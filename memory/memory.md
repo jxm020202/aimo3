@@ -39,22 +39,23 @@
 - **1 submission/day**. Model cutoff March 15, 2026.
 - **Kaggle**: jxm222 | **GitHub**: jxm020202/aimo3 (private)
 
-## Current State (March 2, 2026 evening)
+## Current State (March 2, 2026 night)
 
 - **v15 SUBMITTED** to competition — first entry, awaiting re-run results
-- **v18**: Running 10 reference problems. 3/3 correct so far (50, 580, 520). Slow/stuck on problem 4.
-- **v19**: Running with tiered test framework (cell-17).
-- **Code is functionally identical to baseline** — see `handover.md` for full diff
-- **No uncommitted code changes** — working tree is clean
-- **`strategies.md` has uncommitted research notes** (sandbox library research)
+- **v19 COMPLETE**: 9/10 reference problems correct (90%)! See `reference_problems.md` for full breakdown
+- **New logging version pushed to GitHub** but NOT yet pushed to Kaggle
+- **Cell-13**: Full conversation logging (every turn, every code execution, no truncation)
+- **Cell-17**: Max diagnostic display (turn-by-turn flow, libraries, GPU stats, all attempts)
+- **GitHub Actions auto-deploy DISABLED** (workflow_dispatch). Safe to push.
 
 ## Critical Insights
 
-1. **GPT-OSS-120B solves only 4/10 reference problems** (easy ones). 0/6 hard AIMO3-level.
-2. **Our solver is identical to baseline for solving** — only diffs are early_stop 4→5, deterministic tie-breaking, model/test.csv path discovery. None affect solving speed.
-3. **Hard problems take 900s** because 8 parallel attempts each burn full budget with no consensus. This is expected baseline behavior, not a regression.
-4. **Sandbox kernel hangs** are possible when model generates naive code (e.g., `3**factorial(2025)`). SIGINT can't interrupt C-level bigint operations.
-5. **Highest-impact next step**: Prompt engineering to make model generate efficient code (modular arithmetic, not brute-force bigints). See `strategies.md` "Sandbox Libraries & Compute Efficiency".
+1. **We scored 9/10 on reference problems** — matching Grok-4 and Gemini 2.5 Pro benchmarks. The PDF said GPT-OSS-120B only gets 4/10 at pass@3, but TIR + 8-attempt voting gets 9/10.
+2. **TIR (code execution) is the secret sauce** — problems 5-10 that were "unsolvable" by GPT-OSS-120B in pure reasoning mode were ALL solved with code sandbox access.
+3. **Only failure: Problem 4** (86e8e5, Norwegian numbers with M=3^{2025!}). Got 23 instead of 8687. Need detailed logs to understand why.
+4. **Most hard problems solved in 100-270s** — fast! Not burning full 900s. Only P4 (wrong) and P3/P9 took longer.
+5. **Solver code is functionally identical to baseline** — our diffs (early_stop 5, deterministic tie-breaking) don't explain the 9/10 score. The baseline architecture itself is this good.
+6. **Next priority**: Push new logging version to Kaggle, re-run reference problems to get full diagnostics on P4 failure and understand HOW problems 5-10 were solved.
 
 ## Memory Files — What's Where
 

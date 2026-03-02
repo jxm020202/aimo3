@@ -34,27 +34,42 @@ These 10 problems are for local testing ONLY. Too small for training/fine-tuning
 | DeepSeek-v3.1-terminus (thinking) | 9/10 | Open-weight 671B |
 | GPT-OSS-120B | **4/10** | Open-weight 117B |
 
-**GPT-OSS-120B solves ONLY Problems 1-4. Zero on Problems 5-10.**
+**IMPORTANT**: The 4/10 benchmark is **pass@3 with no code execution**. Pure reasoning only.
+Our TIR setup (8 attempts + code sandbox + entropy-weighted voting) scored **9/10** — see v19 results below.
 
-## Our v18 Results (actual Kaggle H100 run)
+## Our v19 Results (actual Kaggle H100 run, 2026-03-02)
 
 | # | ID | Expected | Got | Time | Status |
 |---|-----|----------|-----|------|--------|
-| 1 | 92ba6a | 50 | 50 | ~26s | CORRECT |
-| 2 | 9c1c5f | 580 | 580 | ~100s | CORRECT |
-| 3 | a295e9 | 520 | 520 | ~335s | CORRECT |
-| 4 | 86e8e5 | 8687 | ? | 900s+ | RUNNING/STUCK |
-| 5-10 | — | — | — | — | NOT REACHED YET |
+| 1 | 92ba6a | 50 | 50 | 28s | CORRECT |
+| 2 | 9c1c5f | 580 | 580 | 99s | CORRECT |
+| 3 | a295e9 | 520 | 520 | 495s | CORRECT |
+| 4 | 86e8e5 | 8687 | **23** | 717s | **WRONG** |
+| 5 | 0e644e | 336 | 336 | 172s | CORRECT |
+| 6 | 26de63 | 32951 | 32951 | 101s | CORRECT |
+| 7 | 424e18 | 21818 | 21818 | 138s | CORRECT |
+| 8 | 42d360 | 32193 | 32193 | 117s | CORRECT |
+| 9 | 641659 | 57447 | 57447 | 424s | CORRECT |
+| 10 | dd7f5e | 160 | 160 | 268s | CORRECT |
 
-Note: Problems get progressively slower. Problem 4 used full 900s budget.
+**Score: 9/10 (90%)** | Total: ~52 min | Kaggle version: scriptVersionId=300944599
 
-## Using Reference Problems
+### Key Findings from v19
+- **Problems 5-10 ALL solved** — these were supposed to be unsolvable by GPT-OSS-120B
+- The difference: TIR (code execution) + 8-attempt voting vs pass@3 pure reasoning
+- Most "hard" problems solved in 100-270s (fast!), not burning full 900s
+- Our 9/10 matches Grok-4, Gemini 2.5 Pro, and DeepSeek-v3.1 (all much larger models)
+- Problem 9 (641659, "very hard") took 424s but solved — geometry + Fibonacci combo
 
-```bash
-# reference.csv has id, problem, answer columns
-# Use for local validation before burning daily submission
-# Test against these first with any new approach
-```
+### Problem 4 Failure Analysis
+- **Predicted 23, expected 8687**. Took 717s (didn't hit full 900s budget)
+- The model DID produce an answer, so it didn't completely hang
+- Problem involves M=3^{2025!} — astronomically large number
+- **We don't have detailed logs for this run** (old cell-17 without diagnostics)
+- Need to re-run with new logging to see: what code the model ran, whether it
+  tried naive bigint computation, and what reasoning led to 23
+- Hypothesis: model may have made a modular arithmetic error, or computed
+  something wrong symbolically. Cannot confirm without logs.
 
 ## Key Remarks from PDF
 - Problem 1 is "easier than any problem used in AIMO3" — pure sanity check

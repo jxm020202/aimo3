@@ -58,4 +58,5 @@ We have two test tiers:
    - `kaggle competitions leaderboard -c ai-mathematical-olympiad-progress-prize-3`
    - Log to CSV to track movement over time
 
-8. (add more as we go)
+8. need to focus on running it locally as close as possible, like idk some simulation for time?
+9. write out steps first and then execute? have 2 of them working together? well for that we really need to understand how the llm even works

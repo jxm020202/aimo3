@@ -12,16 +12,13 @@ takes ages, we need to be sure what we do is correct."
 
 ## Current Kaggle State
 
-- **v15**: Submitted to competition. Waiting for re-run results. First successful run
-  (3/3 trivial test problems correct). This is our first competition entry.
-- **v18**: Running reference problems. Got 3/3 correct on first 3 reference problems
-  (92ba6a=50, 9c1c5f=580, a295e9=520). Stuck/slow on problem 4 (hard number theory).
-  Uses OLD cell-17 (just 10 problems, no tiers). May need to be cancelled.
-- **v19**: Running with NEW cell-17 (tiered test framework + dataset source). Queued
-  behind v18 or running in parallel.
-- **GitHub Actions auto-push is STILL ON** — user asked to disable it but the revert
-  undid that change. Needs to be re-disabled before any git push. Trigger is in
-  `.github/workflows/kaggle-push.yml` (push to main on `notebooks/**` changes).
+- **v15**: Submitted to competition. Waiting for re-run results. First competition entry.
+- **v19 COMPLETE**: **9/10 reference problems correct (90%)**. Only P4 (Norwegian, 86e8e5) wrong.
+  Used OLD cell-17 (no detailed logging). Total runtime ~52 min.
+- **New logging version**: Pushed to GitHub (fb9841f) but NOT yet pushed to Kaggle.
+  Has full conversation logging (every turn, every code execution, GPU stats).
+  Needs `kaggle kernels push -p notebooks/` to deploy.
+- **GitHub Actions auto-push DISABLED** — changed to `workflow_dispatch` (manual only).
 
 ## Exact Diffs from Baseline 44/50
 

@@ -4,6 +4,23 @@ All key changes to the AIMO3 project. Most recent first.
 
 ## 2026-03-02
 
+### v19 Reference Results — 9/10 (90%)
+- **Solved 9/10 reference problems** including all 6 "hard" problems (5-10)
+- Only failure: P4 (86e8e5, Norwegian numbers) — predicted 23, expected 8687
+- Proves TIR + 8-attempt voting >> pure reasoning (PDF benchmark said 4/10)
+- Performance matches Grok-4 and Gemini 2.5 Pro on same problems
+- Most hard problems solved in 100-270s, not burning full 900s budget
+
+### Full Diagnostic Logging (pushed to GitHub, not yet on Kaggle)
+- Cell-13: Single `conversation_log` per attempt with turn-by-turn entries
+  - Type `reasoning`: full model text, no truncation
+  - Type `code_call`: full code + output + error flag, no truncation
+  - Per-attempt timing, stored on `self._last_detailed_results`
+- Cell-17: Maximum diagnostic display for all attempts on all problems
+  - Turn-by-turn conversation flow, library extraction, GPU memory stats
+  - Wrong answer diagnosis (vote comparison, which attempts got what)
+- Disabled GitHub Actions auto-deploy (workflow_dispatch)
+
 ### Project Setup
 - Created project structure at `~/Desktop/sideprojects/aimo3/`
 - Downloaded competition data, reference problems, AIME/IMO/MATH test sets
