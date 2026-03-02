@@ -1,15 +1,5 @@
 # Tools & Workflow
 
-## Kaggle API Setup (REQUIRED before any Kaggle commands)
-
-The Kaggle CLI needs an API key at `~/.kaggle/kaggle.json`. If it doesn't exist:
-1. Ask the user to provide their Kaggle API key
-2. Create the file: `mkdir -p ~/.kaggle && echo '{"username":"jxm222","key":"<KEY>"}' > ~/.kaggle/kaggle.json && chmod 600 ~/.kaggle/kaggle.json`
-3. Install the CLI if needed: `pip3 install kaggle`
-4. Verify: `kaggle kernels status jxm222/aimo3-solver`
-
-**Do NOT attempt Kaggle commands without verifying `~/.kaggle/kaggle.json` exists first.**
-
 ## Kaggle CLI
 
 ```bash
@@ -21,6 +11,10 @@ kaggle kernels status jxm222/aimo3-solver
 
 # Pull output after run completes
 kaggle kernels output jxm222/aimo3-solver -p output/
+
+# Submit to competition
+kaggle competitions submit -c ai-mathematical-olympiad-progress-prize-3 \
+  -f submission.csv -k jxm222/<NOTEBOOK> -v <VERSION> -m "Message"
 
 # Download competition data
 kaggle competitions download ai-mathematical-olympiad-progress-prize-3 -p data/
@@ -34,38 +28,18 @@ kaggle kernels pull <username>/<kernel-slug> -p /tmp/
 
 **Kernel metadata** at `notebooks/kernel-metadata.json`:
 - `id`: `jxm222/aimo3-solver`
-- `code_file`: `aimo3-solver.ipynb` (must match the notebook filename in `notebooks/`)
 - `competition_sources`: `ai-mathematical-olympiad-progress-prize-3`
 - `model_sources`: `openai/gpt-oss-120b/transformers/default/1`
 - `enable_gpu`: true, `enable_internet`: false
 
-## Submission Flow (Step by Step)
+## Workflow: Local → Kaggle
 
-This is a **code competition** — submission = running a notebook on Kaggle, not uploading a CSV.
-
-1. **Develop** notebook locally in `notebooks/aimo3-solver.ipynb`
-2. **Push to Kaggle**: `kaggle kernels push -p notebooks/`
-   - This uploads the notebook + metadata and starts a run on Kaggle's H100
-   - The notebook runs against `test.csv` (3 placeholder problems locally, 50 real problems on competition rerun)
-3. **Wait for run** (takes hours on real problems):
-   - `kaggle kernels status jxm222/aimo3-solver` — check status
-   - States: `queued` → `running` → `complete` or `error`
-4. **Check output**: `kaggle kernels output jxm222/aimo3-solver -p output/`
-5. **Submit to leaderboard**: On Kaggle website, go to notebook → "Submit to Competition"
-   - Or via CLI: the notebook auto-submits when `KAGGLE_IS_COMPETITION_RERUN` is set
-6. **1 submission per day** — don't waste it. Test locally first with reference problems.
-
-### How the notebook becomes a submission
-- When pushed via `kaggle kernels push`, it runs in "test mode" against placeholder data
-- To submit to the actual competition leaderboard, you must select "Submit" on the Kaggle notebook page
-- During competition rerun, `KAGGLE_IS_COMPETITION_RERUN` is set → the notebook calls `inference_server.serve()` which handles the real 50 problems via gRPC
-- The competition runs each submission **TWICE** on the private set. Both must agree for full credit. This is why determinism matters.
-
-### Pre-submission checklist
-- [ ] Verify `kernel-metadata.json` has correct `code_file`, `competition_sources`, `model_sources`
-- [ ] Test against reference problems locally if possible
-- [ ] Check notebook runs without errors on Kaggle (push first, check status)
-- [ ] Only then submit to competition leaderboard
+1. Develop/edit notebook locally in `notebooks/`
+2. `kaggle kernels push -p notebooks/` → uploads and runs on Kaggle H100
+3. `kaggle kernels status jxm222/aimo3-solver` → check if done
+4. `kaggle kernels output jxm222/aimo3-solver -p output/` → pull results
+5. Submit: `kaggle competitions submit ...`
+6. No local GPU needed — all inference runs on Kaggle
 
 ## Python Libraries Available
 
