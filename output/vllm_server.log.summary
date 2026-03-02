@@ -1,0 +1,21 @@
+# vLLM Server Log - Run 300958972 (2026-03-02)
+
+## Status: SUCCESS - No errors
+
+## Key Details
+- vLLM v0.11.2
+- Model: GPT-OSS 120B from /kaggle/input/models/danielhanchen/gpt-oss-120b/transformers/default/1
+- Config: 96% GPU mem, bfloat16, max_seq_len=65536
+- Quantization: MXFP4 with Marlin backend
+- KV cache: FP8, 233,296 tokens available, 6.32x concurrency
+
+## Timeline
+- 09:11:19 - Server started
+- 09:11:38 to 09:12:12 - Model loaded (33.11s, 65.97 GiB GPU)
+- 09:12:12 to 09:13:14 - PyTorch compilation (50.27s) + CUDA graphs (9s)
+- 09:13:16 - Server fully operational
+- Hundreds of successful POST /v1/completions (all 200 OK)
+
+## Conclusion
+Server ran fine. No crashes, no OOM, no errors.
+Need the MAIN NOTEBOOK output to see problem-solving results.
