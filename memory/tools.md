@@ -80,6 +80,23 @@ Claude agents are better for: code search, file reading, codebase exploration, w
 
 **When research is getting out of hand** (3+ agents, deep web crawling, broad surveys): suggest ChatGPT Research instead. One focused research query there saves many agent-hours here.
 
+## Local Testing (Dev Deployment)
+
+```bash
+# Build test sets (fixed 50 + random 50)
+python scripts/build_test_sets.py
+
+# Evaluate output against answers
+python scripts/evaluate.py output/submission.csv data/test_fixed_50_answers.csv
+
+# Simulate double-run scoring (two submission files)
+python scripts/evaluate.py output/run1.csv data/test_fixed_50_answers.csv output/run2.csv
+```
+
+- `data/test_fixed_50.csv` — deterministic benchmark (10 reference + 15 hard AIME + 25 AIME+IMO)
+- `data/test_random_50.csv` — random sample, regenerated each run
+- To test on Kaggle: swap the path in notebook's `run_local_gateway()` to point at test CSV
+
 ## Git
 
 - Repo: https://github.com/jxm020202/aimo3 (private)
