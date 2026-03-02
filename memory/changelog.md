@@ -63,3 +63,53 @@ All key changes to the AIMO3 project. Most recent first.
   Must set `machine_shape: "NvidiaH100"` in kernel-metadata.json.
 - **v8**: All fixes applied — correct kernel_source, model_source, machine_shape.
   Three failure causes resolved: missing wheels, wrong model, wrong GPU.
+
+### Deployment Debugging (v8 → v15)
+- **FAILED (v10)**: vLLM crashed — `OSError: Can't load configuration of '/kaggle/input/gpt-oss-120b/...'`.
+  Model path hardcoded but Kaggle mounts `model_sources` at `/kaggle/input/models/<owner>/...`
+  not `/kaggle/input/<model-name>/...`. Debug showed `Processed 0 files (0.00 GB)`.
+- **v11**: Added debug diagnostics (ls /kaggle/input/). Confirmed model at
+  `/kaggle/input/models/danielhanchen/gpt-oss-120b/transformers/default/1`.
+- **v13**: Added `find_model_path()` auto-discovery in cell-5. Server started successfully
+  (119s). But crashed on `FileNotFoundError: test.csv` — competition data mounts at
+  `/kaggle/input/competitions/...` not `/kaggle/input/...`.
+- **v15**: Added test.csv auto-discovery in cell-16. **FIRST SUCCESSFUL RUN.**
+  All 3 test problems solved correctly. Total runtime ~500s.
+- **v15 submitted to competition** as first entry.
+
+### Hard Fixes / Technical Debt (TODO: fix properly later)
+These are hacks/workarounds that got us running but should be revisited:
+
+1. **Docker image borrowed from someone else** (`kernel-metadata.json`):
+   `gcr.io/kaggle-private-byod/python@sha256:536e3d9752ddf...`
+   — We copied this from another notebook. Should understand what it provides and
+   whether we need it, or if the default Kaggle image works.
+
+2. **Wheels from someone else's notebook** (`kernel_sources: ["andreasbis/aimo-3-utils"]`):
+   — We depend on `andreasbis/aimo-3-utils` notebook output for `wheels.tar.gz`
+   containing vLLM, unsloth, openai_harmony wheels + tiktoken encodings.
+   — If that notebook is deleted/updated, we break. Should fork to `jxm222/aimo3-utils`.
+
+3. **Model source from danielhanchen** (`model_sources: ["danielhanchen/gpt-oss-120b/..."]`):
+   — Using danielhanchen's upload of the model. If removed, we break.
+   — OpenAI's official source `openai/gpt-oss-120b` doesn't show in Kaggle search
+   but might work. Need to verify or fork the model.
+
+4. **Model path auto-discovery** (cell-5 `find_model_path()`):
+   — Works but is a runtime workaround for not knowing the exact mount path.
+   — Kaggle mount paths aren't documented well. Two known patterns:
+     Pattern A: `/kaggle/input/<model-name>/<framework>/<variant>/<version>`
+     Pattern B: `/kaggle/input/models/<owner>/<model-name>/<framework>/<variant>/<version>`
+   — Our function tries both + glob fallback. Robust but hacky.
+
+5. **Test CSV path auto-discovery** (cell-16):
+   — Competition data mounts at `/kaggle/input/competitions/...` in test runs
+   but might be at `/kaggle/input/...` in competition re-runs. We try both.
+   — In competition re-run mode (`serve()`), this code doesn't execute anyway.
+
+### Strategy Research (for future use, not current priority)
+- Comprehensive research on improvement techniques saved to `memory/strategies.md`
+- Key findings: GenSelect (+13% on AIME24), ThinkPRM-14B as verifier, adaptive compute,
+  MCTS (rStar-Math 58.8%→90% on MATH), CISC voting (46% fewer samples needed)
+- SGLang potentially ~29% faster than vLLM on H100
+- None of this matters until we have a stable, scoring submission

@@ -44,8 +44,11 @@
 ## Current State
 
 - **Baseline**: 44/50 public LB (GPT-OSS-120B, zero training, entropy-weighted voting)
-- **Our score**: Not yet submitted
-- **Approach**: Starting from baseline, improving inference strategy
+- **Our score**: NOT YET SUBMITTED — deployment still broken, no successful end-to-end run
+- **Priority**: Get a working submission first. Strategy improvements come AFTER.
+- **Last run**: v15 was cancelled. v13 was last to reach inference but crashed on test.csv path.
+- **Fixes applied**: Model path auto-discovery (cell-5), test.csv path auto-discovery (cell-16)
+- **What still needs testing**: These fixes haven't been validated in a complete run yet
 
 ## Critical Insight
 
@@ -58,7 +61,7 @@ GPT-OSS-120B solves only 4/10 reference problems (the easy AIMO2-level ones, Pro
 | `competition.md` | Rules, constraints, submission format, evaluation, extra prizes, timeline | Setting up submissions, checking rule compliance | Rules clarified or deadlines change |
 | `models.md` | Model landscape, benchmarks, what fits on H100, quantization details | Choosing/switching models, planning ensemble | New model discovered, benchmark results obtained |
 | `solutions.md` | All analyzed solutions — baseline 44/50, Numina, NemoSkills, underdogs | Understanding what's been tried, planning improvements | New solution analyzed, approach validated/failed |
-| `strategies.md` | Improvement vectors, research findings, what works/doesn't, math AI techniques | Planning next experiment, choosing approach | Technique tested (success or failure), new research found |
+| `strategies.md` | Improvement vectors, research findings, what works/doesn't, math AI techniques. **FOR FUTURE USE** — only relevant after we have a working submission. | Planning next experiment, choosing approach | Technique tested (success or failure), new research found |
 | `history.md` | Past AIMO1/2 results, leaderboards, underdog stories, score progressions | Understanding competition dynamics, setting expectations | New competitive intel, leaderboard shifts |
 | `tools.md` | CLI commands, libraries, workflow, Kaggle API, local test harness | **Before any big change**, pushing notebooks, debugging workflow, setting up env | Tool errors, new commands discovered, env quirks found |
 | `reference_problems.md` | The 10 reference problems with answers, difficulty notes, model performance | Local testing, validating our solution before submitting | New model tested on reference, scores updated |
