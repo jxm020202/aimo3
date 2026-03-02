@@ -1,0 +1,14 @@
+[{"stream_name":"stderr","time":12.189114632,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":12.189148866,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":12.189151508,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":12.189152923,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":12.883923261,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":12.88394587,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":12.883947808,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":12.883949134,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":16.206332583,"data":"Found existing installation: keras 3.10.0\r\n"}
+,{"stream_name":"stdout","time":16.559467065,"data":"Uninstalling keras-3.10.0:\r\n"}
+,{"stream_name":"stdout","time":17.316269237,"data":"  Successfully uninstalled keras-3.10.0\r\n"}
+,{"stream_name":"stdout","time":17.467438094,"data":"Found existing installation: matplotlib 3.10.0\r\n"}
+,{"stream_name":"stdout","time":17.51785696,"data":"Uninstalling matplotlib-3.10.0:\r\n"}
+]
