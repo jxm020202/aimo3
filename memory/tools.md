@@ -38,6 +38,10 @@ kaggle kernels pull <username>/<kernel-slug> -p /tmp/
 - `dataset_sources` = a Kaggle dataset, mounted at `/kaggle/input/<dataset-slug>/`
 - The `wheels.tar.gz` comes from `andreasbis/aimo-3-utils` notebook OUTPUT, not a dataset
 - Using `dataset_sources` for this will FAIL — the dataset `capthwi/aimo-3-utils` is different and doesn't have the tar
+- **Fallback**: If `andreasbis/aimo-3-utils` output goes stale, fork it under `jxm222/aimo3-utils`
+- **Model source**: Original baseline uses `danielhanchen/gpt-oss-120b/Transformers/default/1`.
+  We currently use `openai/gpt-oss-120b/transformers/default/1` — both appear to work (v5 is running).
+  `openai/gpt-oss-120b` doesn't show in Kaggle model search but mounts fine.
 
 ## Workflow: Local → Kaggle
 
