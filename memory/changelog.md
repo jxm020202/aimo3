@@ -107,6 +107,28 @@ These are hacks/workarounds that got us running but should be revisited:
    but might be at `/kaggle/input/...` in competition re-runs. We try both.
    — In competition re-run mode (`serve()`), this code doesn't execute anyway.
 
+### Reference Problem Testing (v18)
+- v18 ran 10 reference problems. Results (partial, v18 may still be running):
+  - Problem 1 (92ba6a, sweets): **CORRECT** 50 — ~26s
+  - Problem 2 (9c1c5f, functional equation): **CORRECT** 580 — ~100s
+  - Problem 3 (a295e9, rectangles): **CORRECT** 520 — ~335s
+  - Problem 4 (86e8e5, Norwegian): Still running at 900s budget — hard number theory
+- Confirmed: easy problems solve fast, hard problems burn full 900s budget
+- Kaggle log interleaving: pip stderr from 298s appears between 688s problem output (harmless)
+
+### Tiered Test Framework (v19)
+- Added cell-17 with TEST_LEVEL (0=trivial, 1=+10 reference, 2=+50 fixed, 3=+50 random)
+- Created Kaggle dataset `jxm222/aimo3-test-data` with test CSVs
+- Added to kernel-metadata.json dataset_sources
+- Deduplicates problems across levels
+
+### Code Analysis: Our Diffs from Baseline
+- Confirmed our solver is **functionally identical to baseline** for solving behavior
+- Only diffs: early_stop 4→5, deterministic tie-breaking, model/test path discovery
+- The early stop loop change (no break/cancel) is effectively identical due to executor.shutdown(wait=True)
+- Long runtimes are inherent architecture behavior, not a regression
+- Full diff analysis documented in `memory/handover.md`
+
 ### Strategy Research (for future use, not current priority)
 - Comprehensive research on improvement techniques saved to `memory/strategies.md`
 - Key findings: GenSelect (+13% on AIME24), ThinkPRM-14B as verifier, adaptive compute,

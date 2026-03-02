@@ -36,6 +36,18 @@ These 10 problems are for local testing ONLY. Too small for training/fine-tuning
 
 **GPT-OSS-120B solves ONLY Problems 1-4. Zero on Problems 5-10.**
 
+## Our v18 Results (actual Kaggle H100 run)
+
+| # | ID | Expected | Got | Time | Status |
+|---|-----|----------|-----|------|--------|
+| 1 | 92ba6a | 50 | 50 | ~26s | CORRECT |
+| 2 | 9c1c5f | 580 | 580 | ~100s | CORRECT |
+| 3 | a295e9 | 520 | 520 | ~335s | CORRECT |
+| 4 | 86e8e5 | 8687 | ? | 900s+ | RUNNING/STUCK |
+| 5-10 | — | — | — | — | NOT REACHED YET |
+
+Note: Problems get progressively slower. Problem 4 used full 900s budget.
+
 ## Using Reference Problems
 
 ```bash

@@ -30,7 +30,10 @@ kaggle kernels pull <username>/<kernel-slug> -p /tmp/
 - `id`: `jxm222/aimo3-solver`
 - `competition_sources`: `ai-mathematical-olympiad-progress-prize-3`
 - `kernel_sources`: `andreasbis/aimo-3-utils` (provides `wheels.tar.gz` with vLLM/unsloth wheels + tiktoken encodings)
-- `model_sources`: `openai/gpt-oss-120b/transformers/default/1`
+- `model_sources`: `danielhanchen/gpt-oss-120b/Transformers/default/1`
+- `dataset_sources`: `jxm222/aimo3-test-data` (test CSVs for cell-17)
+- `machine_shape`: `NvidiaH100` (MUST set — default P100 can't fit 120B model)
+- `docker_image`: borrowed from another notebook (see changelog.md hard fixes)
 - `enable_gpu`: true, `enable_internet`: false
 
 **IMPORTANT: kernel_sources vs dataset_sources**:
@@ -39,9 +42,9 @@ kaggle kernels pull <username>/<kernel-slug> -p /tmp/
 - The `wheels.tar.gz` comes from `andreasbis/aimo-3-utils` notebook OUTPUT, not a dataset
 - Using `dataset_sources` for this will FAIL — the dataset `capthwi/aimo-3-utils` is different and doesn't have the tar
 - **Fallback**: If `andreasbis/aimo-3-utils` output goes stale, fork it under `jxm222/aimo3-utils`
-- **Model source**: Original baseline uses `danielhanchen/gpt-oss-120b/Transformers/default/1`.
-  We currently use `openai/gpt-oss-120b/transformers/default/1` — both appear to work (v5 is running).
-  `openai/gpt-oss-120b` doesn't show in Kaggle model search but mounts fine.
+- **Model source**: We use `danielhanchen/gpt-oss-120b/Transformers/default/1`.
+  `openai/gpt-oss-120b` does NOT work on Kaggle (doesn't exist in their registry).
+  Model mounts at: `/kaggle/input/models/danielhanchen/gpt-oss-120b/transformers/default/1`
 
 ## Workflow: Local → Kaggle
 
@@ -107,6 +110,33 @@ python scripts/evaluate.py output/run1.csv data/test_fixed_50_answers.csv output
 - `data/test_fixed_50.csv` — deterministic benchmark (10 reference + 15 hard AIME + 25 AIME+IMO)
 - `data/test_random_50.csv` — random sample, regenerated each run
 - To test on Kaggle: swap the path in notebook's `run_local_gateway()` to point at test CSV
+
+## Kaggle Runtime Gotchas
+
+- **Kaggle log interleaving**: pip stderr from setup (298s) gets mixed into stdout from
+  later cells (688s+). Looks like errors appearing mid-solve but they're harmless pip
+  dependency warnings from earlier.
+- **Model mount paths**: `model_sources` mount at `/kaggle/input/models/<owner>/<name>/<framework>/<variant>/<version>`.
+  Our `find_model_path()` in cell-5 auto-discovers this.
+- **Competition data paths**: Test runs mount at `/kaggle/input/competitions/...`,
+  competition re-runs may differ. Cell-16 tries both.
+- **`KAGGLE_IS_COMPETITION_RERUN`**: Env var set during real competition scoring.
+  When set → `serve()`. When not → `run_local_gateway()`. Cell-17 tests only run when NOT set.
+- **Kernel output**: `kaggle kernels output` only works for completed runs. Can't pull
+  logs from running kernels via CLI. Must use Kaggle UI for live logs.
+- **Version-specific output**: No CLI flag to pull output from a specific version number.
+  Always gets latest completed version.
+- **H100 queue**: Multiple versions can run simultaneously but may compete for GPU time.
+  Cancel old versions from UI if they're wasting resources.
+
+## GitHub Actions (CAUTION)
+
+- `.github/workflows/kaggle-push.yml` auto-pushes to Kaggle on any push to `main`
+  that touches `notebooks/**`
+- **This means git push = Kaggle run = burns H100 time**
+- To push code without triggering: either disable workflow first, or don't change
+  notebooks/ files in the commit
+- To disable: change `on: push:` to `on: workflow_dispatch:` in the YAML
 
 ## Git
 

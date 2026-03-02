@@ -5,10 +5,12 @@ name: Push Notebook to Kaggle
 # To submit, use: kaggle competitions submit -c ai-mathematical-olympiad-progress-prize-3 ...
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'notebooks/**'
+  workflow_dispatch:  # Manual trigger only — no auto-push on merge
+  # To re-enable auto-push, replace workflow_dispatch with:
+  # push:
+  #   branches: [main]
+  #   paths:
+  #     - 'notebooks/**'
 
 jobs:
   kaggle-push:

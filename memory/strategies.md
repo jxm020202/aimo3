@@ -84,7 +84,7 @@
 - Spend more inference budget on harder problems, less on easier ones
 - Current approaches use uniform N candidates per problem
 - If model is confident (low entropy across candidates), stop early and reallocate compute
-- The 44/50 baseline does early-stop if 4 agree (we raised to 5), but doesn't reallocate saved compute
+- The 44/50 baseline does early-stop if 4 agree, but doesn't reallocate saved compute
 - [DiffAdapt](https://arxiv.org/html/2510.19669v2): 82.3% of problems benefit from "Easy" strategy (fewer samples)
 - With 50 problems in 9 hours (~10.8 min/problem), easy problems finish in ~3 min → gives 15+ min per hard problem
 - Could allocate 16-32 attempts on hardest problems instead of uniform 8
@@ -99,6 +99,50 @@
 - Provide worked examples in the prompt for each problem type
 - Could improve performance on problem types the model struggles with
 - Balance: more examples = less context for reasoning
+
+### Sandbox Libraries & Compute Efficiency (RESEARCH NEEDED)
+
+**Problem observed**: Reference problem 3 (rectangles, 500x500) took 900s despite being
+solvable analytically. Model generates naive code that runs slow or hangs the kernel.
+
+**Two research vectors:**
+
+#### 1. Faster/Smarter Math Libraries for Sandbox
+Current sandbox preloads: `math`, `numpy`, `sympy`, `itertools`, `collections`, `mpmath`
+
+Research needed:
+- **`gmpy2`**: GMP-backed arbitrary precision. `pow(base, exp, mod)` is orders of magnitude
+  faster than Python's built-in for huge numbers. Critical for number theory problems.
+- **`sage` / `sagemath`**: Full computer algebra system. Much stronger than sympy for
+  combinatorics, number theory, algebraic geometry. May be too large for Kaggle.
+- **`pari/gp` via `cypari2`**: Number theory powerhouse. Faster than sympy for factorization,
+  primality, modular arithmetic.
+- **`flint` / `python-flint`**: Fast number theory library (C backend). Polynomials, matrices
+  over finite fields, etc.
+- **`galois`**: Finite field arithmetic, fast GF(p) operations
+- **`networkx`**: Graph theory (combinatorics problems often reduce to graph problems)
+- **`scipy.special`**: Combinatorial functions (comb, perm) faster than manual computation
+
+**Key question**: Which of these are available in the Kaggle docker image? Which can be
+pip-installed offline from the wheels tarball? Need to check.
+
+#### 2. Prompt Engineering for Efficient Code
+- Tell model to use `pow(a, b, m)` instead of `a**b % m`
+- Tell model to use modular arithmetic from the start for large-number problems
+- Tell model to set computation timeouts in its own code
+- Add to `preference_prompt`: "NEVER compute astronomically large integers directly.
+  Always use modular arithmetic (pow(base, exp, mod)) for large exponents."
+- Add to `preference_prompt`: "For combinatorics, use generating functions or
+  recurrences rather than brute-force enumeration."
+
+#### 3. Sandbox Hardening
+- Current `jupyter_timeout = 6s` — if code hangs, kernel gets SIGINT but C-level
+  bigint operations can't be interrupted. Kernel becomes zombie.
+- Research: `resource.setrlimit()` to cap CPU time at kernel level
+- Research: `signal.alarm()` as backup timeout inside executed code
+- Research: Run sandbox code in subprocess with hard kill timeout
+- Increase `jupyter_timeout` to 30s for legitimate long computations but add
+  memory limits to prevent OOM from huge allocations
 
 ## What Doesn't Work (Failed in Past Competitions)
 

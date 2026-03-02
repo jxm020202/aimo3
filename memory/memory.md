@@ -16,80 +16,78 @@
 ## User Preferences
 
 - **Never add `Co-Authored-By` to commits** — user doesn't want it
-- **Auto-push**: if 2+ files changed, just commit and push. Full permission granted.
+- **DO NOT push to git without asking** — auto-push triggers Kaggle deploy (GitHub Actions)
+- **GitHub Actions auto-push is ON** — pushing `notebooks/**` to main auto-deploys to Kaggle. Must disable workflow before pushing code casually.
 - Voice input: messages prefixed with `[voice]` are speech-to-text, expect transcription errors
 - User prefers concise communication, doesn't want hand-holding
 - User has CAT 99.63 percentile — strong math intuition, don't underestimate domain knowledge
-- User values being challenged on assumptions (e.g., corrected "private set is harder" misconception)
+- User is in **research mode** — no code changes until core issues are understood
 
 ## Research Tools
 
-- **ChatGPT Research**: User has ChatGPT deep research mode. For broad surveys (papers, techniques, competitive intel), suggest delegating there instead of spinning up 3+ Claude agents. One ChatGPT research query replaces hours of agent work.
+- **ChatGPT Research**: User has ChatGPT deep research mode. For broad surveys, suggest delegating there instead of spinning up 3+ Claude agents.
 - **Claude agents**: Better for code search, file reading, codebase work, writing code.
-- **Rule of thumb**: If research needs >3 agents or deep web crawling → suggest ChatGPT Research.
 
 ## Quick Context
 
 - **Competition**: AIMO Progress Prize 3 — solve 110 original math problems (olympiad to IMO level)
-- **Prize**: $2.2M total. 1st: $262K. 47/50 bonus: $1.59M (never claimed across any AIMO).
+- **Prize**: $2.2M total. 1st: $262K. 47/50 bonus: $1.59M (never claimed).
 - **Deadline**: April 15, 2026 (entry by April 8). ~6 weeks from March 2, 2026.
 - **Hardware**: Free H100 GPUs on Kaggle. No internet during submission.
 - **Answers**: 5-digit integers (0-99999). 50 public + 50 private problems.
-- **Scoring**: Private LB runs each submission twice. Both correct=1, one correct=0.5, both wrong=0.
-- **Open source required**: Winners must release all code, data, weights under CC-BY 4.0.
-- **1 submission/day**, 1 final submission selected.
-- **Model cutoff**: AMLTs used at runtime must be released before March 15, 2026.
-- **Kaggle user**: jxm222 | **GitHub**: jxm020202/aimo3 (private repo)
+- **Scoring**: Double-run. Both correct=1, one=0.5, both wrong=0.
+- **1 submission/day**. Model cutoff March 15, 2026.
+- **Kaggle**: jxm222 | **GitHub**: jxm020202/aimo3 (private)
 
-## Current State
+## Current State (March 2, 2026 evening)
 
-- **Baseline**: 44/50 public LB (GPT-OSS-120B, zero training, entropy-weighted voting)
-- **Our score**: NOT YET SUBMITTED — deployment still broken, no successful end-to-end run
-- **Priority**: Get a working submission first. Strategy improvements come AFTER.
-- **Last run**: v15 was cancelled. v13 was last to reach inference but crashed on test.csv path.
-- **Fixes applied**: Model path auto-discovery (cell-5), test.csv path auto-discovery (cell-16)
-- **What still needs testing**: These fixes haven't been validated in a complete run yet
+- **v15 SUBMITTED** to competition — first entry, awaiting re-run results
+- **v18**: Running 10 reference problems. 3/3 correct so far (50, 580, 520). Slow/stuck on problem 4.
+- **v19**: Running with tiered test framework (cell-17).
+- **Code is functionally identical to baseline** — see `handover.md` for full diff
+- **No uncommitted code changes** — working tree is clean
+- **`strategies.md` has uncommitted research notes** (sandbox library research)
 
-## Critical Insight
+## Critical Insights
 
-GPT-OSS-120B solves only 4/10 reference problems (the easy AIMO2-level ones, Problems 1-4). It gets ZERO of the harder AIMO3-designed problems (5-10). The 44/50 baseline's remaining 6 unsolved problems are likely the hardest IMO-level ones where more sampling won't help. Path to 47+ requires either a stronger model or fundamentally different reasoning strategy for hard problems.
+1. **GPT-OSS-120B solves only 4/10 reference problems** (easy ones). 0/6 hard AIMO3-level.
+2. **Our solver is identical to baseline for solving** — only diffs are early_stop 4→5, deterministic tie-breaking, model/test.csv path discovery. None affect solving speed.
+3. **Hard problems take 900s** because 8 parallel attempts each burn full budget with no consensus. This is expected baseline behavior, not a regression.
+4. **Sandbox kernel hangs** are possible when model generates naive code (e.g., `3**factorial(2025)`). SIGINT can't interrupt C-level bigint operations.
+5. **Highest-impact next step**: Prompt engineering to make model generate efficient code (modular arithmetic, not brute-force bigints). See `strategies.md` "Sandbox Libraries & Compute Efficiency".
 
 ## Memory Files — What's Where
 
-| File | Contains | Read when... | Update when... |
-|------|----------|-------------|----------------|
-| `competition.md` | Rules, constraints, submission format, evaluation, extra prizes, timeline | Setting up submissions, checking rule compliance | Rules clarified or deadlines change |
-| `models.md` | Model landscape, benchmarks, what fits on H100, quantization details | Choosing/switching models, planning ensemble | New model discovered, benchmark results obtained |
-| `solutions.md` | All analyzed solutions — baseline 44/50, Numina, NemoSkills, underdogs | Understanding what's been tried, planning improvements | New solution analyzed, approach validated/failed |
-| `strategies.md` | Improvement vectors, research findings, what works/doesn't, math AI techniques. **FOR FUTURE USE** — only relevant after we have a working submission. | Planning next experiment, choosing approach | Technique tested (success or failure), new research found |
-| `history.md` | Past AIMO1/2 results, leaderboards, underdog stories, score progressions | Understanding competition dynamics, setting expectations | New competitive intel, leaderboard shifts |
-| `tools.md` | CLI commands, libraries, workflow, Kaggle API, local test harness | **Before any big change**, pushing notebooks, debugging workflow, setting up env | Tool errors, new commands discovered, env quirks found |
-| `reference_problems.md` | The 10 reference problems with answers, difficulty notes, model performance | Local testing, validating our solution before submitting | New model tested on reference, scores updated |
-| `changelog.md` | Every key change to the project, most recent first | Understanding what's been done, avoiding duplicate work | **After every meaningful change** — code, config, strategy |
+| File | Contains | Read when... |
+|------|----------|-------------|
+| `handover.md` | **START HERE for new sessions.** Where we stopped, open questions, exact diffs from baseline, what to investigate | Starting a new session |
+| `competition.md` | Rules, constraints, submission format, evaluation, prizes, timeline | Setting up submissions, checking rules |
+| `models.md` | Model landscape, benchmarks, what fits on H100 | Choosing/switching models |
+| `solutions.md` | Analyzed solutions — baseline 44/50, Numina, NemoSkills, underdogs | Understanding what's been tried |
+| `strategies.md` | Improvement techniques, research findings, **sandbox library research** | Planning next experiment |
+| `history.md` | Past AIMO1/2 results, leaderboards, patterns | Competition dynamics |
+| `tools.md` | **CLI commands, Kaggle API, workflow, gotchas** | Before any push/deploy/CLI work |
+| `reference_problems.md` | 10 reference problems with answers, difficulty, model scores | Testing, validating approaches |
+| `changelog.md` | Every change to the project, most recent first | What's been done, avoiding duplicates |
 
 ## Project Structure
 
 ```
 aimo3/
-├── memory/              ← You are here
-├── baseline-44-50.ipynb ← Original 44/50 notebook (read-only reference)
-├── notebooks/           ← Our working notebooks
-│   ├── aimo3-solver.ipynb    ← Active solver (pushed to Kaggle)
+├── memory/              ← You are here. Start with memory.md → handover.md
+├── baseline-44-50.ipynb ← Original 44/50 notebook (READ-ONLY reference)
+├── notebooks/           ← Our working notebooks (pushed to Kaggle)
+│   ├── aimo3-solver.ipynb    ← Active solver
 │   └── kernel-metadata.json  ← Kaggle kernel config
-├── data/                ← Competition data
-│   ├── reference.csv         ← 10 reference problems with answers
-│   ├── test_fixed_50.csv     ← Fixed 50-problem benchmark for dev testing
-│   ├── test_fixed_50_answers.csv
-│   ├── test_random_50.csv    ← Random 50-problem set (regenerate with script)
-│   ├── test_random_50_answers.csv
-│   ├── test.csv              ← Kaggle placeholder (3 trivial problems)
-│   ├── sample_submission.csv
-│   ├── AIMO3_Reference_Problems.pdf
-│   ├── kaggle_evaluation/    ← Submission framework code
-│   └── test_sets/            ← Source datasets (AIME, IMO, MATH)
-├── scripts/
-│   ├── build_test_sets.py    ← Generates fixed/random test CSVs
-│   └── evaluate.py           ← Scores output, supports double-run simulation
-├── research/            ← Research notes
-└── CLAUDE.md            ← High-level project config (read by Claude Code automatically)
+├── data/                ← Competition data + test sets
+├── scripts/             ← build_test_sets.py, evaluate.py
+├── output/              ← Kaggle run outputs (download.txt etc)
+├── .github/workflows/   ← kaggle-push.yml (AUTO-DEPLOYS on push!)
+└── CLAUDE.md            ← Project config (read by Claude Code automatically)
 ```
+
+## Kaggle Dataset
+
+- `jxm222/aimo3-test-data` — uploaded dataset with test CSVs for cell-17
+- Contains: reference.csv, test_fixed_50.csv, test_fixed_50_answers.csv, test_random_50.csv, test_random_50_answers.csv
+- Added to `kernel-metadata.json` dataset_sources
