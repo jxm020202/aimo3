@@ -27,4 +27,35 @@ We have two test tiers:
    - [ ] Past AIMO1/AIMO2 public problems if available
    - [ ] IMO Shortlist problems with numerical answers
 
-2. (add more as we go)
+2. Fix double-run determinism (seed per problem+attempt, not global)
+   - Baseline uses `set_seed(42)` globally but vLLM sampling is still stochastic
+   - Per-attempt seed: `hash(f"{problem_id}_{attempt_index}") % 2**32`
+   - Could recover 1-3 points from 0.5→1.0 on borderline problems
+   - Pure engineering, no model change needed
+
+3. Study the "Condition Mining" approach (39/50 notebook)
+   - `[39/50] AIMO3: Condition Mining + TIR w/ python` by parthenos
+   - Mines constraints/conditions from problem FIRST, then uses TIR
+   - Pull notebook: `kaggle kernels pull parthenos/<slug>`
+
+4. Investigate SymPy-first deterministic solver
+   - "AIMO 3 Submission Evolved" notebook — skips LLM reasoning, uses SymPy directly
+   - Fully deterministic = no double-run penalty
+   - Won't solve hard problems alone, but could complement LLM approach
+   - Hybrid: use SymPy for problems it can solve, LLM for the rest
+
+5. Answer verification step
+   - After majority voting picks an answer, ask model: "verify this answer satisfies all constraints"
+   - Cheap (one inference call per problem), catches obvious errors
+   - Not in baseline
+
+6. Adaptive compute reallocation
+   - Baseline does early-stop if 4/8 agree but doesn't reallocate saved compute
+   - Use saved time to run MORE attempts on problems with no consensus
+   - Could flip borderline problems
+
+7. Track leaderboard daily
+   - `kaggle competitions leaderboard -c ai-mathematical-olympiad-progress-prize-3`
+   - Log to CSV to track movement over time
+
+8. (add more as we go)

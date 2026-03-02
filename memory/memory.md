@@ -14,6 +14,7 @@
 ## User Preferences
 
 - **Never add `Co-Authored-By` to commits** — user doesn't want it
+- **Auto-push**: if 2+ files changed, just commit and push. Full permission granted.
 - Voice input: messages prefixed with `[voice]` are speech-to-text, expect transcription errors
 - User prefers concise communication, doesn't want hand-holding
 - User has CAT 99.63 percentile — strong math intuition, don't underestimate domain knowledge
