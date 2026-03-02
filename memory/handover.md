@@ -64,19 +64,13 @@ are inherent to the 8-attempt parallel architecture with 900s budgets.
 - **Key question**: Which are available on Kaggle's docker image? Can any be installed
   from the wheels tarball?
 
-### 4. Prompt engineering for efficient code
-- Model generates naive code like `3**factorial(2025)` instead of using modular arithmetic
-- Could add to `preference_prompt`: "NEVER compute astronomically large integers directly.
-  Always use pow(base, exp, mod) for large exponents."
-- Could add hints about generating functions, recurrences vs brute-force
-- **This is probably the highest-impact low-effort change**
+### 4. ~~Prompt engineering for efficient code~~ — DONE (1e0334e)
+- **IMPLEMENTED**: Added `pow(base, exp, mod)` hint to `preference_prompt` in cell-8
+- Line: "For very large exponents (e.g. a^(n!)), use pow(base, exp, mod) or analytical methods — never materialize the full number"
+- Could still add more hints (generating functions, recurrences vs brute-force)
 
-### 5. Should we revert early_stop to 4?
-- Currently 5, baseline is 4
-- On paper: 5 is more conservative (waits for stronger consensus)
-- In practice: for easy problems where all 8 agree, doesn't matter. For medium problems
-  where only 4-5 agree, we're slower.
-- **Recommendation**: Revert to 4. No downside, saves time on medium problems.
+### 5. ~~Should we revert early_stop to 4?~~ — DONE (1e0334e)
+- **IMPLEMENTED**: Reverted `early_stop` from 5 → 4 (matches baseline)
 
 ### 6. Should we restore break+cancel on early stop?
 - Currently we collect all futures even after early stop
