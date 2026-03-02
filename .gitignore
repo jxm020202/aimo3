@@ -1,7 +1,3 @@
-data/
-output/
-memory/
-CLAUDE.md
 *.zip
 __pycache__/
 .ipynb_checkpoints/
