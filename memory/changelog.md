@@ -57,3 +57,9 @@ All key changes to the AIMO3 project. Most recent first.
   notebook outputs mount via `kernel_sources`, datasets mount via `dataset_sources`.
 - **v5**: Fixed kernel-metadata.json to use `kernel_sources: ["andreasbis/aimo-3-utils"]`
 - Moved changelog from project root to `memory/changelog.md`
+- **FAILED (v5)**: Model source `openai/gpt-oss-120b` doesn't exist on Kaggle.
+  Correct source is `danielhanchen/gpt-oss-120b/Transformers/default/1`.
+- **FAILED (v6)**: Default GPU is P100 (16GB), way too small for 120B model.
+  Must set `machine_shape: "NvidiaH100"` in kernel-metadata.json.
+- **v8**: All fixes applied — correct kernel_source, model_source, machine_shape.
+  Three failure causes resolved: missing wheels, wrong model, wrong GPU.
