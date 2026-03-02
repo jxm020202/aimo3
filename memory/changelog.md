@@ -48,3 +48,7 @@ All key changes to the AIMO3 project. Most recent first.
 
 ### First Kaggle Run
 - Pushed notebook v1 to Kaggle for test run on H100
+- **FAILED**: Missing `aimo-3-utils` dataset source in kernel-metadata.json.
+  Notebook needs `/kaggle/input/aimo-3-utils/wheels.tar.gz` for offline vLLM install.
+  Fixed by adding `capthwi/aimo-3-utils` to `dataset_sources`.
+- Moved changelog from project root to `memory/changelog.md`

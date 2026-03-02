@@ -40,7 +40,7 @@ aimo3/
 ├── memory/                 # Agent knowledge base (see below)
 ├── research/               # Research notes and reports
 ├── CLAUDE.md               # Claude Code project config
-├── CHANGELOG.md            # All key changes logged here
+├── memory/changelog.md     # All key changes logged here
 └── notes.md                # Improvement ideas and TODOs
 ```
 
