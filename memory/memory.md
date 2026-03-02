@@ -62,6 +62,7 @@ GPT-OSS-120B solves only 4/10 reference problems (the easy AIMO2-level ones, Pro
 | `history.md` | Past AIMO1/2 results, leaderboards, underdog stories, score progressions | Understanding competition dynamics, setting expectations | New competitive intel, leaderboard shifts |
 | `tools.md` | CLI commands, libraries, workflow, Kaggle API, local test harness | **Before any big change**, pushing notebooks, debugging workflow, setting up env | Tool errors, new commands discovered, env quirks found |
 | `reference_problems.md` | The 10 reference problems with answers, difficulty notes, model performance | Local testing, validating our solution before submitting | New model tested on reference, scores updated |
+| `changelog.md` | Every key change to the project, most recent first | Understanding what's been done, avoiding duplicate work | **After every meaningful change** — code, config, strategy |
 
 ## Project Structure
 
