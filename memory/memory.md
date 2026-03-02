@@ -7,9 +7,11 @@
 - **Update memory files when**: you learn something new that future agents need (new technique, failed experiment, config change, insight)
 - **Update at ~80% context compaction**: before you lose context, dump everything the next agent needs into the relevant memory file. This is CRITICAL — don't let knowledge die with your context.
 - **Update after major milestones**: successful submission, score change, new approach validated/invalidated
+- **Update tools.md when**: you hit an error using a tool/command, discover a new useful command, or learn something about the environment. Future agents shouldn't repeat your mistakes.
 - **Don't duplicate**: check if info already exists before writing. Update existing entries instead.
 - **Keep memory.md under 200 lines**: move details to topic files, keep only references here
 - **New agents**: Read ONLY memory.md first. Load topic files only when relevant to your task.
+- **Before any big change**: re-read `tools.md` to know what's available and avoid reinventing.
 
 ## User Preferences
 
@@ -50,15 +52,15 @@ GPT-OSS-120B solves only 4/10 reference problems (the easy AIMO2-level ones, Pro
 
 ## Memory Files — What's Where
 
-| File | Contains | Read when... |
-|------|----------|-------------|
-| `competition.md` | Rules, constraints, submission format, evaluation, extra prizes, timeline | Setting up submissions, checking rule compliance |
-| `models.md` | Model landscape, benchmarks, what fits on H100, quantization details | Choosing/switching models, planning ensemble |
-| `solutions.md` | All analyzed solutions — baseline 44/50, Numina, NemoSkills, underdogs | Understanding what's been tried, planning improvements |
-| `strategies.md` | Improvement vectors, research findings, what works/doesn't, math AI techniques | Planning next experiment, choosing approach |
-| `history.md` | Past AIMO1/2 results, leaderboards, underdog stories, score progressions | Understanding competition dynamics, setting expectations |
-| `tools.md` | Available libraries, CLI commands, workflow, Kaggle API usage | Setting up environment, pushing notebooks, debugging workflow |
-| `reference_problems.md` | The 10 reference problems with answers, difficulty notes, model performance | Local testing, validating our solution before submitting |
+| File | Contains | Read when... | Update when... |
+|------|----------|-------------|----------------|
+| `competition.md` | Rules, constraints, submission format, evaluation, extra prizes, timeline | Setting up submissions, checking rule compliance | Rules clarified or deadlines change |
+| `models.md` | Model landscape, benchmarks, what fits on H100, quantization details | Choosing/switching models, planning ensemble | New model discovered, benchmark results obtained |
+| `solutions.md` | All analyzed solutions — baseline 44/50, Numina, NemoSkills, underdogs | Understanding what's been tried, planning improvements | New solution analyzed, approach validated/failed |
+| `strategies.md` | Improvement vectors, research findings, what works/doesn't, math AI techniques | Planning next experiment, choosing approach | Technique tested (success or failure), new research found |
+| `history.md` | Past AIMO1/2 results, leaderboards, underdog stories, score progressions | Understanding competition dynamics, setting expectations | New competitive intel, leaderboard shifts |
+| `tools.md` | CLI commands, libraries, workflow, Kaggle API, local test harness | **Before any big change**, pushing notebooks, debugging workflow, setting up env | Tool errors, new commands discovered, env quirks found |
+| `reference_problems.md` | The 10 reference problems with answers, difficulty notes, model performance | Local testing, validating our solution before submitting | New model tested on reference, scores updated |
 
 ## Project Structure
 
@@ -66,14 +68,23 @@ GPT-OSS-120B solves only 4/10 reference problems (the easy AIMO2-level ones, Pro
 aimo3/
 ├── memory/              ← You are here
 ├── baseline-44-50.ipynb ← Original 44/50 notebook (read-only reference)
-├── notebooks/           ← Our working notebooks + kernel-metadata.json
-├── data/                ← Competition data (gitignored)
-│   ├── reference.csv    ← 10 reference problems with answers (local test set)
-│   ├── test.csv         ← Placeholder test problems
+├── notebooks/           ← Our working notebooks
+│   ├── aimo3-solver.ipynb    ← Active solver (pushed to Kaggle)
+│   └── kernel-metadata.json  ← Kaggle kernel config
+├── data/                ← Competition data
+│   ├── reference.csv         ← 10 reference problems with answers
+│   ├── test_fixed_50.csv     ← Fixed 50-problem benchmark for dev testing
+│   ├── test_fixed_50_answers.csv
+│   ├── test_random_50.csv    ← Random 50-problem set (regenerate with script)
+│   ├── test_random_50_answers.csv
+│   ├── test.csv              ← Kaggle placeholder (3 trivial problems)
 │   ├── sample_submission.csv
-│   ├── AIMO3_Reference_Problems.pdf ← Reference problems + solutions + model eval
-│   └── kaggle_evaluation/  ← Submission framework code
-├── scripts/             ← Helper scripts
+│   ├── AIMO3_Reference_Problems.pdf
+│   ├── kaggle_evaluation/    ← Submission framework code
+│   └── test_sets/            ← Source datasets (AIME, IMO, MATH)
+├── scripts/
+│   ├── build_test_sets.py    ← Generates fixed/random test CSVs
+│   └── evaluate.py           ← Scores output, supports double-run simulation
 ├── research/            ← Research notes
 └── CLAUDE.md            ← High-level project config (read by Claude Code automatically)
 ```
