@@ -4,12 +4,12 @@
   "code_file": "aimo3-solver.ipynb",
   "language": "python",
   "kernel_type": "notebook",
-  "is_private": "true",
-  "enable_gpu": "true",
-  "enable_tpu": "false",
-  "enable_internet": "false",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
   "dataset_sources": [],
-  "competition_sources": ["ai-mathematical-olympiad-progress-prize-3"],
   "kernel_sources": ["andreasbis/aimo-3-utils"],
-  "model_sources": ["openai/gpt-oss-120b/transformers/default/1"]
+  "competition_sources": ["ai-mathematical-olympiad-progress-prize-3"],
+  "model_sources": ["danielhanchen/gpt-oss-120b/Transformers/default/1"]
 }
