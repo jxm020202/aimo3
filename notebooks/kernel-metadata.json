@@ -11,5 +11,6 @@
   "dataset_sources": [],
   "kernel_sources": ["andreasbis/aimo-3-utils"],
   "competition_sources": ["ai-mathematical-olympiad-progress-prize-3"],
-  "model_sources": ["danielhanchen/gpt-oss-120b/Transformers/default/1"]
+  "model_sources": ["danielhanchen/gpt-oss-120b/Transformers/default/1"],
+  "machine_shape": "NvidiaH100"
 }
