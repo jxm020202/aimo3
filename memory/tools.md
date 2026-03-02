@@ -100,5 +100,5 @@ python scripts/evaluate.py output/run1.csv data/test_fixed_50_answers.csv output
 ## Git
 
 - Repo: https://github.com/jxm020202/aimo3 (private)
-- `data/` and `memory/` are gitignored
+- `data/` and `memory/` are tracked (private repo, useful for agents)
 - Personal GitHub account (no GPG signing needed, unlike WeMoney repos)
