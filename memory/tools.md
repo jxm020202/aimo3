@@ -29,8 +29,15 @@ kaggle kernels pull <username>/<kernel-slug> -p /tmp/
 **Kernel metadata** at `notebooks/kernel-metadata.json`:
 - `id`: `jxm222/aimo3-solver`
 - `competition_sources`: `ai-mathematical-olympiad-progress-prize-3`
+- `kernel_sources`: `andreasbis/aimo-3-utils` (provides `wheels.tar.gz` with vLLM/unsloth wheels + tiktoken encodings)
 - `model_sources`: `openai/gpt-oss-120b/transformers/default/1`
 - `enable_gpu`: true, `enable_internet`: false
+
+**IMPORTANT: kernel_sources vs dataset_sources**:
+- `kernel_sources` = output of another Kaggle notebook, mounted at `/kaggle/input/<kernel-slug>/`
+- `dataset_sources` = a Kaggle dataset, mounted at `/kaggle/input/<dataset-slug>/`
+- The `wheels.tar.gz` comes from `andreasbis/aimo-3-utils` notebook OUTPUT, not a dataset
+- Using `dataset_sources` for this will FAIL — the dataset `capthwi/aimo-3-utils` is different and doesn't have the tar
 
 ## Workflow: Local → Kaggle
 

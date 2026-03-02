@@ -51,4 +51,9 @@ All key changes to the AIMO3 project. Most recent first.
 - **FAILED**: Missing `aimo-3-utils` dataset source in kernel-metadata.json.
   Notebook needs `/kaggle/input/aimo-3-utils/wheels.tar.gz` for offline vLLM install.
   Fixed by adding `capthwi/aimo-3-utils` to `dataset_sources`.
+- **FAILED AGAIN (v2)**: `capthwi/aimo-3-utils` is a dataset with only a llama_cpp wheel,
+  not the right thing. The `wheels.tar.gz` comes from the OUTPUT of `andreasbis/aimo-3-utils`
+  notebook — must use `kernel_sources` (not `dataset_sources`). Key Kaggle concept:
+  notebook outputs mount via `kernel_sources`, datasets mount via `dataset_sources`.
+- **v5**: Fixed kernel-metadata.json to use `kernel_sources: ["andreasbis/aimo-3-utils"]`
 - Moved changelog from project root to `memory/changelog.md`
