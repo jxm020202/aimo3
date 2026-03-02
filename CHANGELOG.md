@@ -1,0 +1,50 @@
+# Changelog
+
+All key changes to the AIMO3 project. Most recent first.
+
+## 2026-03-02
+
+### Project Setup
+- Created project structure at `~/Desktop/sideprojects/aimo3/`
+- Downloaded competition data, reference problems, AIME/IMO/MATH test sets
+- Copied baseline 44/50 notebook as read-only reference
+- Created private GitHub repo: jxm020202/aimo3
+- Set up Kaggle API integration (kernel-metadata.json, secrets)
+
+### Memory System
+- Created 7-file agent knowledge base in `memory/`:
+  - `memory.md` (index), `competition.md`, `models.md`, `solutions.md`,
+    `strategies.md`, `history.md`, `tools.md`, `reference_problems.md`
+- Designed for multi-agent context management: agents load only what they need
+
+### Solver Notebook (`notebooks/aimo3-solver.ipynb`)
+- Started from baseline 44/50 notebook (GPT-OSS-120B, TIR, entropy-weighted voting)
+- **Deterministic seeding**: Added per-attempt seeds (`seed + attempt_index` squared)
+  to ensure identical results across double-runs. Previously used global `set_seed(42)`
+  which didn't guarantee determinism in vLLM sampling.
+- **Deterministic tie-breaking**: Sort by `(score, votes, answer)` descending so ties
+  always resolve the same way regardless of dict ordering.
+- **Early stop threshold**: Changed from 4→5. Gives borderline problems one more attempt
+  to reach consensus. ~12% more compute per problem but could recover 0.5-1pt.
+
+### Test Harness
+- `scripts/build_test_sets.py` — generates fixed 50-problem + random 50-problem test CSVs
+  from AIME, IMO, and reference problem sources
+- `scripts/evaluate.py` — scores submissions against answer keys, supports double-run
+  simulation (pass two CSV files)
+- `data/test_fixed_50.csv` — deterministic benchmark (10 reference + 15 AIME + 25 AIME+IMO)
+- `data/test_random_50.csv` — random sample, regenerated each run
+
+### CI/CD
+- GitHub Actions workflow: merge to main with notebook changes auto-pushes to Kaggle
+- Configured `KAGGLE_USERNAME` and `KAGGLE_KEY` as repo secrets
+
+### Research
+- Analyzed baseline 44/50, Numina (AIMO1 winner), NemoSkills (AIMO2 winner), underdogs
+- ChatGPT deep research report on math AI competition strategies
+- Key finding: GPT-OSS-120B solves only 4/10 reference problems (0/6 hard ones)
+- Identified improvement vectors: determinism fix, answer verification, adaptive compute,
+  condition mining, SymPy hybrid, PRMs, MCTS
+
+### First Kaggle Run
+- Pushed notebook v1 to Kaggle for test run on H100

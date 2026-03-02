@@ -1,0 +1,39 @@
+name: Push Notebook to Kaggle
+
+# Runs the notebook on Kaggle H100 whenever code merges to main.
+# This is a TEST RUN only — it does NOT submit to the competition.
+# To submit, use: kaggle competitions submit -c ai-mathematical-olympiad-progress-prize-3 ...
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'notebooks/**'
+
+jobs:
+  kaggle-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Kaggle CLI
+        run: pip install kaggle
+
+      - name: Push notebook to Kaggle
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        run: kaggle kernels push -p notebooks/
+
+      - name: Check kernel status (initial)
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        run: |
+          sleep 10
+          kaggle kernels status jxm222/aimo3-solver
