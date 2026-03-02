@@ -8,8 +8,8 @@
   "enable_gpu": "true",
   "enable_tpu": "false",
   "enable_internet": "false",
-  "dataset_sources": ["capthwi/aimo-3-utils"],
+  "dataset_sources": [],
   "competition_sources": ["ai-mathematical-olympiad-progress-prize-3"],
-  "kernel_sources": [],
+  "kernel_sources": ["andreasbis/aimo-3-utils"],
   "model_sources": ["openai/gpt-oss-120b/transformers/default/1"]
 }
