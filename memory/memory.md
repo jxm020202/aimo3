@@ -15,9 +15,9 @@
 
 ## User Preferences
 
-- **Never add `Co-Authored-By` to commits** — user doesn't want it
+- **NO GPG signing for this repo** — personal account (jxm020202), NOT WeMoney. Never use `-S` flag or `git config user.signingkey`. GPG signing is ONLY for `~/Desktop/WeMoney/` repos.
 - **DO NOT push to git without asking** — auto-push triggers Kaggle deploy (GitHub Actions)
-- **GitHub Actions auto-push is ON** — pushing `notebooks/**` to main auto-deploys to Kaggle. Must disable workflow before pushing code casually.
+- **GitHub Actions auto-push is NOW DISABLED** — changed to `workflow_dispatch` (manual only). Safe to push.
 - Voice input: messages prefixed with `[voice]` are speech-to-text, expect transcription errors
 - User prefers concise communication, doesn't want hand-holding
 - User has CAT 99.63 percentile — strong math intuition, don't underestimate domain knowledge
