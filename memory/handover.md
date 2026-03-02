@@ -1,112 +1,63 @@
-# Handover Document — March 2, 2026
+# Handover Document — March 2, 2026 (Session 2)
 
 ## Where We Stopped
 
-User and I were analyzing why v18 (Kaggle test run) appeared stuck on reference
-problem 4 (86e8e5, the Norwegian number with M=3^{2025!}). After detailed code
-comparison, we confirmed our solver is **functionally identical to the 44/50 baseline**
-for solving behavior. The long runtimes are inherent to the architecture, not our changes.
-
-User wants no more code changes until we deeply understand the issues. "Every run
-takes ages, we need to be sure what we do is correct."
+v21 pushed to Kaggle. All prompt improvements applied, answer extraction restored to baseline behavior. Waiting for v21 test run results (~5 hours).
 
 ## Current Kaggle State
 
-- **v15**: Submitted to competition. Waiting for re-run results. First competition entry.
-- **v19 COMPLETE**: **9/10 reference problems correct (90%)**. Only P4 (Norwegian, 86e8e5) wrong.
-  Used OLD cell-17 (no detailed logging). Total runtime ~52 min.
-- **New logging version**: Pushed to GitHub (fb9841f) but NOT yet pushed to Kaggle.
-  Has full conversation logging (every turn, every code execution, GPU stats).
-  Needs `kaggle kernels push -p notebooks/` to deploy.
-- **GitHub Actions auto-push DISABLED** — changed to `workflow_dispatch` (manual only).
+- **v15**: Submitted to competition → **scored 38/50** (double-run scoring)
+- **v20**: Test run complete → **19/20** (9/10 ref + 10/10 fixed). Ran with early_stop=4 but old extraction.
+- **v21**: Just pushed. Has all improvements below. Running TEST_LEVEL=4 (~50 problems + double-run retry).
 
-## Exact Diffs from Baseline 44/50
+## Root Cause: Why v15 Scored 38 (not 44)
 
-Our notebook (`notebooks/aimo3-solver.ipynb`) vs `baseline-44-50.ipynb`:
+The baseline has `break` in answer extraction. We removed it. This was the killer:
 
-| Change | Location | Impact |
-|--------|----------|--------|
-| `early_stop = 5` (was 4) | cell-8 CFG | Needs 1 more agreeing answer. ~10-20s more on easy problems. Zero on hard. |
-| No `break`/`cancel` on early stop | cell-13 solve_problem | Collects all futures vs breaking early. But `executor.shutdown(wait=True)` waits in both versions anyway. **Effectively identical timing.** |
-| Deterministic tie-breaking | cell-13 _select_answer | `sort by (score, votes, answer)` vs just `score`. Zero timing impact. |
-| `find_model_path()` | cell-5 | Auto-discovers model mount path. No impact on solving. |
-| Test CSV auto-discovery | cell-16 | Tries multiple paths. No impact on solving. |
-| Cell-17 test framework | cell-17 (NEW) | Tiered reference problem testing. Only runs in test mode. |
-| `dataset_sources` added | kernel-metadata.json | `jxm222/aimo3-test-data` for test framework CSVs. |
+**Baseline (44/50):** When `\boxed{N}` is found during streaming, `break` stops generation immediately. The 32-chunk search window never matters because the answer is always in the latest chunk.
 
-**Conclusion: Our code is functionally identical to baseline for solving.** Long runtimes
-are inherent to the 8-attempt parallel architecture with 900s budgets.
+**Our v15 (38/50):** No `break` → model keeps generating "let me verify..." → 200+ more tokens → later `}` triggers rescan of last 32 chunks → `\boxed{N}` has scrolled out → returns None. Combined with `early_stop=5` (need 5/8 to agree, but only ~5 produce answers) → fragile voting → 38/50.
 
-## Open Questions to Investigate
+**v21 fix:** Restored baseline exact: `text_chunks[-self.cfg.search_tokens:]` + `break`. Proven at 44/50.
 
-### 1. Why do problems take so long? (Architecture understanding)
-- 8 parallel attempts, each with multi-turn LLM + code execution
-- Each attempt runs for up to 900s (15 min) on hard problems
-- Easy problems: ~20-30s (quick consensus)
-- Medium: ~100-300s
-- Hard (no consensus): full 900s budget burned
-- **Question**: Is this actually the optimal time allocation? Could we detect "no consensus
-  likely" early and give up sooner?
+## v21 Changes (All Additive Over Baseline)
 
-### 2. Sandbox kernel hangs (the real v18 issue)
-- Problem 4 has M=3^{2025!}. If model generates `3**math.factorial(2025)`, Python's
-  bigint engine hangs forever in C-level code
-- `interrupt_kernel()` sends SIGINT but can't interrupt C-level operations
-- Sandbox timeout (6s) fires, but kernel becomes zombie — subsequent executes also timeout
-- **Research needed**: How to hard-kill hung kernels? `resource.setrlimit()`?
-  Subprocess wrapper with SIGKILL? Process-level timeout?
+| Change | Cell | What |
+|--------|------|------|
+| Answer extraction | 13 | **Restored to baseline** (32-chunk window + break) |
+| early_stop = 4 | 8 | **Matches baseline** |
+| Efficiency prompt | 8 | Don't overthink trivial problems (saves tokens on easy Qs) |
+| Code Robustness Rules | 8 | Self-contained cells, sympy bloat guard, geometry→numpy, dedup |
+| Bigint hint | 8 | `pow(base, exp, mod)` for large exponents |
+| jupyter_timeout 6→30 | 8 | Let brute-force approaches finish |
+| Sandbox preloads | 11 | +functools, +fractions |
+| TEST_LEVEL=4 | 17 | All tiers: 10 ref + 10 hard diagnostic + 10 random + ~23 comprehensive |
+| TeeLogger | 17 | Persistent `/kaggle/working/diagnostic.log` |
+| Hard FIXED_10_IDS | 17 | 1 easy, 1 medium, 8 hard across diverse domains |
+| Double-run retry | 17 | Re-runs failures, simulates competition double-run scoring |
 
-### 3. Better math libraries for sandbox (ADDED TO strategies.md)
-- `gmpy2`: Fast modular arithmetic, orders of magnitude faster than Python builtins
-- `cypari2`: Number theory (PARI/GP backend)
-- `python-flint`: Fast polynomial/number theory (C backend)
-- `networkx`: Graph theory for combinatorics problems
-- **Key question**: Which are available on Kaggle's docker image? Can any be installed
-  from the wheels tarball?
+## Key Insights from This Session
 
-### 4. Prompt engineering for efficient code
-- Model generates naive code like `3**factorial(2025)` instead of using modular arithmetic
-- Could add to `preference_prompt`: "NEVER compute astronomically large integers directly.
-  Always use pow(base, exp, mod) for large exponents."
-- Could add hints about generating functions, recurrences vs brute-force
-- **This is probably the highest-impact low-effort change**
+1. **`break` in extraction is critical** — without it, the 32-chunk window bug fires and 41% of attempts return None
+2. **Pass@n graph from competition organizers**: Model B (GPT-OSS-120B) at pass@8 ≈ 43-44, pass@20 ≈ 47-48, pass@100 ≈ 49-50. Almost every problem is solvable — it's a consistency/variance game.
+3. **Double-run scoring** doesn't change expected score (E[double] = E[single]) but increases variance. Non-determinism hurts.
+4. **GPU is near-optimal**: vLLM handles ~6 concurrent full-context requests on H100. 8 parallel attempts, 2 queue. No gains from more threading.
+5. **Competition deadline**: April 15, 2026 (entry by April 8). Model cutoff March 15.
 
-### 5. Should we revert early_stop to 4?
-- Currently 5, baseline is 4
-- On paper: 5 is more conservative (waits for stronger consensus)
-- In practice: for easy problems where all 8 agree, doesn't matter. For medium problems
-  where only 4-5 agree, we're slower.
-- **Recommendation**: Revert to 4. No downside, saves time on medium problems.
+## What to Do Next
 
-### 6. Should we restore break+cancel on early stop?
-- Currently we collect all futures even after early stop
-- Baseline breaks out and cancels remaining
-- Analysis shows both versions wait for running futures due to `executor.shutdown(wait=True)`
-- **But**: the `break` does avoid calling `future.result()` on remaining futures, which
-  could matter if any future hangs. Recommend restoring for safety.
-
-## What User Explicitly Wants
-
-1. **No code changes until we understand the core issues** — research first, implement later
-2. **Disable GitHub Actions auto-push** before any git push
-3. **Research better Python math libraries** for faster computation
-4. **Research prompt engineering** to make model generate efficient code
-5. **Understand why hard problems take 900s** — is this expected? Can we do better?
-
-## Files Modified (Not Committed)
-
-Currently clean — all changes were reverted. `memory/strategies.md` has new research
-notes under "Sandbox Libraries & Compute Efficiency" section. This IS committed
-implicitly via the earlier memory updates... actually wait, let me check.
-
-**strategies.md changes are NOT committed** — the library research notes were added
-after the last commit. Need to commit when ready.
+1. **Wait for v21 results** — should take ~5 hours
+2. **If score >= 44**: Submit to competition, then work on prompt improvements for 47+
+3. **If score < 44**: Something else is wrong. Compare v21 logs against baseline carefully.
+4. **Deferred improvements** (wait for v21 data):
+   - Post-hoc adjudication for fragmented votes (only if P4-like failures persist)
+   - Agent specialization (too risky until baseline score recovered)
+   - Adaptive spawning (premature optimization)
 
 ## Context for Next Agent
 
-- Start by reading `memory/memory.md` (index) then this file
-- The notebook on Kaggle is working — v15 submitted, v18/v19 running tests
-- Do NOT push code without disabling the GitHub Actions trigger first
-- The user is in "research and understand" mode, not "implement" mode
-- Key files: `notebooks/aimo3-solver.ipynb`, `baseline-44-50.ipynb`, `memory/strategies.md`
-- Kaggle dataset `jxm222/aimo3-test-data` exists with test CSVs for cell-17
+- Read `memory/memory.md` first, then this file
+- v21 is on Kaggle running now — check with `kaggle kernels status jxm222/aimo3-solver`
+- Pull results: `kaggle kernels output jxm222/aimo3-solver -p output/`
+- GitHub Actions auto-push DISABLED (workflow_dispatch). Safe to push.
+- Key files: `notebooks/aimo3-solver.ipynb`, `baseline-44-50.ipynb`, `prompts.md`
