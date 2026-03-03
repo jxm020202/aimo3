@@ -7,13 +7,13 @@
 ## Current Kaggle State
 
 - **v15**: Submitted to competition → **scored 38/50** (broken extraction, no `break`)
-- **v21**: Test run complete → **49/50** (98%). Breakdown:
+- **v21**: Latest test run → **49/50** (98%). This is the most recent version on Kaggle. Breakdown:
   - Reference: 9/10 (P4 86e8e5 wrong — same failure as v19)
   - Hard diagnostic: 10/10
   - Random: 10/10
   - Comprehensive: 20/20
   - Total time: 63.8 min (well under 5h limit)
-- **v22**: Pushed, running. Changes: early_stop 4→3, temp_schedule, retry on None, hard benchmark level 2.
+- **No v22 exists yet.** v21 is the current latest.
 
 ## Key Discoveries This Session
 
@@ -73,7 +73,7 @@ grep -E 'FINAL SUMMARY' -A3 diagnostics/v21/diagnostic.log     # Final score
 **What happened**: Attempt 2 got correct (8687) but lost vote 2:1 to 41754. All 8 attempts produced wildly different answers. 16 errors, 225 code calls, 460s wall time.
 **Error patterns**: `pow(int, Zero, int)` 3x, `sympy.crt` wrong import 2x, bigint 4300-digit limit 2x.
 
-## Immediate Next Steps (for v23)
+## Immediate Next Steps (for v22)
 
 1. **Increase attempts 8→16** — biggest leverage from pass@100 data. Time budget allows it.
 2. **Fix None rate** — 44.5% wasted. Top targets:
@@ -81,13 +81,13 @@ grep -E 'FINAL SUMMARY' -A3 diagnostics/v21/diagnostic.log     # Final score
    - Improve extraction for "final answer is X" patterns
    - Handle boxed extraction failures (12 cases had `\boxed{}` but weren't extracted)
 3. **Fix error cascades** — preload more in sandbox, add `import sympy as sp` to kernel init
-4. **Submit v22 to competition** if it looks good (currently our best would be v21 at 49/50 test)
+4. **Submit to competition** — v21 at 49/50 on test, should submit soon
 
 ## Context for Next Agent
 
 - Read `memory/memory.md` first, then this file
 - v21 output at `output/v21/` and `diagnostics/v21/`
-- v22 running on Kaggle — check: `kaggle kernels status jxm222/aimo3-solver`
-- Pull v22 output: `kaggle kernels output jxm222/aimo3-solver -p output/v22/`
+- v21 is the latest on Kaggle: `kaggle kernels status jxm222/aimo3-solver`
+- v21 output already pulled to `output/v21/` and `diagnostics/v21/`
 - GitHub Actions auto-push DISABLED (workflow_dispatch). Safe to push.
 - Analysis scripts in `scripts/` — run against `output/v21/diagnostic.log`
