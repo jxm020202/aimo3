@@ -39,14 +39,14 @@
 - **1 submission/day**. Model cutoff March 15, 2026.
 - **Kaggle**: jxm222 | **GitHub**: jxm020202/aimo3 (private)
 
-## Current State (March 3, 2026 — Session 3)
+## Current State (March 3, 2026 — Session 4)
 
 - **v15 SUBMITTED**: Scored 38/50 (broken extraction, no `break`)
-- **v21 COMPLETE**: **49/50** on test (50 problems, 63.8 min). Only failure: 86e8e5 (Norwegian numbers).
-- **Root cause of 38/50**: Missing `break` in answer extraction → 41% None rate → fragile voting
-- **v21 restores baseline extraction** (`break` + 32-chunk window) + prompt improvements
+- **v21**: 49/50 on test (8 attempts, ES=4, temp=0.5, 50 problems, 63.8 min)
+- **v22**: 58/60 on test (8 attempts, ES=3, temp=0.5, 60 problems). Failures: 86e8e5, 76aef9.
+- **v23 RUNNING**: Just pushed. 16 attempts, ES=5, temp schedule [0.1,0.3×4,0.5×6,0.7×4,0.9], 80 problems.
+- **Full changelog**: `memory/changelog-vs-baseline.md` — every diff vs baseline
 - **GitHub Actions auto-deploy DISABLED** (workflow_dispatch). Safe to push.
-- **Deep diagnostics complete**: error analysis, None analysis, struggle scoring all in `diagnostics/v21/`
 
 ## Critical Insights
 
@@ -63,7 +63,7 @@
 
 | File | Contains | Read when... |
 |------|----------|-------------|
-| `handover.md` | **START HERE for new sessions.** Where we stopped, v21 changes, next steps | Starting a new session |
+| `handover.md` | **START HERE for new sessions.** Where we stopped, v23 changes, next steps | Starting a new session |
 | `competition.md` | Rules, constraints, submission format, evaluation, prizes, timeline | Setting up submissions, checking rules |
 | `models.md` | Model landscape, benchmarks, what fits on H100 | Choosing/switching models |
 | `solutions.md` | Analyzed solutions — baseline 44/50, Numina, NemoSkills, underdogs | Understanding what's been tried |
@@ -72,6 +72,7 @@
 | `tools.md` | **CLI commands, Kaggle API, discussion scraping, workflow, gotchas** | Before any push/deploy/CLI work |
 | `reference_problems.md` | 10 reference problems with answers, difficulty, model scores | Testing, validating approaches |
 | `changelog.md` | Every change to the project, most recent first | What's been done, avoiding duplicates |
+| `changelog-vs-baseline.md` | **Exhaustive diff** of notebook vs baseline-44-50.ipynb | Understanding exactly what's changed |
 
 ### Discussion Data (in `data/discussions/`)
 | File | Contains |
@@ -114,8 +115,10 @@ aimo3/
 ├── notebooks/           ← Our working notebooks (pushed to Kaggle)
 │   ├── aimo3-solver.ipynb    ← Active solver
 │   └── kernel-metadata.json  ← Kaggle kernel config
-├── data/                ← Competition data + test sets
-├── scripts/             ← build_test_sets.py, evaluate.py
+├── data/
+│   ├── active/          ← What the notebook uses (test CSVs, reference)
+│   └── available/       ← Everything else (val bench, old benchmarks, discussions)
+├── scripts/             ← build_test_v23.py, parse_diagnostics.py, analyze_*.py
 ├── output/              ← Kaggle run outputs (download.txt etc)
 ├── .github/workflows/   ← kaggle-push.yml (AUTO-DEPLOYS on push!)
 └── CLAUDE.md            ← Project config (read by Claude Code automatically)
@@ -124,5 +127,6 @@ aimo3/
 ## Kaggle Dataset
 
 - `jxm222/aimo3-test-data` — uploaded dataset with test CSVs for cell-17
-- Contains: reference.csv, test_fixed_50.csv, test_fixed_50_answers.csv, test_random_50.csv, test_random_50_answers.csv
+- Contains: reference.csv, test_problems.csv (70 Val Bench), test_answers.csv
+- Old files (test_fixed_50, test_random_50) moved to `data/available/`
 - Added to `kernel-metadata.json` dataset_sources

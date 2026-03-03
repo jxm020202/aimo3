@@ -1,0 +1,154 @@
+========================================================================================================================
+  RUN SUMMARY — Per-Question Results
+========================================================================================================================
+
+  Score: 58/60 (96.7%) | Time: 4202s (70.0 min) | Wrong: 2
+
+  REFERENCE PROBLEMS: 9/10 | 1540s
+  HARD BENCHMARK: 9/10 | 1042s
+  RANDOM 10: 10/10 | 288s
+  COMPREHENSIVE BENCHMARK: 30/30 | 1331s
+
+------------------------------------------------------------------------------------------------------------------------
+      ID   Result    Pred    Exp    Time  Ans/     Votes  Uniq  Errs  Code     Tok    Ent  ES  Vote Detail
+------------------------------------------------------------------------------------------------------------------------
+
+  --- REFERENCE PROBLEMS ---
+  92ba6a       OK      50     50     32s    3/8        3     1     2    21   13553  0.474   Y  [50: 3 votes]
+  9c1c5f       OK     580    580     68s    3/8        3     1     3    26   42328  0.710   Y  [580: 3 votes]
+  a295e9       OK     520    520    153s    3/8        3     1     2    55  114598  0.826   Y  [520: 3 votes]
+>>86e8e5    WRONG      23   8687    495s    6/8        2     4    30   244  253944  0.632   N  [8687: 2 votes | 23: 2 votes | 2404: 1 votes | 41754: 1 votes]
+  0e644e       OK     336    336    110s    3/8        3     1     3    66   70864  0.548   Y  [336: 3 votes]
+  26de63       OK   32951  32951     45s    3/8        3     1     4    14   36615  0.513   Y  [32951: 3 votes]
+  424e18       OK   21818  21818    117s    5/8        3     2    11    79   77673  0.735   Y  [21818: 3 votes | 62140: 2 votes]
+  42d360       OK   32193  32193     80s    3/8        3     1     3    64   52899  0.643   Y  [32193: 3 votes]
+  641659       OK   57447  57447    230s    3/8        3     1    40   137  122457  0.481   Y  [57447: 3 votes]
+  dd7f5e       OK     160    160    210s    5/8        3     3    16   155  126465  0.676   Y  [160: 3 votes | 71: 1 votes | 114: 1 votes]
+
+  --- HARD BENCHMARK ---
+  f28c01       OK      18     18     92s    3/8        3     1     5    59   46919  0.500   Y  [18: 3 votes]
+  d48826       OK     301    301     74s    3/8        3     1    10   110   52184  0.531   Y  [301: 3 votes]
+>>76aef9    WRONG     999      8    136s    3/8        3     1     4    59   95622  0.820   Y  [999: 3 votes]
+  9a1984       OK    1198   1198    262s    3/8        3     1    11   237  156433  0.657   Y  [1198: 3 votes]
+  9be9d3       OK     506    506    127s    3/8        3     1     4    38   72429  0.663   Y  [506: 3 votes]
+  29719a       OK      49     49     16s    3/8        3     1     0     0   12808  0.778   Y  [49: 3 votes]
+  8fea51       OK      42     42    154s    4/8        3     2     7   114   81082  0.556   Y  [42: 3 votes | 0: 1 votes]
+  7f5538       OK   33614  33614     48s    3/8        3     1     0    11   39187  0.767   Y  [33614: 3 votes]
+  c3f0bd       OK       4      4     64s    3/8        3     1     3    55   39232  0.581   Y  [4: 3 votes]
+  2d282e       OK     117    117     69s    4/8        3     2     0     5   54290  0.752   Y  [117: 3 votes | 118: 1 votes]
+
+  --- RANDOM 10 ---
+  45ee22       OK      10     10     11s    3/8        3     1     1     4    7382  0.795   Y  [10: 3 votes]
+  0a27ca       OK    2015   2015      9s    3/8        3     1     1     8    6084  0.506   Y  [2015: 3 votes]
+  37f837       OK       8      8      7s    4/8        4     1     1     0    4714  0.334   Y  [8: 4 votes]
+  83ce64       OK     561    561     20s    3/8        3     1     1     9   15051  0.384   Y  [561: 3 votes]
+  f50235       OK      25     25      4s    3/8        3     1     3     5    2233  0.337   Y  [25: 3 votes]
+  34fe9c       OK       4      4      5s    4/8        4     1     0     0    3197  0.583   Y  [4: 4 votes]
+  af5cc9       OK     601    601     39s    3/8        3     1     2    50   29691  0.539   Y  [601: 3 votes]
+  159758       OK       7      7      5s    3/8        3     1     3     4    3119  0.353   Y  [7: 3 votes]
+  6837b1       OK      81     81    139s    3/8        3     1     6   100   97702  0.730   Y  [81: 3 votes]
+  f84c73       OK     211    211     50s    3/8        3     1     3    54   38736  0.607   Y  [211: 3 votes]
+
+  --- COMPREHENSIVE BENCHMARK ---
+  b4ec47       OK     315    315    218s    5/8        3     3    13   217  146364  0.689   Y  [315: 3 votes | 6: 1 votes | 24: 1 votes]
+  42ee2a       OK     321    321     13s    3/8        3     1     0    12   10070  0.536   Y  [321: 3 votes]
+  737d44       OK      23     23     65s    3/8        3     1     5    46   49828  0.542   Y  [23: 3 votes]
+  c854cd       OK     363    363     71s    3/8        3     1     0    76   52642  0.570   Y  [363: 3 votes]
+  35ecd8       OK     608    608    171s    3/8        3     1     5    79  104365  0.676   Y  [608: 3 votes]
+  269012       OK     751    751    214s    4/8        3     2     4    44  154962  0.660   Y  [751: 3 votes | 101: 1 votes]
+  504b93       OK     125    125     54s    3/8        3     1     1    24   42467  0.624   Y  [125: 3 votes]
+  471086       OK     167    167     72s    3/8        3     1     3    78   41550  0.515   Y  [167: 3 votes]
+  c8adf3       OK      75     75     55s    3/8        3     1     5    76   40808  0.547   Y  [75: 3 votes]
+  354f86       OK     247    247     50s    3/8        3     1     3    83   36120  0.488   Y  [247: 3 votes]
+  69dcfd       OK     235    235     28s    4/8        4     1     0    16   21278  0.590   Y  [235: 4 votes]
+  6618d2       OK      33     33     52s    3/8        3     1     1    39   41441  0.370   Y  [33: 3 votes]
+  bae374       OK     625    625      5s    3/8        3     1     3     3    1990  0.667   Y  [625: 3 votes]
+  8697cd       OK       4      4     25s    3/8        3     1     1     8   19948  0.712   Y  [4: 3 votes]
+  f9333c       OK     928    928     28s    3/8        3     1     0    10   21079  0.682   Y  [928: 3 votes]
+  f8b3d5       OK       9      9      8s    3/8        3     1     3    13    4689  0.379   Y  [9: 3 votes]
+  0fbf22       OK     129    129     10s    4/8        4     1     2    20    6715  0.522   Y  [129: 4 votes]
+  74252c       OK     129    129     16s    3/8        3     1     3     8   12383  0.647   Y  [129: 3 votes]
+  e1d491       OK      84     84     17s    3/8        3     1     0    12   11556  0.706   Y  [84: 3 votes]
+  02af89       OK      20     20      3s    4/8        4     1     1     1    1604  0.464   Y  [20: 4 votes]
+  932759       OK       8      8      9s    3/8        3     1     3     4    4717  0.571   Y  [8: 3 votes]
+  f231de       OK     294    294     15s    3/8        3     1     2     8   11216  0.656   Y  [294: 3 votes]
+  476119       OK      25     25     22s    5/8        5     1     6    47   14841  0.426   Y  [25: 5 votes]
+  4fef3c       OK       3      3     24s    3/8        3     1     1    23   18958  0.529   Y  [3: 3 votes]
+  e7ed61       OK      53     53      9s    3/8        3     1     2     5    6405  0.513   Y  [53: 3 votes]
+  2b836d       OK       6      6     30s    3/8        3     1     0     9   23452  0.629   Y  [6: 3 votes]
+  88178a       OK       3      3     13s    3/8        3     1     3     5    9588  0.555   Y  [3: 3 votes]
+  2677ce       OK     204    204      9s    3/8        3     1     1     2    6723  0.388   Y  [204: 3 votes]
+  7b14f4       OK      10     10     16s    4/8        4     1     1    14   12053  0.410   Y  [10: 4 votes]
+  62c41a       OK      78     78      5s    3/8        3     1     1     2    2767  0.399   Y  [78: 3 votes]
+
+========================================================================================================================
+  WRONG ANSWERS — Details
+========================================================================================================================
+
+  86e8e5 (REFERENCE PROBLEMS)
+    Predicted: 23 | Expected: 8687
+    Time: 494.8s | Answered: 6/8 | Errors: 30 | Code: 244
+    Votes: [8687: 2 votes | 23: 2 votes | 2404: 1 votes | 41754: 1 votes]
+    Entropy: 0.632 | Early stop: No
+
+  76aef9 (HARD BENCHMARK)
+    Predicted: 999 | Expected: 8
+    Time: 135.7s | Answered: 3/8 | Errors: 4 | Code: 59
+    Votes: [999: 3 votes]
+    Entropy: 0.820 | Early stop: Yes
+
+========================================================================================================================
+  AT-RISK — Correct but weak consensus (top_vote<=3 or unique>=3)
+========================================================================================================================
+
+  92ba6a: top_vote=3 unique=1 time=32s errs=2 [50: 3 votes]
+  9c1c5f: top_vote=3 unique=1 time=68s errs=3 [580: 3 votes]
+  a295e9: top_vote=3 unique=1 time=153s errs=2 [520: 3 votes]
+  0e644e: top_vote=3 unique=1 time=110s errs=3 [336: 3 votes]
+  26de63: top_vote=3 unique=1 time=45s errs=4 [32951: 3 votes]
+  424e18: top_vote=3 unique=2 time=117s errs=11 [21818: 3 votes | 62140: 2 votes]
+  42d360: top_vote=3 unique=1 time=80s errs=3 [32193: 3 votes]
+  641659: top_vote=3 unique=1 time=230s errs=40 [57447: 3 votes]
+  dd7f5e: top_vote=3 unique=3 time=210s errs=16 [160: 3 votes | 71: 1 votes | 114: 1 votes]
+  f28c01: top_vote=3 unique=1 time=92s errs=5 [18: 3 votes]
+  d48826: top_vote=3 unique=1 time=74s errs=10 [301: 3 votes]
+  9a1984: top_vote=3 unique=1 time=262s errs=11 [1198: 3 votes]
+  9be9d3: top_vote=3 unique=1 time=127s errs=4 [506: 3 votes]
+  29719a: top_vote=3 unique=1 time=16s errs=0 [49: 3 votes]
+  8fea51: top_vote=3 unique=2 time=154s errs=7 [42: 3 votes | 0: 1 votes]
+  7f5538: top_vote=3 unique=1 time=48s errs=0 [33614: 3 votes]
+  c3f0bd: top_vote=3 unique=1 time=64s errs=3 [4: 3 votes]
+  2d282e: top_vote=3 unique=2 time=69s errs=0 [117: 3 votes | 118: 1 votes]
+  45ee22: top_vote=3 unique=1 time=11s errs=1 [10: 3 votes]
+  0a27ca: top_vote=3 unique=1 time=9s errs=1 [2015: 3 votes]
+  83ce64: top_vote=3 unique=1 time=20s errs=1 [561: 3 votes]
+  f50235: top_vote=3 unique=1 time=4s errs=3 [25: 3 votes]
+  af5cc9: top_vote=3 unique=1 time=39s errs=2 [601: 3 votes]
+  159758: top_vote=3 unique=1 time=5s errs=3 [7: 3 votes]
+  6837b1: top_vote=3 unique=1 time=139s errs=6 [81: 3 votes]
+  f84c73: top_vote=3 unique=1 time=50s errs=3 [211: 3 votes]
+  b4ec47: top_vote=3 unique=3 time=218s errs=13 [315: 3 votes | 6: 1 votes | 24: 1 votes]
+  42ee2a: top_vote=3 unique=1 time=13s errs=0 [321: 3 votes]
+  737d44: top_vote=3 unique=1 time=65s errs=5 [23: 3 votes]
+  c854cd: top_vote=3 unique=1 time=71s errs=0 [363: 3 votes]
+  35ecd8: top_vote=3 unique=1 time=171s errs=5 [608: 3 votes]
+  269012: top_vote=3 unique=2 time=214s errs=4 [751: 3 votes | 101: 1 votes]
+  504b93: top_vote=3 unique=1 time=54s errs=1 [125: 3 votes]
+  471086: top_vote=3 unique=1 time=72s errs=3 [167: 3 votes]
+  c8adf3: top_vote=3 unique=1 time=55s errs=5 [75: 3 votes]
+  354f86: top_vote=3 unique=1 time=50s errs=3 [247: 3 votes]
+  6618d2: top_vote=3 unique=1 time=52s errs=1 [33: 3 votes]
+  bae374: top_vote=3 unique=1 time=5s errs=3 [625: 3 votes]
+  8697cd: top_vote=3 unique=1 time=25s errs=1 [4: 3 votes]
+  f9333c: top_vote=3 unique=1 time=28s errs=0 [928: 3 votes]
+  f8b3d5: top_vote=3 unique=1 time=8s errs=3 [9: 3 votes]
+  74252c: top_vote=3 unique=1 time=16s errs=3 [129: 3 votes]
+  e1d491: top_vote=3 unique=1 time=17s errs=0 [84: 3 votes]
+  932759: top_vote=3 unique=1 time=9s errs=3 [8: 3 votes]
+  f231de: top_vote=3 unique=1 time=15s errs=2 [294: 3 votes]
+  4fef3c: top_vote=3 unique=1 time=24s errs=1 [3: 3 votes]
+  e7ed61: top_vote=3 unique=1 time=9s errs=2 [53: 3 votes]
+  2b836d: top_vote=3 unique=1 time=30s errs=0 [6: 3 votes]
+  88178a: top_vote=3 unique=1 time=13s errs=3 [3: 3 votes]
+  2677ce: top_vote=3 unique=1 time=9s errs=1 [204: 3 votes]
+  62c41a: top_vote=3 unique=1 time=5s errs=1 [78: 3 votes]

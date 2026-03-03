@@ -1,0 +1,639 @@
+id,problem,answer,source,conversion_type,original_answer,category
+ab7beb,"Find all positive integers \(\mathbf{n}\) such that for any: \({a}_{n} \geq {a}_{n - 1} \geq {a}_{n - 2} \geq \cdots \cdots {a}_{2} \geq {a}_{1} > 0,\) satisfying \(\mathop{\sum }\limits_{{k = 1}}^{n}{a}_{k} = \mathop{\sum }\limits_{{k = 1}}^{n}\frac{1}{{a}_{k}}\), the inequality \(\mathop{\prod }\limits_{{k = 1}}^{n}{a}_{k}^{k} \geq 1\) holds.
+
+Find the sum of all elements in the answer set.",6,AMO-Bench-Converted,set_sum,"\{1, 2, 3\}",algebra
+09d1ec,"\[
+\left\lfloor \frac{n!}{(n+1)(n+2)} \right\rfloor
+\]
+represents the greatest integer less than or equal to 
+\(\frac{n!}{(n+1)(n+2)}\). Find all possible values of
+\[
+\left\lfloor \frac{n!}{(n+1)(n+2)} \right\rfloor 
+- \left\lfloor \frac{1}{32} \cdot \frac{n!}{(n+1)(n+2)} \right\rfloor \times 32.
+\]
+
+Find the sum of all elements in the answer set.",240,AMO-Bench-Converted,set_sum,"\{0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30\}",number_theory
+9043f5,"Let \(x,y,z\) be positive real numbers such that \({xy} + {xz} + {yz} \neq 1\), \(\frac{\left( {{x}^{2} - 1}\right) \left( {{y}^{2} - 1}\right) }{xy} + \frac{\left( {{x}^{2} - 1}\right) \left( {{z}^{2} - 1}\right) }{xz} + \frac{\left( {{z}^{2} - 1}\right) \left( {{y}^{2} - 1}\right) }{zy} = 4\). Find the minimum value of \(9{x}^{2} + {13689}{y}^{2}{z}^{2} - {27378yz} + \frac{28561}{{\left( y + z\right) }^{2}}\).
+
+Express your answer as the absolute value of the result.",9126,AMO-Bench-Converted,absolute_value,-9126,algebra
+6deb87,"Let $\{a_k\}$ be a sequence of non-negative integers, and $\{b_k\}$ be a sequence of positive real numbers. Given that:
+1.$$\left(\sum_{n=1}^{2023} a_n b_n\right)\left( \sum_{k=0}^{673} \frac{1}{(k+675)(1348-k)} \right)= \sum_{k=1}^{674}\frac{1}{k(2k-1)}$$
+2.$$\frac{\sum_{k=1}^{1364176}\frac{1}{k(2k-1)}}{\sum_{k=0}^{1364175} \frac{1}{(k+1364177)(2728352-k)}} = 1+\sum_{n=1}^{2023} a_n^2 b_n^2 $$
+3.$$ \left( \sum_{k=0}^{5519455420} \frac{1}{(k+5519455422)(11038910842-k)} \right)\left[\left(\sum^{2023}_{n=1}2a^3_nb^3_n \right)-1\right] =\sum_{k=1}^{5519455421} \frac{1}{k(2k-1)}$$
+Find the minimum value of $$ \sum_{n=1}^{2023} a_n^4 b_n^4 $$
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are positive integers with $\gcd(p,q)=1$, find $p + q$.",33497570861569,AMO-Bench-Converted,fraction_p_plus_q,\frac{33497570861567}{2},algebra
+d3db4d,"Let \( a, b, c, d \) be real numbers such that \[4a^4 + \frac{c^4}{16} + b^4 + b^3d^2 + 27 + \frac{d^2}{4} + a^2c^2 = 3c^2 + 24a^2 + 8b^2 + 4d^2.\] Find the minimum value of \[\frac{4a^4 + \frac{c^4}{16} + a^2c^2 + 12a^2 + \frac{3}{2}c^2 + b^4 + \frac{d^4}{4} + 10 + b^2d^2 + 2b^2 + d^2 }{\sqrt{2a^2b^2 + a^2d^2 + 2a^2 + \frac{b^2c^2}{4} + \frac{c^2d^2}{8} + \frac{c^2}{4} + 3b^2 + 3 + \frac{3}{2}d^2}}.\]
+
+If the answer can be expressed as $\frac{a\sqrt{b}}{c}$ where $a$, $b$, $c$ are positive integers, $b$ is square-free, and $\gcd(a,c)=1$, find $a + b + c$.",14,AMO-Bench-Converted,sqrt_fraction_abc,\frac{9\sqrt{3}}{2},algebra
+e3b75c,"Let complex numbers \(z_1, z_2, \ldots, z_{2025}\) satisfy
+\[
+\sum_{k=1}^{2025} z_k = 0,\qquad \sum_{k=1}^{2025} |z_k|^2 = 1.
+\]
+Find the minimum possible value of
+\[
+\max_{1 \le i < j \le 2025} |z_i - z_j|.
+\]
+
+If the answer can be expressed as $\frac{\sqrt{a}}{b}$ where $a$ and $b$ are positive integers and $a$ is square-free, find $a + b$.",48,AMO-Bench-Converted,sqrt_fraction,\frac{\sqrt{3}}{45},algebra
+4fc407,"It is known that the equation in \(u, v\), \(u^2 - 3v^4 = 1\), has at most four positive integer solutions; and the equation in \(\lambda, \iota\), \(4\lambda^2 - 3\iota^2 = 1\), has at most four positive integer solutions. If a prime \(p\) satisfies \(p \equiv 5 \pmod{8}\), and integers \(x, y\) satisfy
+\[
+\left(\frac{1+x^2}{2} + \frac{\sqrt{\,9x^4 + \frac{4x^6}{3} + 9 + 18x^2\,}}{6}\right)^{\!1/3}
++
+\left(\frac{1+x^2}{2} - \frac{\sqrt{\,9x^4 + \frac{4x^6}{3} + 9 + 18x^2\,}}{6}\right)^{\!1/3}
+= 2py^2 - x^3,
+\]
+find the maximum value of \(x+y\).
+
+Express your answer as the absolute value of the result.",1,AMO-Bench-Converted,absolute_value,-1,number_theory
+191972,"Let \(n\) be an integer with \(n>2\).
+Real numbers \(a_1, a_2, \ldots, a_n\) satisfy
+\[
+\sum_{k=1}^{n} a_k = 2n, \qquad \sum_{k=1}^{n} k\,|a_k| = 4n.
+\]
+Find the minimum value of \(a_1^2 + a_2^2 + \cdots + a_n^2\).
+
+Find the sum of the minimum values for $n = 5, 10, 15, \ldots, 50$.",11550,AMO-Bench-Converted,parametric_cumsum,"For \(n=3\), the minimum of \(a_1^2 + a_2^2 + a_3^2\) is \(12\).
+For \(n \ge 4\), the minimum of \(a",algebra
+1c3066,"Let \(a\) be a prime greater than \(100\) with \(a \equiv 3 \pmod{5}\).
+For complex numbers \(z_n\) \((1 \le n \le a)\), both the real and imaginary parts are nonzero.
+For each \(n\), let \(d_n\) be the distance from the point \((n,\lvert z_n\rvert)\) to the line
+\[
+y=\frac{202}{5}x+2025.
+\]
+Choose one complex number at random from \(\{z_n\}_{n=1}^a\); let \(p\) be the probability that its modulus is a positive integer.
+Given
+\[
+\bigg(2a-\sum_{i=1}^{a} i^{d_i}\bigg)^{\!2}
++\bigg(3+\sum_{k=2}^{a}(2k+2)-\sum_{i=1}^{a} i^{2d_i}\bigg)^{\!2}
++\bigg(\frac{7}{2}+\sum_{j=2}^{a}\!\big(3j^3+3j+\tfrac{1}{2}\big)-\sum_{i=1}^{2022} i^{3d_i}\bigg)^{\!2}=0,
+\]
+find the maximum value of \(p\).
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are positive integers with $\gcd(p,q)=1$, find $p + q$.",124,AMO-Bench-Converted,fraction_p_plus_q,\frac{21}{103},number_theory
+ec565a,"In a $d$-dimensional Euclidean space, there are two definitions:
+1) Encapsulation: For a point $p$, if there exists a ball centered at $p$ with sufficiently small radius such that every point within this ball (except $p$ itself) belongs to at least one convex set $K_i$ (where $i=1, \dots, n$), then we say point $p$ is encapsulated by these convex sets; 
+2) Contact: For a set $K$ and a point $p$, if $p$ does not lie inside $K$ but any neighborhood of $p$ (no matter how small) contains points from $K$, we say point $p$ contacts set $K$ (This is equivalent to saying $p$ is a boundary point of $K$).
+Let $K_1, K_2, K_3$ be three convex sets in $d$-dimensional space. Let $S$ be the set of points encapsulated by these three convex sets. The maximum possible value of $|S|$ is a function theat depends only on the dimension $d$. Based on the above definitions and known conditions, the maximum value can be derived. Let $f(d, 3) = \max |S|$. Please provide the expression for $f(d, 3)$:
+$f(d, 3) = $
+
+Find the sum of the answers for $d$ from $1$ to $100$.",7650,AMO-Bench-Converted,floor_cumsum,"$\lfloor \frac{3d}{2} \rfloor + 1$, where $\lfloor \quad \rfloor$ denotes the floor function (roundi",geometry
+d33d32,"An integer partition of a positive integer $n$ is a finite non-increasing sequence of positive integers $\left(\lambda_1,\lambda_2,\ldots,\lambda_k\right)$ whose sum is equal to $n$. The integers $\lambda_1,\lambda_2,\ldots,\lambda_k$ are called the parts of the partition. For example, the number of partitions of the integer $n=4$ is 5, which are $(4), (3, 1), (2, 2), (2, 1, 1), (1, 1, 1, 1)$. A generalization of integer partitions is the overpartition of $n$, which is a partition of $n$ where each part may be overlined upon its first occurrence. For example, $n=4$ has $14$ overpartitions: $(4), \left(\bar{4}\right),\left(3,1\right),\left(\bar{3},1\right),\left(3,\bar{1}\right),\left(\bar{3},\bar{1}\right),\left(2,2\right),\left(\bar{2},2\right),(2, 1, 1), \left(\bar{2},1,1\right), \left(2,\bar{1},1\right), \left(\bar{2},\bar{1},1\right), (1, 1, 1, 1), \left(\bar{1},1,1,1\right)$. The number of overpartitions of $n$ is usually denoted by $\bar{p}\left(n\right)$; from the above, we can see that $\bar{p}\left(4\right)=14$. The family of functions $\bar{R_l^*}\left(n\right)$ counts the number of overpartitions of weight $n$ such that non-overlined parts are not allowed to be divisible by $l$, while there is no restriction on overlined parts. For example, the overpartitions counted by $\bar{R_3^*}\left(4\right)$ are 12: $(4), \left(\bar{4}\right), \left(\bar{3},1\right), \left(\bar{3},\bar{1}\right), (2, 2), \left(\bar{2},2\right),(2, 1, 1), \left(\bar{2},1,1\right), \left(2,\bar{1},1\right), \left(\bar{2},\bar{1},1\right), (1, 1, 1, 1), \left(\bar{1},1,1,1\right)$. We can easily see that the two overpartitions counted by $\overline{p}\left(4\right) $, namely $\left(3,1\right)$ and $\left(3,\overline{1}\right)$, do not appear in the list above. This is because they contain a non-overlined part divisible by $l= 3$. The function $\bar{R_l^*}\left(n\right)$ satisfies a series of congruence properties. For each $l$, this function satisfies the following generating function identity: $\sum_{n=0}^{\infty}{\bar{R_l^*}\left(n\right)q^n}=\frac{f_2f_l}{f_1^2}$. Where $f_k=\prod_{m=1}^{\infty}\left(1-q^{km}\right)$.
+
+Given Condition 1.3 (Jacobi). We have $(4) f_1^3=\sum_{m\geq0}{\left(-1\right)^m\left(2m+1\right)q^{m\left(m+1\right)/2}} $
+
+Given Condition 1.4. $(5) \frac{f_1}{f_3^3}=\frac{f_2f_4^2f_{12}^2}{f_6^7}-q\frac{f_2^3f_{12}^6}{f_4^2f_6^9}$, $(6) \frac{f_1^3}{f_3}=\frac{f_4^3}{f_{12}}-3q\frac{f_2^2f_{12}^3}{f_4f_6^2}$.
+
+Given Condition 1.5. $(7) \frac{f_1^2}{f_2}=\frac{f_9^2}{f_{18}}-2q\frac{f_3f_{18}^2}{f_6f_9}$
+$(8) \frac{f_2^2}{f_1}=\frac{f_6f_9^2}{f_3f_{18}}+q\frac{f_{18}^2}{f_9}$
+$(9) \frac{f_2}{f_1^2}=\frac{f_6^4f_9^6}{f_3^8f_{18}^3}+2q\frac{f_6^3f_9^3}{f_3^7}+4q^2\frac{f_6^2f_{18}^3}{f_3^6} $
+$(10) f_1f_2=\frac{f_6f_9^4}{f_3f_{18}^2}-qf_9f_{18}-2q^2\frac{f_3f_{18}^4}{f_6f_9^2} $
+$(11) f_1^3=\frac{f_6f_9^6}{f_3f_{18}^3}-3qf_9^3+4q^3\frac{f_3^2f_{18}^6}{f_6^2f_9^3} $
+$(12) \frac{1}{f_1^3}=\frac{f_6^2f_9^{15}}{f_3^{14}f_{18}^6}+3q\frac{f_6f_9^{12}}{f_3^{13}f_{18}^3}+9q^2\frac{f_9^9}{f_3^{12}}+8q^3\frac{f_9^6f_{18}^3}{f_3^{11}f_6}+12q^4\frac{f_9^3f_{18}^6}{f_3^{10}f_6^2}+16q^6\frac{f_{18}^{12}}{f_3^8f_6^4f_9^3}$
+
+Given Condition 1.6. For prime $p$ and positive integers $k$ and $l$,
+$$ f_l^{p^k} \equiv f_{lp}^{p^{k-1}} \pmod{p^k} \quad (13) $$
+
+For all $n \geq 0$ and $k \geq 0$, we have
+$\bar{R_6^*} \left(18 \cdot 3^{2k+1} n + \frac{153 \cdot 3^{2k} - 1}{4}\right) \equiv \text{________} \pmod{?} $
+
+Find the remainder when the answer is divided by 128.",0,AMO-Bench-Converted,mod_remainder,$\boxed{0\left(mod128\right)}$,number_theory
+d7a6e8,"Let \(f(x),g(x),h(x)\) be functions defined on the set of positive integers. 
+Let \(\left\lfloor \tfrac{x}{2}\right\rfloor\) denote the greatest integer less than or equal to \(\tfrac{x}{2}\).
+Define \(f(x)\) to be the number of integers in the list \(1,2,3,\dots,\left\lfloor \tfrac{x}{2}\right\rfloor\) that are coprime to \(x\).
+If \(p_{1},p_{2},\dots,p_{k}\) are distinct primes and \(y=p_{1}^{\alpha_{1}}p_{2}^{\alpha_{2}}\cdots p_{k}^{\alpha_{k}}\), then
+\[
+g(y)=\max\{\,p_{1}^{\alpha_{1}},\,p_{2}^{\alpha_{2}},\,\dots,\,p_{k}^{\alpha_{k}}\,\}.
+\]
+For a positive integer \(z\), let \(h(z)\) be the least positive integer \(m\) such that \(z\mid m!\).
+Find all integers \(b>1\) such that
+\[
+f(b)=h\!\big(g(b^{2})\big).
+\]
+
+Find the sum of all elements in the answer set.",429,AMO-Bench-Converted,set_sum,"\{40, 64, 75, 100, 150\}",number_theory
+22b19a,"Find the largest positive integer \(n\) that satisfies the following property: there exists a sequence of \(n\) positive integers \({a}_{1},\cdots ,{a}_{n}\) such that \({a}_{i} \leq  {2}^{2025}\left( {\forall 1 \leq  i \leq  n}\right)\), and for any \(1 \leq  i < j \leq  n\), there is no non-empty proper subset \(A \subset  \{ i,i + 1,\cdots ,j\}\) such that
+\[\mathop{\sum }\limits_{{k \in  A}}{a}_{k} = \mathop{\sum }\limits_{{k \in  \{ i,i + 1,\cdots ,j\}  - A}}{a}_{k}. \tag{1}\]
+
+Find the remainder when the answer is divided by $10^9 + 7$.",144571402,AMO-Bench-Converted,power_mod,{2}^{2026}-1,combinatorics
+1a01fd,"There are \(n\times n\times n\)  mud blocks on the ground. A miner starts digging through one of the blocks. Each time, he can only dig a face-adjacent block until all blocks are dug out. If he digs the blocks consecutively and for \(n\) times these blocks are all in a line, then the miner is described as to have ``dug a straight line'' once. Find the maximum possible number the miner can ``dig a straight line''.
+
+Find the sum of the answers for $n$ from $2$ to $100$.",338548,AMO-Bench-Converted,parametric_cumsum,"When \(n = 2\), the number is 7;
+When \(n \geq  3\), the number is \({n}^{2} + 2\)",combinatorics
+041491,"Find all functions $g:\mathbb{R}\rightarrow\mathbb{R}$ which is not a linear function and satisfies
+
+\[
+4g\left(x^{2}y+y^{2}z+z^{2}x\right)-(g(y)-g(x))(g(z)-g(y))(g(x)-g(z))=4g\left(xy^{2}+yz^{2}+zx^{2}\right)
+\]
+
+for all real numbers $x,y,z$.
+
+Find the number of functions that satisfy the given conditions.",2,IMO-AnswerBench-Converted,function_count,"$g(x)=2x^{3}+c, g(x)=-2x^{3}+c$ ",algebra
+68cfe8,"Let $u \ge 2$ be a given positive integer. Find the smallest real number $C$ such that for all real numbers $t$, $\frac{t^{2^u}+1}{2} \le (C(t-1)^2+t)^{2^{u-1}}$.
+
+Find the remainder when the answer is divided by $10^9 + 7$, given $u = 100$.",494092823,IMO-AnswerBench-Converted,parametric_eval,$2^{u-2}$,algebra
+d4e983,"Let $P$ be a function from the set of integers to itself such that for all integers $h, m$,
+\[P^{h^2 + m^2}(h+m-1) = mP(m-1) + hP(h-1) + (h+m-1).\]
+Find all possible functions $P$.
+
+Find the number of functions that satisfy the given conditions.",2,IMO-AnswerBench-Converted,function_count,"$P(x)=-1, P(x)=x+1$",algebra
+3ec269,"Let $x_0, x_1, \ldots$ be a sequence of real numbers such that $x_0 = 0$, $x_1 = 1$, and for each integer $k \geq 2$, there exists an integer $1 \leq t \leq k$ such that
+\[ x_k = \frac{x_{k-1} + \dots + x_{k-t}}{t}. \]
+Find the minimum possible value of $x_{2024} - x_{2025}$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",4098599,IMO-AnswerBench-Converted,fraction_p_plus_q,$-\frac{2023}{2024^2}$,algebra
+0e5a38,"A real number $r$ is given, and there is a blackboard with $100$ distinct real numbers written on it. Sharon has three pieces of paper and writes numbers on the sheets of paper by the following rule:
+
+On the first piece of paper, Sharon writes down every number of the form $f-g$, where $f$ and $g$ are (not necessarily distinct) numbers on the blackboard. Then she writes down every number of the form $3pqr$, where $p$ and $q$ are two (not necessarily distinct) numbers from the first paper. Finally Sharon writes down every number of the form $x^2+y^2-z^2-w^{2}$, where $x,y,z,w$ are four (not necessarily distinct) numbers written on the first piece of paper.
+
+Find all possible values of $r$ such that every number in the second paper also appears on the third piece of paper regardless of the numbers on the blackboard.
+
+Find the sum of all possible values. If the sum is a fraction $\frac{p}{q}$ in lowest terms, give $|p| + q$. If the sum is an integer $n$, give $|n| + 1$.",1,IMO-AnswerBench-Converted,latex_fraction_sum,"$-\frac{2}{3},0,\frac{2}{3}$",algebra
+42dd47,"For a real number $T$, it is said that no matter how five distinct positive real numbers $a, b, c, d, e$ are given, it is possible to choose four distinct numbers $e, f, g, h$ from them such that $$|ef-gh|\le Tfh.$$ Find the minimum value of $T$ for which this is possible.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",3,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{1}{2}$,algebra
+fe8202,"Determine all functions $Q$ from the real numbers to itself such that $Q(0)\neq0$ and
+
+$$\frac{1}{2}Q(m+n)^{2}-Q(m)Q(n)=\max\left\{ Q\left(m^{2}+n^{2}\right)\right, Q\left(m^{2}\right)+Q\left(n^{2}\right)\}$$
+
+for all real numbers $m$ and $n$.
+
+Find the number of functions that satisfy the given conditions.",2,IMO-AnswerBench-Converted,function_count,"$Q(x)=-2, Q(x)=2x-2$",algebra
+5afb26,"The 'price' of a finite sequence of real numbers $a_1, \ldots, a_m$ is defined as $$\max_{1\le k\le m}|a_1+\cdots +a_k|.$$ Given $m$ real numbers, Sam and George try to minimize the price of the sequence formed by arranging these real numbers appropriately. Sam compares all possible $m!$ arrangements and chooses the sequence with the smallest price $S$. On the other hand, George chooses one of the numbers with the smallest absolute value as $a_1$, and then sequentially chooses $a_2, \ldots, a_m$. When choosing $a_i$, he randomly selects one of the possible values among the numbers that have not been selected as $a_1, \ldots, a_{i-1}$ such that $|a_1 + a_2 + \ldots + a_{i-1} + a_i|$ is minimized. Let the price of the sequence created in this way be $G$. Regardless of the initial numbers and the sequence George chooses, find the maximum value of the real number $k$ that satisfies $S \ge kG$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",3,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{1}{2}$,algebra
+9ff95d,"Let $a_0, a_1, \ldots$ be a sequence of non-negative integers. Suppose that for all non-negative integers $p$,
+$$a_{a_{a_p}} = a_{p+1} + 1.$$
+Find all possible value of $a_{2025}$.
+
+Find the sum of all possible values.",4056,IMO-AnswerBench-Converted,sum_of_values,"2026, 2030",algebra
+f6faa4,"Find all $P:\mathbb{R}\rightarrow \mathbb{R}$ such that $P$ is not identically zero and there exists $Q:\mathbb{R}\rightarrow \mathbb{R}$ satisfying
+
+\[
+Q(P(a))-P(b)=(b+a)Q(2a-2b)
+\]
+
+for all real numbers $a,b$.
+
+Find the number of functions that satisfy the given conditions.",1,IMO-AnswerBench-Converted,function_count,$P(x)=2x^{2}+c$,algebra
+63810c,"The sum of real numbers $x, y, z, w$ is $12$, and the sum of their squares is $48$. Find the minimum possible value of $$x^4+y^4+z^4+w^4-8(x^3+y^3+z^3+w^3).$$
+
+Express your answer as the absolute value of the result.",768,IMO-AnswerBench-Converted,absolute_value,-768,algebra
+5a04e6,"A function $C$ from the set of positive integers to itself is called ""nice"" if for all positive integers $a, b$, $C(a+b) - C(a) - C(C(b)) + 1 \ge 0$. Find all possible values of $C(1234)$ for a nice function $C: \mathbb{N} \rightarrow \mathbb{N}$.
+
+Find the sum of all possible values.",763230,IMO-AnswerBench-Converted,range_sum,"$1,2,\ldots, 1235$",algebra
+16095b,"Find all functions $A:\mathbb{R}\rightarrow\mathbb{R}$ such that $A(p)A(q)+A(-pq)=A(p+q)+2pq+1$ holds for all real numbers $p$ and $q$.
+
+Find the number of functions that satisfy the given conditions.",3,IMO-AnswerBench-Converted,function_count,"$A(x)=1-x, A(x)=1+2x, A(x)=1-x^{2}$",algebra
+b98530,"Find all functions $g:\mathbb{R}^+\rightarrow\mathbb{R}^+$ such that for all positive real numbers $q, w, e$, $g(4qwe)+g(q)+g(w)+g(e)=9g(\sqrt{qw})g(\sqrt{eq})g(\sqrt{we})$, and if $r>t\ge \frac{1}{2}$, then $g(r)>g(t)$.
+
+Find the number of functions that satisfy the given conditions.",1,IMO-AnswerBench-Converted,function_count,$g(x)=\frac{1}{3} ((2x)^a +(2x)^{-a})$ for some $a>0$,algebra
+3694c9,"Find all pairs $(M, x_0, x_1, \lodts , x_M)$ of positive integers $x_0, x_1, \ldots, x_M$ that satisfy the following three conditions:
+
+(1) $x_0 = 1$.
+(2) For each $1 \le i < M$, $x_{i+1} \ge 1 + \frac{x_i^3 - x_i^2}{x_{i-1}}$.
+(3) $\sum_{i=1}^{M} \frac{x_{i-1}}{x_i} = 0.9375$.
+
+Find the sum of all components in the answer tuple.",718386,IMO-AnswerBench-Converted,tuple_sum,"$(4, 1, 2, 5, 134, 718240)$",algebra
+03d0ee,"Find all functions $P, Q: \mathbb{R} \rightarrow \mathbb{R}$ such that for all real numbers $m, n$,
+$$P(m+Q(n))=nP(m) - m P(n) + Q(m).$$
+
+Find the number of functions that satisfy the given conditions.",2,IMO-AnswerBench-Converted,function_count,"$P(x)=(cx+c^{2})/(1+c), Q(x)=cx+c^{2}$, where $c\ne -1$",algebra
+91f581,"Find all real-coefficient polynomials $f$ such that $2f(0.5f(n))=f(f(n))-f(n)^2$ holds for all real numbers $n$.
+
+Find the number of functions that satisfy the given conditions.",3,IMO-AnswerBench-Converted,function_count,"$f(x)=-1, f(x)=2x^{2}+b x, f(x)=0$",algebra
+eab861,"Find all functions $Y: \mathbb{R} \backslash\{0\} \rightarrow \mathbb{R}$ such that for any non-zero real numbers $a, b$ with $ab \neq -1$, the following equation holds:
+\[
+a Y\left(a+\frac{1}{b}\right)+b Y(b)+\frac{a}{b}=b Y\left(b+\frac{1}{a}\right)+a Y(a)+\frac{b}{a}
+\]
+
+Find the number of functions that satisfy the given conditions.",1,IMO-AnswerBench-Converted,function_count,"$Y(x)=A+\frac{B}{x}-x$
+",algebra
+ad2b45,"Find all functions $X: \mathbb{C} \rightarrow \mathbb{C}$ such that the equation
+$$X(X(a)+b X(b)-b-1)=1+a+|b|^{2}$$
+holds for all complex numbers $a,b\in \mathbb{C}$ and that $X(1)=u$ for some $u\in \mathbb{C}$ such that $|u-1|=1$.
+
+Find the number of functions that satisfy the given conditions.",1,IMO-AnswerBench-Converted,function_count,$X(y)=1+(u-1) \bar{y}$,algebra
+b836d8,"Find all functions $G:\mathbb{R}\rightarrow\mathbb{R}$ that satisfy both of the following conditions:
+
+(1) For all real numbers $m,n$, $G(m)+G(n)-G(m+n)\in\{1,2\}$.
+(2) For all real numbers $l$, $\lfloor G(l) \rfloor -   \lfloor l \rfloor =1$.
+
+Find the number of functions that satisfy the given conditions.",1,IMO-AnswerBench-Converted,function_count,f(x)=x+1,algebra
+83feff,"A sequence $f_1, f_2, \ldots, f_{1028}$ of non-negative real numbers is said to be concave if for each $1 < i < 1028$, $f_{i+1} \le 2f_i - f_{i-1}$. Find the minimum value of the constant $L$ such that the inequality
+
+$$L \sum_{j=1}^{1028} i f_{i}^{2} \geq  \sum_{i=1}^{1028} f_{i}^{2}$$
+
+holds for all concave sequences $f_1, f_2, \ldots, f_{1028}$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",176987,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{685}{176302}$,algebra
+16009c,"A sequence $b_1, b_2, \ldots, b_k$ is said to 'increase steeply' if each term is positive, and for each $2 \le i \le k$, $b_i \ge b_{i-1} + \cdots + b_2 + b_1$. Find the maximum value of the constant $S$ such that for all $k$ and steeply increasing sequences $b_1, b_2, \ldots, b_k$,
+$$S\sum_{i=1}^k{\sqrt{x_i}}\le \sqrt{\sum_{i=1}^k{x_i}}$$
+holds.
+
+If the answer can be expressed as $\sqrt{a} - b$ where $a$ and $b$ are positive integers, find $a + b$.",3,IMO-AnswerBench-Converted,sqrt_expression,$\sqrt{2}-1$,algebra
+b51f4a,"Find the maximum value of the constant $U$ such that $(2x^2+1)(2y^2+1)(2z^2+1)\ge U(xy+yz+zx)$ is always true for positive real numbers $x, y, z$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",11,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{9}{2}$,algebra
+c40b72,"$(x,y,z) \in \mathbb{R}^3$ is a unit vector with respect to the Euclidean distance. Find the minimum possible value of $9xyz - 2(x+y+z)$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",13,IMO-AnswerBench-Converted,fraction_p_plus_q,$-\frac{10}{3}$,algebra
+b4ac2a,"We call a real number $x$ 'mysterious' if it is a  solution to $A(x) = \frac{1}{\sqrt[3]{3}}x$ for some polynomial $A(x)$ with rational coefficients. Find all polynomials $A(x)$ with rational coefficients of lowest possible degree such that $\sqrt[3]{3} + \sqrt[3]{9}$ is mysterious.
+
+Find the number of functions that satisfy the given conditions.",1,IMO-AnswerBench-Converted,function_count,$A(x)=\frac{1}{2}(x^2-x-4)$,algebra
+f18f7f,"Let $P$ be a real-coefficient polynomial with positive leading coefficient such that $tP(t)P(1-t) \ge -225 - t^3$ holds for all real numbers $t$. Find all possible values of $P(0)$.
+
+Find the length of the interval (i.e., the difference between the endpoints).",11,IMO-AnswerBench-Converted,interval_length,"$[-6,5]$",algebra
+9cfd7d,"Real numbers $d$ and $f$, and negative real numbers $\alpha$ and $\beta$ satisfy the following two conditions.
+
+(1) $\alpha^{4}+4\alpha^{3}+4\alpha^{2}+d\alpha+f=\beta^{4}+4\beta^{3}+4\beta^{2}+d\beta+f=0$
+(2) $\frac{1}{\alpha}+\frac{1}{\beta}=-2$
+
+Find the minimum possible value of $d-f$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",43,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{16}{27}$,algebra
+124a0e,"Let $p$ be a positive rational number. Alice and Bob each have a blackboard, initially displaying 0. In the $n$-th minute ($n = 1, 2, 3, \ldots$) they independently add $p^n,0$, or $-p^n$ to the number on their respective boards.
+
+After a certain number of minutes, their blackboards display the same number, despite having made at least one different choice during the process. Determine all possible values of $p$.
+
+Find the sum of all possible values. If the sum is a fraction $\frac{p}{q}$ in lowest terms, give $|p| + q$. If the sum is an integer $n$, give $|n| + 1$.",9,IMO-AnswerBench-Converted,mixed_fraction_sum,"1/2,1,2",algebra
+7679e3,"For all positive integers $n$ and all real numbers $a_1, \ldots, a_n$ less than or equal to $2 / \sqrt{n}$ such that $\sum_{i=1}^n a_i^3 = 0$, find the maximum value of $\sum_{k=1}^n a_i^2$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",19,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{16}{3}$,algebra
+4f7259,"Compute the integral part of the number
+\[
+    \sum_{n=1}^{2024}\frac{2025^n}{\left(1+2025\right)\cdots\left(n+2025\right)}-\sum_{n=1}^{2024}\left(1-\frac{1}{2025}\right)\cdots\left(1-\frac{n}{2025}\right).
+\]
+
+Add 1 to your answer.",1,IMO-AnswerBench-Converted,zero_plus_one,0,algebra
+619a86,"Let $n, p, q$ be positive integers such that
+\[
+    S = \frac{12 + n}{p} + \frac{13 - n}{q} < 1, \quad 1 \le n \le 12.
+\]
+Find the maximum possible value of $S$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",5235,IMO-AnswerBench-Converted,fraction_p_plus_q, $\frac{2617}{2618}$,algebra
+c5d681,"Let $a, b, c, k$ be nonzero real numbers such that
+\[
+    a - b = kbc, \quad b - c = kca, \quad c- a = kab.
+\]
+Find all possible values of $\frac{a}{c} + \frac{b}{a} + \frac{c}{b}$.
+
+Express your answer as the absolute value of the result.",3,IMO-AnswerBench-Converted,absolute_value,-3,algebra
+98df79,"A sequence of integers $a_0, \ldots, a_{1000}$ is called a \textit{good sequence} if there exists a sequence of integers $b_0, \ldots, b_{1000}$ such that
+\[
+    \prod_{k=0}^{1000} (x - a_k) = \prod_{k=0}^{1000} (x - k)^{b_k}, \quad \prod_{k=0}^{1000} (x - b_k) = \prod_{k=0}^{1000} (x - k)^{a_k}
+\]
+for all $x$. Find all the possible values of $\sum_{i=0}^{1000} (i+1)a_i^2$ for good sequences $a_0, \ldots, a_{1000}$.
+
+Find the sum of all possible values.",2987052,IMO-AnswerBench-Converted,sum_of_values,"997008, 995026, 995018",algebra
+77fa18,"Find all triples $(n,x,y)$ where $n\ge 2$ is a positive integer and $x,y$ are rational numbers such that
+\[
+    (x - \sqrt{2})^n = y - \sqrt{2}.
+\]
+
+Find the sum of all components. If the sum is $\frac{p}{q}$ in lowest terms, give $p + q$.",23,IMO-AnswerBench-Converted,tuple_fraction_sum,"$(2, \frac{1}{2}, \frac{9}{4})$",algebra
+133dba,"Let $a, b, c$ be positive real numbers satisfying
+\[
+    \frac{(2a+1)^2 }{4a^2 + 1} + \frac{(2b+1)^2 }{4b^2 + 1} + \frac{(2c+1)^2 }{4c^2 + 1} = \frac{1}{2(a+b)(b+c)(c+a)} + 3.
+\]
+Find all possible values of $ab + bc + ca$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",5,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{1}{4}$,algebra
+349baf,"Find the minimum possible value of
+\[
+    \frac{y}{16x^3 + 1} + \frac{z}{16y^3 + 1} + \frac{w}{16z^3 + 1} + \frac{x}{16w^3 + 1}
+\]
+where $x, y, z, w$ are nonnegative real numbers satisfying $x + y + z + w = 1$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",5,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{2}{3}$,algebra
+4d857a,"Find all integers $n \ge 3$ for which there exist distinct real numbers $a_1, \ldots, a_n$ such that the set
+\[
+    \left\{a_i + a_j : 1 \le i < j \le n\right\}
+\]
+contains all integers from 1 to $\frac{n(n-1)}{2}$.
+
+Find the sum of all possible values.",7,IMO-AnswerBench-Converted,sum_of_values,"3, 4",algebra
+7cbc0f,"Find the minimum value of $(ab-c^2)(bc-a^2)(ca-b^2)$ given that $a,b,c$ are real numbers satisfying $a^2+b^2+c^2=3$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",35,IMO-AnswerBench-Converted,fraction_p_plus_q,$-\frac{27}{8}$,algebra
+42f812,"Find all functions $g:\mathbb{Z}\rightarrow\mathbb{Z}$ satisfying
+\[
+g(g(m)g(n) - g(n) + 2m) - 1 = m - n + ng(m)
+\]
+for all integers $m, n$.
+
+Find the number of functions that satisfy the given conditions.",1,IMO-AnswerBench-Converted,function_count,$g(n)=n - 1$,algebra
+7128bf,"Find all complex-coefficient polynomials $Q(x)$ that satisfy
+\[
+    (x^2 + x - 2)Q(x - 3) = (x^2 - 11x + 28)Q(x)
+\]
+for all real numbers $x \in \mathbb{R}$.
+
+Find the number of functions that satisfy the given conditions.",1,IMO-AnswerBench-Converted,function_count,$Q(x)=c(x-1)^2(x-4)(x+2)$,algebra
+8e805b,"Find all real numbers $a$ such that
+\[
+a\lfloor 22a\lfloor 22a\lfloor 22a\rfloor\rfloor\rfloor= 4.
+\]
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",8,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{1}{7}$,algebra
+42dc42,"Let $f(x) = \pi\sin x$. Find the number of solutions for the following equation.
+\[
+    f^{2025}(x) = 0, \quad 0 \le x \le \pi.
+\]
+Here, $f^{2025}$ means that $f$ is applied to itself 2025 times.
+
+Find the remainder when the answer is divided by $10^9 + 7$.",786142857,IMO-AnswerBench-Converted,power_mod,$2^{2024}+1$,algebra
+129cf2,"Suppose that the function $g:\mathbb{N}\rightarrow\mathbb{N}-\{1\}$ satisfies
+\[
+g(n)+g(n+1)=g(n+2)g(n+3)-840.
+\]
+for all $n\in\mathbb{N}$. Find all the possible values of $\sum_{i=1}^{2025} g(i)$.
+
+Find the sum of all possible values.",1769850,IMO-AnswerBench-Converted,sum_of_values,"60750, 854130, 854970",algebra
+f90c62,"Let $a_1, a_2, \ldots$ be a sequence of positive integers satisfying the following condition.
+
+[Condition] For any positive integers $n$ and $k$ with $n \le \sum_{i=1}^k a_i$, there exist positive integers $b_1, \ldots, b_k$ such that
+\[
+    n = \sum_{i=1}^k \frac{a_i}{b_i}.
+\]
+
+Among all such sequences $a_1, a_2, \ldots$, find the maximum value of $a_{2025}$.
+
+Find the remainder when the answer is divided by $10^9 + 7$.",808960131,IMO-AnswerBench-Converted,power_mod,$4\cdot3^{2023}$,algebra
+343b6a,"Determine all functions $P$ from the positive integers to itself such that for any positive integers $n$ and $m$,
+\[
+    P(n) + P(m) + 2nm
+\]
+is a perfect square.
+
+Find the number of functions that satisfy the given conditions.",1,IMO-AnswerBench-Converted,function_count,$P(n)=(n+2a)^{2}-2a^{2}$ for some nonnegative integer $a$,algebra
+750b56,"A soccer player named Ronaldo stands on a point on a circle with circumference $1$. Given an infinite sequence of positive real numbers $c_1, c_2, c_3, \dots$, Ronaldo successively runs distances $c_1, c_2, c_3, \dots$ around the circle, each time choosing to runs either clockwise or counterclockwise.
+
+Determine the largest constant $C > 0$ with the following property: for every sequence of positive real numbers $c_1, c_2, c_3, \dots$ with $c_i < C$ for all $i$, Ronaldo can (after studying the sequence) ensure that there is some point on the circle that it will never visit or run across.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are positive integers with $\gcd(p,q)=1$, find $p + q$.",3,IMO-AnswerBench-Converted,decimal_to_fraction,0.5,combinatorics
+544e8b,"A domino is a $2 \times 1$ or $1 \times  2$ tile.  A mysterious puzzle involves placing exactly $k^2$ dominoes on a $2k \times  2k$ chessboard without overlapping. The placement must satisfy a peculiar condition: every $2 \times  2$ square on the board contains at least two uncovered unit squares that lie in the same row or column. Additionally, there are some strange symbols engraved on the board that seem to have no connection to the puzzle.  Determine in how many ways the dominoes can be placed according to these rules.
+
+Find the remainder when the answer is divided by $10^9 + 7$, given $k = 100$.",399409184,IMO-AnswerBench-Converted,parametric_eval,$\binom{2k}{k}^2$,combinatorics
+e93447,"The $30$ edges of a regular icosahedron are distinguished by labeling them $1,2,\dots,30.$  Hoang, a Vietnamese student, is tasked with painting each edge red, white, or blue. However, there's a special condition: each of the 20 triangular faces of the icosahedron must have two edges of the same color and a third edge of a different color. Additionally, there are 20 small balls inside the icosahedron, each with a different distinct number written on them. How many different ways are there to paint the edges to satisfy the given condition?
+
+Compute the numerical value of the answer.",61917364224,IMO-AnswerBench-Converted,power_direct,$12^{10}$,combinatorics
+37cc4a,"Let $S$ denote the set of all permutations of the numbers $1,2,\dots,2024.$ For $\pi\in S,$ let $\sigma(\pi)=1$ if $\pi$ is an even permutation and $\sigma(\pi)=-1$ if $\pi$ is an odd permutation. Also, let $v(\pi)$ denote the number of fixed points of $\pi.$  Let $f(x)$ be an arbitrary polynomial such that $f(0)=1$. Compute the sum
+\[ \sum_{\pi\in S}\frac{\sigma(\pi)}{v(\pi)+1}.  \]
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",4049,IMO-AnswerBench-Converted,fraction_p_plus_q,$-\frac{2024}{2025}$,combinatorics
+9e58ab,"For a finite graph $G$, let $f(G)$ be the number of triangles and $g(G)$ the number of tetrahedra formed by edges of $G$. In addition, let $h(G)$ be the number of pentagons formed by edges of $G$.  Find the least constant $c$ such that \[\frac{g(G)^3}{f(G)^4}\le c\] for every graph $G$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",35,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{3}{32}$,combinatorics
+4c5391,"Consider an $n \times n$ chessboard consisting of $n^2$ unit squares, where $n \geqslant 2$ is an integer. A configuration of $n$ rooks on this board is called balanced if each row and each column contains exactly one rook. Find the largest positive integer $k$ such that for any balanced configuration of rooks, there exists a $k \times k$ square with no rook in any of its $k^2$ unit squares. Additionally, consider a $2n \times 2n$ go board, where we put go pieces on that board.
+
+Find the answer when $n = 100$.",9,IMO-AnswerBench-Converted,parametric_eval,$\lfloor\sqrt{n-1}\rfloor$,combinatorics
+75e1dc,"In a dance party initially there are $24$ girls and $26$ boys in the pool and infinitely many more girls and boys waiting outside. In each round, a participant is picked uniformly at random; if a girl is picked, then she invites a boy from the pool to dance and then both of them elave the party after the dance; while if a boy is picked, then he invites a girl and a boy from the waiting line and dance together. The three of them all stay after the dance. The party is over when there are only (two) boys left in the pool. What is the probability that the party never ends?
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",49,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{24}{25}$,combinatorics
+e8d2cf,"Let $P_n$ be a path on $n$ vertices and let $\lambda$ be a positive real number. Define $Z_{P_n}(\lambda) = \sum_{I \in S} \lambda^{|I|}$ where $\cI(P_n)$ is the set of independent set of $P_n$. Compute $z_{15}$ in terms of $\lambda$.
+
+Find the remainder when the answer is divided by $10^9 + 7$, given $lambda = 100$.",690208818,IMO-AnswerBench-Converted,parametric_eval,$\lambda^8 + 36\lambda^7 + 210\lambda^6 + 462\lambda^5 + 495\lambda^4 + 286\lambda^3 + 91\lambda^2 + 15\lambda + 1$,combinatorics
+46cc80,"Let $h$ be the smallest height of a triangular pyramid, and let $d$ be the shortest distance between its opposite edges. Let $S$ be the set of values of $t$ such that the inequality $d > th$ is possible. Find the supremum of $S$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",5,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{3}{2}$,geometry
+662e5f,"Let $n$ cities lie on the circumference of a circular lake. Exactly half of the triangles formed by connecting any three of these cities are acute-angled triangles. Find the value of $n$ for which this is possible.
+
+Find the sum of all possible values.",9,IMO-AnswerBench-Converted,sum_of_values,"4, 5",geometry
+a490ab,"Given cyclic quadrilateral $PQRS$. Four circles each touching its diagonals and the circumcircle internally are equal. Compute the ratio $\frac{PR}{PQ}+\frac{PS}{PQ}$.
+
+If the answer can be expressed as $\sqrt{a} + b$ where $a$ and $b$ are positive integers, find $a + b$.",3,IMO-AnswerBench-Converted,sqrt_expression,$\sqrt{2}+1$,geometry
+962cf5,"Let $x, y, z$ be the lengths of some triangle's sides, $s, \rho$ be the semiperimeter and the inradius of the triangle. Find the minimum value of $\sqrt{\frac{xy(s- z)}{s}} +\sqrt{\frac{zx(s- y)}{s}} +\sqrt{\frac{yz(s-x)}{s}}$ in terms of $\rho$.
+
+Find the answer when $rho = 100$.",600,IMO-AnswerBench-Converted,parametric_eval,$6\rho$,geometry
+9dfd2a,"Given five distinct points $A_1, A_2, A_3, A_4, A_5$ in space. These points are the centers of five spheres, such that four of the spheres are pairwise externally tangent, and these four spheres are internally tangent to the fifth sphere.  It is impossible to determine which of these points is the center of the largest sphere.  Find the ratio of the largest radius to the smallest radius among the five spheres.
+
+If the answer is $\frac{a+\sqrt{b}}{c}$ where $b$ is square-free, find $a + b + c$.",28,IMO-AnswerBench-Converted,sqrt_fraction_sum,$\frac{5+\sqrt{21}}{2}$,geometry
+cf8aad,"Let $P$ and $Q$ be the circumcenter and incenter of triangle $DEF$. The perpendicular from $Q$ to $PQ$ meets $DE$ and the external bisector of angle $F$ at points $M$ and $N$ respectively. What is the value of $QM/QN$?
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are positive integers with $\gcd(p,q)=1$, find $p + q$.",3,IMO-AnswerBench-Converted,decimal_to_fraction,0.5,geometry
+467214,"Let $XYZ$ be a right-angled triangle ($\angle Z = 90^\circ$) and $W$ be the midpoint of an altitude from Z. The reflections of the line $XY$ about $XW$ and $YW$, respectively, meet at point $P$. Find the ratio $S_{XYP}:S_{XYZ}$.
+Note: $S_{\alpha}$ means the area of $\alpha$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",7,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{4}{3}$,geometry
+2536ac,"A triangle $OPQ$ with $\angle P=90^{\circ}$ lies inside another triangle with vertex $O$. The altitude of $OPQ$ from $P$ until it meets the side of angle $O$ at $N$. The distances from $N$ and $Q$ to the second side of angle $O$ are $2$ and $1$ respectively. Find the length of $OP$.
+
+If the answer is $\sqrt{a}$ for some positive integer $a$, find $a$.",2,IMO-AnswerBench-Converted,sqrt_simple,$\sqrt{2}$,geometry
+2e2cc1,"Given a triangle $XYZ$ and $2$ point $P \in XY, \; M \in YZ$ such that $YP=2XP, \; ZM=2YM$ and $D$ is the common point of $XM$ and $ZP$. Compute $\dfrac{ S_{ \triangle XYZ}}{S_{\triangle YZD}}.$
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are positive integers with $\gcd(p,q)=1$, find $p + q$.",11,IMO-AnswerBench-Converted,decimal_to_fraction,1.75,geometry
+1bdd69,"Let $XYZ$ be a triangle with $\angle X = 90^o, \angle Y = 60^o$ and $YZ = 1$. Draw outside of $\vartriangle XYZ$ three equilateral triangles $XYU, XZV$ and $YZW$. Determine the area of $\vartriangle UVW$.
+
+If the answer is $\frac{a\sqrt{b}}{c}$ where $b$ is square-free and $\gcd(a,c)=1$, find $a + b + c$.",28,IMO-AnswerBench-Converted,sqrt_fraction_abc,$\frac{9\sqrt{3}}{16}$,geometry
+612323,"Let $XYZ$ be an acute triangle with $XY = 3$ and $XZ = 4$. Let $XH,XO$ and $XM$ be the altitude, the bisector and the median derived from $X$, respectively. If $HO = 3 MO$, then what is the length of $YZ$?
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",9,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{7}{2}$,geometry
+82669b,"Let $k$ be a positive real number. Triangle XYZ is acute and scalene, O is its circumcenter and XD, YE, ZF are the internal bisectors. On the rays XD, YE, ZF, respectively, let points P, Q, R such that $\frac{XP}{XD} = \frac{YQ}{YE} = \frac{ZR}{ZF} = k$. Denote $(C_1), (C_2), (C_3)$ be respectively the circle through P and touches OX at X, the circle through Q and touches OY at Y, the circle through R and touches OZ at Z. Find all values of k such that three circles $(C_1), (C_2), (C_3)$ have exactly two common points.
+
+Find the sum of all possible values. If the sum is a fraction $\frac{p}{q}$ in lowest terms, give $|p| + q$. If the sum is an integer $n$, give $|n| + 1$.",5,IMO-AnswerBench-Converted,mixed_fraction_sum,"1/2, 1",geometry
+b20bae,"Let $XYZ$ be an isosceles triangle ($XY = XZ$) with its circumcenter $P$. Point $Q$ is the midpoint of the segment $YZ$ and point $R$ is the reflection of the point $Q$ with respect to the side $XZ$. Suppose that $S$ is a point so that $XQYS$ is a rectangle. Denote $\angle YXZ = a$, compute $\angle PRS$ in terms of $a$.
+
+Find the answer when $a = 100$.",50,IMO-AnswerBench-Converted,parametric_eval,$\frac{a}{2}$,geometry
+0124c1,"In the triangle $DEF$, $\angle{F}=90^{\circ},\angle {D}=30^{\circ}$ and $EF=1$. Find the minimum value of the longest side of all inscribed triangles (i.e. triangles with vertices on each of three sides) of the triangle $DEF$.
+
+If the answer is $\sqrt{\frac{a}{b}}$ in lowest terms, find $a + b$.",10,IMO-AnswerBench-Converted,sqrt_of_fraction,$\sqrt{\frac{3}{7}}$,geometry
+8a557f,"Let $PQRST$ be a regular pyramid with square base $QRST$. Suppose that on the line $QS$ lies a point $N$ such that $PN=NR$ and $(PNR)\perp (PQR)$. Compute $\frac{QS}{QN}$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",7,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{4}{3}$,geometry
+0fe578,"Let $F$ be the footpoint of the altitude from $Y$ in the triangle $XYZ$ , where $XY=1$ . The incircle of triangle $YZF$ coincides with the centroid of triangle $XYZ$. Find the lengths of $XZ$.
+
+If the answer is $\frac{\sqrt{a}}{b}$ where $a$ is square-free and $b$ is a positive integer, find $a + b$.",12,IMO-AnswerBench-Converted,sqrt_fraction,$\frac{\sqrt{10}}{2}$,geometry
+898ec8,"Let $T_1T_2T_3T_4$ be a tetrahedron in $\mathbb{R}^3$ and let $C$ be a point equidistant from each of its vertices. Suppose there exists a point $K$ such that for each $i$, the line $T_iK$ is perpendicular to the plane through the other three vertices. Line $T_1K$ intersects the plane through $T_2, T_3, T_4$ at $X$, and contains a point $Y\neq T_1$ such that $CT_1=CY$. Compute $\frac{KX}{KY}$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",4,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{1}{3}$,geometry
+e6af36,"Let $\Omega$ be a circle, and $\gamma_1$ and $\gamma_2$ be two non-intersecting circles inside $\Omega$ that are internally tangent to $\Omega$ at $Y_1$ and $Y_2$, respectively. Let one of the common internal tangents of $\gamma_1$ and $\gamma_2$ touch $\gamma_1$ and $\gamma_2$ at $S_1$ and $S_2$, respectively, while intersecting $\Omega$ at two points $C$ and $D$. Given that $2Y_1S_1=Y_2S_2$ and that $\gamma_1$, $\gamma_2$, and $\Omega$ have radii $2$, $3$, and $12$, respectively, compute the length of $CD$.
+
+If the answer is $\frac{a\sqrt{b}}{c}$ where $b$ is square-free and $\gcd(a,c)=1$, find $a + b + c$.",119,IMO-AnswerBench-Converted,sqrt_fraction_abc,$\frac{96\sqrt{10}}{13}$,geometry
+856e95,"Triangle $PQR$ has incenter $J$. Let $S$ be the foot of the perpendicular from $P$ to side $QR$. Let $Y$ be a point such that segment $PY$ is a diameter of the circumcircle of triangle $PQR$. Given that $JS = 2$, $JP = 3$, and $JY = 4$, compute the inradius of triangle $PQR$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",23,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{11}{12}$,geometry
+01a5b3,"Let $PQRS$ be a convex quadrilateral with perimeter $3$ and $PR=QS=1$. Determine the maximum possible area of $PQRS$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",13,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{5}{8}$,geometry
+f6b791,"A regular heptagon and a regular octagon are inscribed in a circle. Let $d$ be the minimum distance in degrees (of the arc along the circle) between a vertex of the heptagon and a vertex of the octagon. What is the maximum possible value of $d$?
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$.",59,IMO-AnswerBench-Converted,fraction_p_plus_q,$\frac{45}{14}$,geometry
+6d1b95,"Find all positive integer triples $(x, y, z)$ that satisfy $x^3 + y^3 + z^3 - x^2y^2z^2 = 0$ and $x \le y \le z$.
+
+Find the sum of all components in the answer tuple.",6,IMO-AnswerBench-Converted,tuple_sum,"$(1, 2, 3)$",number_theory
+1bc09d,"Suppose $f$ is a polynomial with integer coefficients of odd degree $d \ge 3$. Assume that the following condition holds:
+
+(Condition) For any positive integer $n$, there exist distinct positive integers $a_1, \dots, a_n$ such that for any $1 \leq i, j \leq n$, $\frac{f(a_i)}{f(a_j)}$ is between $\frac{1}{2}$ and $2$ and is the $d$-th power of some rational number.
+
+Furthermore, for some prime $p$, we know that $f(1)=3^d p$ and $\frac{f(2)}{f'(2)}=\frac{5}{2d}$. Evaluate $f(3)$.
+
+Find the remainder when the answer is divided by $10^9 + 7$, given $dp = 100$.",946501044,IMO-AnswerBench-Converted,parametric_eval,$7^d p$,number_theory
+f71dfb,"For a positive integer $n \geq 2$, let the set $C_n$ be the set of integers $2^n - 2^i$ for integers $i$ such that $0 \leq i < n$. Find the smallest positive integer that cannot be expressed as a sum of numbers in $C_n$ (where the same number can be used multiple times).
+
+Find the remainder when the answer is divided by $10^9 + 7$, given $n = 100$.",684385266,IMO-AnswerBench-Converted,parametric_eval,"$(n-2)2^n +1$
+",number_theory
+dbd2be,"Find all ordered triples $(p, a, b)$ of a prime $p > 2$ and positive integers $a, b$ such that $a\le b$ and both $a^{p-1} + b$ and $b^{p-1} + a$ are powers of $p$.
+
+Find the sum of all components in the answer tuple.",10,IMO-AnswerBench-Converted,tuple_sum,"(3,2,5)",number_theory
+8910e6,"Find all functions $g:\mathbb{Q}\rightarrow \mathbb{Z}$ that satisfy the following condition for any rational number $x$, integer $a$, and positive integer $b$:
+$g(x)=g(\frac{g(bx-a)+a}{b})$
+
+Find the number of functions that satisfy the given conditions.",3,IMO-AnswerBench-Converted,function_count,"$g(x)=c, g(x)=\lceil x \rceil, g(x)=\lfloor x \rfloor$
+",number_theory
+8d8847,"Find all positive integer triples $(a,b,c)$ that satisfy $a \le b \le c$ and
+$a^3 (b^3 +c^3 )= 2012 (abc+2)$
+
+Find the sum of all components in the answer tuple.",505,IMO-AnswerBench-Converted,tuple_sum,"(2,251,252)
+",number_theory
+f7d683,"For a given positive integer $n$, let $m$ be the exponent of 2 in the prime factorization of $n$. Define $f(n) = \frac{n}{2^m}$. Find all positive integers $u$ for which there exists a positive integer $v$ such that
+
+(Condition) $f(u+v) - f(u), f(u+v+1) - f(u+1), \cdots, f(u+2v-1) - f(u+v-1)$ are all multiples of 4.
+
+Find the sum of all possible values.",9,IMO-AnswerBench-Converted,sum_of_values,"1,3,5",number_theory
+3aca2d,"Find the maximum number of possible colors in a $2^n \times 2^n$ board colored such that for any $0 \leq a, b \leq 2^n - 1$, the color of the cell in the $a$-th row and $b$-th column is the same as the color of the cell in the $(b-a)$-th row and $a$-th column (where rows and columns are numbered from 0 to $2^n - 1$, and the row index is taken modulo $2^n$).
+
+Find the remainder when the answer is divided by $10^9 + 7$, given $n = 100$.",976371285,IMO-AnswerBench-Converted,parametric_eval,"$2^n$
+",number_theory
+2ceae6,"For a positive integer $n$, let $a_n = \binom{2^n}{2^{n-1}}$. For this, let $b_n = a_{n+1}-a_n$. For $n\geq 2$, find the exponent of $2$ in the prime factorization of $b_n$.
+
+Find the answer when $n = 100$.",300,IMO-AnswerBench-Converted,parametric_eval,$3n$,number_theory
+3da5e8,"Let $k>l$ be given coprime positive integers greater than 1. Define a function $f: \mathbb{Z}\rightarrow \mathbb{Z}$ as follows: for $x$, $f(x)$ is the smallest value of $|a|+|b|$ among all integers $a,b$ satisfying $ka+lb = x$.
+ An integer $x$ is called 'nice' if $f(x)\geq \max (f(x-a),f(x+a),f(x-b),f(x+b))$. Denote by $F(k,l)$ the the number of nice integers when both $k$ and $l$ are odd, and denote by $G(k,l)$ the number of nice integers when either $k$ or $l$ is even. Suppose that there exists polynomials $p(k,l)$ and $q(k,l)$ such that $F(k,l)=p(k,l)$ for all odd integers $k,l$ and $G(k,l)=q(k,l)$ whenever at least one of $k$ or $l$ is even.  Evaluate $p(k,l)^2 + q(k,l)^2$.
+
+Find the answer when $l = 100$.",49005,IMO-AnswerBench-Converted,parametric_eval,$5(l-1)^2$,number_theory
+d71bd5,"Let $n$ be a given positive integer bigger than 1. For $1 \leq k \leq n$, $a_k = 2^{k-1}$. For $k > n$, the sequence $(a_i)$ satisfies the recurrence relation $a_k = a_{k-1} + \cdots + a_{k-n}$. Suppose that $m$ consecutive terms in the sequence are multiples of $n$. Find the maximum possible value of $m$.
+
+Find the answer when $n = 100$.",99,IMO-AnswerBench-Converted,parametric_eval,$n-1$,number_theory
+e81267,"Let a set $S$ be called $p$-good for a given prime number $p$ if it satisfies the following three conditions:
+(1) $S$ consists of positive integers.
+(2) The number of primes dividing at least one number in $S$ is $p-1$.
+(3) For any subset of $S$, the product of all elements in that subset is not a $p$-th power.
+
+Find the maximum number of elements that a $p$-good set can have.
+
+Find the answer when $p = 100$.",9801,IMO-AnswerBench-Converted,parametric_eval,$(p-1)^2$,number_theory
+2b401b,"Find all positive integers $n\ge 2$ such that for any positive integer $k$ relatively prime to $n$, $k^2 - 1$ is a multiple of $n$.
+
+Find the sum of all possible values.",59,IMO-AnswerBench-Converted,sum_of_values,"2, 3, 4, 6, 8, 12, 24
+",number_theory
+cd0a7f,"Find all positive integers $k$ such that the number of positive divisors of $2k^3$ is $2k$.
+
+Find the sum of all possible values.",15,IMO-AnswerBench-Converted,sum_of_values,"1, 4, 10",number_theory
+389ee4,"Find the minimum value of $m$ such that for any $m$ positive integers, there exist $k$ positive integers whose sum is a multiple of $k$.
+
+Find the answer when $k = 100$.",199,IMO-AnswerBench-Converted,parametric_eval,"$2k-1$
+",number_theory
+f9948a,"A sequence $(a_k)$ is called ""weakly increasing"" if there exists an $N$ such that $a_{k+1} > a_k$ for $k > N$.
+
+Find all possible values of the positive integer $n$ for which the sequence defined by $x_k = \operatorname{lcm}(k, k+1, \ldots, k+(n-1))$ is a weakly increasing sequence.
+
+Find the sum of all possible values.",3,IMO-AnswerBench-Converted,sum_of_values,"1, 2",number_theory
+a5806c,"Find the maximum value of $k$ such that for any finite set of positive real numbers less than or equal to 1 whose sum is $k$, it is possible to partition the set into two sets such that the sum of the numbers in one set is less than or equal to 1 and the sum of the numbers in the other set is less than or equal to 6.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are positive integers with $\gcd(p,q)=1$, find $p + q$.",15,IMO-AnswerBench-Converted,decimal_to_fraction,6.5,number_theory
+403988,"Find all prime numbers $p < 260^2$ that satisfy $\{\sqrt{p}\} < \frac{1}{510}$.
+
+Compute the numerical value of the answer.",65537,IMO-AnswerBench-Converted,power_direct,$2^{16} + 1$,number_theory
+3c7074,"Let $n$ be a positive integer with at least 5 positive divisors. Let $a, b, c$ be its second, third, and fifth smallest divisors, respectively. Suppose the following equation holds:
+\[
+    (a + b + c)^2 = a^2 + b^2 + c^2 + 2n
+\]
+Find all possible values the number of divisors of $n$.
+
+Find the sum of all possible values.",17,IMO-AnswerBench-Converted,sum_of_values,"8, 9",number_theory
+17a168,"Let $g: \mathbb{Z}_{>0} \to \mathbb{Z}$ be a function satisfying the following conditions:
+
+(i) $g(p) = p + 1$ for all prime numbers $p$,
+
+(ii) $g(nm) + nm = ng(m) + mg(n)$  for all positive integers $n, m$.
+
+Find all integers $1 \le n \le 4000$ satisfying $g(n) = 2n$.
+
+Find the sum of all possible values.",3156,IMO-AnswerBench-Converted,sum_of_values,"4, 27, 3125",number_theory
+287664,"Find all nonnegative integers $n$ such that
+\[
+    \frac{3((n+2)! + 1)}{2n - 1}
+\]
+is an integer.
+
+Find the sum of all possible values.",19,IMO-AnswerBench-Converted,sum_of_values,"0, 1, 2, 4, 12",number_theory
+89bed7,"Let $k$ be a positive integer and $p$ be a prime. Define a sequence $(x_n)$ of positive integers such that $x_1 = 8p^k$ and
+\[
+    x_n = (n+1)^{x_{n-1}/n}, \quad n = 2, 3, \ldots.
+\]
+Suppose that the product $x_1 x_2 \cdots x_n$ divides $(x_1 - 1)(x_2 - 1)\cdots(x_{n+1} -1)$ for all $n = 1, 2, \ldots$. Find all possible primes $p$.
+
+Find the sum of all possible values.",7,IMO-AnswerBench-Converted,sum_of_values,"2, 5",number_theory
+814e69,"Let $\mathbb{N}$ be the set of positive integers.
+Find all functions $f:\mathbb{N}\rightarrow\mathbb{N} \cup \{0\}$ such that
+\[
+    x + y + f(x) | xy + f(y) + yf(x) + y
+\]
+for all $x, y \in \mathbb{N}$.
+
+Find the number of functions that satisfy the given conditions.",1,IMO-AnswerBench-Converted,function_count,"$f(x) = x^2 - x$
+",number_theory
+3772c7,"Find all integers $n\ge 3$ for which $2^n - 3$ is a power of 5.
+
+Find the sum of all possible values.",10,IMO-AnswerBench-Converted,sum_of_values,"3,7",number_theory
+bcbd46,"Find all tuples of positive integers $(x, n, k)$ with $x > n \ge 2$ such that
+\[
+    x^n + x = 2^k + 2.
+\]
+
+Find the sum of all components in the answer tuple.",15,IMO-AnswerBench-Converted,tuple_sum,"$(5, 3, 7)$
+",number_theory
+f164f4,"Let $q$ be an odd prime number. For an integer $i$ from 1 to $q-1$, let $n_i$ denote the number of divisors of $qi+1$ that are greater than or equal to $i$ and less than or equal to $q-1$. Find the sum of $n_1, n_2, \ldots, n_{q-1}$.
+
+Find the answer when $q = 100$.",99,IMO-AnswerBench-Converted,parametric_eval,"$q-1$
+",number_theory
+c374fe,"Find all pairs $(a, b)$ of rational numbers such that
+\[
+    a^2 - b^2 = \frac{a}{a - 2}.
+\]
+
+Find the sum of all components in the answer tuple.",0,IMO-AnswerBench-Converted,tuple_sum,"(0, 0)",number_theory
+cfc882,"Find all monic polynomials $P(x)$ with integer coefficients for which
+\[
+    \frac{6(|P(q)|!) - 1}{q}
+\]
+is an integer for every prime $q$ greater than 3.
+
+Find the number of functions that satisfy the given conditions.",1,IMO-AnswerBench-Converted,function_count,"$P(x) = x - 4$
+",number_theory
+e06240,"(a) Show that there exists a degree 3 monic polynomial $P(x)$ with integer coefficients such that for an integer $n$, $P(n)$ is a square of an integer if and only if $n = 2024$ or $2025$.
+
+(b) For such a polynomial $P(x)$ in (a), find all possible values for $P(2024)P(2025)$.
+
+Add 1 to your answer.",1,IMO-AnswerBench-Converted,zero_plus_one,0,number_theory
+e33660,"Find all nonnegative integers $n$ for which the following holds:
+\begin{center}
+    $20^{n+1}$ is divisible by $n^3 + 4n^2 + 6n + 4$.
+\end{center}
+
+Find the sum of all possible values.",8,IMO-AnswerBench-Converted,sum_of_values,"0,2,6",number_theory
+7aee8e,"Let $p$ be a prime greater than $100$. Find the $9$th largest positive integer $n$ less than $p$ such that
+\[
+    nk + k \ge p \left\lfloor \frac{nk + n}{p} \right\rfloor
+\]
+for all $k = 0, 1, \ldots, p - 2$.
+
+Find the answer when $p = 100$.",11,IMO-AnswerBench-Converted,parametric_eval,$\lfloor \frac{p}{9} \rfloor$ ,number_theory
+dc6b0e,"Let $K$ be a subset of $\{0, 1, \dots, 2020\}$ with $|K| \ge 3$.
+For any $p, q \in K$, there exists $r \in K$ such that $p+q-2r$ is a multiple of $2021$.
+Find all possible values of $|K|$.
+
+Find the sum of all possible values.",2111,IMO-AnswerBench-Converted,sum_of_values,"43,47,2021",number_theory
+5eee1e,"Find all integers $x$ such that $(8x-41)(x+3)^2$ is a perfect cube.
+
+Find the sum of all possible values.",2,IMO-AnswerBench-Converted,sum_of_values,"5,-3",number_theory
+625894,"Let $n > 12345$ be a prime number. Let $P$ be the set of all bijections from $\{1, 2, \dots, n\}$ to itself. Let $Q$ be a subset of $P$ such that for any two elements $\tau, \sigma \in Q$, the number of $1 \le x \le n$ such that $\tau(x) = \sigma(x)$ is at least 2. Find the maximum possible value of $|Q|$.
+
+Find the remainder when the answer is divided by $10^9 + 7$, given $n = 100$.",990953332,IMO-AnswerBench-Converted,parametric_eval,$(n-2)!$,number_theory
+ff9ce7,"Let $\tau(n)$ be the number of positive divisors of a positive integer $n$. Find all positive integers $n$ such that $n = \tau(n^{12})$.
+
+Find the sum of all possible values.",364,IMO-AnswerBench-Converted,sum_of_values,"1, 13, 25, 325",number_theory
+40decf,"Let $a$ be a positive integer greater than or equal to $3$. A finite set $X$ of positive integers is said to be 'clustered' if for any three elements $x, y, z$ chosen from $X$, at least one of $\gcd(x,y)$, $\gcd(y,z)$, or $\gcd(z,x)$ is not equal to $1$. Find the maximum possible value of $|X|$ for a clustered set $X \subset \mathbb{N}$ where the difference between the maximum and minimum elements of $X$ are less than or equal to $a$.
+
+Find the answer when $a = 100$.",68,IMO-AnswerBench-Converted,parametric_eval,$\lfloor \frac{a+2}{2}\rfloor +\lfloor \frac{a+2}{3}\rfloor -\lfloor \frac{a+2}{6}\rfloor $,number_theory
