@@ -1,0 +1,990 @@
+[
+  {
+    "id": 679559,
+    "title": "Public vs Private problem set difficulty comparison",
+    "author": "Simon Frieder",
+    "content_markdown": "",
+    "postDate": "2026-03-02T09:11:14.289593100Z",
+    "comments": [
+      {
+        "id": 3416225,
+        "author": "N/A",
+        "date": "2026-03-02",
+        "markdown": "I was about to guess the two models are gpt-oss-20b and gpt-oss-120b, but I have some doubts.\n\nIt seems that gpt-oss-120b could not even score 32 with pass@5 without tool calling.\n\nThese are I think the differences with the leaderboard submissions\n- Tool calling is allowed in submissions\n- Your submission is unlikely to run the full context length for all submissions\n- You can only submit only one answer, whereas pass@100 means it is considered correct if any of the 100 submission is correct"
+      },
+      {
+        "id": 3416258,
+        "author": "N/A",
+        "date": "2026-03-02",
+        "markdown": "@friederrr \nI have 3 questions. \n\n1) There was no time constraints for any of the experiments shown above ? \nI mean, the model was run in full context, max output tokens mode with unlimited budget? And of course this is in pov that individual pass @ n were not carried out but extrapolated from pass @ 100 ?\n\n2) Also when you mentioned that no optimizations were carried, does that also align with respect to the sampling parameters used during inference like temperature, min and top P ? Were the default ones used?\n\n3) ```and we used bootstrapping```. During bootstrapping and picking samples, were duplicates/ re sampling discarded for getting scores (to reduce noise) for other pass @ n scores? \n\nAnd can you reveal any spoilers on if the same model families were used \ud83d\ude09\nPS: just kidding :D"
+      },
+      {
+        "id": 3416257,
+        "author": "N/A",
+        "date": "2026-03-02",
+        "markdown": "If nearly all problems can be solved at pass@100 without finetuning or tool calling, does this mean that this year\u2019s competition is primarily measuring true model reasoning capability, or rather the ability to control randomness and reduce variance?\n\nIn that context, could final results be influenced too heavily by stochastic effects?\n\nAnd if so, does the prize ultimately reflect the core capability the competition aims to evaluate, or something more related to engineering robustness and variance management?"
+      }
+    ],
+    "urls": []
+  },
+  {
+    "id": 672978,
+    "title": "B200 + calls bug fix",
+    "author": "Simon Frieder",
+    "content_markdown": "",
+    "postDate": "2026-02-11T17:08:00.026386600Z",
+    "comments": [
+      {
+        "id": 3405023,
+        "author": "N/A",
+        "date": "2026-02-11",
+        "markdown": "For a moment I thought we now have access to B200 on Kaggle, but it is not the case.\n\nIn my experience Triton backend is slower, but I have not seriously benchmarked it (probably I could have written a benchmarking notebook)"
+      },
+      {
+        "id": 3407780,
+        "author": "N/A",
+        "date": "2026-02-19",
+        "markdown": "great learning from this content"
+      }
+    ],
+    "urls": []
+  },
+  {
+    "id": 672594,
+    "title": "Finetuning a model with just a handful of parameters",
+    "author": "Simon Frieder",
+    "content_markdown": "",
+    "postDate": "2026-02-09T10:22:59.100538800Z",
+    "comments": [
+      {
+        "id": 3404496,
+        "author": "N/A",
+        "date": "2026-02-10",
+        "markdown": "I wonder if any work has been done on the extra requirements of a dataset when it's a MoE vs a dense model -- in particular because MoE routing adds an extra failure point.  \n\nIn particular, I'm concerned if their previous training under MoE teaches a \"latent variable regime\" that must be present for future data to be effective.   Or, is my concern is completely baseless -- I guess, my question is :\n\"When you use train a MoE model, is there any extra considerations you must enforce on your data to make sure that routing doesn't collapse outside of your training data?\" "
+      },
+      {
+        "id": 3403869,
+        "author": "N/A",
+        "date": "2026-02-09",
+        "markdown": "I HAVE LORA WITH 4408 STEPS AT [HERE](https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672611)"
+      }
+    ],
+    "urls": [
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672611"
+    ]
+  },
+  {
+    "id": 672384,
+    "title": "AIMO2 LLM Reasoning Long List pointers",
+    "author": "Simon Frieder",
+    "content_markdown": "",
+    "postDate": "2026-02-07T21:59:02.608794900Z",
+    "comments": [
+      {
+        "id": 3403224,
+        "author": "N/A",
+        "date": "2026-02-08",
+        "markdown": "i know this isnt the thread for this question but, could u plz clarify whether we\u2019ll be receiving tinker credits or not??"
+      },
+      {
+        "id": 3403798,
+        "author": "N/A",
+        "date": "2026-02-09",
+        "markdown": "Nice Information"
+      }
+    ],
+    "urls": []
+  },
+  {
+    "id": 671893,
+    "title": "Math Corpus Prize -- final considerations ",
+    "author": "Simon Frieder",
+    "content_markdown": "",
+    "postDate": "2026-02-04T19:25:10.202952100Z",
+    "comments": [
+      {
+        "id": 3403542,
+        "author": "N/A",
+        "date": "2026-02-08",
+        "markdown": "Do you expect/accept  Mathematics question related to Mechanics & Statistics (e.g. Forces and equilibrium, Momentum, Kinematics, Newton\u2019s laws of motion, Permutations and combinations, normal distribution, Discrete random variables, Poisson distribution, Hypothesis tests etc) that is Mathematics in nature but not really in the area of Pure Mathematics ?"
+      },
+      {
+        "id": 3403397,
+        "author": "N/A",
+        "date": "2026-02-08",
+        "markdown": "The goal post is a little ephemeral ; is the metric \"Is useful for the competition\" or \"The community thinks it's useful for the competition\"?\n\nThey seem to be distinct here."
+      },
+      {
+        "id": 3402403,
+        "author": "N/A",
+        "date": "2026-02-06",
+        "markdown": "Is it Latex mandatory for all the equation in the dataset?\n\nFor example if the original questions are in Microsoft Word in OMML or UnicodeMath (which display standard human readable equation without Latex  that I consolidated into a dataset usable for Machine Learning task, do I need to convert it to Latex syntax ?"
+      },
+      {
+        "id": 3402680,
+        "author": "N/A",
+        "date": "2026-02-06",
+        "markdown": ""
+      },
+      {
+        "id": 3402077,
+        "author": "N/A",
+        "date": "2026-02-05",
+        "markdown": ""
+      }
+    ],
+    "urls": []
+  },
+  {
+    "id": 670047,
+    "title": "The Math Corpus Prize and LL Prize are ending soon! Prepare your submissions!",
+    "author": "Simon Frieder",
+    "content_markdown": "",
+    "postDate": "2026-01-25T18:44:24.069706300Z",
+    "comments": [
+      {
+        "id": 3403821,
+        "author": "N/A",
+        "date": "2026-02-09",
+        "markdown": "## Math Corpus Prize \u2014 Activation Aware Fusion\n\n- **Method overview / discussion:**  \n  www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672575\n\n- **Dataset:**  \nwww.kaggle.com/datasets/aneeshmukkamala/aimo3afq"
+      },
+      {
+        "id": 3401656,
+        "author": "N/A",
+        "date": "2026-02-04",
+        "markdown": "Will I be free to use other's dataset from here to finetune my own model? \n\nDoes the dataset have to be strictly math entries only? \n     We propose this question because teaching math doesn't always mean teaching math problems. Teaching how to ask questions also directly influences how the student, in this case the model, learns how to solve problems. Knowing/learning how to ask the right questions is important to solve a problem. \n\n You mention 400 sufficiently original problems+solutions can be a good contender. \n    This is a separate intepretation of `corpus`. For math purposes, this is good. This style of submission suggests non-math entries should not belong to the final submission. \n\n\nI am conflicted because I was building a corpus that teaches math to a model during finetune. I finished turning bhagavad gita and bible into a dataset that has all together ~40k entries. Next stops were tripitaka, dao, vedas, zoroastranism. I was thinking appolonius' texts, pythagorean texts, plato, socrates, aristotalean dialogues. Texts from available books of davinci, archimedes, newton, russell, cantor, riemann, al jabr, all medieval algebra texts found from the meditarrenean, quine, turing, babbage, ada, and a few more. With that spirit I was about to collect/synthesize math problems from grade 1 to grade 12 of all countries that taught math, translate them in english and teach the model math, so they will have reasoning skills from a lot of different countries, especially the resources from the competitive countries for imo. All of these I suspect to be around ~200k entries, if dug properly. \nThen I was running into licensing problems, because I don't know if I can simply release someone else's book content to kaggle/huggingface. Even if I reinterpreted it in my own language, I don't know if that is ethical/within CC BY 4 or any opensourcing grounds. Its going to be really hard to really find mathematical gems if all we rely is open sourced data found in web. \nA separate case is when there is no digital data available of a certain book, converting that into a dataset is perfect. And I would definitely train it to `my` model, and would benefit everyone as well. \n\nGiven the number of days remaining 400 sufficiently original problems is also a path that can be taken. This will make me completely change my current dataset building schema, but it is very achievable. \n\n\nAll my points raised about a math-corpus to include more than just math problems still stands. \n\nThank you for reading. \n"
+      },
+      {
+        "id": 3400601,
+        "author": "N/A",
+        "date": "2026-02-01",
+        "markdown": "Edit: Reposting in the other discussion as requested"
+      },
+      {
+        "id": 3399686,
+        "author": "N/A",
+        "date": "2026-01-31",
+        "markdown": "I am entering my dataset for the Math Corpus Prize.\n\nDataset Name: Math Corpus GRPO Dataset\n\nDataset Link: [Link](https://www.kaggle.com/datasets/sangrampatil5150/math-corpus-grpo-2-6k-dataset/data/data/data)\n\nDetailed Write-up: [Link](https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/671107)"
+      },
+      {
+        "id": 3397301,
+        "author": "N/A",
+        "date": "2026-01-26",
+        "markdown": ""
+      },
+      {
+        "id": 3397158,
+        "author": "N/A",
+        "date": "2026-01-26",
+        "markdown": ""
+      },
+      {
+        "id": 3396805,
+        "author": "N/A",
+        "date": "2026-01-25",
+        "markdown": ""
+      }
+    ],
+    "urls": [
+      "https://www.kaggle.com/datasets/sangrampatil5150/math-corpus-grpo-2-6k-dataset/data/data/data",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/671107"
+    ]
+  },
+  {
+    "id": 669690,
+    "title": "Test Data Update and Rescore",
+    "author": "Ryan Holbrook",
+    "content_markdown": "",
+    "postDate": "2026-01-23T18:20:25.945996500Z",
+    "comments": [
+      {
+        "id": 3395846,
+        "author": "N/A",
+        "date": "2026-01-23",
+        "markdown": "Here is our own announcement around this issue: In the interests of transparency, we want to notify the community\u00a0that through our secondary review process,\u00a0errors were found in two problems from the public leaderboard that require correction.     \n\nProblem A: Incorrect answer. Kaggle will rescore all existing submissions using the corrected\u00a0answer. This will be reflected in the leaderboard and the calculation for the Longest Leader Prize.\n\u00a0           \n\nProblem B: The problem statement requested an answer in a format that is not valid for the actual solution. The problem statement\u00a0has been corrected and the requested answer format updated. Submissions will be evaluated against the updated version.            \n\n\nAs these two problems are comparatively quite hard (for humans and LLMs), very few teams submitted correct answers to either problem, so we expect minimal impact on standings.\n\n\u2014 The AIMO Team"
+      },
+      {
+        "id": 3396521,
+        "author": "N/A",
+        "date": "2026-01-25",
+        "markdown": "Hi Ryan,\n\nI\u2019m reaching out because I\u2019ve been unable to successfully submit to the AIMO-3 competition due to persistent Kaggle system errors, and I\u2019m hoping you might be able to help identify what\u2019s going wrong.\n\nFor the couple of weeks, every submission attempt has resulted in a Kaggle error on the submissions page. I\u2019ve tried a wide range of troubleshooting steps, including:\n\n* Creating and submitting brand-new notebooks\n* Re-submitting older notebooks that previously passed submission (though scored 0)\n* Editing and re-saving notebooks before submission\n* Submitting at different times of day and night\n* Submitting from different devices and browsers\n\nIn all cases, the result is the same: the submission page reports Kaggle errors rather than a score or clear failure reason.\n\nI\u2019ve emailed [support@kaggle.com](mailto:support@kaggle.com) multiple times without receiving a response, and I posted on the AIMO-3 discussion board. The only suggestion I received there was to create a new notebook and submit it, which I did, but the errors persisted.\n\nAt this point, I don\u2019t believe this is a widespread Kaggle outage, since other competitors are clearly able to submit, score, and iterate. That suggests the issue is likely something specific to my account, notebook state, or submission metadata. However, without any actionable error information beyond the generic \u201cA system error. Please try resubmitting\u2026\u201d, I don\u2019t have a way to diagnose or correct it.\n\nI\u2019ve invested a substantial amount of time into this competition, and being unable to submit at all is effectively blocking participation. While others can submit, see scores, and improve, I\u2019m unable to even reach that first feedback step.\n\nIf you\u2019re able to point me toward what might cause persistent submission-level errors like this, or advise on what to check (account state, notebook configuration, dataset bindings, versioning issues, etc.), I would really appreciate it.\n\nFor reference:\n\n* Competition page: [https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/submissions](https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/submissions)\n* My profile: [https://www.kaggle.com/nadinesquires](https://www.kaggle.com/nadinesquires)\n\nThank you for your time, and for any guidance you can provide.\n\nBest regards,\nNadine\n"
+      },
+      {
+        "id": 3395930,
+        "author": "N/A",
+        "date": "2026-01-24",
+        "markdown": "This is a cherrypicked section of my submission history, I don't think it is a \"very few teams\" that submitted correct answers to either problem. (The version description is likely the old score)\n\n![](https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F1680925%2F6b1a48a4086f358307b8eae0d4752712%2FScreenshot%202026-01-23%20at%2017.20.09.png?generation=1769217623309243&alt=media)\n"
+      },
+      {
+        "id": 3400380,
+        "author": "N/A",
+        "date": "2026-02-01",
+        "markdown": "my all notebooks are failed and i shall not submit any notebook"
+      },
+      {
+        "id": 3398972,
+        "author": "N/A",
+        "date": "2026-01-30",
+        "markdown": ""
+      },
+      {
+        "id": 3395836,
+        "author": "N/A",
+        "date": "2026-01-23",
+        "markdown": ""
+      },
+      {
+        "id": 3396492,
+        "author": "N/A",
+        "date": "2026-01-25",
+        "markdown": "Thanks for the update. @ryanholbrook "
+      }
+    ],
+    "urls": [
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/submissions",
+      "https://www.kaggle.com/nadinesquires",
+      "https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F1680925%2F6b1a48a4086f358307b8eae0d4752712%2FScreenshot%202026-01-23%20at%2017.20.09.png?generation=1769217623309243&alt=media"
+    ]
+  },
+  {
+    "id": 663330,
+    "title": "The Math Corpus Prize Repo",
+    "author": "Simon Frieder",
+    "content_markdown": "",
+    "postDate": "2025-12-17T13:05:35.796595300Z",
+    "comments": [
+      {
+        "id": 3404120,
+        "author": "N/A",
+        "date": "2026-02-09",
+        "markdown": "## The Multi-Axis Profiled Mathematics Collection\n\n### Links\n\n[Dataset](https://www.kaggle.com/datasets/laureanoarcanio/the-multi-axis-profiled-mathematics-collection) 72k carefully selected with high accuracy metadata\n\n[Crafted problems (PDF/LaTeX)](https://github.com/laureano-arcanio/aimo3-dataset-pipeline/tree/main/authored_imo_style_problems)\n\n[Discussion](https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672685)\n\n[Full pipeline code](https://github.com/laureano-arcanio/aimo3-dataset-pipeline) Full end to end open source pipeline\n\n[Filter and Split Notebook](https://www.kaggle.com/code/laureanoarcanio/filtering-and-split-notebook/) How to use this dataset to select levels, domanins and more.\n\n[Analysis Notebook](https://www.kaggle.com/code/laureanoarcanio/multi-axis-dataset-exploratory-analysis) Full of charts that explains most of the decisions.\n\n[Qwen 0.5B math model adapter checkpoint:](https://www.kaggle.com/models/laureanoarcanio/qwen2-5-coder-0-5b-instruct-algebra-specialist) Demostrating data targeting finetuning improves a strong coder model.\n\n\n\nThanks!"
+      },
+      {
+        "id": 3404065,
+        "author": "N/A",
+        "date": "2026-02-09",
+        "markdown": "My submission for the Math Corpus prize:\n\n- Dicussion: https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672668\n- Dataset: https://www.kaggle.com/datasets/nguyennguyen599/astral-math-v1"
+      },
+      {
+        "id": 3403804,
+        "author": "N/A",
+        "date": "2026-02-09",
+        "markdown": "My submission for the Math Corpus Prize \u2014 CrystalMath: 2,129 verified, high-difficulty contest math problems for RLVR training.\n\nDiscussion write-up:\nhttps://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672592\n\nDataset:\nhttps://huggingface.co/datasets/ycchen/Crystal-Math-Preview\n\nDetailed report:\nhttps://huggingface.co/datasets/ycchen/Crystal-Math-Preview/blob/main/CrystalMath_CAV_preprint.pdf"
+      },
+      {
+        "id": 3403621,
+        "author": "N/A",
+        "date": "2026-02-08",
+        "markdown": "Here is my submission!\n\nDiscussion:\n\nhttps://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672528\n\nDataset:\n\nhttps://www.kaggle.com/datasets/huikang/aimo3-corpus-prize-submission"
+      },
+      {
+        "id": 3403563,
+        "author": "N/A",
+        "date": "2026-02-08",
+        "markdown": "Submission for Math Corpus Prize:                                                                                                         \n                                                                                                                                            \n  https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672507                                           \n                                                                                                                                            \n  - Dataset: https://www.kaggle.com/datasets/jordane95/aimo3-validation-benchmark                                                           \n  - 347 validation problems with expert-verified integer answers (from BeyondAIME, AMO-Bench, IMO-AnswerBench)                              \n  - 124 auxiliary RL training problems converted from non-integer formats"
+      },
+      {
+        "id": 3404176,
+        "author": "N/A",
+        "date": "2026-02-10",
+        "markdown": "I am entering the Math Corpus competition:\n + Dataset: https://www.kaggle.com/code/sonphamorg/traces-h100-gptoss-curated\n + Write up: https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672706"
+      },
+      {
+        "id": 3404163,
+        "author": "N/A",
+        "date": "2026-02-10",
+        "markdown": "We\u2019re all here to learn and improve!\n"
+      },
+      {
+        "id": 3404112,
+        "author": "N/A",
+        "date": "2026-02-09",
+        "markdown": "\nHi there!\n\nI am entering my dataset for the Math Corpus Prize.\n\n- Dataset: https://www.kaggle.com/datasets/sethmoudry/prism-math-aimo3/data\n\n- EDA Starter Notebook: https://www.kaggle.com/code/sethmoudry/prism-math-eda\n\n- Github: https://github.com/sethmoudry/prism-math"
+      },
+      {
+        "id": 3404035,
+        "author": "N/A",
+        "date": "2026-02-09",
+        "markdown": "Hi! Please find our submission for the Math Corpus prize:\n\n- Dataset: [https://www.kaggle.com/datasets/taraashmittal/aimo-3](https://www.kaggle.com/datasets/taraashmittal/aimo-3)\n- The write-up: [https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672656](https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672656)\n- A tiny notebook for visualization: [https://www.kaggle.com/code/taraashmittal/using-our-aimo3-dataset](https://www.kaggle.com/code/taraashmittal/using-our-aimo3-dataset)"
+      },
+      {
+        "id": 3403916,
+        "author": "N/A",
+        "date": "2026-02-09",
+        "markdown": "Submission for the Math Corpus Prize \n* Discussion: https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672537\n* Dataset: https://www.kaggle.com/datasets/mihailgribov/olympiad-style-integer-math-problems/data"
+      },
+      {
+        "id": 3404152,
+        "author": "N/A",
+        "date": "2026-02-09",
+        "markdown": "Discussion write-up: https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672699\n\nDataset: https://www.kaggle.com/datasets/chewkokwahibrainai/high-school-maths-exam/data"
+      },
+      {
+        "id": 3404125,
+        "author": "N/A",
+        "date": "2026-02-09",
+        "markdown": "Our submission for the Math Corpus Prize: PolyMath\n\nDiscussion write-up: https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672686\n\nDataset: https://huggingface.co/datasets/AIMO-Corpus/PolyMath"
+      },
+      {
+        "id": 3404046,
+        "author": "N/A",
+        "date": "2026-02-09",
+        "markdown": "## Math Corpus - GPT-OSS-120B Tool-Integrated Reasoning Preference Pairs for OpenMathReasoning Additional Set\n\n\n**Discussion Write-Up**: https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672659\n\n**Dataset**: https://huggingface.co/datasets/VITHURSHAN/DFO-Kaggle\n"
+      },
+      {
+        "id": 3404030,
+        "author": "N/A",
+        "date": "2026-02-09",
+        "markdown": "Submission for AIMO - Progress Prize 3 Math Corpus\n\nDiscussion write-up: https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672639\n\nDataset: https://www.kaggle.com/datasets/vijayashantim/aiom3-math-corpus"
+      },
+      {
+        "id": 3403983,
+        "author": "N/A",
+        "date": "2026-02-09",
+        "markdown": "Submission for the Math Corpus Prize \n\n* Discussion: https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672643\n* Dataset 1: https://www.kaggle.com/datasets/zfturbo/hard-math-problems-for-aimo-3\n* Dataset 2: https://www.kaggle.com/datasets/zfturbo/math-datasets-aimo-format"
+      },
+      {
+        "id": 3403760,
+        "author": "N/A",
+        "date": "2026-02-09",
+        "markdown": "My submission for Math Corpus Prize \n\nDiscussion Write up:\n\nhttps://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672575\n\nDataset: \n\nhttps://www.kaggle.com/datasets/aneeshmukkamala/aimo3afq"
+      },
+      {
+        "id": 3403159,
+        "author": "N/A",
+        "date": "2026-02-07",
+        "markdown": "Hey @friederrr to be sure the deadline is 11:59 PM UTC on the February 9th correct? Trying to submit by tomorrow the 8th but there's much to do!"
+      },
+      {
+        "id": 3403044,
+        "author": "N/A",
+        "date": "2026-02-07",
+        "markdown": "Hi, I participated in the Math Corpus Prize 3. Here is my information link.\n\nDataset \n\nhttps://www.kaggle.com/datasets/adyarezapahlevi/math-corpus-adya-dataset-9-0/data\n\ndiscussion :\n\nhttps://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672398"
+      },
+      {
+        "id": 3403451,
+        "author": "N/A",
+        "date": "2026-02-08",
+        "markdown": "Hi Simon, I am officially submitting the \"AIMO 3: Refined Integer-Only Math Reasoning Corpus\" dataset for the Math Corpus Prize.\n\nDataset Link: \n\nhttps://www.kaggle.com/datasets/chethan805/aimo-3-refined-integer-only-math-reasoning-corpus\n\nDiscussion Post:\n\nhttps://www.kaggle.com/datasets/chethan805/aimo-3-refined-integer-only-math-reasoning-corpus/discussion/672470"
+      },
+      {
+        "id": 3402596,
+        "author": "N/A",
+        "date": "2026-02-06",
+        "markdown": "I am entering my dataset for the Math Corpus Prize.\n\nDataset Name: Hard Math SFT\n\nDataset Link: [Link](https://www.kaggle.com/datasets/sangrampatil5150/hard-maths)\n\nDetailed Write-up: Coming Soon"
+      },
+      {
+        "id": 3402856,
+        "author": "N/A",
+        "date": "2026-02-07",
+        "markdown": "\nHi team,\n\nSubmitting my entry for the **Math Corpus Prize**.\n\n* **Dataset:** [AIMO3 Benchmark](https://www.kaggle.com/datasets/ritwikakancharla/aimo-3-benchmark/)\n* **Discussion Thread:** [AIMO3 Benchmark: 400 Expert Problems (Eval & CoT)](https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672246)\n\nThis dataset adapts Google DeepMind's IMO-Bench into 400 expert-level problems, processed into **strict integer evaluation** (Leaderboard Simulator) and **advanced reasoning** (CoT) splits to aid in model training and validation.\n\nThanks!"
+      },
+      {
+        "id": 3402303,
+        "author": "N/A",
+        "date": "2026-02-05",
+        "markdown": "Hello @friederrr \n\nI kindly request your clarification on something.\n\nthis is super late and this could just be me being paranoid but I just wanted to be sure\n\n```Note that due to popular request, we have increased the character size from 50k to 100k, but we won't increase this further. ``` \n\nthis is the answer length right ? whatever is spit out by the llm ? not the prompt + question + answer ?\nand also simple pythonic len(text) and not the tokenized characters count ? \n\n\nI am asking this because it was mentioned as this ```Each datapoint is not allowed to exceed more than 100k characters```\nSo datapoint here means row wise summation or row-column entry wise?\n\nBecause, for a single question if my dataset has answers from multiple passes which could be RL type preference based data, how would that be counted? "
+      },
+      {
+        "id": 3402178,
+        "author": "N/A",
+        "date": "2026-02-05",
+        "markdown": "I have a question can we updatee the dataset until given time?\nor once submitted we can't update the dataset!"
+      },
+      {
+        "id": 3402158,
+        "author": "N/A",
+        "date": "2026-02-05",
+        "markdown": "Here is my dataset attachment, this is the link https://www.kaggle.com/datasets/uttarashah/amio3-dataset\nhttps://www.kaggle.com/datasets/uttarashah/enhanced-aomo3-dataset"
+      },
+      {
+        "id": 3400572,
+        "author": "N/A",
+        "date": "2026-02-01",
+        "markdown": "I am happy to enter the Math Corpus Prize Competition with the following:\n\n1. Discussion: https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/671427\n\n2. Dataset: https://www.kaggle.com/datasets/jeannkouagou/aimo3-tool-integrated-reasoning"
+      },
+      {
+        "id": 3401882,
+        "author": "N/A",
+        "date": "2026-02-04",
+        "markdown": "I am entering my dataset for the Math Corpus Prize.\n\nDataset Name: Math Corpus GRPO Dataset\n\nDataset Link: [Link](https://www.kaggle.com/datasets/sangrampatil5150/math-corpus-grpo-2-6k-dataset/data/data/data)  Final V5\n\nDetailed Write-up: [Link](https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/671107)"
+      },
+      {
+        "id": 3401657,
+        "author": "N/A",
+        "date": "2026-02-04",
+        "markdown": "@friederrr Hello! I\u2019m very excited to participate in the Math Corpus Prize. Below is my submission\u2014please kindly review it. Thank you very much!\n\nLink to Discussion:\n\n[https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/671815](https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/671815)\n\nDataset :\n\n[https://www.kaggle.com/datasets/wenliangtlh/aimo3-high-difficulty-tool-calling-dataset/data](https://www.kaggle.com/datasets/wenliangtlh/aimo3-high-difficulty-tool-calling-dataset/data)\n"
+      },
+      {
+        "id": 3401182,
+        "author": "N/A",
+        "date": "2026-02-03",
+        "markdown": "Hi this is my submission for the math corpus:--- [discussion thread](https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/671520)\n\nDataset link:--- [check here](https://www.kaggle.com/datasets/ngarai/aimo3-rag-dataset-model-training)\n\n-----Team 'Corvus'"
+      },
+      {
+        "id": 3378079,
+        "author": "N/A",
+        "date": "2025-12-17",
+        "markdown": "```python\nPerformance (50 points)\nDoes the dataset improve mathematical reasoning and aid in improving model performance during the AIMO3. How so and how much?\n\n```\n\nAm I right in assuming \"how much your dataset improves LLM's reasoning abilities\" will be measured by the difficulty of the questions it helps solve?   Ie, similar metric as used by the Hard Problem Prize?  Who's responsibility will it be to show this via ablation?  This might be tricky as it's not clear what are the hard problems.\n\nThe reason I ask is I can imagine a significant number of different scenarios where a dataset could improve results that are trivially improved by other mechanisms (better tool calling, prompting changes / improvements, model selection, etc) and I think would have debatable value.   \n  \nI suppose one way of doing it is simply whoever has a dataset which increases the top end the most, but if that's the case, can we assume that 40 -> 41 is more valuable than 38-> 40? (just purely for example!  I am making the assumption here that 39 and 40 are 'easy' and '41' is hard.   You folks would know better what are the hard question ranges).  \n\nThe former would require a model that can achieve 40 and go to 41.   I can imagine scenarios where someone has a  model that can't solve some easy questions because they are using their dataset to focus their efforts on the hard stuff.   This would still have significant value, ofc.\n\nThere are other ways to show this, such as local cross validation with hard datasets.  If it's still also judged by the public LB, there will be some info leakage.  Is it right to assume the Corpus prize will be awarded after competition end?  Will people have until competition end to show ablation studies?  Private LB could be used as well for judging in that case, though showing by ablation would be risky :D\n\nIt's possible you're expecting other participants will use the dataset and you'll have enough datapoints to help judge better without definitive ablation studies.  That would certainly make things clearer and better for everyone.  Hopefully we get cool datasets like that!"
+      },
+      {
+        "id": 3404161,
+        "author": "N/A",
+        "date": "2026-02-10",
+        "markdown": ""
+      },
+      {
+        "id": 3403999,
+        "author": "N/A",
+        "date": "2026-02-09",
+        "markdown": ""
+      },
+      {
+        "id": 3402036,
+        "author": "N/A",
+        "date": "2026-02-05",
+        "markdown": ""
+      },
+      {
+        "id": 3401174,
+        "author": "N/A",
+        "date": "2026-02-03",
+        "markdown": ""
+      }
+    ],
+    "urls": [
+      "https://www.kaggle.com/datasets/laureanoarcanio/the-multi-axis-profiled-mathematics-collection",
+      "https://github.com/laureano-arcanio/aimo3-dataset-pipeline/tree/main/authored_imo_style_problems",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672685",
+      "https://github.com/laureano-arcanio/aimo3-dataset-pipeline",
+      "https://www.kaggle.com/code/laureanoarcanio/filtering-and-split-notebook/",
+      "https://www.kaggle.com/code/laureanoarcanio/multi-axis-dataset-exploratory-analysis",
+      "https://www.kaggle.com/models/laureanoarcanio/qwen2-5-coder-0-5b-instruct-algebra-specialist",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672668",
+      "https://www.kaggle.com/datasets/nguyennguyen599/astral-math-v1",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672592",
+      "https://huggingface.co/datasets/ycchen/Crystal-Math-Preview",
+      "https://huggingface.co/datasets/ycchen/Crystal-Math-Preview/blob/main/CrystalMath_CAV_preprint.pdf",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672528",
+      "https://www.kaggle.com/datasets/huikang/aimo3-corpus-prize-submission",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672507",
+      "https://www.kaggle.com/datasets/jordane95/aimo3-validation-benchmark",
+      "https://www.kaggle.com/code/sonphamorg/traces-h100-gptoss-curated",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672706",
+      "https://www.kaggle.com/datasets/sethmoudry/prism-math-aimo3/data",
+      "https://www.kaggle.com/code/sethmoudry/prism-math-eda",
+      "https://github.com/sethmoudry/prism-math",
+      "https://www.kaggle.com/datasets/taraashmittal/aimo-3",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672656",
+      "https://www.kaggle.com/code/taraashmittal/using-our-aimo3-dataset",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672537",
+      "https://www.kaggle.com/datasets/mihailgribov/olympiad-style-integer-math-problems/data",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672699",
+      "https://www.kaggle.com/datasets/chewkokwahibrainai/high-school-maths-exam/data",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672686",
+      "https://huggingface.co/datasets/AIMO-Corpus/PolyMath",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672659",
+      "https://huggingface.co/datasets/VITHURSHAN/DFO-Kaggle",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672639",
+      "https://www.kaggle.com/datasets/vijayashantim/aiom3-math-corpus",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672643",
+      "https://www.kaggle.com/datasets/zfturbo/hard-math-problems-for-aimo-3",
+      "https://www.kaggle.com/datasets/zfturbo/math-datasets-aimo-format",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672575",
+      "https://www.kaggle.com/datasets/aneeshmukkamala/aimo3afq",
+      "https://www.kaggle.com/datasets/adyarezapahlevi/math-corpus-adya-dataset-9-0/data",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672398",
+      "https://www.kaggle.com/datasets/chethan805/aimo-3-refined-integer-only-math-reasoning-corpus",
+      "https://www.kaggle.com/datasets/chethan805/aimo-3-refined-integer-only-math-reasoning-corpus/discussion/672470",
+      "https://www.kaggle.com/datasets/sangrampatil5150/hard-maths",
+      "https://www.kaggle.com/datasets/ritwikakancharla/aimo-3-benchmark/",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/672246",
+      "https://www.kaggle.com/datasets/uttarashah/amio3-dataset",
+      "https://www.kaggle.com/datasets/uttarashah/enhanced-aomo3-dataset",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/671427",
+      "https://www.kaggle.com/datasets/jeannkouagou/aimo3-tool-integrated-reasoning",
+      "https://www.kaggle.com/datasets/sangrampatil5150/math-corpus-grpo-2-6k-dataset/data/data/data",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/671107",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/671815",
+      "https://www.kaggle.com/datasets/wenliangtlh/aimo3-high-difficulty-tool-calling-dataset/data",
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/671520",
+      "https://www.kaggle.com/datasets/ngarai/aimo3-rag-dataset-model-training"
+    ]
+  },
+  {
+    "id": 663423,
+    "title": "Clarifying the Longest Leader Prize ",
+    "author": "Simon Frieder",
+    "content_markdown": "",
+    "postDate": "2025-12-17T21:00:36.142265700Z",
+    "comments": [
+      {
+        "id": 3384307,
+        "author": "N/A",
+        "date": "2026-01-01",
+        "markdown": "Assuming no mergers, all times in UTC:\n\n- ~~For Siancy to win, Siancy needs to stay at the top until at least January 24, 2026, at 05:14:51 (2035418s from 2025-12-31 15:51:13).~~\n\n- ~~For everyone else who has not been at the top, you need to climb to the top of the leaderboard before January 10, 2026, at 10:35:22 AM (2035418s before February 2, 2026 11:59 PM) and stay there.~~\n\n"
+      },
+      {
+        "id": 3396005,
+        "author": "N/A",
+        "date": "2026-01-24",
+        "markdown": "Helping to confirm an assumption which I think will affect top teams decision:\n1. Is the deadline for Team Merger (which will combine their score) same as the deadline for Public Notebook release, i.e February 9, 2026 11:59 PM UTC, which mean that all potential winners will be allow to negotiate till 9 Feb before they find the best partner to merge and combine their score?\n\nThis is logical assumption because a Team might not be able to fully confirm their final position and score before the end of scoring deadline (i.e. 2 Feb), and thus difficult to make an inform decision prior to that.\n\nBut I think it will be better if Host @friederrr can officially confirm it to avoid confusion."
+      },
+      {
+        "id": 3395931,
+        "author": "N/A",
+        "date": "2026-01-24",
+        "markdown": "If any 2 of the Top 3 merge, they will guarantee a win.\nThe ideal merger will be between the earlier Leaders, i.e. Just a test ( @yiyangzheng ) + Yi-Chia Chen ( @threerabbits) , then we will be able to understand more about their journey in achieving such a big lead so early ahead in time.\n\n![](https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F3967558%2F7c9ff38c63dc5d4f86c6d613378ad48f%2Fimage_2026-01-24_090120309.png?generation=1769216483691457&alt=media)\n\ni.won.a.maths.debate and Siancy also deserving a big appreciation regardless of whether they win at the end because of their selfless sharing of Top scoring notebook."
+      }
+    ],
+    "urls": [
+      "https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F3967558%2F7c9ff38c63dc5d4f86c6d613378ad48f%2Fimage_2026-01-24_090120309.png?generation=1769216483691457&alt=media"
+    ]
+  },
+  {
+    "id": 663402,
+    "title": "Team Size Limit Increase to 20",
+    "author": "Addison Howard",
+    "content_markdown": "",
+    "postDate": "2025-12-17T20:14:40.723535700Z",
+    "comments": [
+      {
+        "id": 3380790,
+        "author": "N/A",
+        "date": "2025-12-23",
+        "markdown": "I hope you\u2019re doing well. I\u2019m reaching out to ask whether you are currently open to adding new members to your team for the AI Mathematical Olympiad \u2013 Progress Prize 3 competition"
+      },
+      {
+        "id": 3378256,
+        "author": "N/A",
+        "date": "2025-12-17",
+        "markdown": "Very very exciting!  Hopefully this comp makes some waves.   Note the post about submission limits impacting your ability to merge - https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/639476#3348005\n\n>Team mergers will combine the longest leader duration of teams, but note: 1) Teams cannot unmerge after merging, and 2) You will not be able to merge teams whose combined daily submission count exceeds the total submission limit to that date (daily limit x number of days). With a daily submission limit of 1, this will limit merging opportunities."
+      },
+      {
+        "id": 3378924,
+        "author": "N/A",
+        "date": "2025-12-18",
+        "markdown": "So glad you did this I requested it for last year as we were more than 7 nvidians interested to work on it. But it was denied at the time. We didn't play the gray area, but as a result some of us, me included, were frustrated to not being able to enter."
+      },
+      {
+        "id": 3398405,
+        "author": "N/A",
+        "date": "2026-01-29",
+        "markdown": "Great news!"
+      }
+    ],
+    "urls": [
+      "https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3/discussion/639476#3348005"
+    ]
+  },
+  {
+    "id": 635859,
+    "title": "Welcome to AIMO3: IMO-level problems, H100s, ecosystem, extra prizes",
+    "author": "Simon Frieder",
+    "content_markdown": "",
+    "postDate": "2025-11-20T17:38:45.623218Z",
+    "comments": [
+      {
+        "id": 3401239,
+        "author": "N/A",
+        "date": "2026-02-03",
+        "markdown": "@friederrr On the **Robustness** part, it is certainly better to run the evaluation on the private leaderboard twice rather than only once. However, we have seen in some notebooks how luck is a major factor and what if somebody gets so lucky twice? - which is highly probable given how many contestants there are. At the same time I understand that every evaluation run consumes a lot of resources.\n\nWhat about something like you run the evaluation on the private leaderboard twice for everyone. And then for the top 5% you run it 3 more times. For the top 5% of the contestants, each run would have a weight of only 0.2 since we have 5 runs in total as opposed to having a weight of 0.5 in case of two runs. You can think of appropriate percentiles and the number of runs, perhaps, out of top 5%, the final top 50 can have even 10 runs in total, etc.? Hopefully, this would be a more fair way to reward those whose solution is consistent and not just lucky, but it would not put too much strain on the resources."
+      },
+      {
+        "id": 3394563,
+        "author": "N/A",
+        "date": "2026-01-21",
+        "markdown": "Simon, can you please give me an answer to this problem Im having... KAGGLE ERROR\nITS BEEN DAYS SUCK WITH GETTING KAGGLE ERRORS. IVE CONTACTED SUPPORT@KAGGLE.COM WITH NO SUCCESS.  My whole submission page is just a list of kaggle error submissions. On the website it says that this is rare and to try resubmitting. Ive lost weeks of being able to submit and participate. Could you please give me some kind of help. Ive invested so much time into this competition to be eliminated before even starting. I have had 2 successful submissions, so i know it has the potential to work. PLEASE HELP!! "
+      },
+      {
+        "id": 3390619,
+        "author": "N/A",
+        "date": "2026-01-13",
+        "markdown": "Anyone know if the 2 private set runs will be completely independent runs (ie different orders) or will they have the same order? "
+      },
+      {
+        "id": 3381598,
+        "author": "N/A",
+        "date": "2025-12-25",
+        "markdown": "> We are the first large-scale competition to have secured 128 H100 GPUs and Tinker credits for you to finetune your models, free of charge.\n\nAre there updates from Tinker? I am looking forward to finetuning on their platform"
+      },
+      {
+        "id": 3368327,
+        "author": "N/A",
+        "date": "2025-12-09",
+        "markdown": "@friederrr I have a question about the Math Corpus Prize Requirements. \n\n`Each datapoint is not allowed to exceed more than 50k characters.` \n\nI think this is not appropriate, with the speed of H100, we can currently make 4-5 requests with 32k tokens in 5 hours with gpt-oss-120b. 32k output tokens are basically over 50k characters, not to mention input characters and metadata if any. Could you consider this? Based on the size of the competition, I think 100,000 characters per data point will yield high quality datasets."
+      },
+      {
+        "id": 3345054,
+        "author": "N/A",
+        "date": "2025-11-23",
+        "markdown": "Tech Q: Is there a plan or possibility for the image/driver to be updated to support cuda beyond 12.6 within this competition period?"
+      },
+      {
+        "id": 3342719,
+        "author": "N/A",
+        "date": "2025-11-21",
+        "markdown": "Do we all get the questions in the same order, or is it shuffled?"
+      },
+      {
+        "id": 3342823,
+        "author": "N/A",
+        "date": "2025-11-21",
+        "markdown": "Everyone can access H100 through public notebooks? Does 5 hour limit resets every week?"
+      },
+      {
+        "id": 3342491,
+        "author": "N/A",
+        "date": "2025-11-21",
+        "markdown": "@friederrr I greatly appreciate your team initiative in bridging the gap between competitors accessing from large labs  and aspiring individuals without access to compute resources. "
+      },
+      {
+        "id": 3365531,
+        "author": "N/A",
+        "date": "2025-12-07",
+        "markdown": "Hi everyone,\n\nI\u2019m still in the process of gathering information about the competition so I can understand whether I\u2019m ready to participate. The discussions here have been really helpful so far, especially the clarifications about the evaluation process, H100 usage, and how the reference set should be interpreted."
+      },
+      {
+        "id": 3360546,
+        "author": "N/A",
+        "date": "2025-12-02",
+        "markdown": "If possible, please inform me quickly."
+      },
+      {
+        "id": 3360544,
+        "author": "N/A",
+        "date": "2025-12-02",
+        "markdown": "Can you tell me what needs to be done in this competition's notebook?\n"
+      },
+      {
+        "id": 3396376,
+        "author": "N/A",
+        "date": "2026-01-24",
+        "markdown": "\"Aligned with the new AIMO3 guidelines regarding stability, our pipeline was specifically engineered to ensure consistent outputs across multiple runs, acknowledging the new scoring penalty for unstable models. By decoupling reasoning from execution via SymPy, we address the 5-digit precision requirement without relying on stochastic arithmetic."
+      },
+      {
+        "id": 3382816,
+        "author": "N/A",
+        "date": "2025-12-28",
+        "markdown": "Hi @friederrr can you please help me with a confusion I have - I tried submitting a notebook earlier today but it failed with an error. With some modifications I wanted to make another submission attempt but it is blocked for the day with a message that says\n>Cannot submit\nYour team has used its daily Submission allowance (1) today, please try again tomorrow UTC (7.5 hours from now).\n\nDoes a failed submission attempt also count as a submission for the day?"
+      },
+      {
+        "id": 3377124,
+        "author": "N/A",
+        "date": "2025-12-15",
+        "markdown": "Hi Everyone\n\nThis is a bit of a dumb question, so please forgive me.\n\nWe need to create our own datasets and then train our models. I am presuming one extremely time consuming way is to go this website\n\nhttps://www.imo-official.org/problems.aspx (IMO past papers)\n\nThen get the questions into Latex with answers and train them.\n\nIs this allowable under competition rules?"
+      },
+      {
+        "id": 3369384,
+        "author": "N/A",
+        "date": "2025-12-10",
+        "markdown": "For this comeptition, can we form a group of about 20 people and work together, and have only 8 representatives form a team on Kaggle?\nOf course, this assumes the other 12 people will not submit any notebooks on kaggle or do not have Kaggle accounts.\n@friederrr"
+      },
+      {
+        "id": 3362155,
+        "author": "N/A",
+        "date": "2025-12-04",
+        "markdown": "Hey, i want to ask if there is any correlation between the reference set and the public set. Means the level of difficulty etc.\n\nBecause i have seen a very irregular patterns, \nThe notebook that is giving 7/10 on reference set is giving 24/50 on public LB.\nAnd the notebook that is giving 8/10 on refernce set is giving 6/50 on public LB.\n\nSo is the submission the only way to test the pipeline?"
+      },
+      {
+        "id": 3344931,
+        "author": "N/A",
+        "date": "2025-11-23",
+        "markdown": "It is allowed for us to use H100 to fine-tuning model on kaggle?"
+      },
+      {
+        "id": 3344310,
+        "author": "N/A",
+        "date": "2025-11-22",
+        "markdown": "@friederrr, As per Qwen docs,\"\"\"All our open-source models, except for the 3B and 72B variants, are licensed under Apache 2.0. You can find the license files in the respective Hugging Face repositories. It is NOT necessary for you to submit a request for commercial usage.\"\"\" So it means 3B and 72B  can't be listed under the whitelist models category. As you mentioned in the previous competition, the clause regarding user thresholds is mainly the reason for not being whitelisted."
+      },
+      {
+        "id": 3343687,
+        "author": "N/A",
+        "date": "2025-11-21",
+        "markdown": "\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f"
+      },
+      {
+        "id": 3343686,
+        "author": "N/A",
+        "date": "2025-11-21",
+        "markdown": "Hiiiiiiiiiiii"
+      },
+      {
+        "id": 3343518,
+        "author": "N/A",
+        "date": "2025-11-21",
+        "markdown": "Could you get the (novel) problems up on https://matharena.ai/ as well?\n\nI think it is a good place for people to see how the LLM responds to the 10 reference problems."
+      },
+      {
+        "id": 3343446,
+        "author": "N/A",
+        "date": "2025-11-21",
+        "markdown": ""
+      },
+      {
+        "id": 3362996,
+        "author": "N/A",
+        "date": "2025-12-05",
+        "markdown": "Thanks for the information!"
+      },
+      {
+        "id": 3345608,
+        "author": "N/A",
+        "date": "2025-11-23",
+        "markdown": "Thanks for the information!"
+      }
+    ],
+    "urls": [
+      "https://www.imo-official.org/problems.aspx",
+      "https://matharena.ai/"
+    ]
+  },
+  {
+    "id": 639476,
+    "title": "Longest Leader Prize Clarification",
+    "author": "Addison Howard",
+    "content_markdown": "",
+    "postDate": "2025-11-24T20:43:20.918942200Z",
+    "comments": [
+      {
+        "id": 3376833,
+        "author": "N/A",
+        "date": "2025-12-15",
+        "markdown": "Who are currently the frontrunners for the longest leader prize?"
+      },
+      {
+        "id": 3383298,
+        "author": "N/A",
+        "date": "2025-12-29",
+        "markdown": "Given the variance in the comp, do all submitted notebooks have to be revealed that got the highest score or just one of the leader's choosing?  Or just the first?  Or the last? This is a different question than the merger case.\n\nDoes all data / fine tuning efforts need to be revealed?\n\nThis can, in theory, be rewarded early as well - even with team mergers.  The benefit being people can start leveraging sooner.  I think around halfway between now and the end date, minus a few days, assuming the current LB leader holds on.\n\n\n\n\n"
+      },
+      {
+        "id": 3347052,
+        "author": "N/A",
+        "date": "2025-11-24",
+        "markdown": "How do you consider team mergers? Let's say we have three teams with 30 days, 30 days and 40 days at the top of the leaderboard and the total duration is 100 days.\n\nIf the two teams with 30 days at the top of the leaderboard merges, do they beat the team with 40 days at the top of the leaderboard?\n\nOne way to avoid facing this scenario is only the consider the maximum tenure among all team mergers."
+      },
+      {
+        "id": 3347050,
+        "author": "N/A",
+        "date": "2025-11-24",
+        "markdown": "Cool, the alternative (notebook has to be public at submission) does not really make sense because the moat is just the 5 hour run time and other contestants could submit and publish something that just happens to be better.\n\nAlso I notice it is \"second longest tenure in first place\", which is different from \"as if the competition has happened without the highest ranking team\". This means that being at second place at any point in time does not help you. This is good, because it is much easier to calculate who is in the line of succession."
+      }
+    ],
+    "urls": []
+  },
+  {
+    "id": 634385,
+    "title": "How to Get Started + Competition's Official Discord",
+    "author": "Addison Howard",
+    "content_markdown": "",
+    "postDate": "2025-11-19T15:07:06.083049400Z",
+    "comments": [
+      {
+        "id": 3366072,
+        "author": "N/A",
+        "date": "2025-12-07",
+        "markdown": "Hello Addison, \n\nMay i know where is the file that hold the 50 mathematical questions we are asked to tackle on ? \n\nThank you,\nKyle "
+      },
+      {
+        "id": 3346910,
+        "author": "N/A",
+        "date": "2025-11-24",
+        "markdown": "Where is exact question.I am new to kaggle please help me."
+      }
+    ],
+    "urls": []
+  },
+  {
+    "id": 679339,
+    "title": "Anyone tried qwen 3.5 models?",
+    "author": "NNMax",
+    "content_markdown": "",
+    "postDate": "2026-02-28T18:13:21.035036700Z",
+    "comments": [
+      {
+        "id": 3415692,
+        "author": "N/A",
+        "date": "2026-03-01",
+        "markdown": "https://www.kaggle.com/code/shelterw/qwen3-5-w-python\n\nHave you tried it yet?"
+      },
+      {
+        "id": 3415380,
+        "author": "N/A",
+        "date": "2026-02-28",
+        "markdown": "Qwen 3.5 27B is a dense model, which means all 27B parameters are active during inference, so it really has no chance of matching the speed of oss-120B, since that one is a Mixture-of-Experts model with only about 5.1B active parameters at inference time.\n\nThe 35B-A3B variant should have a better chance in terms of speed since it is also a MoE, but from what I\u2019ve observed is Qwen models tend to be more verbose in their reasoning, and artificial analysis benchmark seems to reflect that behavior.\n\nIn my small tests, 35B-A3B actually beats oss-120B without tools, but so far I haven\u2019t been able to implement it reliably with tools using vllm.\n\n![](https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F9785820%2F541d0bb25b5d36269ac2e27ec7bad802%2FEkran%20Resmi%202026-02-28%2022.45.18.png?generation=1772308144898966&alt=media)\n"
+      },
+      {
+        "id": 3415372,
+        "author": "N/A",
+        "date": "2026-02-28",
+        "markdown": "The issue with the Qwen3.5 models is not hardware but the architecture per se; `Gated DeltaNet` is totally new and vLLM is not yet optimized for the Qwen3.5 series. It will likely take a couple of weeks (if not months) for Qwen3.5 to have the optimization level of GPT-OSS models, and that will be for Blackwell GPUs (not the H100s used in this competition). \n\nErgo, I'd argue that the Qwen3.5 series would be useful for the AIMO4 competition."
+      },
+      {
+        "id": 3415530,
+        "author": "N/A",
+        "date": "2026-03-01",
+        "markdown": "I don't have anything to say except I hope more people chime in because experienced opinions help shape decisions less experienced like myself make and will likely save us quite a few hours too."
+      }
+    ],
+    "urls": [
+      "https://www.kaggle.com/code/shelterw/qwen3-5-w-python",
+      "https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F9785820%2F541d0bb25b5d36269ac2e27ec7bad802%2FEkran%20Resmi%202026-02-28%2022.45.18.png?generation=1772308144898966&alt=media"
+    ]
+  },
+  {
+    "id": 678966,
+    "title": "Leaked DeepSeek-V4-Lite?",
+    "author": "ShelterW",
+    "content_markdown": "",
+    "postDate": "2026-02-26T05:18:04.330561800Z",
+    "comments": [
+      {
+        "id": 3415994,
+        "author": "N/A",
+        "date": "2026-03-01",
+        "markdown": "The name of the 1st place team is now \"just public 44, all is luck\". This is what I expected. But it also shows that this same public notebook could end up winning the first place. Low probability, but it could happen, it all depends on the mood of gpt-oss-120b:)"
+      },
+      {
+        "id": 3414280,
+        "author": "N/A",
+        "date": "2026-02-26",
+        "markdown": "It has to be GPT-OSS, and probably a public notebook, LOL. A new model would require prior trial and failures"
+      },
+      {
+        "id": 3414540,
+        "author": "N/A",
+        "date": "2026-02-27",
+        "markdown": "![](https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F9052057%2Ff716ca324f3b07d4d1824369140e2bad%2Flb2.png?generation=1772167839620867&alt=media)\n\nThis sort of thing happens.   https://www.kaggle.com/competitions/map-charting-student-math-misunderstandings/leaderboard\n\nPlease be careful about throwing around accusations without proof. \n\nWhat I find interesting is that he's submitting now and not later on.  My guess is he's trying to capture the 'first submission' tie breaker rule."
+      },
+      {
+        "id": 3414338,
+        "author": "N/A",
+        "date": "2026-02-26",
+        "markdown": "The timing is curious with the Qwen3.5 models release 2 days ago. \n\nhttps://huggingface.co/collections/Qwen/qwen35 \n\nSpecifically the 27b or the 122b which seem like they could be intentionally challenging gpt-oss-120b"
+      },
+      {
+        "id": 3414262,
+        "author": "N/A",
+        "date": "2026-02-26",
+        "markdown": "Why do you think that happened? He only has a single submission and his profile is basically empty. Don\u2019t you think there could be some other kind of luck involved?"
+      },
+      {
+        "id": 3414282,
+        "author": "N/A",
+        "date": "2026-02-26",
+        "markdown": "Something feels off. Surprisingly the contestant joined a couple days ago. Entered AIMO and submitted right away? Topped LB? Either it has to be someone with a alias account or luck. "
+      }
+    ],
+    "urls": [
+      "https://www.googleapis.com/download/storage/v1/b/kaggle-forum-message-attachments/o/inbox%2F9052057%2Ff716ca324f3b07d4d1824369140e2bad%2Flb2.png?generation=1772167839620867&alt=media",
+      "https://www.kaggle.com/competitions/map-charting-student-math-misunderstandings/leaderboard",
+      "https://huggingface.co/collections/Qwen/qwen35"
+    ]
+  },
+  {
+    "id": 679529,
+    "title": "Issue: Kept getting 0 score during Submission",
+    "author": "varianceofx",
+    "content_markdown": "",
+    "postDate": "2026-03-02T04:03:04.730711400Z",
+    "comments": [
+      {
+        "id": 3416191,
+        "author": "N/A",
+        "date": "2026-03-02",
+        "markdown": ""
+      }
+    ],
+    "urls": []
+  },
+  {
+    "id": 679451,
+    "title": "Question about evaluation API and GPU runtime",
+    "author": "r\u0131za temizel",
+    "content_markdown": "",
+    "postDate": "2026-03-01T11:46:36.737572Z",
+    "comments": [
+      {
+        "id": 3415847,
+        "author": "N/A",
+        "date": "2026-03-01",
+        "markdown": "On the first part, I believe the submission fails if the notebook exceeds the timelimit, though I've never had it happen so I can't say for sure.\nOn the seconds part, you see runtimes over 5 hours because they obfuscate the exact runtimes by up to half an hour."
+      }
+    ],
+    "urls": []
+  },
+  {
+    "id": 679188,
+    "title": "Issue with notebook submission",
+    "author": "Preet",
+    "content_markdown": "",
+    "postDate": "2026-02-27T19:46:56.468478400Z",
+    "comments": [
+      {
+        "id": 3414998,
+        "author": "N/A",
+        "date": "2026-02-28",
+        "markdown": "Hii buddy, this usually happens because the submission environment is different from your local run.\n\nA few things you have to check:\n\n\ud83d\udd39 Make sure predict() is actually being called during submission (add simple print() logs to confirm).\n\ud83d\udd39 Check that the KAGGLE_IS_COMPETITION_RERUN condition is working correctly and serve() is running.\n\ud83d\udd39 Be careful with asynchronous server start (Popen) \u2014 the server might not be fully ready when inference starts.\n\ud83d\udd39 Load your model inside predict(), not before serve().\n\nAdding debug logs is the best way to find where it stops. Hope this helps! \ud83d\ude80"
+      }
+    ],
+    "urls": []
+  },
+  {
+    "id": 678800,
+    "title": "OS Page Cache Loading 7x Slower Than Usual \u2014 Causing Submission Errors?",
+    "author": "Van-Phuc Huynh",
+    "content_markdown": "",
+    "postDate": "2026-02-25T00:31:06.693259500Z",
+    "comments": [
+      {
+        "id": 3413740,
+        "author": "N/A",
+        "date": "2026-02-25",
+        "markdown": "I also encountered a very slow model loading issue around 0:00 UCT (~ 4 hours ago), which led to the submission timeout with \"Notebook Inference Server Never Started\" error.\n\nFor the past few hours, the model loading on kaggle notebook (w/ H100) has been super slow, but now it seems to be working as usual. Not sure if it is just a transient issue or due to some resource contention."
+      },
+      {
+        "id": 3413681,
+        "author": "N/A",
+        "date": "2026-02-25",
+        "markdown": "Unfortunately, I encountered a \u201cNotebook Inference Server Never Started\u201d error and lost one submission today because of it. What happened?"
+      },
+      {
+        "id": 3413861,
+        "author": "N/A",
+        "date": "2026-02-25",
+        "markdown": "It seems to have been resolved now right? My submission is running "
+      },
+      {
+        "id": 3413858,
+        "author": "N/A",
+        "date": "2026-02-25",
+        "markdown": "hey @ryanholbrook, @herbison can you please tell what is the problem , and resolve it if possible."
+      }
+    ],
+    "urls": []
+  },
+  {
+    "id": 676019,
+    "title": "Inference engines other than vllm",
+    "author": "Darren Amadeus Martin",
+    "content_markdown": "",
+    "postDate": "2026-02-23T09:08:19.244722600Z",
+    "comments": [
+      {
+        "id": 3410664,
+        "author": "N/A",
+        "date": "2026-02-23",
+        "markdown": "i think air LLM may be a good choice"
+      },
+      {
+        "id": 3413891,
+        "author": "N/A",
+        "date": "2026-02-25",
+        "markdown": "I also tried using SGLang, but the inference was a bit slower. I modified the code based on the public notebook, using the `/generate` endpoint to get token_ids."
+      }
+    ],
+    "urls": []
+  }
+]

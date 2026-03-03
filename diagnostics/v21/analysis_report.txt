@@ -1,0 +1,230 @@
+==============================================================================================================
+  V21 DIAGNOSTIC ANALYSIS — 50 problems
+  Score: 49/50
+  Categories: FAILED=1 | HARD=3 | MODERATE=10 | CLEAN=36
+==============================================================================================================
+
+==============================================================================================================
+  DETAILED: FAILED + HARD PROBLEMS (struggle >= 30)
+==============================================================================================================
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  [FAILED] #1 | id=86e8e5 | tier=REFERENCE PROBLEMS | struggle=210
+  Answer: predicted=41754 expected=8687 | WRONG
+  Time: 460.8s wall (min=152.0s max=460.8s avg=308.6s)
+  Attempts: 7/8 answered | 1 correct | 6 wrong | 1 none (excess: 1)
+  Code: 225 calls | 24 errors (10.7% error rate) | 226,337 tokens
+  Voting: {'41754': 2, '39591': 1, '13657': 1, '8687': 1, '85452': 1, '84955': 1}
+    max_votes=2 | margin=1 | unique_answers=6
+  Entropy: 0.568 | Early stop: False
+  Problem: Let $n \geq 6$ be a positive integer. We call a positive integer $n$-Norwegian if it has three distinct positive divisors whose sum is equal to $n$. Let $f(n)$ denote the smallest $n$-Norwegian positive integer. Let $M=3^{2025!}$ and for a non-negative integer $c$ define $g(c)=\frac{1}{2025!}\left\l...
+  STRUGGLE FACTORS: WRONG FINAL ANSWER | 6 wrong attempts | 6 unique answers (scattered) | no early stop (all 8 ran) | weak consensus (2 votes) | razor margin (1) | slow (461s) | token-heavy (226,337) | 1 excess None
+
+  Attempt breakdown:
+    [--] #1: ans=      None ent=0.255 code= 36 err=5 tok= 47677 time= 460.8s
+    [OK] #2: ans=      8687 ent=0.587 code= 28 err=2 tok= 24392 time= 242.5s
+    [XX] #3: ans=     41754 ent=0.582 code= 51 err=4 tok= 30820 time= 356.2s
+    [XX] #4: ans=     39591 ent=0.677 code=  7 err=1 tok= 15205 time= 152.0s
+    [XX] #5: ans=     85452 ent=0.583 code= 20 err=4 tok= 23844 time= 281.5s
+    [XX] #6: ans=     13657 ent=0.596 code= 18 err=1 tok= 17982 time= 219.3s
+    [XX] #7: ans=     41754 ent=0.615 code= 39 err=5 tok= 28249 time= 345.7s
+    [XX] #8: ans=     84955 ent=0.652 code= 26 err=2 tok= 38168 time= 410.8s
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  [HARD] #2 | id=dd7f5e | tier=REFERENCE PROBLEMS | struggle=53
+  Answer: predicted=160 expected=160 | CORRECT
+  Time: 264.4s wall (min=89.8s max=264.4s avg=170.9s)
+  Attempts: 8/8 answered | 4 correct | 4 wrong | 0 none (excess: 0)
+  Code: 179 calls | 16 errors (8.9% error rate) | 118,810 tokens
+  Voting: {'160': 4, '266': 2, '114': 1, '44': 1}
+    max_votes=4 | margin=2 | unique_answers=4
+  Entropy: 0.656 | Early stop: True
+  Problem: Let $\mathcal{F}$ be the set of functions $\alpha \colon \mathbb{Z}\to \mathbb{Z}$ for which there are only finitely many $n \in \mathbb{Z}$ such that $\alpha(n) \neq 0$. For two functions $\alpha$ and $\beta$ in $\mathcal{F}$, define their product $\alpha\star\beta$ to be $\sum\limits_{n\in\mathbb{...
+  STRUGGLE FACTORS: 4 wrong attempts | 4 unique answers (scattered) | slow (264s) | token-heavy (118,810)
+
+  Attempt breakdown:
+    [OK] #1: ans=       160 ent=0.589 code= 33 err=2 tok= 21680 time= 186.8s
+    [OK] #2: ans=       160 ent=0.602 code= 67 err=1 tok= 21258 time= 264.4s
+    [XX] #3: ans=       266 ent=0.671 code= 13 err=2 tok= 11025 time= 106.8s
+    [XX] #4: ans=        44 ent=0.629 code= 24 err=4 tok= 15250 time= 199.3s
+    [OK] #5: ans=       160 ent=0.708 code= 10 err=3 tok= 12364 time= 176.2s
+    [XX] #6: ans=       266 ent=0.698 code=  8 err=0 tok= 10344 time=  99.6s
+    [OK] #7: ans=       160 ent=0.651 code= 16 err=4 tok= 17483 time= 244.2s
+    [XX] #8: ans=       114 ent=0.698 code=  8 err=0 tok=  9406 time=  89.8s
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  [HARD] #3 | id=b4ec47 | tier=REFERENCE PROBLEMS | struggle=48
+  Answer: predicted=315 expected=315 | CORRECT
+  Time: 390.5s wall (min=83.1s max=390.5s avg=217.9s)
+  Attempts: 7/8 answered | 4 correct | 3 wrong | 1 none (excess: 0)
+  Code: 290 calls | 19 errors (6.6% error rate) | 164,743 tokens
+  Voting: {'315': 4, '135': 1, '39': 1, '27': 1}
+    max_votes=4 | margin=3 | unique_answers=4
+  Entropy: 0.668 | Early stop: True
+  Problem: Find the number of rectangles that can be formed inside a fixed regular dodecagon ( $12$ -gon) where each side of the rectangle lies on either a side or a diagonal of the dodecagon. The diagram below shows three of those rectangles. [asy] unitsize(0.6 inch); for(int i=0; i<360; i+=30) { dot(dir(i), ...
+  STRUGGLE FACTORS: 3 wrong attempts | 4 unique answers (scattered) | slow (390s) | token-heavy (164,743)
+
+  Attempt breakdown:
+    [OK] #1: ans=       315 ent=0.553 code= 38 err=8 tok= 24472 time= 276.5s
+    [XX] #2: ans=        27 ent=0.728 code= 22 err=1 tok= 20779 time= 190.9s
+    [--] #3: ans=      None ent=0.608 code= 83 err=4 tok= 35947 time= 390.5s
+    [OK] #4: ans=       315 ent=0.698 code= 20 err=0 tok= 10515 time= 103.3s
+    [OK] #5: ans=       315 ent=0.627 code= 20 err=0 tok= 14543 time= 143.9s
+    [XX] #6: ans=       135 ent=0.757 code=  0 err=0 tok=  8654 time=  83.1s
+    [OK] #7: ans=       315 ent=0.628 code= 78 err=5 tok= 33626 time= 389.9s
+    [XX] #8: ans=        39 ent=0.745 code= 29 err=1 tok= 16207 time= 164.9s
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  [HARD] #4 | id=641659 | tier=REFERENCE PROBLEMS | struggle=38
+  Answer: predicted=57447 expected=57447 | CORRECT
+  Time: 564.2s wall (min=154.9s max=564.2s avg=418.5s)
+  Attempts: 5/8 answered | 4 correct | 1 wrong | 3 none (excess: 0)
+  Code: 366 calls | 71 errors (19.4% error rate) | 272,841 tokens
+  Voting: {'57447': 4, '0': 1}
+    max_votes=4 | margin=3 | unique_answers=2
+  Entropy: 0.413 | Early stop: True
+  Problem: Let $ABC$ be a triangle with $AB \neq AC$, circumcircle $\Omega$, and incircle $\omega$. Let the contact points of $\omega$ with $BC$, $CA$, and $AB$ be $D$, $E$, and $F$, respectively. Let the circumcircle of $AFE$ meet $\Omega$ at $K$ and let the reflection of $K$ in $EF$ be $K'$. Let $N$ denote t...
+  STRUGGLE FACTORS: 1 wrong attempt | high error rate (19%) | slow (564s) | token-heavy (272,841)
+
+  Attempt breakdown:
+    [--] #1: ans=      None ent=0.370 code= 84 err=24 tok= 51671 time= 564.2s
+    [XX] #2: ans=         0 ent=0.449 code=  0 err=0 tok= 49541 time= 476.8s
+    [OK] #3: ans=     57447 ent=0.499 code= 71 err=10 tok= 37140 time= 561.9s
+    [OK] #4: ans=     57447 ent=0.474 code= 25 err=3 tok= 12500 time= 154.9s
+    [--] #5: ans=      None ent=0.379 code= 82 err=10 tok= 42620 time= 562.2s
+    [OK] #6: ans=     57447 ent=0.434 code= 19 err=3 tok= 17240 time= 240.1s
+    [--] #7: ans=      None ent=0.361 code= 69 err=15 tok= 43203 time= 562.2s
+    [OK] #8: ans=     57447 ent=0.341 code= 16 err=6 tok= 18926 time= 226.0s
+
+
+==============================================================================================================
+  MODERATE PROBLEMS (10 <= struggle < 30) — 10 problems
+==============================================================================================================
+  424e18 scr= 20 |  136.7s | 6/8 ans | votes={'21818': 4, '62140': 2} | wrng=2, err=12%, slow=137s, tok=91,422
+  269012 scr= 13 |  228.7s | 4/8 ans | votes={'751': 4} | slow=229s, tok=158,439
+  bae374 scr= 10 |    3.3s | 4/8 ans | votes={'625': 4} | err=75%
+  2677ce scr= 10 |   10.1s | 5/8 ans | votes={'204': 5} | err=50%
+  34fe9c scr= 10 |    5.9s | 4/8 ans | votes={'4': 4} | err=80%
+  8697cd scr= 10 |   28.3s | 4/8 ans | votes={'4': 4} | err=33%
+  45ee22 scr= 10 |    8.8s | 4/8 ans | votes={'10': 4} | err=50%
+  932759 scr= 10 |    7.9s | 5/8 ans | votes={'8': 5} | err=33%
+  f231de scr= 10 |   13.6s | 4/8 ans | votes={'294': 4} | err=38%
+  88178a scr= 10 |   11.8s | 4/8 ans | votes={'3': 4} | err=50%
+
+
+==============================================================================================================
+  FULL RANKING (sorted by struggle score)
+==============================================================================================================
+  # ID         Cat       Scr    Time   A/T Wrng Uniq MaxV Mrgn Errs  ErrR   Tokens  ES
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  1 86e8e5     FAILED    210  460.8s  7/8     6    6    2    1   24  11%   226337   N
+  2 dd7f5e     HARD       53  264.4s  8/8     4    4    4    2   16   9%   118810   Y
+  3 b4ec47     HARD       48  390.5s  7/8     3    4    4    3   19   7%   164743   Y
+  4 641659     HARD       38  564.2s  5/8     1    2    4    3   71  19%   272841   Y
+  5 424e18     MODERATE   20  136.7s  6/8     2    2    4    2    5  12%    91422   Y
+  6 269012     MODERATE   13  228.7s  4/8     0    1    4    4    5   7%   158439   Y
+  7 bae374     MODERATE   10    3.3s  4/8     0    1    4    4    3  75%     1844   Y
+  8 2677ce     MODERATE   10   10.1s  5/8     0    1    5    5    2  50%     7460   Y
+  9 34fe9c     MODERATE   10    5.9s  4/8     0    1    4    4    4  80%     3533   Y
+ 10 8697cd     MODERATE   10   28.3s  4/8     0    1    4    4    1  33%    22007   Y
+ 11 45ee22     MODERATE   10    8.8s  4/8     0    1    4    4    2  50%     6162   Y
+ 12 932759     MODERATE   10    7.9s  5/8     0    1    5    5    1  33%     5384   Y
+ 13 f231de     MODERATE   10   13.6s  4/8     0    1    4    4    3  38%     9946   Y
+ 14 88178a     MODERATE   10   11.8s  4/8     0    1    4    4    2  50%     7923   Y
+ 15 92ba6a     CLEAN       5   51.5s  4/8     0    1    4    4    2  15%    14685   Y
+ 16 a295e9     CLEAN       5  114.6s  4/8     0    1    4    4    0   0%    90786   Y
+ 17 26de63     CLEAN       5   44.0s  4/8     0    1    4    4    5  18%    34358   Y
+ 18 35ecd8     CLEAN       5  187.1s  4/8     0    1    4    4    7   9%    94420   Y
+ 19 6837b1     CLEAN       5  112.6s  4/8     0    1    4    4    3   4%    84613   Y
+ 20 e7ed61     CLEAN       5    9.0s  5/8     0    1    5    5    2  25%     6518   Y
+ 21 74252c     CLEAN       5   16.3s  4/8     0    1    4    4    2  22%    12476   Y
+ 22 0a27ca     CLEAN       5    9.9s  4/8     0    1    4    4    2  17%     6910   Y
+ 23 9c1c5f     CLEAN       0   85.8s  4/8     0    1    4    4    5   8%    52771   Y
+ 24 0e644e     CLEAN       0   91.6s  4/8     0    1    4    4    3   4%    70027   Y
+ 25 42d360     CLEAN       0   64.6s  4/8     0    1    4    4    4   9%    33099   Y
+ 26 f8b3d5     CLEAN       0    7.2s  5/8     0    1    5    5    0   0%     5552   Y
+ 27 c854cd     CLEAN       0   64.1s  4/8     0    1    4    4    1   2%    42226   Y
+ 28 42ee2a     CLEAN       0   21.2s  4/8     0    1    4    4    3  14%    15291   Y
+ 29 c8adf3     CLEAN       0   90.6s  4/8     0    1    4    4    4   4%    49161   Y
+ 30 83ce64     CLEAN       0   26.8s  4/8     0    1    4    4    0   0%    19787   Y
+ 31 6618d2     CLEAN       0   73.4s  4/8     0    1    4    4    0   0%    54192   Y
+ 32 f9333c     CLEAN       0   25.6s  4/8     0    1    4    4    0   0%    19409   Y
+ 33 e1d491     CLEAN       0   20.1s  4/8     0    1    4    4    0   0%    14654   Y
+ 34 354f86     CLEAN       0   42.3s  4/8     0    1    4    4    1   1%    32506   Y
+ 35 737d44     CLEAN       0  115.4s  4/8     0    1    4    4   10  15%    62478   Y
+ 36 471086     CLEAN       0   88.4s  4/8     0    1    4    4    4   5%    55471   Y
+ 37 37f837     CLEAN       0    6.8s  4/8     0    1    4    4    0   0%     4608   Y
+ 38 504b93     CLEAN       0   77.2s  4/8     0    1    4    4    1   3%    60261   Y
+ 39 f84c73     CLEAN       0   62.5s  4/8     0    1    4    4    4   7%    46049   Y
+ 40 af5cc9     CLEAN       0   39.1s  4/8     0    1    4    4    2   4%    28446   Y
+ 41 69dcfd     CLEAN       0   27.5s  4/8     0    1    4    4    1   5%    20944   Y
+ 42 0fbf22     CLEAN       0    9.6s  4/8     0    1    4    4    1   5%     6439   Y
+ 43 02af89     CLEAN       0    2.9s  5/8     0    1    5    5    1 100%     1608   Y
+ 44 159758     CLEAN       0    5.1s  5/8     0    1    5    5    0   0%     3188   Y
+ 45 f50235     CLEAN       0    4.3s  6/8     0    1    6    6    0   0%     3006   Y
+ 46 476119     CLEAN       0   19.7s  5/8     0    1    5    5    1   3%    14794   Y
+ 47 4fef3c     CLEAN       0   27.9s  4/8     0    1    4    4    2  10%    21417   Y
+ 48 2b836d     CLEAN       0   28.5s  4/8     0    1    4    4    0   0%    21862   Y
+ 49 7b14f4     CLEAN       0   16.0s  4/8     0    1    4    4    1   4%    12043   Y
+ 50 62c41a     CLEAN       0    4.9s  4/8     0    1    4    4    0   0%     2918   Y
+
+
+==============================================================================================================
+  AGGREGATE STATISTICS
+==============================================================================================================
+
+  REFERENCE PROBLEMS:
+    Score: 49/50 | Avg time: 76.6s | Avg struggle: 10.0
+    Total tokens: 2,215,824 | Total errors: 230
+
+  GLOBAL ATTEMPT STATS (across all 400 attempts):
+    Extraction success: 222/400 (55.5%)
+    None (extraction fail): 178/400 (44.5%)
+    Correct answers: 206/400 (51.5%)
+    Wrong answers: 16/400 (4.0%)
+    Avg tokens/attempt: 5,540 | Avg code/attempt: 6.2 | Avg errors/attempt: 0.57
+
+
+==============================================================================================================
+  RISK ANALYSIS — Problems That Could Flip on Real Test
+==============================================================================================================
+  (Correct but fragile — could go wrong on a different run)
+
+  dd7f5e: votes={'160': 4, '266': 2, '114': 1, '44': 1}
+    wrong=4 | unique_ans=4 | time=264s | struggle=53
+
+  b4ec47: votes={'315': 4, '135': 1, '39': 1, '27': 1}
+    wrong=3 | unique_ans=4 | time=390s | struggle=48
+
+  424e18: votes={'21818': 4, '62140': 2}
+    wrong=2 | unique_ans=2 | time=137s | struggle=20
+
+
+==============================================================================================================
+  KEY INSIGHTS
+==============================================================================================================
+
+  1. EXTRACTION FAILURE RATE: 44.5% of attempts return None
+     This is the #1 bottleneck — nearly half of compute is wasted.
+     If we could reduce None rate from 44% to 20%, effective attempts per problem doubles.
+
+  2. CODE ERRORS: 15 problems have >15% error rate
+     02af89: 1 errors / 0 calls (100%)
+     34fe9c: 4 errors / 5 calls (80%)
+     bae374: 3 errors / 4 calls (75%)
+     2677ce: 2 errors / 4 calls (50%)
+     45ee22: 2 errors / 4 calls (50%)
+
+  3. SLOW PROBLEMS: 5 problems >= 200s, consuming 1909s / 3829s total (50%)
+     641659: 564s | 272,841 tok | 366 code calls
+     86e8e5: 461s | 226,337 tok | 225 code calls
+     b4ec47: 390s | 164,743 tok | 290 code calls
+     dd7f5e: 264s | 118,810 tok | 179 code calls
+     269012: 229s | 158,439 tok | 73 code calls
+
+  4. TOKEN HOGS (top 5):
+     641659: 272,841 tokens | 564s | category=HARD
+     86e8e5: 226,337 tokens | 461s | category=FAILED
+     b4ec47: 164,743 tokens | 390s | category=HARD
+     269012: 158,439 tokens | 229s | category=MODERATE
+     dd7f5e: 118,810 tokens | 264s | category=HARD

@@ -129,6 +129,30 @@ python scripts/evaluate.py output/run1.csv data/test_fixed_50_answers.csv output
 - **H100 queue**: Multiple versions can run simultaneously but may compete for GPU time.
   Cancel old versions from UI if they're wasting resources.
 
+## Scraping Kaggle Competition Discussions
+
+Kaggle has NO official API for discussions. The approach that works:
+
+1. **Get session cookies**: `GET` the competition discussion page to obtain `XSRF-TOKEN` cookie
+2. **List all topics**: `POST` to `https://www.kaggle.com/api/i/discussions.DiscussionsService/GetTopicListByForumId`
+   - Body: `{"forumId": <FORUM_ID>, "pageSize": 100}`
+   - Header: `X-XSRF-TOKEN: <token from cookie>`
+3. **Get topic messages**: `POST` to `https://www.kaggle.com/api/i/discussions.DiscussionsService/GetForumTopicById`
+   - Body: `{"forumTopicId": <TOPIC_ID>, "includeComments": true}`
+   - Returns: `rawMarkdown` for OP + all comments
+4. **Forum IDs**: Found via `GetForum` endpoint or by intercepting browser network calls
+
+**AIMO3 Forum ID**: `9129558` (competition ID: 118448)
+**Competition slug**: `ai-mathematical-olympiad-progress-prize-3`
+
+**What doesn't work**:
+- Meta Kaggle dataset: AIMO3 topics too recent (max ID 679507, AIMO3 starts at 679559+)
+- Direct Kaggle API (`/api/v1/...`): No discussion endpoints
+- Basic auth on internal endpoints: Returns 400 (needs session cookies)
+- Plain HTTP fetch: JS-rendered pages, only get 5KB shell
+
+**Data stored at**: `data/discussions/all_discussions.json` and `data/discussions/all_discussions.md`
+
 ## GitHub Actions (CAUTION)
 
 - `.github/workflows/kaggle-push.yml` auto-pushes to Kaggle on any push to `main`
@@ -137,6 +161,78 @@ python scripts/evaluate.py output/run1.csv data/test_fixed_50_answers.csv output
 - To push code without triggering: either disable workflow first, or don't change
   notebooks/ files in the commit
 - To disable: change `on: push:` to `on: workflow_dispatch:` in the YAML
+
+## Diagnostic Log Analysis
+
+### Parser Scripts
+```bash
+# Parse diagnostic.log → struggle scores, risk analysis, key insights
+python3 scripts/parse_diagnostics.py
+
+# Analyze code errors → root causes, patterns, per-problem breakdown
+python3 scripts/analyze_errors.py
+```
+- Input: `output/v21/diagnostic.log` (167K lines, 10MB)
+- Diagnostics output: `diagnostics/v21/` (analysis_report.txt, error_analysis.md, all_problems.json, hard_problems.json, error_analysis.json)
+- Categories: FAILED (wrong answer) → HARD (struggle≥30) → MODERATE (10-29) → CLEAN (<10)
+- Error analysis: `diagnostics/v21/error_analysis.md` has full root cause taxonomy
+
+### Log Format (diagnostic.log)
+Structure: `~~~~~~` separators split problem blocks in pairs (ID block + content block).
+```
+======================================================================
+  TIER_NAME (N problems)
+======================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  [1/N] Problem id=XXXXXX
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Problem: <text>
+Budget: 900.00 seconds | Deadline: <unix_ts>
+Final Answer: <N>
+
+  >> CORRECT  (or  >> *** WRONG ***)
+     Predicted: X | Expected: Y | Wall time: Zs
+     Attempts answered: A/B | Code calls: C | Errors: E | Tokens: T
+     Avg entropy: X | Early stop: Yes|No (threshold=4)
+     Attempt times: min=Xs  max=Xs  avg=Xs
+     Votes: [answer: N votes | ...]
+
+     ATTEMPT K  |  answer=X  entropy=Y  code_calls=Z  errors=E  tokens=T  time=Xs << STATUS
+     [Turn N]
+     [Reasoning] (N chars): ...
+     [Code]: ...
+     [Output]: ...
+```
+
+### Quick grep patterns for the log
+```bash
+# Summary lines only (one per problem)
+grep -E 'Predicted:.*Expected:' output/v21/diagnostic.log
+
+# Wrong answers only
+grep -E '\*\*\* WRONG' output/v21/diagnostic.log
+
+# Tier summaries
+grep -E 'Score:|Total time:' output/v21/diagnostic.log
+
+# Final score
+grep -E 'FINAL SUMMARY' -A3 output/v21/diagnostic.log
+
+# All attempt lines (compact view)
+grep 'ATTEMPT.*<<' output/v21/diagnostic.log
+
+# High error attempts
+grep -E 'errors=[5-9][0-9]*|errors=[1-9][0-9]+' output/v21/diagnostic.log
+```
+
+### Key metrics from v21 analysis
+- **44.5% None rate**: Almost half of all attempts fail answer extraction. #1 bottleneck.
+- **Normal happy path**: 4/8 answered, 4 None, early_stop=Yes — this is NOT struggling.
+- **Real struggle indicators**: wrong_count>0, unique_answers≥3, no early stop, wall_time>200s
+- **5 problems ≥200s consume 50% of total time** (1909s / 3829s)
+- **Error rate misleading for small N**: 1/1 = 100% but 1 error is nothing. Use absolute counts.
 
 ## Git
 

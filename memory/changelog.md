@@ -2,6 +2,24 @@
 
 All key changes to the AIMO3 project. Most recent first.
 
+## 2026-03-03
+
+### v22 — Temperature Diversity + Retry on None + Harder Tests
+- **early_stop 4→3**: Faster convergence on easy problems, frees budget for hard ones
+- **Temperature schedule**: `[0.3, 0.4, 0.5, 0.5, 0.6, 0.7, 0.8, 0.9]` per attempt (was flat 0.5)
+- **Retry on None**: If all 8 attempts return None, retry with +0.2 temp bump and remaining budget
+- **Hard benchmark Level 2**: Replaced hand-picked 10 diagnostic problems with 10 random from 28 IMO-AnswerBench problems (7/domain: combinatorics, geometry, number_theory, algebra)
+- **Dataset updated**: Uploaded `hard_benchmark_30.csv` to `jxm222/aimo3-test-data`
+- Pushed as Kaggle kernel v22
+
+### v21 Results — 49/50 (98%)
+- Reference: 9/10 (only 86e8e5 wrong)
+- Hard diagnostic: 10/10
+- Random: 10/10
+- Comprehensive: 20/20
+- Total time: 63.8 min
+- Deep analysis of 86e8e5 failure: correct answer got 1 vote, lost to wrong answer with 2 votes
+
 ## 2026-03-02
 
 ### v19 Reference Results — 9/10 (90%)

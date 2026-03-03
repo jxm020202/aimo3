@@ -39,37 +39,46 @@
 - **1 submission/day**. Model cutoff March 15, 2026.
 - **Kaggle**: jxm222 | **GitHub**: jxm020202/aimo3 (private)
 
-## Current State (March 2, 2026 night)
+## Current State (March 2, 2026 night — Session 2)
 
-- **v15 SUBMITTED** to competition — first entry, awaiting re-run results
-- **v19 COMPLETE**: 9/10 reference problems correct (90%)! See `reference_problems.md` for full breakdown
-- **New logging version pushed to GitHub** but NOT yet pushed to Kaggle
-- **Cell-13**: Full conversation logging (every turn, every code execution, no truncation)
-- **Cell-17**: Max diagnostic display (turn-by-turn flow, libraries, GPU stats, all attempts)
+- **v15 SUBMITTED**: Scored 38/50 (broken extraction, no `break`)
+- **v20 COMPLETE**: 19/20 on test (old extraction, early_stop=4)
+- **v21 RUNNING on Kaggle**: All fixes applied. TEST_LEVEL=4 (~53 problems + double-run retry)
+- **Root cause of 38/50**: Missing `break` in answer extraction → 41% None rate → fragile voting
+- **v21 restores baseline extraction** (`break` + 32-chunk window) + prompt improvements
 - **GitHub Actions auto-deploy DISABLED** (workflow_dispatch). Safe to push.
 
 ## Critical Insights
 
-1. **We scored 9/10 on reference problems** — matching Grok-4 and Gemini 2.5 Pro benchmarks. The PDF said GPT-OSS-120B only gets 4/10 at pass@3, but TIR + 8-attempt voting gets 9/10.
-2. **TIR (code execution) is the secret sauce** — problems 5-10 that were "unsolvable" by GPT-OSS-120B in pure reasoning mode were ALL solved with code sandbox access.
-3. **Only failure: Problem 4** (86e8e5, Norwegian numbers with M=3^{2025!}). Got 23 instead of 8687. Need detailed logs to understand why.
-4. **Most hard problems solved in 100-270s** — fast! Not burning full 900s. Only P4 (wrong) and P3/P9 took longer.
-5. **Solver code is functionally identical to baseline** — our diffs (early_stop 5, deterministic tie-breaking) don't explain the 9/10 score. The baseline architecture itself is this good.
-6. **Next priority**: Push new logging version to Kaggle, re-run reference problems to get full diagnostics on P4 failure and understand HOW problems 5-10 were solved.
+1. **Competition is about variance reduction, not capability** — host confirmed pass@100 solves nearly everything. The gap is reliable answer extraction within 5 hours. [from discussions]
+2. **GPT-OSS-120B is MoE with ~5.1B active params** — "120B" is misleading. This is why it fits in 5 hours. Dense replacements will be slower. [from discussions]
+3. **`break` in answer extraction is critical** — without it, 41% of attempts return None. This was the root cause of 38/50.
+4. **TIR (code execution) is the secret sauce** — hard problems only solvable with code sandbox.
+5. **Leading teams use SymPy for deterministic arithmetic** — decoupling reasoning from execution. [from discussions]
+6. **Reference set is unreliable** — 8/10 ref → 6/50 public LB reported. Use 347-problem community benchmark instead. [from discussions]
+7. **Current #1 is the public 44/50 notebook** — team "just public 44, all is luck". Winning is partly stochastic. [from discussions]
+8. **Qwen3.5-35B-A3B** is most promising model upgrade but vLLM tool-calling broken (Gated DeltaNet arch). AIMO4 play. [from discussions]
 
 ## Memory Files — What's Where
 
 | File | Contains | Read when... |
 |------|----------|-------------|
-| `handover.md` | **START HERE for new sessions.** Where we stopped, open questions, exact diffs from baseline, what to investigate | Starting a new session |
+| `handover.md` | **START HERE for new sessions.** Where we stopped, v21 changes, next steps | Starting a new session |
 | `competition.md` | Rules, constraints, submission format, evaluation, prizes, timeline | Setting up submissions, checking rules |
 | `models.md` | Model landscape, benchmarks, what fits on H100 | Choosing/switching models |
 | `solutions.md` | Analyzed solutions — baseline 44/50, Numina, NemoSkills, underdogs | Understanding what's been tried |
 | `strategies.md` | Improvement techniques, research findings, **sandbox library research** | Planning next experiment |
 | `history.md` | Past AIMO1/2 results, leaderboards, patterns | Competition dynamics |
-| `tools.md` | **CLI commands, Kaggle API, workflow, gotchas** | Before any push/deploy/CLI work |
+| `tools.md` | **CLI commands, Kaggle API, discussion scraping, workflow, gotchas** | Before any push/deploy/CLI work |
 | `reference_problems.md` | 10 reference problems with answers, difficulty, model scores | Testing, validating approaches |
 | `changelog.md` | Every change to the project, most recent first | What's been done, avoiding duplicates |
+
+### Discussion Data (in `data/discussions/`)
+| File | Contains |
+|------|----------|
+| `all_discussions.json` | Raw API data — 20 threads, 118 comments, all markdown |
+| `all_discussions.md` | Readable markdown of all discussion content |
+| `competitive_intel.md` | **Structured analysis** — strategies, model info, host announcements, key URLs |
 
 ## Project Structure
 

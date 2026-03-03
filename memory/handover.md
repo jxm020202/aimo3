@@ -1,63 +1,67 @@
-# Handover Document — March 2, 2026 (Session 2)
+# Handover Document — March 3, 2026 (Session 3)
 
 ## Where We Stopped
 
-v21 pushed to Kaggle. All prompt improvements applied, answer extraction restored to baseline behavior. Waiting for v21 test run results (~5 hours).
+**v22 pushed to Kaggle.** Running now. v21 scored 49/50 (98%). v22 applies 4 improvements.
 
 ## Current Kaggle State
 
-- **v15**: Submitted to competition → **scored 38/50** (double-run scoring)
-- **v20**: Test run complete → **19/20** (9/10 ref + 10/10 fixed). Ran with early_stop=4 but old extraction.
-- **v21**: Just pushed. Has all improvements below. Running TEST_LEVEL=4 (~50 problems + double-run retry).
+- **v15**: Submitted to competition → **scored 38/50** (broken extraction, no `break`)
+- **v21**: Test run complete → **49/50** (98%). Breakdown:
+  - Reference: 9/10 (P4 86e8e5 wrong — same failure as v19)
+  - Hard diagnostic: 10/10
+  - Random: 10/10
+  - Comprehensive: 20/20
+  - Total time: 63.8 min (well under 5h limit)
+- **v22**: Pushed, running. Changes below.
 
-## Root Cause: Why v15 Scored 38 (not 44)
+## v22 Changes (from v21)
 
-The baseline has `break` in answer extraction. We removed it. This was the killer:
+| Change | Cell | What |
+|--------|------|------|
+| early_stop 4→3 | 8 | Faster convergence on easy problems, saves budget for hard ones |
+| temp_schedule | 8 | `[0.3, 0.4, 0.5, 0.5, 0.6, 0.7, 0.8, 0.9]` per attempt |
+| Per-attempt temperature | 13 | `_process_attempt` accepts `temperature` param, used in completions.create |
+| Retry on None | 13 | If all 8 attempts return None, retry with +0.2 temp and remaining budget |
+| Hard benchmark Level 2 | 17 | Replaced hand-picked 10 with 10 random from 28 IMO-AnswerBench problems |
+| hard_benchmark_30.csv | dataset | Uploaded to `jxm222/aimo3-test-data` (28 problems, 7/domain) |
 
-**Baseline (44/50):** When `\boxed{N}` is found during streaming, `break` stops generation immediately. The 32-chunk search window never matters because the answer is always in the latest chunk.
+## The One Failure: 86e8e5
 
-**Our v15 (38/50):** No `break` → model keeps generating "let me verify..." → 200+ more tokens → later `}` triggers rescan of last 32 chunks → `\boxed{N}` has scrolled out → returns None. Combined with `early_stop=5` (need 5/8 to agree, but only ~5 produce answers) → fragile voting → 38/50.
+**Problem**: Norwegian numbers with M=3^{2025!}. Requires finding smallest divisors of `3^{2025!} + d` for various d values.
 
-**v21 fix:** Restored baseline exact: `text_chunks[-self.cfg.search_tokens:]` + `break`. Proven at 44/50.
+**What happened in v21**: Attempt 2 got correct answer (8687) but lost vote to 41754 (2 votes vs 1). All 8 attempts produced wildly different answers. The model's math is correct but it runs out of compute searching for divisors.
 
-## v21 Changes (All Additive Over Baseline)
+**v22 might help**: Temperature diversity could let one low-temp attempt converge more reliably. Retry on None helps if the problem is extraction failure, not wrong answer.
+
+## v21 Changes (from baseline, still in v22)
 
 | Change | Cell | What |
 |--------|------|------|
 | Answer extraction | 13 | **Restored to baseline** (32-chunk window + break) |
-| early_stop = 4 | 8 | **Matches baseline** |
-| Efficiency prompt | 8 | Don't overthink trivial problems (saves tokens on easy Qs) |
-| Code Robustness Rules | 8 | Self-contained cells, sympy bloat guard, geometry→numpy, dedup |
+| Efficiency prompt | 8 | Don't overthink trivial problems |
+| Code Robustness Rules | 8 | Self-contained cells, sympy bloat guard, geometry→numpy |
 | Bigint hint | 8 | `pow(base, exp, mod)` for large exponents |
 | jupyter_timeout 6→30 | 8 | Let brute-force approaches finish |
 | Sandbox preloads | 11 | +functools, +fractions |
-| TEST_LEVEL=4 | 17 | All tiers: 10 ref + 10 hard diagnostic + 10 random + ~23 comprehensive |
-| TeeLogger | 17 | Persistent `/kaggle/working/diagnostic.log` |
-| Hard FIXED_10_IDS | 17 | 1 easy, 1 medium, 8 hard across diverse domains |
-| Double-run retry | 17 | Re-runs failures, simulates competition double-run scoring |
+| TEST_LEVEL=4 | 17 | 10 ref + 10 hard(IMO) + 10 random + remaining comprehensive |
+| TeeLogger | 17 | Persistent diagnostic.log |
 
-## Key Insights from This Session
+## Important Files
 
-1. **`break` in extraction is critical** — without it, the 32-chunk window bug fires and 41% of attempts return None
-2. **Pass@n graph from competition organizers**: Model B (GPT-OSS-120B) at pass@8 ≈ 43-44, pass@20 ≈ 47-48, pass@100 ≈ 49-50. Almost every problem is solvable — it's a consistency/variance game.
-3. **Double-run scoring** doesn't change expected score (E[double] = E[single]) but increases variance. Non-determinism hurts.
-4. **GPU is near-optimal**: vLLM handles ~6 concurrent full-context requests on H100. 8 parallel attempts, 2 queue. No gains from more threading.
-5. **Competition deadline**: April 15, 2026 (entry by April 8). Model cutoff March 15.
-
-## What to Do Next
-
-1. **Wait for v21 results** — should take ~5 hours
-2. **If score >= 44**: Submit to competition, then work on prompt improvements for 47+
-3. **If score < 44**: Something else is wrong. Compare v21 logs against baseline carefully.
-4. **Deferred improvements** (wait for v21 data):
-   - Post-hoc adjudication for fragmented votes (only if P4-like failures persist)
-   - Agent specialization (too risky until baseline score recovered)
-   - Adaptive spawning (premature optimization)
+| File | Purpose |
+|------|---------|
+| `output/v21/diagnostic.log` | Full v21 run logs (167K lines, 10MB) |
+| `output/v21/submission.parquet` | v21 test submission |
+| `data/discussions/competitive_intel.md` | Competition intelligence summary |
+| `data/hard_benchmark_30.csv` | 28 IMO-level problems (7/domain) for harder testing |
+| `notebooks/aimo3-solver.ipynb` | Active solver |
+| `baseline-44-50.ipynb` | Original baseline (read-only reference) |
 
 ## Context for Next Agent
 
 - Read `memory/memory.md` first, then this file
-- v21 is on Kaggle running now — check with `kaggle kernels status jxm222/aimo3-solver`
-- Pull results: `kaggle kernels output jxm222/aimo3-solver -p output/`
+- v21 output at `output/v21/` — already pulled
+- v22 is running on Kaggle — check with `kaggle kernels status jxm222/aimo3-solver`
+- Pull v22 output: `kaggle kernels output jxm222/aimo3-solver -p output/v22/`
 - GitHub Actions auto-push DISABLED (workflow_dispatch). Safe to push.
-- Key files: `notebooks/aimo3-solver.ipynb`, `baseline-44-50.ipynb`, `prompts.md`

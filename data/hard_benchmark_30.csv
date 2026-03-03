@@ -1,0 +1,104 @@
+id,problem,answer,domain,difficulty,source
+e8efd1,"The Bank of Berlin issues coins made out of two types of metal: aluminium (denoted $A$ ) and copper (denoted $C$ ). Sophia has $255$ aluminium coins, and $255$ copper coins, and arranges her $510$ coins in a row in some arbitrary initial order.  Given a fixed positive integer $k \leqslant 510$, she repeatedly performs the following operation: identify the largest subsequence containing the $k$-th coin from the left which consists of consecutive coins made of the same metal, and move all coins in that subsequence to the left end of the row. For example, if there are $4$ aluminum coins and $4$ copper coins and $k=4$, the process starting from the configuration $A A C C C A C A$ would be
+
+\[
+A A C C C A C A \rightarrow C C C A A A C A \rightarrow A A A C C C C A \rightarrow C C C C A A A A \rightarrow \cdots
+\]
+
+In addition to aluminium and copper coins, Sophia also has a few silver coins that she keeps separate from her aluminium and copper coins.
+
+Let $a$ and $b$ be the smallest and largest positive integer $k$ with $1 \leqslant k \leqslant 510$ such that for every initial configuration, at some point of the process there will be at most one aluminium coin adjacent to a copper coin. Find the product $ab$.",97665,combinatorics,IMO-AnswerBench,IMO-AnswerBench
+7302b5,"We colored the $10000$ unit squares of an $100 \times 100$ square lattice such that in each $2\times 2$ square, at least two of the four unit squares have the same color. What is the largest number of colors we could have used?
+",5099,combinatorics,IMO-AnswerBench,IMO-AnswerBench
+9a1984,"Several positive integers are written on a chalkboard in a row from left to right. A transformation is performed as follows: For every pair of consecutive integers on the chalkboard, the sum of those two numbers is written between them.  After 2013 such transformations, how many times does the number 2013 appear on the chalkboard if the initial numbers written on the chalkboard are 1, 2, 3, ..., 1000?",1198,combinatorics,IMO-AnswerBench,IMO-AnswerBench
+060fe3,"Let $n \geq 2$ be an integer. An $n \times n$ board is initially empty. Each minute, you may perform one of four moves:
+If there is an L-shaped tromino region of three cells without stones on the board (see figure; rotations not allowed), you may place a stone in each of those cells.
+If all cells in a column have a stone, you may remove all stones from that column.
+If all cells in a row have a stone, you may remove all stones from that row.
+
+Find the largest positive integer $n \leq 500$ such that it is possible that, after some non-zero number of moves, the board has no stones.",498,combinatorics,IMO-AnswerBench,IMO-AnswerBench
+2d282e,"A teacher wants to divide a class of $d$ students into $k$ groups (some of which may be empty). Each student $i$ has a score $a_i$ between 0 and 1, inclusive, and the sum of the scores of all students is $59$. The teacher wants to partition the students into groups such that the sum of the scores in each group is at most 1. Find the smallest integer $k$ such that this is always possible, regardless of the number of students $d$ and their scores $a_1, \ldots, a_d$.",117,combinatorics,IMO-AnswerBench,IMO-AnswerBench
+29719a,"For a positive integer $m$, let $S_{m}= \{ 1,2,\ldots, 25m\}$. Suppose that there exists a $50$-element set $T$ such that
+(a) each element of $T$ is an $m$-element subset of $S_{m}$;
+(b) each pair of elements of $T$ shares at most one common element;
+(c) each element of $S_{m}$ is contained in exactly two elements of $T$.
+Let $P$ be a set of $50$ random integers.
+Suppose we define a function $f(x)=x^2+2x+1$.
+Determine the maximum possible value of $m$.",49,combinatorics,IMO-AnswerBench,IMO-AnswerBench
+76aef9,"Players $A$ and $B$ play a game on a blackboard that initially contains 1997 copies of the number 1. In every round, player $A$ erases two numbers $x$ and $y$ from the blackboard, and then player $B$ writes one of the numbers $x+y$ and $|x-y|$ on the blackboard. Additionally, there is a coin that is flipped before every round. If the coin lands heads, player $B$ is forced to write $x+y$ and if the coin lands tails player $B$ is forced to write $|x-y|$. The game terminates as soon as, at the end of some round, one of the following holds:
+
+(1) one of the numbers on the blackboard is larger than the sum of all other numbers;
+
+(2) there are only zeros on the blackboard.
+
+Player $B$ must then give as many cookies to player $A$ as there are numbers on the blackboard. Player $A$ wants to get as many cookies as possible, whereas player $B$ wants to give as few as possible. Determine the number of cookies that $A$ receives if both players play optimally.",8,combinatorics,IMO-AnswerBench,IMO-AnswerBench
+3abf34,"For a collection of points on a flat surface, we draw the perpendicular bisectors of the line segments joining each pair of these points and count the number of points where these perpendicular bisectors intersect. What is the largest possible number of intersection points if we begin with fifteen points?
+",4550,geometry,IMO-AnswerBench,IMO-AnswerBench
+d48826,"Let $WXYZ$ be a cyclic quadrilateral with $WX=4,XY=5,YZ=6,$ and $ZW=7$. Let $W_1$ and $Y_1$ be the feet of the perpendiculars from $W$ and $Y$, respectively, to line $XZ,$ and let $X_1$ and $Z_1$ be the feet of the perpendiculars from $X$ and $Z,$ respectively, to line $WY$. The perimeter of $W_1X_1Y_1Z_1$ is $\frac mn$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.
+",301,geometry,IMO-AnswerBench,IMO-AnswerBench
+6280bd,"In $\triangle XYZ$, $XZ=15$, $YZ=20$, and $XY=25$. Points $U$ and $V$ lie on $\overline{XY}$, points $W$ and $S$ lie on $\overline{YZ}$, and points $T$ and $R$ lie on $\overline{XZ}$, with $XU=VY=YW=SZ=ZT=XR=5$. Find the area of hexagon $UVWSTR$.
+",120,geometry,IMO-AnswerBench,IMO-AnswerBench
+00c4f8,"Point $P$ is the intersection of the medians of triangle $XYZ$, and point $M$ is the midpoint of side $YZ$. Triangle $YMP$ is equilateral with side length 2. Determine $XY^2+XZ^2$.
+",80,geometry,IMO-AnswerBench,IMO-AnswerBench
+a749f2,"Let $XYZ$ be an acute-angled, nonisosceles triangle. Altitudes $XX'$ and $YY'$ meet at point $O$, and the medians of triangle $XOY$ meet at point $N$. Line $ZN$ bisects segment $X'Y'$. Find angle $Z$ in terms of degree.
+",45,geometry,IMO-AnswerBench,IMO-AnswerBench
+f28c01,"Diagonals of a quadrilateral $WXYZ$ are equal and intersect at point $M$. The perpendicular bisectors to segments $WX$ and $YZ$ intersect at point $N$, and the perpendicular bisectors to $XY$ and $WZ$ intersect at point $O$. Find angle $\frac{\angle NMO}{5}$ in terms of degree.
+",18,geometry,IMO-AnswerBench,IMO-AnswerBench
+c32b7c,"Given right triangle $ XYZ$ with hypothenuse $ XZ$ and $ \angle X = 50^{\circ}$. Points $ P$ and $ Q$ on the side $ YZ$ are such that $ \angle PXZ = \angle QXY = 10^{\circ}$. Compute the ratio $2 \times YQ/ZP$.
+",4,geometry,IMO-AnswerBench,IMO-AnswerBench
+98b1df,"For a positive integer $n$, we call $g:\mathbb{Z}\rightarrow \mathbb{Z}$ a \textif{$n$-good function} if $g(1)=1$ and for any two distinct integers $a$ and $b$, $g(a)-g(b)$ divides $a^n -b^n$. We call a positive integer $n$ an \textit{exotic integer} if the number of $n$-good functions is twice of an odd integer. Find $132$th exotic integer.
+
+",69169,number_theory,IMO-AnswerBench,IMO-AnswerBench
+c3598e,"Non-negative integers $a<b<c$ satisfy $c\le a+b$, and $3^a, 3^b, 3^c$ all have the same remainder when divided by $10000$. Find the minimum possible value of $a+b+c$.
+",3000,number_theory,IMO-AnswerBench,IMO-AnswerBench
+ef1ac9,"Positive integers $M$ and $N$ satisfy the following conditions:
+
+(1) $M$ is a 1000-digit number, and none of its digits are 0.
+(2) The decimal expansion of $\left \lfloor \frac{M}{N} \right\rfloor$ contains the digit 0 exactly $A$ times. (The leading digit of the decimal expansion is not 0.)
+
+Find the maximum possible value of $A$.
+",939,number_theory,IMO-AnswerBench,IMO-AnswerBench
+789c7f,"Denote by $(a_1, b_1), \ldots, (a_k, b_k)$ all the ordered pairs of positive integers $(a,b)$ that satisfy
+$a^2 + 2\cdot 3^b = a(2^{b+1}-1)$. Evaluate $\sum_{i=1}^k (a_i + b_i)$.
+",94,number_theory,IMO-AnswerBench,IMO-AnswerBench
+8fea51,"Let $b_m b_{m-1}\cdots b_0$ be the base-7 representation of a positive integer $n$ for some positive integer $m$. Let $a_i$ be the number obtained by removing the digit $b_i$ from the base-7 representation of $m$ (read in base 7). Find the number of $n$ that satisfy $n=\sum_{i=0}^{m-1}a_i$.
+",42,number_theory,IMO-AnswerBench,IMO-AnswerBench
+5d7ebb,"The incircle of a triangle with side lengths that are three consecutive integers is a unit circle. Find all possible values for the perimeter of the triangle.
+",12,number_theory,IMO-AnswerBench,IMO-AnswerBench
+29945e,"How many integer triples $(a, b, N)$ such that $2^a5^b+625=N^2$?
+",4,number_theory,IMO-AnswerBench,IMO-AnswerBench
+7f5538,"A polynomial $P$ with integer coefficients is called a geometric polynomial if its degree is at least 2 and the set $\{P(k): k \in \mathbb{Z}\}$ contains an infinite geometric progression. Suppose that the leading coefficient and constant term of a geometric polynomial $Q$ are $64$ and $-486$, respectively. Find $Q(5)$.",33614,algebra,IMO-AnswerBench,IMO-AnswerBench
+189670,"Consider a sequence of positive integers $x_1, x_2, \ldots$ satisfying the following condition:
+\[
+    (x_{2n + d} - x_{n + d} - n)(x_{2n + d} - x_n - n - d) = 0
+\]
+for all integers $n \ge 32$ and $d \ge 1024$. Find the value of the largest possible positive integer $n$ for which $x_{n + 1} - x_n \neq 1$.",2079,algebra,IMO-AnswerBench,IMO-AnswerBench
+f859c7,"Find the minimum value of an integer $N$ that satisfies the following condition:
+
+Given 2025 non-degenerate triangles, each triangle has one side colored green, one side colored purple, and one side colored orange. Let the lengths of the green sides be $g_1 \ge g_2 \ge \cdots \ge g_{2025}$, the lengths of the purple sides be $p_1 \ge p_2 \ge \cdots \ge p_{2025}$, and the lengths of the orange sides be $o_1 \ge o_2 \ge \cdots \ge o_{2025}$. Then, the number of $1 \le a \le 2025$ such that $g_a, p_a, o_a$ do not form the sides of a triangle is always less than or equal to $N$.
+",2024,algebra,IMO-AnswerBench,IMO-AnswerBench
+9be9d3,"Let $x_0, x_1, \ldots, x_{2024}$ and $y_1, y_2, \ldots, y_{2024}$ be two real sequences such that for all $n = 0, 1, \ldots, 2023$,
+\[
+    x_{n+1} = 4x_n^2, \quad y_{n+1} = x_n \quad \text{ or } \quad x_{n+1} = \frac{x_n}{2}, \quad y_{n+1} = \frac{1}{4} - x_n
+\]
+holds, and $x_{2024} \le x_0$. Find the maximal value of $y_1 + \cdots + y_{2024}$.
+",506,algebra,IMO-AnswerBench,IMO-AnswerBench
+aed912,"We call $g: \mathbb{R} \rightarrow \mathbb{R}$ a good function if $g$ satisfies all the following conditions:
+
+(1) For any two distinct real numbers $a, b$, if $g(ab) = 0$, then $g(a) = 0$ or $g(b) = 0$.
+(2) For any two distinct real numbers $a, b$, if $g(ab) \neq 0$, then $$\frac{g(a)-g(b)}{a-b}=\frac{g(a)g(b)}{g(ab)}.$$
+(3) $g(1)=1$
+\\
+Let $S=\{2^a 3^b 5^c 7^d : a,b,c,d\in \mathbb{Z}\}$ and we call $h:S\rightarrow \mathbb{R}$ an essential function if there exists a good function $g$ such that $h(x)=g(x)$ for all $x\in S$. Find the number of essential functions. ",16,algebra,IMO-AnswerBench,IMO-AnswerBench
+c3f0bd,"Let $x, y, z$ be nonnegative real numbers with
+\[
+    (x^3 - 3x^2 + 3x) + (y^3 - 3y^2 + 3y) + (z^3 - 3z^2 + 3z) = 4.
+\]
+Find the maximal value of
+\[
+    x^2 + y^2 + z^2 - x - y - z.
+\]
+",4,algebra,IMO-AnswerBench,IMO-AnswerBench
+517772,"Let $p, q, r, s$ be constants such that the equation $py^3 + qy^2 + ry + s = 0$ has three distinct real roots. Find all possible values for the number of distinct real roots of the equation
+$$\left(pz^{3}+qz^{2}+rz+s\right)(6pz+2q)=\left(3pz^{2}+2qz+r\right)^{2}.$$
+",2,algebra,IMO-AnswerBench,IMO-AnswerBench
