@@ -54,17 +54,46 @@ Full diff: `memory/changelog-vs-baseline.md`
 - `data/available/` — all old data organized (val bench, hard benchmark, old test sets, discussions, etc.)
 - `scripts/build_test_v23.py` — reproducible test set builder
 
-## v22 Analysis Results
+## v22 Deep Analysis (from log_exploration toolkit — 30 scripts)
 
-### None Rate (the real picture)
-- Raw: 280/480 = 58.3% — but 110 are early-stopped (by design)
-- **Effective None rate: 170/370 = 45.9%** (same as v21's 44.5%)
-- Token limit only 6.1% of Nones (was 43% in v21 — that was early-stop, not real)
-- 32 attempts (18.8%) said "the answer is X" but extraction missed → **fixed in v23**
-- 76 attempts (44.7%) had code errors → prompt hints should help
+### None Classification (280 total, 0% unknown)
+- 40.4% extraction-failure (model had answer, regex missed it)
+- 21.4% no-code-generated (pure reasoning, no Python)
+- 11.1% output-not-extracted (code ran, output had numbers, not captured)
+- 6.8% reasoning-truncated (ran out of tokens mid-thought)
+- 6.4% timeout
+- 13.9% various code errors (ValueError, TypeError, NameError, etc.)
+
+### Error Analysis (183 error turns, 129 unique errors)
+- **Top errors**: Timeout 28%, NameError 24%, ValueError 18%, TypeError 14%
+- **Recovery rate**: 68% overall. "Simplify" strategy = 100% recovery.
+- **133 min wasted on errors** (equivalent to 182 clean attempts)
+- **Error rate climbs with turns**: 2% at turn 1 → 20% by turn 15+ (context degradation)
+- **Aborting 3+ error attempts**: zero score impact, saves 87 min
+
+### Performance Insights
+- **Early stop 2 = same 59/60 score as 5**, uses 4.2 avg attempts vs 8.0 (47% time savings)
+- **First 4 attempts capture 90% of score** (53/60). Attempts 5-8 add only 6 more.
+- **Budget utilization only 7.8%** — problems solve in avg 70s against 900s budgets
+- **56% of tokens wasted on None attempts** (1.5M tokens)
+- **Wrong problems: 2.5 unique answers** vs 1.1 for correct (diversity = difficulty signal)
+
+### Reasoning & Code Quality
+- **Wrong attempts: 3.4x longer reasoning** (57K vs 17K chars), 45 approach restarts (vs 12)
+- **Failure keywords**: "let's try" (65% None), "reconsider" (71% None), "probably" (68% None)
+- **Success keywords**: "final answer" (65% correct), "verification" (52% correct)
+- **Code strategy**: number_theory = 100% accuracy, brute_force = lowest at 80%
+- **Library risks**: fractions/Fraction 50% accuracy, mpmath 22.6% error rate, numpy 17.2%
+- **Strategy switching**: wrong attempts switch 11.1x (vs 4.5x correct) — spinning signal
+
+### Adaptive Compute (key v24 finding)
+- After 2 attempts: if ANY answer found + majority agrees → 100% of those end up correct
+- **34/60 EASY** (need only 3 attempts), **10 MEDIUM** (5 att), **16 HARD** (8 att)
+- Adaptive allocation: score 59/60, time 48min (vs 70min). Saves 200 attempts.
+- **Competition projection**: adaptive uses 141min of 300min budget → 159 min headroom
 
 ### Key Insight
-The v21 "43% token limit" Nones were actually early-stopped attempts, not real failures. The real None rate has been ~46% consistently. The new extraction fallbacks target the 32 "answer is X" cases.
+The v21 "43% token limit" Nones were actually early-stopped attempts, not real failures. The real None rate has been ~46% consistently. The new extraction fallbacks target the 40% extraction failures.
 
 ## Diagnostics & Analysis Files
 

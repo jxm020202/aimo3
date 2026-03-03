@@ -98,6 +98,31 @@
 - Could improve performance on problem types the model struggles with
 - Balance: more examples = less context for reasoning
 
+### Strategy Retrieval Bank (1000-problem RAG)
+- **Idea**: Curate ~1000 hard math problems with solving strategies, key insights, and pitfalls
+- **Storage**: Kaggle dataset (JSON), loaded into notebook at runtime as Python dict
+- **Retrieval**: When solving a problem, match to top 3-5 similar entries via keyword/TF-IDF (numpy-only, no sklearn)
+- **Inject**: Only matched strategies go into the prompt (~240-500 tokens), avoiding token overload
+- **Entry format**: `{id, keywords, category, key_insight, pitfall, answer_type}` — ~80 tokens each
+- **1000 entries = 80K tokens stored, 3 matched = 240 tokens injected per problem**
+- **Sources**: Val bench (347), AIME 1983-2024 (~800), IMO shortlists, AoPS. Use ChatGPT deep research for bulk curation.
+- **Primary target**: The 6 "confident wrong" problems where model consistently uses wrong approach. Strategy hints steer toward correct approach.
+- **Matching without sklearn**: TF-IDF is ~20 lines of numpy. Or simpler: keyword overlap scoring.
+- **Submission feasibility**: YES — dataset uploaded to Kaggle, loaded in notebook cell, no internet needed. Matching runs in Python (numpy), adds <1s per problem. Strategy injection is just string concatenation into the prompt.
+- **Risk**: Matching quality — bad matches could steer model wrong. Need good keywords per entry.
+- **v23 evidence**: 7/9 outvoted problems show correct answer has lower entropy — model "knows" correct approach sometimes, just needs a nudge.
+- **Extension — Olympiad Human Tricks**: Include tips and tricks from top olympiad humans (IMO gold medalists, Putnam fellows) for fast calculation and problem-solving shortcuts. Examples:
+  - Modular arithmetic tricks (casting out 9s/11s, Fermat's little theorem shortcuts)
+  - Vieta jumping, infinite descent, extremal principle
+  - Generating function recipes for common combinatorics patterns
+  - Geometric inversion, barycentric coordinates
+  - Simon's Favourite Factoring Trick, chicken mcnugget theorem
+  - "Always check small cases first" heuristics with exact thresholds
+  - Common competition traps (off-by-one in counting, forgetting degenerate cases, confusing edges vs vertices)
+  - Sources: Evan Chen's handouts, AoPS wiki, "Problem-Solving Through Recreational Mathematics", Engel's "Problem-Solving Strategies"
+  - These go into the strategy bank as general-purpose entries (not tied to specific problems) that get injected when problem category matches
+- **Status**: IDEA — not started. Estimated effort: 2-3 days for curation + 1 day for integration.
+
 ### Sandbox Libraries (RESEARCH NEEDED)
 
 Current sandbox preloads: `math`, `numpy`, `sympy`, `itertools`, `collections`, `mpmath`, `functools`, `fractions`

@@ -1,0 +1,481 @@
+problem_id,attempt_num,answer,is_none,is_correct,entropy,temperature,code_calls,errors,tokens,time_s,num_turns,reasoning_chars,code_chars,output_chars,libraries
+92ba6a,1,,1,0,0.448,,2,1,1324,20.2,2,4166,646,151,import sympy as sp
+92ba6a,2,,1,0,0.449,,3,0,1474,32.5,3,4879,1609,124,import sympy as sp
+92ba6a,3,50,0,1,0.515,,2,0,2247,20.1,3,6421,635,34,
+92ba6a,4,50,0,1,0.461,,3,0,1841,17.3,4,5807,1063,72,import sympy as sp
+92ba6a,5,,1,0,0.455,,2,0,1297,28.1,2,4416,1214,96,"import itertools, math"
+92ba6a,6,,1,0,0.488,,6,1,1473,20.6,6,4994,1168,376,import sympy as sp
+92ba6a,7,50,0,1,0.474,,2,0,1821,16.8,3,5442,637,72,import sympy as sp
+92ba6a,8,,1,0,0.502,,1,0,2076,20.1,2,5768,685,16,import sympy as sp
+9c1c5f,1,580,0,1,0.683,,5,0,6109,57.9,6,20115,1290,68,"import sympy as sp, math, itertools, sys, collections, functools, random, time, math, sys, itertools, collections, fractions, decimal, json, os, re"
+9c1c5f,2,580,0,1,0.775,,4,0,5687,52.1,5,20154,1160,29,import sympy as sp
+9c1c5f,3,,1,0,0.636,,3,0,4251,67.7,3,12789,1070,132,"import sympy as sp, math, itertools, sys, collections, functools, random, math, itertools, sys, json, os, typing, fractions, decimal, fractions, collections, itertools, math, sympy as sp"
+9c1c5f,4,,1,0,0.636,,3,2,3199,60.0,3,10464,1788,169,"import sympy as sp, math, itertools, sys, numpy as np, math, collections, itertools, sys, random, math, fractions, decimal, json, os, typing, collections, itertools, math"
+9c1c5f,5,,1,0,0.765,,0,0,6601,59.3,1,21349,0,0,
+9c1c5f,6,,1,0,0.694,,1,1,3319,60.2,1,10754,655,120,import sympy as sp
+9c1c5f,7,580,0,1,0.716,,5,0,6715,59.0,6,21803,940,433,import math
+9c1c5f,8,,1,0,0.772,,5,0,6447,59.2,6,21942,1350,386,"import math, itertools | import random, math | import sympy as sp"
+a295e9,1,,1,0,0.829,,6,0,14697,143.1,7,55597,756,464,
+a295e9,2,,1,0,0.859,,5,0,14681,142.9,6,59965,751,213,
+a295e9,3,520,0,1,0.777,,5,0,14045,135.2,6,51403,640,45,
+a295e9,4,,1,0,0.788,,14,1,14685,142.8,14,56221,2753,220,"import math, sympy as sp | import random, itertools"
+a295e9,5,520,0,1,0.863,,5,0,14350,138.1,6,57629,449,25,import math
+a295e9,6,,1,0,0.839,,4,0,14682,142.9,5,57096,1486,51,import math
+a295e9,7,,1,0,0.844,,4,1,12820,152.9,4,49609,3522,213,"import itertools | import random, time, math, itertools, sys, collections, functools, statistics, math, itertools, random, time, sys"
+a295e9,8,520,0,1,0.805,,12,0,14638,142.2,13,55715,2073,409,"import math | import math, sympy as sp"
+86e8e5,1,2404,0,0,0.586,,22,0,33225,357.2,23,98215,13259,1654,from fractions import Fraction | from math import gcd | import math
+86e8e5,2,,1,0,0.625,,25,3,31000,338.8,25,93112,5026,100732,"from sympy import Rational | from sympy import Rational, nsimplify, simplify | import math, sympy as sp | import math, sys, sympy as sp, itertools, functools, math, decimal, fractions, random, time, os, json, collections, itertools, math, sys, sympy as sp | import sympy as sp | import sympy as sp, math, sys, itertools, functools, collections, random, decimal, fractions, os, json, time, math, sys, sympy as sp | import sys"
+86e8e5,3,,1,0,0.571,,38,7,33668,439.2,38,94954,11766,88191,"from fractions import Fraction | import math, fractions, sympy as sp, sys, itertools, math, random, collections, decimal, fractions, math, os, json, textwrap, hashlib, string, re, statistics, fractions, decimal, itertools, math, sympy as sp | import math, sympy as sp | import math, sympy as sp, sys, itertools, functools, decimal, fractions, random, itertools, collections, math, sys, os, json, textwrap, hashlib, string, re, statistics, fractions, decimal, itertools, math, sympy as sp | import sympy as sp, math, sys, itertools, collections, fractions, decimal, random, math, os, json, textwrap, hashlib, string, re, statistics, fractions, decimal, itertools, math | import sympy as sp, math, sys, itertools, functools, collections, random, decimal, fractions, os, json, textwrap, hashlib, string, re, statistics, math, sys, os | import sys, math, sympy as sp, os, json, textwrap, hashlib, random, itertools, collections, fractions, decimal, statistics, re, string, math, sys, os, json, textwrap, hashlib, string, re, statistics, fractions, decimal, itertools, math, sympy as sp, math, sys, os"
+86e8e5,4,41754,0,0,0.617,,54,9,27422,494.7,55,87740,17046,7043,"from fractions import Fraction | import math | import math, sympy as sp, itertools, sys, time, math, functools, random, collections, itertools, math, sys, time | import math, time, sys, sympy as sp, itertools, functools, random, math, sys, time | import math, time, sys, sympy as sp, itertools, functools, random, math, sys, time, math, sys | import sympy as sp"
+86e8e5,5,8687,0,1,0.673,,20,3,29207,314.2,21,92450,7888,3142,"from math import gcd | import math | import math, fractions | import math, fractions, sys | import math, itertools, fractions, sys | import math, itertools, functools, collections, sys, random, time, math, sympy as sp | import math, sys, fractions, sys, os, math, random, itertools, collections, functools, decimal, fractions, sympy as sp"
+86e8e5,6,23,0,0,0.635,,27,2,29195,344.3,28,86459,4836,6813,"import math, itertools, collections, sys, sympy as sp | import sympy as sp"
+86e8e5,7,8687,0,1,0.66,,37,5,35425,382.7,38,108121,15256,51337,"from fractions import Fraction | from math import gcd | import math | import math, sympy as sp | import math, sys | import sympy as sp | import sys, math, sympy as sp, itertools, math"
+86e8e5,8,23,0,0,0.686,,21,1,34802,442.6,22,105261,7136,3422,"import math, itertools, sys, functools, collections, sympy as sp"
+0e644e,1,336,0,1,0.607,,9,0,6455,61.2,10,21170,3180,881,"import math, itertools, sympy as sp | import sympy as sp"
+0e644e,2,,1,0,0.581,,5,0,9935,94.4,6,29235,703,305,import sympy as sp
+0e644e,3,336,0,1,0.513,,15,0,9771,93.2,16,28529,3715,770,import sympy as sp
+0e644e,4,,1,0,0.551,,7,0,9761,93.5,8,27875,1996,449,"from fractions import Fraction | import math, itertools, sys, sympy as sp | import sympy as sp"
+0e644e,5,,1,0,0.538,,5,1,8386,109.7,5,24994,3152,415,import math | import sympy as sp
+0e644e,6,336,0,1,0.505,,15,0,9493,90.6,16,27316,3061,564,"import math | import math, sympy as sp | import sympy as sp"
+0e644e,7,,1,0,0.604,,3,1,8686,94.3,3,27143,3780,136,"import math, itertools, sys, random, time, collections, decimal, fractions, math, sys, itertools, math, fractions, numpy as np"
+0e644e,8,,1,0,0.486,,7,1,8377,93.5,7,26871,10499,4244,"import math, itertools, sys, sympy as sp, numpy as np, random, itertools, collections, math, sys, fractions, decimal, itertools | import numpy.linalg as la | import sympy as sp"
+26de63,1,,1,0,0.528,,4,1,4774,44.6,4,12171,489,94,"import math, sympy as sp, sys, itertools, functools, operator, math, random, decimal, fractions, collections, itertools, numpy as np"
+26de63,2,32951,0,1,0.504,,1,0,4870,44.2,2,12116,14,5,
+26de63,3,32951,0,1,0.527,,2,0,4263,38.6,3,10962,167,10,"import math, sympy as sp, itertools, functools, sys, json, fractions, decimal, random, collections, statistics, numpy as np"
+26de63,4,,1,0,0.447,,1,0,4750,44.7,2,10998,120,5,"import sympy as sp, math, itertools, sys, fractions, collections, random, decimal, math, numpy as np"
+26de63,5,,1,0,0.486,,3,2,4768,45.0,3,11852,632,1358,"from sympy import factorint | import math, sympy as sp"
+26de63,6,,1,0,0.522,,0,0,4801,45.0,1,11829,0,0,
+26de63,7,,1,0,0.55,,2,1,4683,44.3,2,11738,26,87,
+26de63,8,32951,0,1,0.54,,1,0,3706,33.4,2,9629,24,5,
+424e18,1,21818,0,1,0.621,,12,4,7408,71.7,13,25552,2486,2872,"import math, sys, itertools, functools, collections, sympy as sp, json, decimal, fractions, random, statistics, itertools, math, sys, os, typing, collections, itertools, math, sys"
+424e18,2,21818,0,1,0.68,,11,2,9807,116.5,12,38133,6065,1841,"from itertools import combinations, permutations, product | import itertools, math, collections, random, sys, functools, itertools, math, collections, itertools | import math, sympy as sp"
+424e18,3,,1,0,0.794,,11,0,13019,116.8,12,56036,7109,623,"from itertools import combinations, permutations | import itertools, math, collections, functools, sys, random, time, math, itertools, collections, functools, sys, time, random"
+424e18,4,62140,0,0,0.835,,8,0,8730,84.2,9,37121,4413,214,"import itertools | import itertools, math | import math, itertools, collections, random, sys, math"
+424e18,5,,1,0,0.81,,4,1,9108,117.2,5,37323,1522,100,import itertools
+424e18,6,62140,0,0,0.754,,9,0,10111,95.1,10,39382,3192,328,"from math import comb | import itertools | import math | import math, itertools, sys, random, time, math, functools, collections, itertools, math, sys, time, random, itertools, math, sys | import sympy as sp"
+424e18,7,21818,0,1,0.657,,11,1,8684,84.0,12,31869,7063,860,"from functools import lru_cache | import itertools | import itertools, math | import math"
+424e18,8,,1,0,0.73,,13,3,10806,116.6,14,41992,7543,2568,"from collections import defaultdict | from functools import lru_cache | import itertools, math | import math, sys, itertools, functools, collections, decimal, fractions, random, statistics, itertools, math, sympy as sp, sys, json, os, typing, hashlib, textwrap, string, re, time, datetime, fractions, decimal, itertools, collections, math, sympy as sp"
+42d360,1,32193,0,1,0.633,,7,0,4568,43.5,8,14312,1131,455,"from decimal import Decimal, getcontext | import decimal, math, fractions, sys, itertools, random, collections, functools, itertools, math, sys, decimal, fractions, math, sys"
+42d360,2,32193,0,1,0.638,,8,0,8480,77.2,9,25448,3284,279,from functools import lru_cache | import math
+42d360,3,,1,0,0.629,,9,0,6015,80.5,9,17511,1688,356,
+42d360,4,,1,0,0.625,,19,2,8201,78.2,19,24922,3137,2206,"import decimal, math, sys, fractions, itertools, sympy as sp, mpmath as mp | import math | import mpmath as mp"
+42d360,5,,1,0,0.708,,0,0,8515,78.3,2,27139,0,0,
+42d360,6,,1,0,0.577,,8,0,8122,77.5,9,22988,2515,169,"import decimal, math, sys, itertools, fractions, sympy as sp, math, sys, random, itertools, collections, functools, fractions, decimal, math, sympy as sp | import math"
+42d360,7,,1,0,0.693,,6,1,2770,78.5,7,8935,1448,340,
+42d360,8,32193,0,1,0.639,,7,0,6228,58.8,8,19353,1714,742,"from decimal import Decimal, getcontext | from functools import lru_cache | import math, sys, itertools, numpy as np, sympy as sp, math, itertools, random, collections, fractions, decimal, functools, statistics"
+641659,1,,1,0,0.32,,24,8,12625,230.2,24,38433,21933,6836,"import math, numpy as np, sympy as sp | import mpmath as mp | import sympy as sp, math, itertools, sys, random, numpy as np, sympy.geometry as geom"
+641659,2,,1,0,0.524,,18,4,14745,203.8,19,49195,18958,2967,"import math, numpy as np | import sympy as sp"
+641659,3,,1,0,0.425,,11,5,18870,203.6,11,56558,23992,4978,"from sympy import sqrt, simplify, nsimplify | import math | import math, mpmath | import mpmath as mp | import numpy as np | import sympy as sp"
+641659,4,,1,0,0.44,,26,5,12992,203.3,26,38660,15757,9647,import mpmath as mp | import sympy as sp
+641659,5,,1,0,0.415,,34,12,16859,202.4,35,53982,26447,14518,"import math, cmath, sys, itertools, random, numpy as np, sympy as sp, json, fractions, decimal, itertools, collections, math, sys, os, typing, hashlib | import numpy as np, math, sympy as sp | import numpy as np, math, sympy as sp, sys, itertools, random, json, fractions, decimal, collections, os, typing, hashlib, math, cmath, itertools, statistics"
+641659,6,57447,0,1,0.465,,11,4,12354,146.2,12,40096,18364,2067,"import math, sys, numpy as np, mpmath as mp | import numpy as np, math, mpmath as mp | import sympy as sp, math, itertools, sys, random, numpy as np, sympy"
+641659,7,57447,0,1,0.626,,0,0,22469,202.3,1,75920,0,0,
+641659,8,57447,0,1,0.634,,13,2,11543,121.4,14,39248,7964,3376,"import mpmath as mp | import numpy as np, math, mpmath as mp | import sympy as sp"
+dd7f5e,1,,1,0,0.632,,19,3,15511,209.5,19,49106,6241,1868,"from collections import Counter | from itertools import product | import itertools | import math | import math, itertools | import sympy as sp"
+dd7f5e,2,160,0,1,0.641,,27,2,14450,174.1,28,47999,8962,1562,"from itertools import combinations, chain | from math import gcd | import sympy as sp | import sympy as sp, math, itertools, collections, sys, math, functools, itertools, json, fractions, decimal, random, statistics, fractions, collections, itertools, math, sympy as sp"
+dd7f5e,3,,1,0,0.659,,28,8,17058,194.8,28,60879,16107,12345,"from collections import defaultdict | from itertools import product, combinations | from sympy.matrices.normalforms import smith_normal_form | import itertools, math | import sympy as sp | import sympy as sp, inspect, pkgutil, sys, importlib, types, math, itertools, numpy as np, textwrap, re, json, os, pathlib, collections, fractions, decimal, random, statistics | import sympy as sp, inspect, sys, math, itertools, numpy as np | import sympy as sp, inspect, sys, pkgutil, importlib, re, os, pathlib, types, itertools, math, collections, json, textwrap, builtins"
+dd7f5e,4,160,0,1,0.597,,29,0,20408,194.4,30,64795,11556,1878,from itertools import combinations | import sympy as sp
+dd7f5e,5,114,0,0,0.664,,14,2,13830,164.1,15,44743,4645,1335,"from itertools import combinations, chain | import itertools, math, sympy as sp | import sympy as sp, math, itertools, collections, sys, functools, json, math, random, fractions, decimal, itertools, collections, math, sys"
+dd7f5e,6,,1,0,0.766,,15,0,20789,195.4,16,73045,5143,750,from collections import defaultdict | from itertools import combinations | from itertools import product | import sympy as sp
+dd7f5e,7,71,0,0,0.672,,11,0,12317,119.5,12,41862,3024,1102,"from collections import defaultdict | from itertools import chain, combinations | from itertools import combinations | from sympy import Poly, symbols, cyclotomic_poly | import math | import sympy as sp"
+dd7f5e,8,160,0,1,0.779,,12,1,12102,118.0,13,43210,4967,1519,"from itertools import combinations, chain | import random, itertools, math, collections, sys, math | import sympy as sp, itertools, math, sys, collections, json, math, random, fractions, decimal, statistics, typing, functools, os, re, itertools, collections, math, sympy as sp"
+f28c01,1,18,0,1,0.449,,7,1,6525,64.2,8,18737,4122,2042,"import random, math | import sympy as sp"
+f28c01,2,,1,0,0.519,,9,1,6150,64.6,9,18975,3893,516,"import random, math, itertools, sys, numpy as np, sympy as sp, math, cmath, itertools, random, sys, json | import sympy as sp"
+f28c01,3,,1,0,0.594,,9,1,5018,85.8,9,17380,2447,2272,import sympy as sp
+f28c01,4,18,0,1,0.558,,5,0,3855,58.9,6,12780,2806,2730,"import numpy as np | import random, math | import sympy as sp"
+f28c01,5,,1,0,0.524,,15,1,6364,65.2,15,20162,4495,4921,"import numpy as np | import numpy as np, math | import random, math | import sympy as sp"
+f28c01,6,18,0,1,0.46,,6,0,5830,57.4,7,17476,4297,1334,"import random, math, itertools, numpy as np, sys, math, cmath, itertools, collections, fractions, decimal, statistics | import random, math, numpy as np | import sympy as sp"
+f28c01,7,,1,0,0.34,,4,1,6427,91.8,4,18960,747,363,import sympy as sp
+f28c01,8,,1,0,0.553,,4,0,6750,65.3,5,21410,3182,622,"import numpy as np | import random, math | import sympy as sp"
+d48826,1,301,0,1,0.471,,10,0,6562,64.3,11,20701,1458,467,"from fractions import Fraction | import math, fractions, sympy as sp | import sympy as sp"
+d48826,2,,1,0,0.583,,14,0,7222,73.0,15,23409,2409,5180,import sympy as sp
+d48826,3,301,0,1,0.524,,13,0,7369,72.5,14,22322,2258,376,"import math, sympy as sp | import sympy as sp"
+d48826,4,,1,0,0.568,,12,1,7201,73.8,13,22807,2306,2958,"from fractions import Fraction | import math | import math, sympy as sp | import sympy as sp"
+d48826,5,301,0,1,0.425,,9,2,4745,46.4,10,13914,1436,732,"import math, fractions, sympy as sp | import sympy as sp"
+d48826,6,,1,0,0.534,,23,2,7247,74.0,23,23393,3471,3718,"import math | import math, fractions, sympy as sp | import math, sympy as sp | import sympy as sp"
+d48826,7,,1,0,0.571,,12,4,7306,73.8,13,22707,3553,6036,"from sympy import sqrt, Rational, simplify | import math, sympy | import mpmath as mp | import sympy as sp"
+d48826,8,,1,0,0.575,,17,1,4532,73.4,18,15274,2890,2353,"import fractions, math | import mpmath as mp | import numpy as np, math | import numpy as np, math, sympy as sp | import sympy as sp"
+76aef9,1,,1,0,0.764,,16,0,12958,135.1,17,53868,9943,665,"from collections import deque | from functools import lru_cache | import functools, itertools, math, sys, collections, random, time, math, sys, itertools, functools, collections, math, random"
+76aef9,2,,1,0,0.769,,11,1,7487,135.3,12,28665,3158,1275,"from functools import lru_cache | import functools, itertools, math | import math"
+76aef9,3,,1,0,0.847,,10,1,13637,135.3,10,56070,3692,684,"from collections import Counter | from functools import lru_cache | import itertools | import random, itertools"
+76aef9,4,999,0,0,0.898,,1,0,10100,96.8,2,42733,113,45,"import itertools, functools, math, random, collections, sys, itertools, functools, math, random, collections, sys"
+76aef9,5,999,0,0,0.827,,0,0,14273,134.4,1,55340,0,0,
+76aef9,6,999,0,0,0.787,,5,0,9191,88.7,6,37330,3994,288,from functools import lru_cache | from itertools import combinations
+76aef9,7,,1,0,0.873,,3,0,14211,135.6,4,54743,1142,36,
+76aef9,8,,1,0,0.798,,13,2,13765,134.6,13,52321,5627,1839,from collections import Counter | from functools import lru_cache | from itertools import combinations
+9a1984,1,1198,0,1,0.623,,34,3,19245,234.0,35,62492,9594,2352,"from collections import Counter | import itertools, collections, math, sys, sympy as sp | import math | import sympy as sp"
+9a1984,2,1198,0,1,0.612,,36,1,20910,221.3,37,67558,12438,2992,"import itertools, math | import math | import sympy as sp"
+9a1984,3,,1,0,0.61,,32,0,22786,235.0,33,69682,6364,2817,import math | import sympy as sp
+9a1984,4,,1,0,0.661,,29,0,22854,235.2,30,74341,7985,2030,from collections import Counter
+9a1984,5,,1,0,0.683,,28,3,15996,261.6,28,60884,11452,3322,from collections import Counter | import numpy as np
+9a1984,6,1198,0,1,0.658,,22,0,17033,175.3,23,57284,5557,2252,"import itertools, math, collections, sys, numpy as np, sympy as sp, itertools, math, collections, sys, numpy as np, sympy as sp"
+9a1984,7,,1,0,0.744,,21,4,14914,234.5,21,57983,11228,1791,"from collections import defaultdict | from math import comb | import time, sys, math, random, itertools, collections, functools, decimal, fractions, typing, os, json, hashlib, inspect, string, re, heapq, bisect, collections, itertools, math, sys, time, copy"
+9a1984,8,,1,0,0.663,,35,0,22695,235.3,36,72882,7434,3127,"import itertools, math | import math | import sympy as sp"
+9be9d3,1,,1,0,0.728,,3,1,6698,105.9,4,22553,3018,219,from itertools import product | import sympy as sp
+9be9d3,2,506,0,1,0.621,,1,0,11754,104.9,2,34253,840,127,"import random, math"
+9be9d3,3,,1,0,0.707,,8,1,9685,112.1,8,31000,2496,1982,"import itertools, sympy as sp, math, numpy as np, sys, random, itertools, math"
+9be9d3,4,,1,0,0.633,,13,0,11329,105.5,13,35693,6192,913,"import itertools, math, random, numpy as np, sympy as sp, sys, itertools, math, random, numpy as np | import random, math | import sympy as sp"
+9be9d3,5,,1,0,0.637,,1,1,11621,105.3,1,33779,418,96,import math
+9be9d3,6,506,0,1,0.651,,2,0,9278,85.7,3,28084,205,56,import sympy as sp
+9be9d3,7,506,0,1,0.668,,4,0,7119,67.4,5,21865,636,71,import sympy as sp
+9be9d3,8,,1,0,0.663,,6,1,4945,126.7,6,14940,2915,296,"import itertools, math, sympy as sp | import numpy as np"
+29719a,1,49,0,1,0.768,,0,0,1601,14.3,1,6561,0,0,
+29719a,2,,1,0,0.798,,0,0,1601,15.9,1,6563,0,0,
+29719a,3,,1,0,0.799,,0,0,1601,15.9,1,6689,0,0,
+29719a,4,,1,0,0.75,,0,0,1601,16.0,1,6334,0,0,
+29719a,5,49,0,1,0.808,,0,0,1601,14.3,1,6556,0,0,
+29719a,6,,1,0,0.798,,0,0,1601,15.9,1,6657,0,0,
+29719a,7,49,0,1,0.713,,0,0,1601,14.2,1,6467,0,0,
+29719a,8,,1,0,0.787,,0,0,1601,16.0,1,6565,0,0,
+8fea51,1,,1,0,0.561,,9,2,7397,154.2,9,22682,3575,1277,import itertools
+8fea51,2,,1,0,0.469,,20,1,12961,143.9,21,39550,13083,1318,"import itertools, math, sys, time, functools, collections, random, math, sys, itertools, time, collections, functools"
+8fea51,3,,1,0,0.566,,15,1,8882,145.3,15,28028,5346,1116,import itertools
+8fea51,4,0,0,0,0.641,,15,1,10168,103.6,16,35296,5705,1248,import sympy as sp
+8fea51,5,42,0,1,0.494,,8,0,8581,102.0,9,24809,4134,453,import math
+8fea51,6,42,0,1,0.545,,16,0,9819,88.7,17,31546,10014,675,"import itertools, math, sys, functools, collections, random, time, math, sys, itertools, collections, functools"
+8fea51,7,42,0,1,0.594,,15,1,8504,143.3,16,27430,6870,905,from functools import lru_cache
+8fea51,8,,1,0,0.581,,16,1,14770,143.9,17,46203,10127,1725,from collections import Counter
+7f5538,1,33614,0,1,0.78,,2,0,4184,38.2,3,15425,88,62,import sympy as sp
+7f5538,2,33614,0,1,0.672,,0,0,5095,46.5,1,16310,0,0,
+7f5538,3,,1,0,0.744,,2,0,5033,47.5,3,17066,77,13,"import math, sympy as sp | import sympy as sp"
+7f5538,4,,1,0,0.843,,0,0,5001,47.4,1,19070,0,0,
+7f5538,5,,1,0,0.747,,2,0,4964,47.2,3,17133,221,110,import sympy as sp
+7f5538,6,33614,0,1,0.725,,3,0,5000,45.8,4,17421,1499,69,"import math, itertools"
+7f5538,7,,1,0,0.753,,0,0,5001,47.4,1,18359,0,0,
+7f5538,8,,1,0,0.87,,2,0,4909,47.8,3,19098,1319,46,"import math, itertools, collections, sys, sympy as sp, random, itertools, math, functools, fractions, time, json, os, re"
+c3f0bd,1,,1,0,0.578,,8,0,5208,53.7,9,14698,2569,674,"import math, sympy as sp | import random, math | import sympy as sp"
+c3f0bd,2,,1,0,0.492,,9,0,5380,53.1,10,13851,2154,337,"import math, sympy as sp | import numpy as np, math | import random, math, itertools, sys, time, numpy as np, sympy as sp, math, itertools, random, sys, time, numpy as np"
+c3f0bd,3,,1,0,0.614,,5,1,3618,64.5,5,10405,484,257,import sympy as sp
+c3f0bd,4,4,0,1,0.651,,6,0,4726,44.8,7,14336,1774,283,"import math, sympy as sp | import random, math, itertools, time, sys, numpy as np, math, itertools, random, sys, time, math, numpy as np | import sympy as sp"
+c3f0bd,5,,1,0,0.564,,8,0,5372,53.2,9,15456,3228,388,"import math, sympy as sp | import numpy as np, math | import random, math, itertools, sys, numpy as np, time, math, itertools, random, sys, numpy as np"
+c3f0bd,6,4,0,1,0.52,,6,0,3629,34.6,7,9542,2073,170,"import math, sympy as sp | import random, math | import random, math, itertools, sys, time, numpy as np, math, sympy as sp"
+c3f0bd,7,4,0,1,0.649,,4,0,5731,52.7,5,16736,1017,101,"import random, math, itertools, sys, numpy as np, math, itertools, time, sys, sympy as sp | import sympy as sp"
+c3f0bd,8,,1,0,0.579,,9,2,5568,53.7,9,16023,3197,1079,"import math, sympy as sp | import numpy as np, math | import random, math | import random, math, numpy as np | import sympy as sp"
+2d282e,1,118,0,0,0.738,,1,0,4096,37.2,2,13684,403,10,
+2d282e,2,,1,0,0.822,,0,0,7401,68.6,1,26404,0,0,
+2d282e,3,,1,0,0.649,,1,0,7508,69.2,2,24165,251,10,
+2d282e,4,117,0,1,0.754,,0,0,6479,59.4,1,22759,0,0,
+2d282e,5,,1,0,0.693,,0,0,7160,65.3,1,23564,0,0,
+2d282e,6,,1,0,0.783,,0,0,7401,68.7,1,25308,0,0,
+2d282e,7,117,0,1,0.777,,2,0,6691,61.5,3,22930,626,20,"import math, itertools, random, sys, collections, math, fractions, decimal, itertools, functools, statistics, numpy as np"
+2d282e,8,117,0,1,0.797,,1,0,7554,68.4,2,27740,287,10,"import math, itertools, sys, collections, random, numpy as np"
+45ee22,1,10,0,1,0.856,,0,0,601,5.5,1,2252,0,0,
+45ee22,2,,1,0,0.831,,1,1,1028,9.8,1,3832,134,174,
+45ee22,3,10,0,1,0.809,,0,0,801,7.3,1,2884,0,0,
+45ee22,4,,1,0,0.844,,0,0,1001,10.7,1,3741,0,0,
+45ee22,5,,1,0,0.812,,0,0,1001,10.7,1,3710,0,0,
+45ee22,6,10,0,1,0.702,,1,0,1044,9.5,2,3873,244,94,
+45ee22,7,,1,0,0.733,,1,0,1025,10.8,2,3704,182,97,import math
+45ee22,8,,1,0,0.774,,1,0,881,9.8,2,3069,129,45,"import math, random, itertools, collections, sys, math, itertools, random, collections, fractions, functools, decimal, statistics"
+0a27ca,1,,1,0,0.504,,2,0,815,7.7,2,2259,200,124,"import math, sympy as sp, itertools, sys, numpy as np, math, fractions, random, collections, decimal, itertools, functools, statistics, fractions, math, sympy as sp"
+0a27ca,2,,1,0,0.517,,1,0,643,7.8,2,1763,181,18,"import math, sympy as sp, itertools, sys, numpy as np, math, fractions, random, collections, decimal, itertools, functools, statistics, fractions, math, sympy as sp"
+0a27ca,3,2015,0,1,0.477,,0,0,789,7.3,1,2145,0,0,
+0a27ca,4,2015,0,1,0.55,,0,0,801,7.3,1,2311,0,0,
+0a27ca,5,,1,0,0.519,,1,0,665,8.0,2,1882,42,3,"import math, sympy as sp"
+0a27ca,6,,1,0,0.478,,3,1,805,8.7,3,2195,287,158,"import math, sympy as sp, itertools, sys, random, collections, fractions, decimal, numpy as np, math, itertools, sys, sympy as sp"
+0a27ca,7,2015,0,1,0.56,,0,0,801,7.4,1,2247,0,0,
+0a27ca,8,,1,0,0.445,,1,0,765,8.5,2,1970,90,3,"import math, sympy as sp, itertools, sys, numpy as np, math, sympy as sp"
+37f837,1,,1,0,0.294,,0,0,601,7.0,1,1398,0,0,
+37f837,2,8,0,1,0.326,,0,0,531,5.0,1,1309,0,0,
+37f837,3,,1,0,0.319,,0,0,601,7.1,1,1594,0,0,
+37f837,4,8,0,1,0.388,,0,0,577,5.3,1,1481,0,0,
+37f837,5,8,0,1,0.335,,0,0,601,5.6,1,1557,0,0,
+37f837,6,8,0,1,0.283,,0,0,601,5.5,1,1419,0,0,
+37f837,7,,1,0,0.425,,0,1,601,6.6,1,1808,0,0,
+37f837,8,,1,0,0.305,,0,0,601,7.0,1,1611,0,0,
+83ce64,1,,1,0,0.363,,1,0,2006,19.8,2,4105,285,62,
+83ce64,2,,1,0,0.338,,2,0,1952,19.4,3,3875,384,226,
+83ce64,3,,1,0,0.398,,1,0,1837,18.7,2,3993,391,118,from fractions import Fraction
+83ce64,4,561,0,1,0.45,,0,0,1401,12.7,1,2969,0,0,
+83ce64,5,561,0,1,0.382,,1,0,1876,17.2,2,3926,396,267,import math
+83ce64,6,,1,0,0.341,,3,1,1983,19.9,3,4190,451,798,from fractions import Fraction
+83ce64,7,561,0,1,0.31,,1,0,1995,18.2,2,4084,414,276,import math
+83ce64,8,,1,0,0.493,,0,0,2001,19.7,1,4658,0,0,
+f50235,1,25,0,1,0.43,,0,0,201,2.0,1,464,0,0,
+f50235,2,,1,0,0.325,,1,1,364,3.8,1,772,99,94,import sympy as sp
+f50235,3,,1,0,0.291,,0,0,201,3.8,1,366,0,0,
+f50235,4,,1,0,0.336,,0,0,201,3.8,1,390,0,0,
+f50235,5,25,0,1,0.326,,0,0,370,3.5,1,787,0,0,
+f50235,6,25,0,1,0.235,,1,0,363,3.5,2,719,32,4,
+f50235,7,,1,0,0.401,,2,1,321,4.4,2,758,150,96,import sympy as sp
+f50235,8,,1,0,0.351,,1,1,212,3.8,1,436,39,141,
+34fe9c,1,4,0,1,0.706,,0,0,401,3.7,1,1198,0,0,
+34fe9c,2,4,0,1,0.511,,0,0,390,3.6,1,1151,0,0,
+34fe9c,3,4,0,1,0.508,,0,0,401,3.7,1,1154,0,0,
+34fe9c,4,,1,0,0.58,,0,0,401,4.5,1,1106,0,0,
+34fe9c,5,4,0,1,0.599,,0,0,401,3.7,1,1162,0,0,
+34fe9c,6,,1,0,0.543,,0,0,401,4.5,1,1116,0,0,
+34fe9c,7,,1,0,0.619,,0,0,401,4.1,1,1056,0,0,
+34fe9c,8,,1,0,0.595,,0,0,401,4.8,1,1114,0,0,
+af5cc9,1,601,0,1,0.581,,6,0,3862,37.7,7,11703,988,1251,import itertools
+af5cc9,2,601,0,1,0.439,,3,0,3387,33.1,4,9768,608,163,import math
+af5cc9,3,,1,0,0.543,,5,1,3693,37.9,5,10422,973,341,import sympy as sp
+af5cc9,4,,1,0,0.525,,7,1,3864,39.1,7,10933,723,405,"import math, itertools, sys, collections, functools, itertools, math, random, time, sympy as sp"
+af5cc9,5,601,0,1,0.636,,4,0,3627,35.4,5,11448,712,512,"import random, math, itertools, collections, sys, os, json, fractions, decimal, statistics, itertools, math, sympy as sp"
+af5cc9,6,,1,0,0.587,,14,0,3740,37.8,15,11521,1423,647,"from collections import Counter | from collections import defaultdict | import math, itertools, sys, collections, itertools, math, random, time, functools, fractions, decimal, numpy as np, sympy as sp | import sympy as sp"
+af5cc9,7,,1,0,0.526,,5,0,3875,39.0,6,10986,781,377,from collections import Counter | import itertools
+af5cc9,8,,1,0,0.477,,6,0,3643,38.5,7,10570,1013,615,from collections import Counter
+159758,1,7,0,1,0.382,,0,0,401,3.7,1,988,0,0,
+159758,2,,1,0,0.376,,1,0,401,3.8,1,1040,0,121,
+159758,3,,1,0,0.354,,1,1,374,4.9,1,1011,23,80,
+159758,4,,1,0,0.362,,1,1,339,4.7,1,888,23,80,
+159758,5,7,0,1,0.429,,0,0,401,3.7,1,1064,0,0,
+159758,6,7,0,1,0.269,,0,0,401,3.7,1,997,0,0,
+159758,7,,1,0,0.299,,0,0,401,4.7,1,1042,0,0,
+159758,8,,1,0,0.353,,1,1,401,4.0,1,957,23,444,import sympy as sp
+6837b1,1,81,0,1,0.739,,5,0,14224,137.4,6,58131,2045,149,import itertools
+6837b1,2,,1,0,0.694,,24,0,11414,137.7,25,46329,8753,992,"from collections import Counter | from functools import lru_cache | from itertools import combinations | import itertools | import random, itertools, math"
+6837b1,3,81,0,1,0.777,,9,0,6464,63.3,10,26146,1671,645,from collections import Counter | import itertools
+6837b1,4,,1,0,0.692,,11,1,14064,138.2,12,54231,9440,2393,from collections import Counter | from functools import lru_cache | import functools
+6837b1,5,,1,0,0.662,,11,2,10831,138.6,12,41992,7689,1364,import itertools
+6837b1,6,,1,0,0.759,,13,2,13596,137.9,14,56790,9257,3806,"from collections import Counter | import itertools, math, sys, time, collections, functools, random, math, itertools, sys, collections, functools, math, time, itertools"
+6837b1,7,81,0,1,0.757,,9,0,13096,127.2,10,52926,2786,1923,from collections import Counter | import itertools
+6837b1,8,,1,0,0.758,,18,1,14013,138.5,19,58184,9165,1723,"from functools import lru_cache | import itertools | import itertools, math | import random, itertools, math | import random, itertools, math, collections, json, sys, os, textwrap, math, itertools, collections, pprint, sys, random, json, fractions, decimal, statistics"
+f84c73,1,,1,0,0.585,,1,1,5049,48.9,1,14039,756,121,
+f84c73,2,211,0,1,0.504,,10,0,4622,45.0,11,14258,2667,811,import sympy as sp
+f84c73,3,211,0,1,0.635,,6,0,5015,48.4,7,15532,1360,514,
+f84c73,4,,1,0,0.685,,5,1,4907,49.2,5,15167,879,642,import sympy as sp
+f84c73,5,,1,0,0.648,,12,0,4891,49.2,13,15051,2161,418,
+f84c73,6,,1,0,0.673,,9,1,4855,49.6,10,15714,2148,922,import math
+f84c73,7,,1,0,0.566,,6,0,4950,49.4,7,14634,1414,478,"import math | import math, itertools, sys, collections, fractions, random, decimal, statistics, sympy as sp, numpy as np"
+f84c73,8,211,0,1,0.562,,5,0,4447,42.9,6,14072,1430,340,"import math, itertools, sys, collections, math, random, statistics, fractions, decimal, sympy as sp, numpy as np, itertools, functools, json, re, string, hashlib, os, typing, collections, itertools, math, sys, builtins, types, inspect, textwrap, math, math"
+b4ec47,1,,1,0,0.668,,27,4,18576,217.1,28,73658,16059,3980,"from collections import defaultdict | import math, itertools | import math, itertools, collections, numpy as np, sys, time, itertools, math, random, fractions, itertools, math | import sympy as sp"
+b4ec47,2,315,0,1,0.633,,20,1,13435,148.2,21,53520,14083,1577,"from collections import defaultdict | import itertools, math, cmath, sys, time, collections, numpy as np | import math, itertools, collections, cmath, numpy as np | import math, itertools, collections, sys, numpy as np, cmath, itertools, math, random | import math, itertools, collections, sys, numpy as np, cmath, itertools, math, random, fractions, decimal | import math, itertools, collections, sys, numpy as np, cmath, itertools, math, random, fractions, decimal, itertools, collections, sys"
+b4ec47,3,24,0,0,0.702,,25,0,19011,194.2,26,77020,15473,3869,"import math, itertools | import math, itertools, collections, sys, numpy as np, sympy as sp, itertools, math, cmath, fractions, random, json, os, re"
+b4ec47,4,315,0,1,0.667,,39,3,21418,216.6,40,88718,24239,2809,"from collections import Counter | import itertools, math | import math | import math, itertools, cmath, collections, itertools, sys, math, random, fractions, functools, decimal, statistics | import math, itertools, collections"
+b4ec47,5,,1,0,0.747,,35,0,21483,217.6,36,88400,13917,3248,"import itertools, math | import math, itertools, collections | import math, itertools, collections, sys, random, itertools, math, fractions, decimal, itertools, math, collections, itertools"
+b4ec47,6,6,0,0,0.621,,31,1,16145,167.7,32,60863,16067,2741,"import math | import math, itertools | import math, itertools, collections, sys, math, itertools, numpy as np, sympy as sp, itertools, fractions, random, json, collections, math, itertools"
+b4ec47,7,,1,0,0.694,,27,4,21254,217.4,28,84674,15755,4315,"import inspect, textwrap, sys, math, itertools, random, collections, fractions, decimal, json, hashlib, os, re, typing, fractions, itertools, math, sys, time, types, builtins | import itertools, math, time, sys, collections, random, itertools, math, time | import math, itertools | import sympy as sp"
+b4ec47,8,315,0,1,0.779,,13,0,15042,155.9,14,63828,12035,556,"from collections import defaultdict | import itertools, math | import math, itertools | import math, itertools, collections, sys, random, itertools, math, sympy as sp"
+42ee2a,1,,1,0,0.423,,0,0,1201,12.7,1,2812,0,0,
+42ee2a,2,,1,0,0.606,,2,0,1273,13.2,3,3609,245,46,"import cmath, math | import sympy as sp"
+42ee2a,3,,1,0,0.57,,2,0,1310,13.4,3,3733,220,46,"import cmath, math | import sympy as sp"
+42ee2a,4,,1,0,0.54,,2,0,1175,12.6,3,3183,245,46,"import cmath, math | import sympy as sp"
+42ee2a,5,321,0,1,0.491,,2,0,1365,12.5,3,3894,228,46,"import cmath, math | import sympy as sp"
+42ee2a,6,321,0,1,0.612,,2,0,1191,11.0,3,3488,248,47,"import cmath, math | import sympy as sp"
+42ee2a,7,,1,0,0.504,,0,0,1201,12.7,1,2849,0,0,
+42ee2a,8,321,0,1,0.542,,2,0,1354,12.4,3,3994,226,46,"import cmath, math | import sympy as sp"
+737d44,1,23,0,1,0.508,,3,2,6097,58.3,4,16746,688,3352,import sympy as sp
+737d44,2,,1,0,0.538,,6,0,6641,64.8,7,18049,670,510,"import math, numpy as np"
+737d44,3,23,0,1,0.509,,1,0,6746,63.7,2,17777,221,76,import sympy as sp
+737d44,4,,1,0,0.533,,8,1,6693,65.2,9,19406,2407,2307,"import numpy as np, math, random, itertools, sys, sympy as sp | import sympy as sp"
+737d44,5,,1,0,0.565,,5,1,5563,64.1,5,15264,1235,4025,"import numpy as np, math, sympy as sp | import sympy as sp"
+737d44,6,23,0,1,0.495,,4,0,4972,52.5,5,14557,1125,51,"import mpmath as mp, math, numpy as np, sys, sympy as sp | import sympy as sp, math, itertools, sys, sympy"
+737d44,7,,1,0,0.551,,8,0,6658,64.9,9,19935,2413,904,"import math, random | import sympy as sp"
+737d44,8,,1,0,0.637,,11,1,6458,63.9,11,19587,2650,431,import sympy as sp
+c854cd,1,,1,0,0.543,,14,0,7071,70.9,15,19150,2371,999,import sympy as sp
+c854cd,2,,1,0,0.572,,8,0,7224,71.0,9,20728,1266,220,
+c854cd,3,,1,0,0.559,,12,0,7102,70.9,13,19947,2471,1190,
+c854cd,4,,1,0,0.594,,12,0,7184,71.4,13,20657,2658,646,
+c854cd,5,,1,0,0.554,,10,0,7195,71.2,11,20362,1940,1121,
+c854cd,6,363,0,1,0.583,,7,0,6080,59.0,8,17858,1617,215,from collections import Counter
+c854cd,7,363,0,1,0.534,,11,0,7222,70.1,12,20280,1852,593,import sympy as sp
+c854cd,8,363,0,1,0.622,,2,0,3564,33.7,3,10297,1259,162,import sympy as sp
+35ecd8,1,608,0,1,0.636,,5,0,13293,130.3,6,48862,3038,340,"import itertools | import random, itertools, math"
+35ecd8,2,,1,0,0.684,,8,1,14522,171.1,8,53286,5756,210,"from collections import defaultdict, deque | import itertools"
+35ecd8,3,,1,0,0.634,,23,1,14738,145.4,23,53899,10782,670,"from collections import Counter | from itertools import product | import itertools, math, sys, collections, functools, time, random, math, sys, itertools, collections, functools, time, sys | import time, sys, math, itertools, collections, functools, random, sys, math"
+35ecd8,4,,1,0,0.671,,3,1,11809,147.3,3,42951,4880,284,from itertools import product | import itertools
+35ecd8,5,608,0,1,0.665,,8,1,11964,145.2,9,42444,5798,335,from itertools import product | import itertools | import math
+35ecd8,6,608,0,1,0.731,,12,0,13060,128.9,13,46843,5099,1113,"import itertools, sys, math, collections, functools, time, random, sys, math, itertools, collections, functools, time, sys | import math, itertools, functools"
+35ecd8,7,,1,0,0.694,,8,0,15066,145.8,8,57094,4211,516,"import itertools, math"
+35ecd8,8,,1,0,0.696,,12,1,9913,149.6,12,36514,8712,443,"import itertools, sys, math, collections, time, functools, random, math, sys, time, itertools, collections, functools, math, sys | import sys, threading, time, math, itertools, collections, functools, sys, random, math, sys"
+269012,1,751,0,1,0.597,,8,1,18890,213.3,9,61497,4664,289,"from itertools import combinations | import itertools, math | import numpy as np, math, random, time, sys, itertools, math, fractions, decimal, os, collections, itertools, sys, math | import random, math | import sympy as sp"
+269012,2,,1,0,0.706,,2,0,22416,214.3,3,78863,425,8,import sympy as sp
+269012,3,751,0,1,0.614,,2,0,18403,178.1,3,59925,492,12,"import random, math | import sympy as sp"
+269012,4,,1,0,0.737,,7,0,22322,214.2,8,81897,2589,306,"from collections import Counter | import itertools, math"
+269012,5,,1,0,0.628,,5,1,19019,213.5,6,57341,1450,1115,"import math | import random, math, itertools, numpy as np, sys, math, itertools, random, time, collections, fractions, decimal, itertools, math | import sympy as sp"
+269012,6,,1,0,0.619,,15,2,21804,213.7,15,66918,7913,4677,"import math | import numpy as np, math | import random, math | import sympy as sp"
+269012,7,751,0,1,0.662,,5,0,18010,180.6,6,58874,1794,78,"import numpy as np | import random, math | import random, math, itertools, numpy as np, sys, time, math, itertools, collections, fractions, decimal, sys, math | import sympy as sp"
+269012,8,101,0,0,0.715,,0,0,14098,134.8,1,46565,0,0,
+504b93,1,125,0,1,0.517,,3,0,5049,47.7,4,15289,1157,82,"import math, random | import sympy as sp"
+504b93,2,,1,0,0.649,,6,0,5491,53.4,7,17798,591,106,"from fractions import Fraction | import math, fractions, sympy as sp"
+504b93,3,,1,0,0.67,,1,1,5439,52.6,1,17830,116,80,import sympy as sp
+504b93,4,,1,0,0.575,,9,0,5454,52.4,9,16798,950,301,"from fractions import Fraction | import math, fractions, sympy as sp | import sympy as sp"
+504b93,5,,1,0,0.699,,1,0,5494,53.1,2,18235,329,139,"import itertools, sympy as sp"
+504b93,6,,1,0,0.666,,0,0,5401,54.2,1,18637,0,0,
+504b93,7,125,0,1,0.6,,2,0,5518,51.9,3,18075,561,157,"import itertools, math, sympy as sp | import math, fractions, sympy as sp"
+504b93,8,125,0,1,0.612,,2,0,4621,43.4,3,14890,500,161,"import itertools, sympy as sp | import sympy as sp"
+471086,1,167,0,1,0.471,,10,0,4657,44.8,11,12133,1535,933,"import math | import sympy as sp, math, itertools, sys, fractions, decimal, numpy as np, math, itertools, collections, functools, random, statistics, fractions, itertools, math, sympy as sp"
+471086,2,167,0,1,0.576,,12,0,5049,48.3,13,15090,2406,2086,"import decimal, math | import math, sympy as sp, itertools, sys, fractions, decimal, random, collections, functools, itertools, math, sympy as sp | import sympy as sp"
+471086,3,167,0,1,0.523,,11,0,6086,56.2,12,16776,2208,1236,"import math, itertools | import mpmath as mp | import sympy as sp"
+471086,4,,1,0,0.505,,18,1,5980,57.2,18,15890,1652,998,"import math, sympy as sp | import sympy as sp | import sympy as sp, math"
+471086,5,,1,0,0.509,,6,0,5927,56.3,7,16661,1541,573,"import sympy as sp, math, itertools, sys, fractions, decimal, random, collections, functools, itertools, math, numpy as np"
+471086,6,,1,0,0.512,,5,0,3826,65.7,5,10216,987,546,import sympy as sp
+471086,7,,1,0,0.488,,6,0,5695,56.3,7,13868,660,2085,"import sympy as sp, math, itertools, sys, fractions, decimal, random, collections, math, sympy"
+471086,8,,1,0,0.535,,10,2,4330,72.4,10,12901,3416,1250,"import sympy as sp | import sympy as sp, math, itertools, sys, json, fractions, decimal, random, collections, functools, itertools, math, sympy as sp"
+c8adf3,1,75,0,1,0.417,,5,0,5583,54.6,6,14130,1431,356,"import math, sympy as sp | import sympy as sp"
+c8adf3,2,,1,0,0.56,,13,0,5317,55.1,14,16594,2592,1513,import sympy as sp
+c8adf3,3,,1,0,0.58,,5,1,5524,55.3,5,17088,1503,588,import sympy as sp
+c8adf3,4,,1,0,0.54,,14,2,5382,55.3,14,16208,3340,4237,import sympy as sp
+c8adf3,5,75,0,1,0.464,,11,0,3742,37.3,12,10706,2277,261,"import math, sympy as sp | import sympy as sp"
+c8adf3,6,,1,0,0.502,,10,0,5340,55.0,11,15989,3241,1534,import sympy as sp
+c8adf3,7,,1,0,0.608,,10,2,4635,55.1,10,14695,2511,5951,import sympy as sp
+c8adf3,8,75,0,1,0.708,,8,0,5285,53.9,9,17689,2155,917,"import math | import sympy as sp, math | import sympy as sp, math, itertools, sys, sympy"
+354f86,1,,1,0,0.463,,11,0,4735,45.0,12,13991,1530,248,import sympy as sp
+354f86,2,247,0,1,0.452,,11,1,3879,38.4,12,11630,1413,661,"import math, fractions, sympy as sp | import math, sympy as sp | import sympy as sp"
+354f86,3,,1,0,0.449,,7,1,3770,37.1,8,10997,1727,809,import math | import sympy as sp
+354f86,4,247,0,1,0.457,,15,0,5351,49.8,16,15178,1583,329,"import math, fractions, sympy as sp | import mpmath as mp | import sympy as sp"
+354f86,5,247,0,1,0.43,,8,0,3828,37.9,9,11188,1870,309,"import math | import math, fractions, sympy as sp | import sympy as sp"
+354f86,6,,1,0,0.508,,9,0,5222,49.9,10,15029,1589,198,import math | import sympy as sp
+354f86,7,,1,0,0.671,,9,1,5206,50.1,9,18460,2047,483,"import math, fractions, sympy as sp | import sympy as sp"
+354f86,8,,1,0,0.478,,13,0,4129,40.6,14,12427,2174,346,"import math | import math, fractions, sympy as sp | import sympy as sp"
+69dcfd,1,,1,0,0.549,,3,0,2685,26.9,4,8686,920,9,import itertools | import math
+69dcfd,2,235,0,1,0.664,,2,0,2777,27.8,3,10235,560,6,import itertools
+69dcfd,3,235,0,1,0.64,,1,0,2784,26.2,2,10046,427,3,import itertools
+69dcfd,4,,1,0,0.625,,2,0,2718,27.1,3,8712,769,135,import itertools
+69dcfd,5,,1,0,0.482,,2,0,2781,27.5,3,8534,414,6,import itertools
+69dcfd,6,,1,0,0.53,,2,0,2734,27.2,3,9028,524,6,import itertools
+69dcfd,7,235,0,1,0.594,,2,0,2401,22.7,3,7730,482,6,import itertools
+69dcfd,8,235,0,1,0.638,,2,0,2398,22.6,3,8228,543,91,import itertools
+6618d2,1,33,0,1,0.378,,5,0,5440,51.0,6,12521,726,337,"import math | import math, sympy as sp | import sympy as sp"
+6618d2,2,33,0,1,0.321,,5,0,4479,42.3,6,11029,1265,580,"import itertools, math | import sympy as sp"
+6618d2,3,,1,0,0.402,,4,0,5424,52.3,5,13237,1350,365,"import itertools, sympy as sp, math, fractions, sys, itertools, sympy as sp | import sympy as sp"
+6618d2,4,33,0,1,0.335,,10,1,4947,47.4,11,12743,1699,1440,"import itertools, math | import sympy as sp"
+6618d2,5,,1,0,0.361,,3,0,5363,51.9,4,13368,1695,353,"import math | import math, itertools | import sympy as sp"
+6618d2,6,,1,0,0.329,,3,0,5276,51.2,4,12185,991,406,"import math | import math, itertools | import math, itertools, fractions, sympy as sp, itertools, math, sys, json, random"
+6618d2,7,,1,0,0.422,,4,0,5249,51.4,5,12866,965,673,import sympy as sp
+6618d2,8,,1,0,0.408,,5,0,5263,52.2,6,13218,1155,714,import sympy as sp
+bae374,1,625,0,1,0.737,,0,0,201,1.9,1,722,0,0,
+bae374,2,,1,0,0.713,,0,0,201,3.7,1,730,0,0,
+bae374,3,,1,0,0.645,,1,1,221,3.3,1,790,135,80,
+bae374,4,625,0,1,0.666,,0,0,317,3.1,1,1127,0,0,
+bae374,5,625,0,1,0.568,,0,0,317,3.1,1,1048,0,0,
+bae374,6,,1,0,0.673,,1,1,246,4.0,1,872,109,80,
+bae374,7,,1,0,0.63,,1,1,286,4.0,1,1011,191,141,
+bae374,8,,1,0,0.707,,0,0,201,5.3,1,692,0,0,
+8697cd,1,4,0,1,0.698,,0,0,2401,22.1,1,7220,0,0,
+8697cd,2,,1,0,0.729,,1,0,2601,24.7,1,8256,385,121,
+8697cd,3,4,0,1,0.744,,0,0,2601,23.9,1,8241,0,0,
+8697cd,4,,1,0,0.663,,1,0,2523,24.8,2,7379,122,184,import math
+8697cd,5,,1,0,0.709,,3,0,2506,24.8,4,8472,1497,175,from collections import Counter | import math
+8697cd,6,,1,0,0.734,,2,1,2440,24.7,2,8035,776,133,from collections import defaultdict
+8697cd,7,,1,0,0.695,,1,0,2475,24.5,2,7981,907,11,
+8697cd,8,4,0,1,0.727,,0,0,2401,22.1,1,7690,0,0,
+f9333c,1,,1,0,0.742,,2,0,2630,26.1,2,10569,460,138,"import itertools, math | import math"
+f9333c,2,,1,0,0.782,,0,0,2601,25.8,1,10642,0,0,
+f9333c,3,928,0,1,0.629,,1,0,2307,21.3,2,8915,975,8,import itertools
+f9333c,4,928,0,1,0.515,,2,0,2746,25.4,3,10189,987,20,"import math, itertools, functools, collections, sys, math, itertools, sympy as sp"
+f9333c,5,,1,0,0.682,,1,0,2661,26.3,2,9966,613,246,"import math, itertools, cmath, numpy as np"
+f9333c,6,928,0,1,0.623,,1,0,2652,24.5,2,10793,788,3,import itertools
+f9333c,7,,1,0,0.77,,2,0,2731,26.7,2,11040,300,124,"import math, itertools | import numpy as np, "
+f9333c,8,,1,0,0.714,,1,0,2751,28.4,2,10999,1744,2,"import math, itertools, numpy as np, random, sys, itertools, math, collections, fractions, pprint, json, sympy as sp"
+f8b3d5,1,,1,0,0.327,,2,0,653,7.5,3,1583,61,2,
+f8b3d5,2,9,0,1,0.299,,1,0,581,5.5,2,1406,28,1,
+f8b3d5,3,,1,0,0.313,,1,0,550,6.8,2,1277,28,1,
+f8b3d5,4,,1,0,0.404,,2,1,609,7.3,2,1393,61,79,
+f8b3d5,5,9,0,1,0.346,,1,0,546,5.1,2,1280,28,1,
+f8b3d5,6,,1,0,0.449,,1,1,500,6.5,1,1058,28,78,
+f8b3d5,7,9,0,1,0.448,,2,0,663,6.1,3,1575,59,4,
+f8b3d5,8,,1,0,0.443,,3,1,587,7.1,3,1470,59,145,
+0fbf22,1,,1,0,0.523,,3,1,810,9.4,3,2247,48,96,
+0fbf22,2,129,0,1,0.563,,2,0,893,8.5,3,2602,43,10,
+0fbf22,3,,1,0,0.508,,3,0,881,9.8,4,2301,40,11,
+0fbf22,4,,1,0,0.607,,3,1,891,8.8,3,2507,58,95,
+0fbf22,5,129,0,1,0.455,,2,0,739,7.1,3,2065,43,10,
+0fbf22,6,129,0,1,0.506,,2,0,816,7.8,3,2264,56,12,
+0fbf22,7,,1,0,0.616,,3,0,832,9.5,4,2557,52,21,
+0fbf22,8,129,0,1,0.398,,2,0,853,9.8,3,2379,29,10,
+74252c,1,,1,0,0.632,,1,1,1602,16.2,1,4287,393,113,import math
+74252c,2,129,0,1,0.669,,0,0,1401,12.7,1,3972,0,0,
+74252c,3,,1,0,0.675,,0,0,1601,16.1,1,4562,0,0,
+74252c,4,,1,0,0.741,,1,1,1572,16.0,1,4853,328,89,import math
+74252c,5,,1,0,0.603,,2,1,1443,15.0,2,3948,349,91,import math
+74252c,6,129,0,1,0.638,,0,0,1601,14.6,1,4415,0,0,
+74252c,7,,1,0,0.635,,0,0,1601,16.2,1,4317,0,0,
+74252c,8,129,0,1,0.585,,4,0,1562,14.4,5,4442,362,35,import math
+e1d491,1,84,0,1,0.615,,2,0,1400,13.6,3,4514,681,145,import itertools
+e1d491,2,,1,0,0.731,,2,0,1406,15.4,3,4980,460,285,
+e1d491,3,,1,0,0.703,,1,0,1418,15.5,2,4725,246,143,import itertools
+e1d491,4,84,0,1,0.779,,2,0,1493,14.4,3,5423,469,145,import itertools
+e1d491,5,,1,0,0.556,,0,0,1401,15.3,1,3956,0,0,
+e1d491,6,84,0,1,0.718,,3,0,1513,14.7,4,5398,714,367,from collections import Counter | from math import factorial | import itertools
+e1d491,7,,1,0,0.769,,1,0,1467,15.7,2,5061,272,283,
+e1d491,8,,1,0,0.778,,1,0,1458,17.3,2,4935,238,283,"import itertools, math"
+02af89,1,,1,0,0.483,,1,1,197,3.0,1,652,42,81,import math
+02af89,2,,1,0,0.326,,0,0,201,3.1,1,571,0,0,
+02af89,3,,1,0,0.482,,0,0,201,3.3,1,660,0,0,
+02af89,4,20,0,1,0.335,,0,0,201,1.9,1,644,0,0,
+02af89,5,20,0,1,0.617,,0,0,201,2.0,1,669,0,0,
+02af89,6,,1,0,0.387,,0,0,201,2.6,1,625,0,0,
+02af89,7,20,0,1,0.5,,0,0,201,1.9,1,636,0,0,
+02af89,8,20,0,1,0.584,,0,0,201,2.0,1,619,0,0,
+932759,1,8,0,1,0.43,,0,0,601,5.6,1,1626,0,0,
+932759,2,,1,0,0.581,,1,1,582,6.8,1,1747,221,78,import math
+932759,3,,1,0,0.627,,0,1,601,6.2,1,1886,0,0,
+932759,4,,1,0,0.579,,1,0,601,6.0,1,1814,170,121,import math
+932759,5,,1,0,0.663,,0,1,601,6.2,1,1774,0,0,
+932759,6,8,0,1,0.548,,2,0,529,5.0,3,1738,220,41,import math
+932759,7,8,0,1,0.54,,0,0,601,5.6,1,1757,0,0,
+932759,8,,1,0,0.603,,0,0,601,8.5,1,1746,0,0,
+f231de,1,,1,0,0.726,,1,1,1370,14.6,1,5368,363,80,"import itertools, math"
+f231de,2,294,0,1,0.662,,1,0,1372,12.9,2,5261,418,3,import itertools
+f231de,3,294,0,1,0.664,,1,0,1420,13.4,2,5325,404,9,"import itertools, math"
+f231de,4,,1,0,0.56,,1,0,1402,14.8,2,4843,409,3,import itertools
+f231de,5,,1,0,0.584,,1,0,1398,14.4,2,5163,405,3,"import itertools, math"
+f231de,6,,1,0,0.694,,1,1,1349,14.4,1,5124,655,80,"import itertools, math"
+f231de,7,,1,0,0.694,,1,0,1409,14.8,2,5136,462,3,"import itertools, math"
+f231de,8,294,0,1,0.661,,1,0,1496,14.0,2,5691,353,3,import itertools
+476119,1,25,0,1,0.42,,4,0,1059,10.4,5,2569,310,97,import mpmath as mp
+476119,2,,1,0,0.435,,5,0,1966,20.6,6,4942,933,823,"import mpmath as mp | import numpy as np, math, mpmath as mp"
+476119,3,25,0,1,0.42,,6,1,2036,19.9,7,4896,656,1506,"import math, mpmath as mp | import mpmath as mp"
+476119,4,25,0,1,0.437,,8,2,2019,19.8,9,5790,1238,2405,"import math | import mpmath as mp | import numpy as np, math, mpmath as mp"
+476119,5,25,0,1,0.387,,4,0,1907,18.7,5,4760,730,530,"import math | import mpmath as mp | import mpmath as mp, math, sys, sympy as sp"
+476119,6,25,0,1,0.453,,5,0,2049,19.9,6,5138,650,1256,import mpmath as mp
+476119,7,,1,0,0.371,,7,0,1963,20.2,8,5060,1631,405,"import math | import mpmath as mp | import numpy as np, math | import numpy as np, math, sys, mpmath as mp"
+476119,8,,1,0,0.482,,8,3,1842,22.3,8,5401,1680,2418,"import mpmath as mp | import numpy as np, math, mpmath as mp"
+4fef3c,1,3,0,1,0.429,,1,0,2418,22.6,2,6581,145,40,import sympy as sp
+4fef3c,2,,1,0,0.572,,5,0,2413,22.9,5,7244,539,280,import sympy as sp
+4fef3c,3,,1,0,0.552,,3,0,2393,24.0,4,7029,554,68,import sympy as sp
+4fef3c,4,,1,0,0.533,,4,0,2350,23.8,5,6884,962,221,import sympy as sp
+4fef3c,5,,1,0,0.485,,3,0,2347,23.7,4,6720,322,147,import sympy as sp
+4fef3c,6,3,0,1,0.642,,2,0,2206,20.7,3,6975,296,9,import sympy as sp
+4fef3c,7,,1,0,0.551,,3,1,2413,24.1,3,6817,727,159,import sympy as sp
+4fef3c,8,3,0,1,0.469,,2,0,2418,22.7,3,6830,369,32,"import sympy as sp | import sympy as sp, math"
+e7ed61,1,,1,0,0.413,,0,0,801,8.9,1,1920,0,0,
+e7ed61,2,53,0,1,0.462,,0,0,801,7.4,1,2116,0,0,
+e7ed61,3,,1,0,0.561,,1,1,831,9.3,1,2342,190,111,import sympy as sp
+e7ed61,4,53,0,1,0.528,,1,0,866,8.1,2,2606,207,38,import sympy as sp
+e7ed61,5,,1,0,0.624,,0,0,801,9.1,1,2172,0,0,
+e7ed61,6,53,0,1,0.443,,1,0,779,7.2,2,2222,231,78,
+e7ed61,7,,1,0,0.557,,2,1,725,8.5,2,2180,226,138,import sympy as sp
+e7ed61,8,,1,0,0.517,,0,0,801,9.0,1,2186,0,0,
+2b836d,1,6,0,1,0.525,,1,0,3070,28.4,2,9765,172,44,import sympy as sp
+2b836d,2,,1,0,0.6,,1,0,3074,29.9,2,10269,743,59,import sympy as sp
+2b836d,3,,1,0,0.574,,1,0,2985,29.4,2,10294,1863,68,import sympy as sp
+2b836d,4,6,0,1,0.481,,0,0,2413,22.3,1,6942,0,0,
+2b836d,5,,1,0,0.676,,2,0,3041,29.7,3,10457,608,89,import math | import sympy as sp
+2b836d,6,,1,0,0.769,,0,0,3001,29.4,1,11420,0,0,
+2b836d,7,6,0,1,0.745,,2,0,2901,26.9,3,11087,256,65,"import math, itertools, numpy as np"
+2b836d,8,,1,0,0.66,,2,0,2967,29.2,3,9716,418,14,"import math, itertools, sympy as sp"
+88178a,1,3,0,1,0.569,,1,0,1291,12.0,2,4073,298,9,
+88178a,2,3,0,1,0.532,,0,0,1201,11.2,1,3319,0,0,
+88178a,3,,1,0,0.512,,0,0,1201,12.8,1,3500,0,0,
+88178a,4,,1,0,0.576,,0,0,1201,12.8,1,3433,0,0,
+88178a,5,,1,0,0.55,,1,1,1142,12.4,1,3020,180,86,
+88178a,6,,1,0,0.58,,1,1,1173,12.6,1,3718,302,86,
+88178a,7,,1,0,0.592,,1,1,1101,12.1,1,3681,297,86,
+88178a,8,3,0,1,0.527,,1,0,1278,11.9,2,3814,309,9,
+2677ce,1,,1,0,0.373,,1,1,944,9.1,1,2309,178,115,import sympy as sp
+2677ce,2,,1,0,0.385,,0,0,801,9.0,1,1918,0,0,
+2677ce,3,,1,0,0.356,,0,0,801,9.0,1,1894,0,0,
+2677ce,4,204,0,1,0.395,,0,0,968,8.7,1,2582,0,0,
+2677ce,5,204,0,1,0.416,,1,0,806,7.3,2,2246,156,77,import sympy as sp
+2677ce,6,204,0,1,0.448,,0,0,801,7.2,1,2071,0,0,
+2677ce,7,,1,0,0.357,,0,0,801,9.0,1,1972,0,0,
+2677ce,8,,1,0,0.373,,0,0,801,8.9,1,2077,0,0,
+7b14f4,1,,1,0,0.401,,0,0,1601,16.2,1,3504,0,0,
+7b14f4,2,10,0,1,0.369,,5,0,1690,15.6,6,4087,329,275,import sympy as sp
+7b14f4,3,10,0,1,0.473,,2,0,1659,15.6,3,4335,259,516,import sympy as sp
+7b14f4,4,,1,0,0.296,,0,0,1601,16.3,1,4156,0,0,
+7b14f4,5,,1,0,0.431,,4,1,1530,16.3,4,3873,327,714,import sympy as sp
+7b14f4,6,10,0,1,0.382,,3,0,1363,13.0,4,3293,279,324,import sympy as sp
+7b14f4,7,,1,0,0.491,,0,0,1601,16.2,1,4142,0,0,
+7b14f4,8,10,0,1,0.435,,0,0,1008,8.9,1,2593,0,0,
+62c41a,1,,1,0,0.312,,0,0,401,5.1,1,756,0,0,
+62c41a,2,,1,0,0.424,,0,0,401,5.1,1,912,0,0,
+62c41a,3,,1,0,0.403,,1,1,336,4.1,1,719,41,81,
+62c41a,4,78,0,1,0.344,,1,0,425,3.8,2,891,41,4,
+62c41a,5,,1,0,0.401,,0,0,401,5.0,1,809,0,0,
+62c41a,6,78,0,1,0.477,,0,0,201,1.8,1,480,0,0,
+62c41a,7,,1,0,0.373,,0,0,401,5.0,1,790,0,0,
+62c41a,8,78,0,1,0.455,,0,0,201,1.9,1,541,0,0,

@@ -13,6 +13,15 @@
 - **New agents**: Read ONLY memory.md first. Load topic files only when relevant to your task.
 - **Before any big change**: re-read `tools.md` to know what's available and avoid reinventing.
 
+## HARD RULE: Log Analysis via Query Scripts
+
+**ALWAYS use `log_exploration/` scripts for log extraction. NEVER grep/awk/sed raw diagnostic logs.**
+
+1. Check `log_exploration/README.md` for existing scripts (30 scripts covering errors, timing, voting, extraction, reasoning, etc.)
+2. If script exists → `python3 log_exploration/<script>.py output/<version>/diagnostic.log`
+3. If no script exists → write a new one in `log_exploration/`, import `from log_exploration.log_query import parse_log`, then run it
+4. Core parser returns `list[Problem]` with `.attempts[].turns[]` — structured data, not text matching
+
 ## User Preferences
 
 - **NO GPG signing for this repo** — personal account (jxm020202), NOT WeMoney. Never use `-S` flag or `git config user.signingkey`. GPG signing is ONLY for `~/Desktop/WeMoney/` repos.
@@ -39,25 +48,32 @@
 - **1 submission/day**. Model cutoff March 15, 2026.
 - **Kaggle**: jxm222 | **GitHub**: jxm020202/aimo3 (private)
 
-## Current State (March 3, 2026 — Session 4)
+## Current State (March 3, 2026 — Session 5)
 
 - **v15 SUBMITTED**: Scored 38/50 (broken extraction, no `break`)
 - **v21**: 49/50 on test (8 attempts, ES=4, temp=0.5, 50 problems, 63.8 min)
 - **v22**: 58/60 on test (8 attempts, ES=3, temp=0.5, 60 problems). Failures: 86e8e5, 76aef9.
-- **v23 RUNNING**: Just pushed. 16 attempts, ES=5, temp schedule [0.1,0.3×4,0.5×6,0.7×4,0.9], 80 problems.
+- **v23 OOM CRASH**: 63/80 correct (78.8%), 313.5 min. OOM during nbconvert (80MB notebook from full logging). All results computed, just couldn't serialize.
+  - Priority Debug: 3/4 (86e8e5 solved on run 1, wrong on run 2)
+  - At-Risk: 6/6 (all stable now)
+  - Val Bench: 54/70 (16 new failures on unseen problems)
+  - 17 wrong answers total. Analysis: `output/v23/diagnostic.log` (940K lines)
+  - **OOM fix for v24**: Write verbose conversation logs to `diagnostic.log` file ONLY (not stdout). Keep notebook stdout to summary table only. The 80MB came from all print output in notebook cells.
 - **Full changelog**: `memory/changelog-vs-baseline.md` — every diff vs baseline
 - **GitHub Actions auto-deploy DISABLED** (workflow_dispatch). Safe to push.
 
 ## Critical Insights
 
-1. **Competition is about variance reduction, not capability** — host data: Model B (GPT-OSS-120B) solves ~50/50 at pass@100 without TIR. With TIR, baseline gets 44/50 at pass@8. See `memory/discussions/pass-at-100.md`. [thread #679559]
-2. **GPT-OSS-120B is MoE with ~5.1B active params** — "120B" is misleading. This is why it fits in 5 hours. Dense replacements will be slower. [from discussions]
-3. **`break` in answer extraction is critical** — without it, 41% of attempts return None. This was the root cause of 38/50.
-4. **TIR (code execution) is the secret sauce** — hard problems only solvable with code sandbox.
-5. **Leading teams use SymPy for deterministic arithmetic** — decoupling reasoning from execution. [from discussions]
-6. **Reference set is unreliable** — 8/10 ref → 6/50 public LB reported. Use 347-problem community benchmark instead. [from discussions]
-7. **Current #1 is the public 44/50 notebook** — team "just public 44, all is luck". Winning is partly stochastic. [from discussions]
-8. **Qwen3.5-35B-A3B** is most promising model upgrade but vLLM tool-calling broken (Gated DeltaNet arch). AIMO4 play. [from discussions]
+1. **Competition is about variance reduction, not capability** — host data: pass@100 ~50/50. With TIR, baseline gets 44/50 at pass@8. [thread #679559]
+2. **GPT-OSS-120B is MoE with ~5.1B active params** — "120B" is misleading. Fits in 5 hours because sparse.
+3. **`break` in answer extraction is critical** — without it, 41% None. Root cause of 38/50.
+4. **Early stop is BROKEN and REMOVED** — All attempts launch simultaneously via ThreadPoolExecutor. stop_event.set() fires but all 16 are already mid-inference. Post-ES attempts take identical wall time. ES saves ZERO time. Removed from code entirely in v24. See `memory/ideas/parallelism-and-early-stop.md`. Waves also don't help (GPU has zero queuing, waves 2x slower).
+5. **47% of Nones are extraction failures** — model had the answer, regex missed it. Biggest recoverable failure. [from log analysis]
+6. **Wrong attempts have clear signature** — 3.4x longer reasoning, 45 restarts, 16 turns. Detectable early. [from log analysis]
+7. **133 min wasted on errors** — "simplify" recovery = 100% success. Prompt: "simplify after error". [from log analysis]
+8. **Budget utilization only 7.8%** — massive headroom for adaptive allocation.
+9. **First 4 attempts capture 90% of score** — diminishing returns after that. [from log analysis]
+10. **Aborting 3+ error attempts is safe** — zero score impact, saves 87 min. [from log analysis]
 
 ## Memory Files — What's Where
 
@@ -107,7 +123,24 @@
 | `all_problems.json` | Structured data for all 50 problems |
 | `hard_problems.json` | Just the 4 struggling problems |
 
-### Analysis Scripts (in `scripts/`)
+### Log Exploration Toolkit (in `log_exploration/`)
+**30 scripts** for querying diagnostic.log as structured data. See `log_exploration/README.md` for full list.
+
+| Category | Key Scripts |
+|----------|-------------|
+| Overview | `dashboard_prototype.py`, `export_csv.py` |
+| Inspect | `problem_deep_dive.py <pid>`, `attempt_viewer.py <pid> <att>`, `compare_problems.py` |
+| Search | `search_reasoning.py <regex>`, `search_code.py`, `search_errors.py`, `filter_attempts.py` |
+| Errors | `error_deep_dive.py`, `error_patterns.py`, `error_timing.py`, `error_adaptive.py` |
+| Performance | `timing_analysis.py`, `voting_analysis.py`, `token_efficiency.py`, `attempt_progression.py` |
+| Strategy | `adaptive_compute.py`, `adaptive_simulator.py`, `code_strategy.py`, `library_analysis.py` |
+| Quality | `reasoning_quality.py`, `extraction_analysis.py`, `problem_difficulty.py` |
+| Comparison | `compare_runs.py <log1> <log2>` |
+| Docs | `proposed_logging.md` — 22 logging proposals for v24 |
+
+Core parser: `log_exploration/log_query.py` — also has 29 built-in queries.
+
+### Legacy Scripts (in `scripts/`)
 | Script | What it does |
 |--------|-------------|
 | `parse_diagnostics.py` | Parses diagnostic.log → struggle scores, problem categories |
@@ -126,6 +159,7 @@ aimo3/
 ├── data/
 │   ├── active/          ← What the notebook uses (test CSVs, reference)
 │   └── available/       ← Everything else (val bench, old benchmarks, discussions)
+├── log_exploration/     ← 30-script log query toolkit (see README.md inside)
 ├── scripts/             ← build_test_v23.py, parse_diagnostics.py, analyze_*.py
 ├── output/              ← Kaggle run outputs (download.txt etc)
 ├── .github/workflows/   ← kaggle-push.yml (AUTO-DEPLOYS on push!)

@@ -1,0 +1,741 @@
+problem_id,problem_correct,attempt_num,turn_num,error_type,error_message,code_preview,output_preview
+86e8e5,0,2,4,ValueError,ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit,"import math, sys, sympy as sp, itertools, functools, math, decimal, fractions, random, time, os, json, collections, itertools, math, sys, sympy as sp
+A = math.factorial(2025)
+len(str(A))",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_641/3845786642.py in <cell line: 0>
+86e8e5,0,2,9,TypeError,TypeError: 'den' is an invalid keyword argument for print(),"den = sp.Rational(0,1).denominator",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_641/38478921.py in <cell line: 0>()
+86e8e5,0,2,22,TypeError,TypeError: primerange() takes from 1 to 2 positional arguments but 3 were given,"def smallest_odd_prime_divisor_of_5M_minus_1(limit=1000000):
+    L = math.factorial(2025)  # huge, but we only need modulo p-1
+    # Actually we can compute L modulo (p-1) on the fly
+    # We'll itera",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_641/2420904930.py in <cell line: 0>
+86e8e5,0,3,1,ValueError,ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit,"import math, sympy as sp, sys, itertools, functools, decimal, fractions, random, itertools, collections, math, sys, os, json, textwrap, hashlib, string, re, statistics, fractions, decimal, itertools, ",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_665/2795154617.py in <cell line: 0>
+86e8e5,0,3,8,KeyError,"KeyError: slice(None, 10, None)","def f_bruteforce(n, limit=10000):
+    # find smallest N such that there exist three distinct divisors summing to n
+    for N in range(1, limit+1):
+        # get divisors
+        divs = [d for d in ran",---------------------------------------------------------------------------KeyError                                  Traceback (most recent call last)/tmp/ipykernel_665/2621044401.py in <cell line: 0>
+86e8e5,0,3,10,KeyError,"KeyError: slice(6, 31, None)","def f_bruteforce_limit(n):
+    # search up to some bound maybe n?
+    for N in range(1, n*3+10):
+        divs = [d for d in range(1, N+1) if N % d == 0]
+        if len(divs) < 3:
+            continue
+",---------------------------------------------------------------------------KeyError                                  Traceback (most recent call last)/tmp/ipykernel_665/3731335522.py in <cell line: 0>
+86e8e5,0,3,23,NameError,NameError: name 'smallest_odd_prime_divisor_of_n_minus_1' is not defined,"c_vals_small = [0, 1848374, 10162574, 265710644, 44636594]
+for c in c_vals_small:
+    q = smallest_odd_prime_divisor_of_n_minus_1(c)
+    print(c, q)",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_665/2166003825.py in <cell line: 0>
+86e8e5,0,3,24,NameError,NameError: name 'M_mod' is not defined,"def smallest_odd_prime_divisor_of_n_minus_1(c):
+    for p in sp.primerange(3, 2000):
+        val = (M_mod(p) + c - 1) % p
+        if val == 0:
+            return p
+    return None
+
+c_vals_small = [0, ",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_665/1083460941.py in <cell line: 0>
+86e8e5,0,4,1,KeyError,"KeyError: slice(None, 10, None)","import sympy as sp
+
+def f_bruteforce(n, limit=5000):
+    # search smallest x
+    for x in range(1, limit+1):
+        divisors = sp.divisors(x)
+        # need three distinct divisors
+        for i in r",---------------------------------------------------------------------------KeyError                                  Traceback (most recent call last)/tmp/ipykernel_601/1396706416.py in <cell line: 0>
+86e8e5,0,4,36,KeyError,KeyError: 201,"def minimal_ratio_bruteforce(c, max_S=500):
+    # compute N = M + c (or 5M)
+    best_r = None
+    best_S = None
+    for S in range(6, max_S+1):
+        # compute minimal L for this S
+        L = min_l",---------------------------------------------------------------------------KeyError                                  Traceback (most recent call last)/tmp/ipykernel_601/1000189851.py in <cell line: 0>
+86e8e5,0,4,38,KeyError,KeyError: 501,"for c in [0, '4M', 1848374, 10162574, 265710644, 44636594]:
+    r, S = minimal_ratio_bruteforce(c, max_S=2000)
+    print(c, r, S)",---------------------------------------------------------------------------KeyError                                  Traceback (most recent call last)/tmp/ipykernel_601/2635186296.py in <cell line: 0>
+86e8e5,0,5,14,ValueError,ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit,"import math, fractions
+
+fact = math.factorial(2025)
+
+def floor_factor(factor):
+    # factor is Fraction
+    return (fact * factor.numerator) // factor.denominator
+
+# compute for each offset
+offsets_in","0 2/3
+---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_671/3658653258.py in <cell li"
+86e8e5,0,5,15,KeyError,KeyError: '4M',"# compute sum K
+K = sum(k_vals[name] for name,_ ,_ in offsets_info)
+K",---------------------------------------------------------------------------KeyError                                  Traceback (most recent call last)/tmp/ipykernel_671/2403267824.py in <cell line: 0>
+86e8e5,0,5,19,ValueError,ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit,"K = sum(k_vals[name] for name,_,_ in offsets_info)
+K",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_671/468474822.py in <cell line: 0>(
+86e8e5,0,6,21,TypeError,TypeError: unsupported operand type(s) for *: 'int' and 'NoneType',"A=12
+M=3**A
+def compute_g_small(c):
+    fval = f_brutal_limit_n(M + c, limit=20000)
+    return sp.Rational(A * fval, M).floor() / A
+
+for c in range(0,10):
+    print(c, compute_g_small(c))",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_624/1466510332.py in <cell line: 0>
+86e8e5,0,6,27,TypeError,TypeError: '>=' not supported between instances of 'NoneType' and 'int',"def f_vs_k(k,c):
+    M=3**k
+    d0=2*M//3
+    fval = f_brutal_limit_n(M + c, limit=20000)
+    return fval >= d0
+
+for k in range(3,11):
+    print(k, f_vs_k(k,5))","3 True
+4 True
+5 False
+6 True
+7 False
+8 False
+9 False
+---------------------------------------------------------------------------TypeError                                 Traceback (most recent call la"
+86e8e5,0,7,15,ValueError,ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit,"import math, sympy as sp
+
+K_fact = math.factorial(2025)  # This may be huge but let's see size
+len(str(K_fact))",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_626/998126028.py in <cell line: 0>(
+86e8e5,0,7,17,TypeError,"TypeError: unsupported operand type(s) for ** or pow(): 'int', 'Zero', 'int'","def minimal_b_for_d(d, maxb=100000):
+    # returns minimal b>2 satisfying condition
+    for b in range(3, maxb+1):
+        g = math.gcd(3*b+2, 2)
+        Dprime = (3*b+2)//g
+        # compute M_mod = ",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_626/4276916127.py in <cell line: 0>
+86e8e5,0,7,18,TypeError,TypeError: cannot unpack non-iterable NoneType object,"def minimal_b_for_d(d, maxb=100000):
+    for b in range(3, maxb+1):
+        g = math.gcd(3*b+2, 2)
+        Dprime = (3*b+2)//g
+        phi = int(sp.totient(Dprime))
+        # compute K_mod_phi
+       ",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_626/221642739.py in <cell line: 0>(
+86e8e5,0,7,21,NameError,NameError: name 'Dprime' is not defined,"def find_min_b_limit(d, maxb=5000):
+    for b in range(3, maxb+1):
+        g = math.gcd(3*b+2, 2)
+        Dprime = (3*b+2)//g
+        phi = int(sp.totient(Dprime))",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_626/866058458.py in <cell line: 0>(
+86e8e5,0,7,36,NameError,NameError: name 'p' is not defined,(p+q) % 99991,---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_626/3957850936.py in <cell line: 0>
+0e644e,1,8,7,TypeError,TypeError: 'const_sym' is an invalid keyword argument for print(),"def compute_Y(a,b,c):
+    # compute coordinates as before
+    xC = (b*b + c*c - a*a) / (2*c)
+    yC = math.sqrt(b*b - xC*xC)
+    t = (a*a + c*c - b*b) / (a*a)
+    Dx = c + t*(xC - c)
+    Dy = t*yC
+   ",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_600/3415067701.py in <cell line: 0>
+26de63,1,5,1,AttributeError,AttributeError: module 'sympy' has no attribute 'valuation',"import math, sympy as sp
+def v2(x):
+    return sp.valuation(x,2)
+def test(a,exp):
+    return v2(a**exp + 1)
+for a in [3,5,7,9,11,13,15]:
+    for t in range(1,5):
+        exp = 2**t
+        print(a,exp",---------------------------------------------------------------------------AttributeError                            Traceback (most recent call last)/tmp/ipykernel_626/1466199508.py in <cell line: 0>
+424e18,1,1,3,NameError,NameError: name 'v_p_catalan' is not defined,"for n in range(1,10):
+    print(n, int(v_p_catalan(n,2)), int(v_p_catalan(n,5)))",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_677/4057267568.py in <cell line: 0>
+424e18,1,1,4,NameError,NameError: name 'v_p_binom' is not defined,"def v_p_int(m, p):
+    v=0
+    while m%p==0:
+        v+=1
+        m//=p
+    return v
+
+def v_p_catalan(n, p):
+    return v_p_binom(2*n, n, p) - v_p_int(n+1, p)
+
+for n in range(1,10):
+    print(n, v_p_c",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_677/1264083296.py in <cell line: 0>
+424e18,1,1,7,NameError,NameError: name 'v_p_binom' is not defined,"for n in range(1,10):
+    print(n, v_p_catalan(n,2), v_p_catalan(n,5))",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_677/2048147722.py in <cell line: 0>
+424e18,1,1,8,NameError,NameError: name 'v_p_factorial' is not defined,"def v_p_binom(n, k, p):
+    # compute v_p( binom(n,k) )
+    return v_p_factorial(n, p) - v_p_factorial(k, p) - v_p_factorial(n-k, p)
+
+def v_p_catalan(n, p):
+    return v_p_binom(2*n, n, p) - v_p_int(n",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_677/2545812636.py in <cell line: 0>
+424e18,1,2,5,NameError,NameError: name 'v_p_factorial' is not defined,"def v_p_of_int(x, p):
+    cnt=0
+    while x%p==0 and x>0:
+        cnt+=1
+        x//=p
+    return cnt
+
+def v_p_catalan(n, p):
+    return v_p_factorial(2*n, p) - 2*v_p_factorial(n, p) - v_p_of_int(n+1,",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_631/1436937101.py in <cell line: 0>
+424e18,1,7,3,TypeError,TypeError: 'set' object is not subscriptable,"def winner_sets_n(n):
+    ranks=list(range(n))
+    return feasible_winners(ranks)
+
+ws=winner_sets_n(8)
+len(ws), ws[:5]",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_611/2540363723.py in <cell line: 0>
+424e18,1,8,3,NameError,NameError: name 'v_p_factorial' is not defined,"def v_p_catalan(n, p):
+    v_bin = v_p_factorial(2*n, p) - 2*v_p_factorial(n, p)
+    v_nplus1 = v_p_factorial(n+1, p) - v_p_factorial(n, p)
+    return v_bin - v_nplus1
+
+def valuations():
+    total2=0
+",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_596/1095866487.py in <cell line: 0>
+424e18,1,8,4,NameError,NameError: name 'total2' is not defined,"def v_p_factorial(n, p):
+    exp=0
+    power=p
+    while power<=n:
+        exp+= n//power
+        power*=p
+    return exp
+
+def v_p_catalan(n,p):
+    v_bin = v_p_factorial(2*n, p) - 2*v_p_factorial(n, ",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_596/1229284392.py in <cell line: 0>
+424e18,1,8,5,NameError,NameError: name 'total2' is not defined,"total2,total5 = compute()",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_596/2396457444.py in <cell line: 0>
+42d360,1,4,1,ValueError,ValueError: Could not find root within given tolerance. (1.659685758969727312883494051635427140701827570963620282472348014103283e-28 > 1.854603075343710692865867630773819756683782389378895501226519529,"import mpmath as mp
+
+f=lambda b: mp.log(b)- (1-1/b)
+mp.findroot(f, 2)",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_618/3212563212.py in <cell line: 0>
+641659,1,1,10,NameError,NameError: name 'triangle_data' is not defined,"def find_s_for_n(n, initial_guess_factor=1.5):
+    # compute Fibonacci numbers
+    def fib(k):
+        a,b=0,1
+        for _ in range(k):
+            a,b=b,a+b
+        return a
+    Fn = fib(n)
+    Fn1",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_677/2802036990.py in <cell line: 0>
+641659,1,1,12,NameError,NameError: name 'triangle_data' is not defined,"def find_s_for_n(n):
+    # compute Fibonacci numbers
+    def fib(k):
+        a,b=0,1
+        for _ in range(k):
+            a,b=b,a+b
+        return a
+    Fn = fib(n)
+    Fn1 = fib(n+1)
+    Fn2 = fib(",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_677/1397911917.py in <cell line: 0>
+641659,1,1,16,AttributeError,AttributeError: 'function' object has no attribute 'is_Relational',"def find_root_nsolve(n, lo, hi):
+    def fib(k):
+        a,b=0,1
+        for _ in range(k):
+            a,b=b,a+b
+        return a
+    Fn = fib(n); Fn1 = fib(n+1); Fn2 = fib(n+2)
+    def err_func(s):
+",---------------------------------------------------------------------------AttributeError                            Traceback (most recent call last)/tmp/ipykernel_677/1922814845.py in <cell line: 0>
+641659,1,1,17,TypeError,TypeError: Cannot convert expression to float,"def find_root_nsolve(n, lo, hi):
+    x = sp.symbols('x')
+    def fib(k):
+        a,b=0,1
+        for _ in range(k):
+            a,b=b,a+b
+        return a
+    Fn = fib(n); Fn1 = fib(n+1); Fn2 = fib(n+",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_677/660912757.py in <cell line: 0>(
+641659,1,1,18,ValueError,ValueError: Could not find root within given tolerance. (1.9721522630525295e-31 > 1.854603075343710692865867630773819756683782389378895501226519529458791e-68),"def find_root_numeric(n, lo, hi):
+    import mpmath as mp
+    def fib(k):
+        a,b=0,1
+        for _ in range(k):
+            a,b=b,a+b
+        return a
+    Fn = fib(n); Fn1 = fib(n+1); Fn2 = fib(n",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_677/753349152.py in <cell line: 0>(
+641659,1,1,20,UnboundLocalError,UnboundLocalError: cannot access local variable 'fib' where it is not associated with a value,"def compute_ratio_for_n(n):
+    s = find_root_numeric(n, 1.1*fib(n+2), 20*fib(n+2))  # guess range
+    # compute triangle etc.
+    def fib(k):
+        a,b=0,1
+        for _ in range(k):
+            a,",---------------------------------------------------------------------------UnboundLocalError                         Traceback (most recent call last)/tmp/ipykernel_677/1987142675.py in <cell line: 0>
+641659,1,2,1,AttributeError,AttributeError: 'Point2D' object has no attribute 'mirror',"import sympy as sp
+def compute_triangle(n, t):
+    # n integer, t = s (semiperimeter)
+    # Fibonacci numbers
+    # compute F_n, F_{n+1}, F_{n+2}
+    # Use sympy fibonacci
+    Fn = sp.fibonacci(n)
+   ",---------------------------------------------------------------------------AttributeError                            Traceback (most recent call last)/tmp/ipykernel_611/1376119428.py in <cell line: 0>
+641659,1,2,14,TypeError,TypeError: unsupported operand type(s) for -: 'NoneType' and 'float',"import math, numpy as np
+
+def triangle_data(n, s):
+    # n integer, s = semiperimeter (float)
+    Fn = float(sp.fibonacci(n))
+    Fnp1 = float(sp.fibonacci(n+1))
+    Fnp2 = float(sp.fibonacci(n+2))
+  ",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_611/1968630799.py in <cell line: 0>
+641659,1,2,17,TypeError,TypeError: cannot unpack non-iterable NoneType object,"for n in range(14, 30, 2):
+    ratio = compute_ratio_for_n(n)
+    print(n, ratio)","14 4.23605150214588
+16 4.236065573770482
+18 4.236067626800324
+20 4.236067926333406
+22 12366434929937.092
+24 60440271771886.17
+26 4.236067977340873
+-----------------------------------------------------"
+641659,1,3,6,NameError,NameError: name 'circle_intersections' is not defined,"import math, mpmath
+
+def ratio_for_n_numeric(n):
+    # Fibonacci numbers
+    F = fibonacci_upto(n+2)
+    x = F[n]
+    y = F[n+1]
+    L = x + y
+    # function to compute determinant for given s
+    def",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_625/3380477658.py in <cell line: 0>
+641659,1,3,7,NameError,NameError: name 'np' is not defined,"def ratio_for_n_numeric(n):
+    F = fibonacci_upto(n+2)
+    x = F[n]
+    y = F[n+1]
+    L = x + y
+    # define helper functions
+    def circumcenter(P1,P2,P3):
+        (x1,y1),(x2,y2),(x3,y3) = P1,P2,",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_625/2173657468.py in <cell line: 0>
+641659,1,3,8,ValueError,ValueError: Could not find root within given tolerance. (1.2658942034902879e-28 > 1.854603075343710692865867630773819756683782389378895501226519529458791e-68),"import numpy as np
+for n in range(2,7):
+    ratio, s_val = ratio_for_n_numeric(n)
+    print(""n"", n, ""ratio"", ratio, ""s"", s_val)","n 2 ratio -3.0000000000000018 s 4.1999999999999975
+---------------------------------------------------------------------------ValueError                                Traceback (most recent call last"
+641659,1,3,10,NameError,NameError: name 'circumcenter' is not defined,"def det_range(n):
+    F = fibonacci_upto(n+2)
+    x = F[n]
+    y = F[n+1]
+    L = x + y
+    vals = []
+    for s in [L + i*0.5 for i in range(1,41)]:
+        d = det_for_n(n, s)
+        vals.append((s,",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_625/1134960391.py in <cell line: 0>
+641659,1,4,12,AttributeError,AttributeError: 'Point2D' object has no attribute 'mirror',"Kprime = K.mirror(line_EF)  # reflection across line
+sp.simplify(Kprime.x), sp.simplify(Kprime.y)",---------------------------------------------------------------------------AttributeError                            Traceback (most recent call last)/tmp/ipykernel_662/1838506855.py in <cell line: 0>
+641659,1,4,20,AttributeError,AttributeError: module 'mpmath' has no attribute 'linalg',"import mpmath as mp
+
+def diff_numeric(r_val):
+    # compute coordinates numerically using formulas
+    lam = lam_val
+    # F
+    x_f = lam*(lam**2 - r_val**2)/(lam**2 + r_val**2)
+    y_f = 2*lam**2*r_",---------------------------------------------------------------------------AttributeError                            Traceback (most recent call last)/tmp/ipykernel_662/1929185910.py in <cell line: 0>
+641659,1,4,23,ValueError,ValueError: Could not find root within given tolerance. (0.00000000000000001802583080330259797945907827482961005007456561787474092852816149226542 > 1.85460307534371069286586763077381975668378238937889,"root2 = mp.findroot(diff_numeric, 0.9)
+root2",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_662/1177333470.py in <cell line: 0>
+641659,1,5,4,NameError,NameError: name 'solve_for_r' is not defined,"def test_n(n):
+    r = solve_for_r(n)
+    print(""n"", n, ""r"", r)
+    if r is None:
+        return
+    data = compute_ratio(n, r)
+    K = compute_K(data)
+    Kp = compute_K_prime(K, data)
+    cyclic = i",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_631/1281121019.py in <cell line: 0>
+641659,1,5,7,NameError,NameError: name 'compute_a_n' is not defined,"R2 = compute_a_n(2)
+R2",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_631/253604411.py in <cell line: 0>(
+641659,1,5,8,NameError,NameError: name 'find_r_for_cyclic' is not defined,"# re-run compute_a_n definition
+def compute_a_n(n):
+    r = find_r_for_cyclic(n)
+    if r is None:
+        print(""No r found for n"", n)
+        return None
+    data = compute_geometry(n, r)
+    K = co",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_631/1659358348.py in <cell line: 0>
+641659,1,5,9,NameError,NameError: name 'fibonacci_upto' is not defined,"def find_r_for_cyclic(n):
+    F = fibonacci_upto(n+2)
+    BD = F[n]; CD = F[n+1]
+    low = 1e-9
+    high = min(BD, CD) - 1e-9
+    Nsamples = 200
+    rs = np.linspace(low, high, Nsamples)
+    vals = []",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_631/1418159239.py in <cell line: 0>
+641659,1,5,10,NameError,NameError: name 'compute_geometry' is not defined,"def fibonacci_upto(N):
+    F=[0,1]
+    for i in range(2,N+1):
+        F.append(F[-1]+F[-2])
+    return F
+
+R2 = compute_a_n(2)
+R2",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_631/2510771675.py in <cell line: 0>
+641659,1,5,11,TypeError,TypeError:,"# Re-define all needed functions in order
+import numpy as np, math, sympy as sp
+
+def fibonacci_upto(N):
+    F=[0,1]
+    for i in range(2,N+1):
+        F.append(F[-1]+F[-2])
+    return F
+
+def compute_g",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_631/2609289413.py in <cell line: 0>
+641659,1,5,13,TypeError,TypeError:,"A = np.array([0.85714286,1.14285714])
+F = np.array([0.6,0.8])
+E = np.array([1.23529412,0.94117647])
+center1, r1 = circumcenter(A,F,E)
+center1, r1",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_631/4176766362.py in <cell line: 0>
+641659,1,5,17,TypeError,TypeError:,"R2 = compute_a_n(2)
+R2",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_631/253604411.py in <cell line: 0>(
+641659,1,5,21,TypeError,TypeError:,"def find_r_for_cyclic(n):
+    F = fibonacci_upto(n+2)
+    BD = F[n]; CD = F[n+1]
+    low = 0.01 * min(BD, CD)  # avoid degenerate
+    high = min(BD, CD) - 1e-9
+    Nsamples = 200
+    rs = np.linspace(",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_631/2745311510.py in <cell line: 0>
+641659,1,5,33,TypeError,TypeError:,"A_arr = np.array([2.96610169, 1.01694915])
+F_arr = np.array([2.83783784, 0.97297297])
+E_arr = np.array([3.0990099, 0.99009901])
+center1, r1 = circumcenter(A_arr, F_arr, E_arr)
+center1, r1",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_631/2274238147.py in <cell line: 0>
+641659,1,6,4,NameError,NameError: name 'data2' is not defined,"conds=[cond for s,cond in data2 if cond is not None]
+min_cond=min(conds)
+max_cond=max(conds)
+min_cond, max_cond",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_596/2609289447.py in <cell line: 0>
+641659,1,6,5,NameError,NameError: name 'scan_s' is not defined,"data2=scan_s(2)
+conds=[cond for s,cond in data2 if cond is not None]
+(min(conds), max(conds))",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_596/1020700133.py in <cell line: 0>
+641659,1,6,6,TypeError,TypeError: 'prev_s' is an invalid keyword argument for print(),"import numpy as np, math, mpmath as mp
+
+def fib(n):
+    a,b=0,1
+    for _ in range(n):
+        a,b=b,a+b
+    return a
+
+def geometry_ratio(n, s):
+    Fn = fib(n)
+    Fn1 = fib(n+1)
+    Fn2 = fib(n+2)
+ ","sign change between None 4.200001
+---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_5"
+641659,1,8,5,AttributeError,AttributeError: 'Point2D' object has no attribute 'slope',"sp.Line(sp.Point(0,0), sp.Point(1,0)).reflect(sp.Point(0,0))",---------------------------------------------------------------------------AttributeError                            Traceback (most recent call last)/tmp/ipykernel_600/2863219255.py in <cell line: 0>
+641659,1,8,11,ValueError,ValueError: No K,"import numpy as np, math, mpmath as mp
+
+def f_val(r):
+    return f(r)
+
+xs = np.linspace(1e-6, float(p_val)-1e-6, 500)
+signs = [f_val(x) for x in xs]
+
+# Find intervals where sign changes
+intervals = []",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_600/2610453422.py in <cell line: 0>
+dd7f5e,1,1,5,NameError,NameError: name 'sp' is not defined,"sp.cyclotomic_poly(2, x)",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_601/1993604916.py in <cell line: 0>
+dd7f5e,1,2,7,NameError,NameError: name 'x' is not defined,"def phi_2e(e):
+    return sp.cyclotomic_poly(2*e, x)
+phi_2e(1)",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_665/2936828614.py in <cell line: 0>
+dd7f5e,1,3,2,AttributeError,AttributeError: 'MutableDenseMatrix' object has no attribute 'smith_normal_form',"count, ex = count_small(1)
+print(""count:"", count)",---------------------------------------------------------------------------AttributeError                            Traceback (most recent call last)/tmp/ipykernel_624/2662603021.py in <cell line: 0>
+dd7f5e,1,3,3,ValueError,ValueError: too many values to unpack (expected 3),"import sympy as sp
+from sympy.matrices.normalforms import smith_normal_form
+def has_solution(a):
+    rows = list(range(-8,9))
+    cols = list(range(-8,9))
+    A = [[0]*len(cols) for _ in rows]
+    for",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_624/3027095238.py in <cell line: 0>
+dd7f5e,1,3,7,AttributeError,AttributeError: 'MutableDenseMatrix' object has no attribute 'smith_normal_form',"M = sp.Matrix([[2,4],[6,8]])
+print(M.smith_normal_form())",---------------------------------------------------------------------------AttributeError                            Traceback (most recent call last)/tmp/ipykernel_624/3075458800.py in <cell line: 0>
+dd7f5e,1,3,22,NameError,NameError: name 'n' is not defined,"def poly_to_seq(poly):
+    seq = [0]*9
+    for i in range(0,9):
+        seq[i] = int(poly.nth(i))
+    return seq
+
+def verify_alpha(poly):
+    # find D and t, sign
+    # factor out x^t (lowest exponent",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_624/1703911968.py in <cell line: 0>
+dd7f5e,1,3,23,KeyError,PolynomialError: 1/(x**6 - x**5 + x**4 - x**3 + x**2 - x + 1) contains an element of the set of generators.,"def construct_beta(poly):
+    # factor out monomial and sign
+    coeffs = [poly.nth(i) for i in range(0,9)]
+    t = next(i for i,c in enumerate(coeffs) if c!=0)
+    sign = 1 if coeffs[t]>0 else -1
+   ",---------------------------------------------------------------------------KeyError                                  Traceback (most recent call last)/usr/local/lib/python3.12/dist-packages/sympy/poly
+dd7f5e,1,3,28,KeyError,PolynomialError: x**(-6) contains an element of the set of generators.,"def construct_beta(poly):
+    # factor out monomial and sign
+    coeffs = [poly.nth(i) for i in range(0,9)]
+    t = next(i for i,c in enumerate(coeffs) if c!=0)
+    sign = 1 if coeffs[t]>0 else -1
+   ",---------------------------------------------------------------------------KeyError                                  Traceback (most recent call last)/usr/local/lib/python3.12/dist-packages/sympy/poly
+dd7f5e,1,5,6,AttributeError,AttributeError: module 'sympy' has no attribute 'cyclotic_poly',"x = sp.Symbol('x')
+Phi2 = sp.cyclotomic_poly(2, x)  # x+1
+Phi6 = sp.cyclotomic_poly(6, x)  # x**2 - x + 1
+Phi10 = sp.cyclotomic_poly(10, x)
+Phi14 = sp.cyclotomic_poly(14, x)
+Phi18 = sp.cyclotomic_poly",---------------------------------------------------------------------------AttributeError                            Traceback (most recent call last)/tmp/ipykernel_618/2631470476.py in <cell line: 0>
+dd7f5e,1,8,3,AttributeError,AttributeError: module 'sympy' has no attribute 'npoly',"x=sp.Symbol('x')
+# compute cyclotomic polynomials
+phi_polys = {n: sp.npoly(sp.cyclotomic_poly(n, x), x) for n in candidates}
+# get degree
+phi_deg = {n: sp.degree(phi_polys[n]) for n in candidates}
+phi",---------------------------------------------------------------------------AttributeError                            Traceback (most recent call last)/tmp/ipykernel_641/2209760605.py in <cell line: 0>
+f28c01,1,1,4,ZeroDivisionError,ZeroDivisionError: float division by zero,"import random, math
+def angle_NMO(t_val, a_val, b_val):
+    W = (0.0,0.0)
+    Y = (2.0,0.0)
+    M = (t_val,0.0)
+    X = (t_val + a_val, b_val)
+    Z = (t_val - a_val, -b_val)
+    # compute N intersect",---------------------------------------------------------------------------ZeroDivisionError                         Traceback (most recent call last)/tmp/ipykernel_600/1429163347.py in <cell line: 0>
+d48826,1,4,6,ValueError,ValueError: Could not find root within given tolerance. (0.1239300153129505420264641455380163475839906007218524648127587060853588 > 1.854603075343710692865867630773819756683782389378895501226519529458,"import sympy as sp
+
+# define variables
+x1,y1,x2,y2 = sp.symbols('x1 y1 x2 y2', real=True)
+
+# known points
+W = sp.Point(0,0)
+X = sp.Point(4,0)
+
+Y = sp.Point(x1,y1)
+Z = sp.Point(x2,y2)
+
+eqs = []
+# dista",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_665/4231806943.py in <cell line: 0>
+d48826,1,5,3,NameError,NameError: name '_' is not defined,"sp.nsimplify(_, [sp.sqrt(53041)])",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_599/807115027.py in <cell line: 0>(
+d48826,1,5,6,NameError,NameError: name 'k2' is not defined,float(sp.sqrt((a-b)**2 + (h - k2)**2) - float(d1)),---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_599/1705171420.py in <cell line: 0>
+d48826,1,6,1,ValueError,ValueError: Could not find root within given tolerance. (0.00000008173528085956352813140241812295875828299334413449034007401419860401599 > 1.85460307534371069286586763077381975668378238937889550122651,"import sympy as sp
+
+d1, d2 = sp.symbols('d1 d2', positive=True, real=True)
+
+def tri_area(a,b,c):
+    s = (a+b+c)/2
+    return sp.sqrt(s*(s-a)*(s-b)*(s-c))
+
+A1 = tri_area(4,7,d1)
+A2 = tri_area(5,6,d1)
+",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_624/1641715432.py in <cell line: 0>
+d48826,1,7,3,NameError,NameError: name 'sp' is not defined,"c = sp.Rational(11,59)
+s = 4*sqrt(210)/59
+
+eq1 = (a + w*c)**2 + (w*s)**2 - 16   # 4^2
+eq2 = (a - y*c)**2 + (y*s)**2 - 25   # 5^2
+eq3 = (b + y*c)**2 + (y*s)**2 - 36   # 6^2
+eq4 = (b - w*c)**2 + (w*s)**",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_671/2289307390.py in <cell line: 0>
+d48826,1,7,4,ValueError,ValueError: Could not find root within given tolerance. (113.0071701944844634096487206657045672386955115626120475360563768478305 > 1.8546030753437106928658676307738197566837823893788955012265195294587,"import sympy as sp
+a,b,w,y = sp.symbols('a b w y', positive=True, real=True)
+c = sp.Rational(11,59)
+s = 4*sp.sqrt(210)/59
+eq1 = (a + w*c)**2 + (w*s)**2 - 16
+eq2 = (a - y*c)**2 + (y*s)**2 - 25
+eq3 = (b",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_671/4067411093.py in <cell line: 0>
+d48826,1,7,5,ValueError,ValueError: Could not find root within given tolerance. (0.0002651586970795665982164781244505441158162443129643742687308837105538203 > 1.854603075343710692865867630773819756683782389378895501226519529,"sol = sp.nsolve([eq1,eq2,eq3,eq4],[a,b,w,y],[5,6,4,5])
+sol",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_671/155385863.py in <cell line: 0>(
+d48826,1,7,9,ValueError,ValueError: Could not find root within given tolerance. (118.67838724219671136982264061380369662958309026548368565935726978311966568847849454287 > 1e-14),"import sympy as sp
+# define symbols for a,b,w,y
+a,b,w,y = sp.symbols('a b w y', positive=True, real=True)
+c = sp.Rational(11,59)
+s = 4*sp.sqrt(210)/59
+
+# define equations as earlier but using symbolic",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_671/1331923596.py in <cell line: 0>
+d48826,1,8,13,UFuncTypeError,UFuncTypeError: Cannot cast ufunc 'solve1' input 0 from dtype('O') to dtype('float64') with casting rule 'same_kind',"def line_intersection(A,B,C,D):
+    # lines AB and CD
+    # Solve A + s(B-A) = C + t(D-C)
+    A = np.array(A); B = np.array(B); C = np.array(C); D = np.array(D)
+    AB = B-A
+    CD = D-C
+    # solve f",---------------------------------------------------------------------------UFuncTypeError                            Traceback (most recent call last)/tmp/ipykernel_601/2428274164.py in <cell line: 0>
+76aef9,0,8,2,AttributeError,AttributeError: 'function' object has no attribute 'cache_clear',"def expected_fixed(state):
+    m = len(state)
+    if termination(state):
+        return m
+    # choose two smallest numbers (first two in sorted order)
+    x, y = state[0], state[1]
+    new = list(sta",---------------------------------------------------------------------------AttributeError                            Traceback (most recent call last)/tmp/ipykernel_611/3368863353.py in <cell line: 0>
+9a1984,1,1,26,ValueError,ValueError: max() iterable argument is empty,"def minimal_k_for_pair(c,d):
+    # find smallest k such that (c,d) appears in coeff_pairs_k(k)
+    for k in range(1,20):  # up to 2^20 ~ 1 million, manageable
+        if (c,d) in coeff_pairs_k(k):
+   ",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_599/4196714497.py in <cell line: 0>
+9a1984,1,1,27,ValueError,"ValueError: pair (2, 49) not found up to limit","def max_k_needed_for_target(N_initial, target):
+    maxk=0
+    for n in range(1,N_initial):
+        low = (target + (n+1) -1)//(n+1)
+        high = target // n
+        for A in range(low, high+1):
+   ",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_599/2155520038.py in <cell line: 0>
+9a1984,1,2,5,NameError,NameError: name 'a0' is not defined,"def coeffs_block(k):
+    # generate symbolic for pair a0,a1 only, with length 2^k+1
+    a0,a1=sp.symbols('a0 a1')
+    seq=[a0,a1]
+    # Actually need to generate full sequence for n=2 (a0,a1) after k ","0 2
+---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_641/529052252.py in <cell line:"
+9a1984,1,5,20,TypeError,TypeError: unsupported operand type(s) for +: 'int' and 'str',"def simulate_count(N,limit,steps):
+    # initial sequence 1..N
+    seq=list(range(1,N+1))
+    counts=[]
+    for t in range(steps+1):
+        cnt=seq.count(limit)
+        counts.append(cnt)
+        # t",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_601/2053274176.py in <cell line: 0>
+9a1984,1,7,2,NameError,NameError: name 'transform_k' is not defined,"seq=list(range(1,6))
+print(seq)
+print(transform_k(seq,1))
+print(transform_k(seq,2))","[1, 2, 3, 4, 5]
+---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_665/2568393973.py i"
+9be9d3,1,3,8,OverflowError,OverflowError: int too large to convert to float,"best, seq, x0 = brute_max(10)
+best, seq[:10], x0",---------------------------------------------------------------------------OverflowError                             Traceback (most recent call last)/tmp/ipykernel_662/1166661848.py in <cell line: 0>
+8fea51,1,4,10,NameError,NameError: name 'sp' is not defined,"j,m,B=sp.symbols('j m B', integer=True, nonnegative=True)
+b=sp.Function('b')
+# We'll just derive formula manually using sympy sums
+j=sp.symbols('j', integer=True)
+expr1=sp.summation(j*sp.Symbol('b_j')",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_625/2603612022.py in <cell line: 0>
+8fea51,1,8,4,TypeError,TypeError: object of type 'int' has no len(),"def satisfies_excl_m_fast(n):
+    # compute digits
+    digits=[]
+    temp=n
+    while temp>0:
+        digits.append(temp%7)
+        temp//=7
+    m=len(digits)-1
+    # sum over i=0..m-1
+    s=0
+    # p",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_678/1521035769.py in <cell line: 0>
+c3f0bd,1,8,7,NameError,NameError: name 'f_value' is not defined,"import random, math, numpy as np
+
+def random_search(samples=200000):
+    best=-1
+    best_xyz=None
+    for _ in range(samples):
+        # sample x,y uniformly in [0,4]
+        x = random.random()*4
+  ",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_600/2229113435.py in <cell line: 0>
+159758,1,8,1,TypeError,TypeError: 'x' is an invalid keyword argument for print(),"import sympy as sp
+x=20",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_601/1130137189.py in <cell line: 0>
+6837b1,1,4,3,NameError,NameError: name 'neighbor_mask_idx' is not defined,print(bin(neighbor_mask_idx[1])),---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_625/2249922152.py in <cell line: 0>
+6837b1,1,5,2,TypeError,TypeError: descriptor 'intersection' for 'set' objects doesn't apply to a 'frozenset' object,"def is_intersecting(family):
+    # family: list of subsets (frozenset)
+    for i in range(len(family)):
+        for j in range(i+1, len(family)):
+            if family[i].isdisjoint(family[j]):
+      ",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_611/2675012006.py in <cell line: 0>
+6837b1,1,6,2,RecursionError,RecursionError: maximum recursion depth exceeded,"def generate_subsets(n=5):
+    # return list of bit masks 0..2^n-1
+    return list(range(1<<n))
+
+subsets = generate_subsets()
+n = 5
+N = len(subsets)
+# Precompute disjointness adjacency: edge if subset",---------------------------------------------------------------------------RecursionError                            Traceback (most recent call last)/tmp/ipykernel_600/1602378243.py in <cell line: 0>
+6837b1,1,6,3,RecursionError,RecursionError: maximum recursion depth exceeded,"def bron_kerbosch2(R, P, X, result):
+    if not P and not X:
+        result.append(set(R))
+        return
+    # choose pivot u from P ∪ X
+    # using heuristic: choose vertex with max degree in P∪X
+  ",---------------------------------------------------------------------------RecursionError                            Traceback (most recent call last)/tmp/ipykernel_600/3676521708.py in <cell line: 0>
+6837b1,1,8,5,TypeError,TypeError: 'frozenset' object is not subscriptable,"import random, itertools, math
+
+def is_intersecting(family):
+    for i in range(len(family)):
+        for j in range(i+1,len(family)):
+            if not (all_subsets[family[i]] & all_subsets[family[j",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_631/1203410508.py in <cell line: 0>
+f84c73,1,6,7,NameError,NameError: name 'n' is not defined,"[n for (a,c,k) in sols], [k*k for (a,c,k) in sols]",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_665/3800205451.py in <cell line: 0>
+b4ec47,1,1,14,TypeError,TypeError: unsupported operand type(s) for -: 'NoneType' and 'float',"def verify_rectangles(rects):
+    for rect in rects:
+        L1,L2,M1,M2 = rect
+        P11 = intersect_point(L1,M1)
+        P12 = intersect_point(L1,M2)
+        P21 = intersect_point(L2,M1)
+        P",---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_596/3743409344.py in <cell line: 0>
+b4ec47,1,1,15,ValueError,ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all(),"def verify_rectangles(rects):
+    for rect in rects:
+        L1,L2,M1,M2 = rect
+        P11 = intersect_point(L1,M1)
+        P12 = intersect_point(L1,M2)
+        P21 = intersect_point(L2,M1)
+        P",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_596/1316641590.py in <cell line: 0>
+b4ec47,1,1,17,ValueError,ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all(),"def rectangle_from_chords(chords_set):
+    # chords_set: tuple of four chords
+    # return True if they form rectangle
+    chords = list(chords_set)
+    # iterate over choices of two chords as first p",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_596/3039450428.py in <cell line: 0>
+b4ec47,1,2,17,NameError,NameError: name 'dir_vec' is not defined,"import itertools, math, cmath, sys, time, collections, numpy as np
+
+def rectangle_from_chords(ch_set):
+    # ch_set is tuple of four chords (i,j)
+    # Determine if they can be arranged as rectangle s",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_677/81308870.py in <cell line: 0>()
+b4ec47,1,4,28,KeyError,KeyError: 1,"def rectangle_vertices(L1, L2, M1, M2):
+    # each chord is tuple (i,j)
+    coeff = {}
+    for chord in [L1, L2, M1, M2]:
+        coeff[chord] = line_coeff(*chord)
+    p1 = intersect(coeff[L1], coeff[",---------------------------------------------------------------------------KeyError                                  Traceback (most recent call last)/tmp/ipykernel_662/1576193129.py in <cell line: 0>
+b4ec47,1,4,35,NameError,NameError: name 'contrib' is not defined,print(contrib),---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_662/3999721763.py in <cell line: 0>
+b4ec47,1,4,36,NameError,NameError: name 'count_rectangles_by_pair' is not defined,"contrib = count_rectangles_by_pair()
+contrib",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_662/127080813.py in <cell line: 0>(
+b4ec47,1,6,20,NameError,NameError: name 'p' is not defined,"def is_rectangle(pts, eps=1e-6):
+    # pts list of 4 points (x,y)
+    # Compute centroid
+    cx = sum(p[0] for p in pts)/4
+    cy = sum(p[1] for p in p in pts)/4",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_625/949944845.py in <cell line: 0>(
+b4ec47,1,7,5,NameError,NameError: name 'rectangle_vertices' is not defined,"def is_rectangle(pts, tol=1e-6):
+    # order as given (convex)
+    # compute vectors edges
+    vs=[(pts[(i+1)%4][0]-pts[i][0], pts[(i+1)%4][1]-pts[i][1]) for i in range(4)]
+    # perpendicular adjacen",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_631/4050818961.py in <cell line: 0>
+b4ec47,1,7,7,ValueError,ValueError: No intersection,"def rectangle_vertices(rect):
+    c1,c2,d1,d2=rect
+    inters=[]
+    for a,b in [(c1,d1),(c1,d2),(c2,d1),(c2,d2)]:
+        ok,pt=segments_intersect(a,b)
+        if not ok:
+            raise ValueError",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_631/3326148957.py in <cell line: 0>
+b4ec47,1,7,14,ValueError,ValueError: No intersection,"def is_rectangle_vertices(rect):
+    verts_rect=rectangle_vertices(rect)
+    return is_rectangle(verts_rect)
+
+valid=0
+invalid=0
+for rect in rectangles:
+    if is_rectangle_vertices(rect):
+        vali",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_631/2250873350.py in <cell line: 0>
+b4ec47,1,7,20,ValueError,ValueError: No intersection,"def is_square(rect):
+    # Determine if rectangle is a square: side lengths equal
+    verts_rect=rectangle_vertices(list(rect))
+    # compute side lengths
+    vs=[(verts_rect[(i+1)%4][0]-verts_rect[i]",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_631/2701190076.py in <cell line: 0>
+737d44,1,1,1,NotImplementedError,"NotImplementedError: multiple generators [(-2*sqrt(3)*x + sqrt(3))**(1/3), x**(1/3)]","import sympy as sp
+
+# define symbols
+x = sp.symbols('x', real=True)
+sqrt3 = sp.sqrt(3)
+
+# y expression from line AB
+y = sqrt3/2 - sqrt3*x
+
+# equation of astroid: x^(2/3) + y^(2/3) = 1
+eq = sp.Eq(x**(s",---------------------------------------------------------------------------NotImplementedError                       Traceback (most recent call last)/tmp/ipykernel_677/26878438.py in <cell line: 0>()
+737d44,1,1,2,ValueError,ValueError: Could not find root within given tolerance. (4.670482522607743539624889652144676897445853627366587774477241365783367e-28 > 1.854603075343710692865867630773819756683782389378895501226519529,"a = sp.symbols('a', real=True)
+eq_a = sp.Eq((1 - a)**sp.Rational(3,2), sqrt3/2 - sqrt3 * a**sp.Rational(3,2))
+sol_a = sp.nsolve(eq_a, 0.2)  # initial guess near 0.2
+sol_a",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_677/184388775.py in <cell line: 0>(
+737d44,1,4,2,ValueError,ValueError:,"derivative = sp.diff(u**4 - 2*x*u**3 + (x**2 + y**2 - 1)*u**2 + 2*x*u - x**2, u)
+sp.simplify(derivative.subs(u, sp.Rational(1,2)))",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_678/2294464154.py in <cell line: 0>
+269012,1,5,2,ZeroDivisionError,ZeroDivisionError: float division by zero,"import math
+def V_val(L):
+    return L**3 * (L**2 - 127/2) / (L**2 - 68)
+for L in [6, 6.5, 7, 7.5, math.sqrt(68)]:
+    print(L, V_val(L))","6 185.625
+6.5 226.63228155339806
+7 261.7631578947368
+7.5 260.3058510638298
+---------------------------------------------------------------------------ZeroDivisionError                         Tracebac"
+269012,1,6,8,ValueError,"ValueError: Invalid limits given: ((b, 0, 1), (c, 0, 1), None)","a,b,c=sp.symbols('a b c', real=True)
+p,q=sp.symbols('p q', real=True)
+# define piecewise integrand after integrating over a:
+# For each b,c, integrand = min(1, (7 - p*b - q*c)/2) if positive else 0.
+e",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_665/1991070506.py in <cell line: 0>
+471086,1,8,2,NameError,NameError: name 'sp' is not defined,"x = (sp.sqrt(17)-1)/8
+sp.nsimplify(x)",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_624/1082976252.py in <cell line: 0>
+c8adf3,1,4,5,ValueError,ValueError: Could not find root within given tolerance. (2601564017461.692070417915269868062019926401627204176994507724015660739 > 1.8546030753437106928658676307738197566837823893788955012265195294587,"eq1_s = sp.simplify(eq1)
+eq2_s = sp.simplify(eq2)
+
+# numeric solve
+sol = sp.nsolve([eq1_s, eq2_s], [x, y], [27.5, 15.86])
+sol",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_625/3166371222.py in <cell line: 0>
+c8adf3,1,7,3,ValueError,ValueError: Could not find root within given tolerance. (1.563391423098838322538244898707201098817808815233460994177410299911588 > 1.8546030753437106928658676307738197566837823893788955012265195294587,"# numeric solve
+sol = sp.nsolve([eq1, eq2], (x, y), (20, 10))  # initial guess inside triangle maybe near centroid
+sol",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_596/2720413857.py in <cell line: 0>
+354f86,1,2,7,NameError,NameError: name 'M' is not defined,"AM = A.distance(M)
+AM",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_626/4235786231.py in <cell line: 0>
+354f86,1,3,3,AttributeError,AttributeError: 'Point2D' object has no attribute 'as_real_imag',"P = intersections[1]
+sp.nsimplify(P)",---------------------------------------------------------------------------AttributeError                            Traceback (most recent call last)/tmp/ipykernel_641/724988540.py in <cell line: 0>(
+6618d2,1,4,5,TypeError,TypeError: Cannot convert complex to float,float(expr_val.evalf()),---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)/tmp/ipykernel_624/156288188.py in <cell line: 0>(
+476119,1,3,5,NameError,NameError: name 'x' is not defined,"log1 = (x*mp.log(y))/mp.log(x)
+log2 = (4*y*mp.log(x))/mp.log(y)
+log1, log2",---------------------------------------------------------------------------NameError                                 Traceback (most recent call last)/tmp/ipykernel_677/2535481305.py in <cell line: 0>
+476119,1,4,3,ValueError,ValueError: Could not find root within given tolerance. (1.612330591855646851637291013180190967458022326318346268172302350616221e-30 > 1.854603075343710692865867630773819756683782389378895501226519529,"import mpmath as mp
+root = mp.findroot(f, 1.53)  # initial guess
+root",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_662/667556468.py in <cell line: 0>(
+476119,1,4,4,ValueError,ValueError: Could not find root within given tolerance. (3.188612748287328776664200297928030362263785584090401944801999438697513e-31 > 1.854603075343710692865867630773819756683782389378895501226519529,"root = mp.findroot(f, (1.5,1.6))
+root",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_662/2665376781.py in <cell line: 0>
+476119,1,8,3,ValueError,ValueError: Could not find root within given tolerance. (4.637892277782107041196714538643646575904040368083386900652696117741118e-31 > 1.854603075343710692865867630773819756683782389378895501226519529,"import mpmath as mp
+root = mp.findroot(f, 1.53)
+root",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_600/2356061490.py in <cell line: 0>
+476119,1,8,4,ValueError,ValueError: Could not find root within given tolerance. (9.660878459078190028661586211555086257077196810926906604814596108058377e-31 > 1.854603075343710692865867630773819756683782389378895501226519529,"root = mp.findroot(f, (1.51, 1.6))
+root",---------------------------------------------------------------------------ValueError                                Traceback (most recent call last)/tmp/ipykernel_600/1892723106.py in <cell line: 0>

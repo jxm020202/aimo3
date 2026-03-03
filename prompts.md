@@ -1,7 +1,9 @@
-# Solver Prompts
+# Solver Prompts (v24)
 
 Copy of prompts from `notebooks/aimo3-solver.ipynb` cell-8 (CFG class) for readability.
 Keep in sync — the notebook is the source of truth.
+
+**Last updated**: 2026-03-03 (v24 changes: Vboxed checkpoints, Strategic Rules, library blocklist, scipy replacements)
 
 ---
 
@@ -38,10 +40,24 @@ rigorous mathematical reasoning.
 
 # Output Format:
 The final answer must be a non-negative integer between 0 and 99999.
-Place your final numerical answer inside \boxed{}, e.g., \boxed{42}
+When you compute a candidate answer through any approach, IMMEDIATELY save it as
+\Vboxed{N} (e.g., \Vboxed{42}). This is your checkpoint — continue verifying or
+trying other approaches. When you are confident, write your final answer as \boxed{N}.
+If you find a better answer later, write a new \Vboxed{N} to update your checkpoint.
+Always have at least one \Vboxed{} before attempting verification.
 
 Think step-by-step and show your complete reasoning process. Quality of reasoning
 is as important as the final answer.
+
+# Strategic Rules:
+- If your computed answer is NOT an integer but the format requires an integer,
+  you have likely misinterpreted the problem. Immediately try a different interpretation.
+- If your code consistently computes X but your reasoning suggests Y, trust the code.
+  Empirical results from multiple independent runs outweigh theoretical arguments.
+- For combinatorial problems, verify your formula against brute-force for 3-5 small cases
+  before extrapolating to the full problem size.
+- If your code execution keeps timing out, submit your best partial result
+  rather than retrying indefinitely.
 
 # Efficiency:
 If the problem has an obvious, immediate answer (e.g. direct computation,
@@ -68,6 +84,8 @@ Explain what you're computing and why before running code.
 ```
 
 ## preference_prompt
+
+Appended to the problem text. Contains library guidance and code robustness rules.
 
 ```
 You have access to `math`, `numpy`, and `sympy` for:
@@ -97,7 +115,8 @@ Best Practices:
 - Combine symbolic and numerical approaches: derive symbolically, verify numerically
 - Document your computational strategy clearly
 - Validate computational results against known cases or theoretical bounds
-- For very large exponents (e.g. a^(n!)), use pow(base, exp, mod) or analytical methods — never materialize the full number
+- For very large exponents (e.g. a^(n!)), use pow(base, exp, mod) or analytical
+  methods — never materialize the full number
 
 # Code Robustness Rules:
 - Each code cell must be SELF-CONTAINED: re-import and re-define everything you need.
@@ -108,48 +127,64 @@ Best Practices:
   over pure symbolic or direction-counting approaches.
 - For combinatorics counting: always verify no duplicates — check injectivity explicitly.
 - If 5+ code cells without progress, STOP and restart with a different approach.
-- Never enumerate more than 10^6 cases without checking feasibility first.
+- When using Python, prefer converting sympy expressions to int() before passing to
+  Python builtins like pow(), min(), max().
+- Common import: from sympy.ntheory.modular import crt (note: sympy.crt does not exist).
+- If a code cell fails, re-import necessary libraries in the next cell.
+
+# Library Availability:
+NOT installed (do NOT import — they WILL fail): pulp, ortools, z3-solver, mip,
+pyscipopt, pysat, cvxpy, constraint, matplotlib, sklearn.
+Do not waste turns trying these libraries or probing with try/except.
+
+Available and recommended:
+- sympy, numpy, scipy, networkx, mpmath, math, itertools, functools, fractions,
+  collections, decimal, heapq, random, statistics
+
+Replacements for unavailable optimization/constraint libraries:
+- Integer/Binary Linear Programming (replaces pulp, mip, ortools):
+  from scipy.optimize import milp, LinearConstraint, Bounds
+  import numpy as np
+  res = milp(c=c_vec, constraints=LinearConstraint(A, lb, ub),
+             integrality=np.ones(n), bounds=Bounds(0, 1))
+  # res.success, res.x (solution vector), res.fun (objective value)
+- Linear Programming: scipy.optimize.linprog(c, A_ub=A, b_ub=b, method="highs")
+- Assignment problems: scipy.optimize.linear_sum_assignment(cost_matrix)
+- Graph algorithms (matching, shortest path, components): import networkx as nx
+- Constraint satisfaction: encode as ILP via scipy.optimize.milp, or backtracking
+  with pruning
+- Number theory: sympy.ntheory or random (Monte Carlo verification)
+- Geometry: fractions (exact rational) + sympy, avoid floating point
+- Game theory/DP: functools.lru_cache for memoized recursion
 ```
 
 ---
 
-## CFG Parameters
+## Key Config Parameters
 
 | Parameter | Value | Notes |
 |-----------|-------|-------|
-| early_stop | 4 | Stop when 4/8 attempts agree (simple majority) |
-| attempts | 8 | Parallel attempts per problem |
-| high_problem_timeout | 900 | 15 min budget for hard problems |
-| base_problem_timeout | 300 | 5 min budget for easy problems |
-| jupyter_timeout | 30 | Code execution timeout per cell (was 6 in v20) |
-| sandbox_timeout | 3 | Additional kernel kill timeout |
-| temperature | 0.5 | Sampling temperature |
-| min_p | 0.02 | Minimum probability filter |
-| context_tokens | 65536 | Context window |
-| seed | 42 | Base seed (per-attempt: seed + attempt^2) |
+| `attempts` | 16 | Per problem |
+| `workers` | 16 | Parallel threads |
+| `turns` | 128 | Max reasoning turns per attempt |
+| `temperature` | 0.5 | Default (overridden by schedule) |
+| `temp_schedule` | `[0.1, 0.3×5, 0.5×6, 0.7×4]` | 16 attempts total |
+| `context_tokens` | 65536 | Max context window |
+| `high_problem_timeout` | 900s | Max per problem |
+| `base_problem_timeout` | 300s | Min per problem |
+| `notebook_limit` | 17400s | ~290 min total |
+| `jupyter_timeout` | 30s | Per code execution |
+| `kv_cache_dtype` | `fp8_e4m3` | Compressed KV cache |
+| `gpu_memory_utilization` | 0.96 | vLLM GPU usage |
+| `min_p` | 0.02 | Minimum probability sampling |
 
-## Sandbox Preloads (cell-11)
+## v24 Changes (from baseline)
 
-Pre-imported in every sandbox kernel: `math`, `numpy`, `sympy`, `itertools`, `collections`, `functools`, `fractions`, `mpmath` (dps=64).
-
-## Answer Extraction (cell-13)
-
-Two extraction points:
-1. **Streaming scan**: Every time `}` appears in model output, scan ALL accumulated text for `\boxed{N}`. Takes the LAST match (model may revise). Does NOT break on first find — keeps streaming to capture revisions.
-2. **Final message scan**: When model sends `channel='final'`, scan that message for `\boxed{N}`.
-
-Fallback: also looks for `final answer is N` pattern.
-
-**v20 bug (FIXED in v21)**: Was only scanning last 32 token chunks instead of all text. Model would write `\boxed{8}`, then generate 200+ more tokens ("let me verify..."), and the answer scrolled out of the window. Caused 41% of attempts to return None even when the model had the correct answer.
-
-## Test Levels (cell-17)
-
-| Level | Problems | Description |
-|-------|----------|-------------|
-| 1 | 10 reference | AIMO3 reference problems (embedded) |
-| 2 | +10 hard diagnostic | Hand-picked, mostly hard, diverse domains |
-| 3 | +10 random | Sampled from remaining pool (seeded, deduped) |
-| 4 | +~20 comprehensive | All remaining problems from fixed 50 |
-| DR | failed problems x2 | Double-run retry: re-solves failures, simulates competition scoring |
-
-Output tees to `/kaggle/working/diagnostic.log` (persists as kernel output, avoids stdout truncation).
+1. **Vboxed checkpoints**: Model writes `\Vboxed{N}` as checkpoint before verifying. Extracted at 0.7 confidence (vs 1.0 for `\boxed{}`). Catches answers lost to over-verification.
+2. **Strategic Rules**: Trust code over reasoning, reinterpret if non-integer, verify small cases, submit partial results.
+3. **Library blocklist**: Explicit list of unavailable libraries with scipy replacements.
+4. **Code robustness**: Self-contained cells, sympy explosion guard, re-import on error.
+5. **Confidence-tiered voting**: `\boxed{}` = 1.0, `\Vboxed{}` = 0.7, 0-code attempts = 0.5x weight.
+6. **`% 100000` extraction fallback**: Catches answers like 121818 → 21818.
+7. **Temp schedule**: Dropped 0.9 (useless), heavier on 0.3-0.5.
+8. **Early stop removed**: All 16 attempts always run (ES was broken — all launch simultaneously via ThreadPoolExecutor).
