@@ -1,0 +1,3302 @@
+{
+  "total_attempts": 400,
+  "correct": 206,
+  "wrong": 16,
+  "none": 178,
+  "reason_counts": {
+    "timeout": 19,
+    "token_light": 77,
+    "final_answer_text(2x)": 22,
+    "unknown": 13,
+    "final_answer_text(1x)": 39,
+    "ran_code_ok_but_no_extraction": 23,
+    "many_errors(5)": 1,
+    "token_heavy": 9,
+    "pure_reasoning_no_boxed": 5,
+    "final_answer_text(3x)": 5,
+    "many_errors(3)": 2,
+    "many_errors(24)": 1,
+    "many_errors(10)": 1,
+    "many_errors(15)": 1,
+    "boxed_present(1x)": 10,
+    "boxed_present(2x)": 2,
+    "final_answer_text(4x)": 3,
+    "likely_stopped_early": 13,
+    "many_errors(4)": 1
+  },
+  "none_attempts": [
+    {
+      "problem_id": "92ba6a",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.529,
+      "code_calls": 3,
+      "errors": 1,
+      "tokens": 1744,
+      "time": 51.5,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "50",
+      "turns": 3,
+      "none_reasons": [
+        "timeout",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "92ba6a",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.416,
+      "code_calls": 3,
+      "errors": 1,
+      "tokens": 1245,
+      "time": 46.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "50",
+      "turns": 3,
+      "none_reasons": [
+        "timeout",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "92ba6a",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.392,
+      "code_calls": 3,
+      "errors": 0,
+      "tokens": 1268,
+      "time": 29.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "50",
+      "turns": 3,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "92ba6a",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.424,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 2801,
+      "time": 23.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "50",
+      "turns": 1,
+      "none_reasons": [
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "9c1c5f",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.581,
+      "code_calls": 2,
+      "errors": 1,
+      "tokens": 6175,
+      "time": 85.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "580",
+      "turns": 2,
+      "none_reasons": [
+        "timeout"
+      ]
+    },
+    {
+      "problem_id": "9c1c5f",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.673,
+      "code_calls": 7,
+      "errors": 1,
+      "tokens": 5180,
+      "time": 78.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "580",
+      "turns": 8,
+      "none_reasons": [
+        "timeout"
+      ]
+    },
+    {
+      "problem_id": "9c1c5f",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.638,
+      "code_calls": 12,
+      "errors": 1,
+      "tokens": 8235,
+      "time": 78.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "580",
+      "turns": 12,
+      "none_reasons": [
+        "unknown"
+      ]
+    },
+    {
+      "problem_id": "9c1c5f",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.75,
+      "code_calls": 11,
+      "errors": 1,
+      "tokens": 8646,
+      "time": 77.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "580",
+      "turns": 11,
+      "none_reasons": [
+        "final_answer_text(1x)"
+      ]
+    },
+    {
+      "problem_id": "a295e9",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.894,
+      "code_calls": 3,
+      "errors": 0,
+      "tokens": 12183,
+      "time": 113.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "520",
+      "turns": 4,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "a295e9",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.842,
+      "code_calls": 7,
+      "errors": 0,
+      "tokens": 12194,
+      "time": 114.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "520",
+      "turns": 8,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "a295e9",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.86,
+      "code_calls": 3,
+      "errors": 0,
+      "tokens": 12292,
+      "time": 114.5,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "520",
+      "turns": 4,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "a295e9",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.764,
+      "code_calls": 7,
+      "errors": 0,
+      "tokens": 11129,
+      "time": 114.5,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "520",
+      "turns": 7,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "86e8e5",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.255,
+      "code_calls": 36,
+      "errors": 5,
+      "tokens": 47677,
+      "time": 460.8,
+      "status": "NO ANSWER",
+      "early_stop": false,
+      "expected": "8687",
+      "turns": 37,
+      "none_reasons": [
+        "timeout",
+        "many_errors(5)",
+        "token_heavy"
+      ]
+    },
+    {
+      "problem_id": "0e644e",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.58,
+      "code_calls": 11,
+      "errors": 2,
+      "tokens": 8919,
+      "time": 91.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "336",
+      "turns": 11,
+      "none_reasons": [
+        "unknown"
+      ]
+    },
+    {
+      "problem_id": "0e644e",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.5,
+      "code_calls": 9,
+      "errors": 0,
+      "tokens": 8523,
+      "time": 91.3,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "336",
+      "turns": 9,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "0e644e",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.543,
+      "code_calls": 5,
+      "errors": 0,
+      "tokens": 9525,
+      "time": 91.6,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "336",
+      "turns": 6,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "0e644e",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.525,
+      "code_calls": 3,
+      "errors": 0,
+      "tokens": 9533,
+      "time": 91.4,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "336",
+      "turns": 4,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "26de63",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.447,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 4601,
+      "time": 43.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "32951",
+      "turns": 1,
+      "none_reasons": [
+        "pure_reasoning_no_boxed"
+      ]
+    },
+    {
+      "problem_id": "26de63",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.479,
+      "code_calls": 2,
+      "errors": 0,
+      "tokens": 4559,
+      "time": 43.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "32951",
+      "turns": 3,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "26de63",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.516,
+      "code_calls": 4,
+      "errors": 0,
+      "tokens": 4705,
+      "time": 43.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "32951",
+      "turns": 5,
+      "none_reasons": [
+        "final_answer_text(3x)"
+      ]
+    },
+    {
+      "problem_id": "26de63",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.486,
+      "code_calls": 7,
+      "errors": 3,
+      "tokens": 4637,
+      "time": 43.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "32951",
+      "turns": 7,
+      "none_reasons": [
+        "many_errors(3)"
+      ]
+    },
+    {
+      "problem_id": "424e18",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.882,
+      "code_calls": 2,
+      "errors": 0,
+      "tokens": 16013,
+      "time": 136.6,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "21818",
+      "turns": 3,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "424e18",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.79,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 16041,
+      "time": 136.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "21818",
+      "turns": 3,
+      "none_reasons": [
+        "pure_reasoning_no_boxed"
+      ]
+    },
+    {
+      "problem_id": "42d360",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.749,
+      "code_calls": 4,
+      "errors": 2,
+      "tokens": 1872,
+      "time": 50.4,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "32193",
+      "turns": 4,
+      "none_reasons": [
+        "timeout",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "42d360",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.705,
+      "code_calls": 5,
+      "errors": 0,
+      "tokens": 3362,
+      "time": 50.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "32193",
+      "turns": 6,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "42d360",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.777,
+      "code_calls": 2,
+      "errors": 1,
+      "tokens": 3686,
+      "time": 64.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "32193",
+      "turns": 2,
+      "none_reasons": [
+        "timeout"
+      ]
+    },
+    {
+      "problem_id": "42d360",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.654,
+      "code_calls": 5,
+      "errors": 1,
+      "tokens": 3480,
+      "time": 64.6,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "32193",
+      "turns": 5,
+      "none_reasons": [
+        "timeout"
+      ]
+    },
+    {
+      "problem_id": "641659",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.37,
+      "code_calls": 84,
+      "errors": 24,
+      "tokens": 51671,
+      "time": 564.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "57447",
+      "turns": 112,
+      "none_reasons": [
+        "timeout",
+        "many_errors(24)",
+        "final_answer_text(1x)",
+        "token_heavy"
+      ]
+    },
+    {
+      "problem_id": "641659",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.379,
+      "code_calls": 82,
+      "errors": 10,
+      "tokens": 42620,
+      "time": 562.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "57447",
+      "turns": 82,
+      "none_reasons": [
+        "timeout",
+        "many_errors(10)",
+        "token_heavy"
+      ]
+    },
+    {
+      "problem_id": "641659",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.361,
+      "code_calls": 69,
+      "errors": 15,
+      "tokens": 43203,
+      "time": 562.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "57447",
+      "turns": 69,
+      "none_reasons": [
+        "timeout",
+        "many_errors(15)",
+        "token_heavy"
+      ]
+    },
+    {
+      "problem_id": "f8b3d5",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.406,
+      "code_calls": 1,
+      "errors": 0,
+      "tokens": 673,
+      "time": 7.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "9",
+      "turns": 2,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "f8b3d5",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.304,
+      "code_calls": 1,
+      "errors": 0,
+      "tokens": 612,
+      "time": 6.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "9",
+      "turns": 2,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "f8b3d5",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.287,
+      "code_calls": 2,
+      "errors": 0,
+      "tokens": 690,
+      "time": 7.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "9",
+      "turns": 3,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "c854cd",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.527,
+      "code_calls": 8,
+      "errors": 0,
+      "tokens": 5894,
+      "time": 56.3,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "363",
+      "turns": 9,
+      "none_reasons": [
+        "final_answer_text(3x)"
+      ]
+    },
+    {
+      "problem_id": "c854cd",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.526,
+      "code_calls": 5,
+      "errors": 1,
+      "tokens": 3587,
+      "time": 64.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "363",
+      "turns": 5,
+      "none_reasons": [
+        "timeout"
+      ]
+    },
+    {
+      "problem_id": "c854cd",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.55,
+      "code_calls": 9,
+      "errors": 0,
+      "tokens": 5744,
+      "time": 55.6,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "363",
+      "turns": 10,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "c854cd",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.548,
+      "code_calls": 5,
+      "errors": 0,
+      "tokens": 5830,
+      "time": 55.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "363",
+      "turns": 6,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "42ee2a",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.442,
+      "code_calls": 2,
+      "errors": 1,
+      "tokens": 1780,
+      "time": 20.3,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "321",
+      "turns": 2,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "42ee2a",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.464,
+      "code_calls": 4,
+      "errors": 0,
+      "tokens": 1973,
+      "time": 21.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "321",
+      "turns": 5,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "42ee2a",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.48,
+      "code_calls": 2,
+      "errors": 1,
+      "tokens": 1841,
+      "time": 20.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "321",
+      "turns": 2,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "42ee2a",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.517,
+      "code_calls": 3,
+      "errors": 0,
+      "tokens": 2164,
+      "time": 20.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "321",
+      "turns": 4,
+      "none_reasons": [
+        "final_answer_text(1x)"
+      ]
+    },
+    {
+      "problem_id": "269012",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.717,
+      "code_calls": 5,
+      "errors": 0,
+      "tokens": 24459,
+      "time": 228.5,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "751",
+      "turns": 6,
+      "none_reasons": [
+        "token_heavy"
+      ]
+    },
+    {
+      "problem_id": "269012",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.704,
+      "code_calls": 9,
+      "errors": 1,
+      "tokens": 24106,
+      "time": 227.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "751",
+      "turns": 9,
+      "none_reasons": [
+        "token_heavy"
+      ]
+    },
+    {
+      "problem_id": "269012",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.606,
+      "code_calls": 8,
+      "errors": 0,
+      "tokens": 24373,
+      "time": 228.6,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "751",
+      "turns": 9,
+      "none_reasons": [
+        "boxed_present(1x)",
+        "final_answer_text(2x)",
+        "token_heavy"
+      ]
+    },
+    {
+      "problem_id": "269012",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.556,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 24601,
+      "time": 228.6,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "751",
+      "turns": 1,
+      "none_reasons": [
+        "token_heavy"
+      ]
+    },
+    {
+      "problem_id": "35ecd8",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.7,
+      "code_calls": 12,
+      "errors": 1,
+      "tokens": 15864,
+      "time": 162.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "608",
+      "turns": 12,
+      "none_reasons": [
+        "timeout"
+      ]
+    },
+    {
+      "problem_id": "35ecd8",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.677,
+      "code_calls": 13,
+      "errors": 1,
+      "tokens": 12223,
+      "time": 162.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "608",
+      "turns": 14,
+      "none_reasons": [
+        "timeout"
+      ]
+    },
+    {
+      "problem_id": "35ecd8",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.728,
+      "code_calls": 21,
+      "errors": 2,
+      "tokens": 9960,
+      "time": 161.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "608",
+      "turns": 21,
+      "none_reasons": [
+        "timeout"
+      ]
+    },
+    {
+      "problem_id": "35ecd8",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.673,
+      "code_calls": 19,
+      "errors": 2,
+      "tokens": 11226,
+      "time": 187.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "608",
+      "turns": 19,
+      "none_reasons": [
+        "timeout"
+      ]
+    },
+    {
+      "problem_id": "c8adf3",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.501,
+      "code_calls": 14,
+      "errors": 0,
+      "tokens": 7313,
+      "time": 69.4,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "75",
+      "turns": 15,
+      "none_reasons": [
+        "boxed_present(2x)",
+        "final_answer_text(4x)"
+      ]
+    },
+    {
+      "problem_id": "c8adf3",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.513,
+      "code_calls": 16,
+      "errors": 3,
+      "tokens": 7672,
+      "time": 73.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "75",
+      "turns": 16,
+      "none_reasons": [
+        "many_errors(3)"
+      ]
+    },
+    {
+      "problem_id": "c8adf3",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.613,
+      "code_calls": 7,
+      "errors": 0,
+      "tokens": 4925,
+      "time": 90.6,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "75",
+      "turns": 7,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "c8adf3",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.522,
+      "code_calls": 11,
+      "errors": 0,
+      "tokens": 7759,
+      "time": 73.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "75",
+      "turns": 12,
+      "none_reasons": [
+        "final_answer_text(1x)"
+      ]
+    },
+    {
+      "problem_id": "6837b1",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.72,
+      "code_calls": 9,
+      "errors": 0,
+      "tokens": 11492,
+      "time": 111.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "81",
+      "turns": 10,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "6837b1",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.751,
+      "code_calls": 14,
+      "errors": 0,
+      "tokens": 11580,
+      "time": 112.6,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "81",
+      "turns": 15,
+      "none_reasons": [
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "6837b1",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.634,
+      "code_calls": 10,
+      "errors": 0,
+      "tokens": 10051,
+      "time": 98.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "81",
+      "turns": 11,
+      "none_reasons": [
+        "boxed_present(1x)",
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "6837b1",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.691,
+      "code_calls": 17,
+      "errors": 1,
+      "tokens": 11543,
+      "time": 111.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "81",
+      "turns": 17,
+      "none_reasons": [
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "83ce64",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.321,
+      "code_calls": 3,
+      "errors": 0,
+      "tokens": 2756,
+      "time": 26.3,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "561",
+      "turns": 4,
+      "none_reasons": [
+        "boxed_present(1x)",
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "83ce64",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.452,
+      "code_calls": 2,
+      "errors": 0,
+      "tokens": 1528,
+      "time": 14.5,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "561",
+      "turns": 3,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "83ce64",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.279,
+      "code_calls": 3,
+      "errors": 0,
+      "tokens": 2812,
+      "time": 25.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "561",
+      "turns": 4,
+      "none_reasons": [
+        "boxed_present(2x)",
+        "final_answer_text(1x)"
+      ]
+    },
+    {
+      "problem_id": "83ce64",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.375,
+      "code_calls": 5,
+      "errors": 0,
+      "tokens": 2838,
+      "time": 26.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "561",
+      "turns": 6,
+      "none_reasons": [
+        "final_answer_text(4x)"
+      ]
+    },
+    {
+      "problem_id": "6618d2",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.407,
+      "code_calls": 4,
+      "errors": 0,
+      "tokens": 7864,
+      "time": 73.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "33",
+      "turns": 5,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "6618d2",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.301,
+      "code_calls": 4,
+      "errors": 0,
+      "tokens": 5901,
+      "time": 55.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "33",
+      "turns": 5,
+      "none_reasons": [
+        "boxed_present(1x)",
+        "final_answer_text(4x)"
+      ]
+    },
+    {
+      "problem_id": "6618d2",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.35,
+      "code_calls": 8,
+      "errors": 0,
+      "tokens": 7837,
+      "time": 72.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "33",
+      "turns": 9,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "6618d2",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.396,
+      "code_calls": 9,
+      "errors": 0,
+      "tokens": 7668,
+      "time": 73.3,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "33",
+      "turns": 10,
+      "none_reasons": [
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "f9333c",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.674,
+      "code_calls": 2,
+      "errors": 0,
+      "tokens": 2633,
+      "time": 25.5,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "928",
+      "turns": 3,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "f9333c",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.59,
+      "code_calls": 2,
+      "errors": 0,
+      "tokens": 2657,
+      "time": 24.4,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "928",
+      "turns": 3,
+      "none_reasons": [
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "f9333c",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.755,
+      "code_calls": 1,
+      "errors": 0,
+      "tokens": 2594,
+      "time": 25.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "928",
+      "turns": 2,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "f9333c",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.628,
+      "code_calls": 2,
+      "errors": 0,
+      "tokens": 2659,
+      "time": 25.6,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "928",
+      "turns": 3,
+      "none_reasons": [
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "e1d491",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.855,
+      "code_calls": 2,
+      "errors": 0,
+      "tokens": 1965,
+      "time": 20.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "84",
+      "turns": 3,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "e1d491",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.772,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 2001,
+      "time": 20.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "84",
+      "turns": 1,
+      "none_reasons": [
+        "pure_reasoning_no_boxed"
+      ]
+    },
+    {
+      "problem_id": "e1d491",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.688,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 2001,
+      "time": 20.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "84",
+      "turns": 1,
+      "none_reasons": [
+        "pure_reasoning_no_boxed"
+      ]
+    },
+    {
+      "problem_id": "e1d491",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.758,
+      "code_calls": 2,
+      "errors": 0,
+      "tokens": 1967,
+      "time": 19.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "84",
+      "turns": 3,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "bae374",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.664,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 237,
+      "time": 3.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "625",
+      "turns": 1,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light",
+        "likely_stopped_early"
+      ]
+    },
+    {
+      "problem_id": "bae374",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.582,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 242,
+      "time": 3.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "625",
+      "turns": 1,
+      "none_reasons": [
+        "token_light",
+        "likely_stopped_early"
+      ]
+    },
+    {
+      "problem_id": "bae374",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.586,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 225,
+      "time": 3.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "625",
+      "turns": 1,
+      "none_reasons": [
+        "token_light",
+        "likely_stopped_early"
+      ]
+    },
+    {
+      "problem_id": "bae374",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.669,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 201,
+      "time": 3.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "625",
+      "turns": 1,
+      "none_reasons": [
+        "token_light",
+        "likely_stopped_early"
+      ]
+    },
+    {
+      "problem_id": "354f86",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.577,
+      "code_calls": 10,
+      "errors": 0,
+      "tokens": 4232,
+      "time": 42.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "247",
+      "turns": 11,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "354f86",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.5,
+      "code_calls": 13,
+      "errors": 0,
+      "tokens": 4228,
+      "time": 42.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "247",
+      "turns": 14,
+      "none_reasons": [
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "354f86",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.519,
+      "code_calls": 11,
+      "errors": 1,
+      "tokens": 4276,
+      "time": 42.3,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "247",
+      "turns": 11,
+      "none_reasons": [
+        "unknown"
+      ]
+    },
+    {
+      "problem_id": "354f86",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.407,
+      "code_calls": 14,
+      "errors": 0,
+      "tokens": 4217,
+      "time": 42.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "247",
+      "turns": 15,
+      "none_reasons": [
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "737d44",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.55,
+      "code_calls": 3,
+      "errors": 2,
+      "tokens": 5787,
+      "time": 115.3,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "23",
+      "turns": 3,
+      "none_reasons": [
+        "timeout"
+      ]
+    },
+    {
+      "problem_id": "737d44",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.566,
+      "code_calls": 10,
+      "errors": 0,
+      "tokens": 9215,
+      "time": 89.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "23",
+      "turns": 11,
+      "none_reasons": [
+        "boxed_present(1x)",
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "737d44",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.599,
+      "code_calls": 15,
+      "errors": 1,
+      "tokens": 8893,
+      "time": 89.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "23",
+      "turns": 15,
+      "none_reasons": [
+        "unknown"
+      ]
+    },
+    {
+      "problem_id": "737d44",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.647,
+      "code_calls": 6,
+      "errors": 2,
+      "tokens": 9117,
+      "time": 88.3,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "23",
+      "turns": 6,
+      "none_reasons": [
+        "unknown"
+      ]
+    },
+    {
+      "problem_id": "2677ce",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.329,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 992,
+      "time": 9.4,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "204",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "2677ce",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.43,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 1001,
+      "time": 10.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "204",
+      "turns": 1,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "2677ce",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.324,
+      "code_calls": 2,
+      "errors": 1,
+      "tokens": 995,
+      "time": 10.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "204",
+      "turns": 2,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "471086",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.504,
+      "code_calls": 8,
+      "errors": 0,
+      "tokens": 6974,
+      "time": 88.4,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "167",
+      "turns": 9,
+      "none_reasons": [
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "471086",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.507,
+      "code_calls": 12,
+      "errors": 1,
+      "tokens": 6883,
+      "time": 87.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "167",
+      "turns": 13,
+      "none_reasons": [
+        "unknown"
+      ]
+    },
+    {
+      "problem_id": "471086",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.565,
+      "code_calls": 10,
+      "errors": 2,
+      "tokens": 6217,
+      "time": 88.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "167",
+      "turns": 10,
+      "none_reasons": [
+        "timeout"
+      ]
+    },
+    {
+      "problem_id": "471086",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.485,
+      "code_calls": 8,
+      "errors": 0,
+      "tokens": 6812,
+      "time": 87.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "167",
+      "turns": 9,
+      "none_reasons": [
+        "final_answer_text(1x)"
+      ]
+    },
+    {
+      "problem_id": "37f837",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.393,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 601,
+      "time": 6.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "8",
+      "turns": 1,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "37f837",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.355,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 601,
+      "time": 6.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "8",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "37f837",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.369,
+      "code_calls": 1,
+      "errors": 0,
+      "tokens": 601,
+      "time": 5.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "8",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "37f837",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.315,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 601,
+      "time": 6.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "8",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "e7ed61",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.462,
+      "code_calls": 1,
+      "errors": 0,
+      "tokens": 933,
+      "time": 9.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "53",
+      "turns": 2,
+      "none_reasons": [
+        "final_answer_text(2x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "e7ed61",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.522,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 760,
+      "time": 8.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "53",
+      "turns": 1,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "e7ed61",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.473,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 788,
+      "time": 8.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "53",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "34fe9c",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.567,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 471,
+      "time": 5.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "4",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "34fe9c",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.542,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 430,
+      "time": 5.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "4",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "34fe9c",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.545,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 455,
+      "time": 5.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "4",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "34fe9c",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.527,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 371,
+      "time": 5.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "4",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "504b93",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.757,
+      "code_calls": 2,
+      "errors": 0,
+      "tokens": 7930,
+      "time": 77.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "125",
+      "turns": 3,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "504b93",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.697,
+      "code_calls": 6,
+      "errors": 0,
+      "tokens": 7829,
+      "time": 76.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "125",
+      "turns": 7,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "504b93",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.746,
+      "code_calls": 6,
+      "errors": 1,
+      "tokens": 7981,
+      "time": 76.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "125",
+      "turns": 6,
+      "none_reasons": [
+        "unknown"
+      ]
+    },
+    {
+      "problem_id": "504b93",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.665,
+      "code_calls": 3,
+      "errors": 0,
+      "tokens": 7894,
+      "time": 77.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "125",
+      "turns": 4,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "b4ec47",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.608,
+      "code_calls": 83,
+      "errors": 4,
+      "tokens": 35947,
+      "time": 390.5,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "315",
+      "turns": 84,
+      "none_reasons": [
+        "timeout",
+        "many_errors(4)",
+        "final_answer_text(1x)",
+        "token_heavy"
+      ]
+    },
+    {
+      "problem_id": "f84c73",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.61,
+      "code_calls": 14,
+      "errors": 2,
+      "tokens": 6406,
+      "time": 62.4,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "211",
+      "turns": 15,
+      "none_reasons": [
+        "unknown"
+      ]
+    },
+    {
+      "problem_id": "f84c73",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.701,
+      "code_calls": 3,
+      "errors": 0,
+      "tokens": 6375,
+      "time": 61.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "211",
+      "turns": 4,
+      "none_reasons": [
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "f84c73",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.643,
+      "code_calls": 6,
+      "errors": 1,
+      "tokens": 6434,
+      "time": 62.3,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "211",
+      "turns": 7,
+      "none_reasons": [
+        "final_answer_text(1x)"
+      ]
+    },
+    {
+      "problem_id": "f84c73",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.605,
+      "code_calls": 3,
+      "errors": 0,
+      "tokens": 6481,
+      "time": 62.3,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "211",
+      "turns": 4,
+      "none_reasons": [
+        "boxed_present(1x)",
+        "final_answer_text(3x)"
+      ]
+    },
+    {
+      "problem_id": "af5cc9",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.506,
+      "code_calls": 11,
+      "errors": 1,
+      "tokens": 3972,
+      "time": 39.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "601",
+      "turns": 11,
+      "none_reasons": [
+        "unknown"
+      ]
+    },
+    {
+      "problem_id": "af5cc9",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.588,
+      "code_calls": 6,
+      "errors": 1,
+      "tokens": 3895,
+      "time": 38.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "601",
+      "turns": 6,
+      "none_reasons": [
+        "unknown"
+      ]
+    },
+    {
+      "problem_id": "af5cc9",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.596,
+      "code_calls": 4,
+      "errors": 0,
+      "tokens": 4007,
+      "time": 38.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "601",
+      "turns": 5,
+      "none_reasons": [
+        "final_answer_text(1x)"
+      ]
+    },
+    {
+      "problem_id": "af5cc9",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.488,
+      "code_calls": 6,
+      "errors": 0,
+      "tokens": 4013,
+      "time": 39.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "601",
+      "turns": 7,
+      "none_reasons": [
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "69dcfd",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.692,
+      "code_calls": 3,
+      "errors": 0,
+      "tokens": 2800,
+      "time": 27.5,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "235",
+      "turns": 4,
+      "none_reasons": [
+        "boxed_present(1x)",
+        "final_answer_text(1x)"
+      ]
+    },
+    {
+      "problem_id": "69dcfd",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.594,
+      "code_calls": 2,
+      "errors": 0,
+      "tokens": 2794,
+      "time": 27.4,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "235",
+      "turns": 3,
+      "none_reasons": [
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "69dcfd",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.612,
+      "code_calls": 2,
+      "errors": 0,
+      "tokens": 2792,
+      "time": 27.4,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "235",
+      "turns": 3,
+      "none_reasons": [
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "69dcfd",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.613,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 2730,
+      "time": 26.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "235",
+      "turns": 1,
+      "none_reasons": [
+        "unknown"
+      ]
+    },
+    {
+      "problem_id": "8697cd",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.747,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 3001,
+      "time": 28.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "4",
+      "turns": 1,
+      "none_reasons": [
+        "pure_reasoning_no_boxed"
+      ]
+    },
+    {
+      "problem_id": "8697cd",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.715,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 2816,
+      "time": 27.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "4",
+      "turns": 1,
+      "none_reasons": [
+        "final_answer_text(1x)"
+      ]
+    },
+    {
+      "problem_id": "8697cd",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.666,
+      "code_calls": 1,
+      "errors": 0,
+      "tokens": 2990,
+      "time": 27.5,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "4",
+      "turns": 2,
+      "none_reasons": [
+        "final_answer_text(3x)"
+      ]
+    },
+    {
+      "problem_id": "8697cd",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.79,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 3001,
+      "time": 28.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "4",
+      "turns": 1,
+      "none_reasons": [
+        "final_answer_text(2x)"
+      ]
+    },
+    {
+      "problem_id": "0fbf22",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.538,
+      "code_calls": 3,
+      "errors": 1,
+      "tokens": 819,
+      "time": 9.4,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "129",
+      "turns": 3,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "0fbf22",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.498,
+      "code_calls": 4,
+      "errors": 0,
+      "tokens": 811,
+      "time": 9.3,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "129",
+      "turns": 5,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "0fbf22",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.629,
+      "code_calls": 2,
+      "errors": 0,
+      "tokens": 868,
+      "time": 9.6,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "129",
+      "turns": 3,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "0fbf22",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.583,
+      "code_calls": 3,
+      "errors": 0,
+      "tokens": 731,
+      "time": 8.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "129",
+      "turns": 4,
+      "none_reasons": [
+        "final_answer_text(2x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "74252c",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.557,
+      "code_calls": 1,
+      "errors": 0,
+      "tokens": 1532,
+      "time": 15.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "129",
+      "turns": 2,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "74252c",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.634,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 1601,
+      "time": 16.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "129",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "74252c",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.639,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 1543,
+      "time": 15.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "129",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "74252c",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.641,
+      "code_calls": 2,
+      "errors": 1,
+      "tokens": 1614,
+      "time": 16.3,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "129",
+      "turns": 2,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "0a27ca",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.498,
+      "code_calls": 2,
+      "errors": 1,
+      "tokens": 918,
+      "time": 9.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "2015",
+      "turns": 3,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "0a27ca",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.516,
+      "code_calls": 1,
+      "errors": 0,
+      "tokens": 899,
+      "time": 9.6,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "2015",
+      "turns": 2,
+      "none_reasons": [
+        "boxed_present(1x)",
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "0a27ca",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.461,
+      "code_calls": 2,
+      "errors": 1,
+      "tokens": 909,
+      "time": 8.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "2015",
+      "turns": 2,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "0a27ca",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.519,
+      "code_calls": 1,
+      "errors": 0,
+      "tokens": 842,
+      "time": 9.3,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "2015",
+      "turns": 2,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "02af89",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.35,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 201,
+      "time": 2.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "20",
+      "turns": 1,
+      "none_reasons": [
+        "token_light",
+        "likely_stopped_early"
+      ]
+    },
+    {
+      "problem_id": "02af89",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.466,
+      "code_calls": 0,
+      "errors": 1,
+      "tokens": 201,
+      "time": 2.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "20",
+      "turns": 1,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light",
+        "likely_stopped_early"
+      ]
+    },
+    {
+      "problem_id": "02af89",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.309,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 201,
+      "time": 2.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "20",
+      "turns": 1,
+      "none_reasons": [
+        "token_light",
+        "likely_stopped_early"
+      ]
+    },
+    {
+      "problem_id": "45ee22",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.757,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 801,
+      "time": 8.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "10",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "45ee22",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.677,
+      "code_calls": 2,
+      "errors": 1,
+      "tokens": 767,
+      "time": 8.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "10",
+      "turns": 2,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "45ee22",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.75,
+      "code_calls": 1,
+      "errors": 0,
+      "tokens": 801,
+      "time": 7.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "10",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "45ee22",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.765,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 789,
+      "time": 8.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "10",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "159758",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.318,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 401,
+      "time": 5.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "7",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "159758",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.377,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 401,
+      "time": 5.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "7",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "159758",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.449,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 401,
+      "time": 5.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "7",
+      "turns": 1,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "932759",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.562,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 801,
+      "time": 7.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "8",
+      "turns": 1,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "932759",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.427,
+      "code_calls": 2,
+      "errors": 0,
+      "tokens": 774,
+      "time": 7.5,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "8",
+      "turns": 3,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "932759",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.552,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 641,
+      "time": 7.5,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "8",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "f50235",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.294,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 401,
+      "time": 4.3,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "25",
+      "turns": 1,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light",
+        "likely_stopped_early"
+      ]
+    },
+    {
+      "problem_id": "f50235",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.244,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 401,
+      "time": 4.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "25",
+      "turns": 1,
+      "none_reasons": [
+        "token_light",
+        "likely_stopped_early"
+      ]
+    },
+    {
+      "problem_id": "f231de",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.706,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 1268,
+      "time": 13.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "294",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "f231de",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.694,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 1233,
+      "time": 12.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "294",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "f231de",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.64,
+      "code_calls": 1,
+      "errors": 0,
+      "tokens": 1310,
+      "time": 13.5,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "294",
+      "turns": 2,
+      "none_reasons": [
+        "final_answer_text(2x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "f231de",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.689,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 1330,
+      "time": 13.5,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "294",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "476119",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.475,
+      "code_calls": 5,
+      "errors": 0,
+      "tokens": 1865,
+      "time": 19.2,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "25",
+      "turns": 6,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "476119",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.449,
+      "code_calls": 3,
+      "errors": 1,
+      "tokens": 1789,
+      "time": 18.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "25",
+      "turns": 3,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "476119",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.442,
+      "code_calls": 5,
+      "errors": 0,
+      "tokens": 1954,
+      "time": 19.6,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "25",
+      "turns": 6,
+      "none_reasons": [
+        "final_answer_text(2x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "4fef3c",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.473,
+      "code_calls": 3,
+      "errors": 0,
+      "tokens": 2722,
+      "time": 27.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "3",
+      "turns": 4,
+      "none_reasons": [
+        "final_answer_text(1x)"
+      ]
+    },
+    {
+      "problem_id": "4fef3c",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.453,
+      "code_calls": 2,
+      "errors": 1,
+      "tokens": 2729,
+      "time": 27.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "3",
+      "turns": 2,
+      "none_reasons": [
+        "unknown"
+      ]
+    },
+    {
+      "problem_id": "4fef3c",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.557,
+      "code_calls": 4,
+      "errors": 0,
+      "tokens": 2864,
+      "time": 27.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "3",
+      "turns": 5,
+      "none_reasons": [
+        "final_answer_text(3x)"
+      ]
+    },
+    {
+      "problem_id": "4fef3c",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.629,
+      "code_calls": 5,
+      "errors": 1,
+      "tokens": 2717,
+      "time": 27.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "3",
+      "turns": 5,
+      "none_reasons": [
+        "unknown"
+      ]
+    },
+    {
+      "problem_id": "2b836d",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.567,
+      "code_calls": 6,
+      "errors": 0,
+      "tokens": 2694,
+      "time": 25.4,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "6",
+      "turns": 7,
+      "none_reasons": [
+        "boxed_present(1x)",
+        "final_answer_text(1x)"
+      ]
+    },
+    {
+      "problem_id": "2b836d",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 4,
+      "answer": "None",
+      "entropy": 0.658,
+      "code_calls": 1,
+      "errors": 0,
+      "tokens": 2924,
+      "time": 28.3,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "6",
+      "turns": 2,
+      "none_reasons": [
+        "ran_code_ok_but_no_extraction"
+      ]
+    },
+    {
+      "problem_id": "2b836d",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.513,
+      "code_calls": 7,
+      "errors": 0,
+      "tokens": 2987,
+      "time": 28.4,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "6",
+      "turns": 8,
+      "none_reasons": [
+        "final_answer_text(1x)"
+      ]
+    },
+    {
+      "problem_id": "2b836d",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 8,
+      "answer": "None",
+      "entropy": 0.643,
+      "code_calls": 1,
+      "errors": 0,
+      "tokens": 2233,
+      "time": 20.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "6",
+      "turns": 2,
+      "none_reasons": [
+        "boxed_present(1x)",
+        "final_answer_text(1x)"
+      ]
+    },
+    {
+      "problem_id": "88178a",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.586,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 1032,
+      "time": 11.0,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "3",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "88178a",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.549,
+      "code_calls": 1,
+      "errors": 1,
+      "tokens": 1170,
+      "time": 11.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "3",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "88178a",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.632,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 1201,
+      "time": 11.4,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "3",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "88178a",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.554,
+      "code_calls": 1,
+      "errors": 0,
+      "tokens": 1108,
+      "time": 11.5,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "3",
+      "turns": 2,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "7b14f4",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 1,
+      "answer": "None",
+      "entropy": 0.329,
+      "code_calls": 5,
+      "errors": 0,
+      "tokens": 1529,
+      "time": 15.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "10",
+      "turns": 6,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "7b14f4",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.403,
+      "code_calls": 3,
+      "errors": 0,
+      "tokens": 1530,
+      "time": 15.8,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "10",
+      "turns": 4,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "7b14f4",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 5,
+      "answer": "None",
+      "entropy": 0.266,
+      "code_calls": 1,
+      "errors": 0,
+      "tokens": 1660,
+      "time": 15.6,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "10",
+      "turns": 1,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "7b14f4",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.517,
+      "code_calls": 7,
+      "errors": 1,
+      "tokens": 1535,
+      "time": 15.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "10",
+      "turns": 7,
+      "none_reasons": [
+        "token_light"
+      ]
+    },
+    {
+      "problem_id": "62c41a",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 2,
+      "answer": "None",
+      "entropy": 0.38,
+      "code_calls": 1,
+      "errors": 0,
+      "tokens": 449,
+      "time": 4.1,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "78",
+      "turns": 1,
+      "none_reasons": [
+        "token_light",
+        "likely_stopped_early"
+      ]
+    },
+    {
+      "problem_id": "62c41a",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 3,
+      "answer": "None",
+      "entropy": 0.269,
+      "code_calls": 2,
+      "errors": 0,
+      "tokens": 429,
+      "time": 4.9,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "78",
+      "turns": 3,
+      "none_reasons": [
+        "token_light",
+        "likely_stopped_early"
+      ]
+    },
+    {
+      "problem_id": "62c41a",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 6,
+      "answer": "None",
+      "entropy": 0.435,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 401,
+      "time": 4.5,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "78",
+      "turns": 1,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light",
+        "likely_stopped_early"
+      ]
+    },
+    {
+      "problem_id": "62c41a",
+      "tier": "REFERENCE PROBLEMS",
+      "attempt": 7,
+      "answer": "None",
+      "entropy": 0.513,
+      "code_calls": 0,
+      "errors": 0,
+      "tokens": 401,
+      "time": 4.7,
+      "status": "NO ANSWER",
+      "early_stop": true,
+      "expected": "78",
+      "turns": 1,
+      "none_reasons": [
+        "final_answer_text(1x)",
+        "token_light",
+        "likely_stopped_early"
+      ]
+    }
+  ]
+}

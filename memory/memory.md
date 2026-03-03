@@ -39,18 +39,18 @@
 - **1 submission/day**. Model cutoff March 15, 2026.
 - **Kaggle**: jxm222 | **GitHub**: jxm020202/aimo3 (private)
 
-## Current State (March 2, 2026 night — Session 2)
+## Current State (March 3, 2026 — Session 3)
 
 - **v15 SUBMITTED**: Scored 38/50 (broken extraction, no `break`)
-- **v20 COMPLETE**: 19/20 on test (old extraction, early_stop=4)
-- **v21 RUNNING on Kaggle**: All fixes applied. TEST_LEVEL=4 (~53 problems + double-run retry)
+- **v21 COMPLETE**: **49/50** on test (50 problems, 63.8 min). Only failure: 86e8e5 (Norwegian numbers).
 - **Root cause of 38/50**: Missing `break` in answer extraction → 41% None rate → fragile voting
 - **v21 restores baseline extraction** (`break` + 32-chunk window) + prompt improvements
 - **GitHub Actions auto-deploy DISABLED** (workflow_dispatch). Safe to push.
+- **Deep diagnostics complete**: error analysis, None analysis, struggle scoring all in `diagnostics/v21/`
 
 ## Critical Insights
 
-1. **Competition is about variance reduction, not capability** — host confirmed pass@100 solves nearly everything. The gap is reliable answer extraction within 5 hours. [from discussions]
+1. **Competition is about variance reduction, not capability** — host data: Model B (GPT-OSS-120B) solves ~50/50 at pass@100 without TIR. With TIR, baseline gets 44/50 at pass@8. See `memory/discussions/pass-at-100.md`. [thread #679559]
 2. **GPT-OSS-120B is MoE with ~5.1B active params** — "120B" is misleading. This is why it fits in 5 hours. Dense replacements will be slower. [from discussions]
 3. **`break` in answer extraction is critical** — without it, 41% of attempts return None. This was the root cause of 38/50.
 4. **TIR (code execution) is the secret sauce** — hard problems only solvable with code sandbox.
@@ -79,6 +79,31 @@
 | `all_discussions.json` | Raw API data — 20 threads, 118 comments, all markdown |
 | `all_discussions.md` | Readable markdown of all discussion content |
 | `competitive_intel.md` | **Structured analysis** — strategies, model info, host announcements, key URLs |
+
+### Important Discussions (in `memory/discussions/`)
+| File | Key Insight |
+|------|-------------|
+| `pass-at-100.md` | **#679559** Host data: pass@100 ~50/50. More attempts = more points. |
+| `runtime-and-scoring.md` | 5hr/run, dual run sequential (10hr total), 236 min headroom |
+| `competitive-intel.md` | SymPy decoupling, MoE architecture, ref set unreliable |
+
+### Diagnostics (in `diagnostics/v21/`)
+| File | Contains |
+|------|----------|
+| `diagnostic.log` | Full 167K line run log — every turn, code call, output |
+| `analysis_report.txt` | Struggle scoring: 1 FAILED, 3 HARD, 10 MODERATE, 36 CLEAN |
+| `error_analysis.md` | Root cause taxonomy: 120 errors, 5 categories, per-problem breakdown |
+| `error_patterns.md` | Deep patterns: which functions break, cascade analysis, time impact |
+| `none_analysis.json` | 178/400 None attempts classified by reason |
+| `all_problems.json` | Structured data for all 50 problems |
+| `hard_problems.json` | Just the 4 struggling problems |
+
+### Analysis Scripts (in `scripts/`)
+| Script | What it does |
+|--------|-------------|
+| `parse_diagnostics.py` | Parses diagnostic.log → struggle scores, problem categories |
+| `analyze_errors.py` | Extracts traceback errors → root cause taxonomy |
+| `analyze_nones.py` | Classifies NO ANSWER attempts by failure reason |
 
 ## Project Structure
 
