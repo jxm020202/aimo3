@@ -1,7 +1,9 @@
 # Important Competition Discussions
 
 Tagged summaries of key Kaggle discussion threads that affect strategy.
-Source: `data/discussions/all_discussions.md` (full scrape) + manually captured OPs.
+Source: `data/available/discussions/all_discussions.md` (full scrape) + manually captured OPs.
+
+**Only Kaggle discussion summaries go here.** Our own analysis/ideas go in `memory/ideas/`.
 
 ## Index
 

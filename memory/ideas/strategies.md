@@ -82,12 +82,10 @@
 
 ### Adaptive Compute
 - Spend more inference budget on harder problems, less on easier ones
-- Current approaches use uniform N candidates per problem
-- If model is confident (low entropy across candidates), stop early and reallocate compute
-- The 44/50 baseline does early-stop if 4 agree, but doesn't reallocate saved compute
+- Early stop is currently broken (see `ideas/parallelism-and-early-stop.md`) — all attempts run to completion
+- Adaptive batched execution (proposed for v24) would enable real early stop and compute reallocation
 - [DiffAdapt](https://arxiv.org/html/2510.19669v2): 82.3% of problems benefit from "Easy" strategy (fewer samples)
-- With 50 problems in 9 hours (~10.8 min/problem), easy problems finish in ~3 min → gives 15+ min per hard problem
-- Could allocate 16-32 attempts on hardest problems instead of uniform 8
+- With batched execution: easy problems use 1 wave (~3 min), hard get 3 waves (~10 min)
 
 ### Self-Reflection / Answer Verification
 - After generating an answer, ask the model to verify it
@@ -100,49 +98,25 @@
 - Could improve performance on problem types the model struggles with
 - Balance: more examples = less context for reasoning
 
-### Sandbox Libraries & Compute Efficiency (RESEARCH NEEDED)
+### Sandbox Libraries (RESEARCH NEEDED)
 
-**Problem observed**: Reference problem 3 (rectangles, 500x500) took 900s despite being
-solvable analytically. Model generates naive code that runs slow or hangs the kernel.
+Current sandbox preloads: `math`, `numpy`, `sympy`, `itertools`, `collections`, `mpmath`, `functools`, `fractions`
 
-**Two research vectors:**
+Research needed — which are available in Kaggle docker or installable from wheels?
+- **`gmpy2`**: GMP-backed arbitrary precision, critical for number theory
+- **`networkx`**: Graph theory (combinatorics often reduces to graphs)
+- **`scipy.special`**: Fast combinatorial functions (comb, perm)
+- **`galois`**: Finite field arithmetic
 
-#### 1. Faster/Smarter Math Libraries for Sandbox
-Current sandbox preloads: `math`, `numpy`, `sympy`, `itertools`, `collections`, `mpmath`
+#### Prompt Engineering for Efficient Code — PARTLY DONE
+Already added to v23:
+- bigint hint: `pow(base, exp, mod)` for large exponents
+- 9 code robustness rules including modular arithmetic, feasibility checks
+- Efficiency directive: skip Python for trivial problems
 
-Research needed:
-- **`gmpy2`**: GMP-backed arbitrary precision. `pow(base, exp, mod)` is orders of magnitude
-  faster than Python's built-in for huge numbers. Critical for number theory problems.
-- **`sage` / `sagemath`**: Full computer algebra system. Much stronger than sympy for
-  combinatorics, number theory, algebraic geometry. May be too large for Kaggle.
-- **`pari/gp` via `cypari2`**: Number theory powerhouse. Faster than sympy for factorization,
-  primality, modular arithmetic.
-- **`flint` / `python-flint`**: Fast number theory library (C backend). Polynomials, matrices
-  over finite fields, etc.
-- **`galois`**: Finite field arithmetic, fast GF(p) operations
-- **`networkx`**: Graph theory (combinatorics problems often reduce to graph problems)
-- **`scipy.special`**: Combinatorial functions (comb, perm) faster than manual computation
-
-**Key question**: Which of these are available in the Kaggle docker image? Which can be
-pip-installed offline from the wheels tarball? Need to check.
-
-#### 2. Prompt Engineering for Efficient Code
-- Tell model to use `pow(a, b, m)` instead of `a**b % m`
-- Tell model to use modular arithmetic from the start for large-number problems
-- Tell model to set computation timeouts in its own code
-- Add to `preference_prompt`: "NEVER compute astronomically large integers directly.
-  Always use modular arithmetic (pow(base, exp, mod)) for large exponents."
-- Add to `preference_prompt`: "For combinatorics, use generating functions or
-  recurrences rather than brute-force enumeration."
-
-#### 3. Sandbox Hardening
-- Current `jupyter_timeout = 6s` — if code hangs, kernel gets SIGINT but C-level
-  bigint operations can't be interrupted. Kernel becomes zombie.
-- Research: `resource.setrlimit()` to cap CPU time at kernel level
-- Research: `signal.alarm()` as backup timeout inside executed code
-- Research: Run sandbox code in subprocess with hard kill timeout
-- Increase `jupyter_timeout` to 30s for legitimate long computations but add
-  memory limits to prevent OOM from huge allocations
+Still could add:
+- "For combinatorics, use generating functions or recurrences rather than brute-force enumeration."
+- Negative examples of common hallucinated APIs
 
 ## What Doesn't Work (Failed in Past Competitions)
 
@@ -161,40 +135,42 @@ The remaining 6 problems are likely the hardest IMO-level ones. GPT-OSS-120B get
 
 Path 2 is more realistic for us given hardware constraints.
 
-## Inference Engine: SGLang vs vLLM
+## Inference Engine: SGLang vs vLLM — DEAD IDEA
 
-- SGLang delivers ~29% higher throughput than vLLM on H100 (16,200 vs 12,500 tok/s general benchmarks) — [source](https://blog.premai.io/vllm-vs-sglang-vs-lmdeploy-fastest-llm-inference-engine-in-2026/)
-- However, [Clarifai benchmark](https://www.clarifai.com/blog/comparing-sglang-vllm-and-tensorrt-llm-with-gpt-oss-120b) specifically for GPT-OSS-120B showed vLLM ahead
-- **Verdict**: Test both. If SGLang wins, 29% more generations = ~29% more candidates per problem.
+- SGLang delivers ~29% higher throughput than vLLM on general benchmarks
+- **But**: Clarifai benchmark for GPT-OSS-120B showed vLLM ahead
+- **And**: Discussion #676019 confirms SGLang slightly slower for this exact use case
+- **Verdict**: Stay on vLLM. Don't waste time testing.
 
-## Prioritized Roadmap (6 weeks remaining)
+## Priority Queue (as of v23, updated with notebook analysis)
 
-### Phase 1: Low-Hanging Fruit (Week 1)
-| Technique | Expected Gain | Complexity |
-|-----------|--------------|------------|
-| Adaptive compute allocation | +1-2 problems | Low |
-| Self-verification loop | +0.5-1 | Low |
-| Problem-type routing | +0.5-1 | Low |
-| Better voting (CISC) | +0.5-1 | Low |
+| Priority | Technique | Expected Gain | Status |
+|----------|-----------|--------------|--------|
+| 1 | Adaptive batched execution | +1-2 problems (time savings) | Proposed — see `parallelism-and-early-stop.md` |
+| 2 | Better extraction (reduce 46% None rate) | +0.5-1 | Partly done (v23 fallbacks), more needed |
+| 3 | Test `temp=0.99 + min_p=0.02` vs schedule | +0-1 (simplification) | Not started — top notebook uses this |
+| 4 | `presence_penalty` for repetition breaking | +0-0.5 | Not started — Qwen3.5 notebook uses 1.5 |
+| 5 | Per-turn token cap (`max_tokens_per_turn`) | +0-0.5 | Not started — prevents thinking runaway |
+| 6 | Self-verification loop | +0.5-1 | Not started |
+| 7 | GenSelect (untrained, use GPT-OSS as judge) | +1-3 | Not started |
+| 8 | ThinkPRM-14B/1.5B as verifier | +1-3 | Not started — needs memory budget analysis |
+| 9 | MCTS with step-level search | +1-4 | Not started — high complexity |
 
-### Phase 2: Architecture Changes (Weeks 2-3)
-| Technique | Expected Gain | Complexity |
-|-----------|--------------|------------|
-| GenSelect (untrained) | +1-3 | Medium |
-| ThinkPRM integration | +1-3 | Medium-High |
+**Note**: Gains are NOT additive. Stacking top 3-4 techniques could realistically push 44→46-47.
 
-### Phase 3: Advanced (Weeks 4-5)
-| Technique | Expected Gain | Complexity |
-|-----------|--------------|------------|
-| MCTS with step-level search | +1-4 | High |
-| Multi-model ensemble | +1-2 | Medium |
+## Notebook Landscape (from March 3 analysis)
 
-### Phase 4: Polish (Week 6)
-- Optimize time budget allocation across 50 problems
-- SGLang vs vLLM benchmarking
-- Final reference problem testing
+All public notebooks use the same pattern: parallel attempts + entropy-weighted voting + TIR sandbox. Nobody is doing MCTS, PRMs, GenSelect, or multi-model ensemble publicly.
 
-**Note**: Gains are NOT additive — significant overlap. Stacking top 3-4 techniques could realistically push 44→46-47.
+| Notebook | Model | Attempts | ES | Temp | Special |
+|----------|-------|----------|---|------|---------|
+| Top voted (120v) | GPT-OSS-120B | 8 | 4 | 0.99 | min_p=0.02, no schedule |
+| Qwen3.5-9B (35v) | Qwen3.5-9B | 8 | 4 | 1.0 | presence_penalty=1.5, thinking mode |
+| Qwen3.5-27B (18v) | Qwen3.5-27B | — | — | — | Quantization recipe only |
+| Qwen3-32B (14v) | Qwen3-32B | 4 | 2 | 0.7 | workers=1, max_tokens=16K/turn, thinking |
+| **Ours** | GPT-OSS-120B | **16** | **5** | **schedule** | Temp schedule, GPU monitor, retry on None |
+
+Key takeaway: We have 2x more attempts than anyone else. Our main differentiator.
 
 ## Second Model Candidates (for ensemble/verification)
 
@@ -205,13 +181,7 @@ Path 2 is more realistic for us given hardware constraints.
 
 ## Competition Intelligence
 
-- AIMO3 current landscape: Multiple notebooks at 43-44/50 using GPT-OSS-120B
-- [seshurajup's "Agentic Solver"](https://www.kaggle.com/code/seshurajup/aimo-3-gpt-oss-120b-agentic-solver) uses agentic approach
-- Nobody has publicly cracked 45+ yet
-- The 47/50 bonus ($1.59M) has **never been claimed** across any AIMO competition
-- **AIMO1**: Winner 29/50, 3rd place 21/50 with ZERO training (just 120-160 candidates + smart filtering)
-- **AIMO2**: Winner 34/50, 3rd-5th place 29-30/50 with ZERO training
-- **Pattern**: Inference engineering alone gets within 4-5 problems of trained models
+Moved to `memory/discussions/competitive-intel.md`. Key takeaway: inference engineering alone gets within 4-5 problems of trained models in past competitions.
 
 ## Key Research Sources
 

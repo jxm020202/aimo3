@@ -92,8 +92,7 @@ The v21 "43% token limit" Nones were actually early-stopped attempts, not real f
 
 ## v24 Ideas
 
-- **Adaptive temperature**: if first pass fails, retry at different temp
-- **Per-problem difficulty scaling**: detect difficulty mid-run
+- **Adaptive batched execution**: Run attempts in waves of 4-6 instead of all 16 parallel. Real early stop between waves. See `memory/discussions/parallelism-and-early-stop.md` for full analysis — includes KV cache math, GPU constraints, proposed implementation.
 - **Extraction further**: still ~45% None rate after fixes — code output parsing
 - **Submit to competition**: v23 results should tell us if we're ready
 

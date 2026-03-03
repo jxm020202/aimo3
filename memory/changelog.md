@@ -4,11 +4,30 @@ All key changes to the AIMO3 project. Most recent first.
 
 ## 2026-03-03
 
-### v22 — Temperature Diversity + Retry on None + Harder Tests
-- **early_stop 4→3**: Faster convergence on easy problems, frees budget for hard ones
-- **Temperature schedule**: `[0.3, 0.4, 0.5, 0.5, 0.6, 0.7, 0.8, 0.9]` per attempt (was flat 0.5)
+### v23 — 16 Attempts, Temperature Schedule, Full Diagnostics
+- **attempts 8→16**: Doubled candidate count
+- **early_stop 4→5**: Higher consensus threshold
+- **jupyter_timeout 6→30**: 5x increase for legitimate long computations
+- **Temperature schedule**: Bell curve `[0.1, 0.3×4, 0.5×6, 0.7×4, 0.9]` — wired into solver (v22 had schedule defined but never used)
+- **Extraction fallbacks**: "the answer is X", "answer: X", "answer = X" patterns
+- **GPU monitor**: Background thread polling vLLM /metrics every 5s → `gpu_metrics.log`
+- **Full conversation logging**: Turn-by-turn reasoning + code calls per attempt
+- **Deterministic tie-breaking**: Sort by (score, votes, answer) descending
+- **All-None retry**: Retries at +0.2 temp if first pass produces zero answers
+- **Prompt**: Efficiency directive, 9 code robustness rules, bigint hint, sympy type hint
+- **Sandbox**: Added `import functools` and `import fractions` to kernel init
+- **Test framework (cell 17)**: 3-tier system — Priority Debug (86e8e5×2, 76aef9×2), At-Risk (6), Val Bench (70 from CSV)
+- **Quick-glance summary table**: ID, Status, Pred, Exp, Votes, Ans, Errs, Time, ES
+- **Data restructure**: `data/active/` (test CSVs + reference) vs `data/available/` (everything else)
+- **Dynamic paths**: `find_model_path()` for model, multi-candidate for test.csv
+- Full diff: `memory/changelog-vs-baseline.md`
+- Pushed as Kaggle kernel v23
+
+### v22 — 8 Attempts, Harder Tests, Retry
+- **early_stop 4→3**: Lower threshold for faster convergence
+- **Temperature schedule defined but NOT wired** — solver always used flat 0.5 (fixed in v23)
 - **Retry on None**: If all 8 attempts return None, retry with +0.2 temp bump and remaining budget
-- **Hard benchmark Level 2**: Replaced hand-picked 10 diagnostic problems with 10 random from 28 IMO-AnswerBench problems (7/domain: combinatorics, geometry, number_theory, algebra)
+- **Hard benchmark Level 2**: 10 random from 28 IMO-AnswerBench problems
 - **Dataset updated**: Uploaded `hard_benchmark_30.csv` to `jxm222/aimo3-test-data`
 - Pushed as Kaggle kernel v22
 

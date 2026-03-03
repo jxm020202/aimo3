@@ -67,26 +67,34 @@
 | `competition.md` | Rules, constraints, submission format, evaluation, prizes, timeline | Setting up submissions, checking rules |
 | `models.md` | Model landscape, benchmarks, what fits on H100 | Choosing/switching models |
 | `solutions.md` | Analyzed solutions — baseline 44/50, Numina, NemoSkills, underdogs | Understanding what's been tried |
-| `strategies.md` | Improvement techniques, research findings, **sandbox library research** | Planning next experiment |
 | `history.md` | Past AIMO1/2 results, leaderboards, patterns | Competition dynamics |
 | `tools.md` | **CLI commands, Kaggle API, discussion scraping, workflow, gotchas** | Before any push/deploy/CLI work |
 | `reference_problems.md` | 10 reference problems with answers, difficulty, model scores | Testing, validating approaches |
 | `changelog.md` | Every change to the project, most recent first | What's been done, avoiding duplicates |
 | `changelog-vs-baseline.md` | **Exhaustive diff** of notebook vs baseline-44-50.ipynb | Understanding exactly what's changed |
 
-### Discussion Data (in `data/discussions/`)
-| File | Contains |
-|------|----------|
-| `all_discussions.json` | Raw API data — 20 threads, 118 comments, all markdown |
-| `all_discussions.md` | Readable markdown of all discussion content |
-| `competitive_intel.md` | **Structured analysis** — strategies, model info, host announcements, key URLs |
+### Ideas & Strategy (in `memory/ideas/`)
+- `strategies.md` — **Future scope**: full technique catalog, priority queue, research links. What we could do next.
+- Individual files — **Feature docs**: deep dives on specific features we're planning. Each is a concrete next step.
 
-### Important Discussions (in `memory/discussions/`)
+| File | Key Content |
+|------|-------------|
+| `strategies.md` | Technique catalog, priority queue, what failed, research sources |
+| `parallelism-and-early-stop.md` | Early stop is broken, KV cache math (233K tokens, 6.3x max), adaptive batching for v24 |
+
+### Kaggle Discussion Summaries (in `memory/discussions/`)
 | File | Key Insight |
 |------|-------------|
 | `pass-at-100.md` | **#679559** Host data: pass@100 ~50/50. More attempts = more points. |
 | `runtime-and-scoring.md` | 5hr/run, dual run sequential (10hr total), 236 min headroom |
 | `competitive-intel.md` | SymPy decoupling, MoE architecture, ref set unreliable |
+
+### Discussion Raw Data (in `data/available/discussions/`)
+| File | Contains |
+|------|----------|
+| `all_discussions.json` | Raw API data — 20 threads, 118 comments, all markdown |
+| `all_discussions.md` | Readable markdown of all discussion content |
+| `competitive_intel.md` | **Structured analysis** — strategies, model info, host announcements, key URLs |
 
 ### Diagnostics (in `diagnostics/v21/`)
 | File | Contains |
