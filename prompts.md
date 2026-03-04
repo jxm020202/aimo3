@@ -1,9 +1,9 @@
-# Solver Prompts (v24)
+# Solver Prompts (v32)
 
 Copy of prompts from `notebooks/aimo3-solver.ipynb` cell-8 (CFG class) for readability.
 Keep in sync — the notebook is the source of truth.
 
-**Last updated**: 2026-03-03 (v24 changes: Vboxed checkpoints, Strategic Rules, library blocklist, scipy replacements)
+**Last updated**: 2026-03-04 (v32 changes: timeout-fighting rules, sympy guards, temp schedule 0.3×8+0.5×8)
 
 ---
 
@@ -58,6 +58,14 @@ is as important as the final answer.
   before extrapolating to the full problem size.
 - If your code execution keeps timing out, submit your best partial result
   rather than retrying indefinitely.
+- Before writing code, estimate computational complexity. If the search space exceeds
+  10^6 operations, find a mathematical shortcut, recurrence, or modular arithmetic approach
+  instead of brute force.
+- If code times out, do NOT just reduce the range and retry. Instead:
+  (a) find a closed-form or recurrence, (b) use modular arithmetic to avoid large numbers,
+  (c) reformulate as dynamic programming.
+- If you have 3+ timeouts in the first 5 code cells, STOP coding and reason through the
+  problem mathematically. Your brute-force approach is failing — find the insight.
 
 # Efficiency:
 If the problem has an obvious, immediate answer (e.g. direct computation,
@@ -131,6 +139,10 @@ Best Practices:
   Python builtins like pow(), min(), max().
 - Common import: from sympy.ntheory.modular import crt (note: sympy.crt does not exist).
 - If a code cell fails, re-import necessary libraries in the next cell.
+- sympy.solve() often times out on complex systems. For polynomial systems with > 3 unknowns,
+  prefer numerical methods (scipy fsolve/minimize) or manual algebraic reduction.
+- Never call sympy.simplify() or sympy.expand() on expressions involving large binomials or
+  products of many terms. Use float() first to check the numerical value.
 
 # Library Availability:
 NOT installed (do NOT import — they WILL fail): pulp, ortools, z3-solver, mip,
@@ -168,7 +180,7 @@ Replacements for unavailable optimization/constraint libraries:
 | `workers` | 16 | Parallel threads |
 | `turns` | 128 | Max reasoning turns per attempt |
 | `temperature` | 0.5 | Default (overridden by schedule) |
-| `temp_schedule` | `[0.1, 0.3×5, 0.5×6, 0.7×4]` | 16 attempts total |
+| `temp_schedule` | `[0.3×8, 0.5×8]` | 16 attempts total |
 | `context_tokens` | 65536 | Max context window |
 | `high_problem_timeout` | 900s | Max per problem |
 | `base_problem_timeout` | 300s | Min per problem |
@@ -178,13 +190,15 @@ Replacements for unavailable optimization/constraint libraries:
 | `gpu_memory_utilization` | 0.96 | vLLM GPU usage |
 | `min_p` | 0.02 | Minimum probability sampling |
 
-## v24 Changes (from baseline)
+## v32 Changes (from baseline)
 
 1. **Vboxed checkpoints**: Model writes `\Vboxed{N}` as checkpoint before verifying. Extracted at 0.7 confidence (vs 1.0 for `\boxed{}`). Catches answers lost to over-verification.
-2. **Strategic Rules**: Trust code over reasoning, reinterpret if non-integer, verify small cases, submit partial results.
+2. **Strategic Rules**: Trust code over reasoning, reinterpret if non-integer, verify small cases, submit partial results. + 3 timeout-fighting rules (estimate complexity, don't reduce-and-retry, 3+ timeouts → stop coding).
 3. **Library blocklist**: Explicit list of unavailable libraries with scipy replacements.
-4. **Code robustness**: Self-contained cells, sympy explosion guard, re-import on error.
+4. **Code robustness**: Self-contained cells, sympy explosion guard, re-import on error. + sympy.solve/simplify/expand guards.
 5. **Confidence-tiered voting**: `\boxed{}` = 1.0, `\Vboxed{}` = 0.7, 0-code attempts = 0.5x weight.
 6. **`% 100000` extraction fallback**: Catches answers like 121818 → 21818.
-7. **Temp schedule**: Dropped 0.9 (useless), heavier on 0.3-0.5.
+7. **Temp schedule**: `[0.3×8, 0.5×8]` — data-driven, +3 over old schedule. 0.7/0.9 dropped (0 unique solves, highest None rate).
 8. **Early stop removed**: All 16 attempts always run (ES was broken — all launch simultaneously via ThreadPoolExecutor).
+9. **OOM fixes**: `store_history=False`, output cap at 8K chars, code fence stripping, conversation data freed after voting, gc.collect() between problems.
+10. **Bug fixes**: `_ensure_last_print` skip assignments/control-flow, `math.pow()` → `**`, NaN entropy guard, sandbox pool depletion fix, GPU metrics parser fix, `.item()` fix.
