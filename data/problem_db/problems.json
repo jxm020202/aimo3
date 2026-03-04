@@ -1,0 +1,502 @@
+[
+  {
+    "problem_id": "1363c5",
+    "question": "The rectangle \\(R\\) is divided into 2024 small rectangles, and the sides of each small rectangle are parallel to the sides of \\(R\\). The vertices of the small rectangles are called nodes. A line segment on the sides of the small rectangles, if both of its endpoints are nodes and there are no other nodes inside it, is called a fundamental line segment. Considering all the ways of division, find the sum of the maximum value and the minimum value of the number \\(N\\) of fundamental line segments.",
+    "expected_answer": 10211,
+    "topics": [
+      "geometry",
+      "combinatorics"
+    ],
+    "skills": "rectangle subdivision counting, combinatorial geometry, rectangle perimeter analysis",
+    "failure_mode": "close_vote",
+    "common_wrong_answer": 10123,
+    "approach": "Rectangle divided into 2024 small rectangles with side-parallel constraints. Answer is 10211. Close vote between 10211, 10123, and 10124. The exact count depends on careful treatment of boundary cases in the subdivision structure.",
+    "versions_wrong": [
+      "v31"
+    ],
+    "correct_rate": "10/32"
+  },
+  {
+    "problem_id": "19570e",
+    "question": "The 30 edges of a regular icosahedron are distinguished by labeling them 1, 2, ..., 30. How many different ways are there to paint each edge red, white, or blue such that each of the 20 triangular faces of the icosahedron has two edges of the same color and a third edge of a different color? Find the answer mod 1000.",
+    "expected_answer": 224,
+    "topics": [
+      "combinatorics",
+      "graph_theory"
+    ],
+    "skills": "icosahedron edge labeling, graph automorphisms, Burnside lemma",
+    "failure_mode": "close_vote",
+    "common_wrong_answer": 3,
+    "approach": "Labeling 30 edges of regular icosahedron. Close vote between 224 and 3. Need Burnside/Polya counting with the icosahedral symmetry group (order 60). Model sometimes confuses edge labelings with vertex colorings.",
+    "versions_wrong": [
+      "v23"
+    ],
+    "correct_rate": "12/32"
+  },
+  {
+    "problem_id": "1ec970",
+    "question": "There are 100 observers inside a finite circular playground (the positions of any two observers are different). Each observer has a viewing angle of \\(100^{\\circ}\\) and can observe all the other observers within its viewing angle range (including those on the two sides of the angle) inside the playground. (Each observer is regarded as a point, and these 100 observers are in the same plane.) For \\(i = 1, 2,\\cdots,100\\), let \\(a_i\\) be the number of all the observers other than itself that the \\(i\\)-th observer can observe. Find the maximum value of \\(\\sum_{i = 1}^{100}a_i\\).",
+    "expected_answer": 8700,
+    "topics": [
+      "geometry",
+      "combinatorics",
+      "optimization"
+    ],
+    "skills": "viewing angle geometry, constrained observer placement, non-trivial extremal bound",
+    "failure_mode": "never_correct",
+    "common_wrong_answer": 9900,
+    "approach": "100 observers with 100-degree viewing angles. Model claims 9900=100*99 (all pairs see each other) but this is wrong. The answer 8700 < 9900 means some pairs CANNOT see each other under the constraint. \"Each observer has a viewing angle\" likely means fixed direction, not choosable.",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "0/48"
+  },
+  {
+    "problem_id": "21fb4e",
+    "question": "At least how many black stones should be placed on a 9×9 square grid board to ensure that there is no possibility for the white to make a five-in-a-row? (which means there are no five consecutive empty squares in a row, in a column, or five consecutive empty squares along a diagonal among the remaining empty squares). Note that empty square here means a square with no black stone in it and each square can only be filled with no more than 1 black stone.",
+    "expected_answer": 16,
+    "topics": [
+      "game_theory",
+      "combinatorics",
+      "optimization"
+    ],
+    "skills": "five-in-a-row blocking on 9x9 board, extremal combinatorics, constructive placement",
+    "failure_mode": "outvoted",
+    "common_wrong_answer": 17,
+    "approach": "Minimum black stones to block all possible five-in-a-row on 9x9 board. Model gets 17 but answer is 16. Need to find an efficient blocking configuration. Count all lines of 5 (horizontal, vertical, diagonal) and find minimum hitting set. Off-by-one in the counting of required blockers.",
+    "versions_wrong": [
+      "v23"
+    ],
+    "correct_rate": "18/48"
+  },
+  {
+    "problem_id": "23586c",
+    "question": "Bob has a convex 735-gon in the plane and wishes to construct the centroid of its vertices. He has no standard ruler or compass, but he does have a device with which he can dissect the segment between two given points into m equal parts. For how many \\(m \\in [9, 81256]\\) can Bob necessarily accomplish his task?",
+    "expected_answer": 386,
+    "topics": [
+      "geometry",
+      "number_theory"
+    ],
+    "skills": "geometric constructibility, compass and straightedge with m-section, affine operations on constructible numbers",
+    "failure_mode": "never_correct",
+    "common_wrong_answer": 773,
+    "approach": "Not just 105-divisibility. The centroid constructibility condition is more nuanced than \"prime factors of 735 divide m\". Affine combinations with m-section create richer constructibility. Answer is 386, not 773 (which is roughly 2x). Consider what denominators can be built.",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "0/48"
+  },
+  {
+    "problem_id": "26bee3",
+    "question": "In a square grid table composed of \\(16\\times16\\) unit squares with side length \\(1\\), \\(n\\) squares are selected. In each of the selected squares, a directed diagonal is drawn. It is known that for any two directed diagonals, either the end point of one diagonal is the same as the starting point of the other diagonal, or the distance between the two end points is at least \\(2\\). Find the maximum value of \\(n\\).",
+    "expected_answer": 108,
+    "topics": [
+      "geometry",
+      "combinatorics",
+      "graph_theory"
+    ],
+    "skills": "directed diagonals on grid, graph modeling of grid geometry, extremal counting",
+    "failure_mode": "outvoted",
+    "common_wrong_answer": 97,
+    "approach": "Directed diagonals in 16x16 grid. Model gets various wrong answers (97, 136, 256). Answer is 108 = 4*27 or 12*9. Model the problem as a directed graph on grid diagonals. Draw small cases (4x4, 8x8) and look for the pattern. The answer factors nicely.",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "1/48"
+  },
+  {
+    "problem_id": "27cec1",
+    "question": "\\(x_1,x_2,\\dots,x_{2025}\\) are positive real numbers. Let \\(M\\) be the minimal value of \\(\\max\\{x_1,\\frac{1}{x_1}+x_2,\\dots,\\frac{1}{x_{2024}}+x_{2025},\\frac{1}{x_{2025}}+1\\}\\). Suppose the a polynomial \\(F(x)\\) with integer coefficients can be divided by \\(x^2 - M x + 1\\), find the minimal degree of \\(F(x)\\).",
+    "expected_answer": 2304,
+    "topics": [
+      "algebra",
+      "optimization"
+    ],
+    "skills": "minimax optimization of chained reciprocal expressions, AM-GM inequality chains",
+    "failure_mode": "close_vote",
+    "common_wrong_answer": 2,
+    "approach": "Minimize max of x_1, 1/x_1+x_2, ..., chained expressions with 2025 variables. Answer 2304 = 48^2. Requires careful application of AM-GM or convexity arguments on the chain structure. Some attempts give trivially small answers.",
+    "versions_wrong": [
+      "v23"
+    ],
+    "correct_rate": "5/16"
+  },
+  {
+    "problem_id": "29714f",
+    "question": "There is a function \\( g: \\mathbb{N} \\times \\mathbb{N} \\to \\mathbb{N} \\) such that \\( g(0,0) = 0 \\), and for any \\( x, y \\in \\mathbb{N} \\), there exists \\( n \\in \\mathbb{N} \\) such that \\[\\{g(x,y), g(x,y+1), g(x+1,y)\\} = \\{n, n+1, n+2\\}.\\] Let \\(S\\) be the set of all possible values of \\( g(4000, 4036) \\). Find the 100-th smallest value of \\(S\\).",
+    "expected_answer": 297,
+    "topics": [
+      "algebra",
+      "combinatorics"
+    ],
+    "skills": "functional equation enumeration, domain counting, 3-fold symmetric structure",
+    "failure_mode": "outvoted",
+    "common_wrong_answer": 99,
+    "approach": "g: NxN->N with g(0,0)=0 and recursive structure. Model gets 99 (expected 297=3*99) — consistent factor-of-3 error. Likely misinterprets the domain or counts only 1/3 of function values. Enumerate g(x,y) for small x,y. Check if recurrence generates 3-fold symmetric structure.",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "3/48"
+  },
+  {
+    "problem_id": "32690e",
+    "question": "Let non-real complex number \\(z\\) satisfying \\(z^{4051}+z^{4050}+5=0\\). Find the number of such \\(z\\)'s (multiplicity are counted)．",
+    "expected_answer": 4050,
+    "topics": [
+      "algebra",
+      "number_theory"
+    ],
+    "skills": "complex polynomial root counting, argument principle, Rouche theorem",
+    "failure_mode": "close_vote",
+    "common_wrong_answer": 4051,
+    "approach": "Count non-real roots of z^4051 + z^4050 + 5 = 0. Answer is 4050 (not 4051). One real root exists, so non-real count = 4051-1 = 4050. Off-by-one between total degree and non-real count. Need to verify that exactly one real root exists.",
+    "versions_wrong": [
+      "v23"
+    ],
+    "correct_rate": "22/32"
+  },
+  {
+    "problem_id": "3980cd",
+    "question": "Let \\(m\\) be the maximal positive integer such that there exists complex numbers \\(r_1,\\cdots,r_{645}\\), which are not all zeros, satisfying \\(\\prod_{k = 1}^{645}(r_k + 1)=\\prod_{k = 1}^{645}(r_k^2+1)=\\cdots=\\prod_{k = 1}^{645}(r_k^m + 1)=1\\). Find \\(m \\mod 848\\).",
+    "expected_answer": 46,
+    "topics": [
+      "algebra",
+      "number_theory"
+    ],
+    "skills": "cyclotomic polynomials, roots of unity products, deep number theory",
+    "failure_mode": "outvoted",
+    "common_wrong_answer": 642,
+    "approach": "Product of (r_k^e + 1) = 1 for e=1..m with 645 complex numbers. Model gets 642 (=645-3) — wrong structural guess. Real answer is 46 (mod 848). Requires deep number theory about cyclotomic polynomials. NOT a simple \"count prime factors\" problem.",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "6/48"
+  },
+  {
+    "problem_id": "3b88b3",
+    "question": "Given non-negative real numbers \\(x, y, z\\) satisfying \\(\\sqrt{x^2+y^2}+z=1\\), for positive real number \\(k\\), define \\(f(k)\\) as the maximal value of \\(4(xy+kxz)\\). Find the largest integer no more than \\(f^2(1)+3f^2(2)+8f^2(3)+15f^2(4)+24f^2(5)\\).",
+    "expected_answer": 979,
+    "topics": [
+      "algebra",
+      "optimization"
+    ],
+    "skills": "constrained optimization with floor function, critical point analysis, boundary case checking",
+    "failure_mode": "wrong_formula",
+    "common_wrong_answer": 982,
+    "approach": "ALL attempts derive f(k)=k^2/sqrt(k^2-1) which gives S=982. This satisfies Monte Carlo but is WRONG — it finds a local max, not global. Check ALL boundary cases: z=0, x=0, y=0, and all KKT conditions. True floor(S)=979. A clean integer from optimization is suspicious.",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "0/48"
+  },
+  {
+    "problem_id": "414a5b",
+    "question": "Kevin throws three fair dice numbered from 1 to 6. Then he observes the results of the first throw of the three dice. From these three dice, he can choose \\(n\\), where \\(0\\leq n\\leq3\\) dice to re-throw once. After that, the operation ends. Kevin's goal is to maximize the probability that the sum of the numbers on the final three dice is 7, and Kevin is smart enough. Let the probability when \\(n = 2\\) be \\(p\\). What is the value of \\(216\\times p\\)?",
+    "expected_answer": 42,
+    "topics": [
+      "probability",
+      "combinatorics"
+    ],
+    "skills": "dice probability, conditional computation for specific parameter value, careful problem reading",
+    "failure_mode": "misread_problem",
+    "common_wrong_answer": 95,
+    "approach": "Problem asks for 216*p when n=2 SPECIFICALLY, not the overall optimal probability. Model computes overall optimal (95/216) when problem asks specifically for the n=2 case (42/216). Re-read the problem: what EXACTLY is being asked for?",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "7/48"
+  },
+  {
+    "problem_id": "485d27",
+    "question": "Place 471 coins in the squares of an \\(n\\times n\\) board where each block can hold 1 coin, multiple coins, or no coin at all, such that the difference in the number of coins between any two adjacent squares (squares that share a common side) is 1. Find the maximum value of \\(n\\) for which such an arrangement is possible.",
+    "expected_answer": 29,
+    "topics": [
+      "combinatorics",
+      "optimization"
+    ],
+    "skills": "coin placement on grid, pigeonhole principle, extremal board size",
+    "failure_mode": "close_vote",
+    "common_wrong_answer": 3,
+    "approach": "Place 471 coins on nxn board with adjacency constraints. Answer is n=29. Close vote between 29 and 3. Need to find the minimum n such that 471 coins can be placed under the constraints. Pigeonhole or packing argument.",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "9/32"
+  },
+  {
+    "problem_id": "53de2d",
+    "question": "Consider a pair of integers \\(a, b\\) such as \\(a^2+b^2 \\leq 19\\), and there exists real numbers \\(x, y\\) such that \\(\\frac{a}{\\sqrt{x}}+\\frac{2}{y+3 x}=\\frac{b}{\\sqrt{y}}-\\frac{2}{y+3 x}=1\\)．Find the square of the numbers of ordered pair \\((a, b)\\) satisfying the aforementioned property.",
+    "expected_answer": 576,
+    "topics": [
+      "algebra",
+      "number_theory"
+    ],
+    "skills": "integer pair counting, quadratic form constraints, lattice point enumeration",
+    "failure_mode": "close_vote",
+    "common_wrong_answer": 484,
+    "approach": "Count integer pairs (a,b) with a^2+b^2 <= 19 and existence of real x,y satisfying constraints. Answer is 576. Close vote between 576, 2, and 24. Need to enumerate the feasible lattice points carefully.",
+    "versions_wrong": [
+      "v31"
+    ],
+    "correct_rate": "7/32"
+  },
+  {
+    "problem_id": "581a58",
+    "question": "\\(n\\) students take an exam. There are a total of 6 questions in the exam, and each question has three options. After the exam, it is statistically found that for any two students, the number of questions with the same answers between them is either 0 or 2. What is the maximum value of \\(n\\)?",
+    "expected_answer": 18,
+    "topics": [
+      "combinatorics",
+      "number_theory"
+    ],
+    "skills": "exam scoring combinatorics, multiple choice constraint satisfaction",
+    "failure_mode": "close_vote",
+    "common_wrong_answer": 0,
+    "approach": "n students, 6 questions with 3 options each, constraint on response patterns. Answer is 18. Close vote between 18 and 0. Need careful counting under the given constraints. Zero is wrong — it would mean no students can take the exam.",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "6/32"
+  },
+  {
+    "problem_id": "673b29",
+    "question": "An explorer is challenging to pass through a maze composed of 3033 rows and 3032 columns of squares. The rules of the maze are as follows: In all the middle rows (that is, from the 2nd row to the 3032nd row), there is one invisible teleportation gate hidden in each row, and there are no multiple invisible teleportation gates in the same column. The explorer starts from any position in the 1st row. Each time, he can move one square up, down, left or right, and it is allowed to pass through the explored areas repeatedly. If the explorer touches a teleportation gate, he will immediately return to the starting point and start the next attempt. However, the explorer will mark the position of that teleportation gate. If the explorer reaches any position in the 3033rd row, he will directly pass the maze. It is known that the explorer can remember the positions of all the discovered teleportation gates. Please construct a general strategy so that no matter how the teleportation gates are distributed, the explorer will definitely pass the maze in the \\(k\\)th attempt in the worst-case scenario. Find the minimum possible value of \\(k\\).",
+    "expected_answer": 3,
+    "topics": [
+      "game_theory",
+      "combinatorics"
+    ],
+    "skills": "maze traversal strategy, binary search on columns, logarithmic complexity arguments",
+    "failure_mode": "wrong_formula",
+    "common_wrong_answer": 3032,
+    "approach": "The maze answer is logarithmic (3), NOT linear (3032). Use binary-search strategy on columns. 15/16 attempts pure-reason to 3032 without code verification. ALWAYS simulate small cases first. The model confuses the number of columns with the answer.",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "1/48"
+  },
+  {
+    "problem_id": "76aef9",
+    "question": "Players $A$ and $B$ play a game on a blackboard that initially contains 1997 copies of the number 1. In every round, player $A$ erases two numbers $x$ and $y$ from the blackboard, and then player $B$ writes one of the numbers $x+y$ and $|x-y|$ on the blackboard. Additionally, there is a coin that is flipped before every round. If the coin lands heads, player $B$ is forced to write $x+y$ and if the coin lands tails player $B$ is forced to write $|x-y|$. The game terminates as soon as, at the end of some round, one of the following holds:\n\n(1) one of the numbers on the blackboard is larger than the sum of all other numbers;\n\n(2) there are only zeros on the blackboard.\n\nPlayer $B$ must then give as many cookies to player $A$ as there are numbers on the blackboard. Player $A$ wants to get as many cookies as possible, whereas player $B$ wants to give as few as possible. Determine the number of cookies that $A$ receives if both players play optimally.",
+    "expected_answer": 8,
+    "topics": [
+      "game_theory",
+      "combinatorics",
+      "number_theory"
+    ],
+    "skills": "number replacement game, game theory, Sprague-Grundy analysis, invariant finding",
+    "failure_mode": "close_vote",
+    "common_wrong_answer": 999,
+    "approach": "Game where players replace numbers on blackboard (1997 copies of 1). Close vote between 8 and 999. The game likely has a Sprague-Grundy value or invariant. Need to verify small cases to determine the correct answer.",
+    "versions_wrong": [
+      "v23"
+    ],
+    "correct_rate": "10/32"
+  },
+  {
+    "problem_id": "86e8e5",
+    "question": "Let $n \\geq 6$ be a positive integer. We call a positive integer $n$-Norwegian if it has three distinct positive divisors whose sum is equal to $n$. Let $f(n)$ denote the smallest $n$-Norwegian positive integer. Let $M=3^{2025!}$ and for a non-negative integer $c$ define $g(c)=\\frac{1}{2025!}\\left\\lfloor \\frac{2025! f(M+c)}{M}\\right\\rfloor.$ We can write $g(0)+g(4M)+g(1848374)+g(10162574)+g(265710644)+g(44636594)=\\frac{p}{q}$ where $p$ and $q$ are coprime positive integers. What is the remainder when $p+q$ is divided by $99991$?",
+    "expected_answer": 8687,
+    "topics": [
+      "number_theory"
+    ],
+    "skills": "n-Norwegian numbers, divisor sum properties, extended computation with many turns",
+    "failure_mode": "outvoted",
+    "common_wrong_answer": 41754,
+    "approach": "n-Norwegian = three divisors summing to n. Requires computing over huge ranges. Attempts get wildly scattered wrong answers — no consensus. Correct attempts used 100+ turns of extended computation. The correct approach uses number-theoretic properties of divisor sums.",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "6/80"
+  },
+  {
+    "problem_id": "89c921",
+    "question": "Integers \\(a_1,a_2,\\cdots,a_{2025}\\) satisfy \\(1 = a_1\\leq a_2\\leq\\cdots\\leq a_{2025}=199\\). Let \\(f=(a_1^2 + a_2^2 + \\cdots + a_{2025}^2)-(a_1a_3 + a_2a_4 + a_3a_5 + \\cdots + a_{2023}a_{2025})\\). Find the minimal value of \\(f\\).",
+    "expected_answer": 29800,
+    "topics": [
+      "algebra",
+      "optimization"
+    ],
+    "skills": "quadratic form minimization over integer sequences, telescoping sums, consecutive difference analysis",
+    "failure_mode": "outvoted",
+    "common_wrong_answer": 39601,
+    "approach": "Minimize f = sum(a_i^2) - sum(a_i*a_{i+2}) for non-decreasing integers from 1 to 199. Model gets 39601=199^2 which is a Turan-type bound, but the shifted product term changes the structure. Think about the sum as related to consecutive differences. Answer 29800 = 199*150 - something. Careful algebraic manipulation needed.",
+    "versions_wrong": [
+      "v23"
+    ],
+    "correct_rate": "17/48"
+  },
+  {
+    "problem_id": "9010d9",
+    "question": "G is a simple graph with n=160 vertices. Property: For any vertex u, there exists another vertex v such that u and v are adjacent, and there exists no vertex adjacent to both u and v. i.e., each vertex u has at least one neighbor v such that N(u) ∩ N(v) = ∅ (they share no common neighbor). Also v is adjacent to u (so edge uv). So for each vertex u, there is an edge uv that is \"private\" in sense that u and v have no common neighbors.",
+    "expected_answer": 10320,
+    "topics": [
+      "optimization",
+      "combinatorics",
+      "graph_theory"
+    ],
+    "skills": "graph theory, private neighbor condition, extremal graph theory",
+    "failure_mode": "wrong_formula",
+    "common_wrong_answer": 6400,
+    "approach": "Max edges where each vertex has a private neighbor. Model defaults to Turan-like n^2/4=6400 but the private neighbor constraint changes the structure. Answer is 10320. Need to carefully construct the extremal graph satisfying the private neighbor property.",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "2/48"
+  },
+  {
+    "problem_id": "a824c1",
+    "question": "How many squares at least should be marked on a \\(13\\times13\\) chessboard such that for any placement of a bishop on the chessboard, the bishop can threaten at least one of the marked squares? (A bishop can threaten the squares on the same diagonal line, and if a bishop is placed on a marked square, it is also considered that the square is threatened.)",
+    "expected_answer": 24,
+    "topics": [
+      "geometry",
+      "combinatorics",
+      "optimization"
+    ],
+    "skills": "bishop coverage on 13x13 board, diagonal line covering, set cover optimization",
+    "failure_mode": "never_correct",
+    "common_wrong_answer": 13,
+    "approach": "Bishop covers BOTH diagonals simultaneously. Need to hit all 49 diagonal lines on a 13x13 board. One bishop per row is NOT sufficient because bishops threaten both directions. Answer is 24, not 13. Prove lower bound via diagonal counting.",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "0/48"
+  },
+  {
+    "problem_id": "a9dbc8",
+    "question": "The Bank of Pittsburgh issues coins that have a heads side and a tails side. Vera has a row of 7873 such coins alternately tails-up and heads-up, with the leftmost coin tails-up. In a move, Vera may flip over one of the coins in the row, subject to the following rules: • On the first move, Vera may flip over any of the 7873 coins. • On all subsequent moves, Vera may only flip over a coin adjacent to the coin she flipped on the previous move. (We do not consider a coin to be adjacent to itself.) Determine the smallest possible number of moves Vera can make to reach a state in which every coin is heads-up.",
+    "expected_answer": 15744,
+    "topics": [
+      "probability",
+      "combinatorics"
+    ],
+    "skills": "coin flipping walk, boundary counting, inclusion/exclusion of endpoints",
+    "failure_mode": "off_by_one",
+    "common_wrong_answer": 15743,
+    "approach": "Off-by-1 in walk/flip count. Model consistently gets 15743 instead of 15744. Boundary condition error — miscounting whether first/last move is included. Test formula on small cases (n=3, n=5, n=7) before extrapolating to n=7873.",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "1/48"
+  },
+  {
+    "problem_id": "ae2add",
+    "question": "Among all the lattice points \\((x, y)\\) where \\(1\\leqslant x\\leqslant9973\\) and \\(1\\leqslant y\\leqslant9973\\), some lattice points are to be selected. The restrictive condition is that among the selected lattice points, no four points can form an isosceles trapezoid (a rectangle is also regarded as an isosceles trapezoid) with the base parallel to either the \\(x\\)-axis or the \\(y\\)-axis. So, what is the maximum number of lattice points that can be selected?",
+    "expected_answer": 24931,
+    "topics": [
+      "geometry",
+      "combinatorics",
+      "number_theory"
+    ],
+    "skills": "lattice point selection, isosceles trapezoid avoidance, point set construction",
+    "failure_mode": "wrong_formula",
+    "common_wrong_answer": 19945,
+    "approach": "Lattice points avoiding isosceles trapezoids. Model gets 19945=2*9973-1, but answer is 24931~=2.5*9973. The construction allows more points than the model thinks — each row can have ~2.5 points on average. Wrong approach: treating horizontal and vertical constraints independently.",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "1/48"
+  },
+  {
+    "problem_id": "aff75c",
+    "question": "In a \\(60\\times60\\) square grid of cells, the integers \\(1, 2,\\cdots,3600\\) are filled in such a way that the sum of the numbers in every two adjacent cells (cells that share a common side are called adjacent) is not less than \\(S\\). Try to find the maximum value of \\(S\\).",
+    "expected_answer": 3571,
+    "topics": [
+      "algebra",
+      "combinatorics",
+      "optimization"
+    ],
+    "skills": "grid filling optimization, adjacent sum maximization, averaging/parity arguments",
+    "failure_mode": "outvoted",
+    "common_wrong_answer": 3600,
+    "approach": "60x60 grid with 1..3600, maximize minimum adjacent sum S. Model gets 3600 (too optimistic) or timeout. Answer 3571 = 3600-29 requires clever arrangement theory. Think checkerboard: alternate high/low values. Use averaging argument over all adjacencies.",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "3/48"
+  },
+  {
+    "problem_id": "c19295",
+    "question": "Given a \\(15\\times15\\) chessboard, there are \\(n\\) pieces placed on \\(n\\) individual squares respectively. For each piece, a \\(5\\times5\\) square with its sides parallel to the boundaries of the chessboard is drawn with the piece located as the center, and this square is called the range of the piece. If there is exactly one other piece within the range of each piece, find the maximum value of \\(n\\).",
+    "expected_answer": 48,
+    "topics": [
+      "combinatorics",
+      "optimization"
+    ],
+    "skills": "chessboard piece placement, attacking constraints, extremal combinatorics",
+    "failure_mode": "close_vote",
+    "common_wrong_answer": 18,
+    "approach": "15x15 chessboard with n pieces, each attacking exactly one other. Answer is 48. Very close vote (48 vs 18 vs 36). Need to maximize n under the \"exactly one attacker\" constraint. Think about pairing pieces and maximizing coverage.",
+    "versions_wrong": [
+      "v23"
+    ],
+    "correct_rate": "8/32"
+  },
+  {
+    "problem_id": "cbbc1b",
+    "question": "Real numbers \\(x_1 \\leq x_2 \\leq \\ldots \\leq x_9\\) such that \\(\\sum_{i=1}^9 x_i=1\\). Find the maximum value of \n\\(\n\\frac{\\left(\\sum_{i=1}^9\\left|x_i-x_{5}\\right|\\right)^2 \\cdot \\sum_{1 \\leq i<j \\leq 9}\\left(x_i-x_j\\right)^2}{\\left(\\sum_{i=1}^9 x_i^2\\right)^3}\n\\).",
+    "expected_answer": 96,
+    "topics": [
+      "algebra",
+      "optimization"
+    ],
+    "skills": "sequence optimization, ratio maximization under ordering and sum constraints",
+    "failure_mode": "close_vote",
+    "common_wrong_answer": 432,
+    "approach": "Maximize ratio involving ordered reals x_1<=...<=x_9 summing to 1. Answer is 96. Close vote between 96 and 432. Need careful optimization — the maximum may occur at a boundary where some variables coincide.",
+    "versions_wrong": [
+      "v31"
+    ],
+    "correct_rate": "9/32"
+  },
+  {
+    "problem_id": "dbbfe8",
+    "question": "Place \\(m\\) \\(1 \\times 2\\) dominos on a \\(7\\times7\\) chessboard such that no domino can slide horizontally or vertically when other dominos remains fixed. Find the minimal possible value of \\(m\\).",
+    "expected_answer": 22,
+    "topics": [
+      "combinatorics",
+      "optimization"
+    ],
+    "skills": "domino tiling on 7x7 board, proving minimum via mutual blocking, lower bound arguments",
+    "failure_mode": "brute_force_fail",
+    "common_wrong_answer": 8,
+    "approach": "Dominos must block EACH OTHER, not just touch walls. Prove a lower bound via counting argument first, then construct a matching configuration. Never trust computer search that says \"found k\" without proving k is minimal. Answer is 22, not 8.",
+    "versions_wrong": [
+      "v23",
+      "v31"
+    ],
+    "correct_rate": "7/48"
+  },
+  {
+    "problem_id": "dd7f5e",
+    "question": "Let $\\mathcal{F}$ be the set of functions $\\alpha \\colon \\mathbb{Z}\\to \\mathbb{Z}$ for which there are only finitely many $n \\in \\mathbb{Z}$ such that $\\alpha(n) \\neq 0$. For two functions $\\alpha$ and $\\beta$ in $\\mathcal{F}$, define their product $\\alpha\\star\\beta$ to be $\\sum\\limits_{n\\in\\mathbb{Z}} \\alpha(n)\\cdot \\beta(n)$. Also, for $n\\in\\mathbb{Z}$, define a shift operator $S_n \\colon \\mathcal{F}\\to \\mathcal{F}$ by $S_n(\\alpha)(t)=\\alpha(t+n)$ for all $t \\in \\mathbb{Z}$. A function $\\alpha \\in \\mathcal{F}$ is called shifty if $\\alpha(m)=0$ for all integers $m<0$ and $m>8$ and there exists $\\beta \\in \\mathcal{F}$ and integers $k \\neq l$ such that for all $n \\in \\mathbb{Z}$, $S_n(\\alpha)\\star\\beta = 1$ if $n \\in \\{k,l\\}$ and $0$ if $n \\not\\in \\{k,l\\}$. How many shifty functions are there in $\\mathcal{F}$?",
+    "expected_answer": 160,
+    "topics": [
+      "algebra",
+      "number_theory"
+    ],
+    "skills": "functional analysis, integer sequences with finite support, composition of functions",
+    "failure_mode": "close_vote",
+    "common_wrong_answer": 80,
+    "approach": "Functions Z->Z with finitely many non-zero values. Close vote between 160, 44, and 80. Need careful counting of the function space under the given constraints. Multiple wrong approaches give different answers.",
+    "versions_wrong": [
+      "v23"
+    ],
+    "correct_rate": "4/16"
+  }
+]

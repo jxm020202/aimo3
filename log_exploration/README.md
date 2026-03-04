@@ -115,13 +115,14 @@ Also has 29 built-in queries: `python3 log_exploration/log_query.py <logfile> <q
 | `library_failures.py` | `<log>` | Failed imports: pulp, ortools, z3, mip — counts and affected problems |
 | `python_usage.py` | `<log>` | Python stdlib and 3rd-party usage patterns |
 
-### Strategy & Simulation (4)
+### Strategy & Simulation (5)
 | Script | Usage | What it does |
 |--------|-------|-------------|
 | `adaptive_compute.py` | `<log>` | Wave-based batching simulation, time projections |
 | `adaptive_simulator.py` | `<log>` | Strategy comparisons: fixed vs adaptive attempt counts |
 | `attempt_marginal_value.py` | `<log> [--v22 <log>] [-o <file>]` | **8 vs 16 attempts ROI**: first-correct distribution, truncation score sim, marginal value per attempt, vote stability, v22 comparison |
 | `early_stop_optimizer.py` | `<log> [--v22 <log>] [--save <file>]` | ES threshold optimizer: grid search (att,ES), false positive analysis, vote stabilization, v22/v23 comparison |
+| `wave2_analysis.py` | `<v23_log> <v31_log>` | Cross-version failure analysis: topic classification, strategy detection, failure modes for Wave 2 starter notes |
 
 ### Ordering & Time Pressure (1)
 | Script | Usage | What it does |
@@ -140,6 +141,7 @@ Also has 29 built-in queries: `python3 log_exploration/log_query.py <logfile> <q
 |-----|----------|-------|
 | `output/v22/diagnostic.log` | 60 (8 att, ES=3, flat 0.5) | 12MB, clean run |
 | `output/v23/diagnostic.log` | 80 (16 att, ES=5, temp schedule) | 69MB, 940K lines |
+| `output/v31/diagnostic.log` | 53 (16 att, no ES, temp schedule) | 41MB, T2+T0.5+T1 |
 
 ## Key Findings
 

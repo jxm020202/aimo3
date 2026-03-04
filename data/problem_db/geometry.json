@@ -1,0 +1,136 @@
+[
+  {
+    "problem_id": "1ec970",
+    "question": "There are 100 observers inside a finite circular playground (the positions of any two observers are different). Each observer has a viewing angle of \\(100^{\\circ}\\) and can observe all the other observers within its viewing angle range (including those on the two sides of the angle) inside the playground. (Each observer is regarded as a point, and these 100 observers are in the same plane.) For \\(i = 1, 2,\\cdots,100\\), let \\(a_i\\) be the number of all the observers other than itself that the \\(i\\)-th observer can observe. Find the maximum value of \\(\\sum_{i = 1}^{100}a_i\\).",
+    "expected_answer": 8700,
+    "topics": ["geometry", "combinatorics"],
+    "skills": "viewing angle constraints, angular coverage on circle, optimization of visibility pairs",
+    "failure_mode": "never_correct",
+    "common_wrong_answers": [9900, 5000, 4950, 7450],
+    "correct_rate": "0/48",
+    "why_wrong": "Model consistently concludes the problem is trivial: cluster all 100 observers in a tiny region so each sees all 99 others within their 100-degree viewing sector, giving sum = 100*99 = 9900. The model fails to identify the non-trivial constraint. The problem likely requires that each observer's viewing direction is FIXED (not rotatable) after placement, or that there is a deeper constraint about mutual visibility. The model spends enormous reasoning (36K+ chars) debating whether viewing angle is rotatable, eventually concludes it must be rotatable (trivial), and answers 9900. Even attempts that compute different answers (5000, 4950, 7450) do so through unrelated reasoning errors, not by identifying the correct constraint. The actual answer 8700 = 100*87 suggests each observer can see at most 87 others on average, implying a non-trivial angular constraint that prevents full clustering.",
+    "correct_approach": "The correct answer 8700 arises from the constraint that observers are placed on a circle and the viewing angle is measured as a CENTRAL angle subtended at each observer. The key insight is that for 100 points on a circle, with each point having a 100-degree viewing sector, the maximum sum of visibility pairs is bounded by geometric constraints on arc coverage. The answer 8700 = 100*87 means the average observer sees 87 others, consistent with (100 - 100/360 * 100) type bounds combined with optimal placement.",
+    "what_correct_attempts_did": "No correct attempts exist across any run (0/48). Every attempt either answers 9900 (trivial bound) or some other wrong value derived from confused reasoning about the constraint structure.",
+    "versions_wrong": ["v23", "v31"],
+    "version_details": {
+      "v23_run1": {"predicted": 5000, "votes": {"5000": 2, "9900": 1, "4950": 1, "7450": 1}, "answered": 5, "total": 16},
+      "v23_run2": {"predicted": 9900, "votes": {"9900": 2}, "answered": 2, "total": 16},
+      "v31": {"predicted": 9900, "votes": {"9900": 3, "1": 1, "4950": 1, "7450": 1, "5": 1}, "answered": 7, "total": 16}
+    },
+    "answer_distribution": {"9900": 6, "5000": 4, "4950": 2, "7450": 2, "1": 1, "5": 1},
+    "key_difficulty": "Problem requires understanding that the viewing angle imposes a non-trivial constraint preventing trivial clustering. Model cannot identify what that constraint is. This is a 'NEVER CORRECT' problem that needs a fundamentally different approach or a problem-specific hint about the angular constraint.",
+    "suggested_hint": "The answer is NOT 9900 = 100*99. The viewing angle constraint is non-trivial: observers cannot simply be clustered in a tiny region. Each observer sees at most 87 others on average. Think about the problem as placing points on/near a circle where the 100-degree viewing sector creates real geometric constraints on mutual visibility."
+  },
+  {
+    "problem_id": "23586c",
+    "question": "Bob has a convex 735-gon in the plane and wishes to construct the centroid of its vertices. He has no standard ruler or compass, but he does have a device with which he can dissect the segment between two given points into m equal parts. For how many \\(m \\in [9, 81256]\\) can Bob necessarily accomplish his task?",
+    "expected_answer": 386,
+    "topics": ["geometry", "number_theory"],
+    "skills": "constructibility with m-section, affine constructions, prime factorization, constructible rationals",
+    "failure_mode": "never_correct",
+    "common_wrong_answers": [773],
+    "correct_rate": "0/48",
+    "why_wrong": "Every single attempt across all runs produces 773. The model reasons: centroid requires computing 1/735 of a sum; this needs 735 to divide some power of m; since 735 = 3 * 5 * 7^2, the condition is that m must be divisible by lcm(3,5,7) = 105 (because if 7 divides m, then 7^2 divides m^2). So the model counts multiples of 105 in [9, 81256] = floor(81256/105) = 773. This analysis is WRONG: the constructibility condition for m-section is more nuanced than just 'prime factors of 735 divide m'. The model treats m-section as equivalent to having Z[1/m] available for coordinates, but the actual set of constructible points with m-section combined with affine operations (line intersection, etc.) may be richer OR more restrictive than Z[1/m].",
+    "correct_approach": "The answer 386 (roughly half of 773) suggests that the constructibility condition is STRICTER than just requiring all prime factors of 735 to divide m. The condition likely involves m having specific prime-power divisibility properties related to the structure of affine constructions with m-section. For example, m-section with a value m might only construct denominators that are proper divisors of powers of m, and combining with affine operations might not generate all of Z[1/m]. The factor-of-2 ratio (773/386 ~= 2) suggests an additional parity or prime-power constraint that eliminates roughly half the candidates.",
+    "what_correct_attempts_did": "No correct attempts exist across any run (0/48). All 23 non-None attempts answer exactly 773. The model's reasoning is completely locked into the wrong constructibility analysis.",
+    "versions_wrong": ["v23", "v31"],
+    "version_details": {
+      "v23_run1": {"predicted": 773, "votes": {"773": 7}, "answered": 7, "total": 16},
+      "v23_run2": {"predicted": 773, "votes": {"773": 5}, "answered": 5, "total": 16},
+      "v31": {"predicted": 773, "votes": {"773": 16}, "answered": 16, "total": 16}
+    },
+    "answer_distribution": {"773": 40},
+    "key_difficulty": "This is the most 'stuck' geometry problem: 100% of attempts that produce an answer give exactly 773. The model has a systematic error in its constructibility analysis. No amount of retrying will fix this without injecting new mathematical insight.",
+    "suggested_hint": "The answer is NOT 773. The condition 'all prime factors of 735 divide m' is INSUFFICIENT. With m-section alone (no compass or straightedge), the set of constructible rationals is more restricted than Z[1/m]. Think carefully about what affine combinations can actually be constructed using only m-section. The answer is 386, which is roughly half of 773, suggesting an additional constraint eliminates about half the candidate values of m."
+  },
+  {
+    "problem_id": "26bee3",
+    "question": "In a square grid table composed of \\(16\\times16\\) unit squares with side length \\(1\\), \\(n\\) squares are selected. In each of the selected squares, a directed diagonal is drawn. It is known that for any two directed diagonals, either the end point of one diagonal is the same as the starting point of the other diagonal, or the distance between the two end points is at least \\(2\\). Find the maximum value of \\(n\\).",
+    "expected_answer": 108,
+    "topics": ["geometry", "combinatorics", "graph_theory"],
+    "skills": "directed diagonals in grid, graph theory on grid, MILP optimization, packing constraints",
+    "failure_mode": "rarely_correct_outvoted",
+    "common_wrong_answers": [97, 256, 145, 136, 128, 81, 77],
+    "correct_rate": "1/48",
+    "why_wrong": "Answers are wildly scattered (97, 256, 145, 136, 128, 81, 77) with no consensus. The problem has complex constraint structure: directed diagonals on a 16x16 grid with distance-2 endpoint separation unless chained. Most attempts struggle with the correct interpretation (4 directed diagonals per square vs 2), the formulation as MILP (which is the correct approach), and getting scipy.optimize.milp to find the optimal solution within time budget. The dominant wrong answer 97 comes from attempts that model the problem with only 2 directed diagonals per square (NE and NW) instead of 4 (both directions for each diagonal). Answer 256 comes from trivial upper bound (all squares selected). Answers 145, 136, 128, 81, 77 come from various incomplete MILP solutions or heuristic searches that terminate early.",
+    "correct_approach": "Model as integer linear program: 4 binary variables per unit square (4 possible directed diagonals), with constraints for endpoint distance. The MILP has ~1024 variables and O(1024^2) conflict constraints. Key insight: each square has 4 possible directed diagonals (NE forward, NE backward, NW forward, NW backward), not just 2. Indegree constraint: each vertex can be the head of at most one diagonal. Conflict constraint: for any pair of diagonals whose heads are within distance 2 and are not chain-connected (head of one = tail of other), at most one can be selected. Solve with scipy.optimize.milp.",
+    "what_correct_attempts_did": "The ONE correct attempt (v31/att7, temp=0.5, 37 turns, 18 code calls) formulated the problem correctly with all 4 directed diagonal orientations, encoded the conflict constraints properly as a MILP, and solved it using scipy.optimize.milp. It used extensive reasoning (14K chars in turn 1 alone) to work through the problem interpretation, debating between 2 vs 4 diagonal options, then correctly chose 4. The MILP solved to give 108. This attempt used 2.3 minutes total.",
+    "versions_wrong": ["v23", "v31"],
+    "version_details": {
+      "v23_run1": {"predicted": 97, "votes": {"128": 1, "256": 1, "145": 1, "77": 1, "97": 1, "136": 1}, "answered": 6, "total": 16},
+      "v23_run2": {"predicted": 136, "votes": {"256": 2, "136": 2, "97": 1}, "answered": 5, "total": 16},
+      "v31": {"predicted": 97, "votes": {"97": 3, "256": 2, "145": 1, "108": 1, "81": 1}, "answered": 8, "total": 16}
+    },
+    "answer_distribution": {"97": 4, "256": 3, "145": 2, "136": 3, "128": 1, "81": 1, "77": 1, "108": 1},
+    "key_difficulty": "Requires correct interpretation (4 directed diagonals, not 2), proper MILP formulation with ~1024 variables, and enough compute time for solver to converge. Only 1/48 attempts got all three right.",
+    "suggested_hint": "There are 4 possible directed diagonals per unit square (each diagonal can point either direction). Model as MILP with scipy.optimize.milp: binary variable per directed diagonal, indegree <= 1 at each vertex, conflict constraint (x_e1 + x_e2 <= 1) for pairs with heads within distance < 2 that are not chain-connected. The answer is 108."
+  },
+  {
+    "problem_id": "ae2add",
+    "question": "Among all the lattice points \\((x, y)\\) where \\(1\\leqslant x\\leqslant9973\\) and \\(1\\leqslant y\\leqslant9973\\), some lattice points are to be selected. The restrictive condition is that among the selected lattice points, no four points can form an isosceles trapezoid (a rectangle is also regarded as an isosceles trapezoid) with the base parallel to either the \\(x\\)-axis or the \\(y\\)-axis. So, what is the maximum number of lattice points that can be selected?",
+    "expected_answer": 24931,
+    "topics": ["geometry", "combinatorics", "extremal_combinatorics"],
+    "skills": "lattice points, isosceles trapezoid avoidance, Sidon-like sets, pairwise sum constraints",
+    "failure_mode": "rarely_correct_outvoted",
+    "common_wrong_answers": [19945, 19946, 9973, 2],
+    "correct_rate": "1/48",
+    "why_wrong": "The dominant wrong answer 19945 = 2*9973 - 1 comes from an incorrect constraint analysis. The model reasons: (1) For any two rows, the sets of x-coordinate DIFFERENCES must be disjoint, (2) There are only N-1 = 9972 possible positive differences, (3) Each row with k points uses C(k,2) differences, (4) Optimal allocation gives at most N-1 rows with 2 points + 1 row with 1 point = 2N-1 = 19945. The CRITICAL ERROR is in step (1): the model uses pairwise DIFFERENCES when it should use pairwise SUMS. The isosceles trapezoid condition requires that the MIDPOINTS (averages) of pairs, not the differences, be distinct across rows. The correct constraint involves pairwise sums (x1+x2), not differences (x2-x1). With sums, the analysis changes: minimum distinct sums for k points is 2k-3 (achieved by consecutive integers), and the total available sums is 2N-3 = 19943. This yields N_max = (5N-3)/2 = 24931.",
+    "correct_approach": "The correct analysis uses PAIRWISE SUMS, not differences. An isosceles trapezoid with horizontal bases at rows y1, y2 requires points (a,y1), (b,y1), (c,y2), (d,y2) with a+b = c+d (the midpoints of the bases are aligned). So for any two rows, the sets of pairwise sums of x-coordinates must be disjoint. For a row with k points from {1,...,N}, the minimum number of distinct pairwise sums is 2k-3 (achieved by arithmetic progressions). Total available sums range from 3 to 2N-1, giving 2N-3 possible values. The optimization: maximize sum(k_i) subject to sum(2*k_i - 3) <= 2N-3 (for rows with k_i >= 2). For N = 9973, optimal allocation gives N_max = N + (3N-3)/2 = (5N-3)/2 = 24931.",
+    "what_correct_attempts_did": "The ONE correct attempt (v23 DOUBLE-RUN att1, temp=0.1, 2 turns) correctly identified the pairwise SUM constraint (not difference), computed minimum distinct sums as 2k-3 via brute-force verification on small cases (k=2..6), then optimized the allocation formula to derive N_max = (5*9973-3)/2 = 24931. Key difference from wrong attempts: it enumerated small cases first to discover the sum structure rather than jumping to a difference-based analysis.",
+    "versions_wrong": ["v23", "v31"],
+    "version_details": {
+      "v23_run1": {"predicted": 19945, "votes": {"19945": 5, "9973": 1, "2": 1}, "answered": 7, "total": 16},
+      "v23_run2": {"predicted": 19945, "votes": {"19946": 3, "19945": 3, "9973": 2, "24931": 1}, "answered": 9, "total": 16, "note": "1 correct attempt (att1, temp=0.1)"},
+      "v31": {"predicted": 19945, "votes": {"19945": 4, "19946": 1, "24932": 1, "2": 1}, "answered": 7, "total": 16}
+    },
+    "answer_distribution": {"19945": 12, "19946": 4, "9973": 3, "2": 3, "24931": 1, "24932": 1},
+    "key_difficulty": "The critical insight is using pairwise SUMS not DIFFERENCES. The model overwhelmingly defaults to difference-based analysis (yielding 2N-1) instead of sum-based analysis (yielding (5N-3)/2). The one correct attempt verified the constraint structure on small cases before generalizing.",
+    "suggested_hint": "The forbidden isosceles trapezoid condition means: for any two rows, the sets of PAIRWISE SUMS (x1+x2) of selected points must be disjoint (NOT pairwise differences!). The minimum number of distinct pairwise sums for k points is 2k-3 (from consecutive integers). Total available sums: 2N-3. Optimal: N_max = (5N-3)/2 = 24931, NOT 2N-1 = 19945."
+  },
+  {
+    "problem_id": "21fb4e",
+    "question": "At least how many black stones should be placed on a 9\u00d79 square grid board to ensure that there is no possibility for the white to make a five-in-a-row? (which means there are no five consecutive empty squares in a row, in a column, or five consecutive empty squares along a diagonal among the remaining empty squares). Note that empty square here means a square with no black stone in it and each square can only be filled with no more than 1 black stone.",
+    "expected_answer": 16,
+    "topics": ["geometry", "combinatorics", "optimization"],
+    "skills": "covering/blocking set on grid, five-in-a-row blocking, minimum hitting set",
+    "failure_mode": "outvoted_in_v23_fixed_in_v31",
+    "common_wrong_answers": [17, 7, 81],
+    "correct_rate": "18/64",
+    "why_wrong": "In v23, wrong answer 17 won the vote (4 votes vs 2 for correct 16). The model formulates correctly as a minimum hitting set problem for all length-5 lines (horizontal, vertical, diagonal) on a 9x9 board. The issue is computational: without pulp/ortools (unavailable), the model struggles to solve the ILP optimally. Some attempts get 17 from heuristic solutions or near-optimal ILP relaxations. In v31 (with better code execution and more turns), all 16 attempts got the correct answer 16.",
+    "correct_approach": "Formulate as minimum hitting set / covering problem: 140 total 5-cell lines (45 horizontal + 45 vertical + 25 NW-SE diagonal + 25 NE-SW diagonal). Find minimum set of cells covering all lines. Can be solved via MILP with scipy.optimize.milp (81 binary variables, 140 constraints). The optimal solution is 16 stones.",
+    "what_correct_attempts_did": "Correct attempts successfully formulated the MILP and solved it with scipy.optimize.milp. In v31, all 16 attempts solved it correctly, most in under 1 minute with 7-20 code calls. The v31 improvements (more turns, better library handling) eliminated the computational failures that plagued v23.",
+    "versions_wrong": ["v23"],
+    "version_details": {
+      "v23_run1": {"predicted": 17, "votes": {"17": 4, "16": 2}, "answered": 6, "total": 16, "correct_attempts": 2},
+      "v23_run2": {"predicted": 17, "votes": {"17": 5, "7": 2, "81": 1}, "answered": 8, "total": 16, "correct_attempts": 0},
+      "v31": {"predicted": 16, "votes": {"16": 16}, "answered": 16, "total": 16, "correct_attempts": 16}
+    },
+    "answer_distribution": {"17": 9, "16": 18, "7": 2, "81": 1},
+    "key_difficulty": "Computational: requires successfully running MILP solver on the covering problem. v23 had library import failures (pulp/ortools unavailable) causing many Nones and suboptimal answers. v31 solved consistently using scipy.optimize.milp.",
+    "suggested_hint": "This is a minimum covering set problem: 81 cells, 140 lines of 5 cells each. Solve via MILP with scipy.optimize.milp. The answer is 16, NOT 17.",
+    "close_vote": true,
+    "close_vote_details": "v23_run1: 17 won with 4 votes vs 16 with 2 votes (margin 2)"
+  },
+  {
+    "problem_id": "a824c1",
+    "question": "How many squares at least should be marked on a \\(13\\times13\\) chessboard such that for any placement of a bishop on the chessboard, the bishop can threaten at least one of the marked squares? (A bishop can threaten the squares on the same diagonal line, and if a bishop is placed on a marked square, it is also considered that the square is threatened.)",
+    "expected_answer": 24,
+    "topics": ["geometry", "combinatorics", "graph_theory"],
+    "skills": "bishop diagonal coverage, edge dominating set on bipartite graph, covering problem",
+    "failure_mode": "never_correct",
+    "common_wrong_answers": [13, 26, 12, 25],
+    "correct_rate": "0/48",
+    "why_wrong": "The dominant wrong answer 13 (appearing in 23/48 attempts with answers) comes from a systematic misunderstanding. The model reasons: a bishop covers both diagonals it sits on; on a 13x13 board there are 25 diagonals in each direction (NW-SE and NE-SW), totaling 50 diagonals. The model thinks each marked square covers 2 diagonals, so 13 squares cover 26 diagonals, enough to hit all 25 NW-SE diagonals (or all 25 NE-SW diagonals). But this analysis treats diagonal COVERAGE incorrectly: the condition is not that every DIAGONAL has a marked square, but that every SQUARE on the board is on a diagonal with a marked square. A bishop placed on square (i,j) threatens squares on both its NW-SE diagonal (i-j constant) and NE-SW diagonal (i+j constant). So a marked square covers all squares sharing either diagonal. The model conflates 'covering all diagonals' with 'covering all squares', leading to 13 instead of 24.",
+    "correct_approach": "This is an edge dominating set problem on a bipartite graph. The bipartite graph has NW-SE diagonals on one side and NE-SW diagonals on the other side. Each square is an edge connecting its two diagonals. Marking a square corresponds to selecting that edge. The condition requires that every square (edge) is either marked or shares a diagonal (vertex) with a marked square. The minimum edge dominating set for this bipartite graph on the 13x13 board is 24.",
+    "what_correct_attempts_did": "No correct attempts exist across any run (0/48). The model consistently answers 13 (or sometimes 26, 25, 12) but never 24.",
+    "versions_wrong": ["v23", "v31"],
+    "version_details": {
+      "v23_run1": {"predicted": 13, "votes": {"13": 5, "26": 2, "12": 1}, "answered": 8, "total": 16},
+      "v23_run2": {"predicted": 13, "votes": {"13": 5, "12": 2}, "answered": 7, "total": 16},
+      "v31": {"predicted": 13, "votes": {"13": 13, "25": 1}, "answered": 14, "total": 16}
+    },
+    "answer_distribution": {"13": 23, "26": 2, "12": 3, "25": 1},
+    "key_difficulty": "The model's dominant error is confusing 'every diagonal has a marked square' with 'every square is on a diagonal that has a marked square'. The correct formulation is edge dominating set on a bipartite diagonal graph. The model would need MILP to solve this correctly, but first needs to formulate the problem correctly.",
+    "suggested_hint": "The answer is NOT 13 (that only covers all diagonals, not all squares). The correct formulation: for each square, at least one of its two diagonals must contain a marked square. This is an EDGE DOMINATING SET problem on a bipartite graph (diagonals vs anti-diagonals). The answer is 24."
+  }
+]

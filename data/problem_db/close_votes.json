@@ -1,0 +1,745 @@
+{
+  "close_votes": [
+    {
+      "problem_id": "c19295",
+      "question": "Given a \\(15\\times15\\) chessboard, there are \\(n\\) pieces placed on \\(n\\) individual squares respectively. For each piece, a \\(5\\times5\\) square with its sides parallel to the boundaries of the chessboard is drawn with the piece located as the center, and this square is called the range of the piece. If there is exactly one other piece within the range of each piece, find the maximum value of \\(n\\).",
+      "expected_answer": 48,
+      "topics": [
+        "combinatorics",
+        "geometry",
+        "algebra"
+      ],
+      "skills": "brute_force_search, optimization, grid_reasoning",
+      "vote_margin": 0,
+      "vote_distribution": {
+        "18": 4,
+        "48": 4,
+        "36": 3,
+        "40": 1,
+        "44": 1,
+        "26": 1,
+        "38": 1
+      },
+      "correct_rate": "4/16",
+      "none_count": 1,
+      "risk_level": "critical",
+      "why_close": "Close numeric: 1 attempts got 38 (diff=-10); Close numeric: 1 attempts got 44 (diff=-4); Close numeric: 1 attempts got 40 (diff=-8); High disagreement: 6 different wrong answers produced; Top wrong answer: 18 (4 attempts)",
+      "version": "v23",
+      "batch": "VAL BENCH (new unseen)",
+      "wall_time_s": 922.0,
+      "appears_in_both_versions": true,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "76aef9",
+      "question": "Players $A$ and $B$ play a game on a blackboard that initially contains 1997 copies of the number 1. In every round, player $A$ erases two numbers $x$ and $y$ from the blackboard, and then player $B$ writes one of the numbers $x+y$ and $|x-y|$ on the blackboard. Additionally, there is a coin that is flipped before every round. If the coin lands heads, player $B$ is forced to write $x+y$ and if the coin lands tails player $B$ is forced to write $|x-y|$. The game terminates as soon as, at the end of some round, one of the following holds:",
+      "expected_answer": 8,
+      "topics": [
+        "combinatorics"
+      ],
+      "skills": "brute_force_search, grid_reasoning",
+      "vote_margin": 1,
+      "vote_distribution": {
+        "8": 5,
+        "999": 4
+      },
+      "correct_rate": "5/16",
+      "none_count": 7,
+      "risk_level": "critical",
+      "why_close": "High None rate: 7/16 attempts produced no answer; Top wrong answer: 999 (4 attempts)",
+      "version": "v23",
+      "batch": "PRIORITY DEBUG (dual-run)",
+      "wall_time_s": 260.2,
+      "appears_in_both_versions": true,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "76aef9",
+      "question": "Players $A$ and $B$ play a game on a blackboard that initially contains 1997 copies of the number 1. In every round, player $A$ erases two numbers $x$ and $y$ from the blackboard, and then player $B$ writes one of the numbers $x+y$ and $|x-y|$ on the blackboard. Additionally, there is a coin that is flipped before every round. If the coin lands heads, player $B$ is forced to write $x+y$ and if the coin lands tails player $B$ is forced to write $|x-y|$. The game terminates as soon as, at the end of some round, one of the following holds:",
+      "expected_answer": 8,
+      "topics": [
+        "combinatorics"
+      ],
+      "skills": "brute_force_search, grid_reasoning, numerical_methods",
+      "vote_margin": 1,
+      "vote_distribution": {
+        "8": 5,
+        "999": 4,
+        "1997": 2,
+        "1": 2
+      },
+      "correct_rate": "5/16",
+      "none_count": 3,
+      "risk_level": "critical",
+      "why_close": "Close numeric: 2 attempts got 1 (diff=-7); High disagreement: 3 different wrong answers produced; Top wrong answer: 999 (4 attempts)",
+      "version": "v23",
+      "batch": "PRIORITY DEBUG (dual-run)",
+      "wall_time_s": 226.5,
+      "appears_in_both_versions": true,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "dd7f5e",
+      "question": "Let $\\mathcal{F}$ be the set of functions $\\alpha \\colon \\mathbb{Z}\\to \\mathbb{Z}$ for which there are only finitely many $n \\in \\mathbb{Z}$ such that $\\alpha(n) \\neq 0$. For two functions $\\alpha$ and $\\beta$ in $\\mathcal{F}$, define their product $\\alpha\\star\\beta$ to be $\\sum\\limits_{n\\in\\mathbb{Z}} \\alpha(n)\\cdot \\beta(n)$. Also, for $n\\in\\mathbb{Z}$, define a shift operator $S_n \\colon \\mathcal{F}\\to \\mathcal{F}$ by $S_n(\\alpha)(t)=\\alpha(t+n)$ for all $t \\in \\mathbb{Z}$. A function $\\alpha \\in \\mathcal{F}$ is called shifty if $\\alpha(m)=0$ for all integers $m<0$ and $m>8$ and there exists $\\beta \\in \\mathcal{F}$ and integers $k \\neq l$ such that for all $n \\in \\mathbb{Z}$, $S_n(\\alpha)\\star\\beta = 1$ if $n \\in \\{k,l\\}$ and $0$ if $n \\not\\in \\{k,l\\}$. How many shifty functions are there in $\\mathcal{F}$?",
+      "expected_answer": 160,
+      "topics": [
+        "algebra"
+      ],
+      "skills": "number_properties, numerical_methods, symbolic_computation, counting, brute_force_search",
+      "vote_margin": 1,
+      "vote_distribution": {
+        "160": 4,
+        "44": 3,
+        "80": 3,
+        "1024": 1,
+        "107": 1,
+        "178": 1,
+        "266": 1,
+        "112": 1,
+        "132": 1
+      },
+      "correct_rate": "4/16",
+      "none_count": 0,
+      "risk_level": "critical",
+      "why_close": "High disagreement: 8 different wrong answers produced; Wrong attempts had 2.3x more errors on average; Top wrong answer: 80 (3 attempts)",
+      "version": "v23",
+      "batch": "AT-RISK PROBLEMS",
+      "wall_time_s": 288.4,
+      "appears_in_both_versions": false,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "414a5b",
+      "question": "Kevin throws three fair dice numbered from 1 to 6. Then he observes the results of the first throw of the three dice. From these three dice, he can choose \\(n\\), where \\(0\\leq n\\leq3\\) dice to re-throw once. After that, the operation ends. Kevin's goal is to maximize the probability that the sum of the numbers on the final three dice is 7, and Kevin is smart enough. Let the probability when \\(n = 2\\) be \\(p\\). What is the value of \\(216\\times p\\)?",
+      "expected_answer": 42,
+      "topics": [
+        "combinatorics"
+      ],
+      "skills": "brute_force_search, probability, symbolic_computation",
+      "vote_margin": 1,
+      "vote_distribution": {
+        "42": 5,
+        "95": 4,
+        "23": 3,
+        "216": 1,
+        "6": 1
+      },
+      "correct_rate": "5/16",
+      "none_count": 2,
+      "risk_level": "critical",
+      "why_close": "High disagreement: 4 different wrong answers produced; Top wrong answer: 95 (4 attempts)",
+      "version": "v23",
+      "batch": "DOUBLE-RUN RETRY",
+      "wall_time_s": 159.1,
+      "appears_in_both_versions": false,
+      "cross_version_status": "REGRESSION (correct in v23, wrong in v31)"
+    },
+    {
+      "problem_id": "86e8e5",
+      "question": "Let $n \\geq 6$ be a positive integer. We call a positive integer $n$-Norwegian if it has three distinct positive divisors whose sum is equal to $n$. Let $f(n)$ denote the smallest $n$-Norwegian positive integer. Let $M=3^{2025!}$ and for a non-negative integer $c$ define $g(c)=\\frac{1}{2025!}\\left\\lfloor \\frac{2025! f(M+c)}{M}\\right\\rfloor.$ We can write $g(0)+g(4M)+g(1848374)+g(10162574)+g(265710644)+g(44636594)=\\frac{p}{q}$ where $p$ and $q$ are coprime positive integers. What is the remainder when $p+q$ is divided by $99991$?",
+      "expected_answer": 8687,
+      "topics": [
+        "number_theory"
+      ],
+      "skills": "number_properties, numerical_methods, symbolic_computation, brute_force_search, optimization, modular_arithmetic",
+      "vote_margin": 2,
+      "vote_distribution": {
+        "8687": 3,
+        "64020": 1,
+        "31033": 1,
+        "46426": 1,
+        "73218": 1,
+        "54680": 1,
+        "11": 1,
+        "93764": 1,
+        "91036": 1,
+        "23": 1,
+        "82588": 1,
+        "41754": 1
+      },
+      "correct_rate": "3/16",
+      "none_count": 2,
+      "risk_level": "critical",
+      "why_close": "High disagreement: 11 different wrong answers produced; Wrong attempts had 4.2x more errors on average; Top wrong answer: 31033 (1 attempts)",
+      "version": "v23",
+      "batch": "PRIORITY DEBUG (dual-run)",
+      "wall_time_s": 812.3,
+      "appears_in_both_versions": true,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "19570e",
+      "question": "The 30 edges of a regular icosahedron are distinguished by labeling them 1, 2, ..., 30. How many different ways are there to paint each edge red, white, or blue such that each of the 20 triangular faces of the icosahedron has two edges of the same color and a third edge of a different color? Find the answer mod 1000.",
+      "expected_answer": 224,
+      "topics": [
+        "combinatorics"
+      ],
+      "skills": "numerical_methods, symbolic_computation, counting, brute_force_search, modular_arithmetic",
+      "vote_margin": 2,
+      "vote_distribution": {
+        "224": 5,
+        "3": 3,
+        "324": 1
+      },
+      "correct_rate": "5/16",
+      "none_count": 7,
+      "risk_level": "critical",
+      "why_close": "High None rate: 7/16 attempts produced no answer; Top wrong answer: 3 (3 attempts)",
+      "version": "v23",
+      "batch": "VAL BENCH (new unseen)",
+      "wall_time_s": 281.6,
+      "appears_in_both_versions": false,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "27cec1",
+      "question": "\\(x_1,x_2,\\dots,x_{2025}\\) are positive real numbers. Let \\(M\\) be the minimal value of \\(\\max\\{x_1,\\frac{1}{x_1}+x_2,\\dots,\\frac{1}{x_{2024}}+x_{2025},\\frac{1}{x_{2025}}+1\\}\\). Suppose the a polynomial \\(F(x)\\) with integer coefficients can be divided by \\(x^2 - M x + 1\\), find the minimal degree of \\(F(x)\\).",
+      "expected_answer": 2304,
+      "topics": [
+        "algebra"
+      ],
+      "skills": "number_properties, numerical_methods, symbolic_computation, brute_force_search, equation_solving",
+      "vote_margin": 2,
+      "vote_distribution": {
+        "2304": 5,
+        "2": 3
+      },
+      "correct_rate": "5/16",
+      "none_count": 8,
+      "risk_level": "critical",
+      "why_close": "High None rate: 8/16 attempts produced no answer; Wrong attempts had 0.7x more errors on average; Top wrong answer: 2 (3 attempts)",
+      "version": "v23",
+      "batch": "VAL BENCH (new unseen)",
+      "wall_time_s": 210.7,
+      "appears_in_both_versions": false,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "32690e",
+      "question": "Let non-real complex number \\(z\\) satisfying \\(z^{4051}+z^{4050}+5=0\\). Find the number of such \\(z\\)'s (multiplicity are counted)\uff0e",
+      "expected_answer": 4050,
+      "topics": [
+        "combinatorics"
+      ],
+      "skills": "counting, symbolic_computation",
+      "vote_margin": 2,
+      "vote_distribution": {
+        "4050": 6,
+        "4051": 4
+      },
+      "correct_rate": "6/16",
+      "none_count": 6,
+      "risk_level": "critical",
+      "why_close": "Off-by-one risk: 4 attempts got 4051 instead of 4050; High None rate: 6/16 attempts produced no answer; Top wrong answer: 4051 (4 attempts)",
+      "version": "v23",
+      "batch": "VAL BENCH (new unseen)",
+      "wall_time_s": 21.9,
+      "appears_in_both_versions": false,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "485d27",
+      "question": "Place 471 coins in the squares of an \\(n\\times n\\) board where each block can hold 1 coin, multiple coins, or no coin at all, such that the difference in the number of coins between any two adjacent squares (squares that share a common side) is 1. Find the maximum value of \\(n\\) for which such an arrangement is possible.",
+      "expected_answer": 29,
+      "topics": [
+        "combinatorics",
+        "algebra"
+      ],
+      "skills": "grid_reasoning, numerical_methods, symbolic_computation, counting, brute_force_search, optimization",
+      "vote_margin": 2,
+      "vote_distribution": {
+        "29": 5,
+        "3": 3,
+        "1": 1
+      },
+      "correct_rate": "5/16",
+      "none_count": 7,
+      "risk_level": "critical",
+      "why_close": "High None rate: 7/16 attempts produced no answer; Wrong attempts had 0.2x more errors on average; Top wrong answer: 3 (3 attempts)",
+      "version": "v23",
+      "batch": "VAL BENCH (new unseen)",
+      "wall_time_s": 183.9,
+      "appears_in_both_versions": true,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "581a58",
+      "question": "\\(n\\) students take an exam. There are a total of 6 questions in the exam, and each question has three options. After the exam, it is statistically found that for any two students, the number of questions with the same answers between them is either 0 or 2. What is the maximum value of \\(n\\)?",
+      "expected_answer": 18,
+      "topics": [
+        "algebra"
+      ],
+      "skills": "numerical_methods, symbolic_computation, counting, brute_force_search, optimization",
+      "vote_margin": 2,
+      "vote_distribution": {
+        "18": 5,
+        "0": 3
+      },
+      "correct_rate": "5/16",
+      "none_count": 8,
+      "risk_level": "critical",
+      "why_close": "High None rate: 8/16 attempts produced no answer; Top wrong answer: 0 (3 attempts)",
+      "version": "v23",
+      "batch": "VAL BENCH (new unseen)",
+      "wall_time_s": 249.4,
+      "appears_in_both_versions": true,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "89c921",
+      "question": "Integers \\(a_1,a_2,\\cdots,a_{2025}\\) satisfy \\(1 = a_1\\leq a_2\\leq\\cdots\\leq a_{2025}=199\\). Let \\(f=(a_1^2 + a_2^2 + \\cdots + a_{2025}^2)-(a_1a_3 + a_2a_4 + a_3a_5 + \\cdots + a_{2023}a_{2025})\\). Find the minimal value of \\(f\\).",
+      "expected_answer": 29800,
+      "topics": [
+        "unknown"
+      ],
+      "skills": "brute_force_search, number_properties, symbolic_computation",
+      "vote_margin": 2,
+      "vote_distribution": {
+        "29800": 5,
+        "39601": 3,
+        "39404": 1
+      },
+      "correct_rate": "5/16",
+      "none_count": 7,
+      "risk_level": "critical",
+      "why_close": "High None rate: 7/16 attempts produced no answer; Wrong attempts had 0.5x more errors on average; Top wrong answer: 39601 (3 attempts)",
+      "version": "v23",
+      "batch": "DOUBLE-RUN RETRY",
+      "wall_time_s": 303.5,
+      "appears_in_both_versions": false,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "b4ec47",
+      "question": "Find the number of rectangles that can be formed inside a fixed regular dodecagon ( $12$ -gon) where each side of the rectangle lies on either a side or a diagonal of the dodecagon. The diagram below shows three of those rectangles. [asy] unitsize(0.6 inch); for(int i=0; i<360; i+=30) { dot(dir(i), 4+black); draw(dir(i)--dir(i+30)); } draw(dir(120)--dir(330)); filldraw(dir(210)--dir(240)--dir(30)--dir(60)--cycle, mediumgray, linewidth(1.5)); draw((0,0.366)--(0.366,0), linewidth(1.5)); [/asy]",
+      "expected_answer": 315,
+      "topics": [
+        "geometry"
+      ],
+      "skills": "numerical_methods, symbolic_computation, geometric_reasoning, counting, brute_force_search",
+      "vote_margin": 3,
+      "vote_distribution": {
+        "315": 5,
+        "39": 2,
+        "60": 1,
+        "27": 1
+      },
+      "correct_rate": "5/16",
+      "none_count": 7,
+      "risk_level": "high",
+      "why_close": "High None rate: 7/16 attempts produced no answer; High disagreement: 3 different wrong answers produced; Temperature sensitive: correct avg temp=0.38, wrong avg=0.65; Top wrong answer: 39 (2 attempts)",
+      "version": "v23",
+      "batch": "AT-RISK PROBLEMS",
+      "wall_time_s": 256.2,
+      "appears_in_both_versions": false,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "8fea51",
+      "question": "Let $b_m b_{m-1}\\cdots b_0$ be the base-7 representation of a positive integer $n$ for some positive integer $m$. Let $a_i$ be the number obtained by removing the digit $b_i$ from the base-7 representation of $m$ (read in base 7). Find the number of $n$ that satisfy $n=\\sum_{i=0}^{m-1}a_i$.",
+      "expected_answer": 42,
+      "topics": [
+        "number_theory"
+      ],
+      "skills": "counting, number_properties, brute_force_search",
+      "vote_margin": 3,
+      "vote_distribution": {
+        "42": 5,
+        "6": 2,
+        "0": 1,
+        "24": 1
+      },
+      "correct_rate": "5/16",
+      "none_count": 7,
+      "risk_level": "high",
+      "why_close": "High None rate: 7/16 attempts produced no answer; High disagreement: 3 different wrong answers produced; Top wrong answer: 6 (2 attempts)",
+      "version": "v23",
+      "batch": "AT-RISK PROBLEMS",
+      "wall_time_s": 183.6,
+      "appears_in_both_versions": false,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "53de2d",
+      "question": "Consider a pair of integers \\(a, b\\) such as \\(a^2+b^2 \\leq 19\\), and there exists real numbers \\(x, y\\) such that \\(\\frac{a}{\\sqrt{x}}+\\frac{2}{y+3 x}=\\frac{b}{\\sqrt{y}}-\\frac{2}{y+3 x}=1\\)\uff0eFind the square of the numbers of ordered pair \\((a, b)\\) satisfying the aforementioned property.",
+      "expected_answer": 576,
+      "topics": [
+        "algebra"
+      ],
+      "skills": "brute_force_search, number_properties, numerical_methods, symbolic_computation",
+      "vote_margin": 3,
+      "vote_distribution": {
+        "576": 5,
+        "484": 2
+      },
+      "correct_rate": "5/16",
+      "none_count": 9,
+      "risk_level": "high",
+      "why_close": "High None rate: 9/16 attempts produced no answer; Wrong attempts had 0.5x more errors on average; Top wrong answer: 484 (2 attempts)",
+      "version": "v23",
+      "batch": "VAL BENCH (new unseen)",
+      "wall_time_s": 114.6,
+      "appears_in_both_versions": true,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "06788e",
+      "question": "A sequence of real numbers \\(\\{a_n\\}\\) satisfies that\uff1a\\(a_{n + 1}=2^n-7a_n\uff0cn = 0,1,2,\\cdots\\). Find the minimal possible value of \\(\\frac{1}{a_0}\\) such that \\(a_{n + 1}>a_n\\) for any positive integer \\(n\\).",
+      "expected_answer": 9,
+      "topics": [
+        "algebra"
+      ],
+      "skills": "number_properties, sequences, symbolic_computation",
+      "vote_margin": 4,
+      "vote_distribution": {
+        "9": 5,
+        "1": 1
+      },
+      "correct_rate": "5/16",
+      "none_count": 10,
+      "risk_level": "medium",
+      "why_close": "Close numeric: 1 attempts got 1 (diff=-8); High None rate: 10/16 attempts produced no answer; Temperature sensitive: correct avg temp=0.46, wrong avg=0.10; Top wrong answer: 1 (1 attempts)",
+      "version": "v23",
+      "batch": "VAL BENCH (new unseen)",
+      "wall_time_s": 47.3,
+      "appears_in_both_versions": false,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "0c55f3",
+      "question": "It is known that one plane divides the space (three-dimensional) into two parts, two parallel planes divide the space into three parts, and two intersecting planes divide the space into four parts; Consider the planes where the six faces of the cube \\(ABCD - A_1B_1C_1D_1\\) are located, and the planes where the four faces of the tetrahedron \\(BA_1C_1D_1\\) are located. How many parts does these ten planes divide the space into?",
+      "expected_answer": 64,
+      "topics": [
+        "geometry",
+        "number_theory"
+      ],
+      "skills": "counting, brute_force_search, numerical_methods, symbolic_computation",
+      "vote_margin": 4,
+      "vote_distribution": {
+        "64": 5,
+        "24": 1
+      },
+      "correct_rate": "5/16",
+      "none_count": 10,
+      "risk_level": "medium",
+      "why_close": "High None rate: 10/16 attempts produced no answer; Temperature sensitive: correct avg temp=0.54, wrong avg=0.70; Top wrong answer: 24 (1 attempts)",
+      "version": "v23",
+      "batch": "VAL BENCH (new unseen)",
+      "wall_time_s": 242.8,
+      "appears_in_both_versions": false,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "676ce2",
+      "question": "Consider positive integers \\(a_1<a_2<\\cdots<a_{38}\\) satisfying \\(a_1+a_2+\\cdots+a_{38}=1997\\). Let \\(b_k=\\min \\left\\{a_1+a_2+\\cdots+a_k, a_{k+1}+a_{k+2}+\\cdots+a_{38}\\right\\}\\). Let \\(S=\\max \\left\\{b_1, b_2, \\cdots, b_{37}\\right\\}\\). Find the minimal value of \\(S\\)\uff0e",
+      "expected_answer": 666,
+      "topics": [
+        "unknown"
+      ],
+      "skills": "brute_force_search, number_properties",
+      "vote_margin": 4,
+      "vote_distribution": {
+        "666": 5,
+        "703": 1
+      },
+      "correct_rate": "5/16",
+      "none_count": 10,
+      "risk_level": "medium",
+      "why_close": "High None rate: 10/16 attempts produced no answer; Temperature sensitive: correct avg temp=0.46, wrong avg=0.30; Top wrong answer: 703 (1 attempts)",
+      "version": "v23",
+      "batch": "VAL BENCH (new unseen)",
+      "wall_time_s": 113.5,
+      "appears_in_both_versions": false,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "ba89f9",
+      "question": "Arrange the numbers \\(1, 2,\\dots,333^{2}\\) into a \\(333\\times333\\) number table, with each number appearing exactly once. Calculate the ratio of the larger number to the smaller number for every pair of numbers in the same row or the same column. The smallest value among these \\(333^{2}\\times332\\) ratios is called the characteristic value of this number table. Let the maximum possible value of the characteristic value be \\(\\lambda=\\frac{\\alpha}{\\beta}\\), where \\(\\alpha\\) and \\(\\beta\\) are coprime. Find \\(\\alpha + \\beta\\).",
+      "expected_answer": 667,
+      "topics": [
+        "number_theory",
+        "combinatorics",
+        "algebra"
+      ],
+      "skills": "brute_force_search, optimization, numerical_methods, symbolic_computation",
+      "vote_margin": 4,
+      "vote_distribution": {
+        "667": 5,
+        "2": 1
+      },
+      "correct_rate": "5/16",
+      "none_count": 10,
+      "risk_level": "medium",
+      "why_close": "High None rate: 10/16 attempts produced no answer; Wrong attempts had 5.0x more errors on average; Temperature sensitive: correct avg temp=0.50, wrong avg=0.90; Top wrong answer: 2 (1 attempts)",
+      "version": "v23",
+      "batch": "VAL BENCH (new unseen)",
+      "wall_time_s": 388.4,
+      "appears_in_both_versions": false,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "bad5bf",
+      "question": "Let \\(S = \\{\\frac{2y - 3}{2x - 1} \\mid \\min\\{\\vert x - 2\\vert,\\vert x + 2\\vert\\}+\\vert y\\vert\\leqslant1\\}\\), Assume the length of the set \\(S = \\frac{m}{p}\\) where \\(m\\) and \\(p\\) are coprimes, Find \\(m+p\\).",
+      "expected_answer": 67,
+      "topics": [
+        "number_theory"
+      ],
+      "skills": "brute_force_search, numerical_methods, symbolic_computation",
+      "vote_margin": 4,
+      "vote_distribution": {
+        "67": 5,
+        "5": 1
+      },
+      "correct_rate": "5/16",
+      "none_count": 10,
+      "risk_level": "medium",
+      "why_close": "High None rate: 10/16 attempts produced no answer; Temperature sensitive: correct avg temp=0.50, wrong avg=0.90; Top wrong answer: 5 (1 attempts)",
+      "version": "v23",
+      "batch": "VAL BENCH (new unseen)",
+      "wall_time_s": 137.8,
+      "appears_in_both_versions": false,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "86e8e5",
+      "question": "Let $n \\geq 6$ be a positive integer. We call a positive integer $n$-Norwegian if it has three distinct positive divisors whose sum is equal to $n$. Let $f(n)$ denote the smallest $n$-Norwegian positive integer. Let $M=3^{2025!}$ and for a non-negative integer $c$ define $g(c)=\\frac{1}{2025!}\\left\\lfloor \\frac{2025! f(M+c)}{M}\\right\\rfloor.$ We can write $g(0)+g(4M)+g(1848374)+g(10162574)+g(265710644)+g(44636594)=\\frac{p}{q}$ where $p$ and $q$ are coprime positive integers. What is the remainder when $p+q$ is divided by $99991$?",
+      "expected_answer": 8687,
+      "topics": [
+        "number_theory"
+      ],
+      "skills": "number_properties, numerical_methods, symbolic_computation, brute_force_search, optimization, modular_arithmetic",
+      "vote_margin": 0,
+      "vote_distribution": {
+        "8687": 2,
+        "71": 2,
+        "40958": 2,
+        "41754": 1,
+        "20139": 1,
+        "31227": 1,
+        "1": 1,
+        "91040": 1,
+        "45520": 1
+      },
+      "correct_rate": "2/16",
+      "none_count": 4,
+      "risk_level": "critical",
+      "why_close": "High disagreement: 8 different wrong answers produced; Temperature sensitive: correct avg temp=0.30, wrong avg=0.50; Top wrong answer: 71 (2 attempts)",
+      "version": "v31",
+      "batch": "TIER 0.5 \u2014 HISTORICAL HARD (2x)",
+      "wall_time_s": 851.1,
+      "appears_in_both_versions": true,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "581a58",
+      "question": "\\(n\\) students take an exam. There are a total of 6 questions in the exam, and each question has three options. After the exam, it is statistically found that for any two students, the number of questions with the same answers between them is either 0 or 2. What is the maximum value of \\(n\\)?",
+      "expected_answer": 18,
+      "topics": [
+        "algebra"
+      ],
+      "skills": "numerical_methods, symbolic_computation, counting, brute_force_search, optimization",
+      "vote_margin": 0,
+      "vote_distribution": {
+        "13": 1,
+        "27": 1,
+        "18": 1
+      },
+      "correct_rate": "1/16",
+      "none_count": 13,
+      "risk_level": "critical",
+      "why_close": "Close numeric: 1 attempts got 13 (diff=-5); Close numeric: 1 attempts got 27 (diff=9); High None rate: 13/16 attempts produced no answer; Temperature sensitive: correct avg temp=0.30, wrong avg=0.50; Top wrong answer: 13 (1 attempts)",
+      "version": "v31",
+      "batch": "TIER 2 \u2014 VAL BENCH (remaining)",
+      "wall_time_s": 351.5,
+      "appears_in_both_versions": true,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "53de2d",
+      "question": "Consider a pair of integers \\(a, b\\) such as \\(a^2+b^2 \\leq 19\\), and there exists real numbers \\(x, y\\) such that \\(\\frac{a}{\\sqrt{x}}+\\frac{2}{y+3 x}=\\frac{b}{\\sqrt{y}}-\\frac{2}{y+3 x}=1\\)\uff0eFind the square of the numbers of ordered pair \\((a, b)\\) satisfying the aforementioned property.",
+      "expected_answer": 576,
+      "topics": [
+        "algebra"
+      ],
+      "skills": "brute_force_search, number_properties, numerical_methods, symbolic_computation",
+      "vote_margin": 0,
+      "vote_distribution": {
+        "576": 2,
+        "2": 2,
+        "24": 2
+      },
+      "correct_rate": "2/16",
+      "none_count": 10,
+      "risk_level": "critical",
+      "why_close": "High None rate: 10/16 attempts produced no answer; Wrong attempts had 2.0x more errors on average; Top wrong answer: 2 (2 attempts)",
+      "version": "v31",
+      "batch": "TIER 2 \u2014 VAL BENCH (remaining)",
+      "wall_time_s": 356.5,
+      "appears_in_both_versions": true,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "1363c5",
+      "question": "The rectangle \\(R\\) is divided into 2024 small rectangles, and the sides of each small rectangle are parallel to the sides of \\(R\\). The vertices of the small rectangles are called nodes. A line segment on the sides of the small rectangles, if both of its endpoints are nodes and there are no other nodes inside it, is called a fundamental line segment. Considering all the ways of division, find the sum of the maximum value and the minimum value of the number \\(N\\) of fundamental line segments.",
+      "expected_answer": 10211,
+      "topics": [
+        "geometry",
+        "algebra",
+        "combinatorics"
+      ],
+      "skills": "brute_force_search, optimization, geometric_reasoning, symbolic_computation",
+      "vote_margin": 2,
+      "vote_distribution": {
+        "10211": 5,
+        "10123": 3,
+        "10124": 3,
+        "10127": 1,
+        "2": 1
+      },
+      "correct_rate": "5/16",
+      "none_count": 3,
+      "risk_level": "critical",
+      "why_close": "High disagreement: 4 different wrong answers produced; Top wrong answer: 10123 (3 attempts)",
+      "version": "v31",
+      "batch": "TIER 2 \u2014 VAL BENCH (remaining)",
+      "wall_time_s": 416.2,
+      "appears_in_both_versions": false,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "cbbc1b",
+      "question": "Real numbers \\(x_1 \\leq x_2 \\leq \\ldots \\leq x_9\\) such that \\(\\sum_{i=1}^9 x_i=1\\). Find the maximum value of",
+      "expected_answer": 96,
+      "topics": [
+        "algebra"
+      ],
+      "skills": "brute_force_search, optimization, numerical_methods, symbolic_computation",
+      "vote_margin": 2,
+      "vote_distribution": {
+        "96": 4,
+        "432": 2,
+        "1": 1,
+        "48": 1
+      },
+      "correct_rate": "4/16",
+      "none_count": 8,
+      "risk_level": "critical",
+      "why_close": "High None rate: 8/16 attempts produced no answer; High disagreement: 3 different wrong answers produced; Top wrong answer: 432 (2 attempts)",
+      "version": "v31",
+      "batch": "TIER 2 \u2014 VAL BENCH (remaining)",
+      "wall_time_s": 358.4,
+      "appears_in_both_versions": false,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "485d27",
+      "question": "Place 471 coins in the squares of an \\(n\\times n\\) board where each block can hold 1 coin, multiple coins, or no coin at all, such that the difference in the number of coins between any two adjacent squares (squares that share a common side) is 1. Find the maximum value of \\(n\\) for which such an arrangement is possible.",
+      "expected_answer": 29,
+      "topics": [
+        "combinatorics",
+        "algebra"
+      ],
+      "skills": "grid_reasoning, numerical_methods, symbolic_computation, counting, brute_force_search, optimization",
+      "vote_margin": 2,
+      "vote_distribution": {
+        "29": 4,
+        "3": 2
+      },
+      "correct_rate": "4/16",
+      "none_count": 10,
+      "risk_level": "critical",
+      "why_close": "High None rate: 10/16 attempts produced no answer; Top wrong answer: 3 (2 attempts)",
+      "version": "v31",
+      "batch": "TIER 2 \u2014 VAL BENCH (remaining)",
+      "wall_time_s": 354.4,
+      "appears_in_both_versions": true,
+      "cross_version_status": "stable"
+    },
+    {
+      "problem_id": "c19295",
+      "question": "Given a \\(15\\times15\\) chessboard, there are \\(n\\) pieces placed on \\(n\\) individual squares respectively. For each piece, a \\(5\\times5\\) square with its sides parallel to the boundaries of the chessboard is drawn with the piece located as the center, and this square is called the range of the piece. If there is exactly one other piece within the range of each piece, find the maximum value of \\(n\\).",
+      "expected_answer": 48,
+      "topics": [
+        "combinatorics",
+        "geometry",
+        "algebra"
+      ],
+      "skills": "grid_reasoning, numerical_methods, symbolic_computation, brute_force_search, optimization",
+      "vote_margin": 3,
+      "vote_distribution": {
+        "48": 4,
+        "112": 1,
+        "64": 1,
+        "26": 1,
+        "40": 1,
+        "28": 1
+      },
+      "correct_rate": "4/16",
+      "none_count": 7,
+      "risk_level": "high",
+      "why_close": "Close numeric: 1 attempts got 40 (diff=-8); High None rate: 7/16 attempts produced no answer; High disagreement: 5 different wrong answers produced; Top wrong answer: 112 (1 attempts)",
+      "version": "v31",
+      "batch": "TIER 2 \u2014 VAL BENCH (remaining)",
+      "wall_time_s": 406.1,
+      "appears_in_both_versions": true,
+      "cross_version_status": "stable"
+    }
+  ],
+  "regressions": [
+    {
+      "problem_id": "414a5b",
+      "expected": 42,
+      "v23_predicted": 42,
+      "v31_predicted": 95,
+      "v23_votes": {
+        "42": 5,
+        "95": 4,
+        "23": 3,
+        "216": 1,
+        "6": 1
+      },
+      "v31_votes": {
+        "95": 14,
+        "15": 1,
+        "42": 1
+      },
+      "v23_correct_count": 5,
+      "v31_correct_count": 1,
+      "batch_v23": "DOUBLE-RUN RETRY",
+      "batch_v31": "TIER 0.5 \u2014 HISTORICAL HARD (2x)",
+      "question_snippet": "Kevin throws three fair dice numbered from 1 to 6. Then he observes the results of the first throw of the three dice. From these three dice, he can choose \\(n\\), where \\(0\\leq n\\leq3\\) dice to re-thro"
+    }
+  ],
+  "improvements": [
+    {
+      "problem_id": "21fb4e",
+      "expected": 16,
+      "v23_predicted": 17,
+      "v31_predicted": 16,
+      "v23_votes": {
+        "17": 5,
+        "7": 2,
+        "81": 1
+      },
+      "v31_votes": {
+        "16": 16
+      },
+      "v23_correct_count": 0,
+      "v31_correct_count": 16,
+      "batch_v23": "DOUBLE-RUN RETRY",
+      "batch_v31": "",
+      "question_snippet": "At least how many black stones should be placed on a 9\u00d79 square grid board to ensure that there is no possibility for the white to make a five-in-a-row? (which means there are no five consecutive empt"
+    }
+  ],
+  "summary": {
+    "v23_total": 97,
+    "v23_correct": 65,
+    "v23_close_vote_count": 20,
+    "v31_total": 53,
+    "v31_correct": 38,
+    "v31_close_vote_count": 7,
+    "regressions_count": 1,
+    "improvements_count": 1,
+    "both_close_count": 5
+  }
+}

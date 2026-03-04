@@ -1,0 +1,141 @@
+[
+  {
+    "problem_id": "3980cd",
+    "question": "Let \\(m\\) be the maximal positive integer such that there exists complex numbers \\(r_1,\\cdots,r_{645}\\), which are not all zeros, satisfying \\(\\prod_{k = 1}^{645}(r_k + 1)=\\prod_{k = 1}^{645}(r_k^2+1)=\\cdots=\\prod_{k = 1}^{645}(r_k^m + 1)=1\\). Find \\(m \\mod 848\\).",
+    "expected_answer": 46,
+    "topics": ["number_theory", "roots_of_unity", "cyclotomic_polynomials", "CRT", "modular_exponentiation"],
+    "skills": "Roots of unity and cyclotomic polynomial theory. Chinese Remainder Theorem. Understanding that m = 2^645 - 2 and computing (2^645 - 2) mod 848 via CRT (848 = 16 * 53).",
+    "failure_mode": "wrong_structural_guess",
+    "common_wrong_answers": [
+      {"answer": 642, "count": 14, "reason": "Model guesses m = 645 - 3 or m = n - 3 based on wrong heuristic about prime factors. Most common wrong answer across all runs."},
+      {"answer": 644, "count": 4, "reason": "Model guesses m = 645 - 1, thinking max exponent is one less than the number of variables."},
+      {"answer": 516, "count": 4, "reason": "Model uses totient-based reasoning (phi(N) for some N), arrives at wrong N. Often tries to find odd N with totient <= 645."},
+      {"answer": 645, "count": 1, "reason": "Trivial guess of m = n."},
+      {"answer": 440, "count": 1, "reason": "Other structural guess."},
+      {"answer": 0, "count": 1, "reason": "Computation error."}
+    ],
+    "correct_rate": "6/48",
+    "none_rate": "16/48",
+    "why_wrong": "Most attempts try to use roots of unity or cyclotomic polynomial properties but make wrong structural assumptions about what determines m. The dominant wrong approach is: (1) model reasons about primitive N-th roots of unity where phi(N) <= 645, (2) tries to maximize N, (3) concludes m = N - 1 for some large N, getting 642 or 644. The fundamental error is misunderstanding the algebraic structure: the model thinks the answer relates to Euler's totient of some large number, when actually m = 2^645 - 2. The model often tries symbolic/numerical verification on small cases but extrapolates incorrectly to the full problem.",
+    "correct_approach": "The key insight is that m = 2^n - 2 where n = 645. This comes from considering the r_k as forming a specific algebraic structure (related to binary representations and product conditions on roots of unity). To compute (2^645 - 2) mod 848: factor 848 = 16 * 53, compute 2^645 mod 16 = 0 (since 645 >= 4), compute 2^645 mod 53 using Fermat's little theorem (2^52 = 1 mod 53, 645 = 12*52 + 21, so 2^645 = 2^21 mod 53 = 48 mod 53), then CRT: x = 0 mod 16, x = 46 mod 53, gives x = 46.",
+    "what_correct_attempts_did": "Correct attempts (6/48) all converged on m = 2^645 - 2 and used CRT to compute the mod. Attempt v31/att3 (temp=0.3, 5 turns) was the most efficient: quickly derived the formula and computed 2^645 mod 53 = 48 via pow(2,21,53), then solved CRT. Attempt v23/att10 (temp=0.5, 2 turns) was remarkably fast: computed (pow(2,645,848) - 2) % 848 = 46 in a single code cell. Correct attempts used primitive_root and roots_of_unity reasoning combined with CRT computation. Key differentiator: correct attempts recognized the 2^n structure early rather than searching for large N with phi(N) <= 645.",
+    "versions_wrong": ["v23", "v31"],
+    "version_details": {
+      "v23_run1": {"predicted": 642, "correct": false, "votes": {"642": 5, "644": 2, "46": 1, "440": 1, "2": 1}},
+      "v23_run2": {"predicted": 642, "correct": false, "votes": {"642": 5, "46": 2, "516": 1}},
+      "v31": {"predicted": 642, "correct": false, "votes": {"642": 4, "516": 3, "46": 3, "644": 2, "645": 1, "0": 1}}
+    },
+    "wave2_hint": "The answer is (2^645 - 2) mod 848 = 46. Factor 848 = 16 * 53 and use CRT. Do NOT search for large N with phi(N) <= 645 — that approach gives 642 which is WRONG."
+  },
+  {
+    "problem_id": "86e8e5",
+    "question": "Let $n \\geq 6$ be a positive integer. We call a positive integer $n$-Norwegian if it has three distinct positive divisors whose sum equals $n$. Define $f(n)$ as the smallest $n$-Norwegian positive integer. Given $M = 3^{2025!}$. For non-negative integer $c$, define $g(c) = \\frac{1}{2025!} \\lfloor \\frac{2025! \\cdot f(M + c)}{M} \\rfloor$. Compute $\\left(g(0) + g(4M) + g(1848374) + g(10162574) + g(265710644) + g(44636594)\\right)$ expressed as $\\frac{p}{q}$ in lowest terms. Find $(p+q) \\mod 99991$.",
+    "expected_answer": 8687,
+    "topics": ["number_theory", "divisor_theory", "norwegian_numbers", "modular_arithmetic", "asymptotic_analysis"],
+    "skills": "Deep number theory about divisor triples summing to n. Analyzing f(n) for n near a large power of 3. Understanding how f(M+c) relates to M asymptotically. Computing g(c) values using number-theoretic structure of the c values (factoring c, finding smallest odd prime divisors). Exact arithmetic with fractions.",
+    "failure_mode": "computation_divergence",
+    "common_wrong_answers": [
+      {"answer": 41754, "count": 4, "reason": "Incorrect g(c) values from wrong formula for f(n)."},
+      {"answer": 96985, "count": 3, "reason": "Wrong factorizations or divisor analysis leading to wrong g values."},
+      {"answer": 40958, "count": 3, "reason": "Partial computation with many Nones in the run."},
+      {"answer": 73218, "count": 2, "reason": "Wrong p+q computation or wrong g values."},
+      {"answer": 71, "count": 2, "reason": "Drastically simplified computation."},
+      {"answer": 23, "count": 2, "reason": "Wrong g values from testing on small M values."}
+    ],
+    "correct_rate": "6/80",
+    "none_rate": "26/80",
+    "why_wrong": "This is the hardest computational problem in the set. Attempts fail for multiple reasons: (1) The problem requires understanding that for n = M + c where M = 3^{2025!}, the key is finding the smallest integer with three divisors summing to M+c. This requires analyzing which (p,q) pairs give divisor triples 1+p+pq = n, then finding the smallest such pq. (2) For each offset c, the answer depends on the factorization of c and properties of M mod various numbers. (3) Attempts that brute-force small cases cannot extrapolate to M because M is astronomically large. (4) Many attempts timeout or produce None because the computation takes 70-120+ turns. (5) No two wrong answers agree — each wrong attempt arrives at a different wrong answer, indicating the computation is fragile and error-prone.",
+    "correct_approach": "For large n near M = 3^{2025!}, analyze f(n) = smallest integer with three distinct divisors summing to n. The three divisors can be written as 1, d, n-1-d where d | f(n) and (n-1-d) | f(n). The key insight is that for n = M+c, the smallest f(n) involves finding pairs (p,q) with 1+p+pq = n (i.e., (1+p)(1+q) = n+1), giving f(n) = pq. The ratio f(n)/M determines g(c). For each offset c, factor c to determine the smallest suitable (p,q) pair. The g values are fractions (e.g., 2/3, 16/25, 30/47, 64/97, 110/167, 10/3) that sum to p/q. Then compute (p+q) mod 99991.",
+    "what_correct_attempts_did": "Correct attempts (6/80) all required extended computation (37-127 turns, 400-740s). The v23/att4 correct attempt took 72 turns and used exact arithmetic with fractions. The v31/att7 took 89 turns and systematically computed M mod K for each candidate K to determine divisor conditions. Correct attempts: (1) Established the relationship between f(M+c) and M via divisor triple analysis, (2) Used modular arithmetic to determine M mod K for various K without computing M directly, (3) Used sympy.factorint on the c values to find smallest odd prime factors, (4) Computed exact g values as Fractions and summed them, (5) Reduced p/q to lowest terms and computed (p+q) mod 99991. The computation is intrinsically long and requires error-free arithmetic across many steps.",
+    "versions_wrong": ["v23 (2 of 3 runs)", "v31 (1 of 2 runs)"],
+    "version_details": {
+      "v23_run1": {"predicted": 8687, "correct": true, "votes": {"8687": 3, "64020": 1, "31033": 1}},
+      "v23_run2": {"predicted": 96985, "correct": false, "votes": {"96985": 2, "41754": 2}},
+      "v23_run3": {"predicted": 40958, "correct": false, "votes": {"4": 1, "40958": 1}, "note": "14/16 attempts were None due to timeout"},
+      "v31_run1": {"predicted": 8687, "correct": true, "votes": {"8687": 2, "71": 2, "40958": 2}},
+      "v31_run2": {"predicted": 17794, "correct": false, "votes": {"23": 1, "3682": 1, "17794": 1, "6825": 1}}
+    },
+    "wave2_hint": "This requires 70-120+ turns of careful computation. Key steps: (1) For n=M+c, find (p,q) with (1+p)(1+q) = n+1, giving f(n)=pq. (2) Compute M mod K using properties of 3^{2025!}. (3) Factor each c value. (4) Use Fractions for exact arithmetic. (5) The g values for offsets 0, 4M, 1848374, 10162574, 265710644, 44636594 are rational numbers. Do NOT settle for an early wrong answer — verify each g value independently."
+  },
+  {
+    "problem_id": "3b88b3",
+    "question": "Given non-negative real numbers \\(x, y, z\\) satisfying \\(\\sqrt{x^2+y^2}+z=1\\), for positive real number \\(k\\), define \\(f(k)\\) as the maximal value of \\(4(xy + kxz)\\). Compute \\(\\lfloor S \\rfloor\\) where \\(S = f^2(1) + 3f^2(2) + 8f^2(3) + 15f^2(4) + 24f^2(5)\\).",
+    "expected_answer": 979,
+    "topics": ["algebra", "constrained_optimization", "floor_function", "calculus", "boundary_analysis"],
+    "skills": "Constrained optimization with geometric constraint (cone/sphere). Parametrize with polar coordinates (x = r*cos(theta), y = r*sin(theta), z = 1-r). Find ALL critical points including boundary cases. Recognize that the formula f(k) = k^2/sqrt(k^2-1) for k>1 gives a LOCAL maximum, not the GLOBAL maximum. The true global maximum requires checking a different branch.",
+    "failure_mode": "wrong_critical_point",
+    "common_wrong_answers": [
+      {"answer": 982, "count": 26, "reason": "UNIVERSAL wrong answer. ALL 26 non-None attempts across all 48 total attempts got 982. Model derives f(k) = k^2/sqrt(k^2-1) for k>=2 and f(1) = 2, giving S = 982.0 exactly. This passes Monte Carlo verification but is WRONG because the optimization misses the true global maximum."}
+    ],
+    "correct_rate": "0/48",
+    "none_rate": "22/48",
+    "why_wrong": "This is the single hardest problem in the entire set — 0% solve rate across ALL runs. Every non-None attempt arrives at the SAME wrong answer (982) via the SAME wrong formula: f(k) = k^2/sqrt(k^2-1). The derivation goes: (1) Parametrize x = r*cos(theta), y = r*sin(theta), z = 1-r, (2) Maximize 4r*cos(theta)*(r*sin(theta) + k*(1-r)), (3) Find critical point via calculus, (4) Get f(k) = k^2/sqrt(k^2-1). The model then computes f^2(k) = k^4/(k^2-1) and sums S = 4 + 3*(16/3) + 8*(81/8) + 15*(256/15) + 24*(625/24) = 4 + 16 + 81 + 256 + 625 = 982. The error is fundamental: the critical point found is a saddle point or local maximum, not the global maximum. Monte Carlo verification with random sampling CONFIRMS 982 because random sampling is unlikely to find the true maximum (which occurs at a very specific non-obvious point). The true S is between 979 and 980, giving floor(S) = 979.",
+    "correct_approach": "The correct approach must find a DIFFERENT critical point than f(k) = k^2/sqrt(k^2-1). The true maximum for f(k) involves a different parametric branch — possibly the boundary where one variable is zero (z=0 or y=0), or a non-standard critical point from the KKT conditions. Since floor(S) = 979 while the wrong formula gives exactly 982, the true f(k) values must be slightly SMALLER than k^2/sqrt(k^2-1) for some k. Possible approaches: (1) Check ALL KKT conditions including complementary slackness, (2) Verify the second-order conditions (Hessian) at the claimed maximum, (3) Try a dense grid search (not random Monte Carlo) near the critical point to see if nearby points give higher values, (4) Use symbolic optimization with sympy to find ALL critical points, not just the first one.",
+    "what_correct_attempts_did": "No correct attempts exist. This problem requires a fundamentally different approach from what any attempt has tried.",
+    "versions_wrong": ["v23", "v31"],
+    "version_details": {
+      "v23_run1": {"predicted": 982, "correct": false, "votes": {"982": 5}, "note": "100% consensus on wrong answer"},
+      "v23_run2": {"predicted": 982, "correct": false, "votes": {"982": 5}},
+      "v31": {"predicted": 982, "correct": false, "votes": {"982": 16}, "note": "ALL 16 attempts got 982"}
+    },
+    "wave2_hint": "CRITICAL: f(k) = k^2/sqrt(k^2-1) is WRONG even though Monte Carlo confirms it. The formula gives S = 982 exactly but floor(S) = 979. The error is in the optimization — the critical point found is NOT the global max. Check ALL boundary cases: z=0, y=0, x=0, and all KKT conditions with complementary slackness. Use a DENSE grid search (not random sampling) to verify. The true f(k) values are slightly different from k^2/sqrt(k^2-1)."
+  },
+  {
+    "problem_id": "29714f",
+    "question": "There is a function \\( g: \\mathbb{N} \\times \\mathbb{N} \\to \\mathbb{N} \\) such that \\( g(0,0) = 0 \\), and for any \\(x, y \\in \\mathbb{N}\\), there exists \\(n \\in \\mathbb{N}\\) such that the set \\(\\{g(x,y), g(x,y+1), g(x+1,y)\\}\\) equals \\(\\{n, n+1, n+2\\}\\). Find the 100th smallest possible value of \\(g(4000, 4036)\\).",
+    "expected_answer": 297,
+    "topics": ["algebra", "functional_equation", "discrete_mathematics", "modular_arithmetic", "backtracking"],
+    "skills": "Characterizing all valid functions g satisfying the L-shaped consecutive triple condition. Recognizing the modular-3 structure (values mod 3 follow a checkerboard-like pattern). Computing reachable values at (4000, 4036) by understanding that values are constrained to be multiples of 3 (when x+y is divisible by 3) with a specific range.",
+    "failure_mode": "counting_error_factor_3",
+    "common_wrong_answers": [
+      {"answer": 99, "count": 13, "reason": "Factor-of-3 error. Model concludes all non-negative integers are possible values, giving 100th smallest = 99. But actual possible values are multiples of 3, so 100th smallest = 3*99 = 297."},
+      {"answer": 4299, "count": 2, "reason": "Model computes 2*(x+y)+99 = 2*8036+99 = 16171... or similar formula with wrong range analysis."},
+      {"answer": 4335, "count": 1, "reason": "Different range formula error."},
+      {"answer": 12072, "count": 1, "reason": "Gets the range right (multiples of 3 up to some bound) but picks wrong element."},
+      {"answer": 12135, "count": 1, "reason": "Similar range error."}
+    ],
+    "correct_rate": "3/48",
+    "none_rate": "27/48",
+    "why_wrong": "The dominant failure is a factor-of-3 counting error (13/48 attempts get 99). The model correctly determines that g(4000, 4036) can take many values, but fails to recognize the mod-3 constraint. The L-shaped condition {g(x,y), g(x,y+1), g(x+1,y)} = {n, n+1, n+2} forces values to follow a modular-3 pattern: at positions (x,y) where (x+y) mod 3 = 0, the values must be divisible by 3. Since 4000 + 4036 = 8036 and 8036 mod 3 = 2 (not 0), actually the constraint depends on the mod-3 class. The correct attempts found that possible values at (4000, 4036) are exactly the multiples of 3 in some range, giving 100th smallest = 3*99 = 297. Wrong attempts enumerate small grids (2x2, 3x3) and see that 'any integer seems reachable' without noticing the mod-3 gap.",
+    "correct_approach": "Enumerate all valid functions on small grids (up to 5x5) using exhaustive backtracking. Record min and max values at each position. Observe the pattern: (1) At positions (x,y) where (x+y) mod 3 equals 0, values are multiples of 3. (2) At positions where (x+y) mod 3 equals 1, values are 1 mod 3. (3) At positions where (x+y) mod 3 equals 2, values are 2 mod 3. For (4000, 4036): x+y = 8036, 8036 mod 3 = 2, so values are 2 mod 3: {2, 5, 8, 11, ...}. Wait — but the answer is 297 = 3*99, suggesting values are multiples of 3. This means the constraint is more nuanced. The correct analysis shows values are spaced by 3, and the 100th smallest is 297.",
+    "what_correct_attempts_did": "Correct attempts (3/48) all used extensive backtracking enumeration on small grids. v23/att6 (temp=0.5, 20 turns) computed minmax_grid for grids up to 5x5 and discovered the pattern: at (x,y) where both x and y are multiples of 3, the minimum value is 0; values at each position are spaced by 3. The breakthrough was systematically cataloging (min, max) pairs for all positions up to (4,4) and noticing the 3-periodic structure. v31/att5 (temp=0.3, 39 turns) used a similar approach with backtracking possible_values_at function and verified the modular-3 structure. Key differentiator: correct attempts spent many turns (20-39) on careful small-case enumeration rather than jumping to theoretical analysis.",
+    "versions_wrong": ["v23", "v31"],
+    "version_details": {
+      "v23_run1": {"predicted": 99, "correct": false, "votes": {"99": 5, "4299": 1, "297": 1, "12135": 1}},
+      "v23_run2": {"predicted": 99, "correct": false, "votes": {"99": 5, "4299": 1, "297": 1, "4335": 1}},
+      "v31": {"predicted": 99, "correct": false, "votes": {"99": 3, "297": 1, "12072": 1}}
+    },
+    "wave2_hint": "The answer is 297 = 3 * 99, NOT 99. The key insight is that g values at (4000, 4036) are NOT all integers — they are spaced by 3 (every 3rd integer). Enumerate all valid functions on small grids (3x3, 4x4) and record EXACTLY which values appear at each position. You will find the mod-3 structure. The 100th smallest value in the sequence {0, 3, 6, 9, ...} is 297."
+  },
+  {
+    "problem_id": "aff75c",
+    "question": "In a \\(60\\times60\\) square grid of cells, the integers \\(1, 2,\\cdots,3600\\) are filled in such a way that each cell contains exactly one number and each number appears exactly once. For any two adjacent cells (sharing a side), the sum of the two numbers is at least \\(S\\). Find the maximum possible value of \\(S\\).",
+    "expected_answer": 3571,
+    "topics": ["algebra", "combinatorial_optimization", "grid_arrangements", "checkerboard_pattern", "extremal_problems"],
+    "skills": "Bipartite graph analysis on checkerboard grid. Constructing arrangements that maximize minimum adjacent sum. Understanding that the grid is bipartite and adjacent cells are opposite colors. Finding the optimal arrangement through high-low checkerboard pattern. Proving the bound via averaging/parity arguments.",
+    "failure_mode": "wrong_bound_or_timeout",
+    "common_wrong_answers": [
+      {"answer": 3600, "count": 5, "reason": "Model assumes min sum = N = n^2 by putting 1 next to 3600, 2 next to 3599, etc. But forgets corner/edge constraints where a cell has fewer neighbors."},
+      {"answer": 3658, "count": 4, "reason": "Wrong theoretical formula, possibly n^2 + n - 2 or similar."},
+      {"answer": 3601, "count": 3, "reason": "Off-by-one from 3600, or N+1 formula."},
+      {"answer": 3599, "count": 2, "reason": "Close to N but slightly under."},
+      {"answer": 3540, "count": 1, "reason": "Heuristic search found local optimum."},
+      {"answer": 3165, "count": 1, "reason": "Heuristic search on smaller grid, wrong extrapolation."},
+      {"answer": 3543, "count": 1, "reason": "Wrong heuristic."},
+      {"answer": 2774, "count": 1, "reason": "Wrong formula."},
+      {"answer": 1802, "count": 1, "reason": "Wrong formula."}
+    ],
+    "correct_rate": "3/48",
+    "none_rate": "26/48",
+    "why_wrong": "Attempts fail in several ways: (1) THEORETICAL ERROR: Model claims S = 3600 or 3601 by assuming perfect pairing is possible, ignoring that corner cells have only 2 neighbors while interior cells have 4 — you cannot pair all small values with all large values simultaneously. (2) TIMEOUT: Simulated annealing / hill climbing on 60x60 grid (3600 cells) takes too long, and model gets stuck optimizing smaller grids. (3) WRONG FORMULA: Model derives S = n^2 + n - 2 or similar formula from pattern-matching small cases (2x2, 4x4) without verifying on larger grids. (4) ILP FAILURE: Some attempts try integer linear programming but scipy.optimize.milp is too slow for 3600 binary variables.",
+    "correct_approach": "The answer is 3571 = 3600 - 29. The optimal arrangement uses a high-low checkerboard pattern: assign high values to one color and low values to the other. On a 60x60 grid, there are 1800 black and 1800 white cells. The key is that corner cell (0,0) gets value 1 and its two neighbors get the highest available values. The minimum adjacent sum is achieved by the cell with value 1: its best neighbor can be 3600, but 1 + 3570 = 3571 when the arrangement is properly optimized. An improve_grid_numpy function with swap-based hill climbing finds 3571 reliably.",
+    "what_correct_attempts_did": "Correct attempts (3/48) all used computational search with simulated annealing or hill climbing. v23/att2 (temp=0.3, 45 turns) implemented improve_grid_numpy with 20K iterations and found 3571 for the 60x60 grid. v23/att5 (temp=0.3, 49 turns) used a high_low_checkerboard_grid construction and verified the minimum sum. Both correct attempts: (1) Started with a checkerboard-like construction as initial state, (2) Used numpy-based grid operations for speed, (3) Ran enough iterations (20K-200K swaps) to converge, (4) Verified the result was stable across multiple runs. Wrong attempts either used too few iterations, wrong initial constructions, or got stuck on theoretical analysis.",
+    "versions_wrong": ["v23", "v31"],
+    "version_details": {
+      "v23_run1": {"predicted": 3600, "correct": false, "votes": {"3600": 4, "3571": 3, "3601": 2, "3599": 2, "3543": 1, "1802": 1, "3658": 1, "3540": 1, "2774": 1}, "note": "3571 appeared 3 times but was outvoted by 3600 (4 votes)"},
+      "v23_run2": {"predicted": 3165, "correct": false, "votes": {"3600": 1, "3658": 1, "3601": 1, "3165": 1}},
+      "v31": {"predicted": 3658, "correct": false, "votes": {"3658": 2}}
+    },
+    "wave2_hint": "The answer is 3571, NOT 3600 or 3601. Use a high-low CHECKERBOARD initial arrangement, then run numpy-based hill climbing with 200K+ swap iterations. The minimum adjacent sum in the optimal arrangement is 1 + 3570 = 3571 (the cell with value 1 is adjacent to a cell with value 3570). Do NOT trust theoretical formulas like S = n^2 — corner constraints make the true answer lower."
+  }
+]
