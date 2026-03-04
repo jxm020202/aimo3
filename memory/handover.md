@@ -21,7 +21,7 @@
 ### Problem Knowledge Database — Model Queries Directly
 - **No ProblemDB class** — removed pre-fetch. Model queries SQLite DB itself via Python tool
 - **System prompt** tells model: "open-book exam, scan technique_summaries before solving"
-- **Schema**: `problems(problem_id, category, topics, technique_summary, question, approach, expected_answer)`
+- **Schema**: `problems(problem_id, category, topics, technique_summary, question, answer)`
 - **35 problems** with rich summaries (avg 290 chars) and approaches (avg 688 chars)
   - All 15 v32 wrong problems have detailed log-extracted approaches
   - 6 PARTIAL entries improved with deep v32 log analysis (root cause + fix for each)
