@@ -40,7 +40,7 @@ Data structures:
 
 Also has 29 built-in queries: `python3 log_exploration/log_query.py <logfile> <query>` (run without args to see all).
 
-## Complete Script Inventory (36 scripts)
+## Complete Script Inventory (37 scripts)
 
 ### Dashboard & Overview (2)
 | Script | Usage | What it does |
@@ -91,6 +91,12 @@ Also has 29 built-in queries: `python3 log_exploration/log_query.py <logfile> <q
 |--------|-------|-------------|
 | `temperature_analysis.py` | `<log>` | Per-temp accuracy, None rate, error rate, per-problem matrix, flat-temp simulations |
 | `temperature_deep_analysis.py` | `<log>` | Hard-problem accuracy by temp, outvoted matrix, diversity contribution, 7 schedule simulations |
+
+### Answer Extraction & Confidence (2)
+| Script | Usage | What it does |
+|--------|-------|-------------|
+| `vboxed_analysis.py` | `<log>` | Vboxed checkpoint effectiveness: source breakdown, rescue rate, vote impact, counterfactual score simulations |
+| `intermediate_answer_v23.py` | `<log> [--v31 <log>] [-p <pid>]` | Intermediate answer loss: over-verification, code output extraction failures, reasoning mentions, vote waste, cross-version comparison |
 
 ### Reasoning & Code Quality (6)
 | Script | Usage | What it does |

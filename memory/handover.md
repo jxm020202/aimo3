@@ -1,138 +1,140 @@
-# Handover Document — March 3, 2026 (Session 4)
+# Handover Document — March 4, 2026 (Session 7)
 
 ## Where We Stopped
 
-**v23 pushed to Kaggle.** Major config changes, new test framework, improved extraction. Waiting for results.
+**v31 completed with 38/53 (72%).** Deep analysis done. Time awareness + exam bell implemented. Vboxed analysis complete. Ready for v32 push.
 
 ## Current Kaggle State
 
 - **v15**: Submitted to competition → **scored 38/50** (broken extraction, no `break`)
-- **v21**: Test run → **49/50** (8 attempts, ES=4, temp=0.5 flat, 50 problems, 63.8 min)
-- **v22**: Test run → **58/60** (8 attempts, ES=3, temp=0.5 flat, 60 problems). Two failures:
-  - 86e8e5: Norwegian numbers. Predicted 23, expected 8687. Got correct 8687 twice but tied 2:2.
-  - 76aef9: Game theory/cookies. Predicted 999, expected 8. Model can't solve (capability limit).
-- **v23**: Just pushed → awaiting results. 16 attempts, ES=5, temp schedule, 80 problems.
-  - Check: `kaggle kernels status jxm222/aimo3-solver`
+- **v21**: Test run → **49/50** (8 attempts, ES=4, temp=0.5, 50 problems, 63.8 min)
+- **v22**: Test run → **58/60** (8 attempts, ES=3, temp=0.5, 60 problems)
+- **v23**: OOM during nbconvert (80MB notebook). 63/80 correct (78.8%), 313 min.
+- **v30**: TEST_TIER=-1 (submission only). Failed — likely OOM from HiGHS output flooding.
+- **v31**: TEST_TIER=2 (full test). **38/53 (72%)** — completed all 53 problems, OOM during nbconvert.
+  - Tier 2 (val bench): 34/35 (97%)
+  - Tier 1 (previous failures): 2/14 (14%)
+  - Tier 0.5 (historical hard): 3/16 (19%)
+  - Output: `output/v31/diagnostic.log` (41MB), submission.parquet
 
-## v23 Changes (vs baseline)
+## Changes Applied Since v31 (for v32)
 
-Full diff: `memory/changelog-vs-baseline.md`
+### New This Session
 
-### Config (cell 8)
-- `attempts`: 8 → 16
-- `early_stop`: 4 → 5
-- `jupyter_timeout`: 6 → 30
-- `temp_schedule`: NEW — `[0.1, 0.3×4, 0.5×6, 0.7×4, 0.9]` (bell curve centered on baseline 0.5)
-- `model_path`: hardcoded → dynamic `find_model_path()`
-- Prompt: added efficiency directive, 9 code robustness rules, bigint hint
+#### Time Awareness — Exam Bell (cell 13)
+- **`_DEADLINE` variable** injected into each attempt's sandbox: `sandbox.execute(f'import time as _time; _DEADLINE = {deadline}')`
+- **Exam bell** — automatic time warnings appended to tool (code execution) responses:
+  - `<100s remaining`: checkpoint warning — "Checkpoint your best answer with \Vboxed{N} now"
+  - `<30s remaining`: urgent warning — "Write \Vboxed{YOUR_ANSWER} immediately. No new computations."
+- **System prompt** (cell 8) now has `# Time Management` section explaining _DEADLINE and the automatic warnings
+- Bell fires on every code execution result. Model sees it passively like an exam proctor.
+- If model doesn't call code, it still has `_DEADLINE` from system prompt + its own awareness of time.
 
-### Solver (cell 13)
-- Temperature schedule wired into attempt creation (was ignored before — always flat 0.5)
-- Temperature logged per attempt in result dict
-- GPU monitor: background thread polls vLLM /metrics every 5s → `gpu_metrics.log`
-- Extraction: added fallback patterns — "the answer is X", "answer: X", "answer = X"
-- Early-stop: collects ALL results (no break), more robust voting
-- All-None retry: retries at +0.2 temp if first pass produces zero answers
-- Vote tie-breaking: deterministic (score, votes, answer value)
-- Full conversation logging (reasoning + code calls per turn)
+#### Timeout Simplification (cell 8 + cell 13)
+- Removed `high_problem_timeout` / `base_problem_timeout` dual config
+- Single `problem_timeout = 900`
+- Budget = `time_left / problems_remaining`, capped at `problem_timeout`, floor at 60s
 
-### Sandbox (cell 11)
-- Added `import functools` and `import fractions` to kernel init
+#### Bug Fix: `consecutive_errors` (cell 13)
+- Variable was used without initialization → now initialized to 0 before turn loop
 
-### Test Framework (cell 17) — NEW CELL
-- 3-tier system (replaces old 4-level TEST_LEVEL):
-  - Tier 0: Priority Debug — 86e8e5 ×2, 76aef9 ×2 (dual-run simulation)
-  - Tier 1: At-Risk — 6 problems with dodgy voting in v22
-  - Tier 2: Val Bench — 70 new unseen BeyondAIME problems from CSV
-- Quick-glance summary table (ID, status, predicted, expected, votes, errors, time, ES)
-- Double-run retry with scoring simulation
-- GPU metrics summary print
-- TeeLogger for full diagnostic capture
+#### Removed: `early_stop` (cell 13)
+- Removed broken `early_stop` reference in `solve_problem`. Early stop was proven non-functional (all 16 attempts launch simultaneously, stop_event fires too late).
 
-### Data Restructure
-- `data/active/` — test_problems.csv (70), test_answers.csv (70), reference.csv (10)
-- `data/available/` — all old data organized (val bench, hard benchmark, old test sets, discussions, etc.)
-- `scripts/build_test_v23.py` — reproducible test set builder
+### From Previous Sessions (still applied)
 
-## v22 Deep Analysis (from log_exploration toolkit — 30 scripts)
+#### Prompt Changes (cell 8)
+- **Temp schedule**: `[0.3×8, 0.5×8]` — data shows +3 problems over old `[0.1, 0.3×5, 0.5×6, 0.7×4]`
+- **Strategic rules** (from timeout analysis of 1,528 timeouts):
+  - Estimate complexity before coding (>10^6 ops → find shortcut)
+  - Don't reduce-and-retry after timeout → find closed-form/recurrence/DP
+  - 3+ timeouts in first 5 cells → stop coding, reason mathematically
+- **Code robustness rules**:
+  - sympy.solve() timeout guard (31.5% timeout rate)
+  - sympy.simplify()/expand() guard for large expressions
 
-### None Classification (280 total, 0% unknown)
-- 40.4% extraction-failure (model had answer, regex missed it)
-- 21.4% no-code-generated (pure reasoning, no Python)
-- 11.1% output-not-extracted (code ran, output had numbers, not captured)
-- 6.8% reasoning-truncated (ran out of tokens mid-thought)
-- 6.4% timeout
-- 13.9% various code errors (ValueError, TypeError, NameError, etc.)
+#### Bug Fixes (cells 11-15)
+- `store_history=False` in sandbox — prevents IPython In[]/Out[] memory leak
+- `_ensure_last_print` — skip wrapping assignments, control flow, decorators
+- Code fence stripping — strips ````python` wrappers before execution
+- Output cap at 8K chars — prevents HiGHS MILP output from causing OOM
+- `math.pow()` → `**` operator (avoids float precision loss)
+- NaN/Inf entropy guard
+- Fallback scan includes `code` key
+- Sandbox pool depletion fix — replace dead sandboxes
+- Stop reason logging (7 reasons tracked per attempt)
 
-### Error Analysis (183 error turns, 129 unique errors)
-- **Top errors**: Timeout 28%, NameError 24%, ValueError 18%, TypeError 14%
-- **Recovery rate**: 68% overall. "Simplify" strategy = 100% recovery.
-- **133 min wasted on errors** (equivalent to 182 clean attempts)
-- **Error rate climbs with turns**: 2% at turn 1 → 20% by turn 15+ (context degradation)
-- **Aborting 3+ error attempts**: zero score impact, saves 87 min
+## V31 Deep Analysis — Key Findings
 
-### Performance Insights
-- **Early stop 2 = same 59/60 score as 5**, uses 4.2 avg attempts vs 8.0 (47% time savings)
-- **First 4 attempts capture 90% of score** (53/60). Attempts 5-8 add only 6 more.
-- **Budget utilization only 7.8%** — problems solve in avg 70s against 900s budgets
-- **56% of tokens wasted on None attempts** (1.5M tokens)
-- **Wrong problems: 2.5 unique answers** vs 1.1 for correct (diversity = difficulty signal)
+### Vboxed Analysis (new this session)
+- 91 \Vboxed uses across 848 attempts (10.7% of attempts)
+- Vboxed attempts are **79.7% correct** vs 67.0% non-Vboxed
+- Only 13/848 attempts use Vboxed as FINAL answer source (61.5% accuracy)
+- Weight sweep: keep 0.7 (changing it gains/loses net zero)
+- dbbfe8 (T0): 3 Vboxed attempts had correct answer but were outvoted
 
-### Reasoning & Code Quality
-- **Wrong attempts: 3.4x longer reasoning** (57K vs 17K chars), 45 approach restarts (vs 12)
-- **Failure keywords**: "let's try" (65% None), "reconsider" (71% None), "probably" (68% None)
-- **Success keywords**: "final answer" (65% correct), "verification" (52% correct)
-- **Code strategy**: number_theory = 100% accuracy, brute_force = lowest at 80%
-- **Library risks**: fractions/Fraction 50% accuracy, mpmath 22.6% error rate, numpy 17.2%
-- **Strategy switching**: wrong attempts switch 11.1x (vs 4.5x correct) — spinning signal
+### Time Distribution (new this session)
+- Correct P50=132s, Wrong P50=190s, None P50=331s
+- Score peaks at 660s timeout cap (37/53), actually drops at 900s
+- T2 plateaus at 240s (35/37) — easy problems solved fast
+- T0/T0.5/T1 get 0-1/19 at ALL timeouts — timeout doesn't matter for hard problems
+- New script: `log_exploration/time_distribution.py`
 
-### Adaptive Compute (key v24 finding)
-- After 2 attempts: if ANY answer found + majority agrees → 100% of those end up correct
-- **34/60 EASY** (need only 3 attempts), **10 MEDIUM** (5 att), **16 HARD** (8 att)
-- Adaptive allocation: score 59/60, time 48min (vs 70min). Saves 200 attempts.
-- **Competition projection**: adaptive uses 141min of 300min budget → 159 min headroom
+### Previous Analysis
+- Reduce attempts 16 → 6-8 (peak at N=6)
+- Speed = accuracy: <60s → 84%, >300s → 19%
+- Geometry weakest topic (46.7%)
+- Extraction failures are NOT the problem (84% of Nones are timeouts)
 
-### Key Insight
-The v21 "43% token limit" Nones were actually early-stopped attempts, not real failures. The real None rate has been ~46% consistently. The new extraction fallbacks target the 40% extraction failures.
+## Tier System
+
+Use these labels — NOT "hard/easy":
+- **T0**: dbbfe8, 3b88b3 (known hard, from reference problems)
+- **T0.5**: 86e8e5 (historical hard)
+- **T1**: V31_WRONG_IDS + TIER_15_IDS + DODGY_WIN_IDS - T0 - T0.5 (defined in cell 17)
+- **T2**: everything else (consistently solved)
+
+Group for analysis: T0/T0.5/T1 together vs T2 alone.
+
+## User's Mentality
+
+**Aiming for 50/50** — all correct. Time savings exist purely to fund Wave 2 attempts on unsolved problems. The plan is 1-16-1-16 wave architecture.
+
+## Notebook Editing Helper
+
+Created `scripts/nb.py` for reliable notebook cell editing:
+```bash
+python3 scripts/nb.py list              # Show all cells
+python3 scripts/nb.py read CELL_INDEX   # Print cell to stdout
+python3 scripts/nb.py write CELL_INDEX FILE  # Replace cell from file
+python3 scripts/nb.py diff CELL_INDEX FILE   # Diff current vs file
+```
+
+## Open Decisions for Next Session
+
+1. **Reduce attempts 16 → 8?** Data strongly supports it but not yet applied.
+2. **Wave architecture**: Run 16 attempts, then re-run failed problems with different prompts/temps.
+3. **Push v32?** All changes ready — need user approval for Kaggle push.
 
 ## Diagnostics & Analysis Files
 
 | Location | What |
 |----------|------|
-| `diagnostics/v21/` | Full v21 analysis (167K log, error taxonomy, None analysis) |
-| `diagnostics/v22/` | v22 diagnostic log + summary |
-| `memory/changelog-vs-baseline.md` | Every change vs original baseline notebook |
-| `scripts/build_test_v23.py` | Builds the 70-problem Val Bench test set |
-| `scripts/parse_diagnostics.py` | Parse diagnostic.log → struggle analysis |
-| `scripts/analyze_errors.py` | Extract tracebacks → root cause taxonomy |
-| `scripts/analyze_nones.py` | Classify NO ANSWER attempts by reason |
-
-## What to Look For in v23 Results
-
-1. **Temperature analysis**: Each attempt logs `temp=X`. Check which temps produce correct answers.
-   - If 0.5 dominates → narrow the schedule
-   - If 0.9 cracks unique problems → widen it
-2. **GPU metrics**: `gpu_metrics.log` tells if 16 attempts cause queuing
-   - peak_waiting=0 → could go higher (20+)
-   - waiting in <10% samples → 16 is near-optimal
-   - waiting in >10% → drop to 12
-3. **Extraction improvement**: Compare None rate to v22's 45.9%. The new fallbacks should reduce it.
-4. **New problem failures**: 70 unseen BeyondAIME problems — expect some failures. These identify what to fix next.
-
-## v24 Ideas
-
-- **Adaptive batched execution**: Run attempts in waves of 4-6 instead of all 16 parallel. Real early stop between waves. See `memory/discussions/parallelism-and-early-stop.md` for full analysis — includes KV cache math, GPU constraints, proposed implementation.
-- **Extraction further**: still ~45% None rate after fixes — code output parsing
-- **Submit to competition**: v23 results should tell us if we're ready
+| `output/v31/` | Full v31 output (diagnostic.log 41MB, gpu_metrics, submission.parquet) |
+| `log_exploration/` | 35+ query scripts (see README.md) |
+| `log_exploration/vboxed_deep_analysis.py` | Vboxed checkpoint usage analysis |
+| `log_exploration/time_distribution.py` | Time distributions, optimal timeout, per-topic/tier |
+| `scripts/nb.py` | Notebook cell read/write/diff helper |
 
 ## Hard Rules
 
 - **NEVER push to Kaggle without explicit user approval**
 - **NO GPG signing** — personal account, not WeMoney
+- **GitHub Actions auto-deploy DISABLED** (workflow_dispatch). Safe to git push.
 
 ## Context for Next Agent
 
 - Read `memory/memory.md` first, then this file
 - Full baseline diff: `memory/changelog-vs-baseline.md`
-- v23 is running on Kaggle: `kaggle kernels status jxm222/aimo3-solver`
-- GitHub Actions auto-push DISABLED (workflow_dispatch). Safe to push.
+- v31 results in `output/v31/`
+- Use `scripts/nb.py` for notebook editing (extract → edit → write back)
