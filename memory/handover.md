@@ -1,85 +1,90 @@
-# Handover Document — March 4, 2026 (Session 9)
+# Handover Document — March 6, 2026 (Session 11)
 
 ## Where We Stopped
 
-**v33 ready for push.** Problem DB complete — all 35 problems have rich summaries (avg 290 chars) and approaches (avg 688 chars), including deep log-extracted fixes for all 15 v32 wrong problems. Model queries DB directly via Python tool (no pre-fetch class). Rerun logic added for low-confidence votes.
+**v17 pushed and running.** Full 50-problem run with Wave 1 classification + Wave 2 solving. No hardcoded problems — loads from test CSV, shuffles with seed=42, takes first 50.
 
 ## Current Kaggle State
 
-- **v15**: Submitted → **38/50** (broken extraction)
-- **v21**: Test → **49/50** (8 attempts, ES=4)
-- **v22**: Test → **58/60** (8 attempts, ES=3)
-- **v23**: **63/80 (78.8%)**, 313 min, OOM during nbconvert
-- **v31**: **38/53 (72%)**, 300 min, OOM during nbconvert
-- **v32**: **38/54 (70.4%)**, 220 min. T2=35/35 (100%), T1=2/15, T0=1/2, T0.5=0/2
-  - GAINED: dbbfe8. LOST: 89c921 (regression, close vote 5-4)
-  - Errors halved, None rate halved, 27% faster, no OOM
-  - Optimal at 6 attempts — 10 of 16 add nothing
+- **v15 (Kaggle v15)**: FileNotFoundError — test CSV was on jxm222, kernel on shivzzzzzz02
+- **v16**: Same error (dataset created but not yet available)
+- **v17**: Running — first full Wave 1 + Wave 2 run on 50 random problems
+- Previous baselines: v34 scored 24/50 (48%) on 50 problems without Wave 1
 
-## v33 Changes (This Session)
+## Architecture: Wave 1 + Wave 2
 
-### Problem Knowledge Database — Model Queries Directly
-- **No ProblemDB class** — removed pre-fetch. Model queries SQLite DB itself via Python tool
-- **System prompt** tells model: "open-book exam, scan technique_summaries before solving"
-- **Schema**: `problems(problem_id, category, topics, technique_summary, question, answer)`
-- **35 problems** with rich summaries (avg 290 chars) and approaches (avg 688 chars)
-  - All 15 v32 wrong problems have detailed log-extracted approaches
-  - 6 PARTIAL entries improved with deep v32 log analysis (root cause + fix for each)
-  - All summaries describe: what the problem tests, the common trap, the correct approach
-- **DB files**: `data/problem_db/problems.db` (144KB), `data/problem_db_upload/` for Kaggle
-- **Build**: `python3 scripts/build_sqlite_db.py` (reads unified.json + reextracted.json patches)
-- **Upload**: `kaggle datasets create -p data/problem_db_upload/`
+### Wave 1: Classification (cell 14: `classify_problem()`)
+- 24 parallel attempts, temp 0.1, 100s timeout, ReasoningEffort HIGH
+- Model sees full taxonomy tree (264 entries, ~106K chars) as MCQ options
+- Multi-turn flow: `\Vboxed{taxonomy}` → host injects DB entry → `\boxed{taxonomy : id}` confirms
+- 1-4 picks allowed per attempt
+- Voting: any taxonomy with >50% of attempts (confidence-weighted) gets selected
+- No consensus → injects warning: "expert could not classify, be careful"
+- `basic.basic.basic` → injects "quick solve, save time for tough questions"
 
-### Timeout & Budget Changes
-- `problem_timeout`: 900 → 600
-- `reserved_per_problem`: NEW, 100s (reserves time for future problems)
-- Budget formula: `time_left - (remaining-1)*100`, capped at 600, floor at 100
-- Removed old `max(budget, 60)` floor
+### Wave 2: Solving (cell 14: `solve_problem()`)
+- 24 parallel attempts, temp schedule [0.1→0.7], 400s timeout
+- Notes from Wave 1 selected taxonomies prepended to problem text
+- Rerun logic: if top votes < threshold, reruns all 24 attempts
+- Entropy-weighted voting for final answer
 
-### Low-Confidence Rerun
-- After voting, if top_votes < 5 AND time permits (>30s), rerun all 16 attempts
-- Merges original + rerun results and re-votes
-- `_select_answer` now returns `(answer, top_votes)` tuple
+## Key Files Modified This Session
 
-### Cell Changes
-- Cell 8 (CFG): DB prompt in system_prompt, `problem_timeout=600`, `reserved_per_problem=100`
-- Cell 9: Simplified to comment (ProblemDB class removed)
-- Cell 14 (AIMO3Solver): Removed ProblemDB init/hints, new budget formula, rerun logic
+### Cell 8 (CFG)
+- `wave1_temperature = 0.1`
+- `wave1_system_prompt`: MCQ framing, 1-4 picks, `\Vboxed` then `\boxed{taxonomy : id}` verification
+- Added: "If very easy, pick basic.basic.basic"
 
-## v32 Wrong Problems Analysis
+### Cell 9 (ProblemDB)
+- `get_taxonomy_tree()`: returns all taxonomies with triggers + full technique text
+- `format_notes()`: header "Our IMO expert has given tips and tricks", footer with DB query instructions
+- Schema uses `id` (not `problem_id`)
 
-8 HINTABLE (DB should fix), 6 PARTIAL (DB helps but not enough), 1 UNHINTABLE (86e8e5):
+### Cell 11 (AIMO3Template)
+- `apply_classifier_template()`: ReasoningEffort.HIGH, no developer message, no tools
+- `DB_INSTRUCTIONS`: simplified to "read expert notes if present"
 
-| PID    | Pred  | Exp   | Rating    | Root Cause |
-|--------|-------|-------|-----------|------------|
-| 414a5b | 95    | 42    | HINTABLE  | Misinterprets "probability when n=2" |
-| 673b29 | 3032  | 3     | HINTABLE  | Thinks need ALL gates, not just 2 |
-| 29714f | 99    | 297   | HINTABLE  | Misses mod-3 constraint |
-| 26bee3 | 97    | 108   | HINTABLE  | Counts 2 diags instead of 4 |
-| 9010d9 | 6400  | 10320 | HINTABLE  | Symmetric pairing, misses core-leaf |
-| 3980cd | 642   | 46    | HINTABLE  | Prime-root not binary construction |
-| 89c921 | 39601 | 29800 | HINTABLE  | Misses odd/even parity decomposition |
-| aff75c | 3658  | 3571  | HINTABLE  | Upper bound ≠ achievable minimum |
-| 23586c | 773   | 386   | PARTIAL→FIXED | Divisor 105 not 210 (geometric factor of 2) |
-| ae2add | 19945 | 24931 | PARTIAL   | Confuses budget with answer |
-| a824c1 | 13    | 24    | PARTIAL→FIXED | Cell domination (13) vs diagonal coverage (24), Konig's theorem |
-| 1ec970 | 9900  | 8700  | PARTIAL→FIXED | 5/16 output trivial 9900, need analytical arc coverage formula |
-| 3b88b3 | 982   | 979   | PARTIAL→FIXED | Cone vs simplex constraint at k=1 (f(1)=2 vs f(1)=1) |
-| a9dbc8 | 15743 | 15744 | PARTIAL→FIXED | Initial state encoding off-by-one, try both interpretations |
-| 86e8e5 | varies| 8687  | UNHINTABLE→IMPROVED | Capability gap, but DB now has modular arithmetic guidance |
+### Cell 14 (AIMO3Solver)
+- `_scan_for_taxonomy()`: extracts taxonomy from `\boxed{tax : id}`, strips id suffix
+- `_build_taxonomy_injection()`: Vbox → queries DB → shows entry with id → confirm prompt
+- `_select_taxonomy()`: confidence-weighted votes, 50% absolute threshold
+- `_process_classification_attempt()`: 6 max turns, no code execution, handles python tool rejection
+- `solve_problem()`: Wave 1 → basic detection → DB retrieval → Wave 2
+- Basic handling: `basic.basic.basic` always prepends "quick solve" message, even with other taxonomies
 
-## Tier System
+### Cell 18 (Test Framework)
+- No tiers, no hardcoded problems
+- Loads all from `/kaggle/input/aimo3-test-data/test_problems.csv` + `test_answers.csv`
+- Shuffles seed=42, takes first 50
+- fd-level TeeLogger to prevent Kaggle UI log leakage
 
-- **T0**: dbbfe8 (FIXED in v32!), 3b88b3
-- **T0.5**: 86e8e5 (×2 runs)
-- **T1**: wrong/dodgy problems from v31/v32
-- **T2**: everything else (35/35 in v32)
+### Problem DB
+- 264 entries (was 160 in v34 → grew via bulk import sessions)
+- Schema: `id, category, topic, subtopic, taxonomy, triggers, technique, question, answer`
+- Column renamed from `problem_id` to `id` (done multiple times, keeps reverting on credential swap)
+- Added `basic.basic.basic` entry for easy problems
+- 4 duplicate taxonomies (am_gm, crt, fermat, sum_of_divisors) — both entries get injected, harmless
+- Pushed as v9 to `jxm222/aimo3-problem-db`
 
-## Before v33 Push
+### Kernel Metadata
+- `dataset_sources`: changed `jxm222/aimo3-test-data` → `shivzzzzzz02/aimo3-test-data`
+- Test data uploaded under shivzzzzzz02 account (was private to jxm222)
 
-1. Upload Kaggle dataset: `kaggle datasets create -p data/problem_db_upload/`
-2. Add dataset as notebook input in Kaggle UI
-3. Push notebook: `kaggle kernels push -p notebooks/`
+### Simulation Script
+- `log_exploration/wave1_simulation.py` fully updated to match current code
+- New commands: `--tree`, `--wave1 <pid>`, `--inject <taxonomy>`
+- `--log`: now uses confidence-weighted voting with 50% threshold
+- Verified against v13 and v14 logs
+
+## Time Budget Analysis
+
+v34 (no Wave 1) ran 50 problems in 220 min with 70 min headroom.
+With Wave 1 at ~30-50s avg/problem: 245-262 min, 28-45 min headroom. No budget squeezing.
+Current config is safe for 50 problems. Bug #6 (Wave 1 not in reserve) doesn't cause actual issues.
+
+## Tested Problems Tracking
+
+All tested problems tracked in `data/fixed.txt` — 18 problems across v10-v14.
 
 ## Notebook Editing
 
@@ -88,6 +93,13 @@ python3 scripts/nb.py list              # 19 cells (0-18)
 python3 scripts/nb.py read CELL > /tmp/cell.py
 python3 scripts/nb.py write CELL /tmp/cell.py
 ```
+
+## Kaggle Accounts
+
+- Kernel: `shivzzzzzz02/aimo3-solver`
+- DB dataset: `jxm222/aimo3-problem-db` (public)
+- Test data: `shivzzzzzz02/aimo3-test-data` (private)
+- DB pushes use jxm222 credentials (swap before/after)
 
 ## Hard Rules
 

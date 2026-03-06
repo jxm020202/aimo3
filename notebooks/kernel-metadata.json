@@ -1,5 +1,5 @@
 {
-  "id": "jxm222/aimo3-solver",
+  "id": "shivzzzzzz02/aimo3-solver",
   "title": "AIMO3 Solver",
   "code_file": "aimo3-solver.ipynb",
   "language": "python",
@@ -8,7 +8,7 @@
   "enable_gpu": true,
   "enable_tpu": false,
   "enable_internet": false,
-  "dataset_sources": ["jxm222/aimo3-test-data", "jxm222/aimo3-problem-db"],
+  "dataset_sources": ["shivzzzzzz02/aimo3-test-data", "jxm222/aimo3-problem-db"],
   "kernel_sources": ["andreasbis/aimo-3-utils"],
   "competition_sources": ["ai-mathematical-olympiad-progress-prize-3"],
   "model_sources": ["danielhanchen/gpt-oss-120b/Transformers/default/1"],

@@ -1,0 +1,60 @@
+PROBLEM DB — ENTRIES NEEDING REVIEW
+====================================
+
+1. a9dbc8 | expected=15744 | LIKELY WRONG
+   Category: combinatorics.sequences.walk_parity
+   Issue: BFS ground truth for n=1..16 confirms f(n)=2n-3 for n%4==1.
+          f(7873) = 2*7873 - 3 = 15743, NOT 15744.
+          The DB claims an "off-by-one from initial state encoding" correction
+          to 15744 via f(n)=2n-2, but BFS contradicts this.
+          The model's original answer of 15743 may actually be correct.
+   Action: Re-verify the original problem statement encoding carefully.
+           Run BFS for n=1,5,9,13,17,21 and confirm which formula holds.
+
+2. 1ec970 | expected=8700 | UNVERIFIED
+   Category: geometry.circle.viewing_angle
+   Issue: Numerical tests show:
+          - Uniform on circle: 5600 (56 per observer)
+          - Clustered in 100-deg arc: 7450 (74.5 avg per observer)
+          Neither reaches 8700 (87 per observer). The number 87 doesn't
+          fall out naturally from the geometry. 8700 may be wrong, or the
+          optimal configuration is non-obvious.
+   Action: Need rigorous proof or numerical optimization showing 8700 is
+           achievable. Check original problem source for official answer.
+
+3. 414a5b | expected=42 | VERIFIED CORRECT
+   Note: Answer field still contains exact number "42" and full enumeration
+         breakdown (n=0:15, n=1:132, n=2:42, n=3:27). This leaks the answer.
+
+4. 3980cd | expected=46 | VERIFIED CORRECT
+   Note: Answer field walks through CRT to "gives x = 46". This leaks the answer.
+
+5. 23586c | expected=386 | VERIFIED CORRECT
+   Note: Answer field implies 81256//210 = N which gives 386.
+
+6. hardcode3 (a824c1) | expected=24 | LIKELY WRONG (answer is 13)
+   Category: geometry.combinatorial.diagonal_covering
+   Issue: The problem asks "min marked cells so any bishop threatens a marked cell"
+          = vertex domination. ILP gives 13, verified on all 169 cells.
+          The notes INCORRECTLY claim this is "diagonal coverage" (every diagonal
+          must have a marked cell), which would be 26 by ILP.
+          Neither interpretation gives 24.
+          In v12 run: 21/24 attempts answered 13 (correct), 2 answered 26, 1 None.
+          The notes actively sabotaged the model by calling the correct answer a "trap."
+   Action: Verify expected answer source. ILP proof says 13 is optimal for the
+           problem as stated. Either fix expected to 13 or clarify if problem
+           has a different interpretation that yields 24.
+
+7. hardcode1 | expected=297 | NEEDS BETTER NOTES
+   Category: algebra.functional_equations.functional_equations
+   Issue: The actual problem is about g:NxN→N with {g(x,y),g(x,y+1),g(x+1,y)}={n,n+1,n+2},
+          find 100th smallest g(4000,4036). This is NOT a standard FE.
+          Wave 1 classified as functional_equations and retrieved tech_func_eq
+          (generic FE technique about f(x+y)+f(x-y)=2f(x)+2f(y)), which is
+          completely irrelevant. 9/24 answered 99 via grid backtracking on small
+          grids, 10/24 timed out (None), others scattered (8135, 12072, 12333, 4299).
+          No attempt got 297. The problem needs its own DB entry with correct taxonomy
+          and technique guidance.
+   Action: Create dedicated DB entry with correct taxonomy (combinatorics or
+           number_theory, not functional_equations). Add technique notes explaining
+           the structure of valid g functions.

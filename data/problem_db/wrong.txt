@@ -1,0 +1,10 @@
+PROBLEM DB — CONFIRMED WRONG EXPECTED ANSWERS
+===============================================
+
+1. hardcode3 (a824c1) | expected=24 | ACTUAL=13
+   Problem: Min marked cells on 13x13 board so any bishop threatens a marked cell.
+   Proof: ILP (vertex domination) gives 13, verified on all 169 cells.
+          The notes wrongly claim this is "diagonal coverage" (which gives 26, also not 24).
+          Neither interpretation yields 24.
+   v12 result: 21/24 attempts got 13 (correct), penalized as wrong.
+   Fix: Change expected to 13, or remove from hardcoded set.

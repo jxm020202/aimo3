@@ -48,17 +48,12 @@
 - **1 submission/day**. Model cutoff March 15, 2026.
 - **Kaggle**: jxm222 | **GitHub**: jxm020202/aimo3 (private)
 
-## Current State (March 3, 2026 — Session 5)
+## Current State (March 6, 2026 — Session 11)
 
-- **v15 SUBMITTED**: Scored 38/50 (broken extraction, no `break`)
-- **v21**: 49/50 on test (8 attempts, ES=4, temp=0.5, 50 problems, 63.8 min)
-- **v22**: 58/60 on test (8 attempts, ES=3, temp=0.5, 60 problems). Failures: 86e8e5, 76aef9.
-- **v23 OOM CRASH**: 63/80 correct (78.8%), 313.5 min. OOM during nbconvert (80MB notebook from full logging). All results computed, just couldn't serialize.
-  - Priority Debug: 3/4 (86e8e5 solved on run 1, wrong on run 2)
-  - At-Risk: 6/6 (all stable now)
-  - Val Bench: 54/70 (16 new failures on unseen problems)
-  - 17 wrong answers total. Analysis: `output/v23/diagnostic.log` (940K lines)
-  - **OOM fix for v24**: Write verbose conversation logs to `diagnostic.log` file ONLY (not stdout). Keep notebook stdout to summary table only. The 80MB came from all print output in notebook cells.
+- **v34**: 24/50 (48%) — last version without Wave 1. 50 problems, 220 min.
+- **v17 running**: First full Wave 1 + Wave 2 run on 50 random problems.
+- **Wave 1 architecture**: Classification (24 attempts, temp 0.1, MCQ taxonomy tree) → DB note injection → Wave 2 solving (24 attempts, temp schedule).
+- **Problem DB**: 264 entries across 4 categories + basic.basic.basic fallback.
 - **Full changelog**: `memory/changelog-vs-baseline.md` — every diff vs baseline
 - **GitHub Actions auto-deploy DISABLED** (workflow_dispatch). Safe to push.
 
@@ -166,9 +161,8 @@ aimo3/
 └── CLAUDE.md            ← Project config (read by Claude Code automatically)
 ```
 
-## Kaggle Dataset
+## Kaggle Datasets
 
-- `jxm222/aimo3-test-data` — uploaded dataset with test CSVs for cell-17
-- Contains: reference.csv, test_problems.csv (70 Val Bench), test_answers.csv
-- Old files (test_fixed_50, test_random_50) moved to `data/available/`
-- Added to `kernel-metadata.json` dataset_sources
+- `jxm222/aimo3-problem-db` — Problem DB (264 entries, public). Push with jxm222 creds.
+- `shivzzzzzz02/aimo3-test-data` — Test CSVs (133 problems+answers, private). Uploaded under shivzzzzzz02.
+- Both in `kernel-metadata.json` dataset_sources

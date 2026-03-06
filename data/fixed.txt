@@ -1,0 +1,17 @@
+# Problems we've already tested with DB injection — do not reuse
+# Format: problem_id | category | description | tested_in
+86e8e5 | number_theory | Norwegian numbers, divisor triples near 3^{2025!} | shiv-v1, shiv-v7, v10
+2e2ccb | algebra | Bijection/Carmichael, minimal n >= 866 | shiv-v1
+3b88b3 | algebra | Constrained optimization, f(k) trap (982 vs 979) | v10
+dbbfe8 | combinatorics | Dominos on 7x7 board, min m=22 | shiv-v7, v10
+dd7f5e | algebra | Shifty functions, cyclotomic polynomials, answer=160 | v10
+3980cd | number_theory | Complex roots product, CRT trap, answer=46 | v34
+23586c | geometry | Centroid construction 735-gon, answer=386 | v34
+414a5b | combinatorics | Dice re-throw probability, answer=42 | v34
+1ec970 | geometry | Viewing angle 100 observers, answer=8700 | v34
+29714f | algebra | Grid coloring mod-3 function, answer=297 | shiv-v12
+673b29 | combinatorics | Maze adversarial search, answer=3 | shiv-v12
+a824c1 | geometry | Bishop diagonal covering, answer=24 | shiv-v12
+25e584 | algebra | Symmetric system x²+y²+z²=3, answer=8 | shiv-v13
+d4b03c | number_theory | Cool pairs irrational alpha, answer=6912 | shiv-v13
+26bee3 | combinatorics | Directed diagonals grid, answer=108 | shiv-v13

@@ -3,7 +3,9 @@
 AIMO3 Log Query System
 ======================
 Parses diagnostic.log into structured data and supports rich queries.
-Works with v21, v22, and v23 log formats.
+Works with v21, v22, v23, and v34+ (Wave 1) log formats.
+Parses Wave 1 classification data (taxonomies, votes, time, failures, notes)
+when present — older logs without Wave 1 sections are handled gracefully.
 
 Usage:
     python log_exploration/log_query.py <logfile> <query> [args...]
@@ -28,6 +30,9 @@ Queries — Performance:
     budget                   Budget allocation vs actual time per problem
     efficiency               Tokens/time per correct answer vs wrong/none
     early-stops              Early stop analysis
+
+Queries — Wave 1 Classification:
+    wave1                    Wave 1 stats: taxonomy, votes, time, failures per problem
 
 Queries — Errors:
     errors                   All code execution errors with context
@@ -106,6 +111,16 @@ class Problem:
     early_stop_threshold: int = 0
     votes: dict = field(default_factory=dict)
     attempts: list = field(default_factory=list)
+    # Wave 1 classification data
+    wave1_taxonomies: list = field(default_factory=list)  # selected taxonomies
+    wave1_votes: dict = field(default_factory=dict)       # taxonomy -> vote count
+    wave1_time: float = 0.0                               # total Wave 1 time
+    wave1_attempts: int = 0                                # number of classification attempts
+    wave1_failures: int = 0                                # failed classification attempts
+    wave1_notes_chars: int = 0                             # length of injected notes
+    has_wave1: bool = False                                # whether Wave 1 ran
+    is_basic: bool = False                                 # basic.basic.basic detected
+    is_rerun: bool = False                                 # whether problem got rerun (48 attempts)
 
 
 # ── Parser ───────────────────────────────────────────────────────────────────
@@ -168,6 +183,92 @@ def parse_log(filepath: str) -> list:
         # ── Problem text ──
         if stripped.startswith('Problem:') and current_problem and not current_problem.problem_text:
             current_problem.problem_text = stripped[8:].strip()[:300]
+            i += 1
+            continue
+
+        # ── Wave 1 classification header ──
+        if stripped == 'WAVE 1: CLASSIFICATION' and current_problem:
+            current_problem.has_wave1 = True
+            # Look for Budget: Ns | Attempts: M on the line after the '===...' separator
+            j = i + 1
+            while j < len(lines) and j < i + 5:
+                w1_budget_match = re.match(r'\s*Budget:\s*\d+s?\s*\|\s*Attempts:\s*(\d+)', lines[j].strip())
+                if w1_budget_match:
+                    current_problem.wave1_attempts = int(w1_budget_match.group(1))
+                    break
+                j += 1
+            i += 1
+            continue
+
+        # ── Wave 1 classification failures ──
+        if stripped.startswith('Classification failed:') and current_problem and current_problem.has_wave1:
+            current_problem.wave1_failures += 1
+            i += 1
+            continue
+
+        # ── Wave 1 classification results (extract times) ──
+        w1_result_match = re.match(r'\s*Classification results\s*\((\d+)\s*attempts?\)', stripped)
+        if w1_result_match and current_problem and current_problem.has_wave1:
+            # Parse individual attempt lines that follow
+            j = i + 1
+            while j < len(lines):
+                aline = lines[j].strip()
+                attempt_match = re.match(r'\s*Attempt\s+\d+:\s*(.+?)\s*\(conf=([\d.]+),\s*turns=\d+,\s*time=([\d.]+)s\)', aline)
+                if attempt_match:
+                    time_val = float(attempt_match.group(3))
+                    current_problem.wave1_time += time_val
+                    taxonomy_val = attempt_match.group(1).strip()
+                    # Strip leading \text{ artifacts from LaTeX
+                    taxonomy_val = re.sub(r'^\\text\{', '', taxonomy_val)
+                    if 'basic.basic.basic' in taxonomy_val:
+                        current_problem.is_basic = True
+                    j += 1
+                elif aline == '' or aline.startswith('===') or aline.startswith('Wave') or aline.startswith('Classification'):
+                    break
+                else:
+                    j += 1
+            i += 1
+            continue
+
+        # ── Wave 1 taxonomy votes ──
+        if stripped == '=== WAVE 1 TAXONOMY VOTES ===' and current_problem and current_problem.has_wave1:
+            j = i + 1
+            while j < len(lines):
+                vline = lines[j].strip()
+                if vline == '=== END VOTES ===':
+                    break
+                # Parse: taxonomy: N.N votes [<-- SELECTED]
+                vote_match = re.match(r'\s*(.+?):\s*([\d.]+)\s*votes', vline)
+                if vote_match:
+                    tax_name = vote_match.group(1).strip()
+                    # Strip leading \text{ artifacts from LaTeX
+                    tax_name = re.sub(r'^\\text\{', '', tax_name)
+                    vote_count = float(vote_match.group(2))
+                    current_problem.wave1_votes[tax_name] = vote_count
+                    if 'basic.basic.basic' in tax_name:
+                        current_problem.is_basic = True
+                j += 1
+            i = j + 1 if j < len(lines) else j
+            continue
+
+        # ── Wave 1 result ──
+        w1_res_match = re.match(r"\s*Wave 1 result:\s*\[([^\]]*)\]", stripped)
+        if w1_res_match and current_problem and current_problem.has_wave1:
+            result_str = w1_res_match.group(1).strip()
+            if result_str:
+                # Parse list of quoted taxonomy strings
+                current_problem.wave1_taxonomies = [
+                    t.strip().strip("'\"") for t in result_str.split(',') if t.strip()
+                ]
+                if any('basic.basic.basic' in t for t in current_problem.wave1_taxonomies):
+                    current_problem.is_basic = True
+            i += 1
+            continue
+
+        # ── Wave 1 DB retrieval (notes chars) ──
+        w1_notes_match = re.match(r'\s*Notes:\s*(\d+)\s*chars', stripped)
+        if w1_notes_match and current_problem and current_problem.has_wave1 and current_problem.wave1_notes_chars == 0:
+            current_problem.wave1_notes_chars = int(w1_notes_match.group(1))
             i += 1
             continue
 
@@ -434,6 +535,9 @@ def parse_log(filepath: str) -> list:
             p.total_attempts = len(p.attempts)
         if not p.total_answered and p.attempts:
             p.total_answered = sum(1 for a in p.attempts if not a.is_none)
+        # Detect reruns: more than 24 attempts means the problem was rerun
+        if len(p.attempts) > 24:
+            p.is_rerun = True
 
     return problems
 
@@ -859,6 +963,65 @@ def q_early_stops(problems):
         print(f"  No-ES group: {c}/{len(no_es)} correct ({c/len(no_es)*100:.0f}%), avg={sum(t)/max(len(t),1):.0f}s")
 
 
+def q_wave1(problems):
+    """Wave 1 classification stats per problem."""
+    w1_problems = [p for p in problems if p.has_wave1]
+    if not w1_problems:
+        print("  No Wave 1 data found in this log.")
+        return
+
+    total = len(w1_problems)
+    with_tax = sum(1 for p in w1_problems if p.wave1_taxonomies)
+    no_consensus = total - with_tax
+    basic_count = sum(1 for p in w1_problems if p.is_basic)
+    total_failures = sum(p.wave1_failures for p in w1_problems)
+    total_time = sum(p.wave1_time for p in w1_problems)
+    with_notes = sum(1 for p in w1_problems if p.wave1_notes_chars > 0)
+
+    print(f"{'='*70}")
+    print(f"  WAVE 1 CLASSIFICATION SUMMARY")
+    print(f"{'='*70}")
+    print(f"  Problems with Wave 1: {total}/{len(problems)}")
+    print(f"  Taxonomy selected: {with_tax} ({with_tax/total*100:.0f}%)")
+    print(f"  No consensus: {no_consensus} ({no_consensus/total*100:.0f}%)")
+    print(f"  Basic detected: {basic_count}")
+    print(f"  Notes injected: {with_notes}")
+    print(f"  Total classification failures: {total_failures}")
+    print(f"  Total Wave 1 time: {total_time:.0f}s ({total_time/60:.1f} min)")
+    print(f"  Avg Wave 1 time: {total_time/total:.1f}s per problem")
+
+    # Accuracy: did Wave 1 help?
+    w1_correct = sum(1 for p in w1_problems if p.correct and p.wave1_taxonomies)
+    w1_total = sum(1 for p in w1_problems if p.wave1_taxonomies)
+    nc_correct = sum(1 for p in w1_problems if p.correct and not p.wave1_taxonomies)
+    nc_total = no_consensus
+    if w1_total > 0:
+        print(f"\n  Taxonomy selected → correct: {w1_correct}/{w1_total} ({w1_correct/w1_total*100:.0f}%)")
+    if nc_total > 0:
+        print(f"  No consensus → correct: {nc_correct}/{nc_total} ({nc_correct/nc_total*100:.0f}%)")
+
+    # Per-problem details
+    print(f"\n  {'ID':<8} {'OK':>3} {'Taxonomy':<45} {'Votes':>6} {'Fails':>6} {'Time':>6} {'Notes':>6}")
+    print(f"  {'─'*8} {'─'*3} {'─'*45} {'─'*6} {'─'*6} {'─'*6} {'─'*6}")
+    for p in w1_problems:
+        ok = 'Y' if p.correct else 'N'
+        tax = ', '.join(p.wave1_taxonomies)[:45] if p.wave1_taxonomies else '(no consensus)'
+        if p.is_basic and not p.wave1_taxonomies:
+            tax = '(no consensus, basic detected)'
+        top_votes = max(p.wave1_votes.values()) if p.wave1_votes else 0
+        print(f"  {p.problem_id:<8} {ok:>3} {tax:<45} {top_votes:>5.0f} {p.wave1_failures:>6} {p.wave1_time:>5.0f}s {p.wave1_notes_chars:>6}")
+
+    # Top taxonomies across all problems
+    tax_counter = Counter()
+    for p in w1_problems:
+        for t in p.wave1_taxonomies:
+            tax_counter[t] += 1
+    if tax_counter:
+        print(f"\n  Top selected taxonomies:")
+        for tax, count in tax_counter.most_common(15):
+            print(f"    {count:>3}x  {tax}")
+
+
 def q_errors(problems):
     print(f"  {'ID':<8} {'Att':>4} {'Turn':>5} {'Type':<20} {'Message':<50}")
     print(f"  {'─'*8} {'─'*4} {'─'*5} {'─'*20} {'─'*50}")
@@ -1178,6 +1341,7 @@ QUERIES = {
     'budget': (q_budget, 0),
     'efficiency': (q_efficiency, 0),
     'early-stops': (q_early_stops, 0),
+    'wave1': (q_wave1, 0),
     'errors': (q_errors, 0),
     'errors-by-type': (q_errors_by_type, 0),
     'errors-by-problem': (q_errors_by_problem, 0),
