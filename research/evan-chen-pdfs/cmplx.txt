@@ -1,0 +1,830 @@
+Bashing Geometry with Complex Numbers
+EVAN CHEN《陳誼廷》
+29 August 2015
+
+This is a (quick) English translation of the complex numbers note I wrote
+for Taiwan IMO 2014 training. Incidentally I was also working on an airplane.
+
+1 The Complex Plane
+Let C and R denote the set of complex and real numbers, respectively.
+Each z ∈ C can be expressed as
+z = a + bi = r (cos θ + i sin θ) = reiθ
+√
+where a, b, r, θ ∈ R and 0 ≤ θ < 2π. We write |z| = r = a2 + b2 and arg z = θ.
+More importantly, each z is associated with a conjugate z = a − bi. It satisfies the
+properties
+w±z =w±z
+w·z =w·z
+w/z = w/z
+|z|2 = z · z
+Note that z ∈ R ⇐⇒ z = z and z ∈ iR ⇐⇒ z + z = 0.
+Im
+
+z = 3 + 4i
+|z| = 5
+
+θ
+0
+Re
+−1 − 2i
+
+z = 3 − 4i
+
+Figure 1: Points z = 3 + 4i and −1 − 2i; z = 3 − 4i is the conjugate.
+We represent every point in the plane by a complex number. In particular, we’ll use a
+capital letter (like Z) to denote the point associated to a complex number (like z).
+1
+
+Evan Chen《陳誼廷》 — 29 August 2015
+
+Bashing Geometry with Complex Numbers
+
+Complex numbers add in the same way as vectors. The multiplication is more interesting: for each z1 , z2 ∈ C we have
+|z1 z2 | = |z1 | |z2 | and arg z1 z2 = arg z1 + arg z2 .
+This multiplication lets us capture a geometric structure. For example, for any points Z
+and W we can express rotation of Z at W by 90◦ as
+z 7→ i(z − w) + w.
+Im
+
+Im
+
+z = 3 + 4i
+
+iz = −4 + 3i
+z−w
+i(z − w)
+0
+
+0
+
+Re
+
+Re
+
+z
+
+i(z − w) + w
+w
+
+Figure 2: z 7→ i(z − w) + w.
+
+2 Elementary Propositions
+First, some fundamental formulas:
+Proposition 1. Let A, B, C, D be pairwise distinct points. Then AB ⊥ CD if and
+d−c
+only if b−a
+∈ iR; i.e.
+
+
+d−c
+d−c
++
+= 0.
+b−a
+b−a
+d−c
+Proof. It’s equivalent to b−a
+∈ iR ⇐⇒ arg
+
+
+
+d−c
+b−a
+
+
+
+≡ ±90◦ ⇐⇒ AB ⊥ CD.
+
+Proposition 2. Let A, B, C be pairwise distinct points. Then A, B, C are collinear if
+and only if c−a
+c−b ∈ R; i.e.
+
+
+c−a
+c−a
+=
+.
+c−b
+c−b
+Proof. Similar to the previous one.
+Proposition 3. Let A, B, C, D be pairwise distinct points. Then A, B, C, D are
+concyclic if and only if
+c−a d−a
+:
+∈ R.
+c−b d−b
+
+
+
+
+Proof. It’s not hard to see that arg c−a
+= ∠ACB and arg d−a
+= ∠ADB. (Here
+c−b
+d−b
+angles are directed).
+2
+
+Evan Chen《陳誼廷》 — 29 August 2015
+
+Im
+
+Bashing Geometry with Complex Numbers
+
+Im
+
+b
+
+d
+
+a
+
+b−a
+
+d−c
+
+c
+0
+
+0
+
+Re
+
+Re
+
+d−c
+Figure 3: AB ⊥ CD ⇐⇒ b−a
+∈ iR.
+
+Now, let’s state a more commonly used formula.
+Lemma 4 (Reflection About a Segment). Let W be the reflection of Z across AB. Then
+w=
+
+(a − b)z + ab − ab
+.
+a−b
+
+Of course, it then follows that the foot from Z to AB is exactly 12 (w + z).
+Im
+
+Im
+z
+
+Im
+
+b
+z−a
+w
+
+a
+0
+
+b−a
+
+1
+
+z−a
+b−a
+
+w−a
+0
+
+Re
+
+1
+
+Re
+
+0
+
+1
+w−a
+b−a
+
+Re
+
+Figure 4: The reflection of Z across AB.
+Proof. According to Figure 4 we obtain
+
+
+w−a
+z−a
+z−a
+=
+=
+.
+b−a
+b−a
+b−a
+From this we derive w = (a−b)z+ab−ab
+.
+a−b
+Here are two more formulas.
+Theorem 5 (Complex Shoelace). Let A, B, C be points. Then 4ABC has signed area
+i
+4
+
+a a 1
+b b 1 .
+c c 1
+
+In particular, A, B, C are collinear if and only if this determinant vanishes.
+3
+
+Evan Chen《陳誼廷》 — 29 August 2015
+
+Bashing Geometry with Complex Numbers
+
+Proof. Cartesian coordinates.
+Often, Theorem 5 is easier to use than Proposition 2.
+Actually, we can even write down the formula for an arbitrary intersection of lines.
+Proposition 6. Let A, B, C, D be points. Then lines AB and CD intersect at
+(āb − ab̄)(c − d) − (a − b)(c̄d − c ¯
+d)
+.
+¯
+(ā − b̄)(c − d) − (a − b)(c̄ − d)
+But unless d = 0 or a, b, c, d are on the unit circle, this formula is often too messy to
+use.
+
+3 The Unit Circle, and Triangle Centers
+On the complex plane, the unit circle is of critical importance. Indeed if |z| = 1 we have
+1
+z= .
+z
+Using the above, we can derive the following lemmas.
+Lemma 7. If |a| = |b| = 1 and z ∈ C, then the reflection of Z across AB is a + b − abz,
+and the foot from Z to AB is
+1
+(z + a + b − abz) .
+2
+Lemma 8. If A, B, C, D lie on the unit circle then the intersection of AB and CD is
+given by
+ab(c + d) − cd(a + b)
+.
+ab − cd
+These are much easier to work with than the corresponding formulas in general. We
+can also obtain the triangle centers immediately:
+Theorem 9. Let ABC be a triangle center, and assume that the circumcircle of ABC
+coincides with the unit circle of the complex plane. Then the circumcenter, centroid, and
+orthocenter of ABC are given by 0, 13 (a + b + c), a + b + c, respectively.
+Observe that the Euler line follows from this.
+Proof. The results for the circumcenter and centroid are immediate. Let h = a + b + c.
+By symmetry it suffices to prove AH ⊥ BC. We may set
+h−a
+b+c
+z=
+=
+.
+b−c
+b−c
+Then
+
+
+1
++1
+b+c
+b+c
+c+b
+z=
+=
+= 1b 1c =
+= −z
+b−c
+c−b
+b−c
+b − c
+so z ∈ iR as desired.
+We can actually even get the formula for the incenter.
+Theorem 10. Let triangle ABC have incenter I and circumcircle Γ. Lines AI, BI, CI
+meet Γ again at D, E, F . If Γ is the unit circle of the complex plane then there exists
+x, y, z ∈ C satisfying
+a = x2 , b = y 2 , c = z 2 and d = −yz, e = −zx, f = −xy.
+Note that |x| = |y| = |z| = 1. Moreover, the incenter I is given by −(xy + yz + zx).
+Proof. Show that I is the orthocenter of 4DEF .
+4
+
+Evan Chen《陳誼廷》 — 29 August 2015
+
+Bashing Geometry with Complex Numbers
+
+4 Some Other Lemmas
+Lemma 11. Let A, B be on the unit circle and select P so that P A, P B are tangents.
+Then
+2
+2ab
+p=
+=
+.
+a+b
+a+b
+Proof. Let M be the midpoint of AB and set O = 0. One can show OM · OP = 1 and
+that O, M , P are collinear; the result follows from this.
+2ab
+a+b
+
+a
+b
+
+2
+Figure 5: Two tangents. p = a+b
+.
+
+Lemma 12. For any x, y, z, the circumcenter of 4XY Z is given by
+x xx̄ 1
+y y ȳ 1
+z z z̄ 1
+
+÷
+
+x x̄ 1
+y ȳ 1 .
+z z̄ 1
+
+This formula is often easier to apply if we shift z to the point 0 first, then shift back
+afterwards.
+
+5 Examples
+Example 13 (MOP 2006). Let H be the orthocenter of triangle ABC. Let D, E, F
+lie on the circumcircle of ABC such that AD k BE k CF . Let S, T , U respectively
+denote the reflections of D, E, F across BC, CA, AB. Prove that points S, T , U , H
+are concyclic.
+Proof. Let (ABC) be the unit circle and h = a + b + c. WLOG, AD, BE, CF are
+perpendicular to the real axis (rotate appropriately); thus d = a and so on. Thus
+s = b + c − bcd = b + c − abc and so on; we now have
+s−t
+b−a
+=
+s−u
+c−a
+
+and
+
+h−t
+b + abc
+=
+.
+h−u
+c + abc
+
+Compute
+s−t h−t
+(b − a)(c + abc)
+:
+=
+=
+s−u h−u
+(c − a)(b + abc)
+
+1
+1
+b − a
+1
+1
+c − a
+
+
+
+as desired.
+
+5
+
+1
+1
+c + abc 
+1
+1
+b + abc
+
+
+=⇒
+
+s−t h−t
+:
+∈R
+s−u h−u
+
+Evan Chen《陳誼廷》 — 29 August 2015
+
+Bashing Geometry with Complex Numbers
+
+A
+
+E
+F
+I
+H
+G
+Q
+
+D M
+
+B
+
+C
+
+Example 14 (Taiwan TST 2014). In 4ABC with incenter I, the incircle is tangent to
+CA, AB at E, F . The reflections of E, F across I are G, H. Let Q be the intersection of
+GH and BC, and let M be the midpoint of BC. Prove that IQ and IM are perpendicular.
+Solution. Let D be the foot from I to BC, and set (DEF ) as the unit circle. (This lets
+us exploit the results of Section 3.) Thus |d| = |e| = |f | = 1, and moreover g = −e,
+h = −f . Let x = d = d1 and define y, z similarly. Then
+b=
+
+2
+2
+=
+.
+x
++
+z
+d+f
+
+2
+Similarly, c = x+y
+, so
+
+1
+1
+1
+2x + y + z
+m = (b + c) =
++
+=
+.
+2
+x+y x+z
+(x + y)(x + z)
+Next, we have Q = DD ∩ GH, which implies
+
+
+1
+1
+1
+1 2
+−
+−
+2
+y
+z − yz x
+dd(g + h) − gh(d + d)
+2x + y + z
+x
+q=
+=
+=
+.
+1
+1
+d2 − gh
+x2 − yz
+− yz
+x2
+so
+m/q =
+Now,
+m/q = 
+
+x2 − yz
+.
+(x + y)(x + z)
+
+1
+1
+− yz
+x2
+1
+1
+x + y
+
+
+
+1
+1
+x + z
+
+=
+
+yz − x2
+= −m/q
+(x + y)(x + z)
+
+thus m/q ∈ iR, as desired.
+Example 15 (USAMO 2012). Let P be a point in the plane of 4ABC, and γ a line
+through P . Let A0 , B 0 , C 0 be the points where the reflections of lines P A, P B, P C with
+respect to γ intersect lines BC, AC, AB respectively. Prove that A0 , B 0 , C 0 are collinear.
+Solution. Let p = 0 and set γ as the real line. Then A0 is the intersection of bc and pā.
+So, using Proposition 6 we get
+a0 =
+
+ā(b̄c − bc̄)
+.
+(b̄ − c̄)ā − (b − c)a
+6
+
+Evan Chen《陳誼廷》 — 29 August 2015
+
+Bashing Geometry with Complex Numbers
+
+A
+
+P
+B
+
+Note that
+ā0 =
+
+A′
+
+C
+
+a(bc̄ − b̄c)
+.
+(b − c)a − (b̄ − c̄)ā
+
+Thus by Theorem 5, it suffices to prove
+
+0=
+
+ā(b̄c−bc̄)
+(b̄−c̄)ā−(b−c)a
+b̄(c̄a−cā)
+(c̄−ā)b̄−(c−a)b
+c̄(āb−ab̄)
+(ā−b̄)c̄−(a−b)c
+
+a(bc̄−b̄c)
+(b−c)a−(b̄−c̄)ā
+b(cā−c̄a)
+(c−a)b−(c̄−ā)b̄
+c(ab̄−āb)
+(a−b)c−(ā−b̄)c̄
+
+1
+1 .
+1
+
+This is equivalent to
+0=
+
+ā(b̄c − bc̄) a(b̄c − bc̄) (b̄ − c̄)ā − (b − c)a
+b̄(c̄a − cā) b(c̄a − cā) (c̄ − ā)b̄ − (c − a)b .
+c̄(āb − ab̄) c(āb − ab̄) (ā − b̄)c̄ − (a − b)c
+
+Evaluating the determinant gives
+X
+
+b b̄
+c c̄
+
+((b̄ − c̄)ā − (b − c)a) · −
+
+cyc
+
+
+· (c̄a − cā) āb − ab̄
+
+or, noting the determinant is bc̄ − b̄c and factoring it out,
+X
+
+(b̄c − cb̄)(c̄a − cā)(āb − ab̄)
+ab − ac + c̄ā − b̄ā = 0.
+cyc
+
+Example 16 (Taiwan TST Quiz 2014). Let I and O be the incenter and circumcenter
+of ABC. A line ` is drawn parallel to BC and tangent to the incircle of ABC. Let X,
+Y be on ` so that I, O, X are collinear and ∠XIY = 90◦ . Show that A, X, O, Y are
+concyclic.
+Solution. Let X 0 and Y 0 respectively denote the reflections of X and Y across I. Note
+that X, Y lie on BC. Also, let P , Q be the intersections of IY with the circumcircle.
+Of course, (ABC) is the unit
+√ circle. Let j be the complex number corresponding to I
+(to avoid confusion with i = −1). Thus,
+0
+
+x =
+
+
+
+bc − bc (j − 0) − j0 − j0 (b − c)
+(b − c)(j − 0) − (b − c)(j − 0)
+
+2
+
+=
+
+2
+
+−b
+j · c bc
+
+j · c−b
+bc − (b − c)j
+
+We seek y 0 now. Consider the quadratic equation in z given by
+1
+−j
+z−j
++ z
+= 0 ⇐⇒ z 2 − 2jz + j/j = 0.
+j
+j
+
+7
+
+=
+
+j(b + c)
+.
+j + bcj
+
+Evan Chen《陳誼廷》 — 29 August 2015
+
+Bashing Geometry with Complex Numbers
+
+A
+
+P
+X
+
+Y
+
+O
+I
+
+B
+
+C
+
+Y′
+
+X′
+
+Q
+
+Its zeros in z are p and q, which implies that p + q = 2j and pq = j/j (by Vieta!). From
+this we can compute
+y0 =
+
+pq(b + c) − bc(p + q)
+j(b + c) − 2bcjj
+j(b + c) − 2bcjj
+=
+=
+.
+pq − bc
+j − bcj
+j − bcj
+
+which gives
+x = 2j − x0 =
+
+j(2j − b − c + 2bcj)
+j + bcj
+
+and y = 2j − y 0 =
+
+j(2j − b − c)
+.
+j − bcj
+
+From this we can obtain
+(2j − b − c)(j + bcj) − (2j − b − c + 2bcj)(j − bcj)
+(j − bcj)(j + bcj)
+2bcj(2j − b − c) − 2bcj(j − bcj)
+=j·
+(j − bcj)(j + bcj)
+
+2bcj j − b − c + bcj
+=j·
+(j − bcj)(j + bcj)
+
+2bcj j − b − c + bcj
+y−x
+X=
+=
+x
+(j − bcj)(2j − b − c + 2bcj)
+y−a
+j(2j − b − c − a) + abcj
+A=
+=
+a
+a(j − bcj)
+y−x=j·
+
+We need to prove X/A = X/A. Now set a = x2 , b = y 2 , c = z 2 , j = −(xy + yz + zx),
+j = − x+y+z
+xyz (this is a different x, y than the points X and Y .) So, the above rewrites as
+yz
+2 yz
++ y + z) + y 2 + z 2 + xy + yz + zx)
+x (x + y + z)( x (x 
+
+X=
+yz
+− x (x + y + z) + xy + yz + zx y 2 + z 2 + 2(xy + yz + zx) + 2 yz
+(x
++
+y
++
+z)
+x
+
+
+P
+2
+2yz(x + y + z) 2xyz + sym x y
+=
+(y + z)(x2 − yz) (x(y + z)(2x + y + z) + 2yz(x + y + z))
+
+8
+
+Evan Chen《陳誼廷》 — 29 August 2015
+
+=
+
+Bashing Geometry with Complex Numbers
+
+2yz(x + y + z)(x + y)(x + z)
+(x2 − yz) ((x2 + yz)(y + z) + (xy + yz + zx)(x + y + z))
+
+and
+A=
+
+(xy + yz + zx)(x + y + z)2 − xyz(x + y + z)
+(x + y + z)(x + y)(y + z)(z + x)
+=
+yz
+2
+x (−(xy + yz + zx) + x (x + y + z))
+x(yz − x2 )(y + z)
+
+thus
+X/A =
+=
+
+−2xyz
+(x2 + yz)(y + z) + (x + y + z)(xy + yz + zx)
+2
+− xyz
+1
+1
+1
+1
+( x12 + yz
+)( y1 + z1 ) + ( x1 + y1 + z1 )( xy
++ yz
++ zx
+)
+
+= X/A.
+
+6 Practice Problems
+1. Let ABCD be cyclic. Let HA , HB , HC , HD denote the orthocenters of BCD,
+CDA, DAB, ABC. Show that AHA , BHB , CHC , DHD are concurrent.
+2. (China TST 2011) Let Γ be the circumcircle of a triangle ABC. Assume AA0 , BB 0 ,
+CC 0 are diameters of Γ. Let P be a point inside ABC and let D, E, F be the feet
+from P to BC, CA, AB. Let X be the reflection of A0 across D; define Y and Z
+similarly. Prove that 4XY Z ∼ 4ABC.
+3. In circumscribed quadrilateral ABCD with incircle ω, Prove that the midpoint of
+AC and the midpoint of BD are collinear with the center of ω.
+4. (Simson Line) Let ABC be a triangle and P a point on its circumcircle.
+(a) Let D, E, F be the feet from P to BC, CA, AB. Show that D, E, F are
+collinear.
+(b) Moreover, prove that the line through these points bisects P H, where H is
+the orthocenter of ABC.
+5. (PUMaC Finals) Let γ and I be the incircle and incenter of triangle ABC. Let D,
+E, F be the tangency points of γ to BC, CA, AB and let D0 be the reflection of
+D about I. Assume EF intersects the tangents to γ at D and D0 at points P and
+Q. Show that ∠DAD0 + ∠P IQ = 180◦ .
+6. (Schiffler Point) Let triangle ABC have incenter I. Prove that the Euler lines of
+4AIB, 4BIC, 4CIA, 4ABC are concurrent.
+7. (USA TST 2014) Let ABCD be a cyclic quadrilateral and let E, F , G, H be the
+midpoints of AB, BC, CD, DA. Call W , X, Y , Z the orthocenters of AHE, BEF ,
+CF G, DGH. Prove that ABCD and W XY Z have the same area.
+8. (Iran 2004) Let O be the circumcenter of ABC. A line ` through O cuts AB and
+AC at points X and Y . Let M and N be the midpoints of BY , CX. Show that
+∠M ON = ∠BAC.
+9. (APMO 2010) Let ABC be an acute triangle, where AB > BC and AC > BC.
+Denote by O and H the circumcenter and orthocenter. The circumcircle of AHC
+intersects AB again at M ; the circumcircle of AHB intersects AC again at N .
+Prove that the circumcenter of triangle M N H lies on line OH.
+9
+
+Evan Chen《陳誼廷》 — 29 August 2015
+
+Bashing Geometry with Complex Numbers
+
+d Let N be
+10. (Iran 2013) Let ABC be acute, and M the midpoint of minor arc BC.
+on the circumcircle of ABC such that AN ⊥ BC, and let K, L lie on AB, AC so
+that OK k M B, OL k M C. (Here O is the circumcenter of ABC). Prove that
+N K = N L.
+11. (MOP 2006) Cyclic quadrilateral ABCD has circumcenter O. Let P be a point
+in the plane and let O1 , O2 , O3 , O4 be the circumcenters of P AB, P BC, P CD,
+P DA. Show that the midpoints of O1 O3 , O2 O4 , OP are concurrent.
+
+10
+
+

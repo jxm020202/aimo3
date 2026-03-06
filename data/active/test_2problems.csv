@@ -1,8 +1,0 @@
-id,problem
-23586c,"Bob has a convex 735-gon in the plane and
-wishes to construct the centroid of its vertices. He has no standard ruler or compass, but
-he does have a device with which he can dissect the segment between two given points
-into m equal parts. For how many \(m \in [9, 81256]\) can Bob necessarily accomplish his task?"
-29714f,"There is a function \( g: \mathbb{N} \times \mathbb{N} \to \mathbb{N} \) such that \( g(0,0) = 0 \), and for any \( x, y \in \mathbb{N} \), there exists \( n \in \mathbb{N} \) such that
-\[\{g(x,y), g(x,y+1), g(x+1,y)\} = \{n, n+1, n+2\}.\]
-Let \(S\) be the set of all possible values of \( g(4000, 4036) \). Find the 100-th smallest value of \(S\)."

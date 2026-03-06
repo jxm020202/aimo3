@@ -1,0 +1,1451 @@
+Barycentric Coordinates for the Impatient
+Max Schindler∗
+
+Evan Chen†
+
+July 13, 2012
+
+I suppose it is tempting, if the only tool you have is a
+hammer, to treat everything as if it were a nail.
+
+1
+
+Introduction
+Stop practicing your bash. It gives you an unfair advantage.
+–dragon96
+
+This is intended to be an abridged version of the more thorough “Barycentric Coordinates in Olympiad
+Geometry”. It contains three things: formula sheet, examples, and problems.
+Most of the space, as one can see, is consumed by the example problems; after all, this is a bash technique,
+and any real bash which is less than two pages long is considered very successful.
+Enjoy!
+
+1.1
+
+Standard Formulas
+
+Throughout this paper, 4ABC is a triangle with vertices in counterclockwise order. The lengths will be
+~ B,
+~ C.
+~
+abbreviated a = BC, b = CA, c = AB. These correspond with points in the vector plane A,
+For arbitrary points P , Q, R, [P QR] will denote the signed area of 4P QR.1
+Definition. Each point in the plane is assigned an ordered triple of real numbers P = (x, y, z) such that
+~ + yB
+~ + zC
+~
+P~ = xA
+
+and x + y + z = 1
+
+Theorem 1 (Line). The equation of a line is ux + vy + wz = 0 where u, v, w are reals. (These u, v and w
+are unique up to scaling.)
+∗ Mewto55555, Missouri. I can be contacted at igoroogenflagenstein@gmail.com.
+† v Enhance, SFBA. I can be reached at chen.evan6@gmail.com.
+1 For ABC counterclockwise, this is positive when P , Q and R are in counterclockwise order, and negative otherwise. When
+
+ABC is labeled clockwise the convention is reversed; that is, [P QR] is positive if and only if it is oriented in the same way as
+ABC. In this article, ABC will always be labeled counterclockwise.
+
+1
+
+Coordinates of Special Points
+From this point on, the point (kx : ky : kz) will refer to the point (x, y, z) for k 6= 0. In fact, the equations
+for the line and circle are still valid; hence, when one is simply intersecting lines and circles, it is permissible
+to use these un-homogenized forms in place of their normal forms. Again, the coordinates here are not
+homogenized!
+Point
+Centroid
+Incenter
+Symmedian point
+Excenter
+Orthocenter
+Circumcenter
+
+Coordinates
+G = (1 : 1 : 1)
+I = (a : b : c)
+K = (a2 : b2 : c2 )
+Ia = (−a : b : c), etc.
+H = (tan A : tan B : tan C)
+O = (sin 2A : sin 2B : sin 2C)
+
+Sketch of Proof
+Trivial
+Angle bisector theorem
+Similar to above
+Similar to above
+Use area definition
+Use area definition
+
+If absolutely necessary, it is sometimes useful to convert the trigonometric forms of H and O into expressions entirely in terms of the side lengths (cf. [3, 5]) by
+O = (a2 (b2 + c2 − a2 ) : b2 (c2 + a2 − b2 ) : c2 (a2 + b2 − c2 ))
+and
+H = ((a2 + b2 − c2 )(c2 + a2 − b2 ) : (b2 + c2 − a2 )(a2 + b2 − c2 ) : (c2 + a2 − b2 )(b2 + c2 − a2 ))
+Definition. The displacement vector of two (normalized) points P = (p1 , p2 , p3 ) and Q = (q1 , q2 , q3 ) is
+−−→
+denoted by P Q and is equal to (p1 − q1 , p2 − q2 , p3 − q3 ).
+A Note on Scaling Displacement Vectors
+In EFFT, one can write a displacement vector (x, y, z) as (kx : ky : kz), and the theorem will still be true.
+This is also true for Strong EFFT, but NOT for the distance formula.
+−−→
+−−→
+Theorem 4 (Evan’s Favorite Forgotten Trick). Consider displacement vectors M N = (x1 , y1 , z1 ) and P Q =
+(x2 , y2 , z2 ). Then M N ⊥ P Q if and only if
+0 = a2 (z1 y2 + y1 z2 ) + b2 (x1 z2 + z1 x2 ) + c2 (y1 x2 + x1 y2 )
+−−→
+Corollary 5. Consider a displacement vector P Q = (x1 , y1 , z1 ). Then P Q ⊥ BC if and only if
+0 = a2 (z1 − y1 ) + x1 (c2 − b2 )
+Corollary 6. The perpendicular bisector of BC has equation
+0 = a2 (z − y) + x(c2 − b2 )
+−−→
+Theorem 7 (Distance Formula). Consider a displacement vector P Q = (x, y, z). Then
+|P Q|2 = −a2 yz − b2 zx − c2 xy
+Theorem 8. The general equation of a circle is
+−a2 yz − b2 zx − c2 xy + (ux + vy + wz)(x + y + z) = 0
+for reals u, v, w.
+Corollary 9. The circumcircle has equation
+a2 yz + b2 zx + c2 xy = 0
+2
+
+Theorem 10 (Area Formula). The area of a triangle with vertices P = (x1 , y1 , z1 ), Q = (x2 , y2 , z2 ) and
+R = (x3 , y3 , z3 ) is
+x1 y1 z1
+[P QR] = [ABC] · x2 y2 z2
+x3 y3 z3
+Corollary 11 (First Collinearity Criteria). The points P = (x1 : y1 : z1 ), Q = (x2 : y2 : z2 ) and R = (x3 :
+y3 : z3 ) are collinear if and only if
+x1 y1 z1
+x2 y2 z2 = 0
+x3 y3 z3
+Corollary 12 (Line Through 2 Points). The equation of a line through the points P = (x1 : y1 : z1 ) and
+Q = (x2 : y2 : z2 ) is
+x1 y1 z1
+x2 y2 z2 = 0
+x y z
+Corollary 13 (Second Collinearity Criteria). The points P = (x1 , y1 , z1 ), Q = (x2 , y2 , z2 ) and R =
+(x3 , y3 , z3 ), are collinear if and only if
+x1 y1 1
+x2 y2 1 = 0
+x3 y3 1
+Cyclic variations hold.
+Theorem 14 (Strong EFFT). Suppose M , N , P and Q are points with
+−−→
+−→
+−−→
+−−→
+M N = x1 AO + y1 BO + z1 CO
+−−→
+−→
+−−→
+−−→
+P Q = x2 AO + y2 BO + z2 CO
+If either x1 + y1 + z1 = 0 or x2 + y2 + z2 = 0, then M N ⊥ P Q if and only if
+0 = a2 (z1 y2 + y1 z2 ) + b2 (x1 z2 + z1 x2 ) + c2 (y1 x2 + x1 y2 )
+Corollary 15. The equation for the tangent to the circumcircle at A is b2 z + c2 y = 0.
+Definition (Conway’s Notation). Let S be twice the area of the triangle. Define Sθ = S cot θ, and define
+the shorthand notation Sθφ = Sθ Sφ .
+2
+
+2
+
+2
+
+2
+
+2
+
+2
+
++c
+Fact. We have SA = −a +b
+= bc cos A and its cyclic variations. (We also have Sω = a +b2 +c , where ω
+2
+is the Brocard angle. This follows from cot ω = cot A + cot B + cot C.)
+
+Fact. We have the identities
+SB + SC = a2
+and
+SAB + SBC + SCA = S 2
+
+
+Fact. O = (a2 SA : b2 SB : c2 SC ) and H = (SBC : SCA : SAB ) = S1A : S1B : S1C .
+Theorem 16 (Conway’s Formula). Given a point P with counter-clockwise directed angles ]P BC = θ and
+]BCP = φ, we have P = (−a2 : SC + Sφ : SB + Sθ ).
+Lemma 17 (Parallelogram Lemma). The points ABCD form a parallelogram iff A + C = B + D (here the
+points are normalized), where addition is done component-wise.
+Lemma 18 (Concurrence Lemma). The three lines ui x + vi y + wi z = 0, for i = 1, 2, 3 are concurrent if and
+only if
+u1 v1 w1
+u2 v2 w2 = 0
+u3 v3 w3
+3
+
+1.2
+
+More Obscure Formulas
+
+Here’s some miscellaneous formulas and the like. These were not included in the main text.
+From [7],
+Theorem 19 (Leibniz Theorem). Let Q be a point with homogeneous barycentric coordinates (u : v : w)
+with respect to 4ABC. For any point P on the plane ABC the following relation holds:
+uP A2 + vP B 2 + wP C 2 = (u + v + w)P Q2 + uQA2 + vQB 2 + wQC 2
+1.2.1
+
+Other Special Points
+
+Point
+Gregonne Point [3]
+Nagel Point [3]
+Isogonal Conjugate [1]
+Isotomic Conjugate [1]
+Feuerbach Point [8]
+Nine-point Center
+1.2.2
+
+Coordinates
+Ge = ((s − b)(s − c) : (s − c)(s − a) : (s − a)(s − b))
+Na = 
+(s − a : s − b: s − c)
+P∗ =
+Pt =
+
+2
+2
+a2
+: by : cz
+x
+
+
+
+1
+1
+1
+x : y : z
+
+F = (b + c − a)(b − c)2 : (c + a − b)(c − a)2 : (a + b − c)(a − b)2
+N = (a cos(B − C) : b cos(C − A) : c cos(A − B))
+
+
+
+Special Lines and Circles
+
+Nine-point Circle
+Incircle
+A-excircle [9]
+Euler Line [9]
+
+−a2 yz − b2 xz − c2 xy + 21 (x + y + z)(SA x + SB y + SC z) = 0
+
+−a2 yz − b2 zx − c2 xy + (x + y + z) (s − a)2 x + (s − b)2 y + (s −
+c)2 z = 0
+
+−a2 yz − b2 zx − c2 xy + (x + y + z) s2 x + (s − c)2 y + (s − b)2 z = 0
+SA (SB − SC )x + SB (SC − SA )y + SC (SA − SB )z = 0
+
+4
+
+2
+
+Example Problems
+Graders received some elegant solutions, some not-so-elegant solutions, and some so not elegant
+solutions.
+– Delong Meng
+Let us now demonstrate the power of the strategy on a few... victims.
+
+2.1
+
+USAMO 2001/2
+
+We begin with a USAMO problem which literally (figuratively?) screams for an analytic solution.
+2.1.1
+
+Problem and Solution
+
+Problem (USAMO 2001/2). Let ABC be a triangle and let ω be its incircle. Denote by D1 and E1 the
+points where ω is tangent to sides BC and AC, respectively. Denote by D2 and E2 the points on sides BC
+and AC, respectively, such that CD2 = BD1 and CE2 = AE1 , and denote by P the point of intersection of
+segments AD2 and BE2 . Circle ω intersects segment AD2 at two points, the closer of which to the vertex A
+is denoted by Q. Prove that AQ = D2 P .
+
+A
+
+Q
+E1
+
+E2
+I
+
+B
+
+P
+
+D2
+
+D1
+
+C
+
+Figure 1: USAMO 2001/2
+Solution. (Evan Chen) So we use barycentric coordinates.
+It’s obvious that
+1 = (0 : s −
+ un-normalized, Ds−a
+ c : s − b) ⇒ D2 = (0 : s − b : s − c), so we get a normalized
+s−c
+s−c
+D2 = 0, s−b
+.
+a , a . Similarly, E2 =
+b , 0, b
+
+s−a s−b s−c
+Now we obtain the points P = s , s , s by intersecting the lines AD2 : (s − c)y = (s − b)z and
+BE2 : (s − c)x = (s − a)z.
+5
+
+s−b
+Let Q0 be such that AQ0 = P D2 . It’s obvious that Q0y +Py = Ay +D2y , so we find that Q0y = s−b
+a − s =
+(s−a)(s−b)
+(s−a)(s−c)
+0
+. Also, since it lies on the line AD2 , we get that Q0z = s−c
+. Hence,
+sa
+s−b · Qy =
+sa
+
+Q0x = 1 −
+
+sa − a(s − a)
+a
+((s − b) + (s − c))(s − a)
+=
+=
+sa
+sa
+s
+
+Hence,
+0
+
+Q =
+Let I =
+
+a
+b
+c
+2s , 2s , 2s
+
+
+
+
+
+a (s − a)(s − b) (s − a)(s − c)
+,
+,
+s
+sa
+sa
+
+
+
+. We claim that, in fact, I is the midpoint of Q0 D1 . Indeed,
+a
+a
+1
+0+
+=
+2
+s 2s
+
+1 (s − a)(s − b) s − c
+(s − a)(s − b) + s(s − c)
++
+=
+2
+sa
+a
+2sa
+ab
+=
+2sa
+b
+=
+
+ 2s
+1 (s − a)(s − c) s − b
+c
++
+=
+2
+sa
+a
+2s
+
+Implying that Q lies on the circle; in particular, diametrically opposite from D1 , so it is the closer of the
+two points. Hence, Q = Q0 , so we’re done.
+
+2.1.2
+
+Commentary
+
+The unusual points D2 , and E2 make this problem ripe for barycentric coordinates, since they can be written
+as ratios on the appropriate sides. The point Q0 is also easy to construct because of lengths.
+Now it turns out that it’s well known that AD2 passes through the point directly above D1 , so it is
+merely a matter of length chasing to construct Q0 and subsequently use midpoints.
+
+2.2
+
+USAMO 2008/2
+
+We follow this with another problem, made possible by EFFT (theorem 4). As we shall see, EFFT is
+particularly useful for constructing perpendiculars to the sides of the triangle.
+2.2.1
+
+Problem and Solution
+
+Problem (USAMO 2008/2). Let ABC be an acute, scalene triangle, and let M , N , and P be the midpoints
+of BC, CA, and AB, respectively. Let the perpendicular bisectors of AB and AC intersect ray AM in points
+D and E respectively, and let lines BD and CE intersect in point F , inside of triangle ABC. Prove that
+points A, N , F , and P all lie on one circle.
+Solution. (Evan Chen) Set A = (1, 0, 0), B = (0, 1, 0) and C = (0, 0, 1). Evidently P = ( 12 , 12 , 0), etc. Check
+that the equation of the line AM is y = z.
+
+6
+
+A
+
+P
+
+N
+E
+F
+D
+
+B
+
+C
+
+M
+
+Figure 2: USAMO 2008/2
+We will now compute the coordinates of the point D. Write D = (1 − 2t, t, t) as it lies on the line AM .
+Applying EFFT to DP ⊥ AB,
+
+
+ 
+
+
+1
+1
+t−
+− 2t
+−c2 /2 + t a2 − b2 /2 = 0
+−
+2
+2
+⇒ (3t − 1)(−c2 ) + t(a2 − b2 ) = 0
+⇒ (a2 − b2 − 3c2 )t = −c2
+⇒t=
+
+c2
+3c2 + b2 − a2
+2
+
+b
+Call this value j. Then D = (1 − 2j, j, j). Similarly, E = (1 − 2k, k, k) where k = 3b2 +c
+2 −a2 .
+
+j
+k
+Now the line BD has equation xz = 1−2j
+, whilst the line CE has equation xy = 1−2k
+. So if F = (p, q, r),
+j
+q
+r
+k
+then p + q + r = 1, p = 1−2j , and p = 1−2k .
+2
+
+2
+
+2
+
+2
+
+2
+
+In fact, pr = (3c2 +b2 c−a2 )−2c2 = c2 +bc2 −a2 , and pq = b2 +cb2 −a2 . Evidently p1 = 1 + pr + pq = 1 + c2b+b+c
+2 −a2 =
+
+2
+2S+a2
+= 2 + aS . Let S = c2 + b2 − a2 for convenience.
+S
+0
+
+Dilate F to F = 2F − A = (2p − 1, 2q, 2r). It suffices to show this lies on the circumcircle of triangle
+ABC (since this will send P and N to B and C, respectively), which has equation a2 yz + b2 zx + c2 xy = 0.
+Hence it suffices to show that
+0 = a2 (2q)(2r) + b2 (2r)(2p − 1) + c2 (2p − 1)(2q)
+qr
+1
+r
+q
+⇔ 0 = 4a2
++ (2 + )(2b2 + 2c2 )
+pp
+p
+p
+p
+a2
+c2
+b2
+b2 c2
+⇔ −(2 − (2 + ))(2b2 + 2c2 ) = 4a2 2
+S
+S
+S
+S
+⇔ a2 (2b2 c2 + 2c2 b2 ) = 4a2 b2 c2
+⇔ 4a2 b2 c2 = 4a2 b2 c2
+which is true.
+7
+
+2.2.2
+
+Commentary
+
+EFFT provides a method for constructing the perpendicular bisectors (in actuality this is just corollary 6),
+from which it is not hard at all to intersect lines. The final conclusion involves a circle, so we dilate the
+points such that this circle is simply the circumcircle, which has a very simple form.
+
+2.3
+
+ISL 2001 G1
+
+We now present an application of Conway’s Formula to an ISL G1.
+2.3.1
+
+Problem and Solution
+
+Problem (ISL 2001/G1). Let A1 be the center of the square inscribed in acute triangle ABC with two
+vertices of the square on side BC. Thus one of the two remaining vertices of the square is on side AB and
+the other is on AC. Points B1 , C1 are defined in a similar way for inscribed squares with two vertices on
+sides AC and AB, respectively. Prove that lines AA1 , BB1 , CC1 are concurrent.
+
+A
+
+K
+
+L
+A1
+
+B
+
+M
+
+N
+
+C
+
+A2
+
+M0
+
+N0
+
+Figure 3: ISL 2001 G1
+Solution. (Max Schindler) There is an obvious homothety centered on A that maps the inscribed square
+with center A1 to one with center A2 , which is constructed externally off side BC. B2 and C2 can be defined
+similarly. It then suffices to show that AA2 , BB2 , CC2 concur.
+By Conway’s formula, A2 = (−a2 : SC + S cot 45 : SB + S cot 45) = (−a2 : SC + S : SB + S). It can
+be very easily verified that AA2 , and similarly BB2 and CC2 , all go through the point ((SB + S)(SC + S) :
+(SA + S)(SC + S) : (SB + S)(SA + S)) and are thus concurrent (this point is called the Outer Vecten
+Point).
+2.3.2
+
+Commentary
+
+Homothety (similar to that in problem 2.2) allowed us to create a convenient expression for S by Conway’s
+Formula, at which point Conway’s Formula cleared the problem.
+
+8
+
+2.4
+
+2012 WOOT PO4/7
+
+We now exhibit yet another problem in which perpendicular bisectors can be constructed via EFFT, which
+are then used to determine a circumcenter. The method was used by v Enhance during the actual test and
+received 7/.7. See [6].
+2.4.1
+
+Problem and Solution
+
+Problem (2012 WOOT PO4/7). Let ω be the circumcircle of acute triangle ABC. The tangents to ω at B
+and C intersect at P , and AP and BC intersect at D. Points E, F are on AC and AB, respectively, such
+that DE k BA and DF k CA.
+(a) Prove that points F , B, C, and E are concyclic.
+(b) Let A1 denote the circumcenter of cyclic quadrilateral F BCE. Points B1 and C1 are defined similarly.
+Prove that AA1 , BB1 , and CC1 are concurrent.
+
+A
+
+F
+E
+
+D
+
+B
+
+C
+
+P
+Figure 4: WOOT Practice Olympiad 4, Problem 7
+2
+2
+2
+Solution.
+Chen)
+point
+ (Evan
+ Let A = (1, 0, 0), etc. Since thesymmedian
+ has K =(a 2: b : c2 ), we
+ find that
+2
+2
+2
+2
+b
+c
+b
+c
+c
+b
+D = 0, b2 +c2 , b2 +c2 . Then, it’s obvious that E = b2 +c2 , 0, b2 +c2 and F = b2 +c2 , b2 +c2 , 0 . In that
+
+case, notice that since the general form of a circle is a2 yz + b2 zx + c2 xy + (ux + vy + wz)(x + y + z) = 0,
+the circle passing through
+ω : a2 yz + b2 zx + c2 xy −
+
+b2 c2
+· x(x + y + z) = 0
+b2 + c2
+
+passes through BFEC, so it’s cyclic.
+
+
+1 c2
+1
+1 b2
+=
+,
++
+,
+0
+. Then A1 M1 ⊥ AB, applying
+Suppose A1 = (x0 , y0 , z0 ). Let M1 = B+F
+2
+2
+2
+2
+2
+2 b +c
+2
+2 b +c
+EFFT and rearranging yields
+a2 − b2
+c2
+x0 − y0 +
+z
+=
+0
+c2
+b2 + c 2
+
+9
+
+Doing a similar thing, we find that A1 is given by
+x0 + y0 + z0 = 1
+c2
+a2 − b2
+z
+=
+0
+c2
+b2 + c2
+2
+2
+a −c
+b2
+x0 +
+y0 − z0 = 2
+2
+b
+b + c2
+x0 − y0 +
+
+2
+
+2
+
+2
+
++b −c
+Then by Cramer’s rule, we can bash and get yz00 = aa2 −b
+2 +c2 . Then it’s easy to get the desired conclusion
+by Ceva.
+
+2.4.2
+
+Commentary
+
+Once we realize that AD is a symmedian, the symmedian point immediately gives us a nice form for D,
+and hence E and F by similar triangles. The condition that F BCE is cyclic is made easier since two of
+the points are vertices of the triangle, making both v and w vanish; hence the end computation is no longer
+hard.
+For the second part, EFFT allows us to use perpendicular bisectors to construct the circumcenter; we
+can then compute the ratio that the cevian AA1 divides BC into. Ceva’s Theorem guarantees that these
+will cancel cyclically, so we just compute the proper determinants, knowing that they will cancel cyclically
+at the end.
+The part about Ceva is worth remembering: any time you are trying to prove three cevians are concurrent,
+barycentric coordinates may provide an easy way to compute the ratios in Ceva’s Theorem.
+
+2.5
+
+ISL 2005 G5
+
+We now present a solution to an ISL problem involving Strong EFFT (theorem 1.1). This problem was
+proposed by Romania, and is relatively difficult to approach synthetically.
+2.5.1
+
+Problem and Solution
+
+Problem (ISL 2005/G5). Let 4ABC be an acute-angled triangle with AB 6= AC. Let H be the orthocenter
+of triangle ABC, and let M be the midpoint of the side BC. Let D be a point on the side AB and E a point
+on the side AC such that AE = AD and the points D, H, E are on the same line. Prove that the line HM
+is perpendicular to the common chord of the circumscribed circles of triangle 4ABC and triangle 4ADE.
+Solution. (Max Schindler) We use barycentric co-ordinates.
+Let the length AD = AE = `.
+Then, D = (c − ` : ` : 0), E = (b − ` : 0 : `), and, using Conway’s Notation, H =
+Since they are collinear,
+
+
+c−`
+det  b − `
+1
+SA
+
+−`(c − `)
+⇒
+−`
+SB
+
+`
+0
+1
+SB
+
+
+0
+` =0
+
+1
+SC
+
+
+
+
+b−`
+`
+−
+=0
+SC
+SA
+
+
+cSC − bSB
+1
+1
+1
+⇒
+=`
++
++
+SB SC
+SA
+SB
+SC
+10
+
+
+
+1
+1
+1
+SA : SB : SC
+
+
+
+.
+
+A
+
+F 90◦
+E
+H
+
+D
+
+B
+
+C
+
+M
+
+Figure 5: ISL 2005 G5
+(cSC −bSB )
+.
+Thus, ` = SB SSCA+S
+A SC +SA SB
+2
+
+2
+
+2
+
+Substituting in SA = b +c2 −a and similar, remembering that SB SC + SA SC + SA SB = S 2 gives:
+`=
+
+(b2 + c2 − a2 )[c(a2 + b2 − c2 ) + b(a2 − b2 + c2 )]
+(a + b + c)(a + b − c)(b + c − a)(c + b − a)
+
+It can easily be seen that c = −b is a root of the bracketed part of the numerator; factoring it out leaves
+a2 + 2bc − b2 − c2 = a2 − (b − c)2 = (a − b + c)(a + b − c).
+Thus,
+`=
+
+(b2 + c2 − a2 )(b + c)(a − b + c)(a + b − c)
+(b2 + c2 − a2 )(b + c)
+⇒ `=
+(a + b + c)(a + b − c)(b + c − a)(c + b − a)
+(a + b + c)(b + c − a)
+
+Meanwhile, the circumcircle of ADE has equation given by −a2 yz−b2 zx−c2 xy+(x+y+z)(ux+vy+wz) =
+0, as usual, so upon substituting the points A, D and E we find that
+
+u=0
+2
+
+−c (c − `)(`) + c ((c − `)u + `v) = 0
+−b2 (b − `)(`) + b ((b − `)u + `w) = 0
+Conveniently enough, the first equation immediately gives u = 0, and we can easily solve for v and w to
+get v = c(c − `) and w = b(b − `).
+11
+
+Now we need the common chord of the two circles
+
+−a2 yz − b2 zx − c2 xy = 0
+−a2 yz − b2 zx − c2 xy + (x + y + z)(c(c − `)y + b(b − `)z) = 0
+
+But this is easy: subtract the two equations. We find that the common chord has equation
+c(c − `)y + b(b − `)z = 0
+Now, we have everything we need to finish this problem off.
+Consider two points on this chord, A = (1, 0, 0) and P = (0 : b(b − `) : −c(c − `)).
+−→
+Then, the (scaled) displacement vector P A is (b(b − `) − c(c − `) : −b(b − `) : c(c − `)).
+
+−−→ ~ ~ ~ ~
+~
+C
+= 1, 12 , 21
+Let the circumcenter be the null vector. Then, the displacement vector M H is A+
+B+C− B+
+2
+which can be scaled as (2 : 1 : 1)
+Since P A has coefficient-sum 0, we can apply Strong EFFT:
+M H ⊥ P A ⇔ a2 [c(c − `) − b(b − `)] + b2 [c(c − `) + b(b − `)] + c2 [−b(b − `) − c(c − `)] = 0
+which becomes
+b(a2 − b2 + c2 )(b − `) = c(a2 + b2 − c2 )(c − `)
+But we have
+b−`=
+
+b(a + b + c)(b + c − a) − (b2 + c2 − a2 )(b + c)
+c(a2 + b2 − c2 )
+=
+(a + b + c)(b + c − a)
+(a + b + c)(b + c − a)
+
+Similarly,
+c−`=
+
+b(a2 − b2 + c2 )
+(a + b + c)(b + c − a)
+
+Thus,
+b(a2 − b2 + c2 )(b − `) = b(a2 − b2 + c2 )
+
+c(a2 + b2 − c2 )
+(a + b + c)(b + c − a)
+
+= c(a2 + b2 − c2 )(c − `)
+⇒ MH ⊥ PA
+
+2.5.2
+
+Commentary
+
+While we eventually did have to use the somewhat messy form of H, Strong EFFT permits us to avoid doing
+so when finding the condition for perpendicular chords. The other useful insight was computing the radical
+axis by simply subtracting the two equations: keep this in mind!
+By the way, it is true in general (as the diagram implies) that M , H and F are collinear. To my best
+knowledge, the easiest way to prove this is to first prove the original problem.
+
+12
+
+2.6
+
+USA TSTST 2011/4
+
+The solution to this problem involves a synthetic observation, followed by an application of Vieta. Normally,
+solving for P involves an incredibly painful quadratic. However, by first computing the other intersection,
+we can actually use Vieta to deduce the coordinate of the point we care about.
+2.6.1
+
+Problem and Solution
+
+Problem (TSTST Problem 4). Acute triangle ABC is inscribed in circle ω. Let H and O denote its
+orthocenter and circumcenter, respectively. Let M and N be the midpoints of sides AB and AC, respectively.
+Rays M H and N H meet ω at P and Q, respectively. Lines M N and P Q meet at R. Prove that OA ⊥ RA.
+
+A
+
+R
+
+M
+
+N
+H
+
+O
+
+Q
+
+B
+
+C
+
+P
+
+Figure 6: 2011 TSTST, Problem 4
+Solution. (Evan Chen) We use barycentric coordinates. Set A = (1, 0, 0), B = (0, 1, 0) and C = (0, 0, 1). Let
+TA = S1A in Conway’s Notation, so that H = (TA : TB : TC ).
+~ = 0, and applying
+First we will compute the point R0 = (x : y : z) on M N with R0 A ⊥ OA. Setting O
+2
+2
+Strong EFFT, we find that the point satisfies equations c y + b z = 0 (per EFFT) and x = y + z (per
+midline). Thus, we may write R0 = (b2 − c2 : b2 : −c2 ) .
+Next, we will compute the coordinates of P . Check that we have the line
+HM : x − y +
+
+TB − TA
+z=0
+TC
+
+Furthermore, the circumcircle has equation z[a2 y + b2 x] + c2 xy = 0. WLOG, homogenize so that z = −TC ;
+then the first equation becomes y = x + TA − TB . Substituting in the second equation, this becomes simply
+c2 x(x + (TA − TB )) + a2 (−TC )(x + TA − TB ) + b2 (−TC )(x) = 0
+
+13
+
+Expanding, and collecting coefficients of x, this reduces to
+c2 x2 + [c2 (TA − TB ) − a2 TC − b2 TC ]x + a2 (−TC )(TA − TB ) = 0
+Now here’s the trick: it’s well known that the reflection of H across M lies on the circle. So the other
+~0 =A
+~ +B
+~ −H
+~ (since H 0 AHB is a parallelogram). We can thus quickly deduce
+solution to this equation is H
+0
+that, in barycentric coordinates, H = (TB + TC : TA + TC : −TC ). So by Vieta’s Formulas, the x-coordinate
+we seek is just
+x=−
+
+a2 + b2 − c2
+c2 (TA − TB ) − a2 TC − b2 TC
+−
+(T
++
+T
+)
+=
+TC − TA
+B
+C
+c2
+c2
+
+Hence,
+y=
+
+a2 + b2 − c2
+TC − TB
+c2
+
+So finally, we obtain
+ 2
+
+a + b2 − c2
+a2 + b2 − c2
+TC − TA :
+TC − TB : −TC
+P =
+c2
+c2
+Similarly,
+ 2
+
+a + c 2 − b2
+a2 + c2 − b2
+Q=
+TB − TA : −TB :
+TB − TC
+b2
+b2
+It remains to show that P , Q and R0 are collinear. This occurs if and only if
+ a2 +b2 −c2
+0 = det 
+
+TC − TA
+c2
+a2 +c2 −b2
+TB − TA
+c2
+2
+2
+
+a2 +b2 −c2
+TC − TB
+c2
+
+−TB
+b2
+
+b −c
+
+
+−TC
+a2 +c2 −b2
+TB − TC 
+b2
+−c2
+
+Subtracting the second and third column from the first, this is equivalent to
+
+
+TC + TB − TA
+0 = det  TC + TB − TA
+0
+
+a2 +b2 −c2
+TC − TB
+c2
+
+−TB
+b2
+
+
+−TC
+2
+a +c −b
+TB − TC 
+b2
+−c2
+2
+
+2
+
+Expanding the determinant, and factoring out the term TC + TB − TA , we see that it suffices to show
+that
+
+ 2
+
+ 2
+
+a + b2 − c 2
+a + c2 − b2
+2
+2
+2
+2
+0 = c TB − b TC − −(c )
+TC − TB + (b )
+TB − TC
+c2
+b2
+Expanding, this is just
+−(a2 − b2 + c2 )TB + (a2 + b2 − c2 )TC
+But TB = S1B = a2 −b22 +c2 and TC = a2 +b22 −c2 . Since −2 + 2 = 0, we conclude that the three points are
+collinear.
+2.6.2
+
+Commentary
+
+The application of Vieta played a critical role in this problem. BTW, during the actual TSTST, only one
+person successfully bashed this problem (via complex numbers). Had I known about this technique at the
+time, I think I could have gotten a positive score on Day 2.
+14
+
+2.7
+
+USA TSTST 2011/2
+
+Finally, to complete the section, we present an example of a bash which is possibly not feasible by hand.
+Incidentally, this is the only problem in the section that was not done by hand. Max Schindler claims this
+is doable if you have the computational fortitude.
+The problem has been inverted around the point A, and the constant c has been replaced by 1/c.
+2.7.1
+
+Problem and Solution
+
+Problem (TSTST Problem 2, Inverted). Let AP Q be an obtuse triangle with ∠A > 90◦ . The tangents at
+P and Q to the circumcircle of AP Q meet at the point B. Points X and Y are selected on segments P B
+and QS, respectively, such that P X = c · QA, and QY = c · P A. Then, P A and QA are extended through
+A to R and S, so that AR = AS = c · P A·QA
+P Q . O is the point such that AROS is a parallelogram. Given
+that AXOY is cyclic, prove that ∠P XA = ∠QY A.
+
+Center of APQ
+
+Q
+
+P
+
+A
+S
+R
+
+X
+
+O
+
+Y
+B
+
+Figure 7: 2011 TSTST, Problem 2
+Solution. The reference triangle is AP Q, with A = (1, 0, 0), P = (0, 1, 0) and Q = (0, 0, 1). To avoid
+confusion, let a = P Q, q = AP and p = AQ.
+It is not hard at all to compute R and S. Since AR = AS = cpq
+a , and A = (1, 0, 0), P = (0, 1, 0) and
+Q = (0, 0, 1), a quick application of ratios of lengths yields
+
+
+cq
+−cq
+R=
++ 1,
+,0
+a
+a
+and
+
+
+S=
+
+cp
+−cp
++ 1, 0,
+a
+a
+15
+
+
+
+Next we want to compute X = (x, y, z). Since X lies on the tangent P B, it satisfies 0 = b2 y + c2 z
+(see the earlier problem, 2.6). Letting x + y + z = 1, and invoking the distance formula, we find that
+2
+(cq)2 = a2 (y − 1)z + b2 zx
+ + c x(y − 1). Solving
+ this system by writing everything in z, and taking the
+2
+
+2
+
+2
+
+−a c+ap+cq
+negative root, gives X = ac
+, − cq
+p ,
+ap
+ap .
+
+
+
+2
+2
+cp2 a (−c)+aq+cp
+cq
+cp
+cq
+. We then obtain that O = 1 + cp
+Similarly, Y = ac
+q , − aq ,
+aq
+a + a ,− a ,− a
+
+We’d like to find criteria for when ∠P XA = ∠QY A. Noting the equal angles ∠BP Q = ∠BQP , we
+extend XA and Y A through A to points X 0 and Y 0 respectively. Then X 0 = (0 : pa + q 2 c − a2 c : −q 2 c) and
+Y 0 = (0 : −p2 c : qa + p2 c − a2 c) (aren’t cevians wonderful?). In that case, we obtain the lengths
+P X0 =
+
+−q 2 c
+−q 2 c
+a
+=
+pa − a2 c
+p − ac
+
+and similarly,
+QY 0 =
+
+−p2 c
+q − ac
+
+Now ∠P XA = ∠QY A if and only if the triangles XP X 0 and Y QY 0 are similar! Recall that P X = cq
+and QY = cp; by SAS, this occurs if and only if
+−q 2 c
+p−ac
+
+cq
+
+=
+
+−p2 c
+q−ac
+
+cp
+
+⇔ q(q − ac) = p(p − ac) ⇔ c =
+
+p+q
+a
+
+So we just need to show that if AROS is cyclic, then c = p+q
+a .
+Unfortunately, this is where the calculations get heavy.2
+Putting A, X, Y into the circle formula and solving for u, v, w yields
+u=0
+v = (c2 pq 2 (−a2 c + aq + cp(p + q)))/(−a3 c2 + a2 c(p + q) − c(p3 + q 3 ) + a(−pq + c2 (p2 + q 2 )))
+w = (c2 p2 q(−a2 c + ap + cq(p + q)))/(−a3 c2 + a2 c(p + q) − c(p3 + q 3 ) + a(−pq + c2 (p2 + q 2 )))
+Substituting the point O into the equation and simplifying, we get that
+−(cpq(a5 c3 −2a4 c2 (p+q)−c2 (p+q)3 (p2 −pq+q 2 )+a3 c((1−2c2 )p2 +3pq+(1−2c2 )q 2 )+ac(p+q)2 ((−1+c2 )p2 −c2 pq+(−1+c2 )q 2 )+a2 (p+q)(−pq+3c2 (p2 +q 2 ))))
+=0
+(a2 (a3 c2 −a2 c(p+q)+c(p3 +q 3 )−a(−pq+c2 (p2 +q 2 ))))
+
+Clearing the denominator, this is just
+0 = − cpq(a5 c3 − 2a4 c2 (p + q)
+− c2 (p + q)3 (p2 − pq + q 2 )
++ a3 c((1 − 2c2 )p2 + 3pq + (1 − 2c2 )q 2 )
++ ac(p + q)2 ((−1 + c2 )p2 − c2 pq + (−1 + c2 )q 2 )
++ a2 (p + q)(−pq + 3c2 (p2 + q 2 )))
+Noting that c = 0 and c = p+q
+a are solutions (the latter “by inspection”) we can divide this out and
+collect terms in c to get
+
+
+c2 −a4 − p4 − p3 q − pq 3 − q 4 + 2a2 p2 + q 2 + c a3 (p + q) − a p3 + p2 q + pq 2 + q 3 − a2 pq = 0
+2 I wonder if there’s any synthetic interpretation that would lead directly to this expression for c. That would be nice too.
+Tell me if you find one!
+
+16
+
+We need to show that there are no positive reals c satisfying this. A quick glance at the constant term
+tells us that we should probably use the discriminant; our only hope is that there are no real roots at all.
+Computing, we get
+∆ =a6 p2 − 2a4 p4 + a2 p6 − 2a6 pq + 4a4 p3 q − 2a2 p5 q
++ a6 q 2 − 4a4 p2 q 2 − a2 p4 q 2 + 4a4 pq 3 + 4a2 p3 q 3
+− 2a4 q 4 − a2 p2 q 4 − 2a2 pq 5 + a2 q 6
+which factors as
+∆ = −a2 (−a + p + q)(p − q)2 (a + p − q)(a − p + q)(a + p + q)
+Since a, p and q are the sides of a triangle, this is always negative.
+
+2.7.2
+
+Commentary
+
+The calculations are relatively easy up until incorporating the condition that AROS is cyclic. Despite the
+fact that the “cyclic” condition was fairly brutal, it illustrates a few points worth making: (i) similar triangles
+are your friends in barycentrics too, because they can yield equal angles, (ii) inversion can provide a way to
+eliminate awkward circle conditions, (iii) unusual side length conditions related to the sides of the triangles
+is not a problem, and (iv) cyclic quadrilaterals suck.
+Please let us know if you find a cyclic criteria which completes a reasonable solution! We’d like to have
+a human to attribute the solution to...
+
+17
+
+3
+
+Problems
+There is light at the end of the tunnel, but it is moving away at speed c.
+
+Here, we provide some problems for the reader to attempt. Some are easier than others. Infinity [1]
+has a longer list than is included here; see http://www.bmoc.maths.org/home/areals.pdf for the relevant
+excerpt.
+For practice “in real life”, i.e. determining when barycentric coordinates are feasible for a problem (here,
+they are), you can often simply take an arbitrary geometry problem that begins with the words “triangle
+ABC”, and see if it’s possible to get a barycentric solution. Some will, of course, take much longer than
+others, but a good portion will have a reasonable solution.
+
+3.1
+
+Problems
+
+1. Prove Stewart’s Theorem.
+2. Prove Routh’s Theorem.
+3. (USA TST 2003/2) Let ABC be a triangle and let P be a point in its interior. Lines P A, P B, P C
+intersect sides BC, CA, AB at D, E, F , respectively. Prove that
+[P AF ] + [P BD] + [P CE] =
+
+1
+[ABC]
+2
+
+if and only if P lies on at least one of the medians of triangle ABC. (Here [XY Z] denotes the area of
+triangle XY Z.)
+4. (Mongolia TST 2000/6) In a triangle ABC, the angle bisector at A,B,C meet the opposite sides at
+A1 ,B1 ,C1 , respectively. Prove that if the quadrilateral BA1 B1 C1 is cyclic, then
+AC
+AB
+BC
+=
++
+AB + BC
+AC + BC
+BA + AC
+5. (ISL 2005/G1) Given a triangle ABC satisfying AC + BC = 3 · AB. The incircle of triangle ABC
+has center I and touches the sides BC and CA at the points D and E, respectively. Let K and L be
+the reflections of the points D and E with respect to I. Prove that the points A, B, K, L lie on one
+circle.
+6. (APMO 2005/5) In a triangle ABC, points M and N are on sides AB and AC, respectively, such
+that M B = BC = CN . Let R and r denote the circumradius and the inradius of the triangle ABC,
+respectively. Express the ratio M N/BC in terms of R and r.
+7. (ISL 2008/G4) In an acute triangle ABC segments BE and CF are altitudes. Two circles passing
+through the point A and F and tangent to the line BC at the points P and Q so that B lies between
+C and Q. Prove that lines P E and QF intersect on the circumcircle of triangle AEF .
+8. (ISL 2001/G6) Let ABC be a triangle and P an exterior point in the plane of the triangle. Suppose
+the lines AP , BP , CP meet the sides BC, CA, AB (or extensions thereof) in D, E, F , respectively.
+Suppose further that the areas of triangles P BD, P CE, P AF are all equal. Prove that each of these
+areas is equal to the area of triangle ABC itself.
+9. (IMO 2007/2) Consider five points A, B, C, D and E such that ABCD is a parallelogram and BCED
+is a cyclic quadrilateral. Let ` be a line passing through A. Suppose that ` intersects the interior of
+the segment DC at F and intersects line BC at G. Suppose also that EF = EG = EC. Prove that `
+is the bisector of angle DAB.
+18
+
+3.2
+
+Hints
+
+Hints have been obfuscated by ROT13.
+1. ABG UNEQ
+2. FGENVTUGSBEJNEQ
+3. HFR NERN SBEZ
+4. PVEPYR SBEZ FBYIR HIJ
+5. PVEPF GURA J VF ZVAHF N O
+6. QVFG SNPGBE GURA TRB VQ
+7. CBJRE CBVAG FUBJF NRCD PLPYVP GURA NATYR PUNFR
+8. PNERSHY FVTARQ NERNF
+9. ERS OPQ... SVAQ S T FLF RDA RYVZ P M SNPGBE
+
+19
+
+4
+
+Additional Problems from MOP 2012
+If our solution has at table of contents, how should we number the pages?
+– Evan Chen, MOP 2012
+
+Here’s a more recent collection of geometry problems solvable using barycentric coordinates. These are
+all problems which appeared at MOP 2012,3 along with an IMO question from that year.
+These are in very roughly order, based both on the amount of computation and the difficulty of setup
+1. (IMO 2012) Given triangle ABC the point J is the center of the excircle opposite the vertex A. This
+excircle is tangent to the side BC at M , and to the lines AB and AC at K and L, respectively. The
+lines LM and BJ meet at F , and the lines KM and CJ meet at G. Let S be the point of intersection
+of the lines AF and BC, and let T be the point of intersection of the lines AG and BC. Prove that M
+is the midpoint of ST.
+2. (USA TST 2012) In acute triangle ABC, ∠A < ∠B and ∠A < ∠C. Let P be a variable point on
+side BC. Points D and E lie on sides AB and AC, respectively, such that BP = P D and CP = P E.
+Prove that if P moves along side BC, the circumcircle of triangle ADE passes through a fixed point
+other than A.
+3. (ELMO4 2012/5) Let ABC be an acute triangle with AB < AC, and let D and E be points on side
+BC such that BD = CE and D lies between B and E. Suppose there exists a point P inside ABC
+such that P D k AE and ∠P AB = ∠EAC. Prove that ∠P BA = ∠P CA.
+4. (Saudi Arabia TST 2012) Let ABCD be a convex quadrilateral such that AB = AC = BD. The lines
+AC and BD meet at point O, the circles ABC and ADO meet again at point P , and the lines AP
+and BC meet at point Q. Show that ∠COQ = ∠DOQ.
+5. (ISL 2011/G2) Let A1 A2 A3 A4 be a non-cyclic quadrilateral. For 1 ≤ i ≤ 4, let Oi and ri be the
+circumcenter and the circumradius of triangle Ai+1 Ai+2 Ai+3 (where Ai+4 = Ai ). Prove that
+1
+1
+1
+1
++
++
++
+=0
+O1 A21 − r12
+O2 A22 − r22
+O3 A23 − r32
+O4 A24 − r42
+6. (USA TSTST 2012) Triangle ABC is inscribed in circle Ω. The interior angle bisector of angle A
+intersects side BC and Ω at D and L (other than A), respectively. Let M be the midpoint of side
+BC. The circumcircle of triangle ADM intersects sides AB and AC again at Q and P (other than A),
+respectively. Let N be the midpoint of segment P Q, and let H be the foot of the perpendicular from
+L to line N D. Prove that line M L is tangent to the circumcircle of triangle HM N .
+7. (ISL 2011/G4) Acute triangle ABC is inscribed in circle Ω. Let B0 , C0 , D lie on sides AC, AB, BC,
+respectively, such that AB0 = CB0 , AC0 = BC0 , and AD ⊥ BC. Let G denote the centroid of triangle
+ABC, and let ω be a circle through B0 and C0 that is tangent to Ω at a point X other than A. Prove
+that D, G, X are collinear.
+8. Let ABC be a triangle with circumcenter O and let the angle bisector of ∠BAC intersect BC at D.
+The point M is such that M C ⊥ BC and M A ⊥ AD. Lines BM and OA intersect at the point P .
+Show that the circle centered at P and passing through A is tangent to segment BC.
+9. (USA TSTST 2012) Let ABCD be a quadrilateral with AC = BD. Diagonals AC and BD meet at
+P . Let ω1 and O1 denote the circumcircle and circumcenter of triangle ABP . Let ω2 and O2 denote
+the circumcircle and circumcenter of triangle CDP . Segment BC meets ω1 and ω2 again at S and T
+(other than B and C), respectively. Let M and N be the midpoints of minor arcs SP (not including
+B) and T P (not including C). Prove that M N k O1 O2 .
+3 MOP, occasionally called MOSP, stands for Mathematical Olympiad Program; it is the USA training program for the IMO.
+4 This year’s test was called “Every Little Mistake ⇒ 0”.
+
+20
+
+5
+
+References
+
+[1] Hojoo Lee, Tom Lovering, and Cosmin Pohoata. Infinity.
+Relevant excerpt at http://www.bmoc.maths.org/home/areals.pdf.
+[2] Zachary Abel. “Barycentric Coordinates.”
+http://zacharyabel.com/papers/Barycentric_A07.pdf
+[3] Eric W. Weisstein. “Barycentric Coordinates.” From MathWorld–A Wolfram Web Resource. http:
+//mathworld.wolfram.com/BarycentricCoordinates.html
+[4] Francisco J. Garcı́a Capitán. “Coordenadas Baricéntricas”.
+http://www.aloj.us.es/rbarroso/trianguloscabri/sol/sol202garcap/cb.pdf
+[5] Paul Yiu. “The use of homogenous barycentric coordinates in plane euclidean geometry”.
+http://math.fau.edu/Yiu/barycentricpaper.pdf
+[6] AoPS. Practice Olympiad 4. WOOT 2011-2012.
+[7] AoPS Forum.
+http://www.artofproblemsolving.com/Forum/viewtopic.php?p=2162335#p2162335
+[8] AoPS Forum.
+http://www.artofproblemsolving.com/Forum/viewtopic.php?f=46&t=399047&p=2225645
+[9] Christopher J. Bradley. Challenges in Geometry: For Mathematical Olympians Past and Present.
+
+21
+
+

@@ -1,0 +1,454 @@
+The Chinese Remainder Theorem
+EVAN CHEN《陳誼廷》
+3 February 2015
+
+The Chinese Remainder Theorem is a “theorem” only in that it is useful and requires
+proof. When you ask a capable 15-year-old why an arithmetic progression with common
+difference 7 must contain multiples of 3, they will often say exactly the right thing.
+— Dominic Yeo, Eventually Almost Everywhere
+
+This article, aimed at olympiad students, focuses on the application of the Chinese
+Remainder Theorem in mathematical olympiads.
+
+§1 Warm-Up
+Problem 1.1 (USAMO 2008/1). Prove that for each positive integer n, there are pairwise
+relatively prime integers k0 , . . . , kn , all strictly greater than 1, such that k0 k1 . . . kn − 1
+is the product of two consecutive integers.
+
+§2 The Chinese Remainder Theorem
+First let me write down what the formal statement of the Chinese Remainder Theorem.
+Theorem 2.1 (Chinese Remainder Theorem)
+Let m1 , . . . , mk be pairwise relatively prime positive integers, and let
+M = m1 . . . mk .
+Then for every k-tuple (x1 , . . . , xk ) of integers, there is exactly one residue class x
+(mod M ) such that
+x ≡ x1
+
+(mod m1 )
+
+x ≡ x2
+..
+.
+
+(mod m2 )
+
+x ≡ xk
+
+(mod mk ).
+
+As explained in the opening quote, the theorem above has no real substance. It really
+is just formalizing a piece of intuition1 that you could easily have picked up on your
+own from doing enough problems. But that’s not to say the theorem is useless – it is
+useful because the intuition behind it is useful. To see how versatile this notion is, we
+can phrase the theorem in the following ways.
+1
+
+Muirhead and linearity of expectation are more examples of this kind of flavor.
+
+1
+
+Evan Chen《陳誼廷》 — 3 February 2015
+
+The Chinese Remainder Theorem
+
+Chinese Remainder Theorem A (Construction)
+Given the xi ’s and mi ’s, there exists an x which simultaneously satisfies each
+x ≡ xi
+
+(mod mi )
+
+for all i.
+
+In this perspective, we are given the mi and want to build up an x. Note that the
+resulting x is probably huge, just because the number M is large and the answer is
+unique modulo M . Moreover there isn’t an especially easy way to write down the value
+of x. In other words, this perspective talks about things we can’t actually see. The
+pessimist might be disappointed now, but the optimist is overjoyed — this perspective
+lets us access otherwise hard-to-reach numbers with properties we want.
+Somewhat related is the following.
+Chinese Remainder Theorem B (Lifting)
+If x ≡ k (mod mi ) for every i, then we actually have x ≡ k (mod M ).
+Note again that M is huge. Surprisingly, this is a good way to get size results: since M
+is often large, x is often large too.
+Finally, to talk about things not-huge, we have the following.
+Chinese Remainder Theorem C (Destruction)
+To understand x (mod M ), we only need to understand x (mod mi ) for every i. In
+particular, we can reduce any statement modulo M to a statement modulo each of
+its prime powers.
+This means that given an M we can reduce the problem.
+(And before anyone asks, I made these names up.)
+
+§3 Example Problems
+As with any “vacuous” theorem, it’s important that we internalize these ideas. The
+Chinese Remainder Theorem is a natural, intuitive concept, and therefore it is used most
+effectively when we don’t think explicitly about having to use it.
+Let’s look at some examples of how we can apply each of these perspectives. The key
+is that while the Chinese Remainder Theorem is used in all the problems, it is not really
+the key step to the solution; rather, it serves as a way for us to see what to do. It really
+ought to be called a “lemma”, but blame history. . .
+
+§3.1 Construction
+Let’s begin by looking at the warm-up problem.
+Example 3.1 (USAMO 2008/1)
+Prove that for each positive integer n, there are pairwise relatively prime integers
+k0 , . . . , kn , all strictly greater than 1, such that k0 k1 . . . kn − 1 is the product of two
+consecutive integers.
+
+2
+
+Evan Chen《陳誼廷》 — 3 February 2015
+
+The Chinese Remainder Theorem
+
+Proof. Essentially we are being asked to show that t(t + 1) + 1 = k0 . . . kn can have
+arbitrarily many prime factors. Indeed, it suffices to prove that for any n there exists a t
+such that P (t) = t2 + t + 1 has at least n + 1 prime divisors.
+Now how do we go about getting that many prime divisors? We want to construct a t
+such that P (t) ≡ 0 (mod pi ) for some n + 1 primes p0 , . . . , pn . But for this, we just have
+to construct a ti such that P (ti ) ≡ 0 (mod pi ) for every i. Once that’s done, the Chinese
+Remainder Theorem enables us to select at t such that t ≡ ti (mod pi ) for all i, meaning
+P (t) ≡ P (ti ) ≡ 0 (mod pi ).
+In other words, the problem just reduces to proving that there are infinitely many
+primes dividing some number of the form t2 + t + 1. So, we’ve managed to eliminate
+almost all the structure of the problem before using the Chinese Remainder Theorem,
+leading us to this heart of the problem. And to prove this, we simply have to mimic
+Euclid’s classical proof of the infinitude of primes. Assume for contradiction that P is a
+full set of primes. Take the product N of all primes in P and look at N 2 + N + 1. It
+cannot be divisible by any prime in P, contradiction.
+Let’s see an even more extreme example.
+Example 3.2 (TSTST 2012/3)
+Let N be the set of positive integers. Let f : N → N be a function satisfying the
+following two conditions:
+(a) f (m) and f (n) are relatively prime whenever m and n are relatively prime.
+(b) n ≤ f (n) ≤ n + 2012 for all n.
+Prove that for any natural number n and any prime p, if p divides f (n) then p
+divides n.
+Proof. Fix n and p, and assume for contradiction p - n.
+The idea is that I will construct large integers N such that f (N ) = N . Here is
+how: pick 2012 · 2013 distinct primes qi,j > n + p + 2013 for every i = 1, . . . , 2012 and
+j = 0, . . . , 2012, and use it to fill in the following table:
+N +1 N +2
+M
+q0,1
+q0,2
+M +1
+q1,1
+q1,2
+..
+..
+..
+.
+.
+.
+M + 2012 q2012,1 q2012,2
+
+. . . N + 2012
+...
+q0,2012
+...
+q1,2012 .
+..
+..
+.
+.
+...
+
+q2012,2012
+
+By the Chinese Remainder Theorem, we can construct N such that N + 1 ≡ 0 (mod qi,1 )
+for every i, and similarly for N + 2, and so on. Moreover, we can also tack on the
+condition N ≡ 0 (mod p) and N ≡ 1 (mod n). Notice that N cannot be divisible by any
+of the qi,j ’s, since the qi,j ’s are greater than 2012.
+After we’ve chosen N , we can pick M such that M ≡ 0 (mod q0,j ) for every j, and
+similarly M + 1 ≡ 0 (mod q1,j ), et cetera. Moreover, we can tack on the condition M ≡ 1
+(mod N ).
+What does this do? We claim that f (N ) = N now. Indeed, since M ≡ 1 (mod N )
+we have gcd(M, N ) = 1. So f (M ) and f (N ) are relatively prime by the condition. But
+look at the table! The table tells us that f (M ) must have a common factor with each of
+N + 1, . . . , N + 2012. So the only possibility is that f (N ) = N .
+3
+
+Evan Chen《陳誼廷》 — 3 February 2015
+
+The Chinese Remainder Theorem
+
+Now we’re basically done. Since N ≡ 1 (mod n), we have gcd(N, n) = 1 and hence
+1 = gcd(f (N ), f (n)) = gcd(N, f (n)). But p | N and p | f (n), contradiction.
+Notice how grotesquely large the numbers involved in the proof are. The size of M
+is on the order of
+Y
+2
+qi,j · N > 20132013 .
+i,j
+
+Playing with numbers that big seems obscene, but it solves the problem. That’s the
+power of the Chinese Remainder Theorem; we can access large numbers we couldn’t
+access otherwise. All you have to do is let go of your sense of decency! In the words of
+Paul Zeitz: good, obedient boys and girls solve fewer problems than naughty
+and mischievous ones.
+
+§3.2 Lifting
+Remember the remark about size? Let’s see how it applies here.
+Example 3.3 (Harder than USAMO 2014/6)
+Prove that there is a constant c > 0 with the following property: If a, b, n are
+positive integers such that gcd(a + i, b + j) > 1 for all i, j ∈ {0, 1, . . . n}, then
+min{a, b} > (cn)n .
+What’s interesting about this problem? The hypothesis involves nothing but divisibilities.
+The conclusion involves nothing but size. How are these two things related? In general,
+we just don’t know much about multiplicative structure, and that leads us to suspect
+that the solution involves the Chinese Remainder Theorem in its Lifting form: if we can
+show, for example, a + i ≡ 0 (mod something really big), that would do the trick. We
+can see this running in the solution sketch below.
+Sketch of Proof. The idea is as follows. We know for each 0 ≤ i, j ≤ n, some prime divides
+both a + i and b + j. Let’s write down all the information we have in an (N + 1) × (N + 1)
+table in the obvious manner. Our table might look something like:
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+2
+.
+2
+.
+2
+.
+2
+.
+2
+.
+2
+
+.
+5
+3
+.
+.
+3
+5
+.
+3
+.
+.
+
+2
+7
+2
+.
+2
+.
+2
+.
+2
+.
+2
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+2
+.
+2
+.
+2
+3
+2
+.
+2
+.
+2
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+2 . 2 .
+5 . . 7
+2 3 2 .
+. . . .
+2 . 2 .
+. 3 . .
+2 . 2 .
+. . . .
+2 3 2 7
+. . . .
+2 . 2 .
+
+or something like that. Notice how the primes fill in a evenly P
+spaced “subgrid”. Thus a
+prime p takes up at most a fraction p−2 of the entire grid. But p p−2 is not very big; in
+fact, it’s less than 12 . What this means is that we’ll run out of small primes very quickly,
+and the table will have a lot of big primes.
+
+4
+
+Evan Chen《陳誼廷》 — 3 February 2015
+
+With enough calculations with
+
+The Chinese Remainder Theorem
+
+P l n+1 m2
+
+p
+consists of primes greater than 0.001n2 .
+
+, you can show that at least half the table
+
+So some column must have at least half its
+entries as primes greater than 0.001n2 . Hence a + i is divisible by the product of all these
+primes which is greater than (0.001n2 )n/2 = (cn)n . That’s all there is to it!
+This problem was a USAMO #6, and it looked scary, but was it that bad? The ideas
+behind it are very natural: try to fill up a grid with primes, realize that there are not
+enough small primes, and then use CRT to connect this and get a size result.
+
+§3.3 Destruction
+These examples are probably less interesting than the previous few because the reduction
+does not make the problem much different. Often the destructive form of CRT just
+consists of appending the line “By the Chinese Remainder Theorem, it suffices to consider
+prime powers” and some appropriate embellishments at the end of the solution.
+Here is a silly example. There are nicer examples in the practice problems.
+Example 3.4 (Math Prize Olympiad 2010)
+Prove that for every positive integer n, there exists integers a and b such that
+4a2 + 9b2 − 1 is divisible by n.
+Proof. It suffices to find such an a and b modulo any prime power.
+For 2k , take a ≡ 0 (mod 2k ) and b ≡ 3−1 (mod 2k ).
+For any other pk , take a ≡ 2−1 (mod pk ) and b ≡ 0 (mod pk ).
+
+5
+
+Evan Chen《陳誼廷》 — 3 February 2015
+
+The Chinese Remainder Theorem
+
+§4 Practice Problems
+Problem 4.1 (IMO 1989). Prove that for every positive integer n, there exists n
+consecutive positive integers such that none of them is a power of a prime.
+Problem 4.2. Let n be a positive integer. Determine, in terms of n, the number of
+x ∈ {1, 2, . . . , n} for which x2 ≡ x (mod n).
+Problem 4.3 (IMO 2009/1). Let n, k ≥ 2 be positive integers and let a1 , a2 , a3 ,
+. . . , ak be distinct integers in the set {1, 2, . . . , n} such that n divides ai (ai+1 − 1) for
+i = 1, 2, . . . , k − 1. Prove that n does not divide ak (a1 − 1).
+Problem 4.4 (APMO 2009/4). Prove that for any positive integer k, there exists an
+arithmetic progression
+a1
+a2
+ak
+,
+, ...,
+b1
+b2
+bk
+of rational numbers, where ai , bi are relatively prime positive integers for each i =
+1, 2, . . . , k, and moreover the 2k numbers a1 , . . . , ak , b1 , . . . , bk are pairwise distinct.
+Problem 4.5 (ELMO Shortlist, Evan Chen). Find all triples (a, b, c) of positive integers
+such that if n is a positive integer not divisible by any prime less than 2014, then n + c
+divides an + bn + n.
+Problem 4.6. Let a > b > c ≥ 3 be integers. Given that a | bc + b + c, b | ca + c + a and
+c | ab + a + b, prove that at least one of a, b, c is not prime.
+Problem 4.7 (USA December TST, Iurie Boreico). Prove that for every positive integer
+n, there exists a set S of n positive integers such that for any two distinct a, b ∈ S, a − b
+divides a and b but none of the other elements of S.
+Problem 4.8 (NIMO, Evan Chen). For a finite set X define
+X
+Y
+S(X) =
+x and P (x) =
+x.
+x∈X
+
+x∈X
+
+Let A and B be two finite sets of positive integers such that |A| = |B|, P (A) = P (B)
+and S(A) 6= S(B). Suppose for any n ∈ A ∪ B and prime p dividing n, we have p36 | n
+and p37 - n. Prove that
+|S(A) − S(B)| > 5 · 107 .
+
+§5 Challenges
+Problem 5.1 (ELMO 2013/5, Andre Arslan). Consider P (n), a polynomial with integer
+coefficients. We wish to assign a positive integer to every lattice point in Z3 so that for
+every integer n ≥ 1, the sum of the n3 integers assigned to any n × n × n grid of lattice
+points is divisible by P (n). For which P (n) is this possible?
+Problem 5.2 (ELMO 2013/3, Victor Wang). Let m1 , m2 , . . . , m2013 > 1 be 2013 pairwise
+relatively prime positive integers and A1 , A2 , . . . , A2013 be 2013 (possibly empty) sets
+with Ai ⊆ {1, 2, . . . , mi − 1} for i = 1, 2, . . . , 2013. Prove that there is a positive integer
+N such that
+N ≤ (2 |A1 | + 1) (2 |A2 | + 1) . . . (2 |A2013 | + 1)
+and for each i = 1, 2, . . . , 2013, there does not exist a ∈ Ai such that mi divides N − a.
+
+6
+
+Evan Chen《陳誼廷》 — 3 February 2015
+
+The Chinese Remainder Theorem
+
+§6 Hints
+4.1. Force pi qi | x + i.
+4.2. Solve the problem for prime powers dividing n. The answer is a power of two.
+4.3. Proceed by contradiction. Look at a prime power pr | n, and show that either
+ai ≡ 0 (mod pr ) ∀i or ai ≡ 1 (mod pr ) ∀i.
+4.4. Pick x, N such that
+
+x+1
+x+k
+, ...,
+N
+N
+works after reducing to lowest terms. Force exactly one prime to cancel in each
+reduction.
+
+4.5. Pick n modulo p and p − 1 for a large prime p. Force p to divide a constant.
+4.6. Simon’s Favorite.
+4.7. For n = 3, x1 |{z} x2 |{z} x3 gives {10, 12, 15}. For n = 4, x1 |{z} x2 |{z} x3 | {z} x4 .
+2
+
+3
+
+60
+
+90
+
+7
+
+4.8. Show that the difference is divisible by 23 · 33 · 5 · 7 · 13 · 19 · 37.
+5.1. Look at the one-dimensional case first; the answer is the same.
+5.2. Pick ti for which ti ≡ 1 (mod mi ) and ti ≡ 0 (mod mj ) for i 6= j. Look at numbers
+of the form
+X
+bi ti
+where bi ∈ Bi , and Bi is selected so that for any x, y ∈ Bi we have x − y ∈
+/ Ai .
+Show greedily that we can have
+|Bi | ≥
+
+7
+
+mi
+.
+2 |Ai | + 1
+
+

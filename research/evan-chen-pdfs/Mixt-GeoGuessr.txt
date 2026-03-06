@@ -1,0 +1,154 @@
+A Guessing Game: Mixtilinear Incircles
+EVAN CHEN《陳誼廷》
+11 August 2015
+
+Sometimes figuring out what to prove is harder than actually proving it!
+An important skill for olympiad geometers is to be able to guess when three points
+are collinear, four points are concyclic, three lines are concurrent, and so on. Difficult
+geometry problems (on the level of IMO 3/6) often amount to finding two or three critical
+claims; each of these claims may be no harder to prove than an IMO 1/4, but making
+the right guesses of what to prove can turn out to the core difficulty of the problem. For
+a fantastic example, see my solution to IMO 2011/6.
+In this exercise, I’ll put write down a configuration of several points, lines, and circles.
+Your job is to find as many “coincidences” as you can: nontrivial collinearities, equal
+angles, cyclic quadrilaterals, and so on and so forth. Then, see if you can prove them!
+
+Contents
+1 The Configuration
+
+1
+
+2 Some Hints
+
+2
+
+3 Answers
+
+3
+
+4 Sketches of Solutions
+
+4
+
+§1 The Configuration
+Let ABC be an acute triangle with incenter I and circumcircle Γ, and let D and E
+be the contact points of the incircle and A-excircle on BC. Let MA , MB , MC be
+the midpoints of the arcs BC, CA, AB of Γ.
+The A-mixtilinear incircle is the circle ωA which is tangent to AB, AC, Γ at
+points B1 , C1 , T .
+On the next page there is a bare-bones diagram with all these points, as well as some
+hints to get you started. However, before using it, I encourage you to try and find
+as many things as you can using your own ruler and compass. On an olympiad,
+you do not have the luxury of referring to a perfect, computer-drawn diagram! You can
+(and should) use more than one hand-drawn diagram.
+
+1
+
+Evan Chen《陳誼廷》 — 11 August 2015
+
+A Guessing Game: Mixtilinear Incircles
+
+§2 Some Hints
+Now that you’ve taken a look with the hand-drawn diagram, see if you can spot even
+more things in the following accurate computer-generated figure.
+
+MB
+A
+
+C1
+
+MC
+I
+B1
+B
+
+D
+
+E
+
+C
+
+T
+
+MA
+
+Here are some possible hints for things you could look for:
+• There are at least three nontrivial collinearities among the labelled points.
+• There are at least two nontrivial cyclic quadrilaterals among the labelled points.
+• There are several nontrivial pairs of equal angles among the labelled points.
+• There is at least one set of concurrent lines (which meet outside the triangle).
+• Look at the “top” of the circumcircle.
+• There are at least two lines tangent to some circumcircles.
+My list of properties has ten items. When you want to see my answers, turn the page.
+
+2
+
+Evan Chen《陳誼廷》 — 11 August 2015
+
+A Guessing Game: Mixtilinear Incircles
+
+§3 Answers
+MB
+A
+
+C1
+
+MC
+I
+B1
+B
+
+D
+
+E
+
+C
+
+T
+
+MA
+
+1. Points T , B1 , MC are collinear. Similarly, points T , C1 , MB are collinear.
+2. Point I is the midpoint of B1 C1 .
+3. Ray T I passes through the “topmost” points of both ωA and Γ (the point opposite
+MA on Γ). In particular, AE and T I meet on ωA .
+4. ∠BAT = ∠CAE, and equivalent angles.
+5. ∠AT B = ∠CT D, and equivalent angles.
+6. ∠AT MC = ∠MB T I (not shown in figure).
+7. Quadrilaterals BB1 IT and CC1 IT are cyclic.
+8. Lines BI and CI are tangents to the previously mentioned quadrilaterals.
+9. The intersection of lines AI and BC lies on the circumcircle of 4DT MA .
+10. Lines BC, T MA , B1 C1 are concurrent.
+11. Lines T MA and AD meet on the mixtilinear incircle. (Thanks to my student H.W.
+for finding this one!)
+This list is by no means exhaustive — there are more properties buried in here that I
+haven’t mentioned.
+3
+
+Evan Chen《陳誼廷》 — 11 August 2015
+
+A Guessing Game: Mixtilinear Incircles
+
+§4 Sketches of Solutions
+1. Consider the homothety at T sending ωA to Γ.
+2. You can use Pascal’s Theorem on Γ. (The special case when AB = AC was IMO
+1978).
+3. In 4T B1 C1 , T A is a symmedian and T I is a median. (This was given as a problem
+on Iran 2002.)
+4. Inversion at A. (This was EGMO 2013, Problem 2.)
+5. Reflect T across the perpendicular bisector of BC.
+6. This just follows by symmedians.
+7. Angle chasing (using above properties).
+8. Angle chasing (using above properties).
+9. Some more angle chasing, using ∠AT B = ∠CT D.
+10. Use Pascal on Γ once again.
+11. Two homotheties.
+For more detailed discussion, you might consult http://blog.evanchen.cc/2015/08/11/
+the-mixtilinear-incircle.
+Want to try this again? See what coincidences you can find if you draw in all three
+mixtilinear incircles. For example, what are their radical axii? Can you find some
+concurrent cevians?
+
+4
+
+

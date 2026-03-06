@@ -1,0 +1,150 @@
+id,problem
+03d0ee,"Find all functions $P, Q: \mathbb{R} \rightarrow \mathbb{R}$ such that for all real numbers $m, n$,
+$$P(m+Q(n))=nP(m) - m P(n) + Q(m).$$
+
+Find the number of functions that satisfy the given conditions."
+095efa,Choose a subset of integers from 1 to 15 such that no three consecutive integers are in the chosen set (you can choose an empty set). How many different sets are there?
+09f937,"Let $r$ be the unique positive root of $x^3+x^2+x-10=0$. Suppose that for non-negative integers $k_0, k_1, k_2, \ldots , k_{100}$, we have $$\sum_{i=0}^{101}k_i r^i=2025.$$ Find the minimum possible value of $\sum_{i=0}^{101}k_i$.
+"
+17a168,"Let $g: \mathbb{Z}_{>0} \to \mathbb{Z}$ be a function satisfying the following conditions:
+
+(i) $g(p) = p + 1$ for all prime numbers $p$,
+
+(ii) $g(nm) + nm = ng(m) + mg(n)$  for all positive integers $n, m$.
+
+Find all integers $1 \le n \le 4000$ satisfying $g(n) = 2n$.
+
+Find the sum of all possible values."
+186c06,"Find the largest possible positive integer $n$ such that there exist $n$ distinct positive real numbers $a_1, a_2, \dots, a_n$ satisfying
+\[
+3(a_i^2 + a_j^2) + 15a_i^2 a_j^2 \ge (4a_ia_j + 1)^2
+\]
+for any $1 \le i, j \le n$.
+"
+19570e,"The 30 edges of a regular icosahedron are distinguished by labeling them 1, 2, ..., 30. How many different ways are there to paint each edge red, white, or blue such that each of the 20 triangular faces of the icosahedron has two edges of the same color and a third edge of a different color? Find the answer mod 1000."
+1bdd69,"Let $XYZ$ be a triangle with $\angle X = 90^o, \angle Y = 60^o$ and $YZ = 1$. Draw outside of $\vartriangle XYZ$ three equilateral triangles $XYU, XZV$ and $YZW$. Determine the area of $\vartriangle UVW$.
+
+If the answer is $\frac{a\sqrt{b}}{c}$ where $b$ is square-free and $\gcd(a,c)=1$, find $a + b + c$."
+2510e9,"For which integer $x$ from $1$ to $1717$ maximizes the number of positive integers $y$ for which $\frac{1}{x} + \frac{1}{y}$ is a unit fraction?
+"
+25e584,"Find number of triples $(x,y,z)$ of real numbers satisfying
+\[
+x^2 + y^2 + z^2 = xy^3 + yz^3 + zx^3 = 3.
+\]
+"
+27cec1,"\(x_1,x_2,\dots,x_{2025}\) are positive real numbers. Let \(M\) be the minimal value of \(\max\{x_1,\frac{1}{x_1}+x_2,\dots,\frac{1}{x_{2024}}+x_{2025},\frac{1}{x_{2025}}+1\}\). Suppose the a polynomial \(F(x)\) with integer coefficients can be divided by \(x^2 - M x + 1\), find the minimal degree of \(F(x)\)."
+29945e,"How many integer triples $(a, b, N)$ such that $2^a5^b+625=N^2$?
+"
+349baf,"Find the minimum possible value of
+\[
+    \frac{y}{16x^3 + 1} + \frac{z}{16y^3 + 1} + \frac{w}{16z^3 + 1} + \frac{x}{16w^3 + 1}
+\]
+where $x, y, z, w$ are nonnegative real numbers satisfying $x + y + z + w = 1$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$."
+3772c7,"Find all integers $n\ge 3$ for which $2^n - 3$ is a power of 5.
+
+Find the sum of all possible values."
+389ee4,"Find the minimum value of $m$ such that for any $m$ positive integers, there exist $k$ positive integers whose sum is a multiple of $k$.
+
+Find the answer when $k = 100$."
+443a0e,"Let \(\mathbb{F}_{2027}\) be the field of residues modulo \(2027\). Let \(W\) be the smallest set of polynomials with coefficients in \(\mathbb{F}_{2027}\) such that the polynomials \(x+1\) and \(x^{2025}+x^{2024}+\cdots+x^2+2x+1\) are in \(W\), and for any polynomials \(h_1(x)\) and \(h_2(x)\) in \(W\), the polynomial \(r(x)\), which is the remainder of \(h_1(h_2(x))\) modulo \(x^p-x\) is also in \(W\). Let \(N\) be the number of polynomials in \(W\). How many consecutive zeros are there at the end of the decimal representation of \(N\)?"
+4c5391,"Consider an $n \times n$ chessboard consisting of $n^2$ unit squares, where $n \geqslant 2$ is an integer. A configuration of $n$ rooks on this board is called balanced if each row and each column contains exactly one rook. Find the largest positive integer $k$ such that for any balanced configuration of rooks, there exists a $k \times k$ square with no rook in any of its $k^2$ unit squares. Additionally, consider a $2n \times 2n$ go board, where we put go pieces on that board.
+
+Find the answer when $n = 100$."
+4ebdaa,"If integer \(n\) satisfies \(a_1=n^2-10 n+23, a_2=n^2-9 n+97, a_3=n^2-12 n+46\) are all primes, Find the sum of all possible value of \(a_1+a_2+a_3\)."
+517772,"Let $p, q, r, s$ be constants such that the equation $py^3 + qy^2 + ry + s = 0$ has three distinct real roots. Find all possible values for the number of distinct real roots of the equation
+$$\left(pz^{3}+qz^{2}+rz+s\right)(6pz+2q)=\left(3pz^{2}+2qz+r\right)^{2}.$$
+"
+5ac150,"Find the maximum value of $m$ such that for any partition of $\{1, 2, \dots, 40\}$ into $m$ sets, there exists a set containing three elements $x, y, z$ (possibly with repetition) such that $x + y - z = 0$.
+"
+5dcfb3,"In $\triangle XYZ$ with $XY=XZ$, point $P$ lies strictly between $X$ and $Z$ on side $\overline{XZ}$, and point $Q$ lies strictly between $X$ and $Y$ on side $\overline{XY}$ such that $XQ=QP=PY=YZ$. The degree measure of $\angle XYZ$ is $\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.
+"
+67ec70,"Let $FGHIJ$ be a convex pentagon such that $FG = GH = HI$ and $\angle GIJ = \angle JFH = 30$ degree. Find the possible values of $\frac{\angle GJH}{5}$ in terms of degree.
+"
+6f0e7a,"A positive integer $n$ is called a cool integer if there exists a permutation $(x_1, \dots, x_n)$ of $(1, \dots, n)$ such that for any $i$, $x_1 + \dots + x_i$ is not a perfect square. Find the 2025th smallest cool integer.
+"
+7302b5,"We colored the $10000$ unit squares of an $100 \times 100$ square lattice such that in each $2\times 2$ square, at least two of the four unit squares have the same color. What is the largest number of colors we could have used?
+"
+7571a2,"Given distinct primes $p<q<r$, suppose that $p+q-r, q+r-p, r+p-q, p+q+r$ are all primes. If one of $p+q, q+r, r+p$ is $800$, find the maximum possible value of $r$.
+"
+76aef9,"Players $A$ and $B$ play a game on a blackboard that initially contains 1997 copies of the number 1. In every round, player $A$ erases two numbers $x$ and $y$ from the blackboard, and then player $B$ writes one of the numbers $x+y$ and $|x-y|$ on the blackboard. Additionally, there is a coin that is flipped before every round. If the coin lands heads, player $B$ is forced to write $x+y$ and if the coin lands tails player $B$ is forced to write $|x-y|$. The game terminates as soon as, at the end of some round, one of the following holds:
+
+(1) one of the numbers on the blackboard is larger than the sum of all other numbers;
+
+(2) there are only zeros on the blackboard.
+
+Player $B$ must then give as many cookies to player $A$ as there are numbers on the blackboard. Player $A$ wants to get as many cookies as possible, whereas player $B$ wants to give as few as possible. Determine the number of cookies that $A$ receives if both players play optimally."
+77fa18,"Find all triples $(n,x,y)$ where $n\ge 2$ is a positive integer and $x,y$ are rational numbers such that
+\[
+    (x - \sqrt{2})^n = y - \sqrt{2}.
+\]
+
+Find the sum of all components. If the sum is $\frac{p}{q}$ in lowest terms, give $p + q$."
+789c7f,"Denote by $(a_1, b_1), \ldots, (a_k, b_k)$ all the ordered pairs of positive integers $(a,b)$ that satisfy
+$a^2 + 2\cdot 3^b = a(2^{b+1}-1)$. Evaluate $\sum_{i=1}^k (a_i + b_i)$.
+"
+7f802a,"For a positive integer $n$, find the sum of all $n$ such that the number of ordered pairs of positive integers $(a,b)$ where the greatest common divisor of $a$ and $b$ is $2023$ and the least common multiple of $a$ and $b$ is $n!$ does not exceed 4000.
+"
+8a557f,"Let $PQRST$ be a regular pyramid with square base $QRST$. Suppose that on the line $QS$ lies a point $N$ such that $PN=NR$ and $(PNR)\perp (PQR)$. Compute $\frac{QS}{QN}$.
+
+If the answer can be expressed as $\frac{p}{q}$ where $p$ and $q$ are integers with $\gcd(|p|,q)=1$ and $q > 0$, find $|p| + q$."
+9be9d3,"Let $x_0, x_1, \ldots, x_{2024}$ and $y_1, y_2, \ldots, y_{2024}$ be two real sequences such that for all $n = 0, 1, \ldots, 2023$,
+\[
+    x_{n+1} = 4x_n^2, \quad y_{n+1} = x_n \quad \text{ or } \quad x_{n+1} = \frac{x_n}{2}, \quad y_{n+1} = \frac{1}{4} - x_n
+\]
+holds, and $x_{2024} \le x_0$. Find the maximal value of $y_1 + \cdots + y_{2024}$.
+"
+a240b5,"Let the radius of the circle \(O\) be \(r = 1\), and \(M\) be a point on the edges of regular dodecagon (12-sided polygon) inscribed in the circle \(O\). \(E\) and \(F\) are a pair of diametrically opposite points on the circle \(O\). Let \(S=\min\{\overrightarrow{MF}\cdot\overrightarrow{ME}\}\). Find the value of \(\lceil- 10000\times S\rceil\)."
+a4df0b,"We call an ordered triple $(x,y,z)$ of positive integers a \textit{good triple} if $\frac{(x+1)^y}{x^z +1}$ is a positive integer. Find the number of good triples (x,y,z) such that $0<x,y,z<100$.
+"
+a7effa,"Two players, Ivan and Maria, are playing a guessing game. Ivan chooses three integers $x, y, z$ such that $0 \le x, y, z \le 9$. Maria tries to guess these integers by asking Ivan questions. In each question, Maria gives Ivan three integers $a, b, c$ such that $0 \le a, b, c \le 9$. Ivan then calculates and tells Maria the value of $|x+y-a-b| + |y+z-b-c| + |z+x-c-a|$. What is the minimum number of questions Maria needs to ask to be sure of determining Ivan's three integers?"
+af204c,"Let $PQRS$ be a convex quadrilateral with $PQ=2, PS=7,$ and $RS=3$ such that the bisectors of acute angles $\angle{QPS}$ and $\angle{PSR}$ intersect at the midpoint of $\overline{QR}.$ Find the square of the area of $PQRS.$
+"
+b54a11,"Let $Q$ be a point on the circumcircle of square $EFGH$ such that $QE \cdot QG = 56$ and $QF \cdot QH = 90.$ What is the area of square $EFGH?$
+"
+c3598e,"Non-negative integers $a<b<c$ satisfy $c\le a+b$, and $3^a, 3^b, 3^c$ all have the same remainder when divided by $10000$. Find the minimum possible value of $a+b+c$.
+"
+c3f0bd,"Let $x, y, z$ be nonnegative real numbers with
+\[
+    (x^3 - 3x^2 + 3x) + (y^3 - 3y^2 + 3y) + (z^3 - 3z^2 + 3z) = 4.
+\]
+Find the maximal value of
+\[
+    x^2 + y^2 + z^2 - x - y - z.
+\]
+"
+c9a608,"A frog starts from 0 and makes 2047 jumps. This process satisfies the following conditions: (1) The frog will jump to each point in the set \(\{1, 2, 3,\cdots,2047\}\) exactly once without repetition or omission. (2) The length of each jump of the frog is a power of 2, and the direction can be either to the left or to the right. Let \(T\) be the sum of the reciprocals of the lengths of the frog's jumps. Find the minimum value of \(T\)."
+cd0a7f,"Find all positive integers $k$ such that the number of positive divisors of $2k^3$ is $2k$.
+
+Find the sum of all possible values."
+d33891,"An integer $m \geqslant 100$ is called colorful if, given infinitely many candies in each of $99$ flavors $F_{1}, F_{2}, \ldots, F_{99}$, it is possible to place $m$ of them around a circle so that in any group of $100$ consecutive candies there is at least one candy of flavor $F_{i}$ for each $i=1, \ldots, 99$.  Additionally, let $k$ be an integer such that $k > m$.
+
+Prove that there are only finitely many positive integers which are not colorful. Find the largest among them."
+d48826,"Let $WXYZ$ be a cyclic quadrilateral with $WX=4,XY=5,YZ=6,$ and $ZW=7$. Let $W_1$ and $Y_1$ be the feet of the perpendiculars from $W$ and $Y$, respectively, to line $XZ,$ and let $X_1$ and $Z_1$ be the feet of the perpendiculars from $X$ and $Z,$ respectively, to line $WY$. The perimeter of $W_1X_1Y_1Z_1$ is $\frac mn$, where $m$ and $n$ are relatively prime positive integers. Find $m+n$.
+"
+dc6b0e,"Let $K$ be a subset of $\{0, 1, \dots, 2020\}$ with $|K| \ge 3$.
+For any $p, q \in K$, there exists $r \in K$ such that $p+q-2r$ is a multiple of $2021$.
+Find all possible values of $|K|$.
+
+Find the sum of all possible values."
+e33660,"Find all nonnegative integers $n$ for which the following holds:
+\begin{center}
+    $20^{n+1}$ is divisible by $n^3 + 4n^2 + 6n + 4$.
+\end{center}
+
+Find the sum of all possible values."
+ede277,"Let $PQRS$ be an isosceles trapezoid with $PS=QR$ and $PQ<RS.$ Suppose that the distances from $P$ to the lines $QR,RS,$ and $QS$ are $15,18,$ and $10,$ respectively. Let $A$ be the area of $PQRS.$ Find $\sqrt2 \cdot A.$
+"
+ee08d7,"Find the maximum number of ""kings"" that can be placed on a \(10\times10\) chessboard, such that each ""king"" can exactly attack ONE other ""king"" (a ""king"" can attack the chess piece in the square that shares a common vertex with the square it is in)."
+ef8a39,"Let \(a_1,a_2,\cdots\) be an infinite sequence of positive integers with \(a_1 = 1\), such that\(a_n\mid a_k + a_{k + 1}+\cdots + a_{k + n - 1}\)  for all positive integers \(k\) and \(n\). Let \(N\) be the maximal possible value of \(a_{5652}\), find the \(N \mod 776\)."
+effa13,"Given that the quadrilateral inscribed in the sphere is an isosceles trapezoid \(ABCD\), where \(AB = 2\), \(BC = AD = 3\), \(CD = 4\), and the center of the sphere is \(O\). Points \(E\) and \(F\) are respectively on the sides \(AD\) and \(BC\), and the minimum value of \(\overrightarrow{OE}\cdot\overrightarrow{OF}\) is \(- 2\). Find the minimum interger which is greater than the volume of the sphere."
+f28c01,"Diagonals of a quadrilateral $WXYZ$ are equal and intersect at point $M$. The perpendicular bisectors to segments $WX$ and $YZ$ intersect at point $N$, and the perpendicular bisectors to $XY$ and $WZ$ intersect at point $O$. Find angle $\frac{\angle NMO}{5}$ in terms of degree.
+"
+f7d683,"For a given positive integer $n$, let $m$ be the exponent of 2 in the prime factorization of $n$. Define $f(n) = \frac{n}{2^m}$. Find all positive integers $u$ for which there exists a positive integer $v$ such that
+
+(Condition) $f(u+v) - f(u), f(u+v+1) - f(u+1), \cdots, f(u+2v-1) - f(u+v-1)$ are all multiples of 4.
+
+Find the sum of all possible values."
+fbd72f,"Let $WXYZ$ be a tetrahedron such that $WX = YZ = \sqrt{41}$, $WY = XZ = \sqrt{80}$, and $WZ = XY = \sqrt{89}$. There exists a point $P$ inside the tetrahedron such that the distances from $P$ to each of the faces of the tetrahedron are all equal. This distance can be written in the form $\frac{a \sqrt{b}}{c}$, when $a$, $b$, and $c$ are positive integers, $a$ and $c$ are relatively prime, and $b$ is not divisible by the square of any prime. Find $a+b+c$.
+"

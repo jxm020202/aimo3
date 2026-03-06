@@ -1,0 +1,2269 @@
+Summations
+EVAN CHEN《陳誼廷》
+13 October 2016
+
+Mathematicians just love sigma notation for two reasons. First, it provides a convenient
+way to express a long or even infinite series. But even more important, it looks really
+cool and scary, which frightens nonmathematicians into revering mathematicians and
+paying them more money.
+— Calculus II for Dummies
+
+Acknowledgments
+THANKS to Zack Chroman, Michael Diao, Steven Hao, Ryan Kim, Kevin Qian, Colin
+Tang, Michael Tang, Tyler Zhu, for helpful suggestions and comments.
+
+Contents
+1 Introduction
+
+2
+
+2 Algebraic manipulation
+2.1 Telescoping and partial fractions . . . . . . . . . . . . . . . . . . . . . . .
+2.2 Swapping the order of summation . . . . . . . . . . . . . . . . . . . . . . .
+2.3 Roots of unity filters . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.4 Problems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+2
+3
+3
+6
+7
+
+3 Sums modulo a prime
+8
+3.1 Problems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+4 Multiplicative number theory
+4.1 Multiplicative functions . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4.2 Dirichlet convolution . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4.3 Möbius inversion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4.4 Problems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+10
+10
+11
+13
+13
+
+5 Generating functions
+5.1 Toy applications . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5.2 Linear recurrences . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5.3 Common generating functions . . . . . . . . . . . . . . . . . . . . . . . . .
+5.4 Snake Oil method . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5.5 Problems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+14
+14
+15
+16
+18
+19
+
+6 Author’s Pick
+
+20
+
+7 Hints
+
+21
+1
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+§1 Introduction
+This is a handout about how to deal with complicated sums. Broadly, sums on olympiad
+contests fall into a few different categories:
+P
+1
+• Purely algebraic sums, like n n(n+1)
+, which are mostly exercise in algebraic
+manipulation. These are the kind you would get in a lecture named “sums and
+products”.
+
+• Sums which are combinatorial, involving expressions like nk . You would see this
+in lectures named “combinatorial sums” and “counting in two ways”, or perhaps
+“generating functions”.
+• Sums which are P
+number theoretic, involving functions like ϕ, µ, or which involve
+expressions like d|n , or which ask you to take a sum modulo p. Often appears in
+“multiplicative number theory”.
+I think it is preferable to avoid separating the learning of these apparently disjoint topics,
+hence the unified handout. There are some connected themes which underlie all three; in
+particular, one of the big ideas which runs through the entire handout is the concept of
+swapping the order of summation.
+Theorem 1.1 (Swapping the order of summation)
+Let f (a, b) be a function. Then
+XX
+
+f=
+
+a∈A b∈B
+
+XX
+
+f.
+
+b∈B a∈A
+
+This seemingly obvious fact is a nontrivial step in more than 50% of summation problems
+(in the same way that cyclic quadrilaterals is used in more than 50% of geometry problems).
+We will see this key idea again and again in the examples that follow. Thus any time you
+see a double sum, you should alwaysP
+consider computing the sum in the reversed order.
+In fact, even if you only have a single
+you should consider rewriting the expression as
+a double sum (e.g. a generating function) so that the above theorem applies. You might
+also need to change the variables before this step; for example we also have
+XX
+X X
+f=
+f.
+a≥0 b≥0
+
+k≥0
+
+a,b
+a+b=k
+
+§2 Algebraic manipulation
+These are the most low-tech problems, and often appear on short-answer contests as a
+result. These techniques apply to all sums, and especially to those which don’t have N or
+C flavor.
+Examples of things you can do:
+• Look at telescoping sequences. The classic example that everyone knows of is
+100
+X
+n=1
+
+1
+.
+n(n + 1)
+
+2
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+• Generalizing the above point, looking at partial fractions is often a good thing
+to do if your expression has polynomial denominators.
+• Try to factor the expression. In particular, one can factor through double sums:
+!
+!
+XX
+X
+X
+a2 (b + 1) =
+a2
+(b + 1) .
+a∈A b∈B
+
+a∈A
+
+b∈B
+
+• Try swapping the order of summation. (This is so important we’re saying it
+again.)
+
+§2.1 Telescoping and partial fractions
+I won’t provide too many examples here (though there are plenty in the practice problems!)
+since this is a topic that often appears at the AIME level anyways. So here is my token
+example.
+Example 2.1 (Stanford 2011)
+Evaluate the sum
+
+ n
+3
+.
+n(n + 2)
+4
+
+X 7n + 32
+n≥1
+
+·
+
+Solution. Again, since we have a polynomial denominator, our first reflex is to decompose
+its partial fractions. This gives us
+7n + 32
+16
+9
+=
+−
+.
+n(n + 2)
+n
+n+2
+Suddenly we’re done, because the sum telescopes according to the fact that 9 = (3/4)2 ·16:
+X 16  3 n
+n≥1
+
+n
+
+4
+
+16
+−
+n+2
+
+ n+2
+3
+.
+4
+
+3 16 9
+We see the trailing terms in the sum tend to zero as n → ∞. So the answer is 16
+1 · 4 + 2 · 16 =
+12 + 92 = 33
+2 .
+
+§2.2 Swapping the order of summation
+For a less contrived example, we now prove linearity of expectation, which is the key
+result from [2].
+The motivating example which I always present is that this allows one to compute the
+expected number of fixed points in a random permutation of {1, . . . , n}:
+Example 2.2
+A random permutation of {1, . . . , n} has an average of one fixed point.
+To see this, let’s look at the case n = 4:
+
+3
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+Σ
+
+W
+W
+W
+W
+W
+W
+W
+X
+X
+X
+X
+X
+X
+Y
+Y
+Y
+Y
+Y
+Y
+Z
+Z
+Z
+Z
+Z
+Z
+6
+
+Summations
+
+X
+X
+X
+Y
+Y
+Z
+Z
+W
+W
+Y
+Y
+Z
+Z
+W
+W
+X
+X
+Z
+Z
+W
+W
+X
+X
+Y
+Y
+6
+
+Y
+Y
+Z
+X
+Z
+X
+Y
+Y
+Z
+W
+Z
+W
+Y
+X
+Z
+W
+Z
+W
+X
+X
+Y
+W
+Y
+W
+X
+6
+
+Z
+Z
+Y
+Z
+X
+Y
+X
+Z
+Y
+Z
+W
+Y
+W
+Z
+X
+Z
+W
+X
+W
+Y
+X
+Y
+W
+X
+W
+6
+
+Σ
+4
+2
+2
+1
+1
+2
+2
+0
+1
+0
+0
+1
+1
+0
+2
+1
+0
+0
+0
+1
+1
+2
+0
+0
+24
+
+The idea is as follows: nominally, to compute the expected value, one is supposed to
+compute the number of fixed points in each row, and then take the average. However,
+the number of fixed points per row is chaotic. It would be much simpler to take the sum
+in each column, and take the average of those instead: in which case we see the answer is
+1
+n! n · (n − 1)! = 1.
+The following theorem generalizes this:
+Example 2.3 (Linearity of Expectation)
+Let X and Y be random variables (not necessarily independent). Then E[X + Y ] =
+E[X] + E[Y ].
+As described in [2] the proof of this is just a “double summation”. We do this formally
+here:
+Proof. For simplicity we do the
+X, Y take nonnegative integer values; for the
+R case where P
+general case one should use rather than . By definition, we have
+E[X + Y ] =
+
+X
+
+nP (X + Y = n) =
+
+n≥0
+
+X X
+
+nP (X = a, Y = b).
+
+n≥0 a+b=n
+
+Unfortunately1 we can’t write P (X = a, Y = b) = P (X = a)P (Y = b) since
+P XPand Y
+need not be independent. So instead we write n = a + b and then replace n≥0 a+b=n
+1
+
+This was wrong in an earlier published version. Thanks to SH for noticing.
+
+4
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+P
+with a,b This lets us split the sum into two parts, which we sum in two different orders.
+Here is the calculation:
+X X
+E[X + Y ] =
+(a + b)P (X = a, Y = b)
+n≥0 a+b=n
+
+X
+
+=
+
+(a + b)P (X = a, Y = b)
+
+a,b≥0
+
+=
+
+XX
+
+=
+
+X
+
+aP (X = a, Y = b) +
+
+a≥0 b≥0
+
+XX
+
+bP (Y = b, X = a)
+
+b≥0 a≥0
+
+aP (X = a) +
+
+X
+
+a≥0
+
+bP (Y = b)
+
+b≥0
+
+= E[X] + E[Y ].
+Thus we see that:
+Every application of linearity of expectation is philosophically an
+application of switching the order of summation.
+Finally, let’s look at some number-theoretic examples. First, we prove the following
+lemma which we will revisit later.
+Lemma 2.4 (ϕ ∗ 1 = id)
+Let n ≥ 1 be an integer. Then
+X
+
+ϕ(d) = n.
+
+d|n
+
+Proof. We will give a more pedestrian proof later on in “multiplicative number theory”,
+and so for now let’s present the nice combinatorial proof: look at the fractions
+1
+,
+n
+
+2
+,
+n
+
+3
+,
+n
+
+...,
+
+n
+.
+n
+
+Suppose we reduce all the fractions to simplest form. Then for every d | n, there are
+exactly ϕ(d) fractions with denominator d. (If you don’t see why, try writing out the
+case n = 15.) Since there are n fractions total, we’re done.
+Now I can present my favorite example which illustrates just how useful swapping the
+order of summation can be.
+Example 2.5 (AMSP 2011 NT3 Exam)
+Let n be a positive integer. Prove that
+X
+
+ϕ(k)
+
+jnk
+
+k≥1
+
+1
+= n(n + 1).
+k
+2
+
+Proof. The key idea is to rewrite the floor as a sum involving divisors:
+jnk X
+X
+X
+XX
+ϕ(k)
+=
+ϕ(k)
+1=
+ϕ(k).
+k
+k≥1
+
+m≤n
+k|m
+
+k≥1
+
+5
+
+k≥1 m≤n
+k|m
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+Thus we’re computing the sum of ϕ(k) over several pairs of integers (k, m) for which
+k | m, m ≤ n. For example, if n = 6, the possible pairs (k, m) are given be the following
+table:
+
+
+(1, 1) (1, 2) (1, 3) (1, 4) (1, 5) (1, 6) 
+
+
+
+
+
+
+
+(2,
+2)
+(2,
+4)
+(2,
+6)
+
+
+
+
+
+
+(3, 3)
+(3, 6)
+(k, m) ∈
+(4, 4)
+
+
+
+
+
+
+
+
+
+
+(5, 5)
+
+
+
+
+(6, 6)
+Nominally, we’re supposed to be summing by the rows of this table (i.e. fix k and run
+the sum over corresponding m). However, by interchanging the order of summation we
+can instead consider this as a sum over the columns: if we instead pick the value of m
+first, we see that
+n X
+XX
+X
+ϕ(k) =
+ϕ(k).
+m=1 k|m
+
+k≥1 k|m
+m≤n
+
+But we know how to evaluate the inner sum by the lemma! We get
+n X
+X
+
+ϕ(k) =
+
+m=1 k|m
+
+n
+X
+m=1
+
+1
+m = n(n + 1).
+2
+
+§2.3 Roots of unity filters
+A classic MathCounts-flavored problem goes as follows: we wish to compute
+X 1000
+.
+2k
+k≥0
+
+In order to do this, we use the fact that
+(1 + 1)
+
+1000
+
+=
+
+X 1000
+n≥0
+
+(1 − 1)1000 =
+
+n
+
+X 1000
+(−1)n .
+n
+
+n≥0
+
+Adding these together, we get that twice the desired sum is 21000 hence the answer is
+2999 . The key fact we used was that
+(
+1 n even
+1n + (−1)n
+=
+2
+0 n odd.
+This trick can be generalized using a so-called roots of unity filter. To motivate it, we
+consider the following example problem.
+Example 2.6 (Classical application of roots of unity filter)
+Compute
+X 1000
+.
+3k
+k≥0
+
+6
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+Solution. We can rewrite the sum as
+X 1000
+n≥0
+
+where
+
+(
+1
+f (n) =
+0
+
+n
+
+f (n)
+
+n ≡ 0 (mod 3)
+otherwise.
+
+So we want the mod 3 analog of the parity detector 1n + (−1)n we had earlier.
+The trick, which gives it the name “roots of unity filter”, is that we can take
+
+1 n
+f (n) =
+1 + ω n + ω 2n
+3
+
+where ω = exp 23 πi is a cube root of unity, satisfying the relation ω 2 + ω + 1 = 0. Thus,
+we have
+
+
+X 1000
+1 X 1000
+f (n) =
+(1 + ω n + ω 2n ).
+n
+3
+n
+n≥0
+
+n≥0
+
+We can swap the order of summation now (never gets old, does it?) and instead consider
+
+
+
+
+
+
+X 1000
+1 X 1000
+1 X 1000 n 1 X 1000 2n
+f (n) =
++
+ω +
+ω .
+n
+3
+n
+3
+n
+3
+n
+n≥0
+
+n≥0
+
+n≥0
+
+n≥0
+
+(This doesn’t look like the previous
+examples of
+of summation, but
+ swapping
+P
+P
+P2 the
+Porder1000
+2
+1000
+nk
+perhaps I could instead write n≥0 k=0 n ω = k=0 n≥0 n ω nk . The point
+is we are exchanging an 1001 × 3 sum with a 3 × 1001 sum.) Thus by the binomial
+theorem the expression in question is
+X 1000
+
+1
+f (n) =
+(1 + 1)1000 + (1 + ω)1000 + (1 + ω 2 )1000
+n
+3
+n≥0
+
+
+1  1000
+2
++ (−ω 2 )1000 + (−ω)1000
+3
+
+1  1000
+=
+2
++ ω + ω2
+3
+
+1  1000
+=
+2
+−1 .
+3
+=
+
+§2.4 Problems
+Problem 2.7 (Putnam 2011). Let a1 , a2 , . . . and b1 , b2 , . . . be sequences of positive real
+numbers such that a1 = b1 = 1 and bn = bn−1 an − 2 for n = 2, 3, . . . . Assume that the
+sequence (bj ) is bounded. Prove that
+S=
+
+∞
+X
+n=1
+
+1
+a1 · · · an
+
+converges, and evaluate S.
+Problem 2.8 (Putnam 2013). Let a0 , a1 , . . . , an , x be real numbers, where 0 < x < 1,
+satisfying
+a0
+a1
+an
++
++ ··· +
+= 0.
+2
+1−x 1−x
+1 − xn+1
+Prove that for some 0 < y < 1 we have
+a0 + a1 y + a2 y 2 + · · · + an y n = 0.
+7
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+Problem 2.9 (Putnam 2015). Let T be the set of triples of positive integers whose
+lengths are the sides of a triangle. Compute
+X
+(a,b,c)∈T
+
+2a
+.
+3b 5c
+
+Problem 2.10. How many nonempty subsets of {1, 2, . . . , 1000} have sum divisible by
+3?
+
+§3 Sums modulo a prime
+Sometimes you have a sum which you’d like to evaluate modulo p instead of computing
+altogether. Most of the same strategies from before still apply, and so these problems are
+not actually too different from before.
+However, when working in Fp instead of R, you can take advantage of the fact that there
+are only finitely many elements to get some useful symmetry. A simple manifestation of
+this is
+Lemma 3.1 (Fermat’s little theorem)
+Let p be a prime. Then ap−1 ≡ 1 (mod p) whenever gcd(a, p) = 1.
+Proof. Multiplication by a exhibits a bijection from {1, . . . , p − 1} to itself. Now take the
+products to get ap−1 (p − 1)! ≡ (p − 1)! (mod p), and cancel the resulting (p − 1)!.
+I’m sure you’ve already seen this lemma before, but I included the proof anyways because
+its main idea of exploiting the fact that Fp is finite is often useful.
+Similarly, a sum or product from 1 to p − 1 will often cancel in spectacular ways, such
+as:
+Lemma 3.2 (Wilson’s theorem)
+For any prime p,
+(p − 1)! ≡ −1
+
+(mod p).
+
+Exercise 3.3. Prove this theorem if you don’t already know how.
+The next lemma is somewhat less well-known than it deserves to be.
+Lemma 3.4 (Sums of powers modulo p)
+Let p be a prime and m an integer. Then
+(
+0 (mod p)
+if p − 1 - m
+m
+m
+m
+1 + 2 + · · · + (p − 1) ≡
+−1 (mod p) if p − 1 | m.
+Proof. Suffices to show the case p − 1 - m since the other is obvious. Let g be a primitive
+root modulo p (see [1]), then the above sum equals
+1 + g m + · · · + g (p−2)m ≡
+8
+
+g (p−1)m − 1
+gm − 1
+
+(mod p)
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+which is okay since the denominator isn’t zero. But the numerator vanishes.
+Here is another example.
+Example 3.5 (Wolstenholme’s theorem)
+Let p > 3 be a prime. Then
+
+
+1 1
+1
+(p − 1)!
++ + ··· +
+≡0
+1 2
+p−1
+
+(mod p2 ).
+
+Note the presence of (p − 1)! is just a formality to ensure the left-hand side is an integer;
+it makes more sense to just evaluate S = 1−1 + 2−1 + · · · + (p − 1)−1 (mod p2 ).
+Proof. Let S = 1−1 +2−1 +· · ·+(p−1)−1 (mod p2 ). It’s already clear (by say Lemma 3.4
+with m = −1) that p | S, but we in fact want p2 | S. We exploit the symmetry by pairing
+up the opposite terms:
+2S =
+
+p−1
+X
+1
+k≥1
+
+k
+
+p−1
+
++
+
+X
+1
+p
+=
+.
+p−k
+k(p − k)
+k=1
+
+So just as before we see that S is divisible by p, but this time we know information mod
+p2 : it now suffices to show that
+p−1
+
+X
+1
+1
+· 2S =
+p
+k(p − k)
+k=1
+
+is zero modulo p as well. But
+p−1
+X
+k=1
+
+p−1
+
+p−1
+
+X 1
+X
+1
+≡
+=−
+k −2
+k(p − k)
+k(−k)
+k=1
+
+(mod p)
+
+k=1
+
+and we’re done by Lemma 3.4 applied at m = −2. (Where did we use p > 3?)
+Finally, here is a weird trick which is often useful when faced with k1 expressions modulo
+p. Look through the problems for a few examples.
+Lemma 3.6 (Harmonic modulo p trick)
+For any integer k = 1, 2, . . . , p − 1, we have
+ 
+1
+k−1 1 p
+≡ (−1)
+·
+(mod p).
+k
+p k
+Exercise 3.7. Check this.
+This is often useful because
+it reduces a computation involving k −1 ’s modulo p to a
+
+p
+computation involving k mod p2 ; the latter is often easier to deal with.
+
+9
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+§3.1 Problems
+Problem 3.8 (ELMO 2009, John Berman). Let p be an odd prime and x be an integer
+such that p | x3 − 1 but p - x − 1. Prove that p divides
+
+
+x2 x3
+xp−1
+(p − 1)! x −
++
+− ··· −
+.
+2
+3
+p−1
+Problem 3.9. Let p > 5 be a prime. Prove that
+1
+1
+1
++
++ ··· +
+≡0
+13 23
+(p − 1)3
+
+(mod p2 ).
+
+Problem 3.10 (OMO 2013 W42, Victor Wang). Find the remainder when
+100
+Y
+
+(1 − i2 + i4 )
+
+i=0
+
+is divided by 101.
+
+§4 Multiplicative number theory
+P
+Earlier we saw that that d|n ϕ(d) = n. In this section we’ll develop a more general
+theory which can handle these divisor-based sums.
+To get a grasp of what we’re doing, let’s redo the example from above. The key
+idea is rooted in the standard MathCounts formula for the sum of the prime factors of
+n = pe11 . . . pekk : it is equal to
+X
+
+d = 1 + p1 + p21 + · · · + pe11
+
+
+
+
+
+1 + p2 + p22 + · · · + pe22 . . . 1 + pk + p2k + · · · + pekk .
+
+d|n
+
+Indeed, if we expand the right-hand side, each factor appears exactly once.
+But in fact, ϕ has a special property: if m and n are relatively prime, then ϕ(mn) =
+ϕ(m)ϕ(n). (Proof: Chinese remainder theorem.) So we can copy the work above to get
+X
+
+ϕ(d) = (ϕ(1) + ϕ(p1 ) + · · · + ϕ(pe11 )) . . . ϕ(1) + ϕ(pk ) + · · · + ϕ(pekk ) .
+d|n
+
+But now we’re done, because it’s easy to see that ϕ(1) + ϕ(p) + · · · + ϕ(pe ) = pe when p
+is a prime, and thus the right-hand side is n.
+In this short section we will grow this idea into its full generality. In what follows, N
+denotes the positive integers.
+
+§4.1 Multiplicative functions
+Definition 4.1. An arithmetic function is a function f : N → C. It is
+• multiplicative if f (mn) = f (m)f (n) for relatively prime m and n.
+• completely multiplicative if f (mn) = f (m)f (n) for any m and n.
+
+10
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+Example 4.2 (Completely multiplicative functions)
+The following are examples of completely multiplicative functions.
+• The identity function id.
+(
+1
+• The Dirichlet delta function, δ(n) =
+0
+
+n=1
+n ≥ 2.
+
+• The constant function 1, given by 1(n) = 1.
+Example 4.3 (Multiplicative functions)
+The following are examples of multiplicative functions which are not completely
+multiplicative.
+• Euler’s ϕ. For example, ϕ(15) = ϕ(3)ϕ(5). But not ϕ(9) = ϕ(3)ϕ(3).
+• The Möbius function µ, defined by
+(
+(−1)m if n has m prime factors, all distinct
+µ(n) =
+0
+n is not squarefree.
+For example, µ(10) = 1, µ(105) = −1, but µ(12) = 0.
+• σ is the sum of divisors function. For example σ(6) = 1 + 2 + 3 + 6 = 12.
+• τ is the divisor counting function. For example τ (6) = 4.
+Of course, the product of two multiplicative functions is also multiplicative.
+The nice property of multiplicative functions is that it is sufficient to determine
+their values on prime powers. For example, we have formulas like
+
+
+
+
+e1
+e1 −1
+e2
+e2 −1
+ϕ(n) = p1 − p1
+p2 − p2
+. . . pemm − pemm −1
+when n = pe11 . . . pemm . This is one way you can prove the formula above: the Chinese
+remainder theorem implies quickly that ϕ is multiplicative, and it is straightforward to
+compute ϕ(pk ) = pk − pk−1 , hence the result.
+
+§4.2 Dirichlet convolution
+Now given two arithmetic functions f and g, we define the Dirichlet convolution as
+X
+X
+(f ∗ g)(n) =
+f (d)g(n/d) =
+f (d)g(e).
+de=n
+
+d|n
+
+This is more frequent than you might expect:
+
+11
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+Example 4.4 (Examples of Convolution)
+Verify that
+• 1 ∗ 1 = τ.
+• 1 ∗ id = σ.
+• id ∗ id = n · τ .
+• 1 ∗ ϕ = id (previous example).
+• δ ∗ f = f for any f .
+Here are some properties of ∗:
+• The identity of ∗ is the Dirichlet delta function.
+• Clearly ∗ is commutative.
+• The operation ∗ is associative because
+X
+
+((f ∗ g) ∗ h) (n) = (f ∗ (g ∗ h)) (n) =
+
+f (d1 )g(d2 )h(d3 ).
+
+d1 d2 d3 =n
+
+• It distributes over addition: f ∗ (g + h) = f ∗ g + f ∗ h.
+• Most important: the convolution of two multiplicative functions is also
+multiplicative.
+Thus we have an operation on the set of multiplicative functions.
+Exercise 4.5. Check that convolutions of multiplicative functions are multiplicative.
+(Mimic the proof of ϕ we used earlier.)
+The upshot of this is that we can now use our theory to completely eradicate our
+earlier example.
+Example 4.6 (ϕ ∗ 1 = id)
+Let n ≥ 1 be an integer. Then
+X
+
+ϕ(d) = n.
+
+d|n
+
+Proof. Rephrasing the problem, we wish to show that
+ϕ ∗ 1 = id .
+It is true for prime powers n = pe , because the left-hand side is 1 + (p − 1) + (p2 − p) +
+· · · + (pe − pe−1 ) = pe . But since both the LHS and RHS are multiplicative, this implies
+the problem.
+
+12
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+§4.3 Möbius inversion
+We now know that given a multiplicative function f , we have a good handle on
+X
+g(n) =
+f (d)
+d|n
+
+because g is the Dirichlet convolution f ∗ 1. However, occasionally we instead have g and
+want to recover f . The way to do this is through Möbius inversion.
+Lemma 4.7 (Möbius is inverse of 1)
+We have µ ∗ 1 = δ.
+Exercise 4.8. Prove this. (Check on prime powers.)
+Theorem 4.9 (Möbius inversion formula)
+Let f and g be any arithmetic functions (possibly not multiplicative). Then
+X
+X
+g(n) =
+f (d) ⇐⇒ f (n) =
+µ(d)g(n/d).
+d|n
+
+d|n
+
+In other words, if g = f ∗ 1 then f = g ∗ µ.
+Proof. Assume g = f ∗ 1. Then
+g ∗ µ = (f ∗ 1) ∗ µ = f ∗ (1 ∗ µ) = f ∗ δ = f.
+Here is a silly application from the IMO Shortlist.
+Example 4.10 (Shortlist 1989)
+P
+Define a sequence (an )n≥1 by d|n ad = 2n . Show that n divides an .
+Solution. By Möbius inversion, an =
+bash. Details omitted.
+
+d
+d|n µ(n/d)2 .
+
+P
+
+Now just let n = pe11 . . . perr and
+
+§4.4 Problems
+Problem 4.11. Prove that for any integer n ≥ 1,
+2
+
+
+X
+
+(τ (d))3 = 
+
+d|n
+
+X
+
+τ (d) .
+
+d|n
+
+Problem 4.12 (Bulgaria 1989). Let Ω(n) denote the number of prime factors of n,
+counted with multiplicity. Evaluate
+1989
+X
+
+Ω(n)
+
+(−1)
+
+n=1
+
+13
+
+
+
+
+1989
+.
+n
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+Problem 4.13. Prove that for all positive integers n,
+
+
+X
+2πk
+µ(n) =
+cos
+.
+n
+1≤k≤n
+gcd(k,n)=1
+
+§5 Generating functions
+A generating function is a device somewhat similar to a bag. Instead of
+carrying many little objects detachedly, which could be embarrassing, we put
+them all in a bag, and then we have only one object to carry, the bag.
+— George Pólya
+The idea of generating functions is as follows: given a sequence an , we consider the
+formal series
+X
+A(x) =
+an xn .
+n≥0
+
+This gives us another sum that we can work with. Reasons why this could be helpful:
+1
+• A(x) may often have a nice closed form, like 1 + x + x2 + · · · = 1−x
+, and as Pólya
+has said this makes it much easier to work with.
+
+• Often an is itself a sum, and now we can change the order of summation. See Snake
+Oil below.
+
+§5.1 Toy applications
+Example 5.1 (The Classic)
+We have
+
+X 1000
+n≥0
+
+n
+
+= 21000 .
+
+
+Proof. Let an = 1000
+n , for example. Of course, by the binomial theorem we have attached
+generating function
+X
+X 1000
+A(x) =
+an xn =
+xn = (1 + x)1000 .
+n
+n≥0
+
+n≥0
+
+Plugging in x = 1, for example, then implies the usual identity
+
+Example 5.2 (The Derivative of the Classic)
+We have
+
+X 1000
+n
+= 1000 · 2999 .
+n
+
+n≥0
+
+Proof. Take the derivative of the previous example
+X 1000
+nxn−1 = 1000(1 + x)999 .
+n
+n≥1
+
+This time, we obtain
+
+P
+
+n≥0 n
+
+1000
+n
+
+
+
+= 1000 · 2999 .
+14
+
+P
+
+n≥0
+
+1000
+n
+
+
+
+= 21000 .
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Exercise 5.3. Compute
+
+Summations
+
+
+2 1000 .
+n
+n≥0
+n
+
+P
+
+§5.2 Linear recurrences
+Let’s now use generating functions to derive the closed form of the Lucas numbers Ln ,
+which are defined by
+L0 = 2,
+
+L1 = 1,
+
+Ln+2 = Ln+1 + Ln .
+
+For concreteness, the first few terms are 2, 1, 3, 4, 7, 11, 18, 29, 47, 76, . . . .
+Theorem 5.4 (Explicit form for Lucas numbers)
+√
+√
+Let α = 12 (1 + 5) and β = 12 (1 − 5). Then
+Ln = αn + β n .
+Proof. We consider the generating function
+L(x) = 2 + x + 3x2 + 4x3 + 7x4 + . . . .
+We aim to find its compact form. Write
+L(x) = 2 + x + 3x2 + 4x3 + 7x4 + . . .
+xL(x) = 2x + x2 + 3x3 + 4x4 + . . .
+x2 L(x) = 2x2 + x3 + 3x4 + . . . .
+Thus we can deduce
+L(x) − xL(x) − x2 L(x) = 2 − x
+and consequently
+(1 − x − x2 )L(x) = 2 − x =⇒ L(x) =
+
+2−x
+.
+1 − x − x2
+
+Now, what can we do with this? Answer: use partial fractions again. The denominator
+factors into (1 − αx)(1 − βx), and from this we deduce
+L(x) =
+
+X
+n≥0
+
+Ln xn =
+
+X
+X
+X
+1
+1
++
+=
+(αx)n +
+(βx)n =
+(αn + β n ) xn .
+1 − αx 1 − βx
+n≥0
+
+n≥0
+
+n≥0
+
+So we’re done upon equating coefficients.
+Philosophically, what’s happened is that by considering a sum, we could compactify all
+the information about Ln into a single rational expression, which we could then use
+partial fractions on.
+Exercise 5.5. In the same way, derive Binet’s formula: if Fn is the nth Fibonacci number
+then
+1
+Fn = √ (αn − β n ).
+5
+x
+As an intermediate step, you should find the generating function 1−x−x
+2 for the Fibonacci
+numbers.
+In principle, every linear recurrence can be solved in this way. For more details see for
+example [5].
+15
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+§5.3 Common generating functions
+
+
+1
+So far, we know that 1−x
+= 1 + x + x2 + . . . and (1 + x)n = 1 + n1 x + n2 x2 + . . . . It
+turns out we can get more formulas to add to our arsenal using the following:
+Theorem 5.6 (Generalized binomial theorem)
+Let r be any real number (not necessarily an integer). Then
+ 
+X r 
+r
+r(r − 1) . . . (r − n + 1)
+r
+n
+(1 + x) =
+x
+where
+=
+.
+n
+n
+n!
+n≥0
+
+Proof. For concreteness, let’s show the coefficient of x3 is r(r−1)(r−2)
+. Suppose
+3!
+(1 + x)r =
+
+X
+
+ak xk = a0 + a1 x + a2 x2 + a3 x3 + a4 x4 + . . . .
+
+k≥0
+
+Take the triple derivative:
+r(r − 1)(r − 2) · (1 + x)r−3 = 6a3 + 24a4 x + 60a5 x2 + . . .
+Now if we compare the constant terms we get a3 = 16 r(r − 1)(r − 2).
+This generalized binomial theorem has several applications, described below.
+• For example, if we set r = −1 we obtain
+X −1
+X (−1)(−2) . . . (−n)
+X
+1
+=
+xn =
+xn =
+(−x)n .
+1+x
+n
+n!
+n≥0
+
+n≥0
+
+n≥0
+
+• More generally:
+
+
+Exercise 5.7. Prove that for an integer m, we have −m−1
+= (−1)k m+k
+. Deduce
+k
+k
+that
+ 
+
+
+
+
+X k + m
+1
+m 0
+m+1 1
+m+2 2
+=
+x +
+x +
+x + ··· =
+xk
+(1 − x)m+1
+m
+m
+m
+m
+k≥0
+
+1
+
+• A second interesting example is r = − 12 . For convenience, we will look at (1 − 4x)− 2
+1
+rather than (1 − x)− 2 . Note that
+
+
+X
+1
+−1/2 k
+(1 − 4x)− 2 =
+(−4)k
+x
+k
+k≥0
+
+
+
+1
+X
+− 32 . . . − 2k−1
+k −2
+2
+=
+(−4)
+xk
+k!
+k≥0
+
+1 · 3 · · · · · (2k − 1) k X k (2k − 1)!! k
+x =
+2 ·
+x
+k!
+k!
+k≥0
+k≥0
+X (2k)!/k!
+X 2k 
+k
+=
+x =
+xk .
+k!
+k
+=
+
+X
+
+2k ·
+
+k≥0
+
+k≥0
+
+16
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+
+Thus we get the generating function for 2k
+k . Here we have used the well-known
+fact that
+2k k!(2k − 1)!! = (2k)!
+If you haven’t seen this before, try to prove it!
+ k
+P
+1
+• Finally, let’s integrate both sides of (1 − 4x)− 2 = k≥0 2k
+k x . This tells us that
+X 1 2k 
+1
+1/4
+xk+1 = 1 (1 − 4x) 2 + C
+k+1 k
+−2
+k≥0
+for some constant C; by comparing the constant terms, we get C = 12 . Dividing by
+x we derive
+√
+X 1 2k 
+1 − 1 − 4x
+k
+x =
+.
+k+1 k
+2x
+k≥0
+
+
+1 2k
+The numbers Ck = k+1
+k are the infamous Catalan numbers.
+In Table 1 we collect the fruits of our labors above. Notice that in particular we can
+handle both of
+
+• sequences of the form n∗ (where the top is fixed while the bottom moves)
+
+• sequences of the form n∗ (where the bottom is fixed while the top moves).
+These formulas will be indispensable later on.
+
+X n
+xk
+k
+k≥0
+
+
+X
+1
+k+m k
+=
+x
+(1 − x)m+1
+m
+k≥0
+Xk
+xm
+=
+xk
+(1 − x)m+1
+m
+(1 + x)n =
+
+√
+1−
+
+√
+
+X 2k 
+1
+=
+xk
+k
+1 − 4x k≥0
+
+1 − 4x X
+=
+Ck x k
+2x
+k≥0
+X 1
+ex =
+xk
+k!
+k≥0
+
+k≥0
+
+Table 1: Table of common generating functions
+Here is an application of the formulas.
+Example 5.8 (HMMT 2007 Combinatorics #9)
+Let S be the set of triples (i, j, k) of positive integers which satisfy i + j + k = 17.
+Compute
+X
+ijk.
+(i,j,k)∈S
+
+Solution. The point is to notice that one can consider the quantity
+
+
+
+
+X
+X
+X
+F (x) = 
+ixi  
+jxj  
+kxk 
+i≥0
+
+j≥0
+
+17
+
+k≥0
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+and that we merely want the coefficient of x17 . But
+
+3
+x
+1
+F (x) =
+= x3
+(1 − x)2
+(1 − x)6
+
+19
+1
+so we need the x14 coefficient of (1−x)
+6 which we know is
+5 .
+
+§5.4 Snake Oil method
+The so-called Snake Oil method, so dubbed by [4], is a powerful way to force a combinatorial sum into a generating-function double sum. It serves as a “miracle cure” for a
+whole class of problems, hence the name.
+Here’s how it works: suppose we have a sum we want to evaluate in terms of n, perhaps
+of the form
+X
+an =
+F (k, n)
+k
+
+for some function F . It would suffice to evaluate the generating function
+X
+XX
+A(x) =
+an xn =
+F (k, n)xn .
+n≥0
+
+n≥0 k
+
+Since this is a double sum, we can now swap the order of summation and obtain
+XX
+A(x) =
+F (k, n)xn .
+k n≥0
+
+With any luck the interchanged sum will be significantly easier to evaluate. This works
+best if F is the product of several functions that we know the generating functions of
+(like in table above).
+Let’s see an example:
+Example 5.9 ([4])
+For n ≥ 0, compute
+X n + k 
+2n−k .
+2k
+k≥0
+
+Proof. As described above, we let
+
+
+X X n + k 
+X X n + k 
+
+A(x) =
+2n−k  xn =
+2n−k xn
+2k
+2k
+n≥0 k≥0
+k≥0 n≥0
+X
+X n + k 
+X X (n − k) + 2k 
+=
+2−k
+(2x)n =
+xk
+(2x)n−k
+2k
+2k
+n≥0
+n≥0
+k≥0
+k≥0
+
+
+
+2k+1
+X X a + 2k
+X
+1
+k
+a
+k
+=
+x
+(2x) =
+x
+2k
+1 − 2x
+a≥0
+k≥0
+k≥0
+k
+X 1 
+x
+1
+1
+1 − 2x
+=
+=
+=
+x
+1 − 2x (1 − 2x)2
+1 − 2x 1 − (1−2x)
+(1
+−
+2x)2 − x
+2
+k≥0
+
+=
+
+1 − 2x
+1 − 2x
+1/3
+2/3
+=
+=
++
+1 − 5x + 4x2
+(1 − 4x)(1 − x)
+1 − x 1 − 4x
+18
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+=
+
+Summations
+
+X 1
+n≥0
+
+
+2 n
++ 4 xn .
+3 3
+
+Hence by matching the nth coefficients we obtain
+X n + k 
+1 2
+2n−k = + · 4n .
+2k
+3 3
+k≥0
+
+Example 5.10 ([4])
+For n ≥ 0, compute
+X k 
+.
+n−k
+k≥0
+
+Solution. Snake Oil:
+
+
+X X k 
+XX k 
+
+ xn =
+xn
+n−k
+n−k
+n≥0 k≥0
+k≥0 n≥0
+X
+X  k 
+k
+=
+x
+xn−k
+n−k
+k≥0
+k≤n≤2k
+X
+1
+=
+xk · (1 + x)k =
+1 − x(1 + x)
+k≥0
+
+=
+
+1
+.
+1 − x − x2
+
+Thus the sum in question is the Fibonacci number Fn+1 .
+The snake oil method relies on having the free variable appearing in only one place.
+So the following example doesn’t succumb immediately to Snake Oil:
+Prove that for n ≥ 0 we have
+
+n  
+X
+n
+2n
+i=0
+
+i
+
+n−i
+
+ 
+3n
+=
+.
+n
+
+However, it is a special case of Vandermonde convolution, which does succumb to Snake
+Oil. So if a free variable appears in many places, this is often a hint to try and consider
+generalizations of the identity.
+
+§5.5 Problems
+Problem 5.11 ([3]). Prove that for every integer n ≥ 0,
+X 2a2b
+= 4n .
+a
+b
+a+b=n
+
+Problem 5.12 ([3]). For integers m, n ≥ 0, prove that
+ 
+ (
+X
+1
+n
+n
++
+b
+−
+1
+(−1)a
+=
+a
+b
+0
+a+b=m
+19
+
+m=0
+m > 0.
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+Problem 5.13 ([6]). Let m ≤ n be positive integers. Compute
+n   
+X
+n
+k
+.
+k
+m
+k=m
+
+Problem 5.14 ([4]). For m, n ≥ 1 compute
+X  n + k 2k  (−1)k
+.
+m + 2k
+k k+1
+k≥0
+
+§6 Author’s Pick
+Problem 6.1 (AMSP 2011 NT3 Exam). Let µ be the Möbius function. For n ≥ 1,
+evaluate
+n
+jnk
+X
+µ(k)
+.
+k
+k=1
+
+Problem 6.2 (USAMO 2010/5, Titu Andreescu). Let q = 3p−5
+where p is an odd prime,
+2
+and let
+1
+1
+1
+Sq =
++
++ ··· +
+.
+2·3·4 5·6·7
+q(q + 1)(q + 2)
+Prove that if p1 − 2Sq = m
+n for integers m and n, then m − n is divisible by p.
+Problem 6.3 (Princeton Individual Finals 2015, Xiaoyu Xu). Let p be an odd prime.
+Prove that p2 | 2p − 2 if and only if
+1
+1
+1
++
++ ··· +
+≡0
+1·2 3·4
+(p − 2)(p − 1)
+
+(mod p).
+
+Problem 6.4 (Reed Dawson, [4]). For n ≥ 0, compute
+X 2k n  1 k
+−
+.
+k
+k
+4
+k≥0
+
+Problem 6.5 (NIMO 24.8, Evan Chen). For a complex number z 6= 3,4, let F (z) denote
+1
+the real part of (3−z)(4−z)
+. Compute
+
+Z 1 
+cos 2πt + i sin 2πt
+F
+dt.
+5
+0
+Problem 6.6 (NIMO 14.8, Evan Chen). Let x be a positive real number. Define
+A=
+
+∞
+X
+x3k
+k=0
+
+(3k)!
+
+,
+
+B=
+
+∞
+X
+x3k+1
+,
+(3k + 1)!
+
+and
+
+C=
+
+k=0
+
+∞
+X
+x3k+2
+.
+(3k + 2)!
+k=0
+
+Given that A3 + B 3 + C 3 + 8ABC = 2014, compute ABC.
+Problem 6.7 (OMO 2013 F24, Evan Chen). The real numbers a0 , a1 , . . . , a2013 and
+b0 , b1 , . . . , b2013 satisfy
+1√
+1√
+an =
+2n + 2 + an−1 and bn =
+2n + 2 − bn−1
+63
+96
+for every integer n = 1, 2, . . . , 2013. If a0 = b2013 and b0 = a2013 , compute
+2013
+X
+
+(ak bk−1 − ak−1 bk ) .
+
+k=1
+
+20
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+Summations
+
+Problem 6.8 (Shortlist 2014 N6). Let a1 < a2 < · · · < an be pairwise coprime positive
+integers with a1 being prime and a1 ≥ n + 2. On the segment I = [0, a1 a2 · · · an ] of the
+real line, mark all integers that are divisible by at least one of the numbers a1 , . . . , an .
+These points split I into a number of smaller segments. Prove that the sum of the squares
+of the lengths of these segments is divisible by a1 .
+Problem 6.9 (OMO 2014 S25, Michael Kural). Compute
+∞ 1
+1
+1
+X
+1 + 2 + ··· + n
+
+.
+n+100
+100
+
+n=1
+
+Problem 6.10 (OMO 2015 F30, Michael Kural). Ryan is learning number theory.
+HePreads about the Möbius function µ : N → Z, defined by µ(1) = 1 and µ(n) =
+− d|n,d6=n µ(d) for n > 1. However, Ryan doesn’t like negative numbers, so he invents
+his own function: the dubious function ∆ : N → N, defined by the relations ∆(1) = 1 and
+X
+∆(n) =
+∆(d)
+d|n
+d6=n
+
+for n > 1. Help Ryan determine the value
+∞
+X
+∆(15k )
+k=0
+
+15k
+
+.
+
+§7 Hints
+2.7 Telescoping. S = 3/2.
+2.8 By contradiction and intermediate value theorem. Expand the geometric series and
+swap the order of summation.
+2.9 17
+21 . Ravi substitution.
+2.10 Roots of unity filter on −1 + (1 + x)(1 + x2 )(1 + x3 ) . . . (1 + x1000 ).
+3.8 Lemma 3.6.
+3.9 Repeat the proof of Wolstenholme by adding opposite terms.
+6
+
+3.10 Answer is 9. Write as ii2 +1
+for i 6= ±10. Pair up and cancel all the other remaining
++1
+terms and cancel.
+4.11 Both sides are multiplicative, so check it on prime powers.
+4.12 You will need to compute
+the floor again.
+
+P
+
+Ω(d) . Then swap the order of summation with
+d|n (−1)
+
+4.13 Let F (n) be the right-hand side. Show that F ∗ 1 = δ.
+1
+5.11 Square of √1−4x
+.
+1
+5.12 Product of (1 + (−x))n and (1−x)
+n.
+
+21
+
+Evan Chen《陳誼廷》 — 13 October 2016
+
+5.13 Snake Oil.
+
+n n−m
+.
+m 2
+
+5.14 Snake Oil.
+
+n−1
+m−1 .
+
+Summations
+
+
+
+
+
+6.1
+P It equals 1. Switch order of summation with floor as before. Use the fact that
+d|n µ(d) = δ(n).
+6.2 Partial fractions.
+6.3 Partial fractions, plus Lemma 3.6.
+
+6.4 2−2n 2n
+n . Snake Oil.
+6.5 Don’t be scared by the integral. Partial fractions then geometric series. Switch the
+sum and integral.
+6.6 Answer is 183. Show that A3 + B 3 + C 3 − 3ABC = 1. Roots of unity filter with ex .
+6.7 Look at (an − an−1 )(bn + bn−1 ).
+6.8 Don’t be scared that this is an N6. Let p = a1 and look at intervals of the form
+[cp, cp + p]. Break the sum into several organized parts, and show that each part has sum
+zero. You will likely need Lemma 3.4.
+100
+6.9 9801
+. Swap the
+ order of summation, and telescope the inverted
+∗
+coefficients into 99 . Then telescope again.
+
+∗
+100
+
+
+
+binomial
+
+i j
+6.10 Answer: 11
+7 . Let f (i, j) = ∆(3 5 ). Find a recurrence for f , and
+ deduce that the
+
+
+1
+corresponding two-variable generating function obeys F (x, y) = 12 1 + 1−2x−2y+2xy
+.
+1
+Compute the s0 coefficient of F (s, 15s
+).
+
+References
+[1] Orders Modulo a Prime, by Evan Chen. http://web.evanchen.cc/handouts/ORPR/
+ORPR.pdf
+
+[2] Expected Uses of Probability, by Evan Chen. http://web.evanchen.cc/handouts/
+ProbabilisticMethod/ProbabilisticMethod.pdf
+
+[3] Topics in Generating Functions, by Qiaochu Yuan. https://math.berkeley.edu/
+~qchu/TopicsInGF.pdf.
+[4] generatingfunctionology, by Herbert Wilf. https://www.math.upenn.edu/~wilf/
+DownldGF.html.
+[5] IMOmath: Recurrence Equations, by Milan Novaković. http://www.imomath.
+com/index.php?options=356&lmm=0
+
+[6] IMOmath: The Method of Snake Oil, by Milan Novaković. http://www.imomath.
+com/index.php?options=357&lmm=0
+
+22
+
+

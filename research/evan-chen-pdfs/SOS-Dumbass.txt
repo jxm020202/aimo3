@@ -1,0 +1,1102 @@
+Supersums of Square-Weights (SOS)
+A Dumbass’s Perspective
+EVAN CHEN《陳誼廷》
+6 January 2013
+
+The intended audience should already be familiar with Muirhead and Schur.
+This article is centered around two powerful tools for solving polynomial-type
+inequalities: the SOS technique and Chinese Dumbass Notation.
+
+§1 Introducing SOS
+The whole point of SOS is so that you can use AM-GM backwards.
+— MOP 2012
+
+§1.1 A Motivating Example
+Example 1.1
+For a, b, c ≥ 0, prove that
+2 2
+(a + b2 + c2 )2 ≥ a3 (b + c) + b3 (c + a) + c3 (a + b).
+3
+Solution. Schur/Muirhead is not sufficient here. Thinking wishfully, we can write down
+the two inequalities
+ 1
+1 4
+a + b4 ≥ (a3 b + ab3 )
+2
+2
+2a2 b2 ≤ a3 b + ab3
+The cyclic sum of these two inequalities will yield the desired quantity. Unfortunately,
+we’re not allowed to add two different inequalities in different directions. Or can we?
+Rewrite the two inequalities as:
+
+1 2
+a + ab + b2 (a − b)2 ≥ 0
+2
+(−ab)(a − b)2 ≤ 0
+Now their “sum” is
+
+1 2
+(a − ab + b2 )(a − b)2 ≥ 0
+2
+which is true! So our attempt to add two inequalities pointing in different directions has
+led to the identity:
+1X 2
+(a − ab + b2 )(a − b)2 ≥ 0
+2 cyc
+1
+
+Evan Chen《陳誼廷》 — 6 January 2013
+
+Supersums of Square-Weights (SOS)
+
+and the problem is solved.
+This is a strong way to motivate the method: by factoring out a square (a − b)2 , we
+can “measure” the strength of an inequality that we are trying to apply, and thus we may
+add and subtract these square weights without regards to direction.
+
+§1.2 The SOS Theorem
+The basic idea is to write an inequality in the form
+Sa (b − c)2 + Sb (c − a)2 + Sc (a − b)2 ≥ 0.
+If it so happens that Sa , Sb and Sc are nonnegative, then we are done. For sharper
+inequalities this may not be the case; however, most of the time we can still finish using
+some minor adjustments. Some of the nicer estimates are provided below. They are
+drawn from [1].
+Theorem 1.2 (Pham Kim Hung)
+Consider the sum S = Sa (b − c)2 + Sb (c − a)2 + Sc (a − b)2 . Then S ≥ 0 if any of
+the following take place:
+(i) Sa , Sc , Sa + 2Sb , Sc + 2Sb are all nonnegative.
+(ii) Sb , Sa + Sb and Sb + Sc are all nonnegative when b is the median of {a, b, c}.
+(iii) Sb , Sc and b2 Sa + a2 Sb are all nonnegative when a ≥ b ≥ c.
+Proof. For the first part, the AM-GM (a + c)2 + (2b)2 ≥ 4b(a + c) yields (a − c)2 ≤
+2(a − b)2 + 2(b − c)2 . If Sb ≥ 0 we are already done; else make the estimate
+
+S ≥ Sc (a − b)2 + Sa (c − b)2 + 2(a − b)2 + 2(b − c)2 Sb
+= (Sc + 2Sb )(a − b)2 + (Sa + 2Sb )(c − b)2
+≥ 0.
+For the second part, we have (b − a)(b − c) ≤ 0 =⇒ (a − c)2 ≥ (a − b)2 + (b − c)2 , so we
+make the estimate
+
+S ≥ Sa (b − c)2 + Sc (a − c)2 + Sb (b − c)2 + (a − c)2
+= (Sa + Sb )(b − c)2 + (Sb + Sc )(a − c)2
+≥ 0.
+a
+The third part follows from observing that when a ≥ b ≥ c we have a−c
+b−c ≥ b , so that
+2
+
+(a − c)2 ≥ ab2 (b − c)2 . Hence, we drop the Sc (a − b)2 term to obtain
+S ≥ Sa (b − c)2 + Sb (a − c)2
+ 2
+
+a (b − c)2
+2
+≥ Sa (b − c) + Sb
+b2
+
+2
+
+b−c
+=
+b2 Sa + a2 Sb
+b
+≥ 0.
+2
+
+Evan Chen《陳誼廷》 — 6 January 2013
+
+Supersums of Square-Weights (SOS)
+
+§2 Chinese Dumbass Notation
+Before proceeding further I would like to make sure the reader is acquainted with the
+extremely useful Chinese Dumbass Notation, as described in [2]. Chinese Dumbass
+Notation is a convenient way of presenting a polynomial inequality, making it significantly
+easier to find the suitable applications.
+The idea is that the coefficients of an inequality of the form P (a, b, c) ≥ 0 are held in a
+triangle of side length deg P + 1, where the coefficient of the ax by cz term are located at
+the point with barycentric coordinates (x : y : z). Explicitly for, say, the third degree:
+[a3 ]
+[a2 b]
+[ab2 ]
+[b3 ]
+
+[a2 c]
+[ac2 ]
+
+[abc]
+[b2 c]
+
+[bc2 ]
+
+[c3 ]
+
+To further illustrate the point, here are some common inequalities:
+0
+0
+0
+1
+
+1
+0
+
+0
+-1
+
+1
+0
+
+-1
+
+-1
+1
+
+1
+
+-1
+-1
+
+-1
+
+-1
+1
+
+1
+
+-1
+3
+
+-1
+
+-1
+-1
+
+1
+
+1
+2
+-3
+1
+-2
+1
+
+4
+0
+
+0
+
+-3
+0
+
+2
+
+-3
+0
+
+0
+-3
+
+-1
+0
+4
+0
+
+4
+
+0
+-3
+
+-3
+
+-1
+2
+
+1
+
+1
+0
+
+1
+-1
+
+-1
+0
+0
+0
+
+0
+
+0
+1
+
+0
+
+-1
+-1
+
+Figure 1: First row: b3 + c3 ≥ bc(b + c), a2 + b2 + c2 ≥ ab + bc + ca and 3rd degree Schur.
+Second row: (a − b)2 ≥ 0, our first example, and 5th degree Schur.
+What makes this notation powerful? Once one recognizes Schur and AM-GM, then it
+is visually easy to see how strong1 the inequality is. Furthermore, if one is using SOS,
+then they can pull out things like {1, −2, 1} and {1, −1, −1, 1} from rows (things like the
+upper-left diagram). One may also recognize {1, −4, 6, −4, 1} as P
+(a − b)4 .
+1
+3
+3
+3
+Finally, one can often use the identity a + b + c − 3abc = 2 cyc (a + b + c)(b − c)2
+to convert a 3-variable application of AM-GM to SOS form. But it is usually sufficient
+to just add/subtract things which are parallel to the sides of the triangle.
+
+§2.1 Chinese Dumbass Notation: An Example
+To impress the usefulness of this notation, we provide an instructive example. The
+unfamiliar reader is strongly encouraged to try and solve this problem (via expansion)
+before reading the solution below.
+
+1
+
+In particular, if the last row sums to zero then equality holds at b = c, a = 0.
+
+3
+
+1
+
+Evan Chen《陳誼廷》 — 6 January 2013
+
+Supersums of Square-Weights (SOS)
+
+Example 2.1 (MOP 2011)
+Let a, b, c be positive real numbers such that a + b + c = 3. Show that
+r
+1 1 1
+a2 + b2 + c2
++ + ≥1+2
+.
+a b
+c
+3abc
+Solution. Homogenizing and rearranging, this becomes
+
+
+
+2
+
+
+1 1 1
+(a + b + c)(a2 + b2 + c2 )
+(a + b + c)
++ +
+−3 ≥4
+a b
+c
+abc
+Expanding and clearing denominators, this reduces to
+X
+X
+X
+X
+a4 b2 + 2
+a3 b3 + 6a2 b2 c2 ≥ 2
+a4 bc + 2
+a3 b2 c.
+sym
+
+cyc
+
+cyc
+
+sym
+
+Trying to fight with this mess is no easy task. But watch how easy the problem once we
+put in a triangle:
+0
+0
+1
+
+-2
+
+2
+1
+0
+0
+
+-2
+-2
+
+-2
+0
+
+0
+1
+-2
+6
+
+-2
+1
+
+2
+-2
+
+-2
+2
+
+1
+-2
+
+1
+
+0
+0
+
+0
+
+Figure 2: K4.1 expanded
+It’s hard to see without the triangle, but now we notice that third-degree Schur appears
+upside-down! The {1, −2, 1} on each side also die off: so this problem is merely the
+identity
+X
+X
+a4 (b − c)2 + 2
+ab(ab − bc)(ab − ac) ≥ 0.
+cyc
+
+cyc
+
+which is evident.
+
+§3 Some Examples
+§3.1 SOS vs Schur
+Example 3.1
+Let a, b, c be nonnegative reals. Show that a3 + b3 + c3 + 3abc ≥ a2 (b + c) + b2 (c +
+a) + c2 (a + b).
+Solution. Double both
+and write the inequality
+in the triangle:
+P sides
+P
+3
+3
+2
+2
+We can take out cyc a + b − a b − ab = cyc (a + b)(a − b)2 which will leave us a
+P
+hexagon in the center; which we break up − cyc a(b − c)2 . Hence the original problem
+is equivalent to
+1X
+(b + c − a)(b − c)2 ≥ 0.
+2 cyc
+4
+
+Evan Chen《陳誼廷》 — 6 January 2013
+
+Supersums of Square-Weights (SOS)
+
+2
+-2
+-2
+
+-2
+6
+
+2
+
+-2
+
+-2
+-2
+
+2
+
+Figure 3: Third-degree Schur
+If a ≥ b ≥ c then it is trivial to see Sb , Sb + Sa and Sb + Sc are all nonnegative; hence we
+are done.
+Exercise. Put fourth-degree Schur in SOS form.
+
+In fact, upon discovering (b − c)(b − a) = 12 (b − c)2 + (b − a)2 − (a − c)2 for arbitrary
+r the inequality may be written as
+ 1X r
+1X r
+b (b − c)2 + (b − a)2 − (a − c)2 =
+(b + cr − ar )(b − c)2 .
+2 cyc
+2 cyc
+which is obviously nonnegative by the SOS criteria.
+
+§3.2 An Asymmetric Inequality
+Example 3.2 (Ukraine 2006)
+Let a, b, c be positive reals. Prove that
+3(a3 + b3 + c3 + abc) ≥ 4(a2 b + b2 c + c2 a).
+Solution. Seeking symmetry, we multiply both sides by six and write it as the sum in
+the following figure.
+8
+-16
+8
+8
+
+10
+8
+
+0
+-16
+
+-8
+-16
+
+8
+
+-8
+8
+
+10
+
+-8
+18
+
+-8
+
+-8
+-8
+
+10
+
+Figure 4: Trying to get symmetry
+P
+The left triangle is contrived using a multiple of the form cyc a(a−b)2 to get the second
+P
+P
+addend to be symmetric. Now, we can express it as 5 cyc (b + c)(b − c)2 − 3 cyc a(b − c)2 .
+All in all, the total is
+X
+(13b + 5c − 3a)(b − c)2 ≥ 0
+cyc
+
+which is not hard.
+To be fair, the two triangles above are already nonnegative as is, meaning that simple
+AM-GM and Schur was sufficient.
+
+§4 Too Lazy to Expand
+Up to now, we have used SOS on an inequality only if it could be written in Chinese
+Dumbass notation. In fact, with a bit more precision, one can use SOS on inequalities
+with fractions without expanding. An extremely useful fact is as follows:
+5
+
+Evan Chen《陳誼廷》 — 6 January 2013
+
+Supersums of Square-Weights (SOS)
+
+Fact. If a polynomial expression f (a, b, c) is
+(i) symmetric in a and b (that is, f (a, b, c) = f (b, a, c)), and
+(ii) zero when a = b (that is, f (a, a, c) = 0)
+then it is divisible by (a − b)2 .
+2
+
+2
+
+a
+b
+4ab
+This means that, for example, the expression b+c
++ c+a
+− a+b+2c
+is divisible by (a − b)2 :
+it’s just a matter of computation to extract the factor.
+
+§4.1 A Perfect Example
+Example 4.1 (Calvin Deng, ELMO Shortlist 2010)
+Let a, b, c be positive reals. Prove that
+(a − b)(a − c)
+(b − c)(b − a)
+(c − a)(c − b)
++ 2
++ 2
+≥ 0.
+2
+2
+2
+2a + (b + c)
+2b + (c + a)
+2c + (a + b)2
+Solution. We could not have asked for more here: the first two fractions are symmetric
+in a and b, but even better, it’s downright obvious that it becomes zero at a = b. The
+rest is just courage:
+
+
+(a − b)(a − c)
+(b − c)(b − a)
+a−c
+b−c
++
+= (a − b)
+−
+2a2 + (b + c)2 2b2 + (c + a)2
+2a2 + (b + c)2 2b2 + (c + a)2
+(a − c)(2b2 + (c + a)2 ) − (b − c)(2a2 + (b + c)2 )
+= (a − b) ·
+(2a2 + (b + c)2 )(2b2 + (c + a)2 )
+= (a − b) ·
+
+
+ 
+
+a3 +a2 c+2ab2 −ac2 −2b2 c−c3 − b3 +b2 c+2a2 b−bc2 −2a2 c−c3
+(2a2 +(b+c)2 )(2b2 +(c+a)2 )
+3
+
+3
+
+2
+
+2
+
+2
+
+2
+
+2
+
+)+2ab(b−a)+c (b−a)+2c(a −b )
+= (a − b) · (a −b )+c(a(2a−b
+2 +(b+c)2 )(2b2 +(c+a)2 )
+
+a2 + ab + b2 + c(a + b) − 2ab − c2 + 2c(a + b)
+(2a2 + (b + c)2 )(2b2 + (c + a)2 )
+2
+a − ab + b2 + 3c(a + b) − c2
+= (a − b)2 ·
+(2a2 + (b + c)2 )(2b2 + (c + a)2 )
+= (a − b)2 ·
+
+Taking the cyclic sum of this quantity and dividing by two will yield the left-hand side of
+the inequality.
+At this point we definitely do not want to try and apply one of the criteria; even
+clearing denominators doesn’t look too terrible, since we’ve already done a good chunk
+of the work.2
+But we’ve actually chosen the addends here in a good way; assume c = min{a, b, c}.
+(c−a)(c−b)
+Then we can drop the rightmost term 2c
+2 +(a+b)2 ≥ 0, and this is what remains of the
+left-hand side. But when c = min{a, b, c} this is clearly nonnegative!
+Second Solution. We invoke the powerful identity we discovered earlier with Schur:
+2(a − b)(a − c) = (a − b)2 + (a − c)2 − (b − c)2 .
+2
+
+And in general, if SOS it’s not obvious how to proceed from here, you’re still in a very good position to
+complete the expansion: you have only one extra denominator to deal with, and whatever you get will
+already be in SOS form. I suppose you can view this as a “safety net”.
+
+6
+
+Evan Chen《陳誼廷》 — 6 January 2013
+
+Supersums of Square-Weights (SOS)
+
+1
+Upon letting Xa = 2a2 +(b+c)
+2 the inequality rewrites as
+
+1X
+(Xb + Xc − Xa ) (b − c)2 ≥ 0
+2 cyc
+If a ≥ b ≥ c then Xa + Xc − Xb is evidently nonnegative. (In fact, check that Xc ≥ Xb .)
+But now Sb , Sb + Sa and Sb + Sc are all nonnegative, so once again we are done.
+
+§4.2 Much Sharper
+Example 4.2 (Darij Grinberg)
+Show that for any positive reals a, b, c,
+(b + c)2 (c + a)2 (a + b)2
++ 2
++ 2
+≥ 6.
+a2 + bc
+b + ca
+c + ab
+Solution. Begin again with algebra
+X
+cyc
+
+−2 +
+
+(b + c)2 X b2 + c2 − 2a2
+=
+a2 + bc
+a2 + bc
+cyc
+=
+
+X b2 − a2 + c2 − a2
+a2 + bc
+
+cyc
+
+=
+
+X b2 − a2
+cyc
+
+a2 + bc
+
++
+
+a2 − b2
+b2 + ca
+
+At which point our lemma applies!
+=
+
+X
+
+2
+
+2
+
+2
+
+2
+
+
+
+1
+1
+− 2
+2
+b + ca a + bc
+
+
+
+(a2 + bc) − (b2 + ca)
+(a2 + bc)(b2 + ca)
+
+(a − b )
+
+cyc
+
+=
+
+X
+cyc
+
+=
+
+X
+
+(a − b )
+
+(a − b)2 (a + b) ·
+
+cyc
+
+=Q
+
+
+
+
+
+a+b−c
+(a2 + bc)(b2 + ca)
+
+X
+1
+(a − b)2 (a + b)(a + b − c)(c2 + ab)
+2
+(a
++
+bc)
+cyc
+cyc
+
+The equality case (a, b, c) = (1, 1, 0) appears, so we must be precise. Assume that
+a ≥ b ≥ c, and further that a ≥ b + c (otherwise the result is obvious). By the fourth
+criterion3 of Theorem 1.2 it suffices to prove that
+b2 (b + c)(b + c − a)(a2 + bc) + a2 (a + c)(a + c − b)(b2 + ca) ≥ 0
+⇐⇒ a2 (a + c)(a − b + c)(b2 + ca) ≥ b2 (b + c)(a − b − c)(a2 + bc).
+Again, keeping close in mind the equality case, we write a − b + c ≥ a − b − c, reducing
+the inequality to a2 (a + c)(b2 + ca) ≥ b2 (b + c)(a2 + bc). But this follows writing the
+inequalities a + c ≥ b + c and a2 (b2 + ca) ≥ b2 (a2 + bc) and multiplying them!
+3
+
+We are motivated to choose this criterion for two reasons. First, it is tight at the equality case; secondly,
+this weights the positive Sb by a2 , which is “large” since a ≥ b + c.
+
+7
+
+Evan Chen《陳誼廷》 — 6 January 2013
+
+Supersums of Square-Weights (SOS)
+
+§5 The Ravi Substitution
+When attacking a problem involving the sides of a triangle, it is often beneficial to delay
+the Ravi substitution until after the inequality has been written in SOS form. Often by
+that point it is no longer necessary; especially with the following lemma:
+Lemma 5.1
+Let a ≥ b ≥ c be the sides of a triangle. Then Sa (b − c)2 + Sb (c − a)2 + Sc (a − b)2 is
+nonnegative whenever
+Sa , Sb ≥ 0
+
+and
+
+b2 Sb + c2 Sc ≥ 0.
+
+Proof. Drop the Sa (b − c)2 term. It suffices to show that
+
+Sb ·
+
+a−c
+a−b
+
+2
++ Sc ≥ 0
+
+b−c
+Note that a−c
+a−b = 1 + a−b is a decreasing function in a, so the inequality is sharpest when
+a = b + c (since of course a ≤ b + c). This is precisely the condition in the problem.
+
+If worst comes to worst, we can still use the Ravi substitution with the added comfort
+that the degree will be two less, and the result will already be in SOS format.
+
+§5.1 A Small Example
+Example 5.2
+Let a, b, c be the sides of a triangle. Prove that
+a3 (b − c) + b3 (c − a) + c3 (a − b) + 2(a2 b2 + b2 c2 + c2 a2 ) ≥ 2abc(a + b + c).
+0
+1
+2
+-1
+0
+
+-1
+-2
+
+-2
+1
+
+2
+-2
+
+2
+
+1
+-1
+
+0
+
+Figure 5: The corresponding triangle
+Solution. Of course one can simply perform the Ravi substitution and simply expand,
+but that’s too much work.
+After moving everything to one side, we can consider our given as the sum of the two
+triangles:
+The first triangle is chosen so that the second is symmetric, and so that it can also be
+written as the sum:
+X
+−2
+ab(b − c)2
+cyc
+
+8
+
+Evan Chen《陳誼廷》 — 6 January 2013
+
+Supersums of Square-Weights (SOS)
+
+0
+0
+0
+-2
+0
+
+0
+-2
+
+1
+
+2
+2
+
+0
+
+0
+2
+
+0
+
+2
+0
+
+-2
+
+1
+0
+
+0
+
+1
+-4
+
+-4
+1
+
+2
+-4
+
+2
+
+1
+1
+
+0
+
+Figure 6: Forcing symmetry unto our inequality.
+The second triangle can then be simplified using standard techniques as
+X
+X
+a(b + c)(b − c)2 +
+a2 (b − c)2
+cyc
+
+cyc
+
+So the quantity in question is
+X
+X
+(ab + ac − 2ab + a2 )(b − c)2 =
+a(c + a − b)(b − c)2 ≥ 0.
+cyc
+
+cyc
+
+§5.2 Iran 1996
+Finally, to top off this article we have the infamous Iran TST 1996 inequality.
+Example 5.3 (Iran TST 1996)
+Let x, y, z be positive reals. Prove that
+
+
+1
+1
+1
+9
+(xy + yz + zx)
++
++
+≥ .
+2
+2
+2
+(x + y)
+(y + z)
+(z + x)
+4
+Solution. Rather than expanding directly, we apply the Ravi Substitution in reverse;
+that is, a = y + z, b = z + x, c = x + y. This yields
+
+
+ 1
+1
+1
+2
+2
+2
+2ab + 2bc + 2ca − a − b − c
++
++
+≥ 9.
+a2 b2 c2
+This is much easier to expand! We get:
+X
+b2 c2 (2ab + 2bc + 2ca − a2 − b2 − c2 ) ≥ 9a2 b2 c2
+cyc
+
+Putting this in triangle form gives:
+0
+0
+-1
+2
+-1
+0
+0
+
+0
+2
+
+2
+0
+
+0
+
+0
+
+2
+-12
+
+2
+-1
+
+-1
+2
+2
+2
+
+2
+
+-1
+0
+
+-1
+
+Figure 7: Iran, expanded
+
+9
+
+0
+0
+
+0
+
+Evan Chen《陳誼廷》 — 6 January 2013
+
+Supersums of Square-Weights (SOS)
+
+Taking out the {−1, 2, −1} on the edges and then knocking out the hexagon, we see
+that we may write this as
+X
+X
+X
+−
+b2 c2 (b − c)2 + 2
+a2 bc(b − c)2 =
+bc(2a2 − bc)(b − c)2
+cyc
+
+cyc
+
+cyc
+
+Now applying Lemma 5.1, it suffices to prove that
+
+b2 · ca(2b2 − ca) + c2 · ab(2c2 − ab) ≥ 0 ⇐⇒ 2abc b3 + c3 − abc ≥ 0
+and this is trivial.
+
+§6 Summary
+Some subset of the main ideas:
+• A polynomial inequality can be written in Chinese Dumbass notation, making it
+visually easy to see how sharp the inequality is.
+• If a polynomial inequality does not succumb to Schur and Muirhead, then SOS can
+yield a solution.
+• Cyclic (as opposed to symmetric) inequalities are no harder to put in SOS form.
+• With enough skill, SOS can be used without, before, or to simplify expansion.
+• SOS provides an alternative to the Ravi substitution in triangle-side inequalities.
+Often I will expand an inequality with the hope of applying Schurhead, and upon failing,
+fall back on SOS to provide stronger estimates. But as we have seen, this is far from the
+only way to use SOS.
+
+§7 Exercises
+1. Show that for nonnegative a, b, c,
+2(a6 + b6 + c6 ) + 16(a3 b3 + b3 c3 + c3 a3 ) ≥ 9a4 (b2 + c2 ) + 9b4 (c2 + a2 ) + 9c4 (a2 + b2 ).
+3
+
+3
+
+3
+
++xyz
++xyz
++xyz
+2. Show that for all positive reals x, y, z, x y+z
++ y z+x
++ z x+y
+≥ x2 + y 2 + z 2 .
+
+3. (Wenyu Cao, ELMO 2009) Let a, b, c be nonnegative real numbers. Prove that
+a(a − b)(a − 2b) + b(b − c)(b − 2c) + c(c − a)(c − 2a) ≥ 0.
+3
+
+3
+
+3
+
++c
+4. For positive reals a, b, c, prove that a +b
++ a(b+c)
++ b(c+a)
++ c(a+b)
+≥ 4.
+3abc
+b2 +c2
+c2 +a2
+a2 +b2
+
+5. (Michael Rozenberg) Show that for positive reals a, b, c,
+a2
+b2
+c2
+3 a3 + b3 + c3
++
++
+≥ · 2
+.
+b+c c+a a+b
+2 a + b2 + c2
+
+10
+
+Evan Chen《陳誼廷》 — 6 January 2013
+
+Supersums of Square-Weights (SOS)
+
+6. (MOP 2003) Show that for a, b, c ≥ 0 we have
+0
+0
+−2
+
+1
+−2
+1
+0
+
+2
+
+0
+
+−2
+
+2
+
+2
+1
+
+1
+
+−6
+
+2
+−2
+
+0
+
+0
+
+2
+−2
+
+2
+−2
+
+≥ 0.
+1
+
+1
+
+0
+0
+
+0
+
+References
+[1] Pham Kim Hung, Sums of Squares. https://www.aops.com/community/c55h80127.
+[2] Brian Hamrick, The Art of Dumbassing. https://www.tjhsst.edu/~2010bhamrick/
+files/dumbassing.pdf.
+[3] Thomas Mildorf, Inequalities - Addendum. Handout at Red MOP 2011.
+[4] Thomas Mildorf, Olympiad Inequalities. https://www.aops.com/Resources/Papers/
+MildorfInequalities.pdf.
+
+11
+
+

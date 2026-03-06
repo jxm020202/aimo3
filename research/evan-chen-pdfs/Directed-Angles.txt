@@ -1,0 +1,465 @@
+How to Use Directed Angles
+EVAN CHEN《陳誼廷》
+31 May 2015
+
+“WLOG, diagram as shown.” – Everyone
+This is a very brief note on what a directed angle is and how to use it to write olympiad
+solutions which are impervious to configuration issues. It is short because I don’t actually
+need to teach you how to solve problems, but only to rewrite proofs of problems you’ve
+already essentially solved.
+
+§1 Introduction
+Everyone hates configuration issues (both contestants and graders). Configuration issues
+come up because the most fundamental theorem in olympiad geometry actually has two
+cases.
+Proposition 1.1 (Cyclic Quadrilaterals)
+Let A, B, X, Y be any four points, no three collinear.
+(i) If A and B lie on the same side of XY , then the four points are concyclic if
+and only if ∠XAY = ∠XBY .
+(ii) If A and B lie on different sides of XY , then the four points are concyclic if
+and only if ∠XAY + ∠XBY = 180◦ .
+Doesn’t that just look annoying? Any time you want to invoke a cyclic quadrilateral,
+you have to actually check the points lie on the correct side of some line.
+In fact, you even have to worry about configuration issues for something as simple as
+adding two angles.
+
+A
+
+A
+B
+
+X
+X
+
+Y
+
+Y
+B
+
+Figure 1: The two cases for cyclic quadrilaterals.
+
+1
+
+Evan Chen《陳誼廷》 — 31 May 2015
+
+How to Use Directed Angles
+
+Question 1.2. When does the assertion
+∠AOP + ∠P OB = ∠AOB
+fail?
+Thus any time you want to add two angles, you technically need to also check that
+point P lies “inside” ∠AOB.
+Given all this disaster, you might wonder how we ever got any angle chasing done at
+all. The secret is that configuration issues are the object of widespread scorn: they are
+glossed over, swept under a carpet, or “left as an exercise”. I’ve almost never seen them
+addressed seriously, except in the very rare circumstances in which they actually matter.
+Let’s fix this.
+
+§2 Directed Angles
+In what follows I’m going to write ]AOB for a directed angle to distinguish it from a
+“regular” angle ∠AOB. But I should warn that this notation is not standard.1 Thus
+if you wish to use directed angles on an olympiad, you should explicitly say so in your
+solution.
+Here’s the very general definition.
+Definition 2.1. Given any two non-parallel lines ` and m, we define the directed angle
+](`, m)
+to be the measure of the angle starting from ` and ending at m, measured counterclockwise.
+
+ℓ
+m
+50◦
+
+Figure 2: The directed angle ](`, m) = 50◦ .
+Notice that
+](`, m) + ](m, `) = 180◦
+
+(1)
+
+holds universally. This is kind of nice, but it’s a bit annoying to have that 180◦ lying
+around there, and so we will also take all angle measures modulo 180◦ . That means
+that −70◦ = 110◦ = 290◦ = . . . . Once we take mod 180◦ , (1) becomes the following very
+important result.
+1
+
+Editor note: As of 2023, this notation is more standard now, due to the publishing of the textbook EGMO.
+(This handout was written in 2015.)
+
+2
+
+Evan Chen《陳誼廷》 — 31 May 2015
+
+How to Use Directed Angles
+
+Proposition 2.2
+For any lines ` and m, ](`, m) = −](m, `). (In other words, measuring the angle
+clockwise instead of counterclockwise corresponds to negation.)
+Observe why this is intuitively true in Figure 2.
+You can verify now that with this identification, we have
+](`, m) + ](m, n) = ](`, n)
+for all concurrent lines `, m, and n, regardless of configuration.
+With this definition in place, we can define ]AOB as the angle between the two lines
+AO and BO.
+Definition 2.3. Given three points A, O, B we define
+
+def
+]AOB = ] AO, BO .
+Equivalently, if ` and m are two lines which intersect at O, then ](`, m) = ]AOB for
+any point A on ` and B on m.
+(Note that by XY I mean “line XY ”, not “segment XY ”.)
+
+ℓ
+m
+50◦
+O
+
+A
+−130◦
+B
+
+Figure 3: The directed angle ]AOB = −130◦ = 50◦ .
+Most of the time we will be using the ]AOB notation. But it is sometimes useful to
+use the ](`, m) notation in problems where the intersection point O of ` and m is not
+yet named.
+
+§3 Properties of Directed Angles
+You might ask whether this strange convention is actually useful. Let me convince you it
+is with the following theorem.
+Theorem 3.1 (Directed Cyclic Quadrilaterals)
+Let A, B, X, Y be four points, no three collinear. Then they are concyclic if and
+only if
+]XAY = ]XBY.
+
+3
+
+Evan Chen《陳誼廷》 — 31 May 2015
+
+How to Use Directed Angles
+
+Exercise 3.2. Go back to Figure 1 and verify that this theorem actually works for both
+configurations.
+Now you should be paying attention, because I just eliminated one of the biggest pains
+in olympiad geometry for you. Unlike the Proposition 1.1 you grew up with, Theorem 3.1
+has no case distinctions.
+Many other things become vastly simpler.
+Theorem 3.3 (Angle Addition Postulate)
+We have ]AOP + ]P OB = ]AOB.
+Actually, this is a “special case” of the following result for three concurrent lines `, m,
+n.
+Theorem 3.4 (Triangles Sum to 180◦ )
+For any lines `, m, n we have
+](`, m) + ](m, n) + ](n, `) = 0.
+In particular, for any points A, B, C we have
+]ABC + ]BCA + ]CAB = 0.
+Proof. Check it yourself.
+
+A
+∡CAB
+
+∡BCA
+
+∡ABC
+
+C
+
+B
+Figure 4: Triangle Sum
+
+Theorem 3.5 (Collinearity Criteria)
+Let X be any point. Points A, B, C are collinear if and only if
+]XBC = ]XBA.
+Proof. Prove this yourself. (Show that the assertion is equivalent to ]ABC = 0.)
+Also, note that right angles have the very nice property that if ` ⊥ m we have
+](`, m) = ](m, `) = 90◦ .
+Hence any time you have perpendiculars, you can simply set the measure of the directed
+angle as 90◦ without thinking or worrying about counterclockwise versus clockwise.
+4
+
+Evan Chen《陳誼廷》 — 31 May 2015
+
+How to Use Directed Angles
+
+X
+
+A
+C
+B
+X
+
+C
+B
+A
+Figure 5: Collinearity with directed angles.
+
+§4 Examples
+Writing a solution using directed angles should, in theory, not take any more additional
+effort. One simply solves the problem by looking at one particular diagram, but writes
+the solution up using the above rules so that they hold for all diagrams.
+Let me actually give an example now.
+Example 4.1 (NIMO Winter 2014, Adapted)
+Let ABC be a triangle with orthocenter H and let M be the midpoint of BC.
+Denote by ωB the circle passing through B, H, and M , and denote by ωC the circle
+passing through C, H, and M . Lines AB and AC meet ωB and ωC again at P and
+Q, respectively. Rays P H and QH meet ωC and ωB again at R and S, respectively.
+Prove that M , R, S are collinear.
+This is just angle chasing. Unfortunately, the configurations when 4ABC is acute and
+4ABC is obtuse look quite different from each other.
+
+5
+
+Evan Chen《陳誼廷》 — 31 May 2015
+
+A
+
+How to Use Directed Angles
+
+S
+
+Q
+
+Q
+
+H
+
+R
+H
+
+P
+
+P
+B
+
+C
+
+M
+
+B
+
+A
+C
+
+M
+
+S
+
+R
+
+Follow along the proof in both diagrams, asking yourself why each equality is true.
+The beauty of directed angles is that to write this proof, I only had to look at the first
+diagram; it then works for the other diagram automatically.
+Verbose Solution. Applying Miquel’s Theorem (in the exercises later), we find that
+quadrilateral AP HQ is cyclic. Also from Triangle Sum we have
+
+
+
+] HB, AB + ] AB, AC + ] AC, HB = 0
+we derive that ]HBA + ]BAC = 90◦ .
+Taking these for granted, we can compute
+Cyclic quads
+
+]BP S = ]BHS
+= ]P HS + ]BHP
+
+Angle addition
+
+= ]P HQ + ]BHP
+
+S, H, Q collinear
+
+= ]P AQ + ]BHP
+
+Cyclic quads
+
+= ]P AQ − (]HP B + ]P BH)
+
+Triangle Sum
+
+= ]BAC − (]HP B + ]ABH)
+
+Collinearity
+
+= ]BAC + ]BP H + ]HBA
+
+Negation
+
+◦
+
+= 90 + ]BP H.
+But
+]BP S − ]BP H = ]BP S + ]HP B = ]HP S.
+so we deduce that ]HP S = −90◦ = 90◦ , hence ]HM S = 90◦ as well. In the same way,
+]HM R = 90◦ as well. Hence ]HM S = ]HM R, so points M , R, S are collinear.
+In an actual olympiad one need not be so explicit. In particular, you can omit the part
+where I wrote out the explicit reasons for each step; I only provided this for reference.
+Here is a second example (much harder) in which I will be much more succinct. See if
+you can follow along the logic.
+Example 4.2 (European Girl’s MO 2012, Problem 7)
+Let ABC be an acute-angled triangle with circumcircle Γ and orthocenter H. Let K
+be a point of Γ on the other side of BC from A. Let L be the reflection of K in the
+line AB, and let M be the reflection of K in the line BC. Let E be the second point
+of intersection of Γ with the circumcircle of triangle BLM . Show that the lines KH,
+EM and BC are concurrent.
+
+6
+
+Evan Chen《陳誼廷》 — 31 May 2015
+
+HC
+
+L
+
+How to Use Directed Angles
+
+A
+
+E′
+
+E′
+
+A
+HC
+H
+M
+
+H
+
+B
+
+C
+
+B
+
+C
+K
+
+M
+
+L
+
+HA
+
+HA K
+
+Solution. Let HA and HC be the reflections of H across BC and BA; it is well-known that
+these lie on Γ. Let E 0 be the second intersection of line HA M with Γ. By construction,
+lines E 0 M and HK concur on BC, and our goal is to show that B, L, E 0 , M are concyclic.
+First, we claim that L, HC , and E 0 are collinear. Due to the reflections,
+]LHC B = −]KHB = ]M HA B = ]E 0 HA B = ]E 0 HC B
+which proves the claim. Then
+]LE 0 M = ]HC E 0 HA = ]HC BHA = 2]ABC
+(the last equality following from reflections; verify it yourself) and
+]LBM = ]LBK + ]KBM = 2]ABK + 2]KBC = 2]ABC
+so B, L, E 0 , M are concyclic. Hence E = E 0 and we are done.
+
+§5 A Word of Warning
+Never take half of a directed angle – since we are working modulo 180◦ , taking half of an
+angle doesn’t make sense.
+
+§6 Practice Problems
+Here are some famous lemmas from olympiad geometry that you should know. They are
+not hard to prove (in fact, they are all direct angle chasing) but they do have configuration
+issues. See if you can solve them and then write a single proof which does not need to
+consider different cases.
+
+A
+
+A
+C
+
+F
+
+B
+
+E
+
+D
+
+A
+B
+
+D
+
+C
+
+E X
+
+X
+F
+
+Y
+
+Y
+B
+7
+
+D
+
+C
+
+Evan Chen《陳誼廷》 — 31 May 2015
+
+How to Use Directed Angles
+
+Problem 6.1 (Miquel’s Theorem). Let ABC be a triangle. Consider any points D, E,
+F on lines BC, CA, AB (distinct from the vertices of ABC, but not necessarily in the
+interiors of the sides). Prove that the circumcircles of triangles AEF , BF D, and CDE
+intersect at a single point.
+Problem 6.2 (Spiral Similarity Lemma). Two circles ω1 and ω2 meet at points X and
+Y . A line through X intersects ω1 and ω2 again at A and B. A second line through X
+intersects ω1 and ω2 again at C and D. Show that 4AY C ∼ 4BY D.
+Problem 6.3 (Right Angles on Intouch Chord). Let ABC be a triangle whose incircle
+touches the opposite sides at D, E, F . The angle bisectors of ∠B and ∠C meet line EF
+at points X and Y . Prove that X and Y lie on the circle with diameter BC.
+
+§7 Contest Practice
+Some of the following problems are much more nontrivial; the last one is infamously
+difficult. Directed angles will help clean up a solution but as stressed before will not
+actually help you find the solution in the first place.
+Problem 7.1 (Folklore). Let C1 , C2 , C3 , C4 be four distinct circles. For i = 1, 2, 3, 4,
+suppose that Ci and Ci+1 intersect at two distinct points Ai and Bi (here C5 = C1 ). Prove
+that if A1 A2 A3 A4 is cyclic then so is B1 B2 B3 B4 .
+Problem 7.2 (Shortlist 2010/G1). Let ABC be an acute triangle with altitudes AD,
+BE, CF . One of the intersection points of the line EF and the circumcircle is P . The
+lines BP and DF meet at point Q. Prove that AP = AQ.
+Problem 7.3 (USAMO 2013/1). In triangle ABC, points P , Q, R lie on sides BC,
+CA, AB, respectively. Let ωA , ωB , ωC denote the circumcircles of triangles AQR, BRP ,
+CP Q, respectively. Given the fact that segment AP intersects ωA , ωB , ωC again at X,
+Y , Z respectively, prove that Y X/XZ = BP /P C.
+Problem 7.4 (Balkan 2009). Let M N be a line parallel to the side BC of a triangle
+ABC, with M on side AB and N on side AC. The lines BN and CM intersect at point P .
+The circumcircles of 4BM P and 4CN P meet again at Q. Prove that ∠BAQ = ∠CAP .
+Problem 7.5 (USA TST 2007/1). Circles ω1 and ω2 meet at P and Q. Segments AC
+and BD are chords of ω1 and ω2 respectively, such that lines AB and CD meet at P .
+Lines BD and AC meet at X. Point Y lies on ω1 such that P Y k BD. Point Z lies on
+ω2 such that P Z k AC. Prove that points Q, X, Y , Z are collinear.
+Problem 7.6. Let ABC be a triangle with circumcircle Γ. Let ` be a line in the plane,
+and let `a , `b , `c be the lines obtained by reflecting ` in the lines BC, CA, and AB,
+respectively. Let 4A0 B 0 C 0 denote the triangle determined by the lines `a , `b , `c .
+(a) (Iran 1995) Prove that the incenter of the 4A0 B 0 C 0 lies on Γ.
+(b) (IMO 2011/6) Assume ` is tangent to Γ. Show that the circumcircle 4A0 B 0 C 0 is
+tangent to the circle Γ.
+
+8
+
+Evan Chen《陳誼廷》 — 31 May 2015
+
+How to Use Directed Angles
+
+§A Addendum
+FAQ C-11 from evanchen.cc, which was written several years later, is worth mentioning:
+Question. Directed angles are really confusing! Can I just use normal angles?
+Answer. You could probably get away with it, because it is common practice to not
+deduct for configuration issues (although it does happen from time to time). So, if you
+really hate it, you can ignore it.
+However, in the words of Ankan Bhattacharya:
+You should learn directed angles, not necessarily because they deal with
+inessential configuration issues, but because once you know them angle chasing
+with directed angles becomes easier than normal angle chasing.
+I have the same opinion. I initially used directed angles anyway because I cared about
+having complete correct solutions even if I didn’t lose points for it. But then I realized
+it’s actually easier once you get used to it, because you don’t need to keep track of x
+vs 180◦ − x anymore. So I don’t think I would go back to using normal angles even if I
+could.
+
+9
+
+

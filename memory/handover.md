@@ -1,92 +1,80 @@
-# Handover Document — March 6, 2026 (Session 11)
+# Handover Document — March 6, 2026 (Session 12)
 
 ## Where We Stopped
 
-**v17 pushed and running.** Full 50-problem run with Wave 1 classification + Wave 2 solving. No hardcoded problems — loads from test CSV, shuffles with seed=42, takes first 50.
+**v18 pushed — ran 50 problems** but used OLD datasets (264-entry DB instead of 340, old 113-problem test CSV instead of 398). Cell 17 gateway also wasted time loading `test_2problems.csv`. Both fixed locally. Need to push v19.
 
 ## Current Kaggle State
 
-- **v15 (Kaggle v15)**: FileNotFoundError — test CSV was on jxm222, kernel on shivzzzzzz02
-- **v16**: Same error (dataset created but not yet available)
-- **v17**: Running — first full Wave 1 + Wave 2 run on 50 random problems
-- Previous baselines: v34 scored 24/50 (48%) on 50 problems without Wave 1
+- **v18**: Ran 50 problems but with old datasets (264 DB, old test CSV). Cell 17 gateway used test_2problems.csv. Fixed locally.
+- **v34 (jxm222)**: 24/50 (48%) — last version without Wave 1
+- Previous: v17 scored 42/50 on 50 problems
+
+## What Changed This Session (v36 git, v18 Kaggle)
+
+### Cell 8 (CFG)
+- `attempts`: 24 → **32**
+- `workers`: 24 → **32**
+- `wave1_attempts`: 24 → **42**
+- `wave1_temperature` replaced with `wave1_temp_schedule = [0.02]*11 + [0.1]*21 + [0.3]*10`
+- `temp_schedule`: new 32-entry schedule centered on 0.5 (18/32), range 0.2-0.55
+
+### Cell 12 (AIMO3Sandbox)
+- Added missing aliases to `_init_environment()` and `reset()`: `np`, `sp`, `random`, `time`, `nx`
+- Added `sys.set_int_max_str_digits(100000)` to `reset()` (was missing)
+- Fixes 22% of NameErrors (120/533)
+
+### Cell 14 (AIMO3Solver)
+- `_select_taxonomy()` rewritten: basic >50% = basic-only, normal taxonomies >1/3 threshold
+- Wave 1 executor: `max_workers=wave1_attempts` (42, independent of Wave 2)
+- Wave 1 temperature: indexed from `wave1_temp_schedule` per attempt
+- Rerun threshold: hardcoded `5` → `math.ceil(attempts/3)` = 11
+
+### Cell 17 (Test Runner Gateway)
+- **BUG FIX**: `test_2problems.csv` → `test_problems.csv` in CSV candidates
+
+### Cell 18 (Test Framework)
+- Loads from CSV, shuffles seed=42, takes first 50 (unchanged)
+
+### Test Data
+- Combined val+aux+hard30 = **398 problems** (all valid 0-99999)
+- Old 113-problem CSV replaced
+- `test_2problems.csv` deleted from data/active/
+- Uploaded to `shivzzzzzz02/aimo3-test-data`
+
+### Problem DB
+- **340 entries** (was 264). Pushed as v10 to `jxm222/aimo3-problem-db`
+- Guide for adding entries: `memory/problem-db-guide.md`
+
+## v18 Log Observations (2 problems only)
+
+- Wave 1 classification: 35/42 and 38/40 correct taxonomy — very accurate
+- DB notes injection working perfectly — problem 2 (centroid/735-gon trap) got 32/32 correct
+- All 42 Wave 1 + 32 Wave 2 attempts fully parallel (wall time = slowest attempt)
+- Setup overhead: ~440s (model load 100s, vLLM 124s, pip 200s)
+- Some attempts overshoot deadline by up to 25-30s — acceptable, factor into planning
 
 ## Architecture: Wave 1 + Wave 2
 
-### Wave 1: Classification (cell 14: `classify_problem()`)
-- 24 parallel attempts, temp 0.1, 100s timeout, ReasoningEffort HIGH
-- Model sees full taxonomy tree (264 entries, ~106K chars) as MCQ options
-- Multi-turn flow: `\Vboxed{taxonomy}` → host injects DB entry → `\boxed{taxonomy : id}` confirms
-- 1-4 picks allowed per attempt
-- Voting: any taxonomy with >50% of attempts (confidence-weighted) gets selected
-- No consensus → injects warning: "expert could not classify, be careful"
-- `basic.basic.basic` → injects "quick solve, save time for tough questions"
+### Wave 1: Classification
+- 42 parallel attempts, temp schedule [0.02]*11+[0.1]*21+[0.3]*10, 100s timeout
+- Model sees full taxonomy tree as MCQ options
+- Multi-turn: `\Vboxed{taxonomy}` → DB entry shown → `\boxed{taxonomy : id}` confirms
+- Voting: basic >50% = basic-only, others >1/3 threshold
 
-### Wave 2: Solving (cell 14: `solve_problem()`)
-- 24 parallel attempts, temp schedule [0.1→0.7], 400s timeout
-- Notes from Wave 1 selected taxonomies prepended to problem text
-- Rerun logic: if top votes < threshold, reruns all 24 attempts
-- Entropy-weighted voting for final answer
+### Wave 2: Solving
+- 32 parallel attempts, temp schedule centered on 0.5, 400s timeout
+- Notes from Wave 1 taxonomies prepended to problem
+- Rerun if top votes < ceil(32/3) = 11, merges all 64 results for final vote
 
-## Key Files Modified This Session
+## Known Issues
 
-### Cell 8 (CFG)
-- `wave1_temperature = 0.1`
-- `wave1_system_prompt`: MCQ framing, 1-4 picks, `\Vboxed` then `\boxed{taxonomy : id}` verification
-- Added: "If very easy, pick basic.basic.basic"
+1. **Cell 17 CSV bug** — FIXED locally, not yet pushed
+2. **fp8 + prefix caching** — possibly incompatible, but good results so far
+3. **Wave 1 time not in reserve** — `reserved_per_problem=150` doesn't account for Wave 1's ~30-50s
+4. **Deadline overshoot** — attempts can run up to 30s past `problem_timeout`. Effective max ~430s
 
-### Cell 9 (ProblemDB)
-- `get_taxonomy_tree()`: returns all taxonomies with triggers + full technique text
-- `format_notes()`: header "Our IMO expert has given tips and tricks", footer with DB query instructions
-- Schema uses `id` (not `problem_id`)
-
-### Cell 11 (AIMO3Template)
-- `apply_classifier_template()`: ReasoningEffort.HIGH, no developer message, no tools
-- `DB_INSTRUCTIONS`: simplified to "read expert notes if present"
-
-### Cell 14 (AIMO3Solver)
-- `_scan_for_taxonomy()`: extracts taxonomy from `\boxed{tax : id}`, strips id suffix
-- `_build_taxonomy_injection()`: Vbox → queries DB → shows entry with id → confirm prompt
-- `_select_taxonomy()`: confidence-weighted votes, 50% absolute threshold
-- `_process_classification_attempt()`: 6 max turns, no code execution, handles python tool rejection
-- `solve_problem()`: Wave 1 → basic detection → DB retrieval → Wave 2
-- Basic handling: `basic.basic.basic` always prepends "quick solve" message, even with other taxonomies
-
-### Cell 18 (Test Framework)
-- No tiers, no hardcoded problems
-- Loads all from `/kaggle/input/aimo3-test-data/test_problems.csv` + `test_answers.csv`
-- Shuffles seed=42, takes first 50
-- fd-level TeeLogger to prevent Kaggle UI log leakage
-
-### Problem DB
-- 264 entries (was 160 in v34 → grew via bulk import sessions)
-- Schema: `id, category, topic, subtopic, taxonomy, triggers, technique, question, answer`
-- Column renamed from `problem_id` to `id` (done multiple times, keeps reverting on credential swap)
-- Added `basic.basic.basic` entry for easy problems
-- 4 duplicate taxonomies (am_gm, crt, fermat, sum_of_divisors) — both entries get injected, harmless
-- Pushed as v9 to `jxm222/aimo3-problem-db`
-
-### Kernel Metadata
-- `dataset_sources`: changed `jxm222/aimo3-test-data` → `shivzzzzzz02/aimo3-test-data`
-- Test data uploaded under shivzzzzzz02 account (was private to jxm222)
-
-### Simulation Script
-- `log_exploration/wave1_simulation.py` fully updated to match current code
-- New commands: `--tree`, `--wave1 <pid>`, `--inject <taxonomy>`
-- `--log`: now uses confidence-weighted voting with 50% threshold
-- Verified against v13 and v14 logs
-
-## Time Budget Analysis
-
-v34 (no Wave 1) ran 50 problems in 220 min with 70 min headroom.
-With Wave 1 at ~30-50s avg/problem: 245-262 min, 28-45 min headroom. No budget squeezing.
-Current config is safe for 50 problems. Bug #6 (Wave 1 not in reserve) doesn't cause actual issues.
-
-## Tested Problems Tracking
-
-All tested problems tracked in `data/fixed.txt` — 18 problems across v10-v14.
-
-## Notebook Editing
+## Key Files
 
 ```bash
 python3 scripts/nb.py list              # 19 cells (0-18)
@@ -97,12 +85,5 @@ python3 scripts/nb.py write CELL /tmp/cell.py
 ## Kaggle Accounts
 
 - Kernel: `shivzzzzzz02/aimo3-solver`
-- DB dataset: `jxm222/aimo3-problem-db` (public)
+- DB dataset: `jxm222/aimo3-problem-db` (public, push with jxm222 creds)
 - Test data: `shivzzzzzz02/aimo3-test-data` (private)
-- DB pushes use jxm222 credentials (swap before/after)
-
-## Hard Rules
-
-- **NEVER push to Kaggle without explicit user approval**
-- **NO GPG signing** — personal account, not WeMoney
-- **GitHub Actions auto-deploy DISABLED** (workflow_dispatch). Safe to git push.

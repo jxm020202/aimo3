@@ -1,0 +1,495 @@
+Lemmas in AoPS Geometry
+aka: how you can tell who’s done too much olympiad geo
+EVAN CHEN《陳誼廷》
+13 August 2023
+
+This document is a compilation of a bunch of silly nicknames and terms
+that have become popular on the Internet among modern teenagers.
+
+Important disclaimer (how to use this file)
+Before writing this handout, even I (Evan) did not know several of the names here. If you
+are a beginner or intermediate level geometry student, I do not recommend memorizing
+the names or configurations in this file. The reason is:
+• If it wasn’t already in EGMO at least implicitly, then it doesn’t come up often
+enough to be worth learning for beginners.
+• When it does come up, intermediate students can often figure the relevant facts
+on-the-spot anyway. Thus, the only real value is documenting the “slang” name for
+a fact that they could derive on their own.
+Instead, this handout is meant as an encyclopedic reference that you can refer to when
+you hear some bizarre name on the Internet that does not appear in the textbook EGMO.
+
+1
+
+Evan Chen《陳誼廷》 — 13 August 2023
+
+Lemmas in AoPS Geometry
+
+Contents
+1 Basic configurations
+1.1 Reim’s theorem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.2 The Incenter/Excenter Lemma / Fact 5 / Trillium theorem / chicken feet
+theorem (EGMO Lemma 1.18) . . . . . . . . . . . . . . . . . . . . . . . .
+1.3 Iran incenter lemma (EGMO Lemma 1.45) . . . . . . . . . . . . . . . . .
+1.4 Shooting lemma / Death Star lemma (EGMO Lemma 4.33) . . . . . . . .
+1.5 Salmon theorem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.6 The first isogonality lemma . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+3
+3
+
+2 Length-based lemmas
+2.1 Ratio lemma . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.2 Prism lemma . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.3 EFFT (EGMO Theorem 7.16 and 7.25) . . . . . . . . . . . . . . . . . . .
+
+8
+8
+8
+9
+
+4
+5
+5
+6
+7
+
+3 Special named points inside a triangle
+9
+3.1 HM/Humpty and Dumpty point . . . . . . . . . . . . . . . . . . . . . . . 9
+3.2 Queue points . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.3 Sharky-Devil point . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+4 ’Muricaaaaaaa, by i3435
+
+12
+
+2
+
+Evan Chen《陳誼廷》 — 13 August 2023
+
+Lemmas in AoPS Geometry
+
+§1 Basic configurations
+§1.1 Reim’s theorem
+Reim’s theorem is a nickname given for a certain easy angle chasing statement. To fully
+state it, we give the following somewhat silly definition.
+Definition 1.1. We say two lines `1 , `2 are antiparallel with respect to m1 and m2 , if
+the four points `i ∩ mj are the vertices of a cyclic quadrilateral.
+Theorem 1.2 (Reim’s theorem)
+Fix two lines m1 and m2 . Prove that if `1 is antiparallel to `2 and `2 is antiparallel
+to `3 , then lines `1 and `3 are either parallel or coincide.
+Proof. Because ](m1 , `1 ) = −](m2 , `2 ) = ](m1 , `3 ).
+See Figure 1; I’ve highlighted the angles in green. You’ll notice this is literally a
+two-step angle chase, which means that for practical purposes, whenever you see the
+name “Reim’s theorem”, it’s just a shorthand for a certain two-step anglechase.
+So, if you ever come up to me with the excuse “I didn’t solve the problem because I
+didn’t know Reim’s theorem”, I will be sassy in my reply.
+
+Figure 1: The three angles of Reim’s theorem.
+
+3
+
+Evan Chen《陳誼廷》 — 13 August 2023
+
+Lemmas in AoPS Geometry
+
+§1.2 The Incenter/Excenter Lemma / Fact 5 / Trillium theorem / chicken
+feet theorem (EGMO Lemma 1.18)
+The following theorem from EGMO has several slang names. The most popular one, “Fact
+5”, originated from the filename at https://web.evanchen.cc/handouts/Fact5/Fact5.pdf
+(despite the name itself not appearing in the handout at all).
+Lemma 1.3 (EGMO Lemma 1.18)
+Let ABC be a triangle with incenter I, A-excenter IA . The circumcenter of cyclic
+quadrilateral IBIA C (that is, the midpoint of the diameter IIA ) coincides with the
+arc midpoint L of minor arc BC.
+A
+
+I
+
+B
+
+C
+
+L
+
+IA
+
+Figure 2: EGMO Lemma 1.18, also known as “Fact 5”, and many other regional nicknames.
+Proof. This is just angle chasing; see Figure 2. Let A = ∠BAC, B = ∠CBA, C = ∠ACB,
+and note that A, I, L are collinear (as L is on the angle bisector). We are going to show
+that LB = LI, the other cases being similar.
+First, notice that
+1
+1
+∠LBI = ∠LBC + ∠CBI = ∠LAC + ∠CBI = ∠IAC + ∠CBI = A + B.
+2
+2
+However,
+
+1
+1
+∠BIL = ∠BAI + ∠ABI = A + B.
+2
+2
+Hence, 4BIL is isosceles. So LB = LI. The rest of the proof proceeds along these
+lines.
+You can remember this lemma as saying that the circumcenter of BIC is the arc
+midpoint.
+
+4
+
+Evan Chen《陳誼廷》 — 13 August 2023
+
+Lemmas in AoPS Geometry
+
+§1.3 Iran incenter lemma (EGMO Lemma 1.45)
+The following lemma in EGMO earned the nickname “Iran lemma” or “Iran incenter
+lemma” because of its prominence in Problem 11.19 of EGMO (which was from an Iran
+TST, and from the last chapter of EGMO). This lemma also featured as USAJMO 2014
+problem 6.
+A
+
+K
+E
+N
+F
+I
+
+B
+
+D
+
+M
+
+C
+
+Figure 3: The Iran incenter lemma.
+
+Lemma 1.4 (EGMO Lemma 1.44)
+The incircle of 4ABC is tangent to BC, CA, AB at D, E, F , respectively. Let M
+and N be the midpoints of BC and AC, respectively. Ray BI meets line EF at K.
+Then BK ⊥ CK and K lies on M N .
+Proof. See Figure 3. Left as exercise because it’s a problem in EGMO. Hint: focus on
+the circle with diameter IC, which passes through D, E, and K.
+A good way to remember this lemma is that:
+The A-touch chord, B-bisector, and C-midline concur.
+
+§1.4 Shooting lemma / Death Star lemma (EGMO Lemma 4.33)
+Lemma 4.33 of EGMO concerns the picture in which you have two internally tangent
+circles and a segment of the large circle tangent to the smaller one. In Brazil, it is called
+the Death Star lemma because the two circles look like the Death Star spaceship from
+Star Wars. Here it is:
+Lemma 1.5 (EGMO Lemma 4.33)
+Let AB be a chord of a circle Ω. Let ω be a circle tangent to chord AB at K and
+internally tangent to ω at T . Then ray T K passes through the midpoint M of the
+d not containing T . Moreover,
+arc AB
+M A2 = M B 2 = M K · M T.
+
+5
+
+Evan Chen《陳誼廷》 — 13 August 2023
+
+Lemmas in AoPS Geometry
+
+T
+P
+A
+
+B
+
+K
+
+M
+
+Figure 4: The shooting lemma / death star lemma.
+Proof. See Figure 4. The fact that T K passes through the arc midpoint follows by taking
+the homothety at T mapping ω to Ω: it should map the “south pole” of ω to that of Ω,
+ergo it maps M to K.
+Meanwhile, M K · M T = M A2 follows from 4M KA ∼ 4M AT .
+In the United States, the name shooting lemma refers to various parts of this lemma
+(I never figured out which).
+
+§1.5 Salmon theorem
+The name “Salmon theorem” refers to a certain easy spiral similarity. It seems to have
+first appeared in the official solutions for USAMO 2013 provided by the MAA. Here
+Salmon is a surname, not a kind of fish.
+
+A
+
+O2
+O1
+
+B
+
+C
+
+P
+
+Figure 5: Salmon’s theorem.
+
+Theorem 1.6 (Salmon theorem)
+Let ABC be a triangle and P a point on line BC. Then we have the spiral similarity
++
+
++
+
+4AO1 B ∼ 4AO2 C,
+
+4ABC ∼ 4AO1 O2 .
+
+6
+
+Evan Chen《陳誼廷》 — 13 August 2023
+
+Lemmas in AoPS Geometry
+
+Proof. See Figure 5. Assume without loss of generality that ∠AP B ≤ 90◦ . Then
+∠AO1 B = 2∠AP B
+but
+∠AO2 C = 2 (180 − ∠AP C) = 2∠ABP.
+Hence ∠AO1 B = ∠AO2 C. Moreover, both triangles are isosceles, establishing the first
+similarity.
+The second part follows from spiral similarities coming in pairs.
+Confusingly, there are other results named “Salmon theorem”. See, e.g., this result.
+
+§1.6 The first isogonality lemma
+The following lemma appears in Geometry Revisited, Section 1.9, Exercise 3. It comes up
+once in a blue moon, and has earned the name “isogonality lemma”.
+Lemma 1.7 (The first isogonality lemma)
+Let ABC be a triangle and let P be a point inside it satisfying ∠ABP = ∠P CA.
+Let Q be the reflection of P across the midpoint of BC. Then ∠BAP = ∠CAQ.
+Proof. Most straightforward would be to use barycentric coordinates, but you can see a
+synthetic proof at https://aops.com/community/c6h518987.
+The condition ∠ABP = ∠ACP is actually usually more naturally interpreted as saying
+the points B, C, BP ∩ AC and CP ∩ AB are cyclic. Similarly, the parallelogram BP CQ
+is noteworthy.
+A
+
+P
+
+B
+
+C
+
+Q
+
+Figure 6: The first isogonality lemma.
+Remark 1.8. The second isogonality lemma refers to the following statement: Suppose
+that AP and AQ are isogonal with respect to ∠A. Let X = P B ∩ QC and Y = P C ∩ QB.
+Then AX and AY are isogonal with respect to ∠A.
+
+7
+
+Evan Chen《陳誼廷》 — 13 August 2023
+
+Lemmas in AoPS Geometry
+
+§2 Length-based lemmas
+§2.1 Ratio lemma
+In the United States, the following fact is sometimes called the ratio lemma. Like Reim’s
+theorem, this name is “unnecessary” in that it is only capturing a single natural step.
+A
+
+B
+
+C
+
+D
+
+Figure 7: The simple picture for the Ratio Lemma.
+
+Lemma 2.1 (Ratio lemma)
+Let ABC be a triangle and D a point in the interior of segment BC. Then
+BD
+AB sin ∠BAD
+=
+.
+DC
+AC sin ∠CAD
+Proof. See Figure 7. By the law of sines on 4ABD and 4ACD, we have
+BD
+AB
+CD
+AC
+=
+,
+=
+.
+sin ∠BAD
+sin ∠ADB
+sin ∠CAD
+sin ∠ADC
+Since ∠ADB + ∠ADC = 180◦ , canceling those sines finishes.
+The lemma is most prominently featured in the handout posted by mira74 at https:
+//aops.com/community/p19166714
+
+§2.2 Prism lemma
+The following simple lemma from projective geometry is useful for transferring cross
+ratios. The name is because the picture looks like a pyramid (see Figure 8). I’m told that
+the origin story came from me mentioning during the test review of TSTST 2019/9 that
+“this motif comes up often, so we should have a name for it”, and one student suggested
+“prism lemma”, which stuck.
+Lemma 2.2 (Prism lemma)
+Two lines `1 and `2 meet at a point D. Let A1 , B1 , C1 be distinct points on `1 and
+A2 , B2 , C2 be distinct points on `2 , different from D. Then A1 A2 , B1 B2 , C1 C2 are
+concurrent if and only if (A1 B1 ; C1 D) = (A2 B2 ; C2 D).
+Proof. This is a restatement of the fact that projection through a point preserves cross
+ratios.
+8
+
+Evan Chen《陳誼廷》 — 13 August 2023
+
+Lemmas in AoPS Geometry
+
+Figure 8: The prism lemma.
+
+§2.3 EFFT (EGMO Theorem 7.16 and 7.25)
+In barycentric coordinates, there are two theorems in EGMO that let one decide whether
+two displacement vectors are perpendicular. Teenager Evan, in 2012, thought it was
+a good idea to call these “EFFT” and “strong EFFT” respectively, in the handout he
+posted on Art of Problem Solving. Later efforts to get rid of those names from the slang
+repository have been largely unsuccessful, and Evan has given up.
+Theorem 2.3 (EGMO Lemma 7.16)
+−−→
+−−→
+Let M N = (x1 , y1 , z1 ) and P Q = (x2 , y2 , z2 ) be displacement vectors. Then M N ⊥
+P Q if and only if
+0 = a2 (z1 y2 + y1 z2 ) + b2 (x1 z2 + z1 x2 ) + c2 (y1 x2 + x1 y2 ).
+
+Theorem 2.4 (EGMO Lemma 7.25)
+Suppose M , N , P , and Q are points with
+−−→
+−→
+−−→
+−−→
+M N = x1 AO + y1 BO + z1 CO
+−−→
+−→
+−−→
+−−→
+P Q = x2 AO + y2 BO + z2 CO
+such that either x1 + y1 + z1 = 0 or x2 + y2 + z2 = 0. In that case, lines M N and
+P Q are perpendicular if and only if
+0 = a2 (z1 y2 + y1 z2 ) + b2 (x1 z2 + z1 x2 ) + c2 (y1 x2 + x1 y2 ).
+
+§3 Special named points inside a triangle
+Here we only give the definition of the points and leave the (many) properties of the
+handouts to provided external links.
+
+§3.1 HM/Humpty and Dumpty point
+As shown in Figure 9, let ABC be a triangle with orthic triangle DEF , and orthocenter
+H. Let M be the midpoint of BC.
+
+9
+
+Evan Chen《陳誼廷》 — 13 August 2023
+
+Lemmas in AoPS Geometry
+
+Definition 3.1. The foot of the altitude from H to AM , denoted Q in Figure 9, is called
+either the A-Humpty point or the A-HM point.
+Some basic properties of the A-Humpty point are that lines QH, BC, EF are concurrent, and that it lies on the circle (BHC).
+A
+
+G
+E
+F
+
+B
+
+H
+
+Q
+
+D
+
+M
+
+C
+
+Figure 9: The Humpty point (denoted Q) and the A-queue point (denoted G).
+Less commonly seen is:
+Definition 3.2. The A-Dumpty point is the isogonal conjugate of the A-Humpty point.
+It turns out to coincide with the midpoint of the A-symmedian chord.
+References for these points include:
+• https://math.stackexchange.com/a/3894697/229197
+• On Two Special Points in a Triangle, which seems to be the origin of the name
+Humpty and Dumpty.
+• A Special Point on the Median which seems to be the origin of the name HM.
+
+§3.2 Queue points
+In the Humpty configuration, the point G in Figure 9 also plays an important role. It is
+named as follows:
+Definition 3.3. The A-queue point is the second intersection of (AEF ) and (ABC),
+denoted G in Figure 9. In other words, it is the Miquel point of the cyclic quadrilateral
+BF EC.
+The most important properties of the A-queue point are:
+Theorem 3.4 (Important properties of the A-queue point)
+In the notation of Figure 9:
+1. Line AG is concurrent with lines EF , HQ, BC defined before.
+2. Point G lies on line HM .
+
+10
+
+Evan Chen《陳誼廷》 — 13 August 2023
+
+Lemmas in AoPS Geometry
+
+The name seems to have come from the blog post by math_pi_rate at https://aops.com/
+community/c701535h17542171 , which documents several additional properties of the line.
+
+§3.3 Sharky-Devil point
+As shown in Figure 10, let ABC be a triangle with intouch triangle DEF .
+Definition 3.5. The A-Sharkydevil point, denoted K below, is defined as the Miquel
+point K of BF EC; i.e. the intersection of the (AEF ) and (ABC).
+A
+K
+
+E
+P
+F
+I
+
+B
+
+C
+
+D
+
+M
+
+Figure 10: The A-Sharkydevil point.
+The name seems coined by aops29 in a blog post, https://aops.com/community/c946900h1911664.
+The most important properties are:
+Theorem 3.6 (Important properties of the Sharkydevil point)
+In the notation of Figure 10:
+1. Line KD bisects ∠BKC and hence passes through the midpoint M of ˜
+BC.
+2. Line KD passes through the exsimilicenter of the incircle and circumcircle.
+3. Let P denote the foot from D to EF . Then K is the inverse of P with respect
+to the incircle.
+
+1
+
+The concurrence point AG ∩ EF ∩ HQ ∩ BC is named the A-ex point in that blog post, but that name
+seems to not have caught on.
+
+11
+
+Evan Chen《陳誼廷》 — 13 August 2023
+
+Lemmas in AoPS Geometry
+
+§4 ’Muricaaaaaaa, by i3435
+I tried to keep this handout brief and to-the-point, since I intended it as a lookup of
+common idiosyncratic names.
+If you want a more complete reference, there is a 2021 handout by i3435 at
+https://aops.com/community/p20459825
+
+which is much more comprehensive, including proofs of the facts here, several properties
+of the named points not recorded here, and many more configurations. It also features a
+long set of problems and solutions.
+
+12
+
+

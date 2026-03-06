@@ -1,0 +1,10 @@
+id,problem
+2b401b,"Find all positive integers $n\ge 2$ such that for any positive integer $k$ relatively prime to $n$, $k^2 - 1$ is a multiple of $n$.
+
+Find the sum of all possible values."
+3eee67,"Each edge of the complete graph \(K_{9097}\) is labeled with \(1\), \(2\), or \(3\) such that the sum of the labels of any triangle (formed by three edges) is at least \(5\). Given that the minimum possible value of the average of all \(\binom{9097}{2}\) labels can be expressed as a fraction in its simplest form \(\frac{m}{n}\), find the value of \(m + n\)."
+403988,"Find all prime numbers $p < 260^2$ that satisfy $\{\sqrt{p}\} < \frac{1}{510}$.
+
+Compute the numerical value of the answer."
+dccede,"A convex polyhedron has $m$ faces that are all congruent triangles with angles $30^{\circ}, 75^{\circ}$, and $75^{\circ}$. Determine, with proof, the maximum possible value of $m$.
+"

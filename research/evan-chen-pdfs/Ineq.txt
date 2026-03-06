@@ -1,0 +1,957 @@
+A Brief Introduction to Olympiad
+Inequalities
+EVAN CHEN《陳誼廷》
+30 April 2014
+
+The goal of this document is to provide a easier introduction to olympiad
+inequalities than the standard exposition Olympiad Inequalities, by Thomas
+Mildorf. I was motivated to write it by feeling guilty for getting free 7’s on
+problems by simply regurgitating a few tricks I happened to know, while
+other students were unable to solve the problem.
+Warning: These are notes, not a full handout. Lots of the exposition is
+very minimal, and many things are left to the reader.
+P
+P
+We will use cyc and sym in these notes. In a problem with n variables, these
+respectively mean to cycle through the n variables, and to go through all n! permutations.
+To provide an example, in a three-variable problem we might write
+X
+a2 = a2 + b2 + c2
+cyc
+
+X
+
+a2 b = a2 b + b2 c + c2 a
+
+cyc
+
+X
+
+a2 = a2 + a2 + b2 + b2 + c2 + c2
+
+sym
+
+X
+
+a2 b = a2 b + a2 c + b2 c + b2 a + c2 a + c2 b.
+
+sym
+
+§1 Polynomial Inequalities
+§1.1 AM-GM and Muirhead
+Consider the following theorem.
+Theorem 1.1 (AM-GM)
+For nonnegative reals a1 , a2 , . . . , an we have
+√
+a1 + a2 + · · · + an
+≥ n a1 . . . an .
+n
+Equality holds if and only if a1 = a2 = · · · = an .
+For example, this implies
+a2 + b2 ≥ 2ab,
+
+a3 + b3 + c3 ≥ 3abc.
+
+Adding such inequalities can give us some basic propositions.
+1
+
+Evan Chen《陳誼廷》 — 30 April 2014
+
+A Brief Introduction to Olympiad Inequalities
+
+Example 1.2
+Prove that a2 + b2 + c2 ≥ ab + bc + ca and a4 + b4 + c4 ≥ a2 bc + b2 ca + c2 ab.
+Proof. By AM-GM,
+a2 + b2
+2a4 + b4 + c4
+≥ ab and
+≥ a2 bc.
+2
+4
+Similarly,
+b2 + c2
+2b4 + c4 + a4
+≥ bc and
+≥ b2 ca.
+2
+4
+c2 + a2
+2c4 + a4 + b4
+≥ ca and
+≥ c2 ab.
+2
+4
+Summing the above statements gives
+a2 + b2 + c2 ≥ ab + bc + ca and a4 + b4 + c4 ≥ a2 bc + b2 ca + c2 ab.
+Exercise 1.3. Prove that a3 + b3 + c3 ≥ a2 b + b2 c + c2 a.
+Exercise 1.4. Prove that a5 + b5 + c5 ≥ a3 bc + b3 ca + c3 ab ≥ abc(ab + bc + ca).
+The fundamental intuition is being able to decide which symmetric polynomials of a
+given degree are bigger. For example, for degree 3, the polynomial a3 + b3 + c3 is biggest
+and abc is the smallest. Roughly, the more “mixed” polynomials are the smaller. From
+this, for example, one can immediately see that the inequality
+(a + b + c)3 ≥ a3 + b3 + c3 + 24abc
+must be true, since upon expanding the LHS and cancelling a3 + b3 + c3 , we find that the
+RHS contains only the piddling term 24abc. That means a straight AM-GM will suffice.
+A useful formalization of this is Muirhead’s Inequality. Suppose we have two sequences
+x1 ≥ x2 ≥ · · · ≥ xn and y1 ≥ y2 ≥ · · · ≥ yn such that
+x1 + x2 + · · · + xn = y1 + y2 + · · · + yn ,
+and for k = 1, 2, . . . , n − 1
+x1 + x2 + · · · + xk ≥ y1 + y2 + · · · + yk ,
+Then we say that (xn ) majorizes (yn ), written (xn )  (yn ).
+Using the above, we have the following theorem.
+Theorem 1.5 (Muirhead’s Inequality)
+Ifa1 , a2 , . . . , an are positive reals, and (xn ) majorizes (yn ) then we have the inequality.
+X
+X y y
+ax1 1 ax2 2 . . . axnn ≥
+a11 a22 . . . aynn .
+sym
+
+sym
+
+2
+
+Evan Chen《陳誼廷》 — 30 April 2014
+
+A Brief Introduction to Olympiad Inequalities
+
+Example 1.6
+Since (5, 0, 0)  (3, 1, 1)  (2, 2, 1),
+a5 + a5 + b5 + b5 + c5 + c5 ≥ a3 bc + a3 bc + b3 ca + b3 ca + c3 ab + c3 ab
+≥ a2 b2 c + a2 b2 c + b2 c2 a + b2 c2 a + c2 a2 b + c2 a2 b.
+From this we derive a5 + b5 + c5 ≥ a3 bc + b3 ca + c3 ab ≥ abc(ab + bc + ca).
+Notice that Muirhead is symmetric, not cyclic. For example, even though (3, 0, 0) 
+(2, 1, 0), Muirhead’s inequality only gives that
+2(a3 + b3 + c3 ) ≥ a2 b + a2 c + b2 c + b2 a + c2 a + c2 b
+and in particular this does not imply that a3 + b3 + c3 ≥ a2 b + b2 c + c2 a. These situations
+must still be resolved by AM-GM.
+
+§1.2 Non-homogeneous inequalities
+Consider the following example.
+Example 1.7
+Prove that if abc = 1 then a2 + b2 + c2 ≥ a + b + c.
+Proof. AM-GM alone is hopeless here, because whenever we apply AM-GM, the left
+and right hand sides of the inequality all have the same degree. So we want to use the
+condition abc = 1 to force the problem to have the same degree. The trick is to notice
+that the given inequality can be rewritten as
+a2 + b2 + c2 ≥ a1/3 b1/3 c1/3 (a + b + c) .
+Now the inequality is homogeneous. Observe that if we multiply a, b, c by any real
+number k > 0, all that happens is that both sides of the inequality are multiplied by k 2 ,
+which doesn’t change anything. That means the condition abc = 1 can be ignored now.
+Since (2, 0, 0)  ( 43 , 13 , 13 ), applying Muirhead’s Inequality solves the problem.
+The importance of this problem is that it shows us how to eliminate a given condition
+by homogenizing the inequality; this is very important. (In fact, we will soon see that
+we can use this in reverse — we can impose an arbitrary condition on a homogeneous
+inequality.)
+
+§1.3 Practice Problems
+1. a7 + b7 + c7 ≥ a4 b3 + b4 c3 + c4 a3 .
+3
+
+3
+
+3
+
++c )
+2. If a + b + c = 1, then a1 + 1b + 1c ≤ 3 + 2 · (a +b
+.
+abc
+3
+
+3
+
+3
+
+b
+c
+3. abc + ca
++ ab
+≥ a + b + c.
+
+4. If a1 + 1b + 1c = 1, then (a + 1)(b + 1)(c + 1) ≥ 64.
+5. (USA 2011) If a2 + b2 + c2 + (a + b + c)2 ≤ 4, then
+ab + 1
+bc + 1
+ca + 1
++
++
+≥ 3.
+(a + b)2 (b + c)2 (c + a)2
+3
+
+Evan Chen《陳誼廷》 — 30 April 2014
+
+A Brief Introduction to Olympiad Inequalities
+
+6. If abcd = 1, then a4 b + b4 c + c4 d + d4 a ≥ a + b + c + d.
+
+§2 Inequalities in Arbitrary Functions
+Let f : (u, v) → R be a function and let a1 , a2 , . . . , an ∈ (u, v). Suppose that we fix
+a1 +a2 +···+an
+= a (if the inequality is homogeneous, we will often insert such a condition)
+n
+and we want to prove that
+f (a1 ) + f (a2 ) + · · · + f (an )
+is at least (or at most) nf (a). In this section we will provide three methods for doing so.
+We say that function f is convex if f 00 (x) ≥ 0 for all x; we say it is concave if f 00 (x) ≤ 0
+for all x. Note that f is convex if and only if −f is concave.
+
+§2.1 Jensen / Karamata
+Theorem 2.1 (Jensen’s Inequality)
+If f is convex, then
+f (a1 ) + · · · + f (an )
+≥f
+n
+
+
+
+a1 + · · · + an
+n
+
+
+.
+
+The reverse inequality holds when f is concave.
+
+Theorem 2.2 (Karamata’s Inequality)
+If f is convex, and (xn ) majorizes (yn ) then
+f (x1 ) + · · · + f (xn ) ≥ f (y1 ) + · · · + f (yn ).
+The reverse inequality holds when f is concave.
+
+Example 2.3 (Shortlist 2009)
+Given a + b + c = a1 + 1b + 1c , prove that
+1
+1
+1
+3
++
++
+≤ .
+2
+2
+2
+(2a + b + c)
+(a + 2b + c)
+(a + b + 2c)
+16
+Proof. First, we want to eliminate the condition. The original problem is equivalent to
+1
+1
+1
+3 a1 + 1b + 1c
++
++
+≤
+·
+.
+(2a + b + c)2 (a + 2b + c)2 (a + b + 2c)2
+16 a + b + c
+Now the inequality is homogeneous, so we can assume that a + b + c = 3. Now our
+original problem can be rewritten as
+X 1
+1
+−
+≥ 0.
+16a (a + 3)2
+cyc
+1
+1
+Set f (x) = 16x
+− (x+3)
+2 . We can check that f over (0, 3) is convex so Jensen completes
+the problem.
+
+4
+
+Evan Chen《陳誼廷》 — 30 April 2014
+
+A Brief Introduction to Olympiad Inequalities
+
+Example 2.4
+Prove that
+1 1 1
++ + ≥2
+a b
+c
+
+
+
+1
+1
+1
++
++
+a+b b+c c+a
+
+
+≥
+
+9
+.
+a+b+c
+
+Proof. The problem is equivalent to
+1 1 1
+1
+1
+1
+1
+1
+1
++ + ≥ a+b + b+c + c+a ≥ a+b+c + a+b+c + a+b+c .
+a b
+c
+2
+2
+2
+3
+3
+3
+Assume WLOG that a ≥ b ≥ c. Let f (x) = 1/x. Since
+
+ 
+
+a+b a+c b+c
+a+b+c a+b+c a+b+c
+(a, b, c) 
+,
+,
+
+,
+,
+2
+2
+2
+3
+3
+3
+the conclusion follows by Karamata.
+Example 2.5 (APMO 1996)
+If a, b, c are the three sides of a triangle, prove that
+√
+√
+√
+√
+√
+√
+a + b − c + b + c − a + c + a − b ≤ a + b + c.
+Proof. Again assume WLOG that a ≥ b ≥ c and notice that (a+b−c, c+a−b, b+c−a) 
+√
+(a, b, c). Apply Karamata on f (x) = x.
+
+§2.2 Tangent Line Trick
+n
+Again fix a = a1 +···+a
+. If f is not convex, we can sometimes still prove the inequality
+n
+
+f (x) ≥ f (a) + f 0 (a) (x − a) .
+If this inequality manages to hold for all x, then simply summing the inequality will give
+us the desired conclusion. This method is called the tangent line trick.
+Example 2.6 (Cynthia Stoner)
+If a + b + c = 3, prove that
+18
+
+1
++ 2(ab + bc + ca) ≥ 15.
+(3 − c)(4 − c)
+cyc
+
+X
+
+Proof. We can rewrite the given inequality as
+X
+18
+cyc
+
+(3 − c)(4 − c)
+
+− c2
+
+
+≥ 6.
+
+Using the tangent line trick lets us obtain the magical inequality
+18
+c+3
+− c2 ≥
+⇐⇒ c(c − 1)2 (2c − 9) ≤ 0
+(3 − c)(4 − c)
+2
+and the conclusion follows by summing.
+
+5
+
+Evan Chen《陳誼廷》 — 30 April 2014
+
+A Brief Introduction to Olympiad Inequalities
+
+Example 2.7 (Japan)
+2
+P
+3
+Prove cyc a(b+c−a)
+2 +(b+c)2 ≥ 5 .
+Proof. Since the inequality is homogeneous, we may assume WLOG that a + b + c = 3.
+So the inequality we wish to prove is
+(3 − 2a)2
+3
+≥ .
+2
+2
+a + (3 − a)
+5
+cyc
+
+X
+
+With some computation, the tangent line trick gives away the magical inequality:
+(3 − 2a)2
+1 18
+18
+2a + 1
+≥ − (a − 1) ⇐⇒
+(a − 1)2 2
+≥ 0.
+2
+2
+(3 − a) + a
+5 25
+25
+2a − 6a + 9
+
+§2.3 n − 1 EV
+The last such technique is n − 1 EV. This is a brute force method involving much calculus,
+but it is nonetheless a useful weapon.
+Theorem 2.8 (n − 1 EV)
+Let a1 , a2 , . . . , an be real numbers, and suppose a1 + a2 + · · · + an is fixed. Let
+f : R → R be a function with exactly one inflection point. If
+f (a1 ) + f (a2 ) + · · · + f (an )
+achieves a maximal or minimal value, then n − 1 of the ai are equal to each other.
+Proof. See page 15 of Olympiad Inequalities, by Thomas Mildorf. The main idea is to
+use Karamata to “push” the ai together.
+Example 2.9 (IMO 2001 / APMOC 2014)
+P
+Let a, b, c be positive reals. Prove 1 ≤ cyc √a2a+8bc < 2.
+Proof. Set ex = abc2 , ey = ca
+, ez = ab
+. We have the condition x + y + z = 0 and want to
+b2
+c2
+prove
+1 ≤ f (x) + f (y) + f (z) < 2
+1
+where f (x) = √1+8e
+x . You can compute
+
+f 00 (x) =
+
+4ex (4ex − 1)
+5
+
+(8ex + 1) 2
+
+so by n − 1 EV, we only need to consider the case x = y. Let t = ex ; that means we want
+to show that
+2
+1
+1≤ √
++p
+< 2.
+1 + 8t
+1 + 8/t2
+Since this a function of one variable, we can just use standard Calculus BC methods.
+
+6
+
+Evan Chen《陳誼廷》 — 30 April 2014
+
+A Brief Introduction to Olympiad Inequalities
+
+Example 2.10 (Vietnam 1998)
+Let x1 , x2 , . . . , xn be positive reals satisfying
+√
+n
+
+Pn
+
+1
+1
+i=1 1998+xi = 1998 . Prove
+
+x1 x2 . . . x n
+≥ 1998.
+n−1
+
+1998
+Proof. Let yi = 1998+x
+. Since y1 + y2 + · · · + yn = 1, the problem becomes
+i
+n 
+Y
+1
+
+yi
+
+i=1
+
+Set f (x) = ln
+prove that
+
+
+− 1 ≥ (n − 1)n .
+
+1
+x − 1 , so the inequality becomes f (y1 ) + · · · + f (yn ) ≥ nf
+
+
+
+f 00 (y) =
+
+1
+n
+
+
+
+. We can
+
+1 − 2y
+.
+(y 2 − y)2
+
+So f has one inflection point, we can assume WLOG that y1 = y2 = . . . yn−1 . Let this
+common value be t; we only need to prove
+
+
+
+
+1
+1
+(n − 1) ln
+− 1 + ln
+− 1 ≥ n ln(n − 1).
+t
+1 − (n − 1)t
+Again, since this is a one-variable inequality, calculus methods suffice.
+
+§2.4 Practice Problems
+1. Use Jensen to prove AM-GM.
+1
+1
+1
+2. If a2 + b2 + c2 = 1 then a21+2 + b21+2 + c21+2 ≤ 6ab+c
+2 + 6bc+a2 + 6ca+b2 .
+
+3. If a + b + c = 3 then
+
+a
+3
+≤ .
+2+a+1
+2a
+4
+cyc
+
+X
+
+4. (MOP 2012) If a + b + c + d = 4, then a12 + b12 + c12 + d12 ≥ a2 + b2 + c2 + d2 .
+
+§3 Eliminating Radicals and Fractions
+§3.1 Weighted Power Mean
+AM-GM has the following natural generalization.
+Theorem 3.1 (Weighted Power Mean)
+Let a1 , a2 , . . . , an and w1 , w2 , . . . , wn be positive reals with w1 + w2 + · · · + wn = 1.
+For any real number r, we define
+
+1/r
+r 6= 0
+(w1 ar1 + w2 ar2 + · · · + wn arn )
+P(r) =
+ w1 w2
+n
+a1 a2 . . . aw
+r = 0.
+n
+If r > s, then P(r) ≥ P(s). Equality occurs if and only if a1 = a2 = · · · = an .
+
+7
+
+Evan Chen《陳誼廷》 — 30 April 2014
+
+A Brief Introduction to Olympiad Inequalities
+
+In particular, if w1 = w2 = · · · = wn = n1 , the above P(r) is just
+ r
+
+a1 + ar2 + · · · + arn 1/r
+
+
+
+n
+P(r) =
+
+
+√
+n a a ...a
+1 2
+n
+
+r 6= 0
+r = 0.
+
+By setting r = 2, 1, 0, −1 we derive
+r
+√
+a21 + · · · + a2n
+a1 + · · · + an
+n
+≥
+≥ n a1 a2 . . . an ≥ 1
+1
+n
+n
+a + ··· + a
+
+n
+
+1
+
+which is QM-AM-GM-HM. Moreover, AM-GM lets us “add” roots, like
+r
+√
+√
+√
+a+b+c
+a+ b+ c≤3
+.
+3
+Example 3.2 (Taiwan TST Quiz)
+q
+√
+3
+3
+3
+Prove 3(a + b + c) ≥ 8 3 abc + 3 a +b3 +c .
+Proof. By Power Mean with r = 1, s = 13 , w1 = 19 , w2 = 89 , we find that
+!3
+r
+
+
+√
+1 3 a3 + b3 + c3 8 3
+1 a3 + b3 + c3
+8
++
+abc
+≤
++ (abc) .
+9
+3
+9
+9
+3
+9
+so we want to prove a3 + b3 + c3 + 24abc ≤ (a + b + c)3 , which is clear.
+
+§3.2 Cauchy and Hölder
+Theorem 3.3 (Hölder’s Inequality)
+Let λa , λb , . . . , λz be positive reals with λa + λb + · · · + λz = 1. Let a1 , a2 , . . . , an ,
+b1 , b2 , . . . , bn , . . . , z1 , z2 , . . . , zn be positive reals. Then
+(a1 + · · · + an )λa (b1 + · · · + bn )λb . . . (z1 + · · · + zn )λz ≥
+
+n
+X
+
+aλi a bλi b . . . ziλz .
+
+i=1
+
+Equality holds if a1 : a2 : · · · : an ≡ b1 : b2 : · · · : bn ≡ · · · ≡ z1 : z2 : · · · : zn .
+Proof. WLOG a1 + · · · + an = b1 + · · · + bn = · · · = 1 (note that the degree of the ai on
+either side is λa ). In that case, the LHS of the inequality is 1, and we just note
+n
+X
+i=1
+
+aλi a bλi b . . . ziλz ≤
+
+n
+X
+
+(λa ai + λb bi + . . . ) = 1.
+
+i=1
+
+If we set λa = λb = 12 , we derive what is called the Cauchy-Schwarz inequality.
+(a1 + a2 + · · · + an ) (b1 + b2 + · · · + bn ) ≥
+8
+
+p
+2
+p
+p
+a1 b1 + a2 b2 + · · · + an bn .
+
+Evan Chen《陳誼廷》 — 30 April 2014
+
+A Brief Introduction to Olympiad Inequalities
+
+Cauchy can be rewritten as
+x21 x22
+x2n
+(x1 + x2 + · · · + xn )2
++
++ ··· +
+≥
+.
+y1
+y2
+yn
+y1 + · · · + yn
+This form it is often called Titu’s Lemma in the United States.
+Cauchy and Hölder have at least two uses:
+1. eliminating radicals,
+2. eliminating fractions.
+Let us look at some examples.
+Example 3.4 (IMO 2001)
+Prove
+X
+
+√
+
+cyc
+
+a
+a2 + 8bc
+
+≥ 1.
+
+Proof. By Holder
+!1
+3
+
+X
+
+a
+√
+a2 + 8bc
+cyc
+
+!2
+3
+
+X
+
+2
+
+a(a + 8bc)
+
+cyc
+
+So it suffices to prove (a + b + c)3 ≥
+look familiar?
+
+≥ (a + b + c)
+
+2
+3
+3
+3
+cyc a(a + 8bc) = a + b + c + 24abc. Does this
+
+P
+
+Example 3.5 (Balkan)
+1
+1
+1
+27
+Prove a(b+c)
++ b(c+a)
++ c(a+b)
+≥ 2(a+b+c)
+2.
+
+Proof. Again by Holder,
+!1
+
+!1
+
+3
+
+X
+
+3
+
+X
+
+a
+
+cyc
+
+b+c
+
+cyc
+
+1
+a(b + c)
+cyc
+
+X
+
+!1
+3
+
+≥ 1 + 1 + 1 = 3.
+
+Example 3.6 (JMO 2012)
+
+P
+3 +3b3
+Prove cyc a5a+b
+≥ 23 a2 + b2 + c2 .
+Proof. We use Cauchy (Titu) to obtain
+X (a2 )2
+a3
+(a2 + b2 + c2 )2
+P
+=
+≥
+.
+2
+5a + b
+5a2 + ab
+cyc 5a + ab
+cyc
+cyc
+
+X
+
+We can easily prove this is at least 16 (a2 +b2 +c2 ) (recall a2 +b2 +c2 is the “biggest” sum, so
+P
+3b3
+we knew in advance this method would work). Similarly cyc 5a+b
+≥ 12 (a2 + b2 + c2 ).
+
+9
+
+Evan Chen《陳誼廷》 — 30 April 2014
+
+A Brief Introduction to Olympiad Inequalities
+
+Example 3.7 (USA TST 2010)
+1
+1
+1
+1
+If abc = 1, prove a5 (b+2c)
+2 + b5 (c+2a)2 + c5 (a+2b)2 ≥ 3 .
+
+Proof. We can use Hölder to eliminate the square roots in the denominator:
+!2
+X
+
+1
+5 (b + 2c)2
+a
+cyc
+
+!
+
+X
+
+ab + 2ac
+
+cyc
+
+≥
+
+X1
+a
+cyc
+
+!3
+≥ 3(ab + bc + ca)2 .
+
+§3.3 Practice Problems
+
+√
+√
+√
+√
+√
+√
+1. If a + b + c = 1, then ab + c + bc + a + ca + b ≥ 1 + ab + bc + ca.
+√
+√
+√
+2. If a2 + b2 + c2 = 12, then a · 3 b2 + c2 + b · 3 c2 + a2 + c · 3 a2 + b2 ≤ 12.
+q
+q
+q
+1
+3. (ISL 2004) If ab + bc + ca = 1, prove 3 a1 + 6b + 3 1b + 6c + 3 1c + 6a ≤ abc
+.
+4. (MOP 2011)
+
+√
+
+√
+√
+√
+a2 − ab + b2 + b2 − bc + c2 + c2 − ca + a2 + 9 3 abc ≤ 4(a + b + c).
+
+5. (Evan Chen) If a3 + b3 + c3 + abc = 4, prove
+(5a2 + bc)2
+(5b2 + ca)2
+(5c2 + ab)2
+(10 − abc)2
++
++
+≥
+.
+(a + b)(a + c) (b + c)(b + a) (c + a)(c + b)
+a+b+c
+When does equality hold?
+
+§4 Problems
+1. (MOP 2013) If a + b + c = 3, then
+p
+p
+p
+√
+a2 + ab + b2 + b2 + bc + c2 + c2 + ca + a2 ≥ 3.
+1
+1
+1
+2. (IMO 1995) If abc = 1, then a3 (b+c)
++ b3 (c+a)
++ c3 (a+b)
+≥ 32 .
+
+3. (USA 2003) Prove
+
+(2a+b+c)2
+cyc 2a2 +(b+c)2 ≤ 8.
+
+P
+
+4. (Romania)
+Let x1 , x2 , . . . , xn be positive reals with x1 x2 . . . xn = 1. Prove that
+Pn
+1
+i=1 n−1+xi ≤ 1.
+5. (USA 2004) Let a, b, c be positive reals. Prove that
+
+
+
+a5 − a2 + 3 b5 − b2 + 3 c5 − c2 + 3 ≥ (a + b + c)3 .
+√
+√
+√
+6. (Evan Chen) Let a, b, c be positive reals satisfying a + b + c = 7 a + 7 b + 7 c.
+Prove aa bb cc ≥ 1.
+
+10
+
+

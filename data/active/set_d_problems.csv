@@ -1,0 +1,4 @@
+id,problem
+dbd2be,"Find all ordered triples $(p, a, b)$ of a prime $p > 2$ and positive integers $a, b$ such that $a\le b$ and both $a^{p-1} + b$ and $b^{p-1} + a$ are powers of $p$.
+
+Find the sum of all components in the answer tuple."

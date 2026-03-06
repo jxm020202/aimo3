@@ -1,0 +1,164 @@
+The Incenter/Excenter Lemma
+EVAN CHEN《陳誼廷》
+6 August 2016
+
+In this short note, we’ll be considering the following useful lemma.
+Lemma
+Let ABC be a triangle with incenter I, A-excenter IA , and denote by L the midpoint
+of arc BC. Show that L is the center of a circle through I, IA , B, C.
+A
+
+I
+
+B
+
+C
+
+L
+
+IA
+
+Proof. This is just angle chasing. Let A = ∠BAC, B = ∠CBA, C = ∠ACB, and note
+that A, I, L are collinear (as L is on the angle bisector). We are going to show that
+LB = LI, the other cases being similar.
+First, notice that
+1
+1
+∠LBI = ∠LBC + ∠CBI = ∠LAC + ∠CBI = ∠IAC + ∠CBI = A + B.
+2
+2
+However,
+
+1
+1
+∠BIL = ∠BAI + ∠ABI = A + B.
+2
+2
+Hence, 4BIL is isosceles. So LB = LI. The rest of the proof proceeds along these
+lines.
+Now, let’s see where this lemma has come up before. . .
+1
+
+Evan Chen《陳誼廷》 — 6 August 2016
+
+The Incenter/Excenter Lemma
+
+§1 Mild Embarrassments
+Problem 1.1 (USAMO 1988). Triangle ABC has incenter I. Consider the triangle whose
+vertices are the circumcenters of 4IAB, 4IBC, 4ICA. Show that its circumcenter
+coincides with the circumcenter of 4ABC.
+Problem 1.2 (CGMO 2012). The incircle of a triangle ABC is tangent to sides AB
+and AC at D and E respectively, and O is the circumcenter of triangle BCI. Prove that
+∠ODB = ∠OEC.
+Problem 1.3 (CHMMC Spring 2012). In triangle ABC, the angle bisector of ∠A meets
+the perpendicular bisector of BC at point D. The angle bisector of ∠B meets the
+perpendicular bisector of AC at point E. Let F be the intersection of the perpendicular
+bisectors of BC and AC. Find DF , given that ∠ADF = 5◦ , ∠BEF = 10◦ and AC = 3.
+Problem 1.4 (Nine-Point Circle). Let ABC be an acute triangle with orthocenter H.
+Let D, E, F be the feet of the altitudes from A, B, C to the opposite sides. Show that
+the midpoint of AH lies on the circumcircle of 4DEF .
+
+§2 Some Short-Answer Problems
+Problem 2.1 (HMMT 2011). Let ABCD be a cyclic quadrilateral, and suppose that
+BC = CD = 2. Let I be the incenter of triangle ABD. If AI = 2 as well, find the
+minimum value of the length of diagonal BD.
+Problem 2.2 (HMMT 2013). Let triangle ABC satisfy 2BC = AB + AC and have
+incenter I and circumcircle ω. Let D be the intersection of AI and ω (with A, D distinct).
+Prove that I is the midpoint of AD.
+Problem 2.3 (Online Math Open 2014/F19). In triangle ABC, AB = 3, AC = 5, and
+BC = 7. Let E be the reflection of A over BC, and let line BE meet the circumcircle of
+ABC again at D. Let I be the incenter of 4ABD. Compute cos ∠AEI.
+Problem 2.4 (NIMO 2012). Let ABXC be a cyclic quadrilateral such that ∠XAB =
+∠XAC. Let I be the incenter of triangle ABC and by D the foot of I on BC. Given
+AI = 25, ID = 7, and BC = 14, find XI.
+
+§3 Intermediate Examples
+Problem 3.1. Let ABC be an acute triangle such that ∠A = 60◦ . Prove that IH = IO,
+where I, H, O are the incenter, orthocenter, and circumcenter.
+Problem 3.2 (IMO 2006). Let ABC be a triangle with incenter I. A point P in the
+interior of the triangle satisfies
+∠P BA + ∠P CA = ∠P BC + ∠P CB.
+Show that AP ≥ AI, and that equality holds if and only if P = I.
+Problem 3.3 (APMO 2007). In triangle ABC, we have AB > AC and ∠A = 60◦ . Let
+I and H denote the incenter and orthocenter of the triangle. Show that 2∠AHI = 3∠B.
+Problem 3.4 (ELMO 2013, Evan Chen). Triangle ABC is inscribed in circle ω. A circle
+with chord BC intersects segments AB and AC again at S and R, respectively. Segments
+2
+
+Evan Chen《陳誼廷》 — 6 August 2016
+
+The Incenter/Excenter Lemma
+
+BR and CS meet at L, and rays LR and LS intersect ω at D and E, respectively. The
+internal angle bisector of ∠BDE meets line ER at K. Prove that if BE = BR, then
+∠ELK = 12 ∠BCD.
+Problem 3.5 (Online Math Open 2012/F27). Let ABC be a triangle with circumcircle
+ω. Let the bisector of ∠ABC meet segment AC at D and circle ω at M 6= B. The
+circumcircle of 4BDC meets line AB at E 6= B, and CE meets ω at P 6= C. The
+bisector of ∠P M C meets segment AC at Q 6= C. Given that P Q = M C, determine the
+degree measure of ∠ABC.
+
+§4 Harder Tasks
+Problem 4.1 (Iran 2001). Let ABC be a triangle with incenter I and A-excenter IA .
+Let M be the midpoint of arc BC not containing A, and let N denote the midpoint of
+arc M BA. Lines N I and N IA intersect the circumcircle of ABC at S and T . Prove that
+the lines ST , BC and AI are concurrent.
+Problem 4.2 (Online Math Open 2014/F26). Let ABC be a triangle with AB = 26,
+AC = 28, BC = 30. Let X, Y , Z be the midpoints of arcs BC, CA, AB (not containing
+the opposite vertices) respectively on the circumcircle of ABC. Let P be the midpoint of
+arc BC containing point A. Suppose lines BP and XZ meet at M , while lines CP and
+XY meet at N . Find the square of the distance from X to M N .
+Problem 4.3 (Euler). Let ABC be a triangle with incenter I and circumcenter O. Show
+that IO2 = R(R − 2r), where R and r are the circumradius and inradius of 4ABC,
+respectively.
+Problem 4.4 (IMO 2010). Let I be the incenter of a triangle ABC and let Γ be its
+circumcircle. Let the line AI intersect Γ again at D. Let E be a point on the arc BDC
+and F a point on the side BC such that
+∠BAF = ∠CAE < 12 ∠BAC.
+Finally, let G be the midpoint of IF . Prove that DG and EI intersect on Γ.
+
+§5 Bonus Problems
+Problem 5.1 (Russia 2014). Let ABC be a triangle with AB > BC and circumcircle Ω.
+Points M , N lie on the sides AB, BC respectively, such that AM = CN . Lines M N and
+AC meet at K. Let P be the incenter of the triangle AM K, and let Q be the K-excenter
+of the triangle CN K. If R is midpoint of arc ABC of Ω then prove that RP = RQ.
+Problem 5.2. Let ABC be a triangle with circumcircle Ω, and let D be any point on
+BC. We draw a curvilinear incircle tangent to AD at L, to BC at K and internally
+tangent to Ω. Show that the incenter of triangle ABC lies on KL.
+
+3
+
+Evan Chen《陳誼廷》 — 6 August 2016
+
+The Incenter/Excenter Lemma
+
+§6 Hints to the Problems
+1.1. Tautological.
+1.2. Who is O?
+1.3. Point F is the circumcenter of 4ABC. Who are D and E?
+1.4. What is the incenter of 4DEF ? What is the D-excenter?
+2.1. Show that AC = 4.
+2.2. Apply Ptolemy’s Theorem.
+2.3. Who is C? Erase E.
+2.4. Apply Ptolemy’s Theorem.
+3.1. Since ∠BHC = ∠BIC = ∠BOC = 120◦ , points H and O now lie on the magic
+circle too. So IH = IO is just an equality of certain arcs.
+3.2. Use the angle condition to show that P also lies on the magic circle.
+3.3. The point H lies on the magic circle. So ∠IHC = 180◦ − ∠IBC.
+3.4. You need to do quite a bit of angle chasing. Show that R is the incenter of 4CDE.
+Who is B?
+3.5. Both M and P are arc midpoints. (Why?)
+4.1. First show that S, T , I, IA are concyclic, say by N I · N S = N M 2 = N IA · N T .
+4.2. Add the incenter I. Line M N is a tangent.
+4.3. Add in point L, the midpoint of arc BC. By Power of a Point, it’s equivalent to
+prove AI · IL = 2Rr, which can be done with similar triangles.
+4.4. Take a homothety with ratio 2 at I. This sends G to F and D to the A-excenter.
+5.1. Construct arc midpoints on the circumcircles of both 4AM J and 4CN K. Use
+spiral similarity at R.
+5.2. Let the tangency point to Ω be T , let M be the midpoint of arc BC, and let lines
+KL and AM meet at I. Show that M , K, T are collinear. Show that ALIT is
+cyclic. Prove that M I 2 = M K · M T = M C 2 = M I 2 .
+
+4
+
+
