@@ -42,16 +42,20 @@ def main():
         print(f"  Total time: {total_min:.1f} min | Per-problem: median={sorted(wall_times)[len(wall_times)//2]:.0f}s, max={max(wall_times):.0f}s")
 
     # --- Reruns ---
-    reruns = [p for p in problems if len(p.attempts) > 32]
+    # Auto-detect base attempt count as the mode (most common)
+    attempt_counts = Counter(len(p.attempts) for p in problems)
+    base_attempts = attempt_counts.most_common(1)[0][0] if attempt_counts else 48
+    reruns = [p for p in problems if len(p.attempts) > base_attempts]
+    rerun_threshold = max(1, (base_attempts + 2) // 3)  # ceil(attempts/3)
     rerun_candidates = []
     for p in problems:
         votes = Counter(a.answer for a in p.attempts if a.answer is not None)
         if votes:
             top_votes = votes.most_common(1)[0][1]
-            if top_votes < 11:
+            if top_votes < rerun_threshold:
                 rerun_candidates.append((p, top_votes))
     print(f"\n  Reruns triggered: {len(reruns)}")
-    print(f"  Would-rerun (top_votes < 11): {len(rerun_candidates)} problems")
+    print(f"  Would-rerun (top_votes < {rerun_threshold}): {len(rerun_candidates)} problems")
     for p, tv in rerun_candidates:
         status = "CORRECT" if p.correct else "WRONG"
         print(f"    {p.problem_id}: top_votes={tv} ({status}) pred={p.predicted}")

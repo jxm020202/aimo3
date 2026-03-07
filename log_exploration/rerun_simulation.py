@@ -25,7 +25,11 @@ def main():
     print(f"  RERUN THRESHOLD SIMULATION")
     print(f"{'='*72}")
     print(f"  Baseline: {baseline}/{n} ({baseline*100/n:.0f}%)")
-    print(f"  Current rerun threshold: top_votes < 5")
+    # Auto-detect base attempts as mode
+    attempt_counts = Counter(len(p.attempts) for p in problems)
+    base_attempts = attempt_counts.most_common(1)[0][0] if attempt_counts else 48
+    current_threshold = max(1, (base_attempts + 2) // 3)  # ceil(attempts/3)
+    print(f"  Current rerun threshold: top_votes < {current_threshold} (ceil({base_attempts}/3))")
     print()
 
     # For each threshold, identify which problems would get a rerun

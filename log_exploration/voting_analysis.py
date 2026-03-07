@@ -182,7 +182,15 @@ def analyze_early_stop_impact(problems):
 
     total_with_expected = sum(1 for p in problems if p.expected is not None)
 
-    for threshold in [1, 2, 3, 4, 5, 6, 7, 8]:
+    # Auto-detect base attempts and rerun threshold
+    attempt_counts = Counter(len(p.attempts) for p in problems)
+    base_attempts = attempt_counts.most_common(1)[0][0] if attempt_counts else 8
+    actual_threshold = max(1, (base_attempts + 2) // 3)  # ceil(attempts/3)
+
+    # Simulate thresholds up to base_attempts
+    thresholds = sorted(set(range(1, min(base_attempts + 1, 20))) | {actual_threshold})
+
+    for threshold in thresholds:
         score = 0
         total_attempts_used = 0
         total_time_used = 0
@@ -219,10 +227,11 @@ def analyze_early_stop_impact(problems):
 
         avg_att = total_attempts_used / total_with_expected if total_with_expected else 0
         avg_time = total_time_used / total_with_expected if total_with_expected else 0
-        actual = " (close to actual)" if threshold == 5 else ""
-        print(f"  {threshold:<12} {score:>5}/{total_with_expected} {avg_att:>14.1f} {avg_time:>9.1f}s{actual}")
+        actual = f" (actual rerun threshold ceil({base_attempts}/3))" if threshold == actual_threshold else ""
+        no_stop = " (no early stop)" if threshold == base_attempts else ""
+        print(f"  {threshold:<12} {score:>5}/{total_with_expected} {avg_att:>14.1f} {avg_time:>9.1f}s{actual}{no_stop}")
 
-    print(f"\n  NOTE: Threshold=8 means 'no early stop' (run all 8).")
+    print(f"\n  NOTE: Threshold={base_attempts} means 'no early stop' (run all {base_attempts}).")
     print(f"  Lower thresholds save time but risk incorrect majority votes.")
 
 

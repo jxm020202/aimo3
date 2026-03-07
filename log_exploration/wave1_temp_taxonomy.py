@@ -5,12 +5,12 @@ Parses Wave 1 classification blocks from the raw diagnostic log (NOT the
 log_query parser, which only handles Wave 2) and breaks down taxonomy
 agreement, None/timeout rates, and error patterns by temperature bucket.
 
-The Wave 1 temp schedule is: [0.02]*11 + [0.1]*21 + [0.3]*10 = 42 attempts
-So attempts 1-11 = temp 0.02, 12-32 = temp 0.1, 33-42 = temp 0.3.
+Auto-detects the Wave 1 temp schedule from the notebook or accepts manual override.
+Buckets temperatures into ranges for readable output.
 
 Usage:
     python3 log_exploration/wave1_temp_taxonomy.py <diagnostic.log>
-    python3 log_exploration/wave1_temp_taxonomy.py <diagnostic.log> --schedule 0.02:11,0.1:21,0.3:10
+    python3 log_exploration/wave1_temp_taxonomy.py <diagnostic.log> --schedule 0.1:20,0.05-0.5:22
     python3 log_exploration/wave1_temp_taxonomy.py <diagnostic.log> --wrong-only
     python3 log_exploration/wave1_temp_taxonomy.py <diagnostic.log> --no-consensus-only
 """
@@ -24,15 +24,66 @@ from collections import defaultdict
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
+def auto_detect_wave1_schedule():
+    """Auto-detect Wave 1 temp schedule from the notebook CFG class.
+
+    Reads notebooks/aimo3-solver.ipynb to find wave1_temp_schedule and
+    wave1_attempts. Returns dict mapping attempt_number (1-based) -> temperature.
+    """
+    import json
+    nb_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                           'notebooks', 'aimo3-solver.ipynb')
+    if not os.path.exists(nb_path):
+        return None
+
+    with open(nb_path) as f:
+        nb = json.load(f)
+
+    # Find the cell with wave1_temp_schedule
+    for cell in nb['cells']:
+        if cell['cell_type'] != 'code':
+            continue
+        source = ''.join(cell['source'])
+        if 'wave1_temp_schedule' in source:
+            # Extract the schedule by executing just that line
+            local_ns = {}
+            for line in source.split('\n'):
+                stripped = line.strip()
+                if stripped.startswith('wave1_temp_schedule'):
+                    try:
+                        exec(stripped, {'__builtins__': __builtins__}, local_ns)
+                    except Exception:
+                        pass
+            if 'wave1_temp_schedule' in local_ns:
+                schedule = local_ns['wave1_temp_schedule']
+                return {i + 1: t for i, t in enumerate(schedule)}
+    return None
+
+
 def parse_temp_schedule(schedule_str):
-    """Parse temperature schedule string like '0.02:11,0.1:21,0.3:10'.
+    """Parse temperature schedule string like '0.1:20,linspace(0.05,0.5,22)'.
+
+    Supports:
+      - Simple: '0.1:20,0.3:10' -> 20 attempts at 0.1, 10 at 0.3
+      - Linspace: '0.1:20,linspace(0.05,0.5,22)' -> 20 at 0.1, then 22 linspaced
 
     Returns dict mapping attempt_number (1-based) -> temperature.
     """
     temp_map = {}
     attempt = 1
     for part in schedule_str.split(','):
-        temp_s, count_s = part.strip().split(':')
+        part = part.strip()
+        if part.startswith('linspace('):
+            # Parse linspace(start, end, count)
+            m = re.match(r'linspace\(([\d.]+)\s*,\s*([\d.]+)\s*,\s*(\d+)\)', part)
+            if m:
+                start, end, count = float(m.group(1)), float(m.group(2)), int(m.group(3))
+                for i in range(count):
+                    t = round(start + i * (end - start) / (count - 1), 4) if count > 1 else start
+                    temp_map[attempt] = t
+                    attempt += 1
+            continue
+        temp_s, count_s = part.split(':')
         temp = float(temp_s)
         count = int(count_s)
         for _ in range(count):
@@ -185,17 +236,38 @@ def main():
         epilog=__doc__
     )
     parser.add_argument('logfile', help='Path to diagnostic.log')
-    parser.add_argument('--schedule', default='0.02:11,0.1:21,0.3:10',
-                        help='Temperature schedule as temp:count,... (default: 0.02:11,0.1:21,0.3:10)')
+    parser.add_argument('--schedule', default=None,
+                        help='Temperature schedule as temp:count,... (default: auto-detect from notebook)')
     parser.add_argument('--wrong-only', action='store_true',
                         help='Only show analysis for WRONG problems')
     parser.add_argument('--no-consensus-only', action='store_true',
                         help='Only show analysis for no-consensus problems')
     args = parser.parse_args()
 
-    temp_map = parse_temp_schedule(args.schedule)
-    temps_sorted = sorted(set(temp_map.values()))
-    temp_labels = {t: f'temp={t}' for t in temps_sorted}
+    if args.schedule:
+        temp_map = parse_temp_schedule(args.schedule)
+    else:
+        temp_map = auto_detect_wave1_schedule()
+        if temp_map is None:
+            print("  ERROR: Could not auto-detect Wave 1 temp schedule from notebook.")
+            print("  Use --schedule flag, e.g.: --schedule '0.1:20,linspace(0.05,0.5,22)'")
+            sys.exit(1)
+
+    # Bucket nearby temperatures for readable output (round to nearest 0.05)
+    def bucket_temp(t):
+        return round(round(t / 0.05) * 0.05, 2)
+
+    raw_temps = sorted(set(temp_map.values()))
+    bucketed_map = {att: bucket_temp(t) for att, t in temp_map.items()}
+    temps_sorted = sorted(set(bucketed_map.values()))
+    temp_labels = {t: f'temp={t:.2f}' for t in temps_sorted}
+
+    print(f"  Raw schedule: {len(temp_map)} attempts, {len(raw_temps)} unique temps")
+    print(f"  Range: {min(raw_temps):.3f} to {max(raw_temps):.3f}")
+    print(f"  Bucketed into {len(temps_sorted)} groups (rounded to nearest 0.05)")
+
+    # Use bucketed map for all analysis
+    temp_map = bucketed_map
 
     # Build attempt ranges for display
     temp_ranges = {}
@@ -315,10 +387,12 @@ def main():
     print("  WAVE 1 CLASSIFICATION QUALITY BY TEMPERATURE")
     print("=" * 90)
     print()
-    print(f"  Temperature schedule: {args.schedule}")
+    schedule_src = args.schedule if args.schedule else "auto-detected from notebook"
+    print(f"  Temperature schedule: {schedule_src}")
     for t in temps_sorted:
         lo, hi = temp_ranges[t]
-        print(f"    {temp_labels[t]:12s} -> attempts {lo}-{hi} ({hi - lo + 1} per problem)")
+        count = sum(1 for tv in temp_map.values() if tv == t)
+        print(f"    {temp_labels[t]:12s} -> {count} attempts/problem (att#{lo}-{hi})")
     print(f"\n  Problems analyzed: {len(problems)}")
     print()
 
