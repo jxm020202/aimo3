@@ -116,21 +116,6 @@ def main():
         s = temp_stats[t]
         print(f"    temp={t}: {s['total']:4d} attempts, {s['none']:3d} Nones ({s['none']*100/s['total']:.0f}%)")
 
-    # --- Reduced-attempt simulation ---
-    print(f"\n  {'─'*72}")
-    print(f"  REDUCED-ATTEMPT SIMULATION")
-    print(f"  {'─'*72}")
-    for n_att in [8, 12, 16, 20, 24, 28, 32]:
-        sim_correct = 0
-        for p in problems:
-            atts = p.attempts[:n_att]
-            votes = Counter(a.answer for a in atts if a.answer is not None)
-            if votes:
-                predicted = votes.most_common(1)[0][0]
-                if predicted == p.expected:
-                    sim_correct += 1
-        print(f"    {n_att:2d} attempts: {sim_correct}/{n} ({sim_correct*100/n:.0f}%)")
-
     # --- Outvoted analysis ---
     outvoted = []
     for p in wrong_probs:

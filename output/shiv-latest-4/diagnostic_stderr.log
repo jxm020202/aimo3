@@ -1,0 +1,143 @@
+ERROR:tornado.application:Exception in callback functools.partial(<bound method OutStream._flush of <ipykernel.iostream.OutStream object at 0x782c7531bf70>>)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/tornado/ioloop.py", line 758, in _run_callback
+    ret = callback()
+          ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/ipykernel/iostream.py", line 518, in _flush
+    self.session.send(
+  File "/usr/local/lib/python3.12/dist-packages/jupyter_client/session.py", line 820, in send
+    msg = self.msg(
+          ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/jupyter_client/session.py", line 661, in msg
+    header = self.msg_header(msg_type) if header is None else header
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/jupyter_client/session.py", line 644, in msg_header
+    return msg_header(self.msg_id, msg_type, self.username, self.session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/jupyter_client/session.py", line 275, in msg_header
+    date = utcnow()
+           ^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/jupyter_client/session.py", line 203, in utcnow
+    return datetime.utcnow().replace(tzinfo=utc)
+           ^^^^^^^^^^^^^^^^^
+DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined
+Exception ignored in: <function AIMO3Sandbox.__del__ at 0x7bb903fa7920>
+Traceback (most recent call last):
+  File "/tmp/ipykernel_44/235241606.py", line 218, in __del__
+  File "/tmp/ipykernel_44/235241606.py", line 179, in close
+NameError: name 'contextlib' is not defined

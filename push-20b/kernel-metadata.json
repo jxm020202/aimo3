@@ -1,6 +1,6 @@
 {
-  "id": "shivzzzzzz02/aimo3-solver",
-  "title": "AIMO3 Solver",
+  "id": "jxm222/aimo3-solver-20b",
+  "title": "AIMO3 Solver 20B",
   "code_file": "aimo3-solver.ipynb",
   "language": "python",
   "kernel_type": "notebook",
@@ -8,10 +8,10 @@
   "enable_gpu": true,
   "enable_tpu": false,
   "enable_internet": false,
-  "dataset_sources": ["shivzzzzzz02/aimo3-test-data", "jxm222/aimo3-problem-db"],
+  "dataset_sources": ["jxm222/aimo3-test-data", "jxm222/aimo3-problem-db"],
   "kernel_sources": ["andreasbis/aimo-3-utils"],
   "competition_sources": ["ai-mathematical-olympiad-progress-prize-3"],
-  "model_sources": ["danielhanchen/gpt-oss-120b/Transformers/default/1"],
+  "model_sources": ["danielhanchen/gpt-oss-20b/Transformers/default/1"],
   "machine_shape": "NvidiaH100",
   "docker_image": "gcr.io/kaggle-private-byod/python@sha256:536e3d9752ddf933ae83b0a0c3ea67d38e6236db11a1cd47d84927a0b8d2c440"
 }

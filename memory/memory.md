@@ -35,32 +35,33 @@
 
 - **Competition**: AIMO Progress Prize 3 — solve 110 original math problems (olympiad to IMO level)
 - **Prize**: $2.2M total. 1st: $262K. 47/50 bonus: $1.59M (never claimed).
-- **Deadline**: April 15, 2026 (entry by April 8). ~5 weeks from March 6, 2026.
+- **Deadline**: April 15, 2026 (entry by April 8). ~5 weeks from March 7, 2026.
 - **Hardware**: Free H100 GPUs on Kaggle. No internet during submission.
 - **Answers**: 5-digit integers (0-99999). 50 public + 50 private problems.
 - **Scoring**: Double-run. Both correct=1, one=0.5, both wrong=0.
 - **1 submission/day**. Model cutoff March 15, 2026.
 - **Kaggle**: shivzzzzzz02 (primary), jxm222 (DB dataset) | **GitHub**: jxm020202/aimo3 (private)
 
-## Current State (March 6, 2026 — Session 12)
+## Current State (March 7, 2026 — Session 13)
 
-- **v18 pushed but FAILED**: Loaded `test_2problems.csv` instead of `test_problems.csv`. Fixed locally, need v19 push.
-- **v34 (jxm222)**: 24/50 (48%) — last version without Wave 1
-- **v17**: 42/50 (84%) — first Wave 1 run (but old config: 24 attempts)
-- **Current config**: 32 Wave 2 attempts, 42 Wave 1 agents, 398-problem test set
-- **Problem DB**: 340 entries, pushed as v10 to `jxm222/aimo3-problem-db`
-- **Test data**: 398 problems (val+aux+hard30), all valid 0-99999
+- **v20 (shiv-latest-4)**: 44/50 (88%) on set_a, 213 min
+- **Pending local changes**: prompt tweaks in `/tmp/cell8.py` (not yet written to notebook)
+  - Flat temp 0.5, "when stuck use code" addition, number theory code guidance
+- **Problem DB**: 374 entries, pushed as v12 to `jxm222/aimo3-problem-db`
+- **Config**: 24 Wave 2 attempts, 42 Wave 1 agents, flat 0.5 temp, difficulty classification
+- **Key gap**: Model never votes HARD — difficulty feature exists but unused
 
 ## Critical Insights
 
 1. **Competition is about variance reduction, not capability** — host data: pass@100 ~50/50. With TIR, baseline gets 44/50 at pass@8.
 2. **GPT-OSS-120B is MoE with ~5.1B active params** — "120B" is misleading.
-3. **Early stop is BROKEN and REMOVED** — All attempts launch simultaneously. ES saves ZERO time. See `memory/ideas/parallelism-and-early-stop.md`.
-4. **NameErrors from missing aliases** — 22% of all errors. Fixed in v36 by adding np/sp/random/time/nx to sandbox init+reset.
-5. **Wave 1 classification is very accurate** — 83-95% of agents pick correct taxonomy in v18 test.
+3. **Early stop is BROKEN and REMOVED** — All attempts launch simultaneously. ES saves ZERO time.
+4. **NameErrors from missing aliases** — 22% of all errors. Fixed by adding np/sp/random/time/nx to sandbox.
+5. **Wave 1 classification is very accurate** — 83-95% of agents pick correct taxonomy.
 6. **DB notes dramatically help trap problems** — centroid/735-gon got 32/32 correct with notes (was 0/16 without).
-7. **Deadline overshoot up to 30s** — effective max per problem is ~430s not 400s.
-8. **All attempts fully parallel** — 42 Wave 1 + 32 Wave 2 all run concurrently, GPU handles it fine.
+7. **Reruns trigger on no-consensus, not just Nones** — v20 had 3 reruns, all from vote splits, all correct after rerun.
+8. **Wrong problems fail from confident wrong majorities** — not a timeout/Nones issue. 5/6 wrong had correct answer in votes but outvoted.
+9. **Code-first exploration wins on hard NT/FE problems** — f7d683: 1/24 correct via brute-force, 23 failed via pure-analytical.
 
 ## Memory Files — What's Where
 
@@ -97,8 +98,9 @@ Core parser: `log_exploration/log_query.py` — includes Wave 1 parsing + 30 bui
 ### Available Logs
 | Version | Location | Problems | Score |
 |---------|----------|----------|-------|
+| v20 (latest) | `output/shiv-latest-4/` | 50 | 44/50 |
+| v37-era | `output/shiv-latest-2/` | 50 | ~39/50 |
 | v32-v34 | `output/v32/` etc | 50 | 24/50 (v34) |
-| shiv-v1 to v15 | `output/shiv-v*/` | varies | varies |
 
 ## Project Structure
 
@@ -110,8 +112,8 @@ aimo3/
 │   ├── aimo3-solver.ipynb    ← Active solver
 │   └── kernel-metadata.json  ← Kaggle kernel config
 ├── data/
-│   ├── active/          ← test_problems.csv (398), test_answers.csv (398)
-│   ├── problem_db/      ← problems.db (340 entries, working copy)
+│   ├── active/          ← test set CSVs (set_a/b/c/d)
+│   ├── problem_db/      ← problems.db (374 entries, working copy)
 │   ├── problem_db_upload/ ← problems.db (upload copy for Kaggle)
 │   └── available/       ← val bench, old benchmarks, discussions
 ├── log_exploration/     ← 35+ script log query toolkit
@@ -122,6 +124,6 @@ aimo3/
 
 ## Kaggle Datasets
 
-- `jxm222/aimo3-problem-db` — Problem DB (340 entries, public). Push with jxm222 creds.
-- `shivzzzzzz02/aimo3-test-data` — Test CSVs (398 problems+answers, private).
+- `jxm222/aimo3-problem-db` — Problem DB (374 entries, public). Push with jxm222 creds.
+- `shivzzzzzz02/aimo3-test-data` — Test CSVs (set_a/b/c/d, private).
 - Both in `kernel-metadata.json` dataset_sources

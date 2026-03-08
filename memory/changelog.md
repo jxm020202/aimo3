@@ -2,6 +2,30 @@
 
 All key changes to the AIMO3 project. Most recent first.
 
+## 2026-03-07
+
+### v20 Results — 44/50 (88%) on set_a
+- 213 min (3.5 hrs) — underutilized 290 min budget
+- 3 reruns (27cec1, 67ec70, 19570e) — all from no-consensus votes, all correct after rerun
+- 6 wrong: 76aef9, f7d683, 7302b5, 25e584, 4c5391, 517772
+- All 6 wrong had confident wrong majorities; 5/6 had correct answer in votes but outvoted
+- f7d683: only 1/24 correct (via computational exploration), 23 failed via pure-analytical
+
+### Session 13 — Prompt & Config Changes (pending push)
+- **Prompt: tool_prompt**: Added "But when stuck, use code to explore: compute small cases, search for patterns, test conjectures" after existing guidance
+- **Prompt: preference_prompt**: Added number theory / functional equations code guidance line
+- **Config: temp_schedule**: bell curve → flat [0.5]*24
+- **Config: problem_timeout**: 400 → 450
+- **Config: rerun_timeout**: NEW — 600 (reruns get more time)
+- **Config: wave1_total_budget**: NEW — 6000s total pool for Wave 1
+- **Config: attempts/workers**: 32 → 24 (KV cache contention fix)
+- **Feature: Difficulty classification**: Wave 1 outputs [EASY]/[MEDIUM]/[HARD], voted separately from taxonomy
+- **Feature: ReasoningEffort**: easy/medium→MEDIUM, hard→HIGH, budget≤250s→MEDIUM override
+- **Feature: Wave 1 budget pool**: 6000s distributed per-problem, skip if ≤30s left
+- **Feature: Wave 1 classifier**: uses ReasoningEffort.MEDIUM
+- **Feature: summary.txt**: written at end of run for quick score check
+- **Feature: print_gpu_summary()**: GPU metrics summary method
+
 ## 2026-03-03
 
 ### v23 — 16 Attempts, Temperature Schedule, Full Diagnostics

@@ -1,0 +1,56 @@
+id,problem
+25e584,"Find number of triples $(x,y,z)$ of real numbers satisfying
+\[
+x^2 + y^2 + z^2 = xy^3 + yz^3 + zx^3 = 3.
+\]
+"
+4c5391,"Consider an $n \times n$ chessboard consisting of $n^2$ unit squares, where $n \geqslant 2$ is an integer. A configuration of $n$ rooks on this board is called balanced if each row and each column contains exactly one rook. Find the largest positive integer $k$ such that for any balanced configuration of rooks, there exists a $k \times k$ square with no rook in any of its $k^2$ unit squares. Additionally, consider a $2n \times 2n$ go board, where we put go pieces on that board.
+
+Find the answer when $n = 100$."
+4e2c56,"Two externally tangent circles $\Gamma_1$ and $\Gamma_2$ have centers $P_1$ and $P_2$, respectively. A third circle $\Sigma$ passing through $P_1$ and $P_2$ intersects $\Gamma_1$ at $Q$ and $R$ and $\Gamma_2$ at $S$ and $T$, as shown. Suppose that $SQ = 2$, $P_1P_2 = 15$, $RT = 16$, and $SQP_1RTP_2$ is a convex hexagon. Find the area of this hexagon.
+"
+517772,"Let $p, q, r, s$ be constants such that the equation $py^3 + qy^2 + ry + s = 0$ has three distinct real roots. Find all possible values for the number of distinct real roots of the equation
+$$\left(pz^{3}+qz^{2}+rz+s\right)(6pz+2q)=\left(3pz^{2}+2qz+r\right)^{2}.$$
+"
+7128bf,"Find all complex-coefficient polynomials $Q(x)$ that satisfy
+\[
+    (x^2 + x - 2)Q(x - 3) = (x^2 - 11x + 28)Q(x)
+\]
+for all real numbers $x \in \mathbb{R}$.
+
+Find the number of functions that satisfy the given conditions."
+7302b5,"We colored the $10000$ unit squares of an $100 \times 100$ square lattice such that in each $2\times 2$ square, at least two of the four unit squares have the same color. What is the largest number of colors we could have used?
+"
+76aef9,"Players $A$ and $B$ play a game on a blackboard that initially contains 1997 copies of the number 1. In every round, player $A$ erases two numbers $x$ and $y$ from the blackboard, and then player $B$ writes one of the numbers $x+y$ and $|x-y|$ on the blackboard. Additionally, there is a coin that is flipped before every round. If the coin lands heads, player $B$ is forced to write $x+y$ and if the coin lands tails player $B$ is forced to write $|x-y|$. The game terminates as soon as, at the end of some round, one of the following holds:
+
+(1) one of the numbers on the blackboard is larger than the sum of all other numbers;
+
+(2) there are only zeros on the blackboard.
+
+Player $B$ must then give as many cookies to player $A$ as there are numbers on the blackboard. Player $A$ wants to get as many cookies as possible, whereas player $B$ wants to give as few as possible. Determine the number of cookies that $A$ receives if both players play optimally."
+8accd9,"The Lucas numbers $L_{0}, L_{1}, L_{2}, \ldots$ are defined inductively by $L_{0}=2, L_{1}=1$, and $L_{n+1}=L_{n}+L_{n-1}$ for $n \geqslant 1$. The Fibonacci numbers $F_{0}, F_{1}, F_{2}, \ldots$ are defined inductively by $F_{0}=0, F_{1}=1$, and $F_{n+1}=F_{n}+F_{n-1}$ for $n \geqslant 1$. Determine the smallest size of a set $S$ of integers such that for every $k=2,3, \ldots, 125$ there exist some $x, y \in S$ such that $x-y=F_{k}$. Also, there exist some $a, b \in T$ for some set $T$ such that $a-b = L_{100}$."
+8fea51,"Let $b_m b_{m-1}\cdots b_0$ be the base-7 representation of a positive integer $n$ for some positive integer $m$. Let $a_i$ be the number obtained by removing the digit $b_i$ from the base-7 representation of $m$ (read in base 7). Find the number of $n$ that satisfy $n=\sum_{i=0}^{m-1}a_i$.
+"
+a9dbc8,"The Bank of Pittsburgh issues coins that have a heads side and a tails side. Vera
+has a row of 7873 such coins alternately tails-up and heads-up, with the leftmost
+coin tails-up.
+In a move, Vera may flip over one of the coins in the row, subject to the following
+rules:
+• On the first move, Vera may flip over any of the 7873 coins.
+• On all subsequent moves, Vera may only flip over a coin adjacent to the coin
+she flipped on the previous move. (We do not consider a coin to be adjacent
+to itself.)
+Determine the smallest possible number of moves Vera can make to reach a state in
+which every coin is heads-up."
+ae2add,"Among all the lattice points \((x, y)\) where \(1\leqslant x\leqslant9973\) and \(1\leqslant y\leqslant9973\), some lattice points are to be selected. The restrictive condition is that among the selected lattice points, no four points can form an isosceles trapezoid (a rectangle is also regarded as an isosceles trapezoid) with the base parallel to either the \(x\)-axis or the \(y\)-axis. So, what is the maximum number of lattice points that can be selected?"
+aff75c,"In a \(60\times60\) square grid of cells, the integers \(1, 2,\cdots,3600\) are filled in such a way that the sum of the numbers in every two adjacent cells (cells that share a common side are called adjacent) is not less than \(S\). Try to find the maximum value of \(S\)."
+c8fab8,"Let $XYZ$ be an acute-angled scalene triangle and $P$ be a point inside it such that $\angle XPY  = \angle YPZ = 120^o$. A circle centered at point $Q$ passes through the midpoints of the sides of $XYZ$. For $Y, P, Q$ collinear, find angle $XYZ$  in terms of degree.
+"
+dbbfe8,Place \(m\) \(1 \times 2\) dominos on a \(7\times7\) chessboard such that no domino can slide horizontally or vertically when other dominos remains fixed. Find the minimal possible value of \(m\).
+dccede,"A convex polyhedron has $m$ faces that are all congruent triangles with angles $30^{\circ}, 75^{\circ}$, and $75^{\circ}$. Determine, with proof, the maximum possible value of $m$.
+"
+f7d683,"For a given positive integer $n$, let $m$ be the exponent of 2 in the prime factorization of $n$. Define $f(n) = \frac{n}{2^m}$. Find all positive integers $u$ for which there exists a positive integer $v$ such that
+
+(Condition) $f(u+v) - f(u), f(u+v+1) - f(u+1), \cdots, f(u+2v-1) - f(u+v-1)$ are all multiples of 4.
+
+Find the sum of all possible values."

@@ -1,0 +1,12 @@
+AIMO3 Run Summary
+==================================================
+Score: 1/1 (100.0%)
+Time: 218s (3.6 min)
+Test set: set_d
+
+Answers: 24/24 (100%) | Nones: 0 (0%) | Errors: 15
+Timing: min=218s  max=218s  median=218s
+
+ID       Status   Pred    Exp  Ans None  Err   Time
+-------- ------ ------ ------ ---- ---- ---- ------
+dbd2be   OK         10     10   24    0   15   218s

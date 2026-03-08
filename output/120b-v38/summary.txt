@@ -1,0 +1,17 @@
+AIMO3 Run Summary
+==================================================
+Score: 2/4 (50.0%)
+Time: 904s (15.1 min)
+Test set: set_c
+
+Answers: 106/120 (88%) | Nones: 14 (12%) | Errors: 26
+Timing: min=140s  max=334s  median=246s
+
+ID       Status   Pred    Exp  Ans None  Err   Time
+-------- ------ ------ ------ ---- ---- ---- ------
+403988   FAIL       21  65537   40    8    0   184s
+3eee67   OK      27290  27290   20    4    8   246s
+dccede   FAIL       22     44   22    2   18   334s
+2b401b   OK         59     59   24    0    0   140s
+
+Wrong (2): 403988, dccede
