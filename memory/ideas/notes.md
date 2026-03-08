@@ -5,6 +5,7 @@
 1. **Formal verification layer** — use SymPy to verify numerical answers satisfy constraints
 2. **Per-problem-type prompting** — domain-specific hints for algebra/combinatorics/geometry/number-theory
 3. **Strategy Retrieval Bank** — 1000 hard problems with insights, RAG at runtime, steer model toward correct approach. See strategies.md for details.
+4. **EAGLE speculative decoding** — draft tokens with lightweight head, verify with main model. Could significantly speed up inference → more attempts or longer reasoning within budget. Needs vLLM support check.
 
 ## Closed / Done
 

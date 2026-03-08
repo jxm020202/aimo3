@@ -1,0 +1,1323 @@
+[{"stream_name":"stderr","time":12.520777788,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":12.520831615,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":12.520834183,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":12.520835567,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":13.18860551,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":13.188629872,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":13.188632101,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":13.188633504,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":16.615621022,"data":"Found existing installation: keras 3.10.0\r\n"}
+,{"stream_name":"stdout","time":16.917645185,"data":"Uninstalling keras-3.10.0:\r\n"}
+,{"stream_name":"stdout","time":17.673492658,"data":"  Successfully uninstalled keras-3.10.0\r\n"}
+,{"stream_name":"stdout","time":17.825046214,"data":"Found existing installation: matplotlib 3.10.0\r\n"}
+,{"stream_name":"stdout","time":17.875634366,"data":"Uninstalling matplotlib-3.10.0:\r\n"}
+,{"stream_name":"stdout","time":50.171319598,"data":"  Successfully uninstalled matplotlib-3.10.0\r\n"}
+,{"stream_name":"stdout","time":50.874215841,"data":"Found existing installation: scikit-learn 1.6.1\r\n"}
+,{"stream_name":"stdout","time":50.874242311,"data":"Uninstalling scikit-learn-1.6.1:\r\n"}
+,{"stream_name":"stdout","time":52.18610791,"data":"  Successfully uninstalled scikit-learn-1.6.1\r\n"}
+,{"stream_name":"stdout","time":52.388384316,"data":"Found existing installation: tensorflow 2.19.0\r\n"}
+,{"stream_name":"stdout","time":52.792633687,"data":"Uninstalling tensorflow-2.19.0:\r\n"}
+,{"stream_name":"stdout","time":81.465155096,"data":"  Successfully uninstalled tensorflow-2.19.0\r\n"}
+,{"stream_name":"stdout","time":82.014065596,"data":"Note: you may need to restart the kernel to use updated packages.\n"}
+,{"stream_name":"stdout","time":82.422835459,"data":"Archive found at: /kaggle/input/notebooks/andreasbis/aimo-3-utils/wheels.tar.gz\n"}
+,{"stream_name":"stdout","time":147.627125222,"data":"Looking in links: /kaggle/tmp/setup/wheels\n"}
+,{"stream_name":"stdout","time":147.667362279,"data":"Processing /kaggle/tmp/setup/wheels/unsloth-2025.12.9-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":147.832603112,"data":"Looking in links: /kaggle/tmp/setup/wheels\n"}
+,{"stream_name":"stdout","time":147.832621671,"data":"Processing /kaggle/tmp/setup/wheels/unsloth-2025.12.9-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":147.874776348,"data":"Processing /kaggle/tmp/setup/wheels/trl-0.24.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":147.886141091,"data":"Processing /kaggle/tmp/setup/wheels/vllm-0.11.2-cp38-abi3-manylinux1_x86_64.whl\n"}
+,{"stream_name":"stdout","time":148.076620553,"data":"Processing /kaggle/tmp/setup/wheels/trl-0.24.0-py3-none-any.whl\n"}
+,{"stream_name":"stdout","time":148.076660763,"data":"Processing /kaggle/tmp/setup/wheels/vllm-0.11.2-cp38-abi3-manylinux1_x86_64.whl\n"}
+,{"stream_name":"stdout","time":148.37228003,"data":"Processing /kaggle/tmp/setup/wheels/openai_harmony-0.0.8-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\n"}
+,{"stream_name":"stdout","time":148.409068036,"data":"Processing /kaggle/tmp/setup/wheels/unsloth_zoo-2025.12.7-py3-none-any.whl (from unsloth)\n"}
+,{"stream_name":"stdout","time":148.414993448,"data":"Requirement already satisfied: wheel\u003e=0.42.0 in /usr/local/lib/python3.12/dist-packages (from unsloth) (0.45.1)\n"}
+,{"stream_name":"stdout","time":148.415710226,"data":"Requirement already satisfied: packaging in /usr/local/lib/python3.12/dist-packages (from unsloth) (25.0)\n"}
+,{"stream_name":"stdout","time":148.417110996,"data":"Requirement already satisfied: torch\u003e=2.4.0 in /usr/local/lib/python3.12/dist-packages (from unsloth) (2.8.0+cu126)\n"}
+,{"stream_name":"stdout","time":148.417836799,"data":"Requirement already satisfied: torchvision in /usr/local/lib/python3.12/dist-packages (from unsloth) (0.23.0+cu126)\n"}
+,{"stream_name":"stdout","time":148.422414079,"data":"Requirement already satisfied: numpy in /usr/local/lib/python3.12/dist-packages (from unsloth) (2.0.2)\n"}
+,{"stream_name":"stdout","time":148.424394179,"data":"Requirement already satisfied: tqdm in /usr/local/lib/python3.12/dist-packages (from unsloth) (4.67.1)\n"}
+,{"stream_name":"stdout","time":148.425442361,"data":"Requirement already satisfied: psutil in /usr/local/lib/python3.12/dist-packages (from unsloth) (5.9.5)\n"}
+,{"stream_name":"stdout","time":148.430243848,"data":"Processing /kaggle/tmp/setup/wheels/tyro-1.0.3-py3-none-any.whl (from unsloth)\n"}
+,{"stream_name":"stdout","time":148.435195879,"data":"Requirement already satisfied: protobuf in /usr/local/lib/python3.12/dist-packages (from unsloth) (5.29.5)\n"}
+,{"stream_name":"stdout","time":148.440294516,"data":"Processing /kaggle/tmp/setup/wheels/xformers-0.0.33.post1-cp39-abi3-manylinux_2_28_x86_64.whl (from unsloth)\n"}
+,{"stream_name":"stdout","time":148.547326651,"data":"Processing /kaggle/tmp/setup/wheels/bitsandbytes-0.49.0-py3-none-manylinux_2_24_x86_64.whl (from unsloth)\n"}
+,{"stream_name":"stdout","time":148.574432783,"data":"Processing /kaggle/tmp/setup/wheels/openai_harmony-0.0.8-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\n"}
+,{"stream_name":"stdout","time":148.574449796,"data":"Processing /kaggle/tmp/setup/wheels/unsloth_zoo-2025.12.7-py3-none-any.whl (from unsloth)\n"}
+,{"stream_name":"stdout","time":148.574452575,"data":"Requirement already satisfied: wheel\u003e=0.42.0 in /usr/local/lib/python3.12/dist-packages (from unsloth) (0.45.1)\n"}
+,{"stream_name":"stdout","time":148.574455098,"data":"Requirement already satisfied: packaging in /usr/local/lib/python3.12/dist-packages (from unsloth) (25.0)\n"}
+,{"stream_name":"stdout","time":148.574457204,"data":"Requirement already satisfied: torch\u003e=2.4.0 in /usr/local/lib/python3.12/dist-packages (from unsloth) (2.8.0+cu126)\n"}
+,{"stream_name":"stdout","time":148.574459444,"data":"Requirement already satisfied: torchvision in /usr/local/lib/python3.12/dist-packages (from unsloth) (0.23.0+cu126)\n"}
+,{"stream_name":"stdout","time":148.574461564,"data":"Requirement already satisfied: numpy in /usr/local/lib/python3.12/dist-packages (from unsloth) (2.0.2)\n"}
+,{"stream_name":"stdout","time":148.574463685,"data":"Requirement already satisfied: tqdm in /usr/local/lib/python3.12/dist-packages (from unsloth) (4.67.1)\n"}
+,{"stream_name":"stdout","time":148.574465715,"data":"Requirement already satisfied: psutil in /usr/local/lib/python3.12/dist-packages (from unsloth) (5.9.5)\n"}
+,{"stream_name":"stdout","time":148.574467891,"data":"Processing /kaggle/tmp/setup/wheels/tyro-1.0.3-py3-none-any.whl (from unsloth)\n"}
+,{"stream_name":"stdout","time":148.574469887,"data":"Requirement already satisfied: protobuf in /usr/local/lib/python3.12/dist-packages (from unsloth) (5.29.5)\n"}
+,{"stream_name":"stdout","time":148.574472119,"data":"Processing /kaggle/tmp/setup/wheels/xformers-0.0.33.post1-cp39-abi3-manylinux_2_28_x86_64.whl (from unsloth)\n"}
+,{"stream_name":"stdout","time":148.574488235,"data":"Processing /kaggle/tmp/setup/wheels/bitsandbytes-0.49.0-py3-none-manylinux_2_24_x86_64.whl (from unsloth)\n"}
+,{"stream_name":"stdout","time":148.598717325,"data":"Requirement already satisfied: triton\u003e=3.0.0 in /usr/local/lib/python3.12/dist-packages (from unsloth) (3.4.0)\n"}
+,{"stream_name":"stdout","time":148.599496331,"data":"Requirement already satisfied: sentencepiece\u003e=0.2.0 in /usr/local/lib/python3.12/dist-packages (from unsloth) (0.2.1)\n"}
+,{"stream_name":"stdout","time":148.604956333,"data":"Processing /kaggle/tmp/setup/wheels/datasets-4.3.0-py3-none-any.whl (from unsloth)\n"}
+,{"stream_name":"stdout","time":148.6221919,"data":"Requirement already satisfied: accelerate\u003e=0.34.1 in /usr/local/lib/python3.12/dist-packages (from unsloth) (1.11.0)\n"}
+,{"stream_name":"stdout","time":148.623135896,"data":"Requirement already satisfied: peft!=0.11.0,\u003e=0.7.1 in /usr/local/lib/python3.12/dist-packages (from unsloth) (0.17.1)\n"}
+,{"stream_name":"stdout","time":148.624477931,"data":"Requirement already satisfied: huggingface_hub\u003e=0.34.0 in /usr/local/lib/python3.12/dist-packages (from unsloth) (0.36.0)\n"}
+,{"stream_name":"stdout","time":148.625125347,"data":"Requirement already satisfied: hf_transfer in /usr/local/lib/python3.12/dist-packages (from unsloth) (0.1.9)\n"}
+,{"stream_name":"stdout","time":148.626339633,"data":"Requirement already satisfied: diffusers in /usr/local/lib/python3.12/dist-packages (from unsloth) (0.35.2)\n"}
+,{"stream_name":"stdout","time":148.62923908,"data":"Requirement already satisfied: transformers!=4.52.0,!=4.52.1,!=4.52.2,!=4.52.3,!=4.53.0,!=4.54.0,!=4.55.0,!=4.55.1,!=4.57.0,\u003c=4.57.3,\u003e=4.51.3 in /usr/local/lib/python3.12/dist-packages (from unsloth) (4.57.1)\n"}
+,{"stream_name":"stdout","time":148.641906785,"data":"Requirement already satisfied: regex in /usr/local/lib/python3.12/dist-packages (from vllm) (2025.11.3)\n"}
+,{"stream_name":"stdout","time":148.642535493,"data":"Requirement already satisfied: cachetools in /usr/local/lib/python3.12/dist-packages (from vllm) (5.5.2)\n"}
+,{"stream_name":"stdout","time":148.645799344,"data":"Requirement already satisfied: requests\u003e=2.26.0 in /usr/local/lib/python3.12/dist-packages (from vllm) (2.32.5)\n"}
+,{"stream_name":"stdout","time":148.647321063,"data":"Requirement already satisfied: blake3 in /usr/local/lib/python3.12/dist-packages (from vllm) (1.0.8)\n"}
+,{"stream_name":"stdout","time":148.64785582,"data":"Requirement already satisfied: py-cpuinfo in /usr/local/lib/python3.12/dist-packages (from vllm) (9.0.0)\n"}
+,{"stream_name":"stdout","time":148.649964965,"data":"Requirement already satisfied: tokenizers\u003e=0.21.1 in /usr/local/lib/python3.12/dist-packages (from vllm) (0.22.1)\n"}
+,{"stream_name":"stdout","time":148.651465378,"data":"Requirement already satisfied: fastapi\u003e=0.115.0 in /usr/local/lib/python3.12/dist-packages (from fastapi[standard]\u003e=0.115.0-\u003evllm) (0.119.1)\n"}
+,{"stream_name":"stdout","time":148.652865083,"data":"Requirement already satisfied: aiohttp in /usr/local/lib/python3.12/dist-packages (from vllm) (3.13.2)\n"}
+,{"stream_name":"stdout","time":148.654115126,"data":"Requirement already satisfied: openai\u003e=1.99.1 in /usr/local/lib/python3.12/dist-packages (from vllm) (1.109.1)\n"}
+,{"stream_name":"stdout","time":148.655757168,"data":"Requirement already satisfied: pydantic\u003e=2.12.0 in /usr/local/lib/python3.12/dist-packages (from vllm) (2.12.5)\n"}
+,{"stream_name":"stdout","time":148.656490338,"data":"Requirement already satisfied: prometheus_client\u003e=0.18.0 in /usr/local/lib/python3.12/dist-packages (from vllm) (0.23.1)\n"}
+,{"stream_name":"stdout","time":148.657306362,"data":"Requirement already satisfied: pillow in /usr/local/lib/python3.12/dist-packages (from vllm) (11.3.0)\n"}
+,{"stream_name":"stdout","time":148.662597097,"data":"Processing /kaggle/tmp/setup/wheels/prometheus_fastapi_instrumentator-7.1.0-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.664801199,"data":"Requirement already satisfied: tiktoken\u003e=0.6.0 in /usr/local/lib/python3.12/dist-packages (from vllm) (0.12.0)\n"}
+,{"stream_name":"stdout","time":148.669609634,"data":"Processing /kaggle/tmp/setup/wheels/lm_format_enforcer-0.11.3-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.675922841,"data":"Processing /kaggle/tmp/setup/wheels/llguidance-1.3.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.684977188,"data":"Processing /kaggle/tmp/setup/wheels/outlines_core-0.2.11-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.693658308,"data":"Processing /kaggle/tmp/setup/wheels/diskcache-5.6.3-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.699738872,"data":"Processing /kaggle/tmp/setup/wheels/lark-1.2.2-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.706170577,"data":"Processing /kaggle/tmp/setup/wheels/xgrammar-0.1.25-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.716807148,"data":"Requirement already satisfied: typing_extensions\u003e=4.10 in /usr/local/lib/python3.12/dist-packages (from vllm) (4.15.0)\n"}
+,{"stream_name":"stdout","time":148.717176069,"data":"Requirement already satisfied: filelock\u003e=3.16.1 in /usr/local/lib/python3.12/dist-packages (from vllm) (3.20.1)\n"}
+,{"stream_name":"stdout","time":148.721666437,"data":"Processing /kaggle/tmp/setup/wheels/partial_json_parser-0.2.1.1.post7-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.723579642,"data":"Requirement already satisfied: pyzmq\u003e=25.0.0 in /usr/local/lib/python3.12/dist-packages (from vllm) (26.2.1)\n"}
+,{"stream_name":"stdout","time":148.72825389,"data":"Processing /kaggle/tmp/setup/wheels/msgspec-0.20.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.734237184,"data":"Processing /kaggle/tmp/setup/wheels/gguf-0.17.1-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.739956647,"data":"Processing /kaggle/tmp/setup/wheels/mistral_common-1.8.8-py3-none-any.whl (from mistral_common[image]\u003e=1.8.5-\u003evllm)\n"}
+,{"stream_name":"stdout","time":148.74959761,"data":"Requirement already satisfied: opencv-python-headless\u003e=4.11.0 in /usr/local/lib/python3.12/dist-packages (from vllm) (4.12.0.88)\n"}
+,{"stream_name":"stdout","time":148.750338246,"data":"Requirement already satisfied: pyyaml in /usr/local/lib/python3.12/dist-packages (from vllm) (6.0.3)\n"}
+,{"stream_name":"stdout","time":148.751078036,"data":"Requirement already satisfied: six\u003e=1.16.0 in /usr/local/lib/python3.12/dist-packages (from vllm) (1.17.0)\n"}
+,{"stream_name":"stdout","time":148.756608229,"data":"Processing /kaggle/tmp/setup/wheels/setuptools-80.9.0-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.76636161,"data":"Requirement already satisfied: einops in /usr/local/lib/python3.12/dist-packages (from vllm) (0.8.1)\n"}
+,{"stream_name":"stdout","time":148.771042179,"data":"Processing /kaggle/tmp/setup/wheels/compressed_tensors-0.12.2-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.777524008,"data":"Processing /kaggle/tmp/setup/wheels/depyf-0.20.0-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.779434827,"data":"Requirement already satisfied: cloudpickle in /usr/local/lib/python3.12/dist-packages (from vllm) (3.1.1)\n"}
+,{"stream_name":"stdout","time":148.78388215,"data":"Processing /kaggle/tmp/setup/wheels/watchfiles-1.1.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.785991294,"data":"Requirement already satisfied: python-json-logger in /usr/local/lib/python3.12/dist-packages (from vllm) (4.0.0)\n"}
+,{"stream_name":"stdout","time":148.790125328,"data":"Requirement already satisfied: scipy in /usr/local/lib/python3.12/dist-packages (from vllm) (1.15.3)\n"}
+,{"stream_name":"stdout","time":148.790781866,"data":"Requirement already satisfied: ninja in /usr/local/lib/python3.12/dist-packages (from vllm) (1.13.0)\n"}
+,{"stream_name":"stdout","time":148.795344829,"data":"Processing /kaggle/tmp/setup/wheels/pybase64-1.4.3-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.800693905,"data":"Requirement already satisfied: triton\u003e=3.0.0 in /usr/local/lib/python3.12/dist-packages (from unsloth) (3.4.0)\n"}
+,{"stream_name":"stdout","time":148.800697012,"data":"Requirement already satisfied: sentencepiece\u003e=0.2.0 in /usr/local/lib/python3.12/dist-packages (from unsloth) (0.2.1)\n"}
+,{"stream_name":"stdout","time":148.800698606,"data":"Processing /kaggle/tmp/setup/wheels/datasets-4.3.0-py3-none-any.whl (from unsloth)\n"}
+,{"stream_name":"stdout","time":148.800699932,"data":"Requirement already satisfied: accelerate\u003e=0.34.1 in /usr/local/lib/python3.12/dist-packages (from unsloth) (1.11.0)\n"}
+,{"stream_name":"stdout","time":148.800701268,"data":"Requirement already satisfied: peft!=0.11.0,\u003e=0.7.1 in /usr/local/lib/python3.12/dist-packages (from unsloth) (0.17.1)\n"}
+,{"stream_name":"stdout","time":148.800702778,"data":"Requirement already satisfied: huggingface_hub\u003e=0.34.0 in /usr/local/lib/python3.12/dist-packages (from unsloth) (0.36.0)\n"}
+,{"stream_name":"stdout","time":148.800704127,"data":"Requirement already satisfied: hf_transfer in /usr/local/lib/python3.12/dist-packages (from unsloth) (0.1.9)\n"}
+,{"stream_name":"stdout","time":148.800705404,"data":"Requirement already satisfied: diffusers in /usr/local/lib/python3.12/dist-packages (from unsloth) (0.35.2)\n"}
+,{"stream_name":"stdout","time":148.800706737,"data":"Requirement already satisfied: transformers!=4.52.0,!=4.52.1,!=4.52.2,!=4.52.3,!=4.53.0,!=4.54.0,!=4.55.0,!=4.55.1,!=4.57.0,\u003c=4.57.3,\u003e=4.51.3 in /usr/local/lib/python3.12/dist-packages (from unsloth) (4.57.1)\n"}
+,{"stream_name":"stdout","time":148.800709268,"data":"Requirement already satisfied: regex in /usr/local/lib/python3.12/dist-packages (from vllm) (2025.11.3)\n"}
+,{"stream_name":"stdout","time":148.800710616,"data":"Requirement already satisfied: cachetools in /usr/local/lib/python3.12/dist-packages (from vllm) (5.5.2)\n"}
+,{"stream_name":"stdout","time":148.800711986,"data":"Requirement already satisfied: requests\u003e=2.26.0 in /usr/local/lib/python3.12/dist-packages (from vllm) (2.32.5)\n"}
+,{"stream_name":"stdout","time":148.800713269,"data":"Requirement already satisfied: blake3 in /usr/local/lib/python3.12/dist-packages (from vllm) (1.0.8)\n"}
+,{"stream_name":"stdout","time":148.800714505,"data":"Requirement already satisfied: py-cpuinfo in /usr/local/lib/python3.12/dist-packages (from vllm) (9.0.0)\n"}
+,{"stream_name":"stdout","time":148.800715722,"data":"Requirement already satisfied: tokenizers\u003e=0.21.1 in /usr/local/lib/python3.12/dist-packages (from vllm) (0.22.1)\n"}
+,{"stream_name":"stdout","time":148.80071719,"data":"Requirement already satisfied: fastapi\u003e=0.115.0 in /usr/local/lib/python3.12/dist-packages (from fastapi[standard]\u003e=0.115.0-\u003evllm) (0.119.1)\n"}
+,{"stream_name":"stdout","time":148.800718715,"data":"Requirement already satisfied: aiohttp in /usr/local/lib/python3.12/dist-packages (from vllm) (3.13.2)\n"}
+,{"stream_name":"stdout","time":148.800723377,"data":"Requirement already satisfied: openai\u003e=1.99.1 in /usr/local/lib/python3.12/dist-packages (from vllm) (1.109.1)\n"}
+,{"stream_name":"stdout","time":148.800724809,"data":"Requirement already satisfied: pydantic\u003e=2.12.0 in /usr/local/lib/python3.12/dist-packages (from vllm) (2.12.5)\n"}
+,{"stream_name":"stdout","time":148.800727032,"data":"Requirement already satisfied: prometheus_client\u003e=0.18.0 in /usr/local/lib/python3.12/dist-packages (from vllm) (0.23.1)\n"}
+,{"stream_name":"stdout","time":148.800729308,"data":"Requirement already satisfied: pillow in /usr/local/lib/python3.12/dist-packages (from vllm) (11.3.0)\n"}
+,{"stream_name":"stdout","time":148.800731488,"data":"Processing /kaggle/tmp/setup/wheels/prometheus_fastapi_instrumentator-7.1.0-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.800733614,"data":"Requirement already satisfied: tiktoken\u003e=0.6.0 in /usr/local/lib/python3.12/dist-packages (from vllm) (0.12.0)\n"}
+,{"stream_name":"stdout","time":148.800735745,"data":"Processing /kaggle/tmp/setup/wheels/lm_format_enforcer-0.11.3-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.800738022,"data":"Processing /kaggle/tmp/setup/wheels/llguidance-1.3.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.800740219,"data":"Processing /kaggle/tmp/setup/wheels/outlines_core-0.2.11-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.800742469,"data":"Processing /kaggle/tmp/setup/wheels/diskcache-5.6.3-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.800744483,"data":"Processing /kaggle/tmp/setup/wheels/lark-1.2.2-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.80074659,"data":"Processing /kaggle/tmp/setup/wheels/xgrammar-0.1.25-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.800748689,"data":"Requirement already satisfied: typing_extensions\u003e=4.10 in /usr/local/lib/python3.12/dist-packages (from vllm) (4.15.0)\n"}
+,{"stream_name":"stdout","time":148.800750773,"data":"Requirement already satisfied: filelock\u003e=3.16.1 in /usr/local/lib/python3.12/dist-packages (from vllm) (3.20.1)\n"}
+,{"stream_name":"stdout","time":148.800752834,"data":"Processing /kaggle/tmp/setup/wheels/partial_json_parser-0.2.1.1.post7-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.800754932,"data":"Requirement already satisfied: pyzmq\u003e=25.0.0 in /usr/local/lib/python3.12/dist-packages (from vllm) (26.2.1)\n"}
+,{"stream_name":"stdout","time":148.800756978,"data":"Processing /kaggle/tmp/setup/wheels/msgspec-0.20.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.800760042,"data":"Processing /kaggle/tmp/setup/wheels/gguf-0.17.1-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.800761596,"data":"Processing /kaggle/tmp/setup/wheels/mistral_common-1.8.8-py3-none-any.whl (from mistral_common[image]\u003e=1.8.5-\u003evllm)\n"}
+,{"stream_name":"stdout","time":148.800763255,"data":"Requirement already satisfied: opencv-python-headless\u003e=4.11.0 in /usr/local/lib/python3.12/dist-packages (from vllm) (4.12.0.88)\n"}
+,{"stream_name":"stdout","time":148.800764647,"data":"Requirement already satisfied: pyyaml in /usr/local/lib/python3.12/dist-packages (from vllm) (6.0.3)\n"}
+,{"stream_name":"stdout","time":148.800765898,"data":"Requirement already satisfied: six\u003e=1.16.0 in /usr/local/lib/python3.12/dist-packages (from vllm) (1.17.0)\n"}
+,{"stream_name":"stdout","time":148.800768814,"data":"Processing /kaggle/tmp/setup/wheels/setuptools-80.9.0-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.800770086,"data":"Requirement already satisfied: einops in /usr/local/lib/python3.12/dist-packages (from vllm) (0.8.1)\n"}
+,{"stream_name":"stdout","time":148.800771381,"data":"Processing /kaggle/tmp/setup/wheels/compressed_tensors-0.12.2-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.800772682,"data":"Processing /kaggle/tmp/setup/wheels/depyf-0.20.0-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.800773868,"data":"Requirement already satisfied: cloudpickle in /usr/local/lib/python3.12/dist-packages (from vllm) (3.1.1)\n"}
+,{"stream_name":"stdout","time":148.800775126,"data":"Processing /kaggle/tmp/setup/wheels/watchfiles-1.1.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.800776395,"data":"Requirement already satisfied: python-json-logger in /usr/local/lib/python3.12/dist-packages (from vllm) (4.0.0)\n"}
+,{"stream_name":"stdout","time":148.800777831,"data":"Requirement already satisfied: scipy in /usr/local/lib/python3.12/dist-packages (from vllm) (1.15.3)\n"}
+,{"stream_name":"stdout","time":148.800779082,"data":"Requirement already satisfied: ninja in /usr/local/lib/python3.12/dist-packages (from vllm) (1.13.0)\n"}
+,{"stream_name":"stdout","time":148.80078037,"data":"Processing /kaggle/tmp/setup/wheels/pybase64-1.4.3-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.801568961,"data":"Processing /kaggle/tmp/setup/wheels/cbor2-5.7.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.807530861,"data":"Processing /kaggle/tmp/setup/wheels/setproctitle-1.3.7-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.813845081,"data":"Processing /kaggle/tmp/setup/wheels/anthropic-0.71.0-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.822311509,"data":"Processing /kaggle/tmp/setup/wheels/model_hosting_container_standards-0.1.12-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.829039091,"data":"Processing /kaggle/tmp/setup/wheels/numba-0.61.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":148.837731295,"data":"Requirement already satisfied: ray\u003e=2.48.0 in /usr/local/lib/python3.12/dist-packages (from ray[cgraph]\u003e=2.48.0-\u003evllm) (2.52.1)\n"}
+,{"stream_name":"stdout","time":148.844137366,"data":"Processing /kaggle/tmp/setup/wheels/torch-2.9.0+cu128-cp312-cp312-manylinux_2_28_x86_64.whl (from unsloth)\n"}
+,{"stream_name":"stdout","time":149.003687164,"data":"Processing /kaggle/tmp/setup/wheels/cbor2-5.7.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":149.003707875,"data":"Processing /kaggle/tmp/setup/wheels/setproctitle-1.3.7-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":149.003710165,"data":"Processing /kaggle/tmp/setup/wheels/anthropic-0.71.0-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":149.003711785,"data":"Processing /kaggle/tmp/setup/wheels/model_hosting_container_standards-0.1.12-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":149.003713062,"data":"Processing /kaggle/tmp/setup/wheels/numba-0.61.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":149.003725173,"data":"Requirement already satisfied: ray\u003e=2.48.0 in /usr/local/lib/python3.12/dist-packages (from ray[cgraph]\u003e=2.48.0-\u003evllm) (2.52.1)\n"}
+,{"stream_name":"stdout","time":149.003728072,"data":"Processing /kaggle/tmp/setup/wheels/torch-2.9.0+cu128-cp312-cp312-manylinux_2_28_x86_64.whl (from unsloth)\n"}
+,{"stream_name":"stdout","time":149.622629302,"data":"Processing /kaggle/tmp/setup/wheels/torchaudio-2.9.0+cu128-cp312-cp312-manylinux_2_28_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":149.630541174,"data":"Processing /kaggle/tmp/setup/wheels/torchvision-0.24.0+cu128-cp312-cp312-manylinux_2_28_x86_64.whl (from unsloth)\n"}
+,{"stream_name":"stdout","time":149.643290651,"data":"Processing /kaggle/tmp/setup/wheels/flashinfer_python-0.5.2-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":149.659280508,"data":"Requirement already satisfied: anyio\u003c5,\u003e=3.5.0 in /usr/local/lib/python3.12/dist-packages (from anthropic==0.71.0-\u003evllm) (4.12.0)\n"}
+,{"stream_name":"stdout","time":149.660114983,"data":"Requirement already satisfied: distro\u003c2,\u003e=1.7.0 in /usr/local/lib/python3.12/dist-packages (from anthropic==0.71.0-\u003evllm) (1.9.0)\n"}
+,{"stream_name":"stdout","time":149.660886729,"data":"Requirement already satisfied: docstring-parser\u003c1,\u003e=0.15 in /usr/local/lib/python3.12/dist-packages (from anthropic==0.71.0-\u003evllm) (0.17.0)\n"}
+,{"stream_name":"stdout","time":149.661793642,"data":"Requirement already satisfied: httpx\u003c1,\u003e=0.25.0 in /usr/local/lib/python3.12/dist-packages (from anthropic==0.71.0-\u003evllm) (0.28.1)\n"}
+,{"stream_name":"stdout","time":149.662580684,"data":"Requirement already satisfied: jiter\u003c1,\u003e=0.4.0 in /usr/local/lib/python3.12/dist-packages (from anthropic==0.71.0-\u003evllm) (0.11.1)\n"}
+,{"stream_name":"stdout","time":149.664009117,"data":"Requirement already satisfied: sniffio in /usr/local/lib/python3.12/dist-packages (from anthropic==0.71.0-\u003evllm) (1.3.1)\n"}
+,{"stream_name":"stdout","time":149.673687335,"data":"Processing /kaggle/tmp/setup/wheels/loguru-0.7.3-py3-none-any.whl (from compressed-tensors==0.12.2-\u003evllm)\n"}
+,{"stream_name":"stdout","time":149.683522902,"data":"Processing /kaggle/tmp/setup/wheels/astor-0.8.1-py2.py3-none-any.whl (from depyf==0.20.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":149.685337084,"data":"Requirement already satisfied: dill in /usr/local/lib/python3.12/dist-packages (from depyf==0.20.0-\u003evllm) (0.4.0)\n"}
+,{"stream_name":"stdout","time":149.691988323,"data":"Processing /kaggle/tmp/setup/wheels/apache_tvm_ffi-0.1.7-cp312-abi3-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (from flashinfer-python==0.5.2-\u003evllm)\n"}
+,{"stream_name":"stdout","time":149.696699246,"data":"Requirement already satisfied: click in /usr/local/lib/python3.12/dist-packages (from flashinfer-python==0.5.2-\u003evllm) (8.3.1)\n"}
+,{"stream_name":"stdout","time":149.704217115,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cudnn_frontend-1.17.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (from flashinfer-python==0.5.2-\u003evllm)\n"}
+,{"stream_name":"stdout","time":149.711980135,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cutlass_dsl-4.3.4-cp312-cp312-manylinux_2_28_x86_64.whl (from flashinfer-python==0.5.2-\u003evllm)\n"}
+,{"stream_name":"stdout","time":149.760730479,"data":"Requirement already satisfied: nvidia-ml-py in /usr/local/lib/python3.12/dist-packages (from flashinfer-python==0.5.2-\u003evllm) (12.575.51)\n"}
+,{"stream_name":"stdout","time":149.762550987,"data":"Requirement already satisfied: tabulate in /usr/local/lib/python3.12/dist-packages (from flashinfer-python==0.5.2-\u003evllm) (0.9.0)\n"}
+,{"stream_name":"stdout","time":149.77089489,"data":"Processing /kaggle/tmp/setup/wheels/interegular-0.3.3-py37-none-any.whl (from lm-format-enforcer==0.11.3-\u003evllm)\n"}
+,{"stream_name":"stdout","time":149.778654122,"data":"Processing /kaggle/tmp/setup/wheels/llvmlite-0.44.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from numba==0.61.2-\u003evllm)\n"}
+,{"stream_name":"stdout","time":149.821566511,"data":"Requirement already satisfied: sympy\u003e=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch\u003e=2.4.0-\u003eunsloth) (1.13.3)\n"}
+,{"stream_name":"stdout","time":149.822114686,"data":"Requirement already satisfied: networkx\u003e=2.5.1 in /usr/local/lib/python3.12/dist-packages (from torch\u003e=2.4.0-\u003eunsloth) (3.5)\n"}
+,{"stream_name":"stdout","time":149.822995827,"data":"Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from torch\u003e=2.4.0-\u003eunsloth) (3.1.6)\n"}
+,{"stream_name":"stdout","time":149.824055275,"data":"Requirement already satisfied: fsspec\u003e=0.8.5 in /usr/local/lib/python3.12/dist-packages (from torch\u003e=2.4.0-\u003eunsloth) (2025.10.0)\n"}
+,{"stream_name":"stdout","time":149.824588289,"data":"Processing /kaggle/tmp/setup/wheels/torchaudio-2.9.0+cu128-cp312-cp312-manylinux_2_28_x86_64.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":149.824591415,"data":"Processing /kaggle/tmp/setup/wheels/torchvision-0.24.0+cu128-cp312-cp312-manylinux_2_28_x86_64.whl (from unsloth)\n"}
+,{"stream_name":"stdout","time":149.824593039,"data":"Processing /kaggle/tmp/setup/wheels/flashinfer_python-0.5.2-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":149.824594419,"data":"Requirement already satisfied: anyio\u003c5,\u003e=3.5.0 in /usr/local/lib/python3.12/dist-packages (from anthropic==0.71.0-\u003evllm) (4.12.0)\n"}
+,{"stream_name":"stdout","time":149.824596155,"data":"Requirement already satisfied: distro\u003c2,\u003e=1.7.0 in /usr/local/lib/python3.12/dist-packages (from anthropic==0.71.0-\u003evllm) (1.9.0)\n"}
+,{"stream_name":"stdout","time":149.824597805,"data":"Requirement already satisfied: docstring-parser\u003c1,\u003e=0.15 in /usr/local/lib/python3.12/dist-packages (from anthropic==0.71.0-\u003evllm) (0.17.0)\n"}
+,{"stream_name":"stdout","time":149.824599356,"data":"Requirement already satisfied: httpx\u003c1,\u003e=0.25.0 in /usr/local/lib/python3.12/dist-packages (from anthropic==0.71.0-\u003evllm) (0.28.1)\n"}
+,{"stream_name":"stdout","time":149.824600847,"data":"Requirement already satisfied: jiter\u003c1,\u003e=0.4.0 in /usr/local/lib/python3.12/dist-packages (from anthropic==0.71.0-\u003evllm) (0.11.1)\n"}
+,{"stream_name":"stdout","time":149.824602385,"data":"Requirement already satisfied: sniffio in /usr/local/lib/python3.12/dist-packages (from anthropic==0.71.0-\u003evllm) (1.3.1)\n"}
+,{"stream_name":"stdout","time":149.824604081,"data":"Processing /kaggle/tmp/setup/wheels/loguru-0.7.3-py3-none-any.whl (from compressed-tensors==0.12.2-\u003evllm)\n"}
+,{"stream_name":"stdout","time":149.824605587,"data":"Processing /kaggle/tmp/setup/wheels/astor-0.8.1-py2.py3-none-any.whl (from depyf==0.20.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":149.824607137,"data":"Requirement already satisfied: dill in /usr/local/lib/python3.12/dist-packages (from depyf==0.20.0-\u003evllm) (0.4.0)\n"}
+,{"stream_name":"stdout","time":149.82460844,"data":"Processing /kaggle/tmp/setup/wheels/apache_tvm_ffi-0.1.7-cp312-abi3-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (from flashinfer-python==0.5.2-\u003evllm)\n"}
+,{"stream_name":"stdout","time":149.824610002,"data":"Requirement already satisfied: click in /usr/local/lib/python3.12/dist-packages (from flashinfer-python==0.5.2-\u003evllm) (8.3.1)\n"}
+,{"stream_name":"stdout","time":149.824611681,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cudnn_frontend-1.17.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (from flashinfer-python==0.5.2-\u003evllm)\n"}
+,{"stream_name":"stdout","time":149.824620503,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cutlass_dsl-4.3.4-cp312-cp312-manylinux_2_28_x86_64.whl (from flashinfer-python==0.5.2-\u003evllm)\n"}
+,{"stream_name":"stdout","time":149.824622325,"data":"Requirement already satisfied: nvidia-ml-py in /usr/local/lib/python3.12/dist-packages (from flashinfer-python==0.5.2-\u003evllm) (12.575.51)\n"}
+,{"stream_name":"stdout","time":149.824623913,"data":"Requirement already satisfied: tabulate in /usr/local/lib/python3.12/dist-packages (from flashinfer-python==0.5.2-\u003evllm) (0.9.0)\n"}
+,{"stream_name":"stdout","time":149.824625561,"data":"Processing /kaggle/tmp/setup/wheels/interegular-0.3.3-py37-none-any.whl (from lm-format-enforcer==0.11.3-\u003evllm)\n"}
+,{"stream_name":"stdout","time":149.824627038,"data":"Processing /kaggle/tmp/setup/wheels/llvmlite-0.44.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from numba==0.61.2-\u003evllm)\n"}
+,{"stream_name":"stdout","time":149.824628599,"data":"Requirement already satisfied: sympy\u003e=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch\u003e=2.4.0-\u003eunsloth) (1.13.3)\n"}
+,{"stream_name":"stdout","time":149.824630054,"data":"Requirement already satisfied: networkx\u003e=2.5.1 in /usr/local/lib/python3.12/dist-packages (from torch\u003e=2.4.0-\u003eunsloth) (3.5)\n"}
+,{"stream_name":"stdout","time":149.829309397,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":149.904750306,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":149.91187666,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cuda_cupti_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":149.921948726,"data":"Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in /usr/local/lib/python3.12/dist-packages (from torch\u003e=2.4.0-\u003eunsloth) (9.10.2.21)\n"}
+,{"stream_name":"stdout","time":149.927031613,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cublas_cu12-12.8.4.1-py3-none-manylinux_2_27_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":150.025153408,"data":"Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from torch\u003e=2.4.0-\u003eunsloth) (3.1.6)\n"}
+,{"stream_name":"stdout","time":150.025169644,"data":"Requirement already satisfied: fsspec\u003e=0.8.5 in /usr/local/lib/python3.12/dist-packages (from torch\u003e=2.4.0-\u003eunsloth) (2025.10.0)\n"}
+,{"stream_name":"stdout","time":150.025171633,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cuda_nvrtc_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":150.025173445,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cuda_runtime_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":150.025174934,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cuda_cupti_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":150.025186623,"data":"Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in /usr/local/lib/python3.12/dist-packages (from torch\u003e=2.4.0-\u003eunsloth) (9.10.2.21)\n"}
+,{"stream_name":"stdout","time":150.025188146,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cublas_cu12-12.8.4.1-py3-none-manylinux_2_27_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":150.407946912,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":150.567750758,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_curand_cu12-10.3.9.90-py3-none-manylinux_2_27_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":150.609937301,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":150.609954458,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_curand_cu12-10.3.9.90-py3-none-manylinux_2_27_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":150.625438236,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":150.827330527,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":150.847741502,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":151.049432834,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":151.0845182,"data":"Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /usr/local/lib/python3.12/dist-packages (from torch\u003e=2.4.0-\u003eunsloth) (0.7.1)\n"}
+,{"stream_name":"stdout","time":151.089510578,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_nccl_cu12-2.27.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":151.286515014,"data":"Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /usr/local/lib/python3.12/dist-packages (from torch\u003e=2.4.0-\u003eunsloth) (0.7.1)\n"}
+,{"stream_name":"stdout","time":151.286541198,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_nccl_cu12-2.27.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":151.350085209,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_nvshmem_cu12-3.3.20-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":151.471112934,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_nvtx_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":151.476591449,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":151.515192,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cufile_cu12-1.13.1.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":151.521465823,"data":"Processing /kaggle/tmp/setup/wheels/triton-3.5.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (from unsloth)\n"}
+,{"stream_name":"stdout","time":151.552006693,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_nvshmem_cu12-3.3.20-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":151.552020171,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_nvtx_cu12-12.8.90-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":151.552033367,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_nvjitlink_cu12-12.8.93-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":151.552034863,"data":"Processing /kaggle/tmp/setup/wheels/nvidia_cufile_cu12-1.13.1.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":151.552036189,"data":"Processing /kaggle/tmp/setup/wheels/triton-3.5.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (from unsloth)\n"}
+,{"stream_name":"stdout","time":151.705556503,"data":"Requirement already satisfied: safetensors\u003e=0.4.3 in /usr/local/lib/python3.12/dist-packages (from accelerate\u003e=0.34.1-\u003eunsloth) (0.6.2)\n"}
+,{"stream_name":"stdout","time":151.722752402,"data":"Requirement already satisfied: pyarrow\u003e=21.0.0 in /usr/local/lib/python3.12/dist-packages (from datasets!=4.0.*,!=4.1.0,\u003c4.4.0,\u003e=3.4.1-\u003eunsloth) (22.0.0)\n"}
+,{"stream_name":"stdout","time":151.724322565,"data":"Requirement already satisfied: pandas in /usr/local/lib/python3.12/dist-packages (from datasets!=4.0.*,!=4.1.0,\u003c4.4.0,\u003e=3.4.1-\u003eunsloth) (2.2.2)\n"}
+,{"stream_name":"stdout","time":151.726719429,"data":"Requirement already satisfied: xxhash in /usr/local/lib/python3.12/dist-packages (from datasets!=4.0.*,!=4.1.0,\u003c4.4.0,\u003e=3.4.1-\u003eunsloth) (3.6.0)\n"}
+,{"stream_name":"stdout","time":151.731771808,"data":"Processing /kaggle/tmp/setup/wheels/multiprocess-0.70.16-py312-none-any.whl (from datasets!=4.0.*,!=4.1.0,\u003c4.4.0,\u003e=3.4.1-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":151.73795726,"data":"Processing /kaggle/tmp/setup/wheels/fsspec-2025.9.0-py3-none-any.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":151.760650298,"data":"Requirement already satisfied: starlette\u003c0.49.0,\u003e=0.40.0 in /usr/local/lib/python3.12/dist-packages (from fastapi\u003e=0.115.0-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (0.48.0)\n"}
+,{"stream_name":"stdout","time":151.772636472,"data":"Processing /kaggle/tmp/setup/wheels/fastapi_cli-0.0.20-py3-none-any.whl (from fastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":151.775195463,"data":"Requirement already satisfied: python-multipart\u003e=0.0.18 in /usr/local/lib/python3.12/dist-packages (from fastapi[standard]\u003e=0.115.0-\u003evllm) (0.0.20)\n"}
+,{"stream_name":"stdout","time":151.776303399,"data":"Requirement already satisfied: email-validator\u003e=2.0.0 in /usr/local/lib/python3.12/dist-packages (from fastapi[standard]\u003e=0.115.0-\u003evllm) (2.3.0)\n"}
+,{"stream_name":"stdout","time":151.777198005,"data":"Requirement already satisfied: uvicorn\u003e=0.12.0 in /usr/local/lib/python3.12/dist-packages (from uvicorn[standard]\u003e=0.12.0; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (0.38.0)\n"}
+,{"stream_name":"stdout","time":151.794914895,"data":"Requirement already satisfied: hf-xet\u003c2.0.0,\u003e=1.1.3 in /usr/local/lib/python3.12/dist-packages (from huggingface_hub\u003e=0.34.0-\u003eunsloth) (1.2.1rc0)\n"}
+,{"stream_name":"stdout","time":151.800646447,"data":"Requirement already satisfied: jsonschema\u003e=4.21.1 in /usr/local/lib/python3.12/dist-packages (from mistral_common\u003e=1.8.5-\u003emistral_common[image]\u003e=1.8.5-\u003evllm) (4.25.1)\n"}
+,{"stream_name":"stdout","time":151.808837059,"data":"Processing /kaggle/tmp/setup/wheels/pydantic_extra_types-2.10.6-py3-none-any.whl (from pydantic-extra-types[pycountry]\u003e=2.10.5-\u003emistral_common\u003e=1.8.5-\u003emistral_common[image]\u003e=1.8.5-\u003evllm)\n"}
+,{"stream_name":"stdout","time":151.822200355,"data":"Requirement already satisfied: jmespath in /usr/local/lib/python3.12/dist-packages (from model-hosting-container-standards\u003c1.0.0-\u003evllm) (1.0.1)\n"}
+,{"stream_name":"stdout","time":151.824440405,"data":"INFO: pip is looking at multiple versions of model-hosting-container-standards to determine which version is compatible with other requirements. This could take a while.\n"}
+,{"stream_name":"stdout","time":151.842248508,"data":"Processing /kaggle/tmp/setup/wheels/fastapi-0.128.0-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":151.856154694,"data":"Processing /kaggle/tmp/setup/wheels/annotated_doc-0.0.4-py3-none-any.whl (from fastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":151.859495727,"data":"Requirement already satisfied: pydantic-settings\u003e=2.0.0 in /usr/local/lib/python3.12/dist-packages (from fastapi[standard]\u003e=0.115.0-\u003evllm) (2.11.0)\n"}
+,{"stream_name":"stdout","time":151.873711704,"data":"Processing /kaggle/tmp/setup/wheels/starlette-0.50.0-py3-none-any.whl (from fastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":151.879357967,"data":"Processing /kaggle/tmp/setup/wheels/supervisor-4.3.0-py2.py3-none-any.whl (from model-hosting-container-standards\u003c1.0.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":151.907449999,"data":"Requirement already satisfied: safetensors\u003e=0.4.3 in /usr/local/lib/python3.12/dist-packages (from accelerate\u003e=0.34.1-\u003eunsloth) (0.6.2)\n"}
+,{"stream_name":"stdout","time":151.907464337,"data":"Requirement already satisfied: pyarrow\u003e=21.0.0 in /usr/local/lib/python3.12/dist-packages (from datasets!=4.0.*,!=4.1.0,\u003c4.4.0,\u003e=3.4.1-\u003eunsloth) (22.0.0)\n"}
+,{"stream_name":"stdout","time":151.907466765,"data":"Requirement already satisfied: pandas in /usr/local/lib/python3.12/dist-packages (from datasets!=4.0.*,!=4.1.0,\u003c4.4.0,\u003e=3.4.1-\u003eunsloth) (2.2.2)\n"}
+,{"stream_name":"stdout","time":151.907468397,"data":"Requirement already satisfied: xxhash in /usr/local/lib/python3.12/dist-packages (from datasets!=4.0.*,!=4.1.0,\u003c4.4.0,\u003e=3.4.1-\u003eunsloth) (3.6.0)\n"}
+,{"stream_name":"stdout","time":151.907469979,"data":"Processing /kaggle/tmp/setup/wheels/multiprocess-0.70.16-py312-none-any.whl (from datasets!=4.0.*,!=4.1.0,\u003c4.4.0,\u003e=3.4.1-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":151.907471538,"data":"Processing /kaggle/tmp/setup/wheels/fsspec-2025.9.0-py3-none-any.whl (from torch\u003e=2.4.0-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":151.90747302,"data":"Requirement already satisfied: starlette\u003c0.49.0,\u003e=0.40.0 in /usr/local/lib/python3.12/dist-packages (from fastapi\u003e=0.115.0-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (0.48.0)\n"}
+,{"stream_name":"stdout","time":151.907474896,"data":"Processing /kaggle/tmp/setup/wheels/fastapi_cli-0.0.20-py3-none-any.whl (from fastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":151.907476757,"data":"Requirement already satisfied: python-multipart\u003e=0.0.18 in /usr/local/lib/python3.12/dist-packages (from fastapi[standard]\u003e=0.115.0-\u003evllm) (0.0.20)\n"}
+,{"stream_name":"stdout","time":151.907478343,"data":"Requirement already satisfied: email-validator\u003e=2.0.0 in /usr/local/lib/python3.12/dist-packages (from fastapi[standard]\u003e=0.115.0-\u003evllm) (2.3.0)\n"}
+,{"stream_name":"stdout","time":151.907479796,"data":"Requirement already satisfied: uvicorn\u003e=0.12.0 in /usr/local/lib/python3.12/dist-packages (from uvicorn[standard]\u003e=0.12.0; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (0.38.0)\n"}
+,{"stream_name":"stdout","time":151.90748975,"data":"Requirement already satisfied: hf-xet\u003c2.0.0,\u003e=1.1.3 in /usr/local/lib/python3.12/dist-packages (from huggingface_hub\u003e=0.34.0-\u003eunsloth) (1.2.1rc0)\n"}
+,{"stream_name":"stdout","time":151.907491376,"data":"Requirement already satisfied: jsonschema\u003e=4.21.1 in /usr/local/lib/python3.12/dist-packages (from mistral_common\u003e=1.8.5-\u003emistral_common[image]\u003e=1.8.5-\u003evllm) (4.25.1)\n"}
+,{"stream_name":"stdout","time":151.907493517,"data":"Processing /kaggle/tmp/setup/wheels/pydantic_extra_types-2.10.6-py3-none-any.whl (from pydantic-extra-types[pycountry]\u003e=2.10.5-\u003emistral_common\u003e=1.8.5-\u003emistral_common[image]\u003e=1.8.5-\u003evllm)\n"}
+,{"stream_name":"stdout","time":151.907495311,"data":"Requirement already satisfied: jmespath in /usr/local/lib/python3.12/dist-packages (from model-hosting-container-standards\u003c1.0.0-\u003evllm) (1.0.1)\n"}
+,{"stream_name":"stdout","time":151.907496787,"data":"INFO: pip is looking at multiple versions of model-hosting-container-standards to determine which version is compatible with other requirements. This could take a while.\n"}
+,{"stream_name":"stdout","time":151.90749831,"data":"Processing /kaggle/tmp/setup/wheels/fastapi-0.128.0-py3-none-any.whl (from vllm)\n"}
+,{"stream_name":"stdout","time":151.907499802,"data":"Processing /kaggle/tmp/setup/wheels/annotated_doc-0.0.4-py3-none-any.whl (from fastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":151.907501193,"data":"Requirement already satisfied: pydantic-settings\u003e=2.0.0 in /usr/local/lib/python3.12/dist-packages (from fastapi[standard]\u003e=0.115.0-\u003evllm) (2.11.0)\n"}
+,{"stream_name":"stdout","time":151.907502793,"data":"Processing /kaggle/tmp/setup/wheels/starlette-0.50.0-py3-none-any.whl (from fastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":151.90750413,"data":"Processing /kaggle/tmp/setup/wheels/supervisor-4.3.0-py2.py3-none-any.whl (from model-hosting-container-standards\u003c1.0.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":151.962050637,"data":"Requirement already satisfied: annotated-types\u003e=0.6.0 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003e=2.12.0-\u003evllm) (0.7.0)\n"}
+,{"stream_name":"stdout","time":151.962326194,"data":"Requirement already satisfied: pydantic-core==2.41.5 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003e=2.12.0-\u003evllm) (2.41.5)\n"}
+,{"stream_name":"stdout","time":151.963267277,"data":"Requirement already satisfied: typing-inspection\u003e=0.4.2 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003e=2.12.0-\u003evllm) (0.4.2)\n"}
+,{"stream_name":"stdout","time":151.989255906,"data":"INFO: pip is looking at multiple versions of ray to determine which version is compatible with other requirements. This could take a while.\n"}
+,{"stream_name":"stdout","time":151.994344628,"data":"Processing /kaggle/tmp/setup/wheels/ray-2.53.0-cp312-cp312-manylinux2014_x86_64.whl (from ray[cgraph]\u003e=2.48.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.119167796,"data":"Requirement already satisfied: msgpack\u003c2.0.0,\u003e=1.0.0 in /usr/local/lib/python3.12/dist-packages (from ray\u003e=2.48.0-\u003eray[cgraph]\u003e=2.48.0-\u003evllm) (1.1.2)\n"}
+,{"stream_name":"stdout","time":152.139765569,"data":"INFO: pip is looking at multiple versions of ray[cgraph] to determine which version is compatible with other requirements. This could take a while.\n"}
+,{"stream_name":"stdout","time":152.159072222,"data":"Requirement already satisfied: cupy-cuda12x in /usr/local/lib/python3.12/dist-packages (from ray[cgraph]\u003e=2.48.0-\u003evllm) (13.3.0)\n"}
+,{"stream_name":"stdout","time":152.162850965,"data":"Requirement already satisfied: charset_normalizer\u003c4,\u003e=2 in /usr/local/lib/python3.12/dist-packages (from requests\u003e=2.26.0-\u003evllm) (3.4.4)\n"}
+,{"stream_name":"stdout","time":152.163636449,"data":"Requirement already satisfied: idna\u003c4,\u003e=2.5 in /usr/local/lib/python3.12/dist-packages (from requests\u003e=2.26.0-\u003evllm) (3.11)\n"}
+,{"stream_name":"stdout","time":152.163695376,"data":"Requirement already satisfied: annotated-types\u003e=0.6.0 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003e=2.12.0-\u003evllm) (0.7.0)\n"}
+,{"stream_name":"stdout","time":152.163699962,"data":"Requirement already satisfied: pydantic-core==2.41.5 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003e=2.12.0-\u003evllm) (2.41.5)\n"}
+,{"stream_name":"stdout","time":152.163701606,"data":"Requirement already satisfied: typing-inspection\u003e=0.4.2 in /usr/local/lib/python3.12/dist-packages (from pydantic\u003e=2.12.0-\u003evllm) (0.4.2)\n"}
+,{"stream_name":"stdout","time":152.163702952,"data":"INFO: pip is looking at multiple versions of ray to determine which version is compatible with other requirements. This could take a while.\n"}
+,{"stream_name":"stdout","time":152.163704316,"data":"Processing /kaggle/tmp/setup/wheels/ray-2.53.0-cp312-cp312-manylinux2014_x86_64.whl (from ray[cgraph]\u003e=2.48.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.163705819,"data":"Requirement already satisfied: msgpack\u003c2.0.0,\u003e=1.0.0 in /usr/local/lib/python3.12/dist-packages (from ray\u003e=2.48.0-\u003eray[cgraph]\u003e=2.48.0-\u003evllm) (1.1.2)\n"}
+,{"stream_name":"stdout","time":152.163707429,"data":"INFO: pip is looking at multiple versions of ray[cgraph] to determine which version is compatible with other requirements. This could take a while.\n"}
+,{"stream_name":"stdout","time":152.163708908,"data":"Requirement already satisfied: cupy-cuda12x in /usr/local/lib/python3.12/dist-packages (from ray[cgraph]\u003e=2.48.0-\u003evllm) (13.3.0)\n"}
+,{"stream_name":"stdout","time":152.164352672,"data":"Requirement already satisfied: urllib3\u003c3,\u003e=1.21.1 in /usr/local/lib/python3.12/dist-packages (from requests\u003e=2.26.0-\u003evllm) (2.6.2)\n"}
+,{"stream_name":"stdout","time":152.164984601,"data":"Requirement already satisfied: certifi\u003e=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests\u003e=2.26.0-\u003evllm) (2025.11.12)\n"}
+,{"stream_name":"stdout","time":152.236974835,"data":"Processing /kaggle/tmp/setup/wheels/torchao-0.15.0+cu128-cp310-abi3-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (from unsloth_zoo\u003e=2025.12.7-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":152.259037733,"data":"Processing /kaggle/tmp/setup/wheels/cut_cross_entropy-25.1.1-py3-none-any.whl (from unsloth_zoo\u003e=2025.12.7-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":152.270099239,"data":"Requirement already satisfied: aiohappyeyeballs\u003e=2.5.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003evllm) (2.6.1)\n"}
+,{"stream_name":"stdout","time":152.270551068,"data":"Requirement already satisfied: aiosignal\u003e=1.4.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003evllm) (1.4.0)\n"}
+,{"stream_name":"stdout","time":152.271231807,"data":"Requirement already satisfied: attrs\u003e=17.3.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003evllm) (25.4.0)\n"}
+,{"stream_name":"stdout","time":152.272218285,"data":"Requirement already satisfied: frozenlist\u003e=1.1.1 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003evllm) (1.8.0)\n"}
+,{"stream_name":"stdout","time":152.27286674,"data":"Requirement already satisfied: multidict\u003c7.0,\u003e=4.5 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003evllm) (6.7.0)\n"}
+,{"stream_name":"stdout","time":152.273697933,"data":"Requirement already satisfied: propcache\u003e=0.2.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003evllm) (0.4.1)\n"}
+,{"stream_name":"stdout","time":152.275847443,"data":"Requirement already satisfied: yarl\u003c2.0,\u003e=1.17.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003evllm) (1.22.0)\n"}
+,{"stream_name":"stdout","time":152.292718723,"data":"Requirement already satisfied: importlib_metadata in /usr/local/lib/python3.12/dist-packages (from diffusers-\u003eunsloth) (8.7.0)\n"}
+,{"stream_name":"stdout","time":152.339166366,"data":"Requirement already satisfied: typeguard\u003e=4.0.0 in /usr/local/lib/python3.12/dist-packages (from tyro-\u003eunsloth) (4.4.4)\n"}
+,{"stream_name":"stdout","time":152.364824442,"data":"Requirement already satisfied: charset_normalizer\u003c4,\u003e=2 in /usr/local/lib/python3.12/dist-packages (from requests\u003e=2.26.0-\u003evllm) (3.4.4)\n"}
+,{"stream_name":"stdout","time":152.364838835,"data":"Requirement already satisfied: idna\u003c4,\u003e=2.5 in /usr/local/lib/python3.12/dist-packages (from requests\u003e=2.26.0-\u003evllm) (3.11)\n"}
+,{"stream_name":"stdout","time":152.36484102,"data":"Requirement already satisfied: urllib3\u003c3,\u003e=1.21.1 in /usr/local/lib/python3.12/dist-packages (from requests\u003e=2.26.0-\u003evllm) (2.6.2)\n"}
+,{"stream_name":"stdout","time":152.36484263,"data":"Requirement already satisfied: certifi\u003e=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests\u003e=2.26.0-\u003evllm) (2025.11.12)\n"}
+,{"stream_name":"stdout","time":152.364844244,"data":"Processing /kaggle/tmp/setup/wheels/torchao-0.15.0+cu128-cp310-abi3-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (from unsloth_zoo\u003e=2025.12.7-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":152.36484582,"data":"Processing /kaggle/tmp/setup/wheels/cut_cross_entropy-25.1.1-py3-none-any.whl (from unsloth_zoo\u003e=2025.12.7-\u003eunsloth)\n"}
+,{"stream_name":"stdout","time":152.364847389,"data":"Requirement already satisfied: aiohappyeyeballs\u003e=2.5.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003evllm) (2.6.1)\n"}
+,{"stream_name":"stdout","time":152.364848789,"data":"Requirement already satisfied: aiosignal\u003e=1.4.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003evllm) (1.4.0)\n"}
+,{"stream_name":"stdout","time":152.364850128,"data":"Requirement already satisfied: attrs\u003e=17.3.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003evllm) (25.4.0)\n"}
+,{"stream_name":"stdout","time":152.364851494,"data":"Requirement already satisfied: frozenlist\u003e=1.1.1 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003evllm) (1.8.0)\n"}
+,{"stream_name":"stdout","time":152.364852983,"data":"Requirement already satisfied: multidict\u003c7.0,\u003e=4.5 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003evllm) (6.7.0)\n"}
+,{"stream_name":"stdout","time":152.36485439,"data":"Requirement already satisfied: propcache\u003e=0.2.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003evllm) (0.4.1)\n"}
+,{"stream_name":"stdout","time":152.364855743,"data":"Requirement already satisfied: yarl\u003c2.0,\u003e=1.17.0 in /usr/local/lib/python3.12/dist-packages (from aiohttp-\u003evllm) (1.22.0)\n"}
+,{"stream_name":"stdout","time":152.364857106,"data":"Requirement already satisfied: importlib_metadata in /usr/local/lib/python3.12/dist-packages (from diffusers-\u003eunsloth) (8.7.0)\n"}
+,{"stream_name":"stdout","time":152.364858641,"data":"Requirement already satisfied: typeguard\u003e=4.0.0 in /usr/local/lib/python3.12/dist-packages (from tyro-\u003eunsloth) (4.4.4)\n"}
+,{"stream_name":"stdout","time":152.382811585,"data":"Requirement already satisfied: dnspython\u003e=2.0.0 in /usr/local/lib/python3.12/dist-packages (from email-validator\u003e=2.0.0-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (2.8.0)\n"}
+,{"stream_name":"stdout","time":152.387322085,"data":"Requirement already satisfied: typer\u003e=0.15.1 in /usr/local/lib/python3.12/dist-packages (from fastapi-cli\u003e=0.0.8-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (0.20.0)\n"}
+,{"stream_name":"stdout","time":152.392779081,"data":"Processing /kaggle/tmp/setup/wheels/rich_toolkit-0.17.1-py3-none-any.whl (from fastapi-cli\u003e=0.0.8-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.403764153,"data":"Processing /kaggle/tmp/setup/wheels/fastapi_cloud_cli-0.8.0-py3-none-any.whl (from fastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.429847545,"data":"Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.12/dist-packages (from httpx\u003c1,\u003e=0.25.0-\u003eanthropic==0.71.0-\u003evllm) (1.0.9)\n"}
+,{"stream_name":"stdout","time":152.434196947,"data":"Requirement already satisfied: h11\u003e=0.16 in /usr/local/lib/python3.12/dist-packages (from httpcore==1.*-\u003ehttpx\u003c1,\u003e=0.25.0-\u003eanthropic==0.71.0-\u003evllm) (0.16.0)\n"}
+,{"stream_name":"stdout","time":152.442978651,"data":"Requirement already satisfied: MarkupSafe\u003e=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2-\u003etorch\u003e=2.4.0-\u003eunsloth) (3.0.3)\n"}
+,{"stream_name":"stdout","time":152.450139048,"data":"Requirement already satisfied: jsonschema-specifications\u003e=2023.03.6 in /usr/local/lib/python3.12/dist-packages (from jsonschema\u003e=4.21.1-\u003emistral_common\u003e=1.8.5-\u003emistral_common[image]\u003e=1.8.5-\u003evllm) (2025.9.1)\n"}
+,{"stream_name":"stdout","time":152.450752786,"data":"Requirement already satisfied: referencing\u003e=0.28.4 in /usr/local/lib/python3.12/dist-packages (from jsonschema\u003e=4.21.1-\u003emistral_common\u003e=1.8.5-\u003emistral_common[image]\u003e=1.8.5-\u003evllm) (0.37.0)\n"}
+,{"stream_name":"stdout","time":152.451372718,"data":"Requirement already satisfied: rpds-py\u003e=0.7.1 in /usr/local/lib/python3.12/dist-packages (from jsonschema\u003e=4.21.1-\u003emistral_common\u003e=1.8.5-\u003emistral_common[image]\u003e=1.8.5-\u003evllm) (0.27.1)\n"}
+,{"stream_name":"stdout","time":152.48012907,"data":"Processing /kaggle/tmp/setup/wheels/cuda_python-13.1.1-py3-none-any.whl (from nvidia-cutlass-dsl\u003e=4.2.1-\u003eflashinfer-python==0.5.2-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.502545705,"data":"Processing /kaggle/tmp/setup/wheels/pycountry-24.6.1-py3-none-any.whl (from pydantic-extra-types[pycountry]\u003e=2.10.5-\u003emistral_common\u003e=1.8.5-\u003emistral_common[image]\u003e=1.8.5-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.516672199,"data":"Requirement already satisfied: python-dotenv\u003e=0.21.0 in /usr/local/lib/python3.12/dist-packages (from pydantic-settings\u003e=2.0.0-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (1.1.1)\n"}
+,{"stream_name":"stdout","time":152.530953513,"data":"Requirement already satisfied: mpmath\u003c1.4,\u003e=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy\u003e=1.13.3-\u003etorch\u003e=2.4.0-\u003eunsloth) (1.3.0)\n"}
+,{"stream_name":"stdout","time":152.556862706,"data":"Processing /kaggle/tmp/setup/wheels/httptools-0.7.1-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (from uvicorn[standard]\u003e=0.12.0; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.563779638,"data":"Processing /kaggle/tmp/setup/wheels/uvloop-0.22.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from uvicorn[standard]\u003e=0.12.0; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.570925935,"data":"Requirement already satisfied: websockets\u003e=10.4 in /usr/local/lib/python3.12/dist-packages (from uvicorn[standard]\u003e=0.12.0; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (15.0.1)\n"}
+,{"stream_name":"stdout","time":152.584694994,"data":"Requirement already satisfied: dnspython\u003e=2.0.0 in /usr/local/lib/python3.12/dist-packages (from email-validator\u003e=2.0.0-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (2.8.0)\n"}
+,{"stream_name":"stdout","time":152.584707745,"data":"Requirement already satisfied: typer\u003e=0.15.1 in /usr/local/lib/python3.12/dist-packages (from fastapi-cli\u003e=0.0.8-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (0.20.0)\n"}
+,{"stream_name":"stdout","time":152.584710603,"data":"Processing /kaggle/tmp/setup/wheels/rich_toolkit-0.17.1-py3-none-any.whl (from fastapi-cli\u003e=0.0.8-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.584712465,"data":"Processing /kaggle/tmp/setup/wheels/fastapi_cloud_cli-0.8.0-py3-none-any.whl (from fastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.584713982,"data":"Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.12/dist-packages (from httpx\u003c1,\u003e=0.25.0-\u003eanthropic==0.71.0-\u003evllm) (1.0.9)\n"}
+,{"stream_name":"stdout","time":152.58471566,"data":"Requirement already satisfied: h11\u003e=0.16 in /usr/local/lib/python3.12/dist-packages (from httpcore==1.*-\u003ehttpx\u003c1,\u003e=0.25.0-\u003eanthropic==0.71.0-\u003evllm) (0.16.0)\n"}
+,{"stream_name":"stdout","time":152.584717188,"data":"Requirement already satisfied: MarkupSafe\u003e=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2-\u003etorch\u003e=2.4.0-\u003eunsloth) (3.0.3)\n"}
+,{"stream_name":"stdout","time":152.584718695,"data":"Requirement already satisfied: jsonschema-specifications\u003e=2023.03.6 in /usr/local/lib/python3.12/dist-packages (from jsonschema\u003e=4.21.1-\u003emistral_common\u003e=1.8.5-\u003emistral_common[image]\u003e=1.8.5-\u003evllm) (2025.9.1)\n"}
+,{"stream_name":"stdout","time":152.584720321,"data":"Requirement already satisfied: referencing\u003e=0.28.4 in /usr/local/lib/python3.12/dist-packages (from jsonschema\u003e=4.21.1-\u003emistral_common\u003e=1.8.5-\u003emistral_common[image]\u003e=1.8.5-\u003evllm) (0.37.0)\n"}
+,{"stream_name":"stdout","time":152.584722019,"data":"Requirement already satisfied: rpds-py\u003e=0.7.1 in /usr/local/lib/python3.12/dist-packages (from jsonschema\u003e=4.21.1-\u003emistral_common\u003e=1.8.5-\u003emistral_common[image]\u003e=1.8.5-\u003evllm) (0.27.1)\n"}
+,{"stream_name":"stdout","time":152.584723575,"data":"Processing /kaggle/tmp/setup/wheels/cuda_python-13.1.1-py3-none-any.whl (from nvidia-cutlass-dsl\u003e=4.2.1-\u003eflashinfer-python==0.5.2-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.584725416,"data":"Processing /kaggle/tmp/setup/wheels/pycountry-24.6.1-py3-none-any.whl (from pydantic-extra-types[pycountry]\u003e=2.10.5-\u003emistral_common\u003e=1.8.5-\u003emistral_common[image]\u003e=1.8.5-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.584726953,"data":"Requirement already satisfied: python-dotenv\u003e=0.21.0 in /usr/local/lib/python3.12/dist-packages (from pydantic-settings\u003e=2.0.0-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (1.1.1)\n"}
+,{"stream_name":"stdout","time":152.584728641,"data":"Requirement already satisfied: mpmath\u003c1.4,\u003e=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy\u003e=1.13.3-\u003etorch\u003e=2.4.0-\u003eunsloth) (1.3.0)\n"}
+,{"stream_name":"stdout","time":152.584730177,"data":"Processing /kaggle/tmp/setup/wheels/httptools-0.7.1-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (from uvicorn[standard]\u003e=0.12.0; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.58474003,"data":"Processing /kaggle/tmp/setup/wheels/uvloop-0.22.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from uvicorn[standard]\u003e=0.12.0; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.58474177,"data":"Requirement already satisfied: websockets\u003e=10.4 in /usr/local/lib/python3.12/dist-packages (from uvicorn[standard]\u003e=0.12.0; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (15.0.1)\n"}
+,{"stream_name":"stdout","time":152.586667651,"data":"Requirement already satisfied: fastrlock\u003e=0.5 in /usr/local/lib/python3.12/dist-packages (from cupy-cuda12x-\u003eray[cgraph]\u003e=2.48.0-\u003evllm) (0.8.3)\n"}
+,{"stream_name":"stdout","time":152.596528184,"data":"Requirement already satisfied: zipp\u003e=3.20 in /usr/local/lib/python3.12/dist-packages (from importlib_metadata-\u003ediffusers-\u003eunsloth) (3.23.0)\n"}
+,{"stream_name":"stdout","time":152.628968672,"data":"Requirement already satisfied: python-dateutil\u003e=2.8.2 in /usr/local/lib/python3.12/dist-packages (from pandas-\u003edatasets!=4.0.*,!=4.1.0,\u003c4.4.0,\u003e=3.4.1-\u003eunsloth) (2.9.0.post0)\n"}
+,{"stream_name":"stdout","time":152.629887817,"data":"Requirement already satisfied: pytz\u003e=2020.1 in /usr/local/lib/python3.12/dist-packages (from pandas-\u003edatasets!=4.0.*,!=4.1.0,\u003c4.4.0,\u003e=3.4.1-\u003eunsloth) (2025.2)\n"}
+,{"stream_name":"stdout","time":152.630453987,"data":"Requirement already satisfied: tzdata\u003e=2022.7 in /usr/local/lib/python3.12/dist-packages (from pandas-\u003edatasets!=4.0.*,!=4.1.0,\u003c4.4.0,\u003e=3.4.1-\u003eunsloth) (2025.3)\n"}
+,{"stream_name":"stdout","time":152.646782374,"data":"Processing /kaggle/tmp/setup/wheels/cuda_bindings-13.1.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (from cuda-python\u003e=12.8-\u003envidia-cutlass-dsl\u003e=4.2.1-\u003eflashinfer-python==0.5.2-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.667216726,"data":"Processing /kaggle/tmp/setup/wheels/cuda_pathfinder-1.3.3-py3-none-any.whl (from cuda-python\u003e=12.8-\u003envidia-cutlass-dsl\u003e=4.2.1-\u003eflashinfer-python==0.5.2-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.681569372,"data":"Processing /kaggle/tmp/setup/wheels/rignore-0.7.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from fastapi-cloud-cli\u003e=0.1.1-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.686650589,"data":"Requirement already satisfied: sentry-sdk\u003e=2.20.0 in /usr/local/lib/python3.12/dist-packages (from fastapi-cloud-cli\u003e=0.1.1-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (2.42.1)\n"}
+,{"stream_name":"stdout","time":152.691316596,"data":"Processing /kaggle/tmp/setup/wheels/fastar-0.8.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from fastapi-cloud-cli\u003e=0.1.1-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.732032179,"data":"Requirement already satisfied: rich\u003e=13.7.1 in /usr/local/lib/python3.12/dist-packages (from rich-toolkit\u003e=0.14.8-\u003efastapi-cli\u003e=0.0.8-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (14.2.0)\n"}
+,{"stream_name":"stdout","time":152.740152029,"data":"Requirement already satisfied: shellingham\u003e=1.3.0 in /usr/local/lib/python3.12/dist-packages (from typer\u003e=0.15.1-\u003efastapi-cli\u003e=0.0.8-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (1.5.4)\n"}
+,{"stream_name":"stdout","time":152.772871499,"data":"Requirement already satisfied: markdown-it-py\u003e=2.2.0 in /usr/local/lib/python3.12/dist-packages (from rich\u003e=13.7.1-\u003erich-toolkit\u003e=0.14.8-\u003efastapi-cli\u003e=0.0.8-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (4.0.0)\n"}
+,{"stream_name":"stdout","time":152.773260821,"data":"Requirement already satisfied: pygments\u003c3.0.0,\u003e=2.13.0 in /usr/local/lib/python3.12/dist-packages (from rich\u003e=13.7.1-\u003erich-toolkit\u003e=0.14.8-\u003efastapi-cli\u003e=0.0.8-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (2.19.2)\n"}
+,{"stream_name":"stdout","time":152.788684459,"data":"Requirement already satisfied: fastrlock\u003e=0.5 in /usr/local/lib/python3.12/dist-packages (from cupy-cuda12x-\u003eray[cgraph]\u003e=2.48.0-\u003evllm) (0.8.3)\n"}
+,{"stream_name":"stdout","time":152.788698072,"data":"Requirement already satisfied: zipp\u003e=3.20 in /usr/local/lib/python3.12/dist-packages (from importlib_metadata-\u003ediffusers-\u003eunsloth) (3.23.0)\n"}
+,{"stream_name":"stdout","time":152.788700216,"data":"Requirement already satisfied: python-dateutil\u003e=2.8.2 in /usr/local/lib/python3.12/dist-packages (from pandas-\u003edatasets!=4.0.*,!=4.1.0,\u003c4.4.0,\u003e=3.4.1-\u003eunsloth) (2.9.0.post0)\n"}
+,{"stream_name":"stdout","time":152.788701997,"data":"Requirement already satisfied: pytz\u003e=2020.1 in /usr/local/lib/python3.12/dist-packages (from pandas-\u003edatasets!=4.0.*,!=4.1.0,\u003c4.4.0,\u003e=3.4.1-\u003eunsloth) (2025.2)\n"}
+,{"stream_name":"stdout","time":152.788703665,"data":"Requirement already satisfied: tzdata\u003e=2022.7 in /usr/local/lib/python3.12/dist-packages (from pandas-\u003edatasets!=4.0.*,!=4.1.0,\u003c4.4.0,\u003e=3.4.1-\u003eunsloth) (2025.3)\n"}
+,{"stream_name":"stdout","time":152.788705236,"data":"Processing /kaggle/tmp/setup/wheels/cuda_bindings-13.1.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (from cuda-python\u003e=12.8-\u003envidia-cutlass-dsl\u003e=4.2.1-\u003eflashinfer-python==0.5.2-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.78870682,"data":"Processing /kaggle/tmp/setup/wheels/cuda_pathfinder-1.3.3-py3-none-any.whl (from cuda-python\u003e=12.8-\u003envidia-cutlass-dsl\u003e=4.2.1-\u003eflashinfer-python==0.5.2-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.78870829,"data":"Processing /kaggle/tmp/setup/wheels/rignore-0.7.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from fastapi-cloud-cli\u003e=0.1.1-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.788710046,"data":"Requirement already satisfied: sentry-sdk\u003e=2.20.0 in /usr/local/lib/python3.12/dist-packages (from fastapi-cloud-cli\u003e=0.1.1-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (2.42.1)\n"}
+,{"stream_name":"stdout","time":152.788711833,"data":"Processing /kaggle/tmp/setup/wheels/fastar-0.8.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from fastapi-cloud-cli\u003e=0.1.1-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm)\n"}
+,{"stream_name":"stdout","time":152.788713359,"data":"Requirement already satisfied: rich\u003e=13.7.1 in /usr/local/lib/python3.12/dist-packages (from rich-toolkit\u003e=0.14.8-\u003efastapi-cli\u003e=0.0.8-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (14.2.0)\n"}
+,{"stream_name":"stdout","time":152.788715492,"data":"Requirement already satisfied: shellingham\u003e=1.3.0 in /usr/local/lib/python3.12/dist-packages (from typer\u003e=0.15.1-\u003efastapi-cli\u003e=0.0.8-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (1.5.4)\n"}
+,{"stream_name":"stdout","time":152.788723602,"data":"Requirement already satisfied: markdown-it-py\u003e=2.2.0 in /usr/local/lib/python3.12/dist-packages (from rich\u003e=13.7.1-\u003erich-toolkit\u003e=0.14.8-\u003efastapi-cli\u003e=0.0.8-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (4.0.0)\n"}
+,{"stream_name":"stdout","time":152.788726125,"data":"Requirement already satisfied: pygments\u003c3.0.0,\u003e=2.13.0 in /usr/local/lib/python3.12/dist-packages (from rich\u003e=13.7.1-\u003erich-toolkit\u003e=0.14.8-\u003efastapi-cli\u003e=0.0.8-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (2.19.2)\n"}
+,{"stream_name":"stdout","time":152.791459256,"data":"Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.12/dist-packages (from markdown-it-py\u003e=2.2.0-\u003erich\u003e=13.7.1-\u003erich-toolkit\u003e=0.14.8-\u003efastapi-cli\u003e=0.0.8-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (0.1.2)\n"}
+,{"stream_name":"stdout","time":152.992894907,"data":"Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.12/dist-packages (from markdown-it-py\u003e=2.2.0-\u003erich\u003e=13.7.1-\u003erich-toolkit\u003e=0.14.8-\u003efastapi-cli\u003e=0.0.8-\u003efastapi-cli[standard]\u003e=0.0.8; extra == \"standard\"-\u003efastapi[standard]\u003e=0.115.0-\u003evllm) (0.1.2)\n"}
+,{"stream_name":"stdout","time":154.279561746,"data":"Installing collected packages: torchao, supervisor, uvloop, triton, setuptools, setproctitle, rignore, pycountry, pybase64, partial-json-parser, outlines_core, nvidia-nvtx-cu12, nvidia-nvshmem-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufile-cu12, nvidia-cudnn-frontend, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, multiprocess, msgspec, loguru, llvmlite, llguidance, lark, interegular, httptools, gguf, fsspec, fastar, diskcache, cuda-pathfinder, cbor2, astor, apache-tvm-ffi, annotated-doc, watchfiles, tyro, starlette, nvidia-cusparse-cu12, nvidia-cufft-cu12, numba, depyf, cuda-bindings, rich-toolkit, pydantic-extra-types, prometheus-fastapi-instrumentator, openai_harmony, nvidia-cusolver-cu12, lm-format-enforcer, fastapi, cuda-python, anthropic, torch, ray, nvidia-cutlass-dsl, model-hosting-container-standards, fastapi-cloud-cli, fastapi-cli, datasets, xgrammar, xformers, torchvision, torchaudio, mistral_common, flashinfer-python, cut_cross_entropy, compressed-tensors, bitsandbytes, trl, unsloth_zoo, vllm, unsloth\n"}
+,{"stream_name":"stdout","time":154.279728706,"data":"  Attempting uninstall: torchao\n"}
+,{"stream_name":"stdout","time":154.375952955,"data":"    Found existing installation: torchao 0.10.0\n"}
+,{"stream_name":"stdout","time":154.393339904,"data":"    Uninstalling torchao-0.10.0:\n"}
+,{"stream_name":"stdout","time":154.481566905,"data":"Installing collected packages: torchao, supervisor, uvloop, triton, setuptools, setproctitle, rignore, pycountry, pybase64, partial-json-parser, outlines_core, nvidia-nvtx-cu12, nvidia-nvshmem-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufile-cu12, nvidia-cudnn-frontend, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, multiprocess, msgspec, loguru, llvmlite, llguidance, lark, interegular, httptools, gguf, fsspec, fastar, diskcache, cuda-pathfinder, cbor2, astor, apache-tvm-ffi, annotated-doc, watchfiles, tyro, starlette, nvidia-cusparse-cu12, nvidia-cufft-cu12, numba, depyf, cuda-bindings, rich-toolkit, pydantic-extra-types, prometheus-fastapi-instrumentator, openai_harmony, nvidia-cusolver-cu12, lm-format-enforcer, fastapi, cuda-python, anthropic, torch, ray, nvidia-cutlass-dsl, model-hosting-container-standards, fastapi-cloud-cli, fastapi-cli, datasets, xgrammar, xformers, torchvision, torchaudio, mistral_common, flashinfer-python, cut_cross_entropy, compressed-tensors, bitsandbytes, trl, unsloth_zoo, vllm, unsloth\n"}
+,{"stream_name":"stdout","time":154.481603838,"data":"  Attempting uninstall: torchao\n"}
+,{"stream_name":"stdout","time":154.481606769,"data":"    Found existing installation: torchao 0.10.0\n"}
+,{"stream_name":"stdout","time":154.481608635,"data":"    Uninstalling torchao-0.10.0:\n"}
+,{"stream_name":"stdout","time":154.889503498,"data":"      Successfully uninstalled torchao-0.10.0\n"}
+,{"stream_name":"stdout","time":155.09119614,"data":"      Successfully uninstalled torchao-0.10.0\n"}
+,{"stream_name":"stdout","time":155.956163695,"data":"  Attempting uninstall: triton\n"}
+,{"stream_name":"stdout","time":156.059929921,"data":"    Found existing installation: triton 3.4.0\n"}
+,{"stream_name":"stdout","time":156.072434418,"data":"    Uninstalling triton-3.4.0:\n"}
+,{"stream_name":"stdout","time":156.158053602,"data":"  Attempting uninstall: triton\n"}
+,{"stream_name":"stdout","time":156.158075283,"data":"    Found existing installation: triton 3.4.0\n"}
+,{"stream_name":"stdout","time":156.158077541,"data":"    Uninstalling triton-3.4.0:\n"}
+,{"stream_name":"stdout","time":160.086354773,"data":"      Successfully uninstalled triton-3.4.0\n"}
+,{"stream_name":"stdout","time":160.288561633,"data":"      Successfully uninstalled triton-3.4.0\n"}
+,{"stream_name":"stdout","time":163.583124484,"data":"  Attempting uninstall: setuptools\n"}
+,{"stream_name":"stdout","time":163.594234388,"data":"    Found existing installation: setuptools 75.2.0\n"}
+,{"stream_name":"stdout","time":163.619491032,"data":"    Uninstalling setuptools-75.2.0:\n"}
+,{"stream_name":"stdout","time":163.785006017,"data":"  Attempting uninstall: setuptools\n"}
+,{"stream_name":"stdout","time":163.785032833,"data":"    Found existing installation: setuptools 75.2.0\n"}
+,{"stream_name":"stdout","time":163.785035532,"data":"    Uninstalling setuptools-75.2.0:\n"}
+,{"stream_name":"stdout","time":167.081878775,"data":"      Successfully uninstalled setuptools-75.2.0\n"}
+,{"stream_name":"stdout","time":167.284528025,"data":"      Successfully uninstalled setuptools-75.2.0\n"}
+,{"stream_name":"stdout","time":167.968572942,"data":"  Attempting uninstall: nvidia-nvtx-cu12\n"}
+,{"stream_name":"stdout","time":168.076487464,"data":"    Found existing installation: nvidia-nvtx-cu12 12.6.77\n"}
+,{"stream_name":"stdout","time":168.080532851,"data":"    Uninstalling nvidia-nvtx-cu12-12.6.77:\n"}
+,{"stream_name":"stdout","time":168.112066943,"data":"      Successfully uninstalled nvidia-nvtx-cu12-12.6.77\n"}
+,{"stream_name":"stdout","time":168.129198983,"data":"  Attempting uninstall: nvidia-nvshmem-cu12\n"}
+,{"stream_name":"stdout","time":168.170273203,"data":"  Attempting uninstall: nvidia-nvtx-cu12\n"}
+,{"stream_name":"stdout","time":168.170290659,"data":"    Found existing installation: nvidia-nvtx-cu12 12.6.77\n"}
+,{"stream_name":"stdout","time":168.170293205,"data":"    Uninstalling nvidia-nvtx-cu12-12.6.77:\n"}
+,{"stream_name":"stdout","time":168.170295074,"data":"      Successfully uninstalled nvidia-nvtx-cu12-12.6.77\n"}
+,{"stream_name":"stdout","time":168.170296935,"data":"  Attempting uninstall: nvidia-nvshmem-cu12\n"}
+,{"stream_name":"stdout","time":168.312590297,"data":"    Found existing installation: nvidia-nvshmem-cu12 3.4.5\n"}
+,{"stream_name":"stdout","time":168.317275083,"data":"    Uninstalling nvidia-nvshmem-cu12-3.4.5:\n"}
+,{"stream_name":"stdout","time":168.514829419,"data":"    Found existing installation: nvidia-nvshmem-cu12 3.4.5\n"}
+,{"stream_name":"stdout","time":168.51485105,"data":"    Uninstalling nvidia-nvshmem-cu12-3.4.5:\n"}
+,{"stream_name":"stdout","time":170.054303742,"data":"      Successfully uninstalled nvidia-nvshmem-cu12-3.4.5\n"}
+,{"stream_name":"stdout","time":170.256565029,"data":"      Successfully uninstalled nvidia-nvshmem-cu12-3.4.5\n"}
+,{"stream_name":"stdout","time":171.572507884,"data":"  Attempting uninstall: nvidia-nvjitlink-cu12\n"}
+,{"stream_name":"stdout","time":171.756335303,"data":"    Found existing installation: nvidia-nvjitlink-cu12 12.6.85\n"}
+,{"stream_name":"stdout","time":171.759595195,"data":"    Uninstalling nvidia-nvjitlink-cu12-12.6.85:\n"}
+,{"stream_name":"stdout","time":171.774357478,"data":"  Attempting uninstall: nvidia-nvjitlink-cu12\n"}
+,{"stream_name":"stdout","time":171.774371648,"data":"    Found existing installation: nvidia-nvjitlink-cu12 12.6.85\n"}
+,{"stream_name":"stdout","time":171.774373648,"data":"    Uninstalling nvidia-nvjitlink-cu12-12.6.85:\n"}
+,{"stream_name":"stdout","time":172.114980509,"data":"      Successfully uninstalled nvidia-nvjitlink-cu12-12.6.85\n"}
+,{"stream_name":"stdout","time":172.317102993,"data":"      Successfully uninstalled nvidia-nvjitlink-cu12-12.6.85\n"}
+,{"stream_name":"stdout","time":172.7020145,"data":"  Attempting uninstall: nvidia-nccl-cu12\n"}
+,{"stream_name":"stdout","time":172.797322492,"data":"    Found existing installation: nvidia-nccl-cu12 2.27.3\n"}
+,{"stream_name":"stdout","time":172.800187347,"data":"    Uninstalling nvidia-nccl-cu12-2.27.3:\n"}
+,{"stream_name":"stdout","time":172.903763622,"data":"  Attempting uninstall: nvidia-nccl-cu12\n"}
+,{"stream_name":"stdout","time":172.903781466,"data":"    Found existing installation: nvidia-nccl-cu12 2.27.3\n"}
+,{"stream_name":"stdout","time":172.903783828,"data":"    Uninstalling nvidia-nccl-cu12-2.27.3:\n"}
+,{"stream_name":"stdout","time":176.343059251,"data":"      Successfully uninstalled nvidia-nccl-cu12-2.27.3\n"}
+,{"stream_name":"stdout","time":176.545237863,"data":"      Successfully uninstalled nvidia-nccl-cu12-2.27.3\n"}
+,{"stream_name":"stdout","time":180.831793437,"data":"  Attempting uninstall: nvidia-curand-cu12\n"}
+,{"stream_name":"stdout","time":181.019303705,"data":"    Found existing installation: nvidia-curand-cu12 10.3.7.77\n"}
+,{"stream_name":"stdout","time":181.023247407,"data":"    Uninstalling nvidia-curand-cu12-10.3.7.77:\n"}
+,{"stream_name":"stdout","time":181.038438601,"data":"  Attempting uninstall: nvidia-curand-cu12\n"}
+,{"stream_name":"stdout","time":181.038445696,"data":"    Found existing installation: nvidia-curand-cu12 10.3.7.77\n"}
+,{"stream_name":"stdout","time":181.038447982,"data":"    Uninstalling nvidia-curand-cu12-10.3.7.77:\n"}
+,{"stream_name":"stdout","time":181.88282971,"data":"      Successfully uninstalled nvidia-curand-cu12-10.3.7.77\n"}
+,{"stream_name":"stdout","time":182.085055411,"data":"      Successfully uninstalled nvidia-curand-cu12-10.3.7.77\n"}
+,{"stream_name":"stdout","time":182.434382822,"data":"  Attempting uninstall: nvidia-cufile-cu12\n"}
+,{"stream_name":"stdout","time":182.59523459,"data":"    Found existing installation: nvidia-cufile-cu12 1.11.1.6\n"}
+,{"stream_name":"stdout","time":182.598313054,"data":"    Uninstalling nvidia-cufile-cu12-1.11.1.6:\n"}
+,{"stream_name":"stdout","time":182.62958925,"data":"      Successfully uninstalled nvidia-cufile-cu12-1.11.1.6\n"}
+,{"stream_name":"stdout","time":182.636274684,"data":"  Attempting uninstall: nvidia-cufile-cu12\n"}
+,{"stream_name":"stdout","time":182.636299063,"data":"    Found existing installation: nvidia-cufile-cu12 1.11.1.6\n"}
+,{"stream_name":"stdout","time":182.636300866,"data":"    Uninstalling nvidia-cufile-cu12-1.11.1.6:\n"}
+,{"stream_name":"stdout","time":182.636302069,"data":"      Successfully uninstalled nvidia-cufile-cu12-1.11.1.6\n"}
+,{"stream_name":"stdout","time":182.780289249,"data":"  Attempting uninstall: nvidia-cuda-runtime-cu12\n"}
+,{"stream_name":"stdout","time":182.928347075,"data":"    Found existing installation: nvidia-cuda-runtime-cu12 12.6.77\n"}
+,{"stream_name":"stdout","time":182.93339189,"data":"    Uninstalling nvidia-cuda-runtime-cu12-12.6.77:\n"}
+,{"stream_name":"stdout","time":182.982289728,"data":"  Attempting uninstall: nvidia-cuda-runtime-cu12\n"}
+,{"stream_name":"stdout","time":182.982301484,"data":"    Found existing installation: nvidia-cuda-runtime-cu12 12.6.77\n"}
+,{"stream_name":"stdout","time":182.982303288,"data":"    Uninstalling nvidia-cuda-runtime-cu12-12.6.77:\n"}
+,{"stream_name":"stdout","time":183.098245693,"data":"      Successfully uninstalled nvidia-cuda-runtime-cu12-12.6.77\n"}
+,{"stream_name":"stdout","time":183.143888802,"data":"  Attempting uninstall: nvidia-cuda-nvrtc-cu12\n"}
+,{"stream_name":"stdout","time":183.300264091,"data":"      Successfully uninstalled nvidia-cuda-runtime-cu12-12.6.77\n"}
+,{"stream_name":"stdout","time":183.30028117,"data":"  Attempting uninstall: nvidia-cuda-nvrtc-cu12\n"}
+,{"stream_name":"stdout","time":183.340845419,"data":"    Found existing installation: nvidia-cuda-nvrtc-cu12 12.6.77\n"}
+,{"stream_name":"stdout","time":183.343636248,"data":"    Uninstalling nvidia-cuda-nvrtc-cu12-12.6.77:\n"}
+,{"stream_name":"stdout","time":183.542550657,"data":"    Found existing installation: nvidia-cuda-nvrtc-cu12 12.6.77\n"}
+,{"stream_name":"stdout","time":183.542570869,"data":"    Uninstalling nvidia-cuda-nvrtc-cu12-12.6.77:\n"}
+,{"stream_name":"stdout","time":183.928813709,"data":"      Successfully uninstalled nvidia-cuda-nvrtc-cu12-12.6.77\n"}
+,{"stream_name":"stdout","time":184.130552237,"data":"      Successfully uninstalled nvidia-cuda-nvrtc-cu12-12.6.77\n"}
+,{"stream_name":"stdout","time":185.233964238,"data":"  Attempting uninstall: nvidia-cuda-cupti-cu12\n"}
+,{"stream_name":"stdout","time":185.436130536,"data":"  Attempting uninstall: nvidia-cuda-cupti-cu12\n"}
+,{"stream_name":"stdout","time":185.448016542,"data":"    Found existing installation: nvidia-cuda-cupti-cu12 12.6.80\n"}
+,{"stream_name":"stdout","time":185.452444352,"data":"    Uninstalling nvidia-cuda-cupti-cu12-12.6.80:\n"}
+,{"stream_name":"stdout","time":185.650051893,"data":"    Found existing installation: nvidia-cuda-cupti-cu12 12.6.80\n"}
+,{"stream_name":"stdout","time":185.650074099,"data":"    Uninstalling nvidia-cuda-cupti-cu12-12.6.80:\n"}
+,{"stream_name":"stdout","time":185.724216685,"data":"      Successfully uninstalled nvidia-cuda-cupti-cu12-12.6.80\n"}
+,{"stream_name":"stdout","time":185.926064764,"data":"      Successfully uninstalled nvidia-cuda-cupti-cu12-12.6.80\n"}
+,{"stream_name":"stdout","time":185.984761419,"data":"  Attempting uninstall: nvidia-cublas-cu12\n"}
+,{"stream_name":"stdout","time":186.08715187,"data":"    Found existing installation: nvidia-cublas-cu12 12.6.4.1\n"}
+,{"stream_name":"stdout","time":186.090059761,"data":"    Uninstalling nvidia-cublas-cu12-12.6.4.1:\n"}
+,{"stream_name":"stdout","time":186.186324183,"data":"  Attempting uninstall: nvidia-cublas-cu12\n"}
+,{"stream_name":"stdout","time":186.18634625,"data":"    Found existing installation: nvidia-cublas-cu12 12.6.4.1\n"}
+,{"stream_name":"stdout","time":186.186348371,"data":"    Uninstalling nvidia-cublas-cu12-12.6.4.1:\n"}
+,{"stream_name":"stdout","time":191.109075642,"data":"      Successfully uninstalled nvidia-cublas-cu12-12.6.4.1\n"}
+,{"stream_name":"stdout","time":191.311268232,"data":"      Successfully uninstalled nvidia-cublas-cu12-12.6.4.1\n"}
+,{"stream_name":"stdout","time":196.038435426,"data":"  Attempting uninstall: multiprocess\n"}
+,{"stream_name":"stdout","time":196.068255934,"data":"    Found existing installation: multiprocess 0.70.18\n"}
+,{"stream_name":"stdout","time":196.073348768,"data":"    Uninstalling multiprocess-0.70.18:\n"}
+,{"stream_name":"stdout","time":196.14614423,"data":"      Successfully uninstalled multiprocess-0.70.18\n"}
+,{"stream_name":"stdout","time":196.240540005,"data":"  Attempting uninstall: multiprocess\n"}
+,{"stream_name":"stdout","time":196.240558031,"data":"    Found existing installation: multiprocess 0.70.18\n"}
+,{"stream_name":"stdout","time":196.240560968,"data":"    Uninstalling multiprocess-0.70.18:\n"}
+,{"stream_name":"stdout","time":196.240562968,"data":"      Successfully uninstalled multiprocess-0.70.18\n"}
+,{"stream_name":"stdout","time":196.910485629,"data":"  Attempting uninstall: llvmlite\n"}
+,{"stream_name":"stdout","time":197.088989964,"data":"    Found existing installation: llvmlite 0.43.0\n"}
+,{"stream_name":"stdout","time":197.092969341,"data":"    Uninstalling llvmlite-0.43.0:\n"}
+,{"stream_name":"stdout","time":197.112269052,"data":"  Attempting uninstall: llvmlite\n"}
+,{"stream_name":"stdout","time":197.112282108,"data":"    Found existing installation: llvmlite 0.43.0\n"}
+,{"stream_name":"stdout","time":197.11228433,"data":"    Uninstalling llvmlite-0.43.0:\n"}
+,{"stream_name":"stdout","time":198.037508479,"data":"      Successfully uninstalled llvmlite-0.43.0\n"}
+,{"stream_name":"stdout","time":198.239317228,"data":"      Successfully uninstalled llvmlite-0.43.0\n"}
+,{"stream_name":"stdout","time":198.95177056,"data":"  Attempting uninstall: lark\n"}
+,{"stream_name":"stdout","time":199.100039839,"data":"    Found existing installation: lark 1.3.0\n"}
+,{"stream_name":"stdout","time":199.104753683,"data":"    Uninstalling lark-1.3.0:\n"}
+,{"stream_name":"stdout","time":199.153725112,"data":"  Attempting uninstall: lark\n"}
+,{"stream_name":"stdout","time":199.153732309,"data":"    Found existing installation: lark 1.3.0\n"}
+,{"stream_name":"stdout","time":199.153734326,"data":"    Uninstalling lark-1.3.0:\n"}
+,{"stream_name":"stdout","time":199.161012205,"data":"      Successfully uninstalled lark-1.3.0\n"}
+,{"stream_name":"stdout","time":199.3628668,"data":"      Successfully uninstalled lark-1.3.0\n"}
+,{"stream_name":"stdout","time":199.363458012,"data":"  Attempting uninstall: fsspec\n"}
+,{"stream_name":"stdout","time":199.390085612,"data":"    Found existing installation: fsspec 2025.10.0\n"}
+,{"stream_name":"stdout","time":199.395410115,"data":"    Uninstalling fsspec-2025.10.0:\n"}
+,{"stream_name":"stdout","time":199.458219945,"data":"      Successfully uninstalled fsspec-2025.10.0\n"}
+,{"stream_name":"stdout","time":199.565559941,"data":"  Attempting uninstall: fsspec\n"}
+,{"stream_name":"stdout","time":199.565577128,"data":"    Found existing installation: fsspec 2025.10.0\n"}
+,{"stream_name":"stdout","time":199.565579408,"data":"    Uninstalling fsspec-2025.10.0:\n"}
+,{"stream_name":"stdout","time":199.565581169,"data":"      Successfully uninstalled fsspec-2025.10.0\n"}
+,{"stream_name":"stdout","time":199.966329837,"data":"  Attempting uninstall: starlette\n"}
+,{"stream_name":"stdout","time":200.15450339,"data":"    Found existing installation: starlette 0.48.0\n"}
+,{"stream_name":"stdout","time":200.15875787,"data":"    Uninstalling starlette-0.48.0:\n"}
+,{"stream_name":"stdout","time":200.168139875,"data":"  Attempting uninstall: starlette\n"}
+,{"stream_name":"stdout","time":200.168157647,"data":"    Found existing installation: starlette 0.48.0\n"}
+,{"stream_name":"stdout","time":200.168159721,"data":"    Uninstalling starlette-0.48.0:\n"}
+,{"stream_name":"stdout","time":200.197019355,"data":"      Successfully uninstalled starlette-0.48.0\n"}
+,{"stream_name":"stdout","time":200.265263431,"data":"  Attempting uninstall: nvidia-cusparse-cu12\n"}
+,{"stream_name":"stdout","time":200.398926093,"data":"      Successfully uninstalled starlette-0.48.0\n"}
+,{"stream_name":"stdout","time":200.398946287,"data":"  Attempting uninstall: nvidia-cusparse-cu12\n"}
+,{"stream_name":"stdout","time":200.459169438,"data":"    Found existing installation: nvidia-cusparse-cu12 12.5.4.2\n"}
+,{"stream_name":"stdout","time":200.462699429,"data":"    Uninstalling nvidia-cusparse-cu12-12.5.4.2:\n"}
+,{"stream_name":"stdout","time":200.661224923,"data":"    Found existing installation: nvidia-cusparse-cu12 12.5.4.2\n"}
+,{"stream_name":"stdout","time":200.661240738,"data":"    Uninstalling nvidia-cusparse-cu12-12.5.4.2:\n"}
+,{"stream_name":"stdout","time":202.860190914,"data":"      Successfully uninstalled nvidia-cusparse-cu12-12.5.4.2\n"}
+,{"stream_name":"stdout","time":203.062011902,"data":"      Successfully uninstalled nvidia-cusparse-cu12-12.5.4.2\n"}
+,{"stream_name":"stdout","time":206.177173777,"data":"  Attempting uninstall: nvidia-cufft-cu12\n"}
+,{"stream_name":"stdout","time":206.323300029,"data":"    Found existing installation: nvidia-cufft-cu12 11.3.0.4\n"}
+,{"stream_name":"stdout","time":206.32702741,"data":"    Uninstalling nvidia-cufft-cu12-11.3.0.4:\n"}
+,{"stream_name":"stdout","time":206.379041038,"data":"  Attempting uninstall: nvidia-cufft-cu12\n"}
+,{"stream_name":"stdout","time":206.379058055,"data":"    Found existing installation: nvidia-cufft-cu12 11.3.0.4\n"}
+,{"stream_name":"stdout","time":206.379060316,"data":"    Uninstalling nvidia-cufft-cu12-11.3.0.4:\n"}
+,{"stream_name":"stdout","time":209.563408446,"data":"      Successfully uninstalled nvidia-cufft-cu12-11.3.0.4\n"}
+,{"stream_name":"stdout","time":209.76551443,"data":"      Successfully uninstalled nvidia-cufft-cu12-11.3.0.4\n"}
+,{"stream_name":"stdout","time":211.553188844,"data":"  Attempting uninstall: numba\n"}
+,{"stream_name":"stdout","time":211.731980525,"data":"    Found existing installation: numba 0.60.0\n"}
+,{"stream_name":"stdout","time":211.761659278,"data":"  Attempting uninstall: numba\n"}
+,{"stream_name":"stdout","time":211.761671637,"data":"    Found existing installation: numba 0.60.0\n"}
+,{"stream_name":"stdout","time":211.763378103,"data":"    Uninstalling numba-0.60.0:\n"}
+,{"stream_name":"stdout","time":211.965476498,"data":"    Uninstalling numba-0.60.0:\n"}
+,{"stream_name":"stdout","time":212.579171769,"data":"      Successfully uninstalled numba-0.60.0\n"}
+,{"stream_name":"stdout","time":212.781243751,"data":"      Successfully uninstalled numba-0.60.0\n"}
+,{"stream_name":"stdout","time":215.507652234,"data":"  Attempting uninstall: nvidia-cusolver-cu12\n"}
+,{"stream_name":"stdout","time":215.629357413,"data":"    Found existing installation: nvidia-cusolver-cu12 11.7.1.2\n"}
+,{"stream_name":"stdout","time":215.633078336,"data":"    Uninstalling nvidia-cusolver-cu12-11.7.1.2:\n"}
+,{"stream_name":"stdout","time":215.709999965,"data":"  Attempting uninstall: nvidia-cusolver-cu12\n"}
+,{"stream_name":"stdout","time":215.710024617,"data":"    Found existing installation: nvidia-cusolver-cu12 11.7.1.2\n"}
+,{"stream_name":"stdout","time":215.710038491,"data":"    Uninstalling nvidia-cusolver-cu12-11.7.1.2:\n"}
+,{"stream_name":"stdout","time":217.184885257,"data":"      Successfully uninstalled nvidia-cusolver-cu12-11.7.1.2\n"}
+,{"stream_name":"stdout","time":217.387393533,"data":"      Successfully uninstalled nvidia-cusolver-cu12-11.7.1.2\n"}
+,{"stream_name":"stdout","time":221.312978231,"data":"  Attempting uninstall: fastapi\n"}
+,{"stream_name":"stdout","time":221.445205103,"data":"    Found existing installation: fastapi 0.119.1\n"}
+,{"stream_name":"stdout","time":221.450774043,"data":"    Uninstalling fastapi-0.119.1:\n"}
+,{"stream_name":"stdout","time":221.515126642,"data":"  Attempting uninstall: fastapi\n"}
+,{"stream_name":"stdout","time":221.515145023,"data":"    Found existing installation: fastapi 0.119.1\n"}
+,{"stream_name":"stdout","time":221.515148143,"data":"    Uninstalling fastapi-0.119.1:\n"}
+,{"stream_name":"stdout","time":221.516118402,"data":"      Successfully uninstalled fastapi-0.119.1\n"}
+,{"stream_name":"stdout","time":221.58827458,"data":"  Attempting uninstall: cuda-python\n"}
+,{"stream_name":"stdout","time":221.718388096,"data":"      Successfully uninstalled fastapi-0.119.1\n"}
+,{"stream_name":"stdout","time":221.718404652,"data":"  Attempting uninstall: cuda-python\n"}
+,{"stream_name":"stdout","time":221.782460968,"data":"    Found existing installation: cuda-python 12.6.2.post1\n"}
+,{"stream_name":"stdout","time":221.787937232,"data":"    Uninstalling cuda-python-12.6.2.post1:\n"}
+,{"stream_name":"stdout","time":221.984485913,"data":"    Found existing installation: cuda-python 12.6.2.post1\n"}
+,{"stream_name":"stdout","time":221.984509312,"data":"    Uninstalling cuda-python-12.6.2.post1:\n"}
+,{"stream_name":"stdout","time":222.177877327,"data":"      Successfully uninstalled cuda-python-12.6.2.post1\n"}
+,{"stream_name":"stdout","time":222.380149365,"data":"      Successfully uninstalled cuda-python-12.6.2.post1\n"}
+,{"stream_name":"stdout","time":222.409385125,"data":"  Attempting uninstall: torch\n"}
+,{"stream_name":"stdout","time":222.611681554,"data":"  Attempting uninstall: torch\n"}
+,{"stream_name":"stdout","time":222.620789504,"data":"    Found existing installation: torch 2.8.0+cu126\n"}
+,{"stream_name":"stdout","time":222.822539744,"data":"    Found existing installation: torch 2.8.0+cu126\n"}
+,{"stream_name":"stdout","time":222.894858296,"data":"    Uninstalling torch-2.8.0+cu126:\n"}
+,{"stream_name":"stdout","time":223.096743835,"data":"    Uninstalling torch-2.8.0+cu126:\n"}
+,{"stream_name":"stdout","time":247.211891299,"data":"      Successfully uninstalled torch-2.8.0+cu126\n"}
+,{"stream_name":"stdout","time":247.420035368,"data":"      Successfully uninstalled torch-2.8.0+cu126\n"}
+,{"stream_name":"stdout","time":268.023441573,"data":"  Attempting uninstall: ray\n"}
+,{"stream_name":"stdout","time":268.101283046,"data":"    Found existing installation: ray 2.52.1\n"}
+,{"stream_name":"stdout","time":268.216976839,"data":"    Uninstalling ray-2.52.1:\n"}
+,{"stream_name":"stdout","time":268.22519564,"data":"  Attempting uninstall: ray\n"}
+,{"stream_name":"stdout","time":268.22521818,"data":"    Found existing installation: ray 2.52.1\n"}
+,{"stream_name":"stdout","time":268.225220946,"data":"    Uninstalling ray-2.52.1:\n"}
+,{"stream_name":"stdout","time":272.283050711,"data":"      Successfully uninstalled ray-2.52.1\n"}
+,{"stream_name":"stdout","time":272.485330155,"data":"      Successfully uninstalled ray-2.52.1\n"}
+,{"stream_name":"stdout","time":277.635561521,"data":"  Attempting uninstall: datasets\n"}
+,{"stream_name":"stdout","time":277.678540098,"data":"    Found existing installation: datasets 4.4.1\n"}
+,{"stream_name":"stdout","time":277.688222396,"data":"    Uninstalling datasets-4.4.1:\n"}
+,{"stream_name":"stdout","time":277.843394078,"data":"  Attempting uninstall: datasets\n"}
+,{"stream_name":"stdout","time":277.843408371,"data":"    Found existing installation: datasets 4.4.1\n"}
+,{"stream_name":"stdout","time":277.843410123,"data":"    Uninstalling datasets-4.4.1:\n"}
+,{"stream_name":"stdout","time":277.86622656,"data":"      Successfully uninstalled datasets-4.4.1\n"}
+,{"stream_name":"stdout","time":278.068041329,"data":"      Successfully uninstalled datasets-4.4.1\n"}
+,{"stream_name":"stdout","time":282.577809657,"data":"  Attempting uninstall: torchvision\n"}
+,{"stream_name":"stdout","time":282.763966443,"data":"    Found existing installation: torchvision 0.23.0+cu126\n"}
+,{"stream_name":"stdout","time":282.774081304,"data":"    Uninstalling torchvision-0.23.0+cu126:\n"}
+,{"stream_name":"stdout","time":282.779659165,"data":"  Attempting uninstall: torchvision\n"}
+,{"stream_name":"stdout","time":282.779678592,"data":"    Found existing installation: torchvision 0.23.0+cu126\n"}
+,{"stream_name":"stdout","time":282.779681108,"data":"    Uninstalling torchvision-0.23.0+cu126:\n"}
+,{"stream_name":"stdout","time":283.135846792,"data":"      Successfully uninstalled torchvision-0.23.0+cu126\n"}
+,{"stream_name":"stdout","time":283.337827502,"data":"      Successfully uninstalled torchvision-0.23.0+cu126\n"}
+,{"stream_name":"stdout","time":283.59807887,"data":"  Attempting uninstall: torchaudio\n"}
+,{"stream_name":"stdout","time":283.799979692,"data":"  Attempting uninstall: torchaudio\n"}
+,{"stream_name":"stdout","time":283.81142714,"data":"    Found existing installation: torchaudio 2.8.0+cu126\n"}
+,{"stream_name":"stdout","time":283.820479724,"data":"    Uninstalling torchaudio-2.8.0+cu126:\n"}
+,{"stream_name":"stdout","time":284.013332164,"data":"    Found existing installation: torchaudio 2.8.0+cu126\n"}
+,{"stream_name":"stdout","time":284.013350527,"data":"    Uninstalling torchaudio-2.8.0+cu126:\n"}
+,{"stream_name":"stdout","time":284.044888123,"data":"      Successfully uninstalled torchaudio-2.8.0+cu126\n"}
+,{"stream_name":"stdout","time":284.246722528,"data":"      Successfully uninstalled torchaudio-2.8.0+cu126\n"}
+,{"stream_name":"stderr","time":298.558892249,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":298.558922503,"data":"kauldron 1.3.0 requires scikit-learn, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.558924945,"data":"kauldron 1.3.0 requires tensorflow, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.558927103,"data":"ydata-profiling 4.18.0 requires matplotlib\u003c=3.10,\u003e=3.5, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.558929777,"data":"pyldavis 3.4.1 requires scikit-learn\u003e=1.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.558931733,"data":"stable-baselines3 2.1.0 requires matplotlib, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.55893354,"data":"sentence-transformers 5.1.1 requires scikit-learn, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.558935233,"data":"librosa 0.11.0 requires scikit-learn\u003e=1.1.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.558936857,"data":"cuml-cu12 25.6.0 requires scikit-learn\u003e=1.5, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.558938625,"data":"bigframes 2.26.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.558951045,"data":"bigframes 2.26.0 requires matplotlib\u003e=3.7.1, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.55895251,"data":"arviz 0.22.0 requires matplotlib\u003e=3.8, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.558953885,"data":"pynndescent 0.5.13 requires scikit-learn\u003e=0.18, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.558955167,"data":"shap 0.49.1 requires scikit-learn, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.55895653,"data":"fastai 2.8.4 requires matplotlib, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.558957746,"data":"fastai 2.8.4 requires scikit-learn, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.55895908,"data":"umap-learn 0.5.9.post2 requires scikit-learn\u003e=1.6, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.55896035,"data":"ipython-sql 0.5.0 requires sqlalchemy\u003e=2.0, but you have sqlalchemy 1.2.19 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.558961769,"data":"cudf-cu12 25.6.0 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.558963343,"data":"cudf-cu12 25.6.0 requires pyarrow\u003c20.0.0a0,\u003e=14.0.0; platform_machine == \"x86_64\", but you have pyarrow 22.0.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.558965049,"data":"gradio 5.49.1 requires pydantic\u003c2.12,\u003e=2.0, but you have pydantic 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.558966499,"data":"cuml-cu12 25.6.0 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.558967959,"data":"bigframes 2.26.0 requires rich\u003c14,\u003e=12.4.4, but you have rich 14.2.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.558969305,"data":"pylibraft-cu12 25.6.0 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.558971817,"data":"cuvs-cu12 25.6.1 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.558973193,"data":"fastai 2.8.4 requires torch\u003c2.9,\u003e=1.10, but you have torch 2.9.0+cu128 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.558974897,"data":"rmm-cu12 25.6.0 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.558976263,"data":"pylibcudf-cu12 25.6.0 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.558977657,"data":"pylibcudf-cu12 25.6.0 requires pyarrow\u003c20.0.0a0,\u003e=14.0.0; platform_machine == \"x86_64\", but you have pyarrow 22.0.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.558979339,"data":"gcsfs 2025.3.0 requires fsspec==2025.3.0, but you have fsspec 2025.9.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":298.559042787,"data":"Successfully installed annotated-doc-0.0.4 anthropic-0.71.0 apache-tvm-ffi-0.1.7 astor-0.8.1 bitsandbytes-0.49.0 cbor2-5.7.1 compressed-tensors-0.12.2 cuda-bindings-13.1.1 cuda-pathfinder-1.3.3 cuda-python-13.1.1 cut_cross_entropy-25.1.1 datasets-4.3.0 depyf-0.20.0 diskcache-5.6.3 fastapi-0.128.0 fastapi-cli-0.0.20 fastapi-cloud-cli-0.8.0 fastar-0.8.0 flashinfer-python-0.5.2 fsspec-2025.9.0 gguf-0.17.1 httptools-0.7.1 interegular-0.3.3 lark-1.2.2 llguidance-1.3.0 llvmlite-0.44.0 lm-format-enforcer-0.11.3 loguru-0.7.3 mistral_common-1.8.8 model-hosting-container-standards-0.1.12 msgspec-0.20.0 multiprocess-0.70.16 numba-0.61.2 nvidia-cublas-cu12-12.8.4.1 nvidia-cuda-cupti-cu12-12.8.90 nvidia-cuda-nvrtc-cu12-12.8.93 nvidia-cuda-runtime-cu12-12.8.90 nvidia-cudnn-frontend-1.17.0 nvidia-cufft-cu12-11.3.3.83 nvidia-cufile-cu12-1.13.1.3 nvidia-curand-cu12-10.3.9.90 nvidia-cusolver-cu12-11.7.3.90 nvidia-cusparse-cu12-12.5.8.93 nvidia-cutlass-dsl-4.3.4 nvidia-nccl-cu12-2.27.5 nvidia-nvjitlink-cu12-12.8.93 nvidia-nvshmem-cu12-3.3.20 nvidia-nvtx-cu12-12.8.90 openai_harmony-0.0.8 outlines_core-0.2.11 partial-json-parser-0.2.1.1.post7 prometheus-fastapi-instrumentator-7.1.0 pybase64-1.4.3 pycountry-24.6.1 pydantic-extra-types-2.10.6 ray-2.53.0 rich-toolkit-0.17.1 rignore-0.7.6 setproctitle-1.3.7 setuptools-80.9.0 starlette-0.50.0 supervisor-4.3.0 torch-2.9.0+cu128 torchao-0.15.0+cu128 torchaudio-2.9.0+cu128 torchvision-0.24.0+cu128 triton-3.5.0 trl-0.24.0 tyro-1.0.3 unsloth-2025.12.9 unsloth_zoo-2025.12.7 uvloop-0.22.1 vllm-0.11.2 watchfiles-1.1.1 xformers-0.0.33.post1 xgrammar-0.1.25\n"}
+,{"stream_name":"stdout","time":298.708810626,"data":"Successfully installed annotated-doc-0.0.4 anthropic-0.71.0 apache-tvm-ffi-0.1.7 astor-0.8.1 bitsandbytes-0.49.0 cbor2-5.7.1 compressed-tensors-0.12.2 cuda-bindings-13.1.1 cuda-pathfinder-1.3.3 cuda-python-13.1.1 cut_cross_entropy-25.1.1 datasets-4.3.0 depyf-0.20.0 diskcache-5.6.3 fastapi-0.128.0 fastapi-cli-0.0.20 fastapi-cloud-cli-0.8.0 fastar-0.8.0 flashinfer-python-0.5.2 fsspec-2025.9.0 gguf-0.17.1 httptools-0.7.1 interegular-0.3.3 lark-1.2.2 llguidance-1.3.0 llvmlite-0.44.0 lm-format-enforcer-0.11.3 loguru-0.7.3 mistral_common-1.8.8 model-hosting-container-standards-0.1.12 msgspec-0.20.0 multiprocess-0.70.16 numba-0.61.2 nvidia-cublas-cu12-12.8.4.1 nvidia-cuda-cupti-cu12-12.8.90 nvidia-cuda-nvrtc-cu12-12.8.93 nvidia-cuda-runtime-cu12-12.8.90 nvidia-cudnn-frontend-1.17.0 nvidia-cufft-cu12-11.3.3.83 nvidia-cufile-cu12-1.13.1.3 nvidia-curand-cu12-10.3.9.90 nvidia-cusolver-cu12-11.7.3.90 nvidia-cusparse-cu12-12.5.8.93 nvidia-cutlass-dsl-4.3.4 nvidia-nccl-cu12-2.27.5 nvidia-nvjitlink-cu12-12.8.93 nvidia-nvshmem-cu12-3.3.20 nvidia-nvtx-cu12-12.8.90 openai_harmony-0.0.8 outlines_core-0.2.11 partial-json-parser-0.2.1.1.post7 prometheus-fastapi-instrumentator-7.1.0 pybase64-1.4.3 pycountry-24.6.1 pydantic-extra-types-2.10.6 ray-2.53.0 rich-toolkit-0.17.1 rignore-0.7.6 setproctitle-1.3.7 setuptools-80.9.0 starlette-0.50.0 supervisor-4.3.0 torch-2.9.0+cu128 torchao-0.15.0+cu128 torchaudio-2.9.0+cu128 torchvision-0.24.0+cu128 triton-3.5.0 trl-0.24.0 tyro-1.0.3 unsloth-2025.12.9 unsloth_zoo-2025.12.7 uvloop-0.22.1 vllm-0.11.2 watchfiles-1.1.1 xformers-0.0.33.post1 xgrammar-0.1.25\n"}
+,{"stream_name":"stderr","time":298.709250856,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":298.709255255,"data":"kauldron 1.3.0 requires scikit-learn, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709256763,"data":"kauldron 1.3.0 requires tensorflow, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709258129,"data":"ydata-profiling 4.18.0 requires matplotlib\u003c=3.10,\u003e=3.5, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709259649,"data":"pyldavis 3.4.1 requires scikit-learn\u003e=1.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709261106,"data":"stable-baselines3 2.1.0 requires matplotlib, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709262586,"data":"sentence-transformers 5.1.1 requires scikit-learn, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709263812,"data":"librosa 0.11.0 requires scikit-learn\u003e=1.1.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709265242,"data":"cuml-cu12 25.6.0 requires scikit-learn\u003e=1.5, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709279002,"data":"bigframes 2.26.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709280489,"data":"bigframes 2.26.0 requires matplotlib\u003e=3.7.1, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709281709,"data":"arviz 0.22.0 requires matplotlib\u003e=3.8, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709283055,"data":"pynndescent 0.5.13 requires scikit-learn\u003e=0.18, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709284347,"data":"shap 0.49.1 requires scikit-learn, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709285755,"data":"fastai 2.8.4 requires matplotlib, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709286965,"data":"fastai 2.8.4 requires scikit-learn, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.70928838,"data":"umap-learn 0.5.9.post2 requires scikit-learn\u003e=1.6, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.70928962,"data":"ipython-sql 0.5.0 requires sqlalchemy\u003e=2.0, but you have sqlalchemy 1.2.19 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709291046,"data":"cudf-cu12 25.6.0 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709292496,"data":"cudf-cu12 25.6.0 requires pyarrow\u003c20.0.0a0,\u003e=14.0.0; platform_machine == \"x86_64\", but you have pyarrow 22.0.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.70929413,"data":"gradio 5.49.1 requires pydantic\u003c2.12,\u003e=2.0, but you have pydantic 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709295526,"data":"cuml-cu12 25.6.0 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709296833,"data":"bigframes 2.26.0 requires rich\u003c14,\u003e=12.4.4, but you have rich 14.2.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709298167,"data":"pylibraft-cu12 25.6.0 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.70930022,"data":"cuvs-cu12 25.6.1 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709301582,"data":"fastai 2.8.4 requires torch\u003c2.9,\u003e=1.10, but you have torch 2.9.0+cu128 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.70930289,"data":"rmm-cu12 25.6.0 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709304206,"data":"pylibcudf-cu12 25.6.0 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709305535,"data":"pylibcudf-cu12 25.6.0 requires pyarrow\u003c20.0.0a0,\u003e=14.0.0; platform_machine == \"x86_64\", but you have pyarrow 22.0.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709306986,"data":"gcsfs 2025.3.0 requires fsspec==2025.3.0, but you have fsspec 2025.9.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709308307,"data":"\n"}
+,{"stream_name":"stderr","time":298.709309499,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":298.70931092,"data":"kauldron 1.3.0 requires scikit-learn, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709312102,"data":"kauldron 1.3.0 requires tensorflow, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709315203,"data":"ydata-profiling 4.18.0 requires matplotlib\u003c=3.10,\u003e=3.5, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709316549,"data":"pyldavis 3.4.1 requires scikit-learn\u003e=1.0.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709317782,"data":"stable-baselines3 2.1.0 requires matplotlib, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709319053,"data":"sentence-transformers 5.1.1 requires scikit-learn, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709320305,"data":"librosa 0.11.0 requires scikit-learn\u003e=1.1.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709321519,"data":"cuml-cu12 25.6.0 requires scikit-learn\u003e=1.5, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709322736,"data":"bigframes 2.26.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709324156,"data":"bigframes 2.26.0 requires matplotlib\u003e=3.7.1, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709325363,"data":"arviz 0.22.0 requires matplotlib\u003e=3.8, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709326562,"data":"pynndescent 0.5.13 requires scikit-learn\u003e=0.18, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.70932778,"data":"shap 0.49.1 requires scikit-learn, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.70932903,"data":"fastai 2.8.4 requires matplotlib, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.70933019,"data":"fastai 2.8.4 requires scikit-learn, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709331332,"data":"umap-learn 0.5.9.post2 requires scikit-learn\u003e=1.6, which is not installed.\n"}
+,{"stream_name":"stderr","time":298.709332559,"data":"ipython-sql 0.5.0 requires sqlalchemy\u003e=2.0, but you have sqlalchemy 1.2.19 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709334025,"data":"cudf-cu12 25.6.0 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.70933537,"data":"cudf-cu12 25.6.0 requires pyarrow\u003c20.0.0a0,\u003e=14.0.0; platform_machine == \"x86_64\", but you have pyarrow 22.0.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.70933672,"data":"gradio 5.49.1 requires pydantic\u003c2.12,\u003e=2.0, but you have pydantic 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709338032,"data":"cuml-cu12 25.6.0 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709341022,"data":"bigframes 2.26.0 requires rich\u003c14,\u003e=12.4.4, but you have rich 14.2.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709342382,"data":"pylibraft-cu12 25.6.0 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709344019,"data":"cuvs-cu12 25.6.1 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709345325,"data":"fastai 2.8.4 requires torch\u003c2.9,\u003e=1.10, but you have torch 2.9.0+cu128 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709346635,"data":"rmm-cu12 25.6.0 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.70934795,"data":"pylibcudf-cu12 25.6.0 requires cuda-python\u003c13.0a0,\u003e=12.6.2, but you have cuda-python 13.1.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709350986,"data":"pylibcudf-cu12 25.6.0 requires pyarrow\u003c20.0.0a0,\u003e=14.0.0; platform_machine == \"x86_64\", but you have pyarrow 22.0.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":298.709352419,"data":"gcsfs 2025.3.0 requires fsspec==2025.3.0, but you have fsspec 2025.9.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":298.746144178,"data":"cl100k_base.tiktoken\n"}
+,{"stream_name":"stdout","time":298.746158957,"data":"o200k_base.tiktoken\n"}
+,{"stream_name":"stdout","time":298.76192037,"data":"cl100k_base.tiktoken\n"}
+,{"stream_name":"stdout","time":298.761930206,"data":"o200k_base.tiktoken\n"}
+,{"stream_name":"stdout","time":298.779704794,"data":"Model found via search: /kaggle/input/models/danielhanchen/gpt-oss-120b/transformers/default/1\n"}
+,{"stream_name":"stdout","time":298.779718926,"data":"\n"}
+,{"stream_name":"stdout","time":298.779720834,"data":"Using model path: /kaggle/input/models/danielhanchen/gpt-oss-120b/transformers/default/1\n"}
+,{"stream_name":"stdout","time":306.967613381,"data":"Loading model weights from /kaggle/input/models/danielhanchen/gpt-oss-120b/transformers/default/1 into OS Page Cache...\n"}
+,{"stream_name":"stdout","time":386.605755319,"data":"Processed 26 files (65.28 GB) in 79.63 seconds.\n"}
+,{"stream_name":"stdout","time":386.605779796,"data":"\n"}
+,{"stream_name":"stdout","time":386.860449011,"data":"Waiting for vLLM server...\n"}
+,{"stream_name":"stdout","time":514.347943053,"data":"Server is ready (took 127.49 seconds).\n"}
+,{"stream_name":"stdout","time":514.347973098,"data":"\n"}
+,{"stream_name":"stdout","time":514.347976009,"data":"Initializing 24 persistent Jupyter kernels...\n"}
+,{"stream_name":"stdout","time":518.477313044,"data":"Kernels initialized in 4.29 seconds.\n"}
+,{"stream_name":"stdout","time":518.477361361,"data":"\n"}
+,{"stream_name":"stdout","time":518.477363841,"data":"GenSelect-7B: model not found at any candidate path — skipping\n"}
+,{"stream_name":"stdout","time":518.477366544,"data":"  Searched: ['/kaggle/input/models/jxm222/openreasoningnemotron-7b-bnb4/transformers/default/1', '/kaggle/input/openreasoningnemotron-7b-bnb4/transformers/default/1', '/kaggle/input/openreasoningnemotron-7b-bnb4', '/kaggle/input/openreasoning-nemotron-7b-bnb4/transformers/default/1', '/kaggle/input/openreasoning-nemotron-7b-bnb4']\n"}
+,{"stream_name":"stdout","time":518.477371894,"data":"  GPU [after-7B-load]: alloc=0.0G reserved=0.0G free=85.0G total=85.0G\n"}
+,{"stream_name":"stdout","time":518.624788248,"data":"Using test CSV: /kaggle/input/competitions/ai-mathematical-olympiad-progress-prize-3/test.csv\n"}
+,{"stream_name":"stdout","time":519.139163581,"data":"\n"}
+,{"stream_name":"stdout","time":519.139191944,"data":"Problem: Solve $4+x=4$ for $x$.\n"}
+,{"stream_name":"stdout","time":519.139194794,"data":"\n"}
+,{"stream_name":"stdout","time":519.139196334,"data":"\n"}
+,{"stream_name":"stdout","time":519.139197887,"data":"=== USER PROMPT (3957 chars) ===\n"}
+,{"stream_name":"stdout","time":519.139199804,"data":"Solve $4+x=4$ for $x$. You have access to `math`, `numpy`, and `sympy` for:\n"}
+,{"stream_name":"stdout","time":519.139202118,"data":"\n"}
+,{"stream_name":"stdout","time":519.139203668,"data":"# Symbolic Computation (sympy):\n"}
+,{"stream_name":"stdout","time":519.139205638,"data":"- Algebraic manipulation and simplification\n"}
+,{"stream_name":"stdout","time":519.13920727,"data":"- Solving equations and systems of equations\n"}
+,{"stream_name":"stdout","time":519.139208887,"data":"- Symbolic differentiation and integration\n"}
+,{"stream_name":"stdout","time":519.13921052,"data":"- Number theory functions (primes, divisors, modular arithmetic)\n"}
+,{"stream_name":"stdout","time":519.139223014,"data":"- Polynomial operations and factorization\n"}
+,{"stream_name":"stdout","time":519.139224371,"data":"- Working with mathematical expressions symbolically\n"}
+,{"stream_name":"stdout","time":519.139225878,"data":"\n"}
+,{"stream_name":"stdout","time":519.139227025,"data":"# Numerical Computation (numpy):\n"}
+,{"stream_name":"stdout","time":519.139228301,"data":"- Array operations and linear algebra\n"}
+,{"stream_name":"stdout","time":519.139229598,"data":"- Efficient numerical calculations for large datasets\n"}
+,{"stream_name":"stdout","time":519.139230944,"data":"- Matrix operations and eigenvalue problems\n"}
+,{"stream_name":"stdout","time":519.139232144,"data":"- Statistical computations\n"}
+,{"stream_name":"stdout","time":519.139233404,"data":"\n"}
+,{"stream_name":"stdout","time":519.139234461,"data":"# Mathematical Functions (math):\n"}
+,{"stream_name":"stdout","time":519.139235704,"data":"- Standard mathematical functions (trig, log, exp)\n"}
+,{"stream_name":"stdout","time":519.139236981,"data":"- Constants like pi and e\n"}
+,{"stream_name":"stdout","time":519.139238307,"data":"- Basic operations for single values\n"}
+,{"stream_name":"stdout","time":519.139239708,"data":"\n"}
+,{"stream_name":"stdout","time":519.139240784,"data":"Best Practices:\n"}
+,{"stream_name":"stdout","time":519.139242548,"data":"- Use sympy for exact symbolic answers when possible\n"}
+,{"stream_name":"stdout","time":519.139244075,"data":"- Use numpy for numerical verification and large-scale computation\n"}
+,{"stream_name":"stdout","time":519.139245335,"data":"- Combine symbolic and numerical approaches: derive symbolically, verify numerically\n"}
+,{"stream_name":"stdout","time":519.139246634,"data":"- Document your computational strategy clearly\n"}
+,{"stream_name":"stdout","time":519.139247797,"data":"- Validate computational results against known cases or theoretical bounds\n"}
+,{"stream_name":"stdout","time":519.139249622,"data":"- For very large exponents (e.g. a^(n!)), use pow(base, exp, mod) or analytical methods — never materialize the full number\n"}
+,{"stream_name":"stdout","time":519.139251675,"data":"\n"}
+,{"stream_name":"stdout","time":519.139252755,"data":"# Code Robustness Rules:\n"}
+,{"stream_name":"stdout","time":519.139253944,"data":"- Each code cell must be SELF-CONTAINED: re-import and re-define everything you need. If a previous cell errored, its definitions are LOST.\n"}
+,{"stream_name":"stdout","time":519.139255324,"data":"- Avoid sympy expressions that grow beyond a few hundred characters. If an expression is exploding, switch to numerical methods (numpy) or modular arithmetic.\n"}
+,{"stream_name":"stdout","time":519.139256695,"data":"- For geometry: prefer numpy coordinate models with brute-force verification over pure symbolic or direction-counting approaches.\n"}
+,{"stream_name":"stdout","time":519.139258074,"data":"- For number theory / functional equations: compute small cases first (n=1..20) to find patterns before attempting a proof. Brute-force exploration often reveals the structure.\n"}
+,{"stream_name":"stdout","time":519.139259498,"data":"- For combinatorics counting: always verify no duplicates — check injectivity explicitly.\n"}
+,{"stream_name":"stdout","time":519.139261872,"data":"- If 5+ code cells without progress, STOP and restart with a different approach.\n"}
+,{"stream_name":"stdout","time":519.139263184,"data":"- When using Python, prefer converting sympy expressions to int() before passing to Python builtins like pow(), min(), max().\n"}
+,{"stream_name":"stdout","time":519.13926453,"data":"- Common import: from sympy.ntheory.modular import crt (note: sympy.crt does not exist).\n"}
+,{"stream_name":"stdout","time":519.139268148,"data":"- If a code cell fails, re-import necessary libraries in the next cell.\n"}
+,{"stream_name":"stdout","time":519.13926945,"data":"- sympy.solve() often times out on complex systems. For polynomial systems with \u003e 3 unknowns, prefer numerical methods (scipy fsolve/minimize) or manual algebraic reduction.\n"}
+,{"stream_name":"stdout","time":519.139271118,"data":"- Never call sympy.simplify() or sympy.expand() on expressions involving large binomials or products of many terms. Use float() first to check the numerical value.\n"}
+,{"stream_name":"stdout","time":519.139272531,"data":"\n"}
+,{"stream_name":"stdout","time":519.139273817,"data":"# Library Availability:\n"}
+,{"stream_name":"stdout","time":519.139275234,"data":"NOT installed (do NOT import — they WILL fail): pulp, ortools, z3-solver, mip, pyscipopt, pysat, cvxpy, constraint, matplotlib, sklearn.\n"}
+,{"stream_name":"stdout","time":519.139276715,"data":"Do not waste turns trying these libraries or probing with try/except.\n"}
+,{"stream_name":"stdout","time":519.139278097,"data":"\n"}
+,{"stream_name":"stdout","time":519.139279327,"data":"Available and recommended:\n"}
+,{"stream_name":"stdout","time":519.139280552,"data":"- sympy, numpy, scipy, networkx, mpmath, math, itertools, functools, fractions, collections, decimal, heapq, random, statistics\n"}
+,{"stream_name":"stdout","time":519.139282171,"data":"\n"}
+,{"stream_name":"stdout","time":519.139283385,"data":"Replacements for unavailable optimization/constraint libraries:\n"}
+,{"stream_name":"stdout","time":519.139284625,"data":"- Integer/Binary Linear Programming (replaces pulp, mip, ortools):\n"}
+,{"stream_name":"stdout","time":519.139285845,"data":"  from scipy.optimize import milp, LinearConstraint, Bounds\n"}
+,{"stream_name":"stdout","time":519.139287037,"data":"  import numpy as np\n"}
+,{"stream_name":"stdout","time":519.139288304,"data":"  res = milp(c=c_vec, constraints=LinearConstraint(A, lb, ub),\n"}
+,{"stream_name":"stdout","time":519.13928955,"data":"             integrality=np.ones(n), bounds=Bounds(0, 1))\n"}
+,{"stream_name":"stdout","time":519.139290744,"data":"  # res.success, res.x (solution vector), res.fun (objective value)\n"}
+,{"stream_name":"stdout","time":519.139291974,"data":"- Linear Programming: scipy.optimize.linprog(c, A_ub=A, b_ub=b, method=\"highs\")\n"}
+,{"stream_name":"stdout","time":519.139293528,"data":"- Assignment problems: scipy.optimize.linear_sum_assignment(cost_matrix)\n"}
+,{"stream_name":"stdout","time":519.139294978,"data":"- Graph algorithms (matching, shortest path, components): import networkx as nx\n"}
+,{"stream_name":"stdout","time":519.13929635,"data":"- Constraint satisfaction: encode as ILP via scipy.optimize.milp, or backtracking with pruning\n"}
+,{"stream_name":"stdout","time":519.139297658,"data":"- Number theory: sympy.ntheory or random (Monte Carlo verification)\n"}
+,{"stream_name":"stdout","time":519.139298838,"data":"- Geometry: fractions (exact rational) + sympy, avoid floating point\n"}
+,{"stream_name":"stdout","time":519.139300041,"data":"- Game theory/DP: functools.lru_cache for memoized recursion\n"}
+,{"stream_name":"stdout","time":519.13930123,"data":"=== END USER PROMPT ===\n"}
+,{"stream_name":"stdout","time":519.139302358,"data":"\n"}
+,{"stream_name":"stdout","time":519.139303671,"data":"Budget: 450.00 seconds | Deadline: 1772958919.06 | TimeLeft: 17400s | Effort: always-high\n"}
+,{"stream_name":"stdout","time":519.13930497,"data":"\n"}
+,{"stream_name":"stdout","time":535.721354494,"data":"  → Att 5 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":535.721409213,"data":"  Summ Att 5: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":536.136334067,"data":"  → Att 19 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":536.136367292,"data":"  Summ Att 19: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":536.136369618,"data":"  → Att 22 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":536.136371306,"data":"  Summ Att 22: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":536.136372559,"data":"  → Att 16 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":536.136373948,"data":"  Summ Att 16: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":536.136375075,"data":"  → Att 21 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":536.136376388,"data":"  Summ Att 21: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":536.136377528,"data":"  → Att 20 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":536.13637891,"data":"  Summ Att 20: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":536.36911492,"data":"  → Att 4 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":536.369152499,"data":"  Summ Att 4: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":536.369154769,"data":"  → Att 11 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":536.369156561,"data":"  Summ Att 11: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":536.369157856,"data":"  → Att 18 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":536.369159288,"data":"  Summ Att 18: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":536.369160482,"data":"  → Att 3 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":536.369162355,"data":"  → Att 12 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":536.369163641,"data":"  Summ Att 3: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":536.369164851,"data":"  Summ Att 12: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":536.369166042,"data":"  → Att 9 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":536.369167471,"data":"  Summ Att 9: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":536.604318661,"data":"  → Att 1 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":536.604355459,"data":"  Summ Att 1: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":536.6043579,"data":"  → Att 7 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":536.604359468,"data":"  Summ Att 7: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":536.604360686,"data":"  → Att 10 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":536.604362363,"data":"  Summ Att 10: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":537.028509921,"data":"  → Att 23 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":537.02854461,"data":"  Summ Att 23: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":537.02854661,"data":"  → Att 14 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":537.028562623,"data":"  Summ Att 14: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":537.028564022,"data":"  → Att 13 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":537.028565574,"data":"  Summ Att 13: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":537.028566913,"data":"  → Att 17 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":537.028568335,"data":"  Summ Att 17: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":537.028569481,"data":"  → Att 2 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":537.02857088,"data":"  Summ Att 2: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":537.028572434,"data":"  → Att 8 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":537.028573893,"data":"  Summ Att 8: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":537.028575207,"data":"  → Att 6 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":537.028576498,"data":"  → Att 24 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":537.02857776,"data":"  → Att 15 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":537.028579016,"data":"  Summ Att 6: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":537.028580205,"data":"  Summ Att 24: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":537.028581437,"data":"  Summ Att 15: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":537.028582687,"data":"\n"}
+,{"stream_name":"stdout","time":537.028584076,"data":"=== STREAMING SUMMARIES: collecting 24 summaries ===\n"}
+,{"stream_name":"stdout","time":537.028585349,"data":"R1 finished in 18s | 24 valid answers | 24 summaries submitted\n"}
+,{"stream_name":"stdout","time":537.028586601,"data":"  24/24 already done before collection\n"}
+,{"stream_name":"stdout","time":537.02858775,"data":"Summaries: 24/24 collected (waited 0.0s)\n"}
+,{"stream_name":"stdout","time":537.028588913,"data":"  Status: 0 ok, 0 mismatch, 0 skip-short, 0 error\n"}
+,{"stream_name":"stdout","time":537.028590091,"data":"  Avg summarization time: 0.0s | Avg compression ratio: 0.00\n"}
+,{"stream_name":"stdout","time":537.028591339,"data":"=== END STREAMING SUMMARIES ===\n"}
+,{"stream_name":"stdout","time":537.02859257,"data":"\n"}
+,{"stream_name":"stdout","time":537.02859384,"data":" Attempt  Response Length  Python Calls  Python Errors  Entropy  Temperature  Answer  Confidence    Source Stop_Reason  Successful_Code  Time_Remaining  Time\n"}
+,{"stream_name":"stdout","time":537.028595432,"data":"       5              104             0              0    0.806          0.6       0         1.0 streaming   max_turns                0           433.4  16.6\n"}
+,{"stream_name":"stdout","time":537.028596841,"data":"      19              131             0              0    0.812          0.6       0         1.0 streaming   max_turns                0           433.0  16.8\n"}
+,{"stream_name":"stdout","time":537.028598259,"data":"      22              130             0              0    0.700          0.6       0         1.0 streaming   max_turns                0           433.0  16.8\n"}
+,{"stream_name":"stdout","time":537.028601099,"data":"      16              142             0              0    0.752          0.6       0         1.0 streaming   max_turns                0           432.8  17.0\n"}
+,{"stream_name":"stdout","time":537.028602679,"data":"      21              143             0              0    0.702          0.6       0         1.0 streaming   max_turns                0           432.8  17.0\n"}
+,{"stream_name":"stdout","time":537.028607141,"data":"      20              144             0              0    0.699          0.6       0         1.0 streaming   max_turns                0           432.8  17.0\n"}
+,{"stream_name":"stdout","time":537.028608571,"data":"       4              147             0              0    0.645          0.6       0         1.0 streaming   max_turns                0           432.7  17.3\n"}
+,{"stream_name":"stdout","time":537.028609998,"data":"      11              150             0              0    0.679          0.6       0         1.0 streaming   max_turns                0           432.7  17.2\n"}
+,{"stream_name":"stdout","time":537.028611491,"data":"      18              150             0              0    0.812          0.6       0         1.0 streaming   max_turns                0           432.7  17.1\n"}
+,{"stream_name":"stdout","time":537.028612898,"data":"       3              156             0              0    0.740          0.6       0         1.0 streaming   max_turns                0           432.6  17.4\n"}
+,{"stream_name":"stdout","time":537.028614336,"data":"      12              155             0              0    0.740          0.6       0         1.0 streaming   max_turns                0           432.6  17.2\n"}
+,{"stream_name":"stdout","time":537.02861572,"data":"       9              156             0              0    0.761          0.6       0         1.0 streaming   max_turns                0           432.6  17.3\n"}
+,{"stream_name":"stdout","time":537.028617081,"data":"       1              165             0              0    0.759          0.6       0         1.0 streaming   max_turns                0           432.5  17.5\n"}
+,{"stream_name":"stdout","time":537.028618441,"data":"       7              171             0              0    0.773          0.6       0         1.0 streaming   max_turns                0           432.4  17.6\n"}
+,{"stream_name":"stdout","time":537.028619809,"data":"      10              174             0              0    0.773          0.6       0         1.0 streaming   max_turns                0           432.4  17.6\n"}
+,{"stream_name":"stdout","time":537.028621223,"data":"      23              191             0              0    0.837          0.6       0         1.0 streaming   max_turns                0           432.2  17.5\n"}
+,{"stream_name":"stdout","time":537.028622809,"data":"      14              193             0              0    0.940          0.6       0         1.0 streaming   max_turns                0           432.1  17.7\n"}
+,{"stream_name":"stdout","time":537.028624232,"data":"      13              193             0              0    0.817          0.6       0         1.0 streaming   max_turns                0           432.1  17.7\n"}
+,{"stream_name":"stdout","time":537.02862559,"data":"      17              198             0              0    0.761          0.6       0         1.0 streaming   max_turns                0           432.1  17.7\n"}
+,{"stream_name":"stdout","time":537.028626934,"data":"       2              198             0              0    0.738          0.6       0         1.0 streaming   max_turns                0           432.1  17.9\n"}
+,{"stream_name":"stdout","time":537.028628302,"data":"       8              201             0              0    0.759          0.6       0         1.0 streaming   max_turns                0           432.0  17.9\n"}
+,{"stream_name":"stdout","time":537.028629672,"data":"       6              201             0              0    0.724          0.6       0         1.0 streaming   max_turns                0           432.0  18.0\n"}
+,{"stream_name":"stdout","time":537.02863106,"data":"      24              201             0              0    0.805          0.6       0         1.0 streaming   max_turns                0           432.0  17.7\n"}
+,{"stream_name":"stdout","time":537.028636016,"data":"      15              201             0              0    0.819          0.6       0         1.0 streaming   max_turns                0           432.0  17.8\n"}
+,{"stream_name":"stdout","time":537.028637587,"data":" Answer  Votes  Score\n"}
+,{"stream_name":"stdout","time":537.028638803,"data":"      0     24 15.788\n"}
+,{"stream_name":"stdout","time":537.028640102,"data":"\n"}
+,{"stream_name":"stdout","time":537.02864133,"data":"Final Answer: 0 (votes: 24)\n"}
+,{"stream_name":"stdout","time":537.028642687,"data":"\n"}
+,{"stream_name":"stdout","time":537.028643999,"data":"\n"}
+,{"stream_name":"stdout","time":537.028645087,"data":"=== GENSELECT PHASE: launching dual judges ===\n"}
+,{"stream_name":"stdout","time":537.028646534,"data":"R1 answer: 0 (votes: 24/24)\n"}
+,{"stream_name":"stdout","time":537.028647793,"data":"Competing clusters: 1 ({0: 24})\n"}
+,{"stream_name":"stdout","time":537.028648972,"data":"Time elapsed: 18s | Time left: 17382s\n"}
+,{"stream_name":"stdout","time":537.02865057,"data":"  GPU [before-GenSelect]: alloc=0.0G reserved=0.0G free=85.0G total=85.0G\n"}
+,{"stream_name":"stdout","time":537.028652083,"data":"GenSelect-7B: fewer than 2 competing answers — skipping\n"}
+,{"stream_name":"stdout","time":537.028654264,"data":"GenSelect-120B: fewer than 2 competing answers — skipping\n"}
+,{"stream_name":"stdout","time":537.028655554,"data":"  GPU [after-GenSelect]: alloc=0.0G reserved=0.0G free=85.0G total=85.0G\n"}
+,{"stream_name":"stdout","time":537.028656971,"data":"\n"}
+,{"stream_name":"stdout","time":537.028658122,"data":"=== 3-WAY DECISION ===\n"}
+,{"stream_name":"stdout","time":537.028659283,"data":"  majority:       0 (votes: 24/24)\n"}
+,{"stream_name":"stdout","time":537.028660463,"data":"  GenSelect-7B:   None (reasoning: 0 chars)\n"}
+,{"stream_name":"stdout","time":537.028661718,"data":"  GenSelect-120B: None (reasoning: 0 chars)\n"}
+,{"stream_name":"stdout","time":537.028662894,"data":"  GenSelect phase time: 0.0s\n"}
+,{"stream_name":"stdout","time":537.028664067,"data":"  Verdict: SOLE JUDGE — GenSelects inconclusive (1 valid), trusting majority 0\n"}
+,{"stream_name":"stdout","time":537.028665399,"data":"=== END 3-WAY DECISION ===\n"}
+,{"stream_name":"stdout","time":537.028666869,"data":"\n"}
+,{"stream_name":"stdout","time":537.028668212,"data":"=== RERUN CHECK: top_votes=24, threshold=8, gs_disagrees=False, should_rerun=False ===\n"}
+,{"stream_name":"stdout","time":537.028669583,"data":"\n"}
+,{"stream_name":"stdout","time":537.028670667,"data":"=== PROBLEM COMPLETE ===\n"}
+,{"stream_name":"stdout","time":537.028671931,"data":"Final answer: 0\n"}
+,{"stream_name":"stdout","time":537.028673091,"data":"Path: R1=0(v24) -\u003e FINAL=0\n"}
+,{"stream_name":"stdout","time":537.02867456,"data":"Total time: 18.0s\n"}
+,{"stream_name":"stdout","time":537.028675847,"data":"Summaries: 0/24 clean | total summ time: 0.0s (overlapped with R1)\n"}
+,{"stream_name":"stdout","time":537.028677284,"data":"Session: 18s elapsed, 17382s remaining, 49 problems left\n"}
+,{"stream_name":"stdout","time":537.028678529,"data":"=== END PROBLEM ===\n"}
+,{"stream_name":"stdout","time":537.028679676,"data":"\n"}
+,{"stream_name":"stdout","time":537.338504411,"data":"\n"}
+,{"stream_name":"stdout","time":537.338534079,"data":"Problem: What is $1-1$?\n"}
+,{"stream_name":"stdout","time":537.338536282,"data":"\n"}
+,{"stream_name":"stdout","time":537.33853752,"data":"\n"}
+,{"stream_name":"stdout","time":537.338551408,"data":"=== USER PROMPT (3949 chars) ===\n"}
+,{"stream_name":"stdout","time":537.338552804,"data":"What is $1-1$? You have access to `math`, `numpy`, and `sympy` for:\n"}
+,{"stream_name":"stdout","time":537.33855425,"data":"\n"}
+,{"stream_name":"stdout","time":537.338555415,"data":"# Symbolic Computation (sympy):\n"}
+,{"stream_name":"stdout","time":537.338556659,"data":"- Algebraic manipulation and simplification\n"}
+,{"stream_name":"stdout","time":537.338557943,"data":"- Solving equations and systems of equations\n"}
+,{"stream_name":"stdout","time":537.338559297,"data":"- Symbolic differentiation and integration\n"}
+,{"stream_name":"stdout","time":537.338560635,"data":"- Number theory functions (primes, divisors, modular arithmetic)\n"}
+,{"stream_name":"stdout","time":537.338561924,"data":"- Polynomial operations and factorization\n"}
+,{"stream_name":"stdout","time":537.338563161,"data":"- Working with mathematical expressions symbolically\n"}
+,{"stream_name":"stdout","time":537.338564652,"data":"\n"}
+,{"stream_name":"stdout","time":537.338565737,"data":"# Numerical Computation (numpy):\n"}
+,{"stream_name":"stdout","time":537.338566939,"data":"- Array operations and linear algebra\n"}
+,{"stream_name":"stdout","time":537.338568121,"data":"- Efficient numerical calculations for large datasets\n"}
+,{"stream_name":"stdout","time":537.33856955,"data":"- Matrix operations and eigenvalue problems\n"}
+,{"stream_name":"stdout","time":537.338570767,"data":"- Statistical computations\n"}
+,{"stream_name":"stdout","time":537.338571985,"data":"\n"}
+,{"stream_name":"stdout","time":537.338573179,"data":"# Mathematical Functions (math):\n"}
+,{"stream_name":"stdout","time":537.338574455,"data":"- Standard mathematical functions (trig, log, exp)\n"}
+,{"stream_name":"stdout","time":537.338575815,"data":"- Constants like pi and e\n"}
+,{"stream_name":"stdout","time":537.338576951,"data":"- Basic operations for single values\n"}
+,{"stream_name":"stdout","time":537.33857816,"data":"\n"}
+,{"stream_name":"stdout","time":537.338579268,"data":"Best Practices:\n"}
+,{"stream_name":"stdout","time":537.338580479,"data":"- Use sympy for exact symbolic answers when possible\n"}
+,{"stream_name":"stdout","time":537.338581778,"data":"- Use numpy for numerical verification and large-scale computation\n"}
+,{"stream_name":"stdout","time":537.338583279,"data":"- Combine symbolic and numerical approaches: derive symbolically, verify numerically\n"}
+,{"stream_name":"stdout","time":537.33858456,"data":"- Document your computational strategy clearly\n"}
+,{"stream_name":"stdout","time":537.338585814,"data":"- Validate computational results against known cases or theoretical bounds\n"}
+,{"stream_name":"stdout","time":537.338587186,"data":"- For very large exponents (e.g. a^(n!)), use pow(base, exp, mod) or analytical methods — never materialize the full number\n"}
+,{"stream_name":"stdout","time":537.338589233,"data":"\n"}
+,{"stream_name":"stdout","time":537.33859035,"data":"# Code Robustness Rules:\n"}
+,{"stream_name":"stdout","time":537.338591577,"data":"- Each code cell must be SELF-CONTAINED: re-import and re-define everything you need. If a previous cell errored, its definitions are LOST.\n"}
+,{"stream_name":"stdout","time":537.338592999,"data":"- Avoid sympy expressions that grow beyond a few hundred characters. If an expression is exploding, switch to numerical methods (numpy) or modular arithmetic.\n"}
+,{"stream_name":"stdout","time":537.338594488,"data":"- For geometry: prefer numpy coordinate models with brute-force verification over pure symbolic or direction-counting approaches.\n"}
+,{"stream_name":"stdout","time":537.338598055,"data":"- For number theory / functional equations: compute small cases first (n=1..20) to find patterns before attempting a proof. Brute-force exploration often reveals the structure.\n"}
+,{"stream_name":"stdout","time":537.33859967,"data":"- For combinatorics counting: always verify no duplicates — check injectivity explicitly.\n"}
+,{"stream_name":"stdout","time":537.338602214,"data":"- If 5+ code cells without progress, STOP and restart with a different approach.\n"}
+,{"stream_name":"stdout","time":537.338603664,"data":"- When using Python, prefer converting sympy expressions to int() before passing to Python builtins like pow(), min(), max().\n"}
+,{"stream_name":"stdout","time":537.338605092,"data":"- Common import: from sympy.ntheory.modular import crt (note: sympy.crt does not exist).\n"}
+,{"stream_name":"stdout","time":537.33860641,"data":"- If a code cell fails, re-import necessary libraries in the next cell.\n"}
+,{"stream_name":"stdout","time":537.338607699,"data":"- sympy.solve() often times out on complex systems. For polynomial systems with \u003e 3 unknowns, prefer numerical methods (scipy fsolve/minimize) or manual algebraic reduction.\n"}
+,{"stream_name":"stdout","time":537.338609488,"data":"- Never call sympy.simplify() or sympy.expand() on expressions involving large binomials or products of many terms. Use float() first to check the numerical value.\n"}
+,{"stream_name":"stdout","time":537.338611281,"data":"\n"}
+,{"stream_name":"stdout","time":537.338612768,"data":"# Library Availability:\n"}
+,{"stream_name":"stdout","time":537.338614057,"data":"NOT installed (do NOT import — they WILL fail): pulp, ortools, z3-solver, mip, pyscipopt, pysat, cvxpy, constraint, matplotlib, sklearn.\n"}
+,{"stream_name":"stdout","time":537.338615545,"data":"Do not waste turns trying these libraries or probing with try/except.\n"}
+,{"stream_name":"stdout","time":537.338616953,"data":"\n"}
+,{"stream_name":"stdout","time":537.338618266,"data":"Available and recommended:\n"}
+,{"stream_name":"stdout","time":537.338619475,"data":"- sympy, numpy, scipy, networkx, mpmath, math, itertools, functools, fractions, collections, decimal, heapq, random, statistics\n"}
+,{"stream_name":"stdout","time":537.338621244,"data":"\n"}
+,{"stream_name":"stdout","time":537.338622434,"data":"Replacements for unavailable optimization/constraint libraries:\n"}
+,{"stream_name":"stdout","time":537.338623769,"data":"- Integer/Binary Linear Programming (replaces pulp, mip, ortools):\n"}
+,{"stream_name":"stdout","time":537.338625037,"data":"  from scipy.optimize import milp, LinearConstraint, Bounds\n"}
+,{"stream_name":"stdout","time":537.33862634,"data":"  import numpy as np\n"}
+,{"stream_name":"stdout","time":537.338627528,"data":"  res = milp(c=c_vec, constraints=LinearConstraint(A, lb, ub),\n"}
+,{"stream_name":"stdout","time":537.338628838,"data":"             integrality=np.ones(n), bounds=Bounds(0, 1))\n"}
+,{"stream_name":"stdout","time":537.338630077,"data":"  # res.success, res.x (solution vector), res.fun (objective value)\n"}
+,{"stream_name":"stdout","time":537.338631405,"data":"- Linear Programming: scipy.optimize.linprog(c, A_ub=A, b_ub=b, method=\"highs\")\n"}
+,{"stream_name":"stdout","time":537.338632873,"data":"- Assignment problems: scipy.optimize.linear_sum_assignment(cost_matrix)\n"}
+,{"stream_name":"stdout","time":537.338634213,"data":"- Graph algorithms (matching, shortest path, components): import networkx as nx\n"}
+,{"stream_name":"stdout","time":537.33863555,"data":"- Constraint satisfaction: encode as ILP via scipy.optimize.milp, or backtracking with pruning\n"}
+,{"stream_name":"stdout","time":537.338636891,"data":"- Number theory: sympy.ntheory or random (Monte Carlo verification)\n"}
+,{"stream_name":"stdout","time":537.338640491,"data":"- Geometry: fractions (exact rational) + sympy, avoid floating point\n"}
+,{"stream_name":"stdout","time":537.338641803,"data":"- Game theory/DP: functools.lru_cache for memoized recursion\n"}
+,{"stream_name":"stdout","time":537.338643057,"data":"=== END USER PROMPT ===\n"}
+,{"stream_name":"stdout","time":537.338644304,"data":"\n"}
+,{"stream_name":"stdout","time":537.338645694,"data":"Budget: 450.00 seconds | Deadline: 1772958937.24 | TimeLeft: 17381s | Effort: always-high\n"}
+,{"stream_name":"stdout","time":537.338647015,"data":"\n"}
+,{"stream_name":"stdout","time":538.93275903,"data":"  → Att 14 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":538.932794138,"data":"  Summ Att 14: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":538.932796012,"data":"  → Att 2 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":538.932797434,"data":"  Summ Att 2: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":538.932798871,"data":"  → Att 23 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":538.932800125,"data":"  Summ Att 23: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":538.932801382,"data":"  → Att 22 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":538.932802525,"data":"  Summ Att 22: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":539.141465191,"data":"  → Att 9 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":539.141494675,"data":"  Summ Att 9: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":539.435174138,"data":"  → Att 19 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":539.435210728,"data":"  Summ Att 19: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":539.435212696,"data":"  → Att 13 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":539.435214285,"data":"  Summ Att 13: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":539.435221832,"data":"  → Att 6 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":539.435223232,"data":"  Summ Att 6: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":539.43522452,"data":"  → Att 1 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":539.435226334,"data":"  Summ Att 1: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":539.435227817,"data":"  → Att 3 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":539.435229027,"data":"  Summ Att 3: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":539.435230134,"data":"  → Att 18 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":539.435231462,"data":"  Summ Att 18: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":539.635701076,"data":"  → Att 12 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":539.635736308,"data":"  Summ Att 12: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":539.635738868,"data":"  → Att 4 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":539.635740827,"data":"  Summ Att 4: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":539.635742088,"data":"  → Att 8 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":539.635756153,"data":"  Summ Att 8: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":539.635757453,"data":"  → Att 5 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":539.635758623,"data":"  Summ Att 5: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":539.84440189,"data":"  → Att 10 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":539.844448633,"data":"  Summ Att 10: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":539.844451159,"data":"  → Att 17 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":539.844452849,"data":"  Summ Att 17: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":539.844454063,"data":"  → Att 16 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":539.844455382,"data":"  Summ Att 16: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":540.140608967,"data":"  → Att 21 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":540.140639293,"data":"  Summ Att 21: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":540.140641696,"data":"  → Att 15 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":540.14064352,"data":"  Summ Att 15: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":540.14064481,"data":"  → Att 11 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":540.140646193,"data":"  Summ Att 11: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":540.140647492,"data":"  → Att 20 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":540.140648713,"data":"  Summ Att 20: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":540.140649875,"data":"  → Att 24 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":540.140651126,"data":"  Summ Att 24: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":540.426685699,"data":"  → Att 7 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":540.426709566,"data":"  Summ Att 7: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":540.426711888,"data":"\n"}
+,{"stream_name":"stdout","time":540.426713302,"data":"=== STREAMING SUMMARIES: collecting 24 summaries ===\n"}
+,{"stream_name":"stdout","time":540.426714778,"data":"R1 finished in 3s | 24 valid answers | 24 summaries submitted\n"}
+,{"stream_name":"stdout","time":540.426716475,"data":"  24/24 already done before collection\n"}
+,{"stream_name":"stdout","time":540.426717772,"data":"Summaries: 24/24 collected (waited 0.0s)\n"}
+,{"stream_name":"stdout","time":540.4267191,"data":"  Status: 0 ok, 0 mismatch, 0 skip-short, 0 error\n"}
+,{"stream_name":"stdout","time":540.426720508,"data":"  Avg summarization time: 0.0s | Avg compression ratio: 0.00\n"}
+,{"stream_name":"stdout","time":540.426721812,"data":"=== END STREAMING SUMMARIES ===\n"}
+,{"stream_name":"stdout","time":540.426723402,"data":"\n"}
+,{"stream_name":"stdout","time":540.426724548,"data":" Attempt  Response Length  Python Calls  Python Errors  Entropy  Temperature  Answer  Confidence    Source Stop_Reason  Successful_Code  Time_Remaining  Time\n"}
+,{"stream_name":"stdout","time":540.426726076,"data":"      14               88             0              0    0.685          0.6       0         1.0 streaming   max_turns                0           448.4   1.5\n"}
+,{"stream_name":"stdout","time":540.426738963,"data":"       2              103             0              0    0.760          0.6       0         1.0 streaming   max_turns                0           448.3   1.7\n"}
+,{"stream_name":"stdout","time":540.426740532,"data":"      23               90             0              0    0.669          0.6       0         1.0 streaming   max_turns                0           448.3   1.4\n"}
+,{"stream_name":"stdout","time":540.426741942,"data":"      22               97             0              0    0.666          0.6       0         1.0 streaming   max_turns                0           448.2   1.5\n"}
+,{"stream_name":"stdout","time":540.426743438,"data":"       9              117             0              0    0.741          0.6       0         1.0 streaming   max_turns                0           448.1   1.8\n"}
+,{"stream_name":"stdout","time":540.426744802,"data":"      19              122             0              0    0.875          0.6       0         1.0 streaming   max_turns                0           447.8   1.9\n"}
+,{"stream_name":"stdout","time":540.426746252,"data":"      13              129             0              0    0.860          0.6       0         1.0 streaming   max_turns                0           447.8   2.0\n"}
+,{"stream_name":"stdout","time":540.426747586,"data":"       6              137             0              0    0.671          0.6       0         1.0 streaming   max_turns                0           447.8   2.2\n"}
+,{"stream_name":"stdout","time":540.426748927,"data":"       1              148             0              0    0.686          0.6       0         1.0 streaming   max_turns                0           447.8   2.2\n"}
+,{"stream_name":"stdout","time":540.426751792,"data":"       3              148             0              0    0.726          0.6       0         1.0 streaming   max_turns                0           447.8   2.2\n"}
+,{"stream_name":"stdout","time":540.426753355,"data":"      18              127             0              0    0.612          0.6       0         1.0 streaming   max_turns                0           447.7   2.0\n"}
+,{"stream_name":"stdout","time":540.426754717,"data":"      12              142             0              0    0.766          0.6       0         1.0 streaming   max_turns                0           447.6   2.2\n"}
+,{"stream_name":"stdout","time":540.426756204,"data":"       4              155             0              0    0.874          0.6       0         1.0 streaming   max_turns                0           447.6   2.4\n"}
+,{"stream_name":"stdout","time":540.426757555,"data":"       8              159             0              0    0.728          0.6       0         1.0 streaming   max_turns                0           447.6   2.4\n"}
+,{"stream_name":"stdout","time":540.426759017,"data":"       5              172             0              0    0.746          0.6       0         1.0 streaming   max_turns                0           447.5   2.5\n"}
+,{"stream_name":"stdout","time":540.426760411,"data":"      10              159             0              0    0.801          0.6       0         1.0 streaming   max_turns                0           447.4   2.5\n"}
+,{"stream_name":"stdout","time":540.426761775,"data":"      17              161             0              0    0.773          0.6       0         1.0 streaming   max_turns                0           447.4   2.4\n"}
+,{"stream_name":"stdout","time":540.426763119,"data":"      16              159             0              0    0.728          0.6       0         1.0 streaming   max_turns                0           447.4   2.4\n"}
+,{"stream_name":"stdout","time":540.426764577,"data":"      21              186             0              0    0.797          0.6       0         1.0 streaming   max_turns                0           447.1   2.6\n"}
+,{"stream_name":"stdout","time":540.426768594,"data":"      15              201             0              0    0.818          0.6       0         1.0 streaming   max_turns                0           447.1   2.8\n"}
+,{"stream_name":"stdout","time":540.426770042,"data":"      11              201             0              0    0.865          0.6       0         1.0 streaming   max_turns                0           447.1   2.8\n"}
+,{"stream_name":"stdout","time":540.426771408,"data":"      20              201             0              0    0.818          0.6       0         1.0 streaming   max_turns                0           447.0   2.7\n"}
+,{"stream_name":"stdout","time":540.426773051,"data":"      24              201             0              0    0.816          0.6       0         1.0 streaming   max_turns                0           447.0   2.6\n"}
+,{"stream_name":"stdout","time":540.42677443,"data":"       7              242             0              0    0.700          0.6       0         1.0 streaming   max_turns                0           446.9   3.1\n"}
+,{"stream_name":"stdout","time":540.426775824,"data":" Answer  Votes  Score\n"}
+,{"stream_name":"stdout","time":540.426777016,"data":"      0     24  15.99\n"}
+,{"stream_name":"stdout","time":540.426778184,"data":"\n"}
+,{"stream_name":"stdout","time":540.426779281,"data":"Final Answer: 0 (votes: 24)\n"}
+,{"stream_name":"stdout","time":540.42678051,"data":"\n"}
+,{"stream_name":"stdout","time":540.426781576,"data":"\n"}
+,{"stream_name":"stdout","time":540.426782662,"data":"=== GENSELECT PHASE: launching dual judges ===\n"}
+,{"stream_name":"stdout","time":540.42678388,"data":"R1 answer: 0 (votes: 24/24)\n"}
+,{"stream_name":"stdout","time":540.42678501,"data":"Competing clusters: 1 ({0: 24})\n"}
+,{"stream_name":"stdout","time":540.426786161,"data":"Time elapsed: 22s | Time left: 17378s\n"}
+,{"stream_name":"stdout","time":540.426787418,"data":"  GPU [before-GenSelect]: alloc=0.0G reserved=0.0G free=85.0G total=85.0G\n"}
+,{"stream_name":"stdout","time":540.426788712,"data":"GenSelect-7B: fewer than 2 competing answers — skipping\n"}
+,{"stream_name":"stdout","time":540.426790034,"data":"GenSelect-120B: fewer than 2 competing answers — skipping\n"}
+,{"stream_name":"stdout","time":540.426791296,"data":"  GPU [after-GenSelect]: alloc=0.0G reserved=0.0G free=85.0G total=85.0G\n"}
+,{"stream_name":"stdout","time":540.42679259,"data":"\n"}
+,{"stream_name":"stdout","time":540.426793719,"data":"=== 3-WAY DECISION ===\n"}
+,{"stream_name":"stdout","time":540.426794932,"data":"  majority:       0 (votes: 24/24)\n"}
+,{"stream_name":"stdout","time":540.426796099,"data":"  GenSelect-7B:   None (reasoning: 0 chars)\n"}
+,{"stream_name":"stdout","time":540.426797302,"data":"  GenSelect-120B: None (reasoning: 0 chars)\n"}
+,{"stream_name":"stdout","time":540.426798477,"data":"  GenSelect phase time: 0.0s\n"}
+,{"stream_name":"stdout","time":540.426799898,"data":"  Verdict: SOLE JUDGE — GenSelects inconclusive (1 valid), trusting majority 0\n"}
+,{"stream_name":"stdout","time":540.426801223,"data":"=== END 3-WAY DECISION ===\n"}
+,{"stream_name":"stdout","time":540.426802429,"data":"\n"}
+,{"stream_name":"stdout","time":540.426803518,"data":"=== RERUN CHECK: top_votes=24, threshold=8, gs_disagrees=False, should_rerun=False ===\n"}
+,{"stream_name":"stdout","time":540.426804846,"data":"\n"}
+,{"stream_name":"stdout","time":540.4268059,"data":"=== PROBLEM COMPLETE ===\n"}
+,{"stream_name":"stdout","time":540.426807059,"data":"Final answer: 0\n"}
+,{"stream_name":"stdout","time":540.426808314,"data":"Path: R1=0(v24) -\u003e FINAL=0\n"}
+,{"stream_name":"stdout","time":540.42681212,"data":"Total time: 3.1s\n"}
+,{"stream_name":"stdout","time":540.426813578,"data":"Summaries: 0/24 clean | total summ time: 0.0s (overlapped with R1)\n"}
+,{"stream_name":"stdout","time":540.426814878,"data":"Session: 22s elapsed, 17378s remaining, 48 problems left\n"}
+,{"stream_name":"stdout","time":540.426816372,"data":"=== END PROBLEM ===\n"}
+,{"stream_name":"stdout","time":540.42681775,"data":"\n"}
+,{"stream_name":"stdout","time":540.426818929,"data":"\n"}
+,{"stream_name":"stdout","time":540.426820002,"data":"Problem: What is $0\\times10$?\n"}
+,{"stream_name":"stdout","time":540.426821429,"data":"\n"}
+,{"stream_name":"stdout","time":540.426822684,"data":"\n"}
+,{"stream_name":"stdout","time":540.426823872,"data":"=== USER PROMPT (3955 chars) ===\n"}
+,{"stream_name":"stdout","time":540.42682511,"data":"What is $0\\times10$? You have access to `math`, `numpy`, and `sympy` for:\n"}
+,{"stream_name":"stdout","time":540.42682647,"data":"\n"}
+,{"stream_name":"stdout","time":540.426827538,"data":"# Symbolic Computation (sympy):\n"}
+,{"stream_name":"stdout","time":540.426828734,"data":"- Algebraic manipulation and simplification\n"}
+,{"stream_name":"stdout","time":540.426829928,"data":"- Solving equations and systems of equations\n"}
+,{"stream_name":"stdout","time":540.426831123,"data":"- Symbolic differentiation and integration\n"}
+,{"stream_name":"stdout","time":540.42683236,"data":"- Number theory functions (primes, divisors, modular arithmetic)\n"}
+,{"stream_name":"stdout","time":540.426833633,"data":"- Polynomial operations and factorization\n"}
+,{"stream_name":"stdout","time":540.426834812,"data":"- Working with mathematical expressions symbolically\n"}
+,{"stream_name":"stdout","time":540.426836033,"data":"\n"}
+,{"stream_name":"stdout","time":540.426837105,"data":"# Numerical Computation (numpy):\n"}
+,{"stream_name":"stdout","time":540.426838248,"data":"- Array operations and linear algebra\n"}
+,{"stream_name":"stdout","time":540.426839391,"data":"- Efficient numerical calculations for large datasets\n"}
+,{"stream_name":"stdout","time":540.426840614,"data":"- Matrix operations and eigenvalue problems\n"}
+,{"stream_name":"stdout","time":540.426842073,"data":"- Statistical computations\n"}
+,{"stream_name":"stdout","time":540.426843243,"data":"\n"}
+,{"stream_name":"stdout","time":540.426844316,"data":"# Mathematical Functions (math):\n"}
+,{"stream_name":"stdout","time":540.426845463,"data":"- Standard mathematical functions (trig, log, exp)\n"}
+,{"stream_name":"stdout","time":540.426846672,"data":"- Constants like pi and e\n"}
+,{"stream_name":"stdout","time":540.42684782,"data":"- Basic operations for single values\n"}
+,{"stream_name":"stdout","time":540.426849004,"data":"\n"}
+,{"stream_name":"stdout","time":540.426850152,"data":"Best Practices:\n"}
+,{"stream_name":"stdout","time":540.426851464,"data":"- Use sympy for exact symbolic answers when possible\n"}
+,{"stream_name":"stdout","time":540.426852677,"data":"- Use numpy for numerical verification and large-scale computation\n"}
+,{"stream_name":"stdout","time":540.426854139,"data":"- Combine symbolic and numerical approaches: derive symbolically, verify numerically\n"}
+,{"stream_name":"stdout","time":540.426855426,"data":"- Document your computational strategy clearly\n"}
+,{"stream_name":"stdout","time":540.426856754,"data":"- Validate computational results against known cases or theoretical bounds\n"}
+,{"stream_name":"stdout","time":540.426858026,"data":"- For very large exponents (e.g. a^(n!)), use pow(base, exp, mod) or analytical methods — never materialize the full number\n"}
+,{"stream_name":"stdout","time":540.426862236,"data":"\n"}
+,{"stream_name":"stdout","time":540.426863619,"data":"# Code Robustness Rules:\n"}
+,{"stream_name":"stdout","time":540.426864807,"data":"- Each code cell must be SELF-CONTAINED: re-import and re-define everything you need. If a previous cell errored, its definitions are LOST.\n"}
+,{"stream_name":"stdout","time":540.426866214,"data":"- Avoid sympy expressions that grow beyond a few hundred characters. If an expression is exploding, switch to numerical methods (numpy) or modular arithmetic.\n"}
+,{"stream_name":"stdout","time":540.426867748,"data":"- For geometry: prefer numpy coordinate models with brute-force verification over pure symbolic or direction-counting approaches.\n"}
+,{"stream_name":"stdout","time":540.426869152,"data":"- For number theory / functional equations: compute small cases first (n=1..20) to find patterns before attempting a proof. Brute-force exploration often reveals the structure.\n"}
+,{"stream_name":"stdout","time":540.426870626,"data":"- For combinatorics counting: always verify no duplicates — check injectivity explicitly.\n"}
+,{"stream_name":"stdout","time":540.426872012,"data":"- If 5+ code cells without progress, STOP and restart with a different approach.\n"}
+,{"stream_name":"stdout","time":540.426873676,"data":"- When using Python, prefer converting sympy expressions to int() before passing to Python builtins like pow(), min(), max().\n"}
+,{"stream_name":"stdout","time":540.426875219,"data":"- Common import: from sympy.ntheory.modular import crt (note: sympy.crt does not exist).\n"}
+,{"stream_name":"stdout","time":540.42687671,"data":"- If a code cell fails, re-import necessary libraries in the next cell.\n"}
+,{"stream_name":"stdout","time":540.426877945,"data":"- sympy.solve() often times out on complex systems. For polynomial systems with \u003e 3 unknowns, prefer numerical methods (scipy fsolve/minimize) or manual algebraic reduction.\n"}
+,{"stream_name":"stdout","time":540.426879892,"data":"- Never call sympy.simplify() or sympy.expand() on expressions involving large binomials or products of many terms. Use float() first to check the numerical value.\n"}
+,{"stream_name":"stdout","time":540.426881337,"data":"\n"}
+,{"stream_name":"stdout","time":540.426882439,"data":"# Library Availability:\n"}
+,{"stream_name":"stdout","time":540.42688361,"data":"NOT installed (do NOT import — they WILL fail): pulp, ortools, z3-solver, mip, pyscipopt, pysat, cvxpy, constraint, matplotlib, sklearn.\n"}
+,{"stream_name":"stdout","time":540.426885063,"data":"Do not waste turns trying these libraries or probing with try/except.\n"}
+,{"stream_name":"stdout","time":540.426886294,"data":"\n"}
+,{"stream_name":"stdout","time":540.426887405,"data":"Available and recommended:\n"}
+,{"stream_name":"stdout","time":540.426888596,"data":"- sympy, numpy, scipy, networkx, mpmath, math, itertools, functools, fractions, collections, decimal, heapq, random, statistics\n"}
+,{"stream_name":"stdout","time":540.426889983,"data":"\n"}
+,{"stream_name":"stdout","time":540.426891388,"data":"Replacements for unavailable optimization/constraint libraries:\n"}
+,{"stream_name":"stdout","time":540.426892663,"data":"- Integer/Binary Linear Programming (replaces pulp, mip, ortools):\n"}
+,{"stream_name":"stdout","time":540.42689392,"data":"  from scipy.optimize import milp, LinearConstraint, Bounds\n"}
+,{"stream_name":"stdout","time":540.42689516,"data":"  import numpy as np\n"}
+,{"stream_name":"stdout","time":540.426896314,"data":"  res = milp(c=c_vec, constraints=LinearConstraint(A, lb, ub),\n"}
+,{"stream_name":"stdout","time":540.426897679,"data":"             integrality=np.ones(n), bounds=Bounds(0, 1))\n"}
+,{"stream_name":"stdout","time":540.426901155,"data":"  # res.success, res.x (solution vector), res.fun (objective value)\n"}
+,{"stream_name":"stdout","time":540.426902505,"data":"- Linear Programming: scipy.optimize.linprog(c, A_ub=A, b_ub=b, method=\"highs\")\n"}
+,{"stream_name":"stdout","time":540.426904007,"data":"- Assignment problems: scipy.optimize.linear_sum_assignment(cost_matrix)\n"}
+,{"stream_name":"stdout","time":540.426905278,"data":"- Graph algorithms (matching, shortest path, components): import networkx as nx\n"}
+,{"stream_name":"stdout","time":540.426906517,"data":"- Constraint satisfaction: encode as ILP via scipy.optimize.milp, or backtracking with pruning\n"}
+,{"stream_name":"stdout","time":540.426907821,"data":"- Number theory: sympy.ntheory or random (Monte Carlo verification)\n"}
+,{"stream_name":"stdout","time":540.426909059,"data":"- Geometry: fractions (exact rational) + sympy, avoid floating point\n"}
+,{"stream_name":"stdout","time":540.42691034,"data":"- Game theory/DP: functools.lru_cache for memoized recursion\n"}
+,{"stream_name":"stdout","time":540.426911588,"data":"=== END USER PROMPT ===\n"}
+,{"stream_name":"stdout","time":540.426913159,"data":"\n"}
+,{"stream_name":"stdout","time":540.426914255,"data":"Budget: 450.00 seconds | Deadline: 1772958940.48 | TimeLeft: 17378s | Effort: always-high\n"}
+,{"stream_name":"stdout","time":540.42691558,"data":"\n"}
+,{"stream_name":"stdout","time":541.921791398,"data":"  → Att 20 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":541.921832131,"data":"  Summ Att 20: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":541.921834625,"data":"  → Att 4 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":541.921836945,"data":"  Summ Att 4: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":542.233945103,"data":"  → Att 13 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":542.233984394,"data":"  Summ Att 13: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":542.233988104,"data":"  → Att 7 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":542.233990914,"data":"  Summ Att 7: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":542.233993664,"data":"  → Att 2 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":542.233996787,"data":"  Summ Att 2: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":542.46233213,"data":"  → Att 9 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":542.462373423,"data":"  Summ Att 9: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":542.462376102,"data":"  → Att 23 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":542.462378122,"data":"  Summ Att 23: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":542.462379894,"data":"  → Att 15 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":542.462381728,"data":"  Summ Att 15: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":542.462383705,"data":"  → Att 14 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":542.462385538,"data":"  → Att 22 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":542.462387136,"data":"  Summ Att 14: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":542.462388632,"data":"  Summ Att 22: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":542.462404945,"data":"  → Att 16 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":542.462406257,"data":"  Summ Att 16: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":542.831918173,"data":"  → Att 5 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":542.831950087,"data":"  Summ Att 5: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":542.831952529,"data":"  → Att 6 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":542.831954113,"data":"  Summ Att 6: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":543.16217719,"data":"  → Att 17 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":543.162209285,"data":"  Summ Att 17: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":543.162217017,"data":"  → Att 19 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":543.162218658,"data":"  Summ Att 19: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":543.162220303,"data":"  → Att 24 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":543.162221732,"data":"  Summ Att 24: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":543.162223083,"data":"  → Att 12 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":543.162224528,"data":"  Summ Att 12: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":543.162225665,"data":"  → Att 3 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":543.162226895,"data":"  Summ Att 3: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":543.454689188,"data":"  → Att 1 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":543.454724701,"data":"  Summ Att 1: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":543.454726651,"data":"  → Att 10 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":543.454728173,"data":"  Summ Att 10: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":543.454729486,"data":"  → Att 8 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":543.454730799,"data":"  Summ Att 8: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":543.454732094,"data":"  → Att 11 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":543.454733374,"data":"  Summ Att 11: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":543.45473459,"data":"  → Att 18 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":543.45473579,"data":"  Summ Att 18: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":543.454737014,"data":"  → Att 21 finished (answer=0, 0 turns) — submitting for summarization\n"}
+,{"stream_name":"stdout","time":543.454738168,"data":"  Summ Att 21: empty conversation → skip\n"}
+,{"stream_name":"stdout","time":543.454739269,"data":"\n"}
+,{"stream_name":"stdout","time":543.454740351,"data":"=== STREAMING SUMMARIES: collecting 24 summaries ===\n"}
+,{"stream_name":"stdout","time":543.454741501,"data":"R1 finished in 3s | 24 valid answers | 24 summaries submitted\n"}
+,{"stream_name":"stdout","time":543.454743012,"data":"  24/24 already done before collection\n"}
+,{"stream_name":"stdout","time":543.454744126,"data":"Summaries: 24/24 collected (waited 0.0s)\n"}
+,{"stream_name":"stdout","time":543.45475835,"data":"  Status: 0 ok, 0 mismatch, 0 skip-short, 0 error\n"}
+,{"stream_name":"stdout","time":543.454759493,"data":"  Avg summarization time: 0.0s | Avg compression ratio: 0.00\n"}
+,{"stream_name":"stdout","time":543.454760676,"data":"=== END STREAMING SUMMARIES ===\n"}
+,{"stream_name":"stdout","time":543.454761918,"data":"\n"}
+,{"stream_name":"stdout","time":543.454763008,"data":" Attempt  Response Length  Python Calls  Python Errors  Entropy  Temperature  Answer  Confidence    Source Stop_Reason  Successful_Code  Time_Remaining  Time\n"}
+,{"stream_name":"stdout","time":543.454764512,"data":"      20               73             0              0    0.606          0.6       0         1.0 streaming   max_turns                0           448.6   1.1\n"}
+,{"stream_name":"stdout","time":543.454765963,"data":"       4               98             0              0    0.593          0.6       0         1.0 streaming   max_turns                0           448.4   1.6\n"}
+,{"stream_name":"stdout","time":543.45476738,"data":"      13              101             0              0    0.714          0.6       0         1.0 streaming   max_turns                0           448.3   1.6\n"}
+,{"stream_name":"stdout","time":543.454768807,"data":"       7              110             0              0    0.777          0.6       0         1.0 streaming   max_turns                0           448.2   1.8\n"}
+,{"stream_name":"stdout","time":543.454773157,"data":"       2              117             0              0    0.816          0.6       0         1.0 streaming   max_turns                0           448.1   1.9\n"}
+,{"stream_name":"stdout","time":543.454775753,"data":"       9              121             0              0    0.588          0.6       0         1.0 streaming   max_turns                0           448.1   1.8\n"}
+,{"stream_name":"stdout","time":543.454777066,"data":"      23              104             0              0    0.580          0.6       0         1.0 streaming   max_turns                0           448.1   1.6\n"}
+,{"stream_name":"stdout","time":543.454778496,"data":"      15              118             0              0    0.831          0.6       0         1.0 streaming   max_turns                0           447.9   1.9\n"}
+,{"stream_name":"stdout","time":543.45477977,"data":"      14              127             0              0    0.764          0.6       0         1.0 streaming   max_turns                0           447.9   1.9\n"}
+,{"stream_name":"stdout","time":543.454781035,"data":"      22              115             0              0    0.616          0.6       0         1.0 streaming   max_turns                0           447.9   1.8\n"}
+,{"stream_name":"stdout","time":543.454782308,"data":"      16              125             0              0    0.759          0.6       0         1.0 streaming   max_turns                0           447.9   1.9\n"}
+,{"stream_name":"stdout","time":543.454783715,"data":"       5              149             0              0    0.862          0.6       0         1.0 streaming   max_turns                0           447.7   2.3\n"}
+,{"stream_name":"stdout","time":543.454784978,"data":"       6              162             0              0    0.793          0.6       0         1.0 streaming   max_turns                0           447.5   2.5\n"}
+,{"stream_name":"stdout","time":543.454786283,"data":"      17              162             0              0    0.802          0.6       0         1.0 streaming   max_turns                0           447.4   2.4\n"}
+,{"stream_name":"stdout","time":543.454787555,"data":"      19              163             0              0    0.817          0.6       0         1.0 streaming   max_turns                0           447.3   2.4\n"}
+,{"stream_name":"stdout","time":543.454791217,"data":"      24              165             0              0    0.727          0.6       0         1.0 streaming   max_turns                0           447.3   2.4\n"}
+,{"stream_name":"stdout","time":543.454792546,"data":"      12              186             0              0    0.774          0.6       0         1.0 streaming   max_turns                0           447.2   2.7\n"}
+,{"stream_name":"stdout","time":543.45479379,"data":"       3              189             0              0    0.758          0.6       0         1.0 streaming   max_turns                0           447.2   2.8\n"}
+,{"stream_name":"stdout","time":543.454795293,"data":"       1              201             0              0    0.748          0.6       0         1.0 streaming   max_turns                0           447.1   2.9\n"}
+,{"stream_name":"stdout","time":543.454796693,"data":"      10              201             0              0    0.960          0.6       0         1.0 streaming   max_turns                0           447.1   2.8\n"}
+,{"stream_name":"stdout","time":543.454797941,"data":"       8              201             0              0    0.859          0.6       0         1.0 streaming   max_turns                0           447.1   2.9\n"}
+,{"stream_name":"stdout","time":543.454799204,"data":"      11              201             0              0    0.905          0.6       0         1.0 streaming   max_turns                0           447.1   2.8\n"}
+,{"stream_name":"stdout","time":543.454800453,"data":"      18              201             0              0    0.837          0.6       0         1.0 streaming   max_turns                0           447.0   2.8\n"}
+,{"stream_name":"stdout","time":543.454801705,"data":"      21              201             0              0    0.944          0.6       0         1.0 streaming   max_turns                0           447.0   2.7\n"}
+,{"stream_name":"stdout","time":543.454803001,"data":" Answer  Votes  Score\n"}
+,{"stream_name":"stdout","time":543.454804063,"data":"      0     24 15.952\n"}
+,{"stream_name":"stdout","time":543.454805155,"data":"\n"}
+,{"stream_name":"stdout","time":543.45480618,"data":"Final Answer: 0 (votes: 24)\n"}
+,{"stream_name":"stdout","time":543.45480726,"data":"\n"}
+,{"stream_name":"stdout","time":543.454808237,"data":"\n"}
+,{"stream_name":"stdout","time":543.454809291,"data":"=== GENSELECT PHASE: launching dual judges ===\n"}
+,{"stream_name":"stdout","time":543.454810422,"data":"R1 answer: 0 (votes: 24/24)\n"}
+,{"stream_name":"stdout","time":543.454811478,"data":"Competing clusters: 1 ({0: 24})\n"}
+,{"stream_name":"stdout","time":543.454812604,"data":"Time elapsed: 25s | Time left: 17375s\n"}
+,{"stream_name":"stdout","time":543.454813722,"data":"  GPU [before-GenSelect]: alloc=0.0G reserved=0.0G free=85.0G total=85.0G\n"}
+,{"stream_name":"stdout","time":543.454814932,"data":"GenSelect-7B: fewer than 2 competing answers — skipping\n"}
+,{"stream_name":"stdout","time":543.454816086,"data":"GenSelect-120B: fewer than 2 competing answers — skipping\n"}
+,{"stream_name":"stdout","time":543.454817216,"data":"  GPU [after-GenSelect]: alloc=0.0G reserved=0.0G free=85.0G total=85.0G\n"}
+,{"stream_name":"stdout","time":543.454818392,"data":"\n"}
+,{"stream_name":"stdout","time":543.454819392,"data":"=== 3-WAY DECISION ===\n"}
+,{"stream_name":"stdout","time":543.454820496,"data":"  majority:       0 (votes: 24/24)\n"}
+,{"stream_name":"stdout","time":543.454821591,"data":"  GenSelect-7B:   None (reasoning: 0 chars)\n"}
+,{"stream_name":"stdout","time":543.454822706,"data":"  GenSelect-120B: None (reasoning: 0 chars)\n"}
+,{"stream_name":"stdout","time":543.454823813,"data":"  GenSelect phase time: 0.0s\n"}
+,{"stream_name":"stdout","time":543.454826958,"data":"  Verdict: SOLE JUDGE — GenSelects inconclusive (1 valid), trusting majority 0\n"}
+,{"stream_name":"stdout","time":543.454828256,"data":"=== END 3-WAY DECISION ===\n"}
+,{"stream_name":"stdout","time":543.454829377,"data":"\n"}
+,{"stream_name":"stdout","time":543.454830388,"data":"=== RERUN CHECK: top_votes=24, threshold=8, gs_disagrees=False, should_rerun=False ===\n"}
+,{"stream_name":"stdout","time":543.45483161,"data":"\n"}
+,{"stream_name":"stdout","time":543.45483269,"data":"=== PROBLEM COMPLETE ===\n"}
+,{"stream_name":"stdout","time":543.454833773,"data":"Final answer: 0\n"}
+,{"stream_name":"stdout","time":543.45483495,"data":"Path: R1=0(v24) -\u003e FINAL=0\n"}
+,{"stream_name":"stdout","time":543.454836308,"data":"Total time: 3.0s\n"}
+,{"stream_name":"stdout","time":543.454837425,"data":"Summaries: 0/24 clean | total summ time: 0.0s (overlapped with R1)\n"}
+,{"stream_name":"stdout","time":543.45483864,"data":"Session: 25s elapsed, 17375s remaining, 47 problems left\n"}
+,{"stream_name":"stdout","time":543.454839836,"data":"=== END PROBLEM ===\n"}
+,{"stream_name":"stdout","time":543.45484091,"data":"\n"}
+,{"stream_name":"stderr","time":1488.375902317,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1488.375935928,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1488.527720644,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1488.527743962,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1489.164729187,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":1489.16475685,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":1489.233388466,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":1489.460271956,"data":"[NbConvertApp] Writing 262481 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":1491.351715404,"data":"/usr/local/lib/python3.12/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":1491.351748243,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":1491.382525533,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1492.258370889,"data":"[NbConvertApp] Writing 944375 bytes to __results__.html\n"}
+,{"stream_name":"stderr","time":1492.995247524,"data":"/usr/local/lib/python3.12/dist-packages/fastprogress/fastprogress.py:107: UserWarning: Couldn't import ipywidgets properly, progress bar will use console behavior\n"}
+,{"stream_name":"stderr","time":1492.995284756,"data":"  warn(\"Couldn't import ipywidgets properly, progress bar will use console behavior\")\n"}
+]

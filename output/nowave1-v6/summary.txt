@@ -1,0 +1,23 @@
+AIMO3 Run Summary
+============================================================
+Score: 1/1 (100.0%)
+Time: 847s (14.1 min)
+Test set: set_d
+
+Attempts: 23/24 answered (96%) | Nones: 1 | Errors: 22
+Timing: min=847s  max=847s  median=847s
+Summaries: 21/21 clean, 0 mismatch, 1371s total
+Reruns: 0/1
+
+============================================================
+PER-PROBLEM DETAIL
+============================================================
+
+--- dbd2be [OK] ---
+  Predicted: 10  Expected: 10  Time: 847s
+  R1 Votes: {10: 23}
+  R1 Answers: 23  Nones: 1  Errors: 22
+  Summaries: 21/21 clean, 0 mismatch, 1370.7s
+  GS Round 1: 7B=None  120B=None  majority=10(v23)  clusters=1  time=0s
+  Path: R1=10(v23) -> FINAL=10
+

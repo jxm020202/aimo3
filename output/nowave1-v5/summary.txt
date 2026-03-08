@@ -1,0 +1,51 @@
+AIMO3 Run Summary
+============================================================
+Score: 3/4 (75.0%)
+Time: 941s (15.7 min)
+Test set: set_c
+
+Attempts: 84/96 answered (88%) | Nones: 12 | Errors: 31
+Timing: min=49s  max=452s  median=377s
+Summaries: 0/84 clean, 0 mismatch, 1s total
+Reruns: 0/4
+
+============================================================
+PER-PROBLEM DETAIL
+============================================================
+
+--- 403988 [OK] ---
+  Predicted: 65537  Expected: 65537  Time: 63s
+  R1 Votes: {65537: 24}
+  R1 Answers: 24  Nones: 0  Errors: 2
+  Summaries: 0/24 clean, 0 mismatch, 0.2s
+  GS Round 1: 7B=None  120B=None  majority=65537(v24)  clusters=1  time=0s
+  Path: R1=65537(v24) -> FINAL=65537
+
+--- 3eee67 [OK] ---
+  Predicted: 27290  Expected: 27290  Time: 377s
+  R1 Votes: {27290: 22, 290: 1}
+  R1 Answers: 23  Nones: 1  Errors: 10
+  Summaries: 0/23 clean, 0 mismatch, 0.5s
+  GS Round 1: 7B=None  120B=None  majority=27290(v22)  clusters=2  time=0s
+  Path: R1=27290(v22) -> FINAL=27290
+
+--- dccede [FAIL] ---
+  Predicted: 52  Expected: 44  Time: 452s
+  R1 Votes: {52: 8, 22: 5}
+  R1 Answers: 13  Nones: 11  Errors: 19
+  Summaries: 0/13 clean, 0 mismatch, 0.2s
+  GS Round 1: 7B=None  120B=None  majority=52(v8)  clusters=2  time=0s
+  Path: R1=52(v8) -> FINAL=52
+
+--- 2b401b [OK] ---
+  Predicted: 59  Expected: 59  Time: 49s
+  R1 Votes: {59: 24}
+  R1 Answers: 24  Nones: 0  Errors: 0
+  Summaries: 0/24 clean, 0 mismatch, 0.2s
+  GS Round 1: 7B=None  120B=None  majority=59(v24)  clusters=1  time=0s
+  Path: R1=59(v24) -> FINAL=59
+
+============================================================
+WRONG ANSWERS (1)
+============================================================
+  dccede: predicted=52 expected=44  votes={52: 8, 22: 5}  7B=None 120B=None  rerun=False
