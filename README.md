@@ -1,6 +1,6 @@
 # AIMO3 — AI Mathematical Olympiad Progress Prize 3
 
-Competitive solution for [AIMO Progress Prize 3](https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3) on Kaggle.
+Competitive solution for [AIMO Progress Prize 3](https://www.kaggle.com/competitions/ai-mathematical-olympiad-progress-prize-3) on Kaggle. # Won Bronze Medal, which led to me become 2nd rank Kaggler in Perth
 
 **Goal**: Solve 110 original math problems (olympiad → IMO level) using open-weight LLMs on free H100 GPUs.
 
